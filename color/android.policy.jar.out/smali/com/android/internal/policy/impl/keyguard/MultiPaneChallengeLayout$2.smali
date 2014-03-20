@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 115
+    .line 123
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$2;->this$0:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -39,7 +39,7 @@
     .parameter "animation"
 
     .prologue
-    .line 118
+    .line 126
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$2;->this$0:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->mScrimView:Landroid/view/View;
@@ -51,6 +51,6 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 119
+    .line 127
     return-void
 .end method

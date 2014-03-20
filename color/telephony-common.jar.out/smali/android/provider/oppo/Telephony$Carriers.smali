@@ -74,8 +74,6 @@
 
 .field public static final OMACPID:Ljava/lang/String; = "omacpid"
 
-.field public static final OPPOSPN:Ljava/lang/String; = "oppoSpn"
-
 .field public static final PASSWORD:Ljava/lang/String; = "password"
 
 .field public static final PNN:Ljava/lang/String; = "pnn"
@@ -143,6 +141,6 @@
     .line 2550
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2674
+    .line 2669
     return-void
 .end method

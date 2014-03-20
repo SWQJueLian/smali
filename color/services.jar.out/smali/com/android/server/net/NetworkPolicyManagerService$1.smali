@@ -1,5 +1,5 @@
 .class Lcom/android/server/net/NetworkPolicyManagerService$1;
-.super Landroid/app/IProcessObserver$Stub;
+.super Landroid/content/BroadcastReceiver;
 .source "NetworkPolicyManagerService.java"
 
 
@@ -24,80 +24,90 @@
     .parameter
 
     .prologue
-    .line 406
+    .line 455
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    invoke-direct {p0}, Landroid/app/IProcessObserver$Stub;-><init>()V
+    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onForegroundActivitiesChanged(IIZ)V
-    .locals 3
-    .parameter "pid"
-    .parameter "uid"
-    .parameter "foregroundActivities"
+.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+    .locals 4
+    .parameter "context"
+    .parameter "intent"
 
     .prologue
-    .line 409
-    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
-
-    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$000(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/os/Handler;
+    .line 457
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    const/4 v1, 0x3
+    .line 458
+    .local v0, action:Ljava/lang/String;
+    const-string v2, "android.intent.action.SIM_STATE_CHANGED"
 
-    invoke-static {p3}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v2
+    move-result v2
 
-    invoke-virtual {v0, v1, p1, p2, v2}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+    if-eqz v2, :cond_1
 
-    move-result-object v0
+    .line 459
+    const-string v2, "ss"
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 411
-    return-void
-.end method
+    move-result-object v1
 
-.method public onImportanceChanged(III)V
-    .locals 0
-    .parameter "pid"
-    .parameter "uid"
-    .parameter "importance"
+    .line 460
+    .local v1, simState:Ljava/lang/String;
+    const-string v2, "LOADED"
 
-    .prologue
-    .line 415
-    return-void
-.end method
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-.method public onProcessDied(II)V
-    .locals 2
-    .parameter "pid"
-    .parameter "uid"
+    move-result v2
 
-    .prologue
-    .line 419
-    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+    if-nez v2, :cond_0
 
-    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$000(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/os/Handler;
+    const-string v2, "ABSENT"
 
-    move-result-object v0
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/4 v1, 0x4
+    move-result v2
 
-    invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+    if-eqz v2, :cond_1
 
-    move-result-object v0
+    .line 462
+    :cond_0
+    const-string v2, "NetworkPolicy"
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    const-string v3, "receive ACTION_SIM_STATE_CHANGED"
 
-    .line 420
+    invoke-static {v2, v3}, Lcom/mediatek/xlog/Xlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 463
+    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+
+    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateDataUsageSimInsert()V
+    invoke-static {v2}, Lcom/android/server/net/NetworkPolicyManagerService;->access$000(Lcom/android/server/net/NetworkPolicyManagerService;)V
+
+    .line 464
+    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+
+    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateDataUsageSimIMSI()V
+    invoke-static {v2}, Lcom/android/server/net/NetworkPolicyManagerService;->access$100(Lcom/android/server/net/NetworkPolicyManagerService;)V
+
+    .line 465
+    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$1;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+
+    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateMobileDataEnableStatus()V
+    invoke-static {v2}, Lcom/android/server/net/NetworkPolicyManagerService;->access$200(Lcom/android/server/net/NetworkPolicyManagerService;)V
+
+    .line 471
+    .end local v1           #simState:Ljava/lang/String;
+    :cond_1
     return-void
 .end method

@@ -203,7 +203,7 @@
     .line 134
     new-instance v4, Ljava/lang/IllegalArgumentException;
 
-    const-string v5, "must have at least one record"
+    const-string/jumbo v5, "must have at least one record"
 
     invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

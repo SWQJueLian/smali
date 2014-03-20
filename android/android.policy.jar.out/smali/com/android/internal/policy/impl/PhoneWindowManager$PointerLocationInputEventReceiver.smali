@@ -26,13 +26,13 @@
     .parameter "view"
 
     .prologue
-    .line 332
+    .line 340
     invoke-direct {p0, p1, p2}, Landroid/view/InputEventReceiver;-><init>(Landroid/view/InputChannel;Landroid/os/Looper;)V
 
-    .line 333
+    .line 341
     iput-object p3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$PointerLocationInputEventReceiver;->mView:Lcom/android/internal/widget/PointerLocationView;
 
-    .line 334
+    .line 342
     return-void
 .end method
 
@@ -43,10 +43,10 @@
     .parameter "event"
 
     .prologue
-    .line 338
+    .line 346
     const/4 v1, 0x0
 
-    .line 340
+    .line 348
     .local v1, handled:Z
     :try_start_0
     instance-of v3, p1, Landroid/view/MotionEvent;
@@ -61,14 +61,14 @@
 
     if-eqz v3, :cond_0
 
-    .line 342
+    .line 350
     move-object v0, p1
 
     check-cast v0, Landroid/view/MotionEvent;
 
     move-object v2, v0
 
-    .line 343
+    .line 351
     .local v2, motionEvent:Landroid/view/MotionEvent;
     iget-object v3, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$PointerLocationInputEventReceiver;->mView:Lcom/android/internal/widget/PointerLocationView;
 
@@ -76,18 +76,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 344
+    .line 352
     const/4 v1, 0x1
 
-    .line 347
+    .line 355
     .end local v2           #motionEvent:Landroid/view/MotionEvent;
     :cond_0
     invoke-virtual {p0, p1, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager$PointerLocationInputEventReceiver;->finishInputEvent(Landroid/view/InputEvent;Z)V
 
-    .line 349
+    .line 357
     return-void
 
-    .line 347
+    .line 355
     :catchall_0
     move-exception v3
 

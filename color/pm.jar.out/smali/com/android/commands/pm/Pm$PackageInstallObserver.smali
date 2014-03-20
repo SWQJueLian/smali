@@ -28,7 +28,7 @@
     .parameter
 
     .prologue
-    .line 686
+    .line 679
     iput-object p1, p0, Lcom/android/commands/pm/Pm$PackageInstallObserver;->this$0:Lcom/android/commands/pm/Pm;
 
     invoke-direct {p0}, Landroid/content/pm/IPackageInstallObserver$Stub;-><init>()V
@@ -44,28 +44,28 @@
     .parameter "status"
 
     .prologue
-    .line 691
+    .line 684
     monitor-enter p0
 
-    .line 692
+    .line 685
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Lcom/android/commands/pm/Pm$PackageInstallObserver;->finished:Z
 
-    .line 693
+    .line 686
     iput p2, p0, Lcom/android/commands/pm/Pm$PackageInstallObserver;->result:I
 
-    .line 694
+    .line 687
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 695
+    .line 688
     monitor-exit p0
 
-    .line 696
+    .line 689
     return-void
 
-    .line 695
+    .line 688
     :catchall_0
     move-exception v0
 

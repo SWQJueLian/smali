@@ -194,7 +194,7 @@
     .line 157
     new-array v0, v4, [Ljava/lang/String;
 
-    const-string v1, "key"
+    const-string/jumbo v1, "key"
 
     aput-object v1, v0, v2
 
@@ -693,7 +693,7 @@
 
     .line 549
     .local v10, values:Landroid/content/ContentValues;
-    const-string v1, "name"
+    const-string/jumbo v1, "name"
 
     move-object/from16 v0, p2
 
@@ -720,7 +720,7 @@
     .line 552
     const-string v1, "accounts"
 
-    const-string v12, "name"
+    const-string/jumbo v12, "name"
 
     invoke-virtual {v2, v1, v12, v10}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
@@ -2116,7 +2116,7 @@
 
     aput-object v0, v2, v6
 
-    const-string v3, "name=? AND type=?"
+    const-string/jumbo v3, "name=? AND type=?"
 
     const/4 v0, 0x2
 
@@ -2601,7 +2601,7 @@
 
     move-result-object v0
 
-    const-string v3, "key"
+    const-string/jumbo v3, "key"
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3177,7 +3177,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "no credentials permission for usage of "
+    const-string/jumbo v8, "no credentials permission for usage of "
 
     invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -3520,7 +3520,7 @@
 
     .line 580
     .local v0, values:Landroid/content/ContentValues;
-    const-string v1, "key"
+    const-string/jumbo v1, "key"
 
     invoke-virtual {v0, v1, p4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -3541,7 +3541,7 @@
     .line 583
     const-string v1, "extras"
 
-    const-string v2, "key"
+    const-string/jumbo v2, "key"
 
     invoke-virtual {p1, v1, v2, v0}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
@@ -4414,7 +4414,7 @@
 
     aput-object v4, v2, v3
 
-    const-string v3, "name=? AND type=?"
+    const-string/jumbo v3, "name=? AND type=?"
 
     const/4 v4, 0x2
 
@@ -4678,7 +4678,7 @@
     .local v0, db:Landroid/database/sqlite/SQLiteDatabase;
     const-string v1, "accounts"
 
-    const-string v3, "name=? AND type=?"
+    const-string/jumbo v3, "name=? AND type=?"
 
     const/4 v4, 0x2
 
@@ -5816,7 +5816,7 @@
 
     const/4 v5, 0x2
 
-    const-string v6, "name"
+    const-string/jumbo v6, "name"
 
     aput-object v6, v4, v5
 
@@ -9087,7 +9087,7 @@
 
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
-    const-string v4, "key is null"
+    const-string/jumbo v4, "key is null"
 
     invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -10735,7 +10735,7 @@
 
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
-    const-string v4, "key is null"
+    const-string/jumbo v4, "key is null"
 
     invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

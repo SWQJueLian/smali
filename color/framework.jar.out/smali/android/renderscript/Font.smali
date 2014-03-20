@@ -135,7 +135,7 @@
     .line 61
     new-array v0, v7, [Ljava/lang/String;
 
-    const-string v1, "monospace"
+    const-string/jumbo v1, "monospace"
 
     aput-object v1, v0, v3
 
@@ -147,7 +147,7 @@
 
     aput-object v1, v0, v5
 
-    const-string v1, "monaco"
+    const-string/jumbo v1, "monaco"
 
     aput-object v1, v0, v6
 

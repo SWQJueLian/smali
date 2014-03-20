@@ -56,7 +56,7 @@
     if-eqz v2, :cond_0
 
     .line 114
-    const-string v2, "networkInfo"
+    const-string/jumbo v2, "networkInfo"
 
     invoke-virtual {p2, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 

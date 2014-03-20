@@ -1249,7 +1249,7 @@
     .line 446
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "must write 16-bytes"
+    const-string/jumbo v2, "must write 16-bytes"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

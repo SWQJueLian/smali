@@ -86,7 +86,7 @@
 
     move-result-object v2
 
-    const-string v3, "mimeType: "
+    const-string/jumbo v3, "mimeType: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -199,7 +199,7 @@
 
     move-result-object v1
 
-    const-string v2, "mimeType: "
+    const-string/jumbo v2, "mimeType: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -39,7 +39,7 @@
     .parameter "msg"
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
     .line 135
     iget v0, p1, Landroid/os/Message;->what:I
@@ -50,11 +50,23 @@
     :goto_0
     return-void
 
-    .line 139
+    .line 137
     :pswitch_0
+    sget-boolean v0, Lcom/android/server/am/BroadcastQueue;->DEBUG_BROADCAST:Z
+
+    if-eqz v0, :cond_0
+
+    const-string v0, "BroadcastQueue"
+
+    const-string v1, "Received BROADCAST_INTENT_MSG"
+
+    invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 139
+    :cond_0
     iget-object v0, p0, Lcom/android/server/am/BroadcastQueue$1;->this$0:Lcom/android/server/am/BroadcastQueue;
 
-    invoke-virtual {v0, v1}, Lcom/android/server/am/BroadcastQueue;->processNextBroadcast(Z)V
+    invoke-virtual {v0, v2}, Lcom/android/server/am/BroadcastQueue;->processNextBroadcast(Z)V
 
     goto :goto_0
 
@@ -89,8 +101,6 @@
     throw v0
 
     .line 135
-    nop
-
     :pswitch_data_0
     .packed-switch 0xc8
         :pswitch_0

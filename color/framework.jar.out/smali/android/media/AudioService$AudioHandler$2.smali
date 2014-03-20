@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 3194
+    .line 3287
     iput-object p1, p0, Landroid/media/AudioService$AudioHandler$2;->this$1:Landroid/media/AudioService$AudioHandler;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,13 +44,13 @@
     .parameter "extra"
 
     .prologue
-    .line 3196
+    .line 3289
     iget-object v0, p0, Landroid/media/AudioService$AudioHandler$2;->this$1:Landroid/media/AudioService$AudioHandler;
 
     #calls: Landroid/media/AudioService$AudioHandler;->cleanupPlayer(Landroid/media/MediaPlayer;)V
     invoke-static {v0, p1}, Landroid/media/AudioService$AudioHandler;->access$4800(Landroid/media/AudioService$AudioHandler;Landroid/media/MediaPlayer;)V
 
-    .line 3197
+    .line 3290
     const/4 v0, 0x1
 
     return v0

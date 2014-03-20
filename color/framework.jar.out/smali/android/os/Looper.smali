@@ -35,7 +35,7 @@
     .locals 1
 
     .prologue
-    .line 57
+    .line 59
     new-instance v0, Ljava/lang/ThreadLocal;
 
     invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
@@ -50,29 +50,29 @@
     .parameter "quitAllowed"
 
     .prologue
-    .line 188
+    .line 204
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 189
+    .line 205
     new-instance v0, Landroid/os/MessageQueue;
 
     invoke-direct {v0, p1}, Landroid/os/MessageQueue;-><init>(Z)V
 
     iput-object v0, p0, Landroid/os/Looper;->mQueue:Landroid/os/MessageQueue;
 
-    .line 190
+    .line 206
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/os/Looper;->mRun:Z
 
-    .line 191
+    .line 207
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/os/Looper;->mThread:Ljava/lang/Thread;
 
-    .line 192
+    .line 208
     return-void
 .end method
 
@@ -80,12 +80,12 @@
     .locals 2
 
     .prologue
-    .line 102
+    .line 118
     const-class v1, Landroid/os/Looper;
 
     monitor-enter v1
 
-    .line 103
+    .line 119
     :try_start_0
     sget-object v0, Landroid/os/Looper;->sMainLooper:Landroid/os/Looper;
 
@@ -93,7 +93,7 @@
 
     return-object v0
 
-    .line 104
+    .line 120
     :catchall_0
     move-exception v0
 
@@ -108,16 +108,16 @@
     .locals 11
 
     .prologue
-    .line 112
+    .line 128
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v3
 
-    .line 113
+    .line 129
     .local v3, me:Landroid/os/Looper;
     if-nez v3, :cond_0
 
-    .line 114
+    .line 130
     new-instance v8, Ljava/lang/RuntimeException;
 
     const-string v9, "No Looper; Looper.prepare() wasn\'t called on this thread."
@@ -126,42 +126,42 @@
 
     throw v8
 
-    .line 116
+    .line 132
     :cond_0
     iget-object v7, v3, Landroid/os/Looper;->mQueue:Landroid/os/MessageQueue;
 
-    .line 120
+    .line 136
     .local v7, queue:Landroid/os/MessageQueue;
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
-    .line 121
+    .line 137
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v0
 
-    .line 124
+    .line 140
     .local v0, ident:J
     :goto_0
     invoke-virtual {v7}, Landroid/os/MessageQueue;->next()Landroid/os/Message;
 
     move-result-object v4
 
-    .line 125
+    .line 141
     .local v4, msg:Landroid/os/Message;
     if-nez v4, :cond_1
 
-    .line 127
+    .line 143
     return-void
 
-    .line 131
+    .line 147
     :cond_1
     iget-object v2, v3, Landroid/os/Looper;->mLogging:Landroid/util/Printer;
 
-    .line 132
+    .line 148
     .local v2, logging:Landroid/util/Printer;
     if-eqz v2, :cond_2
 
-    .line 133
+    .line 149
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -208,16 +208,16 @@
 
     invoke-interface {v2, v8}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 137
+    .line 153
     :cond_2
     iget-object v8, v4, Landroid/os/Message;->target:Landroid/os/Handler;
 
     invoke-virtual {v8, v4}, Landroid/os/Handler;->dispatchMessage(Landroid/os/Message;)V
 
-    .line 139
+    .line 155
     if-eqz v2, :cond_3
 
-    .line 140
+    .line 156
     new-instance v8, Ljava/lang/StringBuilder;
 
     invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
@@ -252,19 +252,19 @@
 
     invoke-interface {v2, v8}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 145
+    .line 161
     :cond_3
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v5
 
-    .line 146
+    .line 162
     .local v5, newIdent:J
     cmp-long v8, v0, v5
 
     if-eqz v8, :cond_4
 
-    .line 147
+    .line 163
     const-string v8, "Looper"
 
     new-instance v9, Ljava/lang/StringBuilder;
@@ -349,7 +349,7 @@
 
     invoke-static {v8, v9}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 154
+    .line 170
     :cond_4
     invoke-virtual {v4}, Landroid/os/Message;->recycle()V
 
@@ -360,7 +360,7 @@
     .locals 1
 
     .prologue
-    .line 163
+    .line 179
     sget-object v0, Landroid/os/Looper;->sThreadLocal:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -376,7 +376,7 @@
     .locals 1
 
     .prologue
-    .line 185
+    .line 201
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
 
     move-result-object v0
@@ -390,49 +390,144 @@
     .locals 1
 
     .prologue
-    .line 73
+    .line 75
     const/4 v0, 0x1
 
     invoke-static {v0}, Landroid/os/Looper;->prepare(Z)V
 
-    .line 74
+    .line 76
     return-void
 .end method
 
 .method private static prepare(Z)V
-    .locals 2
+    .locals 5
     .parameter "quitAllowed"
 
     .prologue
-    .line 77
-    sget-object v0, Landroid/os/Looper;->sThreadLocal:Ljava/lang/ThreadLocal;
+    .line 79
+    sget-object v2, Landroid/os/Looper;->sThreadLocal:Ljava/lang/ThreadLocal;
 
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    invoke-virtual {v2}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v2
 
-    if-eqz v0, :cond_0
-
-    .line 78
-    new-instance v0, Ljava/lang/RuntimeException;
-
-    const-string v1, "Only one Looper may be created per thread"
-
-    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v0
+    if-eqz v2, :cond_0
 
     .line 80
+    new-instance v2, Ljava/lang/RuntimeException;
+
+    const-string v3, "Only one Looper may be created per thread"
+
+    invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v2
+
+    .line 82
     :cond_0
-    sget-object v0, Landroid/os/Looper;->sThreadLocal:Ljava/lang/ThreadLocal;
+    sget-object v2, Landroid/os/Looper;->sThreadLocal:Ljava/lang/ThreadLocal;
 
-    new-instance v1, Landroid/os/Looper;
+    new-instance v3, Landroid/os/Looper;
 
-    invoke-direct {v1, p0}, Landroid/os/Looper;-><init>(Z)V
+    invoke-direct {v3, p0}, Landroid/os/Looper;-><init>(Z)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+    invoke-virtual {v2, v3}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
-    .line 81
+    .line 85
+    const-class v2, Landroid/os/Looper;
+
+    const/4 v3, 0x0
+
+    invoke-static {v2, v3}, Ldalvik/system/VMDebug;->countInstancesOfClass(Ljava/lang/Class;Z)J
+
+    move-result-wide v0
+
+    .line 88
+    .local v0, instances:J
+    const-wide/16 v2, 0x64
+
+    cmp-long v2, v2, v0
+
+    if-gez v2, :cond_1
+
+    .line 90
+    const-string v2, "Looper"
+
+    const-string v3, "WARNING: The Looper class instance count has over a limit(100). There should be some leakage of Looper or HandlerThread."
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 91
+    const-string v2, "Looper"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Looper class instance count = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 92
+    const-string v2, "Looper"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v4, "Current Thread Name: "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Thread;->getName()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 93
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Thread;->getThreadGroup()Ljava/lang/ThreadGroup;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/ThreadGroup;->list()V
+
+    .line 94
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    invoke-static {}, Ljava/lang/Thread;->dumpStack()V
+
+    .line 97
+    :cond_1
     return-void
 .end method
 
@@ -440,23 +535,23 @@
     .locals 3
 
     .prologue
-    .line 90
+    .line 106
     const/4 v0, 0x0
 
     invoke-static {v0}, Landroid/os/Looper;->prepare(Z)V
 
-    .line 91
+    .line 107
     const-class v1, Landroid/os/Looper;
 
     monitor-enter v1
 
-    .line 92
+    .line 108
     :try_start_0
     sget-object v0, Landroid/os/Looper;->sMainLooper:Landroid/os/Looper;
 
     if-eqz v0, :cond_0
 
-    .line 93
+    .line 109
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v2, "The main Looper has already been prepared."
@@ -465,7 +560,7 @@
 
     throw v0
 
-    .line 96
+    .line 112
     :catchall_0
     move-exception v0
 
@@ -475,7 +570,7 @@
 
     throw v0
 
-    .line 95
+    .line 111
     :cond_0
     :try_start_1
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -484,12 +579,12 @@
 
     sput-object v0, Landroid/os/Looper;->sMainLooper:Landroid/os/Looper;
 
-    .line 96
+    .line 112
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 97
+    .line 113
     return-void
 .end method
 
@@ -501,24 +596,24 @@
     .parameter "prefix"
 
     .prologue
-    .line 258
+    .line 274
     invoke-static {p1, p2}, Landroid/util/PrefixPrinter;->create(Landroid/util/Printer;Ljava/lang/String;)Landroid/util/Printer;
 
     move-result-object p1
 
-    .line 259
+    .line 275
     invoke-virtual {p0}, Landroid/os/Looper;->toString()Ljava/lang/String;
 
     move-result-object v4
 
     invoke-interface {p1, v4}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 260
+    .line 276
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "mRun="
+    const-string/jumbo v5, "mRun="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -536,12 +631,12 @@
 
     invoke-interface {p1, v4}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 261
+    .line 277
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "mThread="
+    const-string/jumbo v5, "mThread="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -559,12 +654,12 @@
 
     invoke-interface {p1, v4}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 262
+    .line 278
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "mQueue="
+    const-string/jumbo v5, "mQueue="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -587,38 +682,38 @@
 
     invoke-interface {p1, v4}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 263
+    .line 279
     iget-object v4, p0, Landroid/os/Looper;->mQueue:Landroid/os/MessageQueue;
 
     if-eqz v4, :cond_2
 
-    .line 264
+    .line 280
     iget-object v5, p0, Landroid/os/Looper;->mQueue:Landroid/os/MessageQueue;
 
     monitor-enter v5
 
-    .line 265
+    .line 281
     :try_start_0
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v2
 
-    .line 266
+    .line 282
     .local v2, now:J
     iget-object v4, p0, Landroid/os/Looper;->mQueue:Landroid/os/MessageQueue;
 
     iget-object v0, v4, Landroid/os/MessageQueue;->mMessages:Landroid/os/Message;
 
-    .line 267
+    .line 283
     .local v0, msg:Landroid/os/Message;
     const/4 v1, 0x0
 
-    .line 268
+    .line 284
     .local v1, n:I
     :goto_1
     if-eqz v0, :cond_1
 
-    .line 269
+    .line 285
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -653,17 +748,17 @@
 
     invoke-interface {p1, v4}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 270
+    .line 286
     add-int/lit8 v1, v1, 0x1
 
-    .line 271
+    .line 287
     iget-object v0, v0, Landroid/os/Message;->next:Landroid/os/Message;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     goto :goto_1
 
-    .line 262
+    .line 278
     .end local v0           #msg:Landroid/os/Message;
     .end local v1           #n:I
     .end local v2           #now:J
@@ -672,7 +767,7 @@
 
     goto :goto_0
 
-    .line 273
+    .line 289
     .restart local v0       #msg:Landroid/os/Message;
     .restart local v1       #n:I
     .restart local v2       #now:J
@@ -704,17 +799,17 @@
 
     invoke-interface {p1, v4}, Landroid/util/Printer;->println(Ljava/lang/String;)V
 
-    .line 274
+    .line 290
     monitor-exit v5
 
-    .line 276
+    .line 292
     .end local v0           #msg:Landroid/os/Message;
     .end local v1           #n:I
     .end local v2           #now:J
     :cond_2
     return-void
 
-    .line 274
+    .line 290
     :catchall_0
     move-exception v4
 
@@ -729,7 +824,7 @@
     .locals 1
 
     .prologue
-    .line 254
+    .line 270
     iget-object v0, p0, Landroid/os/Looper;->mQueue:Landroid/os/MessageQueue;
 
     return-object v0
@@ -739,7 +834,7 @@
     .locals 1
 
     .prologue
-    .line 249
+    .line 265
     iget-object v0, p0, Landroid/os/Looper;->mThread:Ljava/lang/Thread;
 
     return-object v0
@@ -749,7 +844,7 @@
     .locals 3
 
     .prologue
-    .line 227
+    .line 243
     iget-object v0, p0, Landroid/os/Looper;->mQueue:Landroid/os/MessageQueue;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -767,12 +862,12 @@
     .locals 1
 
     .prologue
-    .line 200
+    .line 216
     iget-object v0, p0, Landroid/os/Looper;->mQueue:Landroid/os/MessageQueue;
 
     invoke-virtual {v0}, Landroid/os/MessageQueue;->quit()V
 
-    .line 201
+    .line 217
     return-void
 .end method
 
@@ -781,12 +876,12 @@
     .parameter "token"
 
     .prologue
-    .line 242
+    .line 258
     iget-object v0, p0, Landroid/os/Looper;->mQueue:Landroid/os/MessageQueue;
 
     invoke-virtual {v0, p1}, Landroid/os/MessageQueue;->removeSyncBarrier(I)V
 
-    .line 243
+    .line 259
     return-void
 .end method
 
@@ -795,10 +890,10 @@
     .parameter "printer"
 
     .prologue
-    .line 176
+    .line 192
     iput-object p1, p0, Landroid/os/Looper;->mLogging:Landroid/util/Printer;
 
-    .line 177
+    .line 193
     return-void
 .end method
 
@@ -806,7 +901,7 @@
     .locals 2
 
     .prologue
-    .line 279
+    .line 295
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

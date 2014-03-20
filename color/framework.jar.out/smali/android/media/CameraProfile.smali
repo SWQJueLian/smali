@@ -35,7 +35,7 @@
     sput-object v0, Landroid/media/CameraProfile;->sCache:Ljava/util/HashMap;
 
     .line 92
-    const-string v0, "media_jni"
+    const-string/jumbo v0, "media_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 

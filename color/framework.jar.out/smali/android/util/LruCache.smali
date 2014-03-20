@@ -57,7 +57,7 @@
     .line 82
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "maxSize <= 0"
+    const-string/jumbo v1, "maxSize <= 0"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -270,7 +270,7 @@
     .line 113
     new-instance v2, Ljava/lang/NullPointerException;
 
-    const-string v3, "key == null"
+    const-string/jumbo v3, "key == null"
 
     invoke-direct {v2, v3}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -528,7 +528,7 @@
     :cond_0
     new-instance v1, Ljava/lang/NullPointerException;
 
-    const-string v2, "key == null || value == null"
+    const-string/jumbo v2, "key == null || value == null"
 
     invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -658,7 +658,7 @@
     .line 232
     new-instance v1, Ljava/lang/NullPointerException;
 
-    const-string v2, "key == null"
+    const-string/jumbo v2, "key == null"
 
     invoke-direct {v1, v2}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -736,7 +736,7 @@
     .line 96
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "maxSize <= 0"
+    const-string/jumbo v1, "maxSize <= 0"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

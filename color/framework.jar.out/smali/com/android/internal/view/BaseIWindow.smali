@@ -57,6 +57,16 @@
     return-void
 .end method
 
+.method public dispatchPositionChanged(II)V
+    .locals 0
+    .parameter "left"
+    .parameter "top"
+
+    .prologue
+    .line 114
+    return-void
+.end method
+
 .method public dispatchScreenState(Z)V
     .locals 0
     .parameter "on"
@@ -164,6 +174,23 @@
     return-void
 .end method
 
+.method public dumpInputDispatchingStatus()V
+    .locals 0
+
+    .prologue
+    .line 124
+    return-void
+.end method
+
+.method public enableLog(Z)V
+    .locals 0
+    .parameter "enable"
+
+    .prologue
+    .line 120
+    return-void
+.end method
+
 .method public executeCommand(Ljava/lang/String;Ljava/lang/String;Landroid/os/ParcelFileDescriptor;)V
     .locals 0
     .parameter "command"
@@ -236,20 +263,5 @@
 
     .prologue
     .line 65
-    return-void
-.end method
-
-.method public dispatchPositionChanged(II)V
-    .locals 0
-    .parameter "left"
-    .parameter "top"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "Jianhui.Yu@Plf.SDK,2012.09.19: Add for position changed"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->MTK:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
-
-    .prologue
-    .line 114
     return-void
 .end method

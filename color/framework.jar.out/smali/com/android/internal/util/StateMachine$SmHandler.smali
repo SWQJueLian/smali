@@ -1086,7 +1086,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "moveDeferredMessageAtFrontOfQueue; what="
+    const-string/jumbo v4, "moveDeferredMessageAtFrontOfQueue; what="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1159,7 +1159,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "moveTempStackToStateStack: i="
+    const-string/jumbo v5, "moveTempStackToStateStack: i="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1221,7 +1221,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "moveTempStackToStateStack: X mStateStackTop="
+    const-string/jumbo v5, "moveTempStackToStateStack: X mStateStackTop="
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

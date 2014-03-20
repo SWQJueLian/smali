@@ -60,7 +60,7 @@
 
     .line 86
     .local v7, replacer:Landroid/filterfw/core/Filter;
-    const-string v0, "learningDoneListener"
+    const-string/jumbo v0, "learningDoneListener"
 
     iget-object v1, p0, Landroid/media/effect/effects/BackDropperEffect;->mLearningListener:Landroid/filterpacks/videoproc/BackDropperFilter$LearningDoneListener;
 

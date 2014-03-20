@@ -57,7 +57,7 @@
     .line 83
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "keyStoreAlias must not be empty"
+    const-string/jumbo v1, "keyStoreAlias must not be empty"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

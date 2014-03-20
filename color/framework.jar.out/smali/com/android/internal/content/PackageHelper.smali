@@ -877,7 +877,7 @@
 
     .prologue
     .line 62
-    const-string v1, "mount"
+    const-string/jumbo v1, "mount"
 
     invoke-static {v1}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 

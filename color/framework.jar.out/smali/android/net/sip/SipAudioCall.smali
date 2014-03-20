@@ -1463,7 +1463,7 @@
     .line 1002
     new-instance v15, Ljava/lang/IllegalStateException;
 
-    const-string v16, "mPeerSd = null"
+    const-string/jumbo v16, "mPeerSd = null"
 
     invoke-direct/range {v15 .. v16}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -2912,7 +2912,7 @@
     .local v0, e:Ljava/io/IOException;
     new-instance v1, Landroid/net/sip/SipException;
 
-    const-string v2, "makeCall()"
+    const-string/jumbo v2, "makeCall()"
 
     invoke-direct {v1, v2, v0}, Landroid/net/sip/SipException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 

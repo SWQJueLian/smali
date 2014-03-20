@@ -38,7 +38,7 @@
     .parameter
 
     .prologue
-    .line 7555
+    .line 7900
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$PackageInstalledInfo;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

@@ -3,12 +3,12 @@
 .source "WifiDisplayController.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/content/DialogInterface$OnCancelListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/display/WifiDisplayController;->reportFeatureState()V
+    value = Lcom/android/server/display/WifiDisplayController;->requestConnect(Ljava/lang/String;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,15 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/display/WifiDisplayController;
 
-.field final synthetic val$featureState:I
-
 
 # direct methods
-.method constructor <init>(Lcom/android/server/display/WifiDisplayController;I)V
+.method constructor <init>(Lcom/android/server/display/WifiDisplayController;)V
     .locals 0
-    .parameter
     .parameter
 
     .prologue
-    .line 278
+    .line 346
     iput-object p1, p0, Lcom/android/server/display/WifiDisplayController$3;->this$0:Lcom/android/server/display/WifiDisplayController;
-
-    iput p2, p0, Lcom/android/server/display/WifiDisplayController$3;->val$featureState:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,22 +37,26 @@
 
 
 # virtual methods
-.method public run()V
+.method public onCancel(Landroid/content/DialogInterface;)V
     .locals 2
+    .parameter "arg0"
 
     .prologue
-    .line 281
-    iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$3;->this$0:Lcom/android/server/display/WifiDisplayController;
+    .line 349
+    invoke-static {}, Lcom/android/server/display/WifiDisplayController;->access$200()Z
 
-    #getter for: Lcom/android/server/display/WifiDisplayController;->mListener:Lcom/android/server/display/WifiDisplayController$Listener;
-    invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$400(Lcom/android/server/display/WifiDisplayController;)Lcom/android/server/display/WifiDisplayController$Listener;
+    move-result v0
 
-    move-result-object v0
+    if-eqz v0, :cond_0
 
-    iget v1, p0, Lcom/android/server/display/WifiDisplayController$3;->val$featureState:I
+    .line 350
+    const-string v0, "WifiDisplayController"
 
-    invoke-interface {v0, v1}, Lcom/android/server/display/WifiDisplayController$Listener;->onFeatureStateChanged(I)V
+    const-string v1, "keep previous Wi-Fi P2p connection"
 
-    .line 282
+    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 352
+    :cond_0
     return-void
 .end method

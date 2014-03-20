@@ -174,6 +174,8 @@
 
 .field public static final MODE_IN_CALL:I = 0x2
 
+.field public static final MODE_IN_CALL_2:I = 0x4
+
 .field public static final MODE_IN_COMMUNICATION:I = 0x3
 
 .field public static final MODE_NORMAL:I = 0x0
@@ -186,17 +188,11 @@
 
 .field private static final NUM_FORCE_USE:I = 0x5
 
-.field public static final NUM_MODES:I = 0x4
+.field public static final NUM_MODES:I = 0x5
 
 .field public static final NUM_STREAMS:I = 0x5
 
-.field private static final NUM_STREAM_TYPES:I = 0xb
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
-        note = "add for fm stream type"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->QCOM:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
-.end field
+.field private static final NUM_STREAM_TYPES:I = 0xc
 
 .field public static final PHONE_STATE_INCALL:I = 0x2
 
@@ -246,12 +242,8 @@
 .field public static final STREAM_DTMF:I = 0x8
 
 .field public static final STREAM_FM:I = 0xa
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_FIELD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "add for fm stream type"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->QCOM:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
-.end field
+
+.field public static final STREAM_MATV:I = 0xb
 
 .field public static final STREAM_MUSIC:I = 0x3
 
@@ -285,46 +277,64 @@
     return-void
 .end method
 
+.method public static native GetAudioCommand(I)I
+.end method
+
+.method public static native GetAudioData(II[B)I
+.end method
+
+.method public static native GetEMParameter([BI)I
+.end method
+
+.method public static native SetAudioCommand(II)I
+.end method
+
+.method public static native SetAudioData(II[B)I
+.end method
+
+.method public static native SetEMParameter([BI)I
+.end method
+
 .method private static errorCallbackFromNative(I)V
     .locals 3
     .parameter "error"
 
     .prologue
-    .line 200
+    .line 188
     const/4 v0, 0x0
 
-    .line 201
+    .line 189
     .local v0, errorCallback:Landroid/media/AudioSystem$ErrorCallback;
     const-class v2, Landroid/media/AudioSystem;
 
     monitor-enter v2
 
-    .line 202
+    .line 190
     :try_start_0
     sget-object v1, Landroid/media/AudioSystem;->mErrorCallback:Landroid/media/AudioSystem$ErrorCallback;
 
     if-eqz v1, :cond_0
 
-    .line 203
+    .line 191
     sget-object v0, Landroid/media/AudioSystem;->mErrorCallback:Landroid/media/AudioSystem$ErrorCallback;
 
-    .line 205
+    .line 193
     :cond_0
     monitor-exit v2
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 206
+    .line 194
     if-eqz v0, :cond_1
 
-    .line 207
+    .line 195
     invoke-interface {v0, p0}, Landroid/media/AudioSystem$ErrorCallback;->onError(I)V
 
-    .line 209
+    .line 197
     :cond_1
     return-void
 
-    .line 205
+    .line 193
     :catchall_0
     move-exception v1
 
@@ -344,112 +354,112 @@
     .parameter "device"
 
     .prologue
-    .line 325
+    .line 312
     sparse-switch p0, :sswitch_data_0
 
-    .line 360
+    .line 347
     const-string v0, ""
 
     :goto_0
     return-object v0
 
-    .line 327
+    .line 314
     :sswitch_0
     const-string v0, "earpiece"
 
     goto :goto_0
 
-    .line 329
+    .line 316
     :sswitch_1
     const-string/jumbo v0, "speaker"
 
     goto :goto_0
 
-    .line 331
+    .line 318
     :sswitch_2
     const-string v0, "headset"
 
     goto :goto_0
 
-    .line 333
+    .line 320
     :sswitch_3
     const-string v0, "headphone"
 
     goto :goto_0
 
-    .line 335
+    .line 322
     :sswitch_4
     const-string v0, "bt_sco"
 
     goto :goto_0
 
-    .line 337
+    .line 324
     :sswitch_5
     const-string v0, "bt_sco_hs"
 
     goto :goto_0
 
-    .line 339
+    .line 326
     :sswitch_6
     const-string v0, "bt_sco_carkit"
 
     goto :goto_0
 
-    .line 341
+    .line 328
     :sswitch_7
     const-string v0, "bt_a2dp"
 
     goto :goto_0
 
-    .line 343
+    .line 330
     :sswitch_8
     const-string v0, "bt_a2dp_hp"
 
     goto :goto_0
 
-    .line 345
+    .line 332
     :sswitch_9
     const-string v0, "bt_a2dp_spk"
 
     goto :goto_0
 
-    .line 347
+    .line 334
     :sswitch_a
     const-string v0, "aux_digital"
 
     goto :goto_0
 
-    .line 349
+    .line 336
     :sswitch_b
     const-string v0, "analog_dock"
 
     goto :goto_0
 
-    .line 351
+    .line 338
     :sswitch_c
     const-string v0, "digital_dock"
 
     goto :goto_0
 
-    .line 353
+    .line 340
     :sswitch_d
     const-string/jumbo v0, "usb_accessory"
 
     goto :goto_0
 
-    .line 355
+    .line 342
     :sswitch_e
     const-string/jumbo v0, "usb_device"
 
     goto :goto_0
 
-    .line 357
+    .line 344
     :sswitch_f
     const-string/jumbo v0, "remote_submix"
 
     goto :goto_0
 
-    .line 325
+    .line 312
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_0
@@ -487,8 +497,8 @@
     .locals 1
 
     .prologue
-    .line 80
-    const/16 v0, 0xb
+    .line 68
+    const/16 v0, 0xc
 
     return v0
 .end method
@@ -528,27 +538,27 @@
     .parameter "cb"
 
     .prologue
-    .line 188
+    .line 176
     const-class v1, Landroid/media/AudioSystem;
 
     monitor-enter v1
 
-    .line 189
+    .line 177
     :try_start_0
     sput-object p0, Landroid/media/AudioSystem;->mErrorCallback:Landroid/media/AudioSystem$ErrorCallback;
 
-    .line 190
+    .line 178
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 195
+    .line 183
     invoke-static {}, Landroid/media/AudioSystem;->isMicrophoneMuted()Z
 
-    .line 196
+    .line 184
     return-void
 
-    .line 190
+    .line 178
     :catchall_0
     move-exception v0
 

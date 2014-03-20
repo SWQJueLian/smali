@@ -29,7 +29,11 @@
 
 .field public static final OUTPUT_FORMAT_MPEG2TS:I = 0x8
 
+.field public static final OUTPUT_FORMAT_OGG:I = 0xa
+
 .field public static final OUTPUT_FORMAT_RTP_AVP:I = 0x7
+
+.field public static final OUTPUT_FORMAT_WAV:I = 0x9
 
 .field public static final RAW_AMR:I = 0x3
 
@@ -46,7 +50,7 @@
     .parameter
 
     .prologue
-    .line 212
+    .line 226
     iput-object p1, p0, Landroid/media/MediaRecorder$OutputFormat;->this$0:Landroid/media/MediaRecorder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

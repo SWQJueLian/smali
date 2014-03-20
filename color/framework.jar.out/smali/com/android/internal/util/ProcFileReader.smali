@@ -227,7 +227,7 @@
     .line 90
     new-instance v2, Ljava/io/IOException;
 
-    const-string v3, "no tokens remaining on current line"
+    const-string/jumbo v3, "no tokens remaining on current line"
 
     invoke-direct {v2, v3}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 

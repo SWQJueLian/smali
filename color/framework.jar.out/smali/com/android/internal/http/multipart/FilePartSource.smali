@@ -159,7 +159,7 @@
 
     if-nez v0, :cond_0
 
-    const-string v0, "noname"
+    const-string/jumbo v0, "noname"
 
     :goto_0
     return-object v0

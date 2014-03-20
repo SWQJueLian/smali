@@ -375,6 +375,10 @@
 
 .field public static final ic_volume:I = 0x1080363
 
+.field public static final ic_volume_off_small:I = 0x1080367
+
+.field public static final ic_volume_small:I = 0x1080368
+
 .field public static final indicator_code_lock_drag_direction_green_up:I = 0x108036e
 
 .field public static final indicator_code_lock_drag_direction_red_up:I = 0x108036f
@@ -451,9 +455,9 @@
 
 .field public static final notification_bg_low:I = 0x1080419
 
-.field public static final notification_template_icon_bg:I = 0x1080615
+.field public static final notification_template_icon_bg:I = 0x1080617
 
-.field public static final notification_template_icon_low_bg:I = 0x1080616
+.field public static final notification_template_icon_low_bg:I = 0x1080618
 
 .field public static final overscroll_edge:I = 0x1080432
 
@@ -732,7 +736,7 @@
     .locals 0
 
     .prologue
-    .line 11521
+    .line 11517
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

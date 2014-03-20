@@ -164,7 +164,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "kk:mm"
+    const-string/jumbo v0, "kk:mm"
 
     :goto_0
     iput-object v0, p0, Lcom/android/internal/widget/DigitalClock;->mFormat:Ljava/lang/String;
@@ -349,7 +349,7 @@
     invoke-super {p0}, Landroid/widget/RelativeLayout;->onFinishInflate()V
 
     .line 170
-    const v0, 0x10202e1
+    const v0, 0x1020895
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/DigitalClock;->findViewById(I)Landroid/view/View;
 
@@ -374,7 +374,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 174
-    const v0, 0x10202e2
+    const v0, 0x1020896
 
     invoke-virtual {p0, v0}, Lcom/android/internal/widget/DigitalClock;->findViewById(I)Landroid/view/View;
 

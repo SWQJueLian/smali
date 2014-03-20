@@ -357,7 +357,7 @@
     invoke-virtual/range {v18 .. v20}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
     .line 165
-    const-string v19, "mime_type"
+    const-string/jumbo v19, "mime_type"
 
     move-object/from16 v0, v18
 

@@ -101,7 +101,7 @@
     .line 43
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "mimeType is null"
+    const-string/jumbo v1, "mimeType is null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -116,7 +116,7 @@
     .line 46
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v1, "mimeType is an empty string"
+    const-string/jumbo v1, "mimeType is an empty string"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

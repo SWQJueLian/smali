@@ -273,7 +273,7 @@
 
     new-instance v1, Ljava/lang/IllegalStateException;
 
-    const-string v2, "not open"
+    const-string/jumbo v2, "not open"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -325,7 +325,7 @@
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "not open"
+    const-string/jumbo v1, "not open"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -365,7 +365,7 @@
 
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "not open"
+    const-string/jumbo v1, "not open"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

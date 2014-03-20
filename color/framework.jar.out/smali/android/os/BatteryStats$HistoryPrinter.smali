@@ -443,7 +443,7 @@
 
     .line 2024
     :pswitch_4
-    const-string v0, "not-charging"
+    const-string/jumbo v0, "not-charging"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -507,7 +507,7 @@
 
     .line 2066
     :pswitch_c
-    const-string v0, "none"
+    const-string/jumbo v0, "none"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 

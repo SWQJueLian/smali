@@ -313,7 +313,7 @@
     .parameter "packageName"
 
     .prologue
-    .line 2957
+    .line 2964
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -395,6 +395,9 @@
 .end method
 
 .method public abstract canonicalToCurrentPackageNames([Ljava/lang/String;)[Ljava/lang/String;
+.end method
+
+.method public abstract checkAPKSignatures(Ljava/lang/String;)I
 .end method
 
 .method public abstract checkPermission(Ljava/lang/String;Ljava/lang/String;)I

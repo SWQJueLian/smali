@@ -196,7 +196,7 @@
     if-eqz p2, :cond_0
 
     .line 367
-    const-string v0, "nonce"
+    const-string/jumbo v0, "nonce"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
@@ -380,7 +380,7 @@
     iput v2, p0, Landroid/net/http/HttpAuthHeader;->mScheme:I
 
     .line 292
-    const-string v2, "md5"
+    const-string/jumbo v2, "md5"
 
     iput-object v2, p0, Landroid/net/http/HttpAuthHeader;->mAlgorithm:Ljava/lang/String;
 
@@ -685,7 +685,7 @@
     .line 246
     iget-object v2, p0, Landroid/net/http/HttpAuthHeader;->mAlgorithm:Ljava/lang/String;
 
-    const-string v3, "md5"
+    const-string/jumbo v3, "md5"
 
     invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

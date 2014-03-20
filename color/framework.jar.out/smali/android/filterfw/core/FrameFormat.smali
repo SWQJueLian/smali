@@ -623,7 +623,7 @@
 
     .line 362
     :pswitch_2
-    const-string v0, "native"
+    const-string/jumbo v0, "native"
 
     goto :goto_0
 
@@ -646,8 +646,6 @@
     goto :goto_0
 
     .line 359
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

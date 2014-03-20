@@ -405,7 +405,7 @@
 
     move-result-object v2
 
-    const-string v3, "normal"
+    const-string/jumbo v3, "normal"
 
     invoke-virtual {v0, v2, v3}, Landroid/renderscript/Element$Builder;->add(Landroid/renderscript/Element;Ljava/lang/String;)Landroid/renderscript/Element$Builder;
 

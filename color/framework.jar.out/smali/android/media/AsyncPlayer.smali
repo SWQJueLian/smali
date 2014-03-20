@@ -320,7 +320,7 @@
 
     move-result-object v5
 
-    const-string v6, "msecs"
+    const-string/jumbo v6, "msecs"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -27,15 +27,15 @@
     .parameter "newIndex"
 
     .prologue
-    .line 2394
+    .line 2529
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2395
+    .line 2530
     iput p1, p0, Landroid/telephony/PhoneNumberUtils$CountryCallingCodeAndNewIndex;->countryCallingCode:I
 
-    .line 2396
+    .line 2531
     iput p2, p0, Landroid/telephony/PhoneNumberUtils$CountryCallingCodeAndNewIndex;->newIndex:I
 
-    .line 2397
+    .line 2532
     return-void
 .end method

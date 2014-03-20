@@ -264,7 +264,7 @@
     .line 379
     const-string v0, "SpeechRecognizer"
 
-    const-string v1, "not connected to the recognition service"
+    const-string/jumbo v1, "not connected to the recognition service"
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -714,7 +714,7 @@
     .line 271
     const-string v2, "SpeechRecognizer"
 
-    const-string v3, "no selected voice recognition service"
+    const-string/jumbo v3, "no selected voice recognition service"
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 

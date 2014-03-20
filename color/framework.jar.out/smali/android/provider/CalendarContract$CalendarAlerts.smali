@@ -379,7 +379,7 @@
     invoke-virtual {v2, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     .line 2261
-    const-string v3, "minutes"
+    const-string/jumbo v3, "minutes"
 
     invoke-static {p9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

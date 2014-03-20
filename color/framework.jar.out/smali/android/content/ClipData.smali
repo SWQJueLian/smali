@@ -156,7 +156,7 @@
     .line 638
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "item is null"
+    const-string/jumbo v1, "item is null"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -368,7 +368,7 @@
     .line 622
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "item is null"
+    const-string/jumbo v1, "item is null"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -636,7 +636,7 @@
     .line 768
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "item is null"
+    const-string/jumbo v1, "item is null"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 

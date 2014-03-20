@@ -141,3 +141,17 @@
 
     goto :goto_0
 .end method
+
+.method protected onDestroy()V
+    .locals 0
+
+    .prologue
+    .line 76
+    invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
+
+    .line 77
+    invoke-static {}, Lcom/android/server/power/ShutdownThread;->dismissDialog()V
+
+    .line 78
+    return-void
+.end method

@@ -62,6 +62,20 @@
     .end sparse-switch
 .end method
 
+.method protected getEFPath(IZ)Ljava/lang/String;
+    .locals 1
+    .parameter "efid"
+    .parameter "is7FFF"
+
+    .prologue
+    .line 70
+    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/cdma/RuimFileHandler;->getEFPath(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public loadEFImgTransparent(IIIILandroid/os/Message;)V
     .locals 12
     .parameter "fileid"
@@ -115,7 +129,7 @@
     .parameter "msg"
 
     .prologue
-    .line 70
+    .line 75
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -138,7 +152,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 71
+    .line 76
     return-void
 .end method
 
@@ -147,7 +161,7 @@
     .parameter "msg"
 
     .prologue
-    .line 75
+    .line 80
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -170,6 +184,6 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 76
+    .line 81
     return-void
 .end method

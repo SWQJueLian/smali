@@ -86,7 +86,7 @@
 
     move-result-object v1
 
-    const-string v2, "mimeType: "
+    const-string/jumbo v2, "mimeType: "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -124,14 +124,14 @@
 
     .line 152
     .local v0, isValid:Z
-    packed-switch p0, :pswitch_data_0
+    sparse-switch p0, :sswitch_data_0
 
-    .line 160
+    .line 172
     :goto_0
     return v0
 
-    .line 157
-    :pswitch_0
+    .line 169
+    :sswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
@@ -139,13 +139,23 @@
     .line 152
     nop
 
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-    .end packed-switch
+    :sswitch_data_0
+    .sparse-switch
+        0x1 -> :sswitch_0
+        0x2 -> :sswitch_0
+        0x3 -> :sswitch_0
+        0x4 -> :sswitch_0
+        0x7d1 -> :sswitch_0
+        0x7d2 -> :sswitch_0
+        0x7d3 -> :sswitch_0
+        0x7d4 -> :sswitch_0
+        0x7d5 -> :sswitch_0
+        0x7d6 -> :sswitch_0
+        0x7d7 -> :sswitch_0
+        0x7d8 -> :sswitch_0
+        0x7d9 -> :sswitch_0
+        0x7da -> :sswitch_0
+    .end sparse-switch
 .end method
 
 

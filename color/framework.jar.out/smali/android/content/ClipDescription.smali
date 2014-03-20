@@ -115,7 +115,7 @@
     .line 73
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string v1, "mimeTypes is null"
+    const-string/jumbo v1, "mimeTypes is null"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -544,7 +544,7 @@
     .line 182
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "must have at least 1 mime type"
+    const-string/jumbo v2, "must have at least 1 mime type"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -576,7 +576,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "mime type at "
+    const-string/jumbo v3, "mime type at "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

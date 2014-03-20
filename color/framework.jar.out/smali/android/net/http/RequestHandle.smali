@@ -826,7 +826,7 @@
 
     move-result-object v1
 
-    const-string v4, "nonce="
+    const-string/jumbo v4, "nonce="
 
     invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

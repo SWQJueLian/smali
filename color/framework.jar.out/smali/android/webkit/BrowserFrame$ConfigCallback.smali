@@ -40,20 +40,20 @@
     .parameter "wm"
 
     .prologue
-    .line 144
+    .line 149
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 140
+    .line 145
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/webkit/BrowserFrame$ConfigCallback;->mHandlers:Ljava/util/ArrayList;
 
-    .line 145
+    .line 150
     iput-object p1, p0, Landroid/webkit/BrowserFrame$ConfigCallback;->mWindowManager:Landroid/view/WindowManager;
 
-    .line 146
+    .line 151
     return-void
 .end method
 
@@ -64,7 +64,7 @@
     .parameter "h"
 
     .prologue
-    .line 153
+    .line 158
     monitor-enter p0
 
     :try_start_0
@@ -78,12 +78,12 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 154
+    .line 159
     monitor-exit p0
 
     return-void
 
-    .line 153
+    .line 158
     :catchall_0
     move-exception v0
 
@@ -97,7 +97,7 @@
     .parameter "newConfig"
 
     .prologue
-    .line 157
+    .line 162
     iget-object v6, p0, Landroid/webkit/BrowserFrame$ConfigCallback;->mHandlers:Ljava/util/ArrayList;
 
     invoke-virtual {v6}, Ljava/util/ArrayList;->size()I
@@ -106,11 +106,11 @@
 
     if-nez v6, :cond_0
 
-    .line 197
+    .line 202
     :goto_0
     return-void
 
-    .line 160
+    .line 165
     :cond_0
     iget-object v6, p0, Landroid/webkit/BrowserFrame$ConfigCallback;->mWindowManager:Landroid/view/WindowManager;
 
@@ -122,15 +122,15 @@
 
     move-result v3
 
-    .line 162
+    .line 167
     .local v3, orientation:I
     packed-switch v3, :pswitch_data_0
 
-    .line 178
+    .line 183
     :goto_1
     monitor-enter p0
 
-    .line 181
+    .line 186
     :try_start_0
     new-instance v1, Ljava/util/ArrayList;
 
@@ -142,7 +142,7 @@
 
     invoke-direct {v1, v6}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 183
+    .line 188
     .local v1, handlersToRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/ref/WeakReference;>;"
     iget-object v6, p0, Landroid/webkit/BrowserFrame$ConfigCallback;->mHandlers:Ljava/util/ArrayList;
 
@@ -164,7 +164,7 @@
 
     check-cast v5, Ljava/lang/ref/WeakReference;
 
-    .line 184
+    .line 189
     .local v5, wh:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/os/Handler;>;"
     invoke-virtual {v5}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -172,11 +172,11 @@
 
     check-cast v0, Landroid/os/Handler;
 
-    .line 185
+    .line 190
     .local v0, h:Landroid/os/Handler;
     if-eqz v0, :cond_1
 
-    .line 186
+    .line 191
     const/16 v6, 0x3ea
 
     const/4 v7, 0x0
@@ -189,7 +189,7 @@
 
     goto :goto_2
 
-    .line 196
+    .line 201
     .end local v0           #h:Landroid/os/Handler;
     .end local v1           #handlersToRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/ref/WeakReference;>;"
     .end local v2           #i$:Ljava/util/Iterator;
@@ -203,35 +203,35 @@
 
     throw v6
 
-    .line 164
+    .line 169
     :pswitch_0
     const/16 v3, 0x5a
 
-    .line 165
+    .line 170
     goto :goto_1
 
-    .line 167
+    .line 172
     :pswitch_1
     const/16 v3, 0xb4
 
-    .line 168
+    .line 173
     goto :goto_1
 
-    .line 170
+    .line 175
     :pswitch_2
     const/16 v3, -0x5a
 
-    .line 171
+    .line 176
     goto :goto_1
 
-    .line 173
+    .line 178
     :pswitch_3
     const/4 v3, 0x0
 
-    .line 174
+    .line 179
     goto :goto_1
 
-    .line 189
+    .line 194
     .restart local v0       #h:Landroid/os/Handler;
     .restart local v1       #handlersToRemove:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/ref/WeakReference;>;"
     .restart local v2       #i$:Ljava/util/Iterator;
@@ -242,7 +242,7 @@
 
     goto :goto_2
 
-    .line 193
+    .line 198
     .end local v0           #h:Landroid/os/Handler;
     .end local v5           #wh:Ljava/lang/ref/WeakReference;,"Ljava/lang/ref/WeakReference<Landroid/os/Handler;>;"
     :cond_2
@@ -263,7 +263,7 @@
 
     check-cast v4, Ljava/lang/ref/WeakReference;
 
-    .line 194
+    .line 199
     .local v4, weak:Ljava/lang/ref/WeakReference;
     iget-object v6, p0, Landroid/webkit/BrowserFrame$ConfigCallback;->mHandlers:Ljava/util/ArrayList;
 
@@ -271,7 +271,7 @@
 
     goto :goto_3
 
-    .line 196
+    .line 201
     .end local v4           #weak:Ljava/lang/ref/WeakReference;
     :cond_3
     monitor-exit p0
@@ -280,7 +280,7 @@
 
     goto :goto_0
 
-    .line 162
+    .line 167
     nop
 
     :pswitch_data_0
@@ -296,6 +296,6 @@
     .locals 0
 
     .prologue
-    .line 199
+    .line 204
     return-void
 .end method

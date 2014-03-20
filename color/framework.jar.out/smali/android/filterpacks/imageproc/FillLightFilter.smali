@@ -101,7 +101,7 @@
     .local v3, igamma:F
     iget-object v5, p0, Landroid/filterpacks/imageproc/FillLightFilter;->mProgram:Landroid/filterfw/core/Program;
 
-    const-string v6, "mult"
+    const-string/jumbo v6, "mult"
 
     invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 

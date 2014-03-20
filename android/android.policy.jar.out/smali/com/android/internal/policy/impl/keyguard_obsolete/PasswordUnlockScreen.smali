@@ -150,7 +150,7 @@
     iput-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard_obsolete/PasswordUnlockScreen;->mIsAlpha:Z
 
     .line 111
-    const v1, 0x102021e
+    const v1, 0x1020220
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard_obsolete/PasswordUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -161,7 +161,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard_obsolete/PasswordUnlockScreen;->mKeyboardView:Lcom/android/internal/widget/PasswordEntryKeyboardView;
 
     .line 112
-    const v1, 0x10202bd
+    const v1, 0x10202bf
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard_obsolete/PasswordUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -269,7 +269,7 @@
     invoke-virtual {v1, v2}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     .line 181
-    const v1, 0x10202be
+    const v1, 0x10202c0
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard_obsolete/PasswordUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -401,7 +401,7 @@
     invoke-virtual {v2, v1}, Lcom/android/internal/widget/PasswordEntryKeyboardView;->setVisibility(I)V
 
     .line 130
-    const v1, 0x10202e6
+    const v1, 0x10202e8
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard_obsolete/PasswordUnlockScreen;->findViewById(I)Landroid/view/View;
 

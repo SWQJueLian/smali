@@ -11,6 +11,10 @@
 .end annotation
 
 
+# static fields
+.field private static final MESSAGE_DUMP_SIZE_MAX:I = 0x14
+
+
 # instance fields
 .field private mBlocked:Z
 
@@ -120,6 +124,192 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
+.end method
+
+.method public final declared-synchronized dumpMessageQueue()V
+    .locals 6
+
+    .prologue
+    .line 476
+    monitor-enter p0
+
+    :try_start_0
+    iget-object v3, p0, Landroid/os/MessageQueue;->mMessages:Landroid/os/Message;
+
+    if-eqz v3, :cond_2
+
+    .line 478
+    const-string v3, "MessageQueue"
+
+    const-string v4, "Dump first 20 messages in Queue: "
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 479
+    iget-object v2, p0, Landroid/os/MessageQueue;->mMessages:Landroid/os/Message;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 482
+    .local v2, tempMsg:Landroid/os/Message;
+    const/4 v0, 0x0
+
+    .line 483
+    .local v0, count:I
+    :goto_0
+    if-eqz v2, :cond_1
+
+    .line 485
+    add-int/lit8 v0, v0, 0x1
+
+    .line 487
+    const/16 v3, 0x14
+
+    if-gt v0, v3, :cond_0
+
+    .line 491
+    :try_start_1
+    const-string v3, "MessageQueue"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Dump Message in Queue ("
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "): "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
+
+    .line 498
+    :cond_0
+    :goto_1
+    :try_start_2
+    iget-object v2, v2, Landroid/os/Message;->next:Landroid/os/Message;
+
+    goto :goto_0
+
+    .line 492
+    :catch_0
+    move-exception v1
+
+    .line 494
+    .local v1, re:Ljava/lang/RuntimeException;
+    const-string v3, "MessageQueue"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Dump Message in Queue ("
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string v5, "): RuntimeException occurred. Ignore this message dump."
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    goto :goto_1
+
+    .line 476
+    .end local v0           #count:I
+    .end local v1           #re:Ljava/lang/RuntimeException;
+    .end local v2           #tempMsg:Landroid/os/Message;
+    :catchall_0
+    move-exception v3
+
+    monitor-exit p0
+
+    throw v3
+
+    .line 501
+    .restart local v0       #count:I
+    .restart local v2       #tempMsg:Landroid/os/Message;
+    :cond_1
+    :try_start_3
+    const-string v3, "MessageQueue"
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v5, "Total Message Count: "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    .line 508
+    .end local v0           #count:I
+    .end local v2           #tempMsg:Landroid/os/Message;
+    :goto_2
+    monitor-exit p0
+
+    return-void
+
+    .line 506
+    :cond_2
+    :try_start_4
+    const-string v3, "MessageQueue"
+
+    const-string/jumbo v4, "mMessages is null"
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    goto :goto_2
 .end method
 
 .method final enqueueMessage(Landroid/os/Message;J)Z

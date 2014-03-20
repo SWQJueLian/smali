@@ -22,6 +22,8 @@
 
 .field public useAutoBrightness:Z
 
+.field public useEcoBrightness:Z
+
 .field public useProximitySensor:Z
 
 
@@ -32,34 +34,37 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 65
+    .line 70
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 66
+    .line 71
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/android/server/power/DisplayPowerRequest;->screenState:I
 
-    .line 67
+    .line 72
     iput-boolean v1, p0, Lcom/android/server/power/DisplayPowerRequest;->useProximitySensor:Z
 
-    .line 68
+    .line 73
     const/16 v0, 0xff
 
     iput v0, p0, Lcom/android/server/power/DisplayPowerRequest;->screenBrightness:I
 
-    .line 69
+    .line 74
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/power/DisplayPowerRequest;->screenAutoBrightnessAdjustment:F
 
-    .line 70
+    .line 75
     iput-boolean v1, p0, Lcom/android/server/power/DisplayPowerRequest;->useAutoBrightness:Z
 
-    .line 71
+    .line 77
+    iput-boolean v1, p0, Lcom/android/server/power/DisplayPowerRequest;->useEcoBrightness:Z
+
+    .line 79
     iput-boolean v1, p0, Lcom/android/server/power/DisplayPowerRequest;->blockScreenOn:Z
 
-    .line 72
+    .line 80
     return-void
 .end method
 
@@ -68,13 +73,13 @@
     .parameter "other"
 
     .prologue
-    .line 74
+    .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 75
+    .line 83
     invoke-virtual {p0, p1}, Lcom/android/server/power/DisplayPowerRequest;->copyFrom(Lcom/android/server/power/DisplayPowerRequest;)V
 
-    .line 76
+    .line 84
     return-void
 .end method
 
@@ -85,37 +90,42 @@
     .parameter "other"
 
     .prologue
-    .line 79
+    .line 87
     iget v0, p1, Lcom/android/server/power/DisplayPowerRequest;->screenState:I
 
     iput v0, p0, Lcom/android/server/power/DisplayPowerRequest;->screenState:I
 
-    .line 80
+    .line 88
     iget-boolean v0, p1, Lcom/android/server/power/DisplayPowerRequest;->useProximitySensor:Z
 
     iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerRequest;->useProximitySensor:Z
 
-    .line 81
+    .line 89
     iget v0, p1, Lcom/android/server/power/DisplayPowerRequest;->screenBrightness:I
 
     iput v0, p0, Lcom/android/server/power/DisplayPowerRequest;->screenBrightness:I
 
-    .line 82
+    .line 90
     iget v0, p1, Lcom/android/server/power/DisplayPowerRequest;->screenAutoBrightnessAdjustment:F
 
     iput v0, p0, Lcom/android/server/power/DisplayPowerRequest;->screenAutoBrightnessAdjustment:F
 
-    .line 83
+    .line 91
     iget-boolean v0, p1, Lcom/android/server/power/DisplayPowerRequest;->useAutoBrightness:Z
 
     iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerRequest;->useAutoBrightness:Z
 
-    .line 84
+    .line 93
+    iget-boolean v0, p1, Lcom/android/server/power/DisplayPowerRequest;->useEcoBrightness:Z
+
+    iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerRequest;->useEcoBrightness:Z
+
+    .line 95
     iget-boolean v0, p1, Lcom/android/server/power/DisplayPowerRequest;->blockScreenOn:Z
 
     iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerRequest;->blockScreenOn:Z
 
-    .line 85
+    .line 96
     return-void
 .end method
 
@@ -124,7 +134,7 @@
     .parameter "other"
 
     .prologue
-    .line 94
+    .line 105
     if-eqz p1, :cond_0
 
     iget v0, p0, Lcom/android/server/power/DisplayPowerRequest;->screenState:I
@@ -159,6 +169,12 @@
 
     if-ne v0, v1, :cond_0
 
+    iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerRequest;->useEcoBrightness:Z
+
+    iget-boolean v1, p1, Lcom/android/server/power/DisplayPowerRequest;->useEcoBrightness:Z
+
+    if-ne v0, v1, :cond_0
+
     iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerRequest;->blockScreenOn:Z
 
     iget-boolean v1, p1, Lcom/android/server/power/DisplayPowerRequest;->blockScreenOn:Z
@@ -181,7 +197,7 @@
     .parameter "o"
 
     .prologue
-    .line 89
+    .line 100
     instance-of v0, p1, Lcom/android/server/power/DisplayPowerRequest;
 
     if-eqz v0, :cond_0
@@ -210,7 +226,7 @@
     .locals 1
 
     .prologue
-    .line 105
+    .line 117
     const/4 v0, 0x0
 
     return v0
@@ -220,7 +236,7 @@
     .locals 2
 
     .prologue
-    .line 110
+    .line 122
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -280,6 +296,18 @@
     move-result-object v0
 
     iget-boolean v1, p0, Lcom/android/server/power/DisplayPowerRequest;->useAutoBrightness:Z
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string v1, ", useEcoBrightness="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-boolean v1, p0, Lcom/android/server/power/DisplayPowerRequest;->useEcoBrightness:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 

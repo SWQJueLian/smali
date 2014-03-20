@@ -406,7 +406,7 @@
 
     move-result-object v5
 
-    const-string v6, "ms for "
+    const-string/jumbo v6, "ms for "
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

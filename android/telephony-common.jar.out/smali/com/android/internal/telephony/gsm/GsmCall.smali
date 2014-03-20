@@ -1,4 +1,4 @@
-.class Lcom/android/internal/telephony/gsm/GsmCall;
+.class public Lcom/android/internal/telephony/gsm/GsmCall;
 .super Lcom/android/internal/telephony/Call;
 .source "GsmCall.java"
 

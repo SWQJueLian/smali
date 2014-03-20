@@ -3,7 +3,7 @@
 .source "DisplayPowerController.java"
 
 # interfaces
-.implements Lcom/android/server/TwilightService$TwilightListener;
+.implements Landroid/hardware/SensorEventListener;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1323
+    .line 1437
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerController$9;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,24 +37,54 @@
 
 
 # virtual methods
-.method public onTwilightStateChanged()V
-    .locals 2
+.method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
+    .locals 0
+    .parameter "sensor"
+    .parameter "accuracy"
 
     .prologue
-    .line 1326
-    iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$9;->this$0:Lcom/android/server/power/DisplayPowerController;
+    .line 1450
+    return-void
+.end method
 
-    const/4 v1, 0x1
+.method public onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .locals 5
+    .parameter "event"
 
-    #setter for: Lcom/android/server/power/DisplayPowerController;->mTwilightChanged:Z
-    invoke-static {v0, v1}, Lcom/android/server/power/DisplayPowerController;->access$1102(Lcom/android/server/power/DisplayPowerController;Z)Z
+    .prologue
+    .line 1440
+    iget-object v3, p0, Lcom/android/server/power/DisplayPowerController$9;->this$0:Lcom/android/server/power/DisplayPowerController;
 
-    .line 1327
-    iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$9;->this$0:Lcom/android/server/power/DisplayPowerController;
+    #getter for: Lcom/android/server/power/DisplayPowerController;->mLightSensorEnabled:Z
+    invoke-static {v3}, Lcom/android/server/power/DisplayPowerController;->access$1100(Lcom/android/server/power/DisplayPowerController;)Z
 
-    #calls: Lcom/android/server/power/DisplayPowerController;->updatePowerState()V
-    invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$300(Lcom/android/server/power/DisplayPowerController;)V
+    move-result v3
 
-    .line 1328
+    if-eqz v3, :cond_0
+
+    .line 1441
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v1
+
+    .line 1442
+    .local v1, time:J
+    iget-object v3, p1, Landroid/hardware/SensorEvent;->values:[F
+
+    const/4 v4, 0x0
+
+    aget v0, v3, v4
+
+    .line 1443
+    .local v0, lux:F
+    iget-object v3, p0, Lcom/android/server/power/DisplayPowerController$9;->this$0:Lcom/android/server/power/DisplayPowerController;
+
+    #calls: Lcom/android/server/power/DisplayPowerController;->handleLightSensorEvent(JF)V
+    invoke-static {v3, v1, v2, v0}, Lcom/android/server/power/DisplayPowerController;->access$1200(Lcom/android/server/power/DisplayPowerController;JF)V
+
+    .line 1445
+    .end local v0           #lux:F
+    .end local v1           #time:J
+    :cond_0
     return-void
 .end method

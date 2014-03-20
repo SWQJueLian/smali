@@ -218,7 +218,7 @@
 
     .line 563
     .local v0, builder:Ljava/lang/StringBuilder;
-    const-string v3, "modifiers: "
+    const-string/jumbo v3, "modifiers: "
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

@@ -1107,7 +1107,7 @@
     invoke-direct {p0, v1, p2}, Landroid/opengl/EGLLogWrapper;->arg(Ljava/lang/String;Ljavax/microedition/khronos/egl/EGLSurface;)V
 
     .line 69
-    const-string v1, "native_pixmap"
+    const-string/jumbo v1, "native_pixmap"
 
     invoke-direct {p0, v1, p3}, Landroid/opengl/EGLLogWrapper;->arg(Ljava/lang/String;Ljava/lang/Object;)V
 
@@ -1258,7 +1258,7 @@
     invoke-direct {p0, v1, p2}, Landroid/opengl/EGLLogWrapper;->arg(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 114
-    const-string v1, "native_pixmap"
+    const-string/jumbo v1, "native_pixmap"
 
     invoke-direct {p0, v1, p3}, Landroid/opengl/EGLLogWrapper;->arg(Ljava/lang/String;Ljava/lang/Object;)V
 
@@ -1312,7 +1312,7 @@
     invoke-direct {p0, v1, p2}, Landroid/opengl/EGLLogWrapper;->arg(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 130
-    const-string v1, "native_window"
+    const-string/jumbo v1, "native_window"
 
     invoke-direct {p0, v1, p3}, Landroid/opengl/EGLLogWrapper;->arg(Ljava/lang/String;Ljava/lang/Object;)V
 
@@ -1643,7 +1643,7 @@
     invoke-direct {p0, v1}, Landroid/opengl/EGLLogWrapper;->begin(Ljava/lang/String;)V
 
     .line 232
-    const-string v1, "native_display"
+    const-string/jumbo v1, "native_display"
 
     invoke-direct {p0, v1, p1}, Landroid/opengl/EGLLogWrapper;->arg(Ljava/lang/String;Ljava/lang/Object;)V
 
@@ -1730,7 +1730,7 @@
     invoke-direct {p0, v0}, Landroid/opengl/EGLLogWrapper;->returns(Z)V
 
     .line 258
-    const-string v1, "major_minor"
+    const-string/jumbo v1, "major_minor"
 
     invoke-direct {p0, v1, p2}, Landroid/opengl/EGLLogWrapper;->arg(Ljava/lang/String;[I)V
 
@@ -1868,7 +1868,7 @@
     invoke-direct {p0, v1, p1}, Landroid/opengl/EGLLogWrapper;->arg(Ljava/lang/String;Ljavax/microedition/khronos/egl/EGLDisplay;)V
 
     .line 295
-    const-string v1, "name"
+    const-string/jumbo v1, "name"
 
     invoke-direct {p0, v1, p2}, Landroid/opengl/EGLLogWrapper;->arg(Ljava/lang/String;I)V
 

@@ -76,7 +76,7 @@
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v5, "not implemented on this device"
+    const-string/jumbo v5, "not implemented on this device"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -111,7 +111,7 @@
     .local v2, e:Ljava/lang/UnsupportedOperationException;
     const-string v3, "AcousticEchoCanceler"
 
-    const-string v4, "not enough resources"
+    const-string/jumbo v4, "not enough resources"
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -132,7 +132,7 @@
     .local v2, e:Ljava/lang/RuntimeException;
     const-string v3, "AcousticEchoCanceler"
 
-    const-string v4, "not enough memory"
+    const-string/jumbo v4, "not enough memory"
 
     invoke-static {v3, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_1

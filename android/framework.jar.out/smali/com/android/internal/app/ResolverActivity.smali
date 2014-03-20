@@ -70,7 +70,7 @@
 
     iput-object v0, p0, Lcom/android/internal/app/ResolverActivity;->mPackageMonitor:Lcom/android/internal/content/PackageMonitor;
 
-    .line 663
+    .line 676
     return-void
 .end method
 
@@ -96,7 +96,40 @@
     return v0
 .end method
 
-.method static synthetic access$300(Lcom/android/internal/app/ResolverActivity;)Landroid/content/pm/PackageManager;
+.method static synthetic access$300(Lcom/android/internal/app/ResolverActivity;)Landroid/widget/GridView;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lcom/android/internal/app/ResolverActivity;->mGrid:Landroid/widget/GridView;
+
+    return-object v0
+.end method
+
+.method static synthetic access$400(Lcom/android/internal/app/ResolverActivity;)Landroid/widget/Button;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lcom/android/internal/app/ResolverActivity;->mAlwaysButton:Landroid/widget/Button;
+
+    return-object v0
+.end method
+
+.method static synthetic access$500(Lcom/android/internal/app/ResolverActivity;)Landroid/widget/Button;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lcom/android/internal/app/ResolverActivity;->mOnceButton:Landroid/widget/Button;
+
+    return-object v0
+.end method
+
+.method static synthetic access$600(Lcom/android/internal/app/ResolverActivity;)Landroid/content/pm/PackageManager;
     .locals 1
     .parameter "x0"
 
@@ -107,7 +140,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$400(Lcom/android/internal/app/ResolverActivity;)Z
+.method static synthetic access$700(Lcom/android/internal/app/ResolverActivity;)Z
     .locals 1
     .parameter "x0"
 
@@ -118,7 +151,7 @@
     return v0
 .end method
 
-.method static synthetic access$402(Lcom/android/internal/app/ResolverActivity;Z)Z
+.method static synthetic access$702(Lcom/android/internal/app/ResolverActivity;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -130,7 +163,7 @@
     return p1
 .end method
 
-.method static synthetic access$500(Lcom/android/internal/app/ResolverActivity;)I
+.method static synthetic access$800(Lcom/android/internal/app/ResolverActivity;)I
     .locals 1
     .parameter "x0"
 
@@ -323,7 +356,7 @@
 
     move-result v2
 
-    const v1, 0x1020352
+    const v1, 0x102035a
 
     if-ne v0, v1, :cond_0
 
@@ -604,7 +637,7 @@
     .line 142
     iget-object v1, v9, Lcom/android/internal/app/AlertController$AlertParams;->mView:Landroid/view/View;
 
-    const v2, 0x1020351
+    const v2, 0x1020359
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -657,7 +690,7 @@
     if-eqz p6, :cond_1
 
     .line 165
-    const v1, 0x1020278
+    const v1, 0x102027a
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/ResolverActivity;->findViewById(I)Landroid/view/View;
 
@@ -675,7 +708,7 @@
     invoke-virtual {v10, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     .line 168
-    const v1, 0x1020352
+    const v1, 0x102035a
 
     invoke-virtual {v10, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
@@ -686,7 +719,7 @@
     iput-object v1, p0, Lcom/android/internal/app/ResolverActivity;->mAlwaysButton:Landroid/widget/Button;
 
     .line 169
-    const v1, 0x1020353
+    const v1, 0x102035b
 
     invoke-virtual {v10, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 

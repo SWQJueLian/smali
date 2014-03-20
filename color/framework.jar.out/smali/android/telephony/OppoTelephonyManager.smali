@@ -12,6 +12,8 @@
 
 
 # static fields
+.field private static final LOCAL_DEBUG:Z = true
+
 .field static final TAG:Ljava/lang/String; = "OppoTelephonyManager"
 
 .field private static isMtkGeminiSupport:Z
@@ -32,7 +34,7 @@
     .locals 1
 
     .prologue
-    .line 62
+    .line 64
     new-instance v0, Landroid/telephony/OppoTelephonyManager;
 
     invoke-direct {v0}, Landroid/telephony/OppoTelephonyManager;-><init>()V
@@ -46,10 +48,10 @@
     .locals 0
 
     .prologue
-    .line 58
+    .line 60
     invoke-direct {p0}, Landroid/telephony/TelephonyManager;-><init>()V
 
-    .line 59
+    .line 61
     return-void
 .end method
 
@@ -58,27 +60,27 @@
     .parameter "context"
 
     .prologue
-    .line 39
+    .line 41
     invoke-direct {p0, p1}, Landroid/telephony/TelephonyManager;-><init>(Landroid/content/Context;)V
 
-    .line 40
+    .line 42
     sget-object v1, Landroid/telephony/OppoTelephonyManager;->sContext:Landroid/content/Context;
 
     if-nez v1, :cond_0
 
-    .line 41
+    .line 43
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 42
+    .line 44
     .local v0, appContext:Landroid/content/Context;
     if-eqz v0, :cond_1
 
-    .line 43
+    .line 45
     sput-object v0, Landroid/telephony/OppoTelephonyManager;->sContext:Landroid/content/Context;
 
-    .line 49
+    .line 51
     .end local v0           #appContext:Landroid/content/Context;
     :cond_0
     :goto_0
@@ -96,7 +98,7 @@
 
     sput-boolean v1, Landroid/telephony/OppoTelephonyManager;->isOppoSupport:Z
 
-    .line 50
+    .line 52
     sget-object v1, Landroid/telephony/OppoTelephonyManager;->sContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -111,22 +113,22 @@
 
     sput-boolean v1, Landroid/telephony/OppoTelephonyManager;->isRomSupport:Z
 
-    .line 51
+    .line 53
     sget-object v1, Landroid/telephony/OppoTelephonyManager;->sContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v1
 
-    const-string v2, "mtk.gemini.support"
+    const-string/jumbo v2, "mtk.gemini.support"
 
     invoke-virtual {v1, v2}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
 
     move-result v1
 
-    sput-boolean v1, Landroid/telephony/OppoTelephonyManager;->isMtkSupport:Z
+    sput-boolean v1, Landroid/telephony/OppoTelephonyManager;->isMtkGeminiSupport:Z
 
-    .line 52
+    .line 54
     sget-object v1, Landroid/telephony/OppoTelephonyManager;->sContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -139,9 +141,9 @@
 
     move-result v1
 
-    sput-boolean v1, Landroid/telephony/OppoTelephonyManager;->isMtkGeminiSupport:Z
+    sput-boolean v1, Landroid/telephony/OppoTelephonyManager;->isMtkSupport:Z
 
-    .line 53
+    .line 55
     const-string v1, "OppoTelephonyManager"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -178,10 +180,10 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 54
+    .line 56
     return-void
 
-    .line 45
+    .line 47
     .restart local v0       #appContext:Landroid/content/Context;
     :cond_1
     sput-object p1, Landroid/telephony/OppoTelephonyManager;->sContext:Landroid/content/Context;
@@ -193,7 +195,7 @@
     .locals 1
 
     .prologue
-    .line 66
+    .line 68
     sget-object v0, Landroid/telephony/OppoTelephonyManager;->sInstance:Landroid/telephony/OppoTelephonyManager;
 
     return-object v0
@@ -203,7 +205,7 @@
     .locals 1
 
     .prologue
-    .line 70
+    .line 72
     const-string/jumbo v0, "phone"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -221,7 +223,7 @@
     .locals 1
 
     .prologue
-    .line 74
+    .line 76
     sget-boolean v0, Landroid/telephony/OppoTelephonyManager;->isMtkSupport:Z
 
     if-eqz v0, :cond_0
@@ -230,7 +232,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 75
+    .line 77
     invoke-virtual {p0}, Landroid/telephony/OppoTelephonyManager;->getDefaultSim()I
 
     move-result v0
@@ -239,7 +241,7 @@
 
     move-result-object v0
 
-    .line 77
+    .line 79
     :goto_0
     return-object v0
 
@@ -260,14 +262,12 @@
 .method private getIccPhoneBookInfoGemini(I)Lcom/android/internal/telephony/IIccPhoneBook;
     .locals 1
     .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "get ICC phonebook information, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 328
+    .line 214
+    if-nez p1, :cond_0
+
+    .line 215
     const-string/jumbo v0, "simphonebook"
 
     invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
@@ -278,7 +278,42 @@
 
     move-result-object v0
 
+    .line 220
+    :goto_0
     return-object v0
+
+    .line 217
+    :cond_0
+    const/4 v0, 0x1
+
+    if-ne p1, v0, :cond_1
+
+    .line 218
+    const-string/jumbo v0, "simphonebook2"
+
+    invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/internal/telephony/IIccPhoneBook$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/IIccPhoneBook;
+
+    move-result-object v0
+
+    goto :goto_0
+
+    .line 220
+    :cond_1
+    const-string/jumbo v0, "simphonebook"
+
+    invoke-static {v0}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/android/internal/telephony/IIccPhoneBook$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/telephony/IIccPhoneBook;
+
+    move-result-object v0
+
+    goto :goto_0
 .end method
 
 
@@ -290,7 +325,7 @@
     .parameter "onComplete"
 
     .prologue
-    .line 258
+    .line 355
     return-void
 .end method
 
@@ -299,27 +334,47 @@
     .parameter "name"
 
     .prologue
-    .line 140
+    .line 115
     const/4 v0, -0x1
 
     return v0
 .end method
 
 .method public oppoCheckPhbNameLengthGenimi(Ljava/lang/String;I)I
-    .locals 1
+    .locals 4
     .parameter "name"
     .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "check phonebook\'s name length, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 363
-    const/4 v0, -0x1
+    const/4 v3, 0x3
 
-    return v0
+    .line 240
+    invoke-virtual {p0, p2}, Landroid/telephony/OppoTelephonyManager;->oppoGetSimPhonebookNameLengthGemini(I)I
+
+    move-result v1
+
+    .line 251
+    .local v1, leng:I
+    const/4 v2, 0x0
+
+    invoke-static {p1, v2}, Landroid/telephony/SmsMessage;->calculateLength(Ljava/lang/String;Z)[I
+
+    move-result-object v0
+
+    .line 252
+    .local v0, encodeInfo:[I
+    aget v2, v0, v3
+
+    if-ne v2, v3, :cond_0
+
+    .line 253
+    add-int/lit8 v2, v1, -0x1
+
+    div-int/lit8 v1, v2, 0x2
+
+    .line 256
+    :cond_0
+    return v1
 .end method
 
 .method public oppoDisableDataConnectivity()Z
@@ -328,7 +383,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 160
+    .line 144
     sget-boolean v2, Landroid/telephony/OppoTelephonyManager;->isMtkSupport:Z
 
     if-eqz v2, :cond_1
@@ -337,7 +392,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 161
+    .line 145
     invoke-virtual {p0}, Landroid/telephony/OppoTelephonyManager;->getDefaultSim()I
 
     move-result v2
@@ -350,12 +405,12 @@
 
     const/4 v1, 0x1
 
-    .line 166
+    .line 150
     :cond_0
     :goto_0
     return v1
 
-    .line 164
+    .line 148
     :cond_1
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/OppoTelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
@@ -370,29 +425,45 @@
 
     goto :goto_0
 
-    .line 165
+    .line 149
     :catch_0
     move-exception v0
 
-    .line 166
+    .line 150
     .local v0, ex:Landroid/os/RemoteException;
     goto :goto_0
 .end method
 
 .method public oppoDisableDataConnectivityGemini(I)I
-    .locals 1
+    .locals 2
     .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "disble data connectivity, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 399
-    const/4 v0, -0x1
+    .line 292
+    :try_start_0
+    invoke-direct {p0}, Landroid/telephony/OppoTelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
-    return v0
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->disableDataConnectivityGemini(I)I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 294
+    :goto_0
+    return v1
+
+    .line 293
+    :catch_0
+    move-exception v0
+
+    .line 294
+    .local v0, ex:Landroid/os/RemoteException;
+    const/4 v1, -0x1
+
+    goto :goto_0
 .end method
 
 .method public oppoEnableDataConnectivity()Z
@@ -401,7 +472,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 148
+    .line 132
     sget-boolean v2, Landroid/telephony/OppoTelephonyManager;->isMtkSupport:Z
 
     if-eqz v2, :cond_1
@@ -410,7 +481,7 @@
 
     if-eqz v2, :cond_1
 
-    .line 149
+    .line 133
     invoke-virtual {p0}, Landroid/telephony/OppoTelephonyManager;->getDefaultSim()I
 
     move-result v2
@@ -423,12 +494,12 @@
 
     const/4 v1, 0x1
 
-    .line 154
+    .line 138
     :cond_0
     :goto_0
     return v1
 
-    .line 152
+    .line 136
     :cond_1
     :try_start_0
     invoke-direct {p0}, Landroid/telephony/OppoTelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
@@ -443,118 +514,75 @@
 
     goto :goto_0
 
-    .line 153
+    .line 137
     :catch_0
     move-exception v0
 
-    .line 154
+    .line 138
     .local v0, ex:Landroid/os/RemoteException;
     goto :goto_0
 .end method
 
 .method public oppoEnableDataConnectivityGemini(I)I
-    .locals 1
+    .locals 2
     .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "enable data connectivity, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 392
-    const/4 v0, -0x1
+    .line 283
+    :try_start_0
+    invoke-direct {p0}, Landroid/telephony/OppoTelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
 
-    return v0
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->enableDataConnectivityGemini(I)I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 285
+    :goto_0
+    return v1
+
+    .line 284
+    :catch_0
+    move-exception v0
+
+    .line 285
+    .local v0, ex:Landroid/os/RemoteException;
+    const/4 v1, -0x1
+
+    goto :goto_0
 .end method
 
 .method public oppoGetAudioRecordState()Z
     .locals 1
 
     .prologue
-    .line 321
+    .line 387
     const/4 v0, 0x0
 
     return v0
 .end method
 
 .method public oppoGetIccCardType()Ljava/lang/String;
-    .locals 4
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "get sim Card Type"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
+    .locals 1
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 421
-    const-string v2, "gsm.sim.card.type"
-
-    const-string v3, "SIM"
-
-    invoke-static {v2, v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 392
+    invoke-virtual {p0}, Landroid/telephony/OppoTelephonyManager;->getIccCardType()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 423
-    .local v0, vStr:Ljava/lang/String;
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_0
-
-    .line 425
-    const-string v2, "USIM"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1
-
-    .line 427
-    const-string v1, "USIM"
-
-    .line 437
-    :cond_0
-    :goto_0
-    return-object v1
-
-    .line 429
-    :cond_1
-    const-string v2, "SIM"
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    .line 431
-    const-string v1, "SIM"
-
-    goto :goto_0
+    return-object v0
 .end method
 
 .method public oppoGetIccLockEnabled()Z
     .locals 1
 
     .prologue
-    .line 237
+    .line 345
     const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public oppoGetIccPin1RetryCount()I
-    .locals 1
-
-    .prologue
-    .line 317
-    const/4 v0, -0x1
 
     return v0
 .end method
@@ -563,7 +591,7 @@
     .locals 1
 
     .prologue
-    .line 108
+    .line 89
     const/4 v0, -0x1
 
     return v0
@@ -574,69 +602,253 @@
     .parameter "slotId"
 
     .prologue
-    .line 286
+    .line 199
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public oppoGetServiceState()Landroid/os/Bundle;
-    .locals 1
+    .locals 4
 
     .prologue
-    .line 188
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    return-object v0
+    .line 156
+    sget-boolean v3, Landroid/telephony/OppoTelephonyManager;->isMtkSupport:Z
+
+    if-eqz v3, :cond_1
+
+    sget-boolean v3, Landroid/telephony/OppoTelephonyManager;->isMtkGeminiSupport:Z
+
+    if-eqz v3, :cond_1
+
+    .line 157
+    invoke-virtual {p0}, Landroid/telephony/OppoTelephonyManager;->getDefaultSim()I
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Landroid/telephony/OppoTelephonyManager;->oppoGetServiceStateGemini(I)Landroid/os/Bundle;
+
+    move-result-object v2
+
+    .line 169
+    :cond_0
+    :goto_0
+    return-object v2
+
+    .line 160
+    :cond_1
+    :try_start_0
+    invoke-direct {p0}, Landroid/telephony/OppoTelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
+
+    move-result-object v1
+
+    .line 161
+    .local v1, telephony:Lcom/android/internal/telephony/ITelephony;
+    if-eqz v1, :cond_0
+
+    .line 162
+    invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->getServiceState()Landroid/os/Bundle;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result-object v2
+
+    goto :goto_0
+
+    .line 166
+    .end local v1           #telephony:Lcom/android/internal/telephony/ITelephony;
+    :catch_0
+    move-exception v0
+
+    .line 167
+    .local v0, ex:Landroid/os/RemoteException;
+    goto :goto_0
+
+    .line 168
+    .end local v0           #ex:Landroid/os/RemoteException;
+    :catch_1
+    move-exception v0
+
+    .line 169
+    .local v0, ex:Ljava/lang/NullPointerException;
+    goto :goto_0
 .end method
 
 .method public oppoGetServiceStateGemini(I)Landroid/os/Bundle;
-    .locals 1
+    .locals 3
     .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "get service state, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 406
-    const/4 v0, 0x0
+    const/4 v2, 0x0
 
-    return-object v0
+    .line 300
+    :try_start_0
+    invoke-direct {p0}, Landroid/telephony/OppoTelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
+
+    move-result-object v1
+
+    .line 301
+    .local v1, telephony:Lcom/android/internal/telephony/ITelephony;
+    if-eqz v1, :cond_0
+
+    .line 302
+    invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->getServiceStateGemini(I)Landroid/os/Bundle;
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result-object v2
+
+    .line 311
+    .end local v1           #telephony:Lcom/android/internal/telephony/ITelephony;
+    :cond_0
+    :goto_0
+    return-object v2
+
+    .line 307
+    :catch_0
+    move-exception v0
+
+    .line 309
+    .local v0, ex:Landroid/os/RemoteException;
+    goto :goto_0
+
+    .line 310
+    .end local v0           #ex:Landroid/os/RemoteException;
+    :catch_1
+    move-exception v0
+
+    .line 311
+    .local v0, ex:Ljava/lang/NullPointerException;
+    goto :goto_0
 .end method
 
 .method public oppoGetSimIndicatorState()I
-    .locals 1
+    .locals 4
 
     .prologue
-    .line 208
-    const/4 v0, -0x1
+    const/4 v2, -0x1
 
-    return v0
+    .line 175
+    sget-boolean v3, Landroid/telephony/OppoTelephonyManager;->isMtkSupport:Z
+
+    if-eqz v3, :cond_1
+
+    sget-boolean v3, Landroid/telephony/OppoTelephonyManager;->isMtkGeminiSupport:Z
+
+    if-eqz v3, :cond_1
+
+    .line 176
+    invoke-virtual {p0}, Landroid/telephony/OppoTelephonyManager;->getDefaultSim()I
+
+    move-result v2
+
+    invoke-virtual {p0, v2}, Landroid/telephony/OppoTelephonyManager;->oppoGetSimIndicatorStateGemini(I)I
+
+    move-result v2
+
+    .line 188
+    :cond_0
+    :goto_0
+    return v2
+
+    .line 179
+    :cond_1
+    :try_start_0
+    invoke-direct {p0}, Landroid/telephony/OppoTelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
+
+    move-result-object v1
+
+    .line 180
+    .local v1, telephony:Lcom/android/internal/telephony/ITelephony;
+    if-eqz v1, :cond_0
+
+    .line 181
+    invoke-interface {v1}, Lcom/android/internal/telephony/ITelephony;->getSimIndicatorState()I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result v2
+
+    goto :goto_0
+
+    .line 185
+    .end local v1           #telephony:Lcom/android/internal/telephony/ITelephony;
+    :catch_0
+    move-exception v0
+
+    .line 186
+    .local v0, ex:Landroid/os/RemoteException;
+    goto :goto_0
+
+    .line 187
+    .end local v0           #ex:Landroid/os/RemoteException;
+    :catch_1
+    move-exception v0
+
+    .line 188
+    .local v0, ex:Ljava/lang/NullPointerException;
+    goto :goto_0
 .end method
 
 .method public oppoGetSimIndicatorStateGemini(I)I
-    .locals 1
+    .locals 3
     .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "get sim indicator state, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 413
-    const/4 v0, -0x1
+    const/4 v2, -0x1
 
-    return v0
+    .line 317
+    :try_start_0
+    invoke-direct {p0}, Landroid/telephony/OppoTelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
+
+    move-result-object v1
+
+    .line 318
+    .local v1, telephony:Lcom/android/internal/telephony/ITelephony;
+    if-eqz v1, :cond_0
+
+    .line 319
+    invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->getSimIndicatorStateGemini(I)I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_1
+
+    move-result v2
+
+    .line 326
+    .end local v1           #telephony:Lcom/android/internal/telephony/ITelephony;
+    :cond_0
+    :goto_0
+    return v2
+
+    .line 323
+    :catch_0
+    move-exception v0
+
+    .line 324
+    .local v0, ex:Landroid/os/RemoteException;
+    goto :goto_0
+
+    .line 325
+    .end local v0           #ex:Landroid/os/RemoteException;
+    :catch_1
+    move-exception v0
+
+    .line 326
+    .local v0, ex:Ljava/lang/NullPointerException;
+    goto :goto_0
 .end method
 
 .method public oppoGetSimPhonebookAllSpace()I
     .locals 1
 
     .prologue
-    .line 128
+    .line 99
     const/4 v0, -0x1
 
     return v0
@@ -645,14 +857,9 @@
 .method public oppoGetSimPhonebookAllSpaceGemini(I)I
     .locals 1
     .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "get sim phonebook\'s all space, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 342
+    .line 231
     const/4 v0, -0x1
 
     return v0
@@ -660,14 +867,9 @@
 
 .method public oppoGetSimPhonebookEmailLength()I
     .locals 1
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "get sim phonebook\'s email length, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 378
+    .line 127
     const/4 v0, -0x1
 
     return v0
@@ -676,14 +878,9 @@
 .method public oppoGetSimPhonebookEmailLengthGemini(I)I
     .locals 1
     .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "get sim phonebook\'s email length, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 385
+    .line 277
     const/4 v0, -0x1
 
     return v0
@@ -693,7 +890,7 @@
     .locals 1
 
     .prologue
-    .line 136
+    .line 109
     const/4 v0, -0x1
 
     return v0
@@ -702,14 +899,9 @@
 .method public oppoGetSimPhonebookNameLengthGemini(I)I
     .locals 1
     .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "get sim phonebook\'s name length, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 356
+    .line 263
     const/4 v0, -0x1
 
     return v0
@@ -719,7 +911,7 @@
     .locals 1
 
     .prologue
-    .line 144
+    .line 120
     const/16 v0, 0x14
 
     return v0
@@ -728,14 +920,9 @@
 .method public oppoGetSimPhonebookNumberLengthGemini(I)I
     .locals 1
     .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "get sim phonebook\'s number length, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 371
+    .line 270
     const/4 v0, -0x1
 
     return v0
@@ -745,7 +932,7 @@
     .locals 1
 
     .prologue
-    .line 132
+    .line 104
     const/4 v0, -0x1
 
     return v0
@@ -754,15 +941,20 @@
 .method public oppoGetSimPhonebookUsedSpaceGemini(I)I
     .locals 1
     .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "get sim phonebook\'s used space, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 349
+    .line 236
     const/4 v0, -0x1
+
+    return v0
+.end method
+
+.method public oppoIs3GSwitchVisible()Z
+    .locals 1
+
+    .prologue
+    .line 396
+    const/4 v0, 0x0
 
     return v0
 .end method
@@ -771,7 +963,7 @@
     .locals 1
 
     .prologue
-    .line 270
+    .line 358
     const/4 v0, 0x0
 
     return v0
@@ -784,7 +976,7 @@
     .parameter "onComplete"
 
     .prologue
-    .line 248
+    .line 350
     return-void
 .end method
 
@@ -793,7 +985,19 @@
     .parameter "phoneNumber"
 
     .prologue
-    .line 224
+    .line 333
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public oppoSetLine1NumberGemini(Ljava/lang/String;I)Z
+    .locals 1
+    .parameter "phoneNumber"
+    .parameter "simId"
+
+    .prologue
+    .line 339
     const/4 v0, 0x0
 
     return v0
@@ -804,7 +1008,7 @@
     .parameter "networkType"
 
     .prologue
-    .line 124
+    .line 94
     const/4 v0, -0x1
 
     return v0
@@ -816,7 +1020,7 @@
     .parameter "slotId"
 
     .prologue
-    .line 304
+    .line 210
     const/4 v0, 0x0
 
     return v0
@@ -826,7 +1030,7 @@
     .locals 1
 
     .prologue
-    .line 91
+    .line 84
     const/4 v0, -0x1
 
     return v0
@@ -835,15 +1039,53 @@
 .method public oppoSimPhonebookIsReadyGemini(I)I
     .locals 1
     .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "tell sim phonebook is ready, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
-    .line 335
+    .line 226
     const/4 v0, -0x1
 
     return v0
+.end method
+
+.method public oppoSwitch3GDefaultSim(I)Z
+    .locals 1
+    .parameter "simid"
+
+    .prologue
+    .line 401
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public oppoisSimInsert(I)Z
+    .locals 2
+    .parameter "simId"
+
+    .prologue
+    .line 380
+    :try_start_0
+    invoke-direct {p0}, Landroid/telephony/OppoTelephonyManager;->getITelephony()Lcom/android/internal/telephony/ITelephony;
+
+    move-result-object v1
+
+    invoke-interface {v1, p1}, Lcom/android/internal/telephony/ITelephony;->isSimInsert(I)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 382
+    :goto_0
+    return v1
+
+    .line 381
+    :catch_0
+    move-exception v0
+
+    .line 382
+    .local v0, ex:Landroid/os/RemoteException;
+    const/4 v1, 0x0
+
+    goto :goto_0
 .end method

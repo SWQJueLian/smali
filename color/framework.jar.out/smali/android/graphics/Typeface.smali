@@ -107,7 +107,7 @@
     sput-object v0, Landroid/graphics/Typeface;->SERIF:Landroid/graphics/Typeface;
 
     .line 187
-    const-string v0, "monospace"
+    const-string/jumbo v0, "monospace"
 
     invoke-static {v0, v3}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
 
@@ -171,7 +171,7 @@
     .line 175
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "native typeface cannot be made"
+    const-string/jumbo v1, "native typeface cannot be made"
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 

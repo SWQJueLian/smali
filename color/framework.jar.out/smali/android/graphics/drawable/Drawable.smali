@@ -452,7 +452,7 @@
     .line 844
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
     :cond_1
-    const-string v2, "level-list"
+    const-string/jumbo v2, "level-list"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -471,7 +471,7 @@
     .line 850
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
     :cond_2
-    const-string v2, "layer-list"
+    const-string/jumbo v2, "layer-list"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -694,7 +694,7 @@
     .line 875
     .end local v0           #drawable:Landroid/graphics/drawable/Drawable;
     :cond_d
-    const-string v2, "nine-patch"
+    const-string/jumbo v2, "nine-patch"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

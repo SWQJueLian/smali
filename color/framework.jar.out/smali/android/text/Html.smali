@@ -738,7 +738,7 @@
 
     .line 278
     .local v5, s:Ljava/lang/String;
-    const-string v7, "monospace"
+    const-string/jumbo v7, "monospace"
 
     invoke-virtual {v5, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1095,7 +1095,7 @@
 
     .line 351
     .restart local v5       #s:Ljava/lang/String;
-    const-string v7, "monospace"
+    const-string/jumbo v7, "monospace"
 
     invoke-virtual {v5, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

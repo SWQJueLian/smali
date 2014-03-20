@@ -10,6 +10,9 @@
 .method public abstract getFailedAttempts()I
 .end method
 
+.method public abstract hasOnDismissAction()Z
+.end method
+
 .method public abstract isVerifyUnlockOnly()Z
 .end method
 
@@ -23,6 +26,12 @@
 .end method
 
 .method public abstract showBackupSecurity()V
+.end method
+
+.method public abstract updateClipChildren(Z)V
+.end method
+
+.method public abstract updateKeyguardLayerVisibility(Z)V
 .end method
 
 .method public abstract userActivity(J)V

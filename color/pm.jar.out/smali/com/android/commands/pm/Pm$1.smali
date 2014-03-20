@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 359
+    .line 352
     iput-object p1, p0, Lcom/android/commands/pm/Pm$1;->this$0:Lcom/android/commands/pm/Pm;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
     .parameter "o2"
 
     .prologue
-    .line 361
+    .line 354
     iget-object v0, p1, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
 
     iget-object v1, p2, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
@@ -62,11 +62,11 @@
 
     const/4 v0, 0x0
 
-    .line 364
+    .line 357
     :goto_0
     return v0
 
-    .line 362
+    .line 355
     :cond_0
     iget-object v0, p1, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
 
@@ -76,7 +76,7 @@
 
     goto :goto_0
 
-    .line 363
+    .line 356
     :cond_1
     iget-object v0, p2, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
 
@@ -86,7 +86,7 @@
 
     goto :goto_0
 
-    .line 364
+    .line 357
     :cond_2
     iget-object v0, p1, Landroid/content/pm/FeatureInfo;->name:Ljava/lang/String;
 
@@ -105,7 +105,7 @@
     .parameter "x1"
 
     .prologue
-    .line 359
+    .line 352
     check-cast p1, Landroid/content/pm/FeatureInfo;
 
     .end local p1

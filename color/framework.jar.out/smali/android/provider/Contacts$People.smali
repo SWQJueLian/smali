@@ -216,7 +216,7 @@
 
     sget-object v2, Landroid/provider/Contacts$People;->GROUPS_PROJECTION:[Ljava/lang/String;
 
-    const-string v3, "name=?"
+    const-string/jumbo v3, "name=?"
 
     const/4 v0, 0x1
 
@@ -505,7 +505,7 @@
 
     .line 454
     .local v1, values:Landroid/content/ContentValues;
-    const-string v2, "last_time_contacted"
+    const-string/jumbo v2, "last_time_contacted"
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -663,7 +663,7 @@
 
     aput-object v5, v4, v0
 
-    const-string v5, "name ASC"
+    const-string/jumbo v5, "name ASC"
 
     move-object v0, p0
 

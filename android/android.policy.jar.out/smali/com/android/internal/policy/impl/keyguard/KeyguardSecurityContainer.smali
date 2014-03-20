@@ -122,6 +122,31 @@
     return-void
 .end method
 
+.method public setClipChildrenForNewEventView(Z)V
+    .locals 1
+    .parameter "clipChildren"
+
+    .prologue
+    .line 49
+    invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->setClipChildren(Z)V
+
+    .line 50
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityContainer;->getFlipper()Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;
+
+    move-result-object v0
+
+    .line 51
+    .local v0, flipper:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;
+    if-eqz v0, :cond_0
+
+    .line 52
+    invoke-virtual {v0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;->setClipChildrenForNewEventView(Z)V
+
+    .line 54
+    :cond_0
+    return-void
+.end method
+
 .method public showBouncer(I)V
     .locals 1
     .parameter "duration"

@@ -907,7 +907,7 @@
     .line 375
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "not impled"
+    const-string/jumbo v1, "not impled"
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 

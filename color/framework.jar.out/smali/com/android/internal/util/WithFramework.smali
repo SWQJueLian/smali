@@ -85,7 +85,7 @@
     invoke-static {p0, v7, v2, v6, v3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 45
-    const-string v3, "main"
+    const-string/jumbo v3, "main"
 
     new-array v4, v7, [Ljava/lang/Class;
 

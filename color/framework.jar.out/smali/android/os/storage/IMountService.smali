@@ -177,6 +177,14 @@
     .end annotation
 .end method
 
+.method public abstract isSDExist()Z
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract isSecureContainerMounted(Ljava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -225,6 +233,14 @@
     .end annotation
 .end method
 
+.method public abstract mountVolumeNotSwap(Ljava/lang/String;)I
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
 .method public abstract registerListener(Landroid/os/storage/IMountServiceListener;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -242,6 +258,14 @@
 .end method
 
 .method public abstract setUsbMassStorageEnabled(Z)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract shareCDRom(Z)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -274,6 +298,14 @@
 .end method
 
 .method public abstract unmountVolume(Ljava/lang/String;ZZ)V
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+.end method
+
+.method public abstract unmountVolumeNotSwap(Ljava/lang/String;ZZ)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

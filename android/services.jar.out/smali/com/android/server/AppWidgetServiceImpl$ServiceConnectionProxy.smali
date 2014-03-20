@@ -40,14 +40,14 @@
     .end annotation
 
     .prologue
-    .line 134
+    .line 138
     .local p1, key:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/Integer;Landroid/content/Intent$FilterComparison;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 135
+    .line 139
     iput-object p2, p0, Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;->mConnectionCb:Landroid/os/IBinder;
 
-    .line 136
+    .line 140
     return-void
 .end method
 
@@ -57,29 +57,29 @@
     .locals 3
 
     .prologue
-    .line 153
+    .line 157
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;->mConnectionCb:Landroid/os/IBinder;
 
     invoke-static {v2}, Lcom/android/internal/widget/IRemoteViewsAdapterConnection$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/widget/IRemoteViewsAdapterConnection;
 
     move-result-object v0
 
-    .line 156
+    .line 160
     .local v0, cb:Lcom/android/internal/widget/IRemoteViewsAdapterConnection;
     :try_start_0
     invoke-interface {v0}, Lcom/android/internal/widget/IRemoteViewsAdapterConnection;->onServiceDisconnected()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 160
+    .line 164
     :goto_0
     return-void
 
-    .line 157
+    .line 161
     :catch_0
     move-exception v1
 
-    .line 158
+    .line 162
     .local v1, e:Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -92,29 +92,29 @@
     .parameter "service"
 
     .prologue
-    .line 139
+    .line 143
     iget-object v2, p0, Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;->mConnectionCb:Landroid/os/IBinder;
 
     invoke-static {v2}, Lcom/android/internal/widget/IRemoteViewsAdapterConnection$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/widget/IRemoteViewsAdapterConnection;
 
     move-result-object v0
 
-    .line 142
+    .line 146
     .local v0, cb:Lcom/android/internal/widget/IRemoteViewsAdapterConnection;
     :try_start_0
     invoke-interface {v0, p2}, Lcom/android/internal/widget/IRemoteViewsAdapterConnection;->onServiceConnected(Landroid/os/IBinder;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 146
+    .line 150
     :goto_0
     return-void
 
-    .line 143
+    .line 147
     :catch_0
     move-exception v1
 
-    .line 144
+    .line 148
     .local v1, e:Ljava/lang/Exception;
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
@@ -126,9 +126,9 @@
     .parameter "name"
 
     .prologue
-    .line 149
+    .line 153
     invoke-virtual {p0}, Lcom/android/server/AppWidgetServiceImpl$ServiceConnectionProxy;->disconnect()V
 
-    .line 150
+    .line 154
     return-void
 .end method

@@ -24,6 +24,8 @@
 # instance fields
 .field protected mBatteryCharged:Z
 
+.field private mBatteryDetialStatus:I
+
 .field protected mBatteryIsLow:Z
 
 .field mBatteryLevel:I
@@ -57,12 +59,12 @@
     .parameter "context"
 
     .prologue
-    .line 148
+    .line 151
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 149
+    .line 152
     return-void
 .end method
 
@@ -74,48 +76,48 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 152
+    .line 155
     invoke-direct {p0, p1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 48
+    .line 49
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mShowingBatteryInfo:Z
 
-    .line 51
+    .line 52
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mShowingBouncer:Z
 
-    .line 54
+    .line 55
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mPluggedIn:Z
 
-    .line 57
+    .line 58
     const/16 v0, 0x64
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mBatteryLevel:I
 
-    .line 62
+    .line 63
     const-wide/16 v0, 0x1388
 
     iput-wide v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mTimeout:J
 
-    .line 72
+    .line 73
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$1;-><init>(Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;)V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mClearMessageRunnable:Ljava/lang/Runnable;
 
-    .line 133
+    .line 134
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$2;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$2;-><init>(Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;)V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mInfoCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
 
-    .line 155
+    .line 158
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->setSelected(Z)V
 
-    .line 158
+    .line 161
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -126,14 +128,14 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mUpdateMonitor:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
-    .line 159
+    .line 162
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mUpdateMonitor:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mInfoCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->registerCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;)V
 
-    .line 160
+    .line 163
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -144,7 +146,7 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mHandler:Landroid/os/Handler;
 
-    .line 162
+    .line 165
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -157,10 +159,10 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mSeparator:Ljava/lang/CharSequence;
 
-    .line 164
+    .line 167
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->update()V
 
-    .line 165
+    .line 168
     return-void
 .end method
 
@@ -171,7 +173,7 @@
     .parameter "x2"
 
     .prologue
-    .line 40
+    .line 41
     invoke-direct {p0, p1, p2}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->hideMessage(IZ)V
 
     return-void
@@ -183,10 +185,22 @@
     .parameter "x1"
 
     .prologue
-    .line 40
+    .line 41
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->showMessage(I)V
 
     return-void
+.end method
+
+.method static synthetic access$202(Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;I)I
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 41
+    iput p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mBatteryDetialStatus:I
+
+    return p1
 .end method
 
 .method private varargs concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
@@ -196,12 +210,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 193
+    .line 203
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 194
+    .line 204
     .local v0, b:Ljava/lang/StringBuilder;
     aget-object v3, p1, v4
 
@@ -211,12 +225,12 @@
 
     if-nez v3, :cond_0
 
-    .line 195
+    .line 205
     aget-object v3, p1, v4
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 197
+    .line 207
     :cond_0
     const/4 v1, 0x1
 
@@ -226,10 +240,10 @@
 
     if-ge v1, v3, :cond_3
 
-    .line 198
+    .line 208
     aget-object v2, p1, v1
 
-    .line 199
+    .line 209
     .local v2, text:Ljava/lang/CharSequence;
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -237,29 +251,29 @@
 
     if-nez v3, :cond_2
 
-    .line 200
+    .line 210
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
 
     if-lez v3, :cond_1
 
-    .line 201
+    .line 211
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mSeparator:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 203
+    .line 213
     :cond_1
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 197
+    .line 207
     :cond_2
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 206
+    .line 216
     .end local v2           #text:Ljava/lang/CharSequence;
     :cond_3
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -276,10 +290,10 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 223
+    .line 233
     const/4 v0, 0x0
 
-    .line 224
+    .line 234
     .local v0, string:Ljava/lang/CharSequence;
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mShowingBatteryInfo:Z
 
@@ -289,12 +303,18 @@
 
     if-nez v1, :cond_0
 
-    .line 226
+    .line 237
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mPluggedIn:Z
 
     if-eqz v1, :cond_2
 
-    .line 228
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->isDeviceCharging()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 239
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -322,27 +342,27 @@
 
     move-result-object v0
 
-    .line 231
+    .line 242
     iput v5, p1, Llibcore/util/MutableInt;->value:I
 
-    .line 239
+    .line 250
     :cond_0
     :goto_1
     return-object v0
 
-    .line 228
+    .line 239
     :cond_1
     const v1, 0x10402f1
 
     goto :goto_0
 
-    .line 232
+    .line 243
     :cond_2
     iget-boolean v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mBatteryIsLow:Z
 
     if-eqz v1, :cond_0
 
-    .line 234
+    .line 245
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -353,7 +373,7 @@
 
     move-result-object v0
 
-    .line 236
+    .line 247
     iput v5, p1, Llibcore/util/MutableInt;->value:I
 
     goto :goto_1
@@ -367,10 +387,10 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 243
+    .line 254
     if-lez p1, :cond_2
 
-    .line 244
+    .line 255
     const-string v1, "alpha"
 
     const/4 v2, 0x1
@@ -385,43 +405,96 @@
 
     move-result-object v0
 
-    .line 245
+    .line 256
     .local v0, anim:Landroid/animation/Animator;
     int-to-long v1, p1
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 246
+    .line 257
     if-eqz p2, :cond_0
 
-    .line 247
+    .line 258
     new-instance v1, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$3;
 
     invoke-direct {v1, p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$3;-><init>(Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/Animator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 254
+    .line 265
     :cond_0
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 261
+    .line 272
     .end local v0           #anim:Landroid/animation/Animator;
     :cond_1
     :goto_0
     return-void
 
-    .line 256
+    .line 267
     :cond_2
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->setAlpha(F)V
 
-    .line 257
+    .line 268
     if-eqz p2, :cond_1
 
-    .line 258
+    .line 269
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->update()V
 
     goto :goto_0
+.end method
+
+.method private setTextMediatek(Ljava/lang/CharSequence;)V
+    .locals 3
+    .parameter "text"
+
+    .prologue
+    .line 291
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 292
+    .local v0, b:Ljava/lang/StringBuilder;
+    if-eqz p1, :cond_0
+
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v1
+
+    if-lez v1, :cond_0
+
+    .line 293
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    .line 294
+    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mSeparator:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    .line 296
+    :cond_0
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->getContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    const v2, 0x205009b
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getText(I)Ljava/lang/CharSequence;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+    .line 297
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->setText(Ljava/lang/CharSequence;)V
+
+    .line 298
+    return-void
 .end method
 
 .method private showMessage(I)V
@@ -431,10 +504,10 @@
     .prologue
     const/high16 v4, 0x3f80
 
-    .line 264
+    .line 275
     if-lez p1, :cond_0
 
-    .line 265
+    .line 276
     const-string v1, "alpha"
 
     const/4 v2, 0x1
@@ -449,21 +522,21 @@
 
     move-result-object v0
 
-    .line 266
+    .line 277
     .local v0, anim:Landroid/animation/Animator;
     int-to-long v1, p1
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/Animator;->setDuration(J)Landroid/animation/Animator;
 
-    .line 267
+    .line 278
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 271
+    .line 282
     .end local v0           #anim:Landroid/animation/Animator;
     :goto_0
     return-void
 
-    .line 269
+    .line 280
     :cond_0
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->setAlpha(F)V
 
@@ -476,7 +549,7 @@
     .locals 1
 
     .prologue
-    .line 210
+    .line 220
     iget-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mShowingMessage:Z
 
     if-eqz v0, :cond_0
@@ -500,7 +573,7 @@
 
     const/4 v3, -0x2
 
-    .line 214
+    .line 224
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->getContext()Landroid/content/Context;
 
     move-result-object v2
@@ -509,7 +582,7 @@
 
     move-result-object v1
 
-    .line 215
+    .line 225
     .local v1, res:Landroid/content/ContentResolver;
     const-string v2, "lock_screen_owner_info_enabled"
 
@@ -519,7 +592,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 217
+    .line 227
     .local v0, ownerInfoEnabled:Z
     :goto_0
     if-eqz v0, :cond_1
@@ -537,14 +610,14 @@
     :goto_1
     return-object v2
 
-    .line 215
+    .line 225
     .end local v0           #ownerInfoEnabled:Z
     :cond_0
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 217
+    .line 227
     .restart local v0       #ownerInfoEnabled:Z
     :cond_1
     const/4 v2, 0x0
@@ -552,31 +625,82 @@
     goto :goto_1
 .end method
 
+.method public isDeviceCharging()Z
+    .locals 2
+
+    .prologue
+    .line 302
+    iget v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mBatteryDetialStatus:I
+
+    const/4 v1, 0x3
+
+    if-eq v0, v1, :cond_0
+
+    iget v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mBatteryDetialStatus:I
+
+    const/4 v1, 0x4
+
+    if-eq v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method protected onDetachedFromWindow()V
+    .locals 2
+
+    .prologue
+    .line 309
+    invoke-super {p0}, Landroid/widget/TextView;->onDetachedFromWindow()V
+
+    .line 310
+    iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mUpdateMonitor:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+
+    iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mInfoCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;
+
+    invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->removeCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitorCallback;)V
+
+    .line 311
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mUpdateMonitor:Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+
+    .line 312
+    return-void
+.end method
+
 .method public securityMessageChanged()V
     .locals 4
 
     .prologue
-    .line 168
+    .line 171
     const/high16 v0, 0x3f80
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->setAlpha(F)V
 
-    .line 169
+    .line 172
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mShowingMessage:Z
 
-    .line 170
+    .line 173
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->update()V
 
-    .line 171
+    .line 174
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mClearMessageRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 172
+    .line 175
     iget-wide v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mTimeout:J
 
     const-wide/16 v2, 0x0
@@ -585,7 +709,7 @@
 
     if-lez v0, :cond_0
 
-    .line 173
+    .line 176
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mClearMessageRunnable:Ljava/lang/Runnable;
@@ -594,7 +718,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 175
+    .line 178
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->getText()Ljava/lang/CharSequence;
 
@@ -602,62 +726,86 @@
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->announceForAccessibility(Ljava/lang/CharSequence;)V
 
-    .line 176
+    .line 179
     return-void
 .end method
 
 .method update()V
-    .locals 6
+    .locals 7
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v6, 0x0
 
-    .line 186
-    new-instance v0, Llibcore/util/MutableInt;
+    .line 189
+    new-instance v1, Llibcore/util/MutableInt;
 
-    invoke-direct {v0, v5}, Llibcore/util/MutableInt;-><init>(I)V
+    invoke-direct {v1, v6}, Llibcore/util/MutableInt;-><init>(I)V
 
-    .line 187
-    .local v0, icon:Llibcore/util/MutableInt;
-    const/4 v2, 0x3
+    .line 190
+    .local v1, icon:Llibcore/util/MutableInt;
+    const/4 v3, 0x3
 
-    new-array v2, v2, [Ljava/lang/CharSequence;
+    new-array v3, v3, [Ljava/lang/CharSequence;
 
-    invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->getChargeInfo(Llibcore/util/MutableInt;)Ljava/lang/CharSequence;
+    invoke-direct {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->getChargeInfo(Llibcore/util/MutableInt;)Ljava/lang/CharSequence;
 
-    move-result-object v3
+    move-result-object v4
 
-    aput-object v3, v2, v5
+    aput-object v4, v3, v6
 
-    const/4 v3, 0x1
+    const/4 v4, 0x1
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->getOwnerInfo()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    aput-object v4, v2, v3
+    aput-object v5, v3, v4
 
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->getCurrentMessage()Ljava/lang/CharSequence;
 
-    move-result-object v4
+    move-result-object v5
 
-    aput-object v4, v2, v3
+    aput-object v5, v3, v4
 
-    invoke-direct {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-direct {p0, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->concat([Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
-    move-result-object v1
+    move-result-object v2
 
-    .line 188
-    .local v1, status:Ljava/lang/CharSequence;
-    iget v2, v0, Llibcore/util/MutableInt;->value:I
+    .line 191
+    .local v2, status:Ljava/lang/CharSequence;
+    iget v3, v1, Llibcore/util/MutableInt;->value:I
 
-    invoke-virtual {p0, v2, v5, v5, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+    invoke-virtual {p0, v3, v6, v6, v6}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
-    .line 189
-    invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->setText(Ljava/lang/CharSequence;)V
+    .line 193
+    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->getContext()Landroid/content/Context;
 
-    .line 190
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->dmIsLocked()Z
+
+    move-result v0
+
+    .line 194
+    .local v0, dmLocked:Z
+    if-nez v0, :cond_0
+
+    .line 195
+    invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->setText(Ljava/lang/CharSequence;)V
+
+    .line 200
+    :goto_0
     return-void
+
+    .line 197
+    :cond_0
+    invoke-direct {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->setTextMediatek(Ljava/lang/CharSequence;)V
+
+    goto :goto_0
 .end method

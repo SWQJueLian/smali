@@ -3299,7 +3299,7 @@
     .line 1876
     new-instance v1, Landroid/icu/text/ArabicShaping$ArabicShapingException;
 
-    const-string v3, "not enough room for result data"
+    const-string/jumbo v3, "not enough room for result data"
 
     invoke-direct {v1, v3}, Landroid/icu/text/ArabicShaping$ArabicShapingException;-><init>(Ljava/lang/String;)V
 
@@ -3596,8 +3596,6 @@
     goto :goto_3
 
     .line 1846
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x8 -> :sswitch_1
@@ -5476,7 +5474,7 @@
 
     .line 594
     :sswitch_4
-    const-string v1, "lamAlef auto"
+    const-string/jumbo v1, "lamAlef auto"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 
@@ -5635,8 +5633,6 @@
     goto/16 :goto_7
 
     .line 589
-    nop
-
     :sswitch_data_0
     .sparse-switch
         0x0 -> :sswitch_0

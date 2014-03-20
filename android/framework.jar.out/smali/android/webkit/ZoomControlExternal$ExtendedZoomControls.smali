@@ -47,7 +47,7 @@
     invoke-virtual {v0, v1, p0, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 125
-    const v1, 0x10203af
+    const v1, 0x10203b7
 
     invoke-virtual {p0, v1}, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;->findViewById(I)Landroid/view/View;
 
@@ -58,7 +58,7 @@
     iput-object v1, p0, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;->mPlusMinusZoomControls:Landroid/widget/ZoomControls;
 
     .line 127
-    const v1, 0x10203b2
+    const v1, 0x10203ba
 
     invoke-virtual {p0, v1}, Landroid/webkit/ZoomControlExternal$ExtendedZoomControls;->findViewById(I)Landroid/view/View;
 

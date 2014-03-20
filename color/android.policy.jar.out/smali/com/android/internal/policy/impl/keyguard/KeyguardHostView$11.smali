@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 1405
+    .line 1626
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +42,11 @@
     .parameter "duration"
 
     .prologue
-    .line 1408
+    .line 1629
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mSecurityViewContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$2100(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$2400(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;
 
     move-result-object v0
 
@@ -64,7 +64,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 1409
+    .line 1630
     return-void
 .end method
 
@@ -72,11 +72,11 @@
     .locals 2
 
     .prologue
-    .line 1413
+    .line 1634
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mSecurityViewContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$2100(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$2400(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;
 
     move-result-object v0
 
@@ -84,7 +84,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;->setAlpha(F)V
 
-    .line 1414
+    .line 1635
     return-void
 .end method
 
@@ -92,27 +92,27 @@
     .locals 1
 
     .prologue
-    .line 1418
+    .line 1639
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mKeyguardSelectorView:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$2200(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$2500(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1419
+    .line 1640
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mKeyguardSelectorView:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$2200(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$2500(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->showUsabilityHint()V
 
-    .line 1421
+    .line 1642
     :cond_0
     return-void
 .end method
@@ -121,21 +121,21 @@
     .locals 1
 
     .prologue
-    .line 1425
+    .line 1646
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mViewMediatorCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator$ViewMediatorCallback;
 
     if-eqz v0, :cond_0
 
-    .line 1426
+    .line 1647
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$11;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mViewMediatorCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator$ViewMediatorCallback;
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewMediator$ViewMediatorCallback;->userActivity()V
 
-    .line 1428
+    .line 1649
     :cond_0
     return-void
 .end method

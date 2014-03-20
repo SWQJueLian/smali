@@ -198,7 +198,7 @@
 
     .line 124
     .local v0, i:Landroid/content/Intent;
-    const-string v3, "new_search"
+    const-string/jumbo v3, "new_search"
 
     invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
@@ -242,15 +242,17 @@
     goto :goto_1
 
     .line 90
+    nop
+
     :sswitch_data_0
     .sparse-switch
         0x1020020 -> :sswitch_0
         0x1020021 -> :sswitch_1
         0x1020022 -> :sswitch_2
-        0x10203b4 -> :sswitch_4
-        0x10203b5 -> :sswitch_3
-        0x10203b6 -> :sswitch_5
-        0x10203b7 -> :sswitch_6
+        0x1020973 -> :sswitch_4
+        0x1020974 -> :sswitch_3
+        0x1020975 -> :sswitch_5
+        0x1020976 -> :sswitch_6
     .end sparse-switch
 .end method
 
@@ -367,7 +369,7 @@
 
     .line 74
     .local v4, canWebSearch:Z
-    const v9, 0x10203b6
+    const v9, 0x1020975
 
     invoke-direct {p0, p2, v2, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
@@ -387,7 +389,7 @@
     invoke-direct {p0, p2, v0, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 78
-    const v9, 0x10203b7
+    const v9, 0x1020976
 
     invoke-direct {p0, p2, v4, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 

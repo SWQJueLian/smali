@@ -112,7 +112,7 @@
 
     .line 269
     .local v0, format:Landroid/media/MediaFormat;
-    const-string v1, "mime"
+    const-string/jumbo v1, "mime"
 
     invoke-virtual {v0, v1, p0}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -144,7 +144,7 @@
 
     .line 287
     .local v0, format:Landroid/media/MediaFormat;
-    const-string v1, "mime"
+    const-string/jumbo v1, "mime"
 
     invoke-virtual {v0, v1, p0}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
 

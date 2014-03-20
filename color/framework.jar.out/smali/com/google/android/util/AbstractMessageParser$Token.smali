@@ -165,7 +165,7 @@
     .line 713
     new-instance v0, Ljava/lang/AssertionError;
 
-    const-string v1, "not html"
+    const-string/jumbo v1, "not html"
 
     invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 

@@ -29,7 +29,7 @@
 
     .prologue
     .line 32
-    const-string v0, "media_jni"
+    const-string/jumbo v0, "media_jni"
 
     invoke-static {v0}, Ljava/lang/System;->loadLibrary(Ljava/lang/String;)V
 
@@ -395,7 +395,7 @@
 
     new-instance v2, Ljava/lang/IllegalStateException;
 
-    const-string v3, "not open"
+    const-string/jumbo v3, "not open"
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

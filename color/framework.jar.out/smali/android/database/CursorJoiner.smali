@@ -844,7 +844,7 @@
     .line 191
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v1, "not implemented"
+    const-string/jumbo v1, "not implemented"
 
     invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 

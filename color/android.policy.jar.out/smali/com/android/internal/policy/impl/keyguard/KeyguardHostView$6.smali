@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 955
+    .line 1176
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$6;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,10 +40,10 @@
     .parameter "alpha"
 
     .prologue
-    .line 976
+    .line 1197
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$6;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
-    const v2, 0x10202b6
+    const v2, 0x102086a
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->findViewById(I)Landroid/view/View;
 
@@ -51,14 +51,14 @@
 
     check-cast v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 
-    .line 978
+    .line 1199
     .local v0, slider:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
     if-eqz v0, :cond_0
 
-    .line 979
+    .line 1200
     invoke-virtual {v0, p1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setHandleAlpha(F)V
 
-    .line 981
+    .line 1202
     :cond_0
     return-void
 .end method
@@ -69,18 +69,18 @@
     .locals 2
 
     .prologue
-    .line 963
+    .line 1184
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$6;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mAppWidgetContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$1400(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$1600(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     move-result-object v0
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$6;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mAppWidgetContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
-    invoke-static {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$1400(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
+    invoke-static {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$1600(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     move-result-object v1
 
@@ -94,30 +94,30 @@
 
     if-eqz v0, :cond_0
 
-    .line 964
+    .line 1185
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$6;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mAppWidgetContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$1400(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$1600(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->scrollLeft()V
 
-    .line 966
+    .line 1187
     :cond_0
     const/high16 v0, 0x3f80
 
     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$6;->setSliderHandleAlpha(F)V
 
-    .line 967
+    .line 1188
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$6;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mShowSecurityWhenReturn:Z
 
-    .line 968
+    .line 1189
     return-void
 .end method
 
@@ -125,12 +125,12 @@
     .locals 1
 
     .prologue
-    .line 972
+    .line 1193
     const/high16 v0, 0x3f80
 
     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$6;->setSliderHandleAlpha(F)V
 
-    .line 973
+    .line 1194
     return-void
 .end method
 
@@ -138,11 +138,11 @@
     .locals 1
 
     .prologue
-    .line 958
+    .line 1179
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$6;->setSliderHandleAlpha(F)V
 
-    .line 959
+    .line 1180
     return-void
 .end method

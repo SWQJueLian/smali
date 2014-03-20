@@ -59,45 +59,45 @@
     .prologue
     const-wide/16 v1, -0x1
 
-    .line 223
+    .line 228
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 224
+    .line 229
     iput-object p1, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->account:Landroid/accounts/Account;
 
-    .line 225
+    .line 230
     iput p2, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->userId:I
 
-    .line 226
+    .line 231
     iput-object p3, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->authority:Ljava/lang/String;
 
-    .line 227
+    .line 232
     iput p4, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->ident:I
 
-    .line 228
+    .line 233
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->enabled:Z
 
-    .line 229
+    .line 234
     const/4 v0, -0x1
 
     iput v0, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->syncable:I
 
-    .line 230
+    .line 235
     iput-wide v1, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->backoffTime:J
 
-    .line 231
+    .line 236
     iput-wide v1, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->backoffDelay:J
 
-    .line 232
+    .line 237
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->periodicSyncs:Ljava/util/ArrayList;
 
-    .line 233
+    .line 238
     iget-object v0, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->periodicSyncs:Ljava/util/ArrayList;
 
     new-instance v1, Landroid/os/Bundle;
@@ -116,7 +116,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 234
+    .line 239
     return-void
 .end method
 
@@ -125,62 +125,62 @@
     .parameter "toCopy"
 
     .prologue
-    .line 206
+    .line 211
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 207
+    .line 212
     iget-object v2, p1, Landroid/content/SyncStorageEngine$AuthorityInfo;->account:Landroid/accounts/Account;
 
     iput-object v2, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->account:Landroid/accounts/Account;
 
-    .line 208
+    .line 213
     iget v2, p1, Landroid/content/SyncStorageEngine$AuthorityInfo;->userId:I
 
     iput v2, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->userId:I
 
-    .line 209
+    .line 214
     iget-object v2, p1, Landroid/content/SyncStorageEngine$AuthorityInfo;->authority:Ljava/lang/String;
 
     iput-object v2, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->authority:Ljava/lang/String;
 
-    .line 210
+    .line 215
     iget v2, p1, Landroid/content/SyncStorageEngine$AuthorityInfo;->ident:I
 
     iput v2, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->ident:I
 
-    .line 211
+    .line 216
     iget-boolean v2, p1, Landroid/content/SyncStorageEngine$AuthorityInfo;->enabled:Z
 
     iput-boolean v2, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->enabled:Z
 
-    .line 212
+    .line 217
     iget v2, p1, Landroid/content/SyncStorageEngine$AuthorityInfo;->syncable:I
 
     iput v2, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->syncable:I
 
-    .line 213
+    .line 218
     iget-wide v2, p1, Landroid/content/SyncStorageEngine$AuthorityInfo;->backoffTime:J
 
     iput-wide v2, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->backoffTime:J
 
-    .line 214
+    .line 219
     iget-wide v2, p1, Landroid/content/SyncStorageEngine$AuthorityInfo;->backoffDelay:J
 
     iput-wide v2, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->backoffDelay:J
 
-    .line 215
+    .line 220
     iget-wide v2, p1, Landroid/content/SyncStorageEngine$AuthorityInfo;->delayUntil:J
 
     iput-wide v2, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->delayUntil:J
 
-    .line 216
+    .line 221
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v2, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->periodicSyncs:Ljava/util/ArrayList;
 
-    .line 217
+    .line 222
     iget-object v2, p1, Landroid/content/SyncStorageEngine$AuthorityInfo;->periodicSyncs:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -201,7 +201,7 @@
 
     check-cast v1, Landroid/util/Pair;
 
-    .line 219
+    .line 224
     .local v1, sync:Landroid/util/Pair;,"Landroid/util/Pair<Landroid/os/Bundle;Ljava/lang/Long;>;"
     iget-object v3, p0, Landroid/content/SyncStorageEngine$AuthorityInfo;->periodicSyncs:Ljava/util/ArrayList;
 
@@ -223,7 +223,7 @@
 
     goto :goto_0
 
-    .line 221
+    .line 226
     .end local v1           #sync:Landroid/util/Pair;,"Landroid/util/Pair<Landroid/os/Bundle;Ljava/lang/Long;>;"
     :cond_0
     return-void

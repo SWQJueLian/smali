@@ -28,7 +28,7 @@
 
     .prologue
     .line 46
-    const-string v3, "mixedcase"
+    const-string/jumbo v3, "mixedcase"
 
     invoke-virtual {p0, v3}, Landroid/filterpacks/text/ToUpperCase;->pullInput(Ljava/lang/String;)Landroid/filterfw/core/Frame;
 
@@ -87,7 +87,7 @@
     iput-object v0, p0, Landroid/filterpacks/text/ToUpperCase;->mOutputFormat:Landroid/filterfw/core/FrameFormat;
 
     .line 40
-    const-string v0, "mixedcase"
+    const-string/jumbo v0, "mixedcase"
 
     iget-object v1, p0, Landroid/filterpacks/text/ToUpperCase;->mOutputFormat:Landroid/filterfw/core/FrameFormat;
 

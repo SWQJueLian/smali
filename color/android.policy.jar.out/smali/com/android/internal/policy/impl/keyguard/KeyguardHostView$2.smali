@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 315
+    .line 344
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 328
+    .line 357
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->numWidgets()I
@@ -54,7 +54,7 @@
 
     if-lt v0, v1, :cond_0
 
-    .line 329
+    .line 358
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     const/4 v1, 0x0
@@ -62,7 +62,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->setAddWidgetEnabled(Z)V
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$200(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;Z)V
 
-    .line 331
+    .line 360
     :cond_0
     return-void
 .end method
@@ -72,7 +72,7 @@
     .parameter "v"
 
     .prologue
-    .line 335
+    .line 364
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->numWidgets()I
@@ -84,7 +84,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 336
+    .line 365
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     const/4 v1, 0x1
@@ -92,7 +92,7 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->setAddWidgetEnabled(Z)V
     invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$200(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;Z)V
 
-    .line 338
+    .line 367
     :cond_0
     return-void
 .end method
@@ -101,12 +101,12 @@
     .locals 1
 
     .prologue
-    .line 323
+    .line 352
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->onUserActivityTimeoutChanged()V
 
-    .line 324
+    .line 353
     return-void
 .end method
 
@@ -114,11 +114,11 @@
     .locals 1
 
     .prologue
-    .line 318
+    .line 347
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->userActivity()V
 
-    .line 319
+    .line 348
     return-void
 .end method

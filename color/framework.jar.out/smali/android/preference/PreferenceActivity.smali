@@ -314,7 +314,7 @@
     invoke-virtual {v1, v2}, Landroid/app/FragmentTransaction;->setTransition(I)Landroid/app/FragmentTransaction;
 
     .line 1141
-    const v2, 0x1020343
+    const v2, 0x10208fd
 
     invoke-virtual {v1, v2, v0}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -1623,7 +1623,7 @@
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceActivity;->setContentView(I)V
 
     .line 512
-    const v17, 0x1020341
+    const v17, 0x10208fb
 
     move-object/from16 v0, p0
 
@@ -1642,7 +1642,7 @@
     iput-object v0, v1, Landroid/preference/PreferenceActivity;->mListFooter:Landroid/widget/FrameLayout;
 
     .line 513
-    const v17, 0x1020342
+    const v17, 0x10208fc
 
     move-object/from16 v0, p0
 
@@ -1836,7 +1836,7 @@
     if-eqz v17, :cond_c
 
     .line 571
-    const v17, 0x1020340
+    const v17, 0x10208fa
 
     move-object/from16 v0, p0
 
@@ -1914,7 +1914,7 @@
     if-eqz v17, :cond_5
 
     .line 603
-    const v17, 0x1020278
+    const v17, 0x102082c
 
     move-object/from16 v0, p0
 
@@ -1929,7 +1929,7 @@
     invoke-virtual/range {v17 .. v18}, Landroid/view/View;->setVisibility(I)V
 
     .line 605
-    const v17, 0x1020344
+    const v17, 0x10208fe
 
     move-object/from16 v0, p0
 
@@ -1956,7 +1956,7 @@
     invoke-virtual {v3, v0}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 612
-    const v17, 0x1020345
+    const v17, 0x10208ff
 
     move-object/from16 v0, p0
 
@@ -1981,7 +1981,7 @@
     invoke-virtual/range {v16 .. v17}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 619
-    const v17, 0x1020346
+    const v17, 0x1020900
 
     move-object/from16 v0, p0
 
@@ -2362,7 +2362,7 @@
     invoke-virtual {v0, v1}, Landroid/preference/PreferenceActivity;->setContentView(I)V
 
     .line 593
-    const v17, 0x1020341
+    const v17, 0x10208fb
 
     move-object/from16 v0, p0
 
@@ -2381,7 +2381,7 @@
     iput-object v0, v1, Landroid/preference/PreferenceActivity;->mListFooter:Landroid/widget/FrameLayout;
 
     .line 594
-    const v17, 0x1020343
+    const v17, 0x10208fd
 
     move-object/from16 v0, p0
 
@@ -3164,7 +3164,7 @@
     invoke-virtual {v3, v4}, Landroid/app/FragmentBreadCrumbs;->setVisibility(I)V
 
     .line 1089
-    const v3, 0x1020270
+    const v3, 0x1020824
 
     invoke-virtual {p0, v3}, Landroid/preference/PreferenceActivity;->findViewById(I)Landroid/view/View;
 
@@ -3221,7 +3221,7 @@
 
     .line 1230
     .local v0, transaction:Landroid/app/FragmentTransaction;
-    const v1, 0x1020343
+    const v1, 0x10208fd
 
     invoke-virtual {v0, v1, p1}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 
@@ -3315,7 +3315,7 @@
 
     .line 1269
     .local v8, transaction:Landroid/app/FragmentTransaction;
-    const v0, 0x1020343
+    const v0, 0x10208fd
 
     invoke-virtual {v8, v0, v7}, Landroid/app/FragmentTransaction;->replace(ILandroid/app/Fragment;)Landroid/app/FragmentTransaction;
 

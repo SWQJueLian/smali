@@ -150,6 +150,10 @@
 
 .field public static final SENDER_VISIBILITY:Ljava/lang/String; = "s_vis"
 
+.field public static final SERVICE_CENTER:Ljava/lang/String; = "service_center"
+
+.field public static final SIM_ID:Ljava/lang/String; = "sim_id"
+
 .field public static final START:Ljava/lang/String; = "start"
 
 .field public static final STATUS:Ljava/lang/String; = "st"

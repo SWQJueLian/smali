@@ -50,19 +50,33 @@
 
 .field public static final EXTRA_REASON:Ljava/lang/String; = "reason"
 
+.field public static final EXTRA_SIM_ID:Ljava/lang/String; = "simId"
+
 .field public static final INET_CONDITION_ACTION:Ljava/lang/String; = "android.net.conn.INET_CONDITION_ACTION"
 
-.field public static final MAX_NETWORK_TYPE:I = 0xd
+.field public static final MAX_NETWORK_TYPE:I = 0x28
 
-.field public static final MAX_RADIO_TYPE:I = 0xd
+.field public static final MAX_RADIO_NUM:I = 0x2
+
+.field public static final MAX_RADIO_TYPE:I = 0x28
+
+.field public static final READY_FOR_USBINTERNET:Ljava/lang/String; = "android.net.conn.READY_FOR_USBINTERNET"
 
 .field private static final TAG:Ljava/lang/String; = "ConnectivityManager"
+
+.field public static final TETHER_CHANGED_DONE_ACTION:Ljava/lang/String; = "android.net.conn.TETHER_CHANGED_DONE"
 
 .field public static final TETHER_ERROR_DISABLE_NAT_ERROR:I = 0x9
 
 .field public static final TETHER_ERROR_ENABLE_NAT_ERROR:I = 0x8
 
 .field public static final TETHER_ERROR_IFACE_CFG_ERROR:I = 0xa
+
+.field public static final TETHER_ERROR_IPV6_AVAIABLE:I = 0x20
+
+.field public static final TETHER_ERROR_IPV6_NO_ERROR:I = 0x10
+
+.field public static final TETHER_ERROR_IPV6_UNAVAIABLE:I = 0x30
 
 .field public static final TETHER_ERROR_MASTER_ERROR:I = 0x5
 
@@ -90,6 +104,10 @@
 
 .field public static final TYPE_MOBILE_CBS:I = 0xc
 
+.field public static final TYPE_MOBILE_CMMAIL:I = 0x25
+
+.field public static final TYPE_MOBILE_DM:I = 0x22
+
 .field public static final TYPE_MOBILE_DUN:I = 0x4
 
 .field public static final TYPE_MOBILE_FOTA:I = 0xa
@@ -100,15 +118,25 @@
 
 .field public static final TYPE_MOBILE_MMS:I = 0x2
 
+.field public static final TYPE_MOBILE_NET:I = 0x24
+
+.field public static final TYPE_MOBILE_RCSE:I = 0x26
+
 .field public static final TYPE_MOBILE_SUPL:I = 0x3
 
+.field public static final TYPE_MOBILE_WAP:I = 0x23
+
 .field public static final TYPE_NONE:I = -0x1
+
+.field public static final TYPE_USB:I = 0x28
 
 .field public static final TYPE_WIFI:I = 0x1
 
 .field public static final TYPE_WIFI_P2P:I = 0xd
 
 .field public static final TYPE_WIMAX:I = 0x6
+
+.field public static final USBINTERNET_DONE_ACTION:Ljava/lang/String; = "android.net.conn.USBINTERNET_CHANGED_DONE"
 
 
 # instance fields
@@ -121,11 +149,11 @@
     .parameter "service"
 
     .prologue
-    .line 659
+    .line 773
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 660
-    const-string v0, "missing IConnectivityManager"
+    .line 774
+    const-string/jumbo v0, "missing IConnectivityManager"
 
     invoke-static {p1, v0}, Lcom/android/internal/util/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -135,7 +163,7 @@
 
     iput-object v0, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
-    .line 661
+    .line 775
     return-void
 .end method
 
@@ -144,7 +172,7 @@
     .parameter "context"
 
     .prologue
-    .line 665
+    .line 779
     const-string v0, "connectivity"
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -161,10 +189,11 @@
     .parameter "type"
 
     .prologue
-    .line 349
+    .line 448
     packed-switch p0, :pswitch_data_0
 
-    .line 379
+    .line 488
+    :pswitch_0
     invoke-static {p0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -172,94 +201,125 @@
     :goto_0
     return-object v0
 
-    .line 351
-    :pswitch_0
+    .line 450
+    :pswitch_1
     const-string v0, "MOBILE"
 
     goto :goto_0
 
-    .line 353
-    :pswitch_1
+    .line 452
+    :pswitch_2
     const-string v0, "WIFI"
 
     goto :goto_0
 
-    .line 355
-    :pswitch_2
+    .line 454
+    :pswitch_3
     const-string v0, "MOBILE_MMS"
 
     goto :goto_0
 
-    .line 357
-    :pswitch_3
+    .line 456
+    :pswitch_4
     const-string v0, "MOBILE_SUPL"
 
     goto :goto_0
 
-    .line 359
-    :pswitch_4
+    .line 458
+    :pswitch_5
     const-string v0, "MOBILE_DUN"
 
     goto :goto_0
 
-    .line 361
-    :pswitch_5
+    .line 460
+    :pswitch_6
     const-string v0, "MOBILE_HIPRI"
 
     goto :goto_0
 
-    .line 363
-    :pswitch_6
+    .line 462
+    :pswitch_7
     const-string v0, "WIMAX"
 
     goto :goto_0
 
-    .line 365
-    :pswitch_7
+    .line 464
+    :pswitch_8
     const-string v0, "BLUETOOTH"
 
     goto :goto_0
 
-    .line 367
-    :pswitch_8
+    .line 466
+    :pswitch_9
     const-string v0, "DUMMY"
 
     goto :goto_0
 
-    .line 369
-    :pswitch_9
+    .line 468
+    :pswitch_a
     const-string v0, "ETHERNET"
 
     goto :goto_0
 
-    .line 371
-    :pswitch_a
+    .line 470
+    :pswitch_b
     const-string v0, "MOBILE_FOTA"
 
     goto :goto_0
 
-    .line 373
-    :pswitch_b
+    .line 472
+    :pswitch_c
     const-string v0, "MOBILE_IMS"
 
     goto :goto_0
 
-    .line 375
-    :pswitch_c
+    .line 474
+    :pswitch_d
     const-string v0, "MOBILE_CBS"
 
     goto :goto_0
 
-    .line 377
-    :pswitch_d
+    .line 476
+    :pswitch_e
     const-string v0, "WIFI_P2P"
 
     goto :goto_0
 
-    .line 349
+    .line 478
+    :pswitch_f
+    const-string v0, "MOBILE_DM"
+
+    goto :goto_0
+
+    .line 480
+    :pswitch_10
+    const-string v0, "MOBILE_NET"
+
+    goto :goto_0
+
+    .line 482
+    :pswitch_11
+    const-string v0, "MOBILE_WAP"
+
+    goto :goto_0
+
+    .line 484
+    :pswitch_12
+    const-string v0, "MOBILE_CMMAIL"
+
+    goto :goto_0
+
+    .line 486
+    :pswitch_13
+    const-string v0, "MOBILE_RCSE"
+
+    goto :goto_0
+
+    .line 448
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_0
         :pswitch_1
         :pswitch_2
         :pswitch_3
@@ -273,6 +333,32 @@
         :pswitch_b
         :pswitch_c
         :pswitch_d
+        :pswitch_e
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_f
+        :pswitch_11
+        :pswitch_10
+        :pswitch_12
+        :pswitch_13
     .end packed-switch
 .end method
 
@@ -281,41 +367,40 @@
     .parameter "networkType"
 
     .prologue
-    .line 385
-    packed-switch p0, :pswitch_data_0
+    .line 494
+    sparse-switch p0, :sswitch_data_0
 
-    .line 396
-    :pswitch_0
+    .line 510
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 394
-    :pswitch_1
+    .line 508
+    :sswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 385
+    .line 494
     nop
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_1
-        :pswitch_1
-    .end packed-switch
+    :sswitch_data_0
+    .sparse-switch
+        0x0 -> :sswitch_0
+        0x2 -> :sswitch_0
+        0x3 -> :sswitch_0
+        0x4 -> :sswitch_0
+        0x5 -> :sswitch_0
+        0xa -> :sswitch_0
+        0xb -> :sswitch_0
+        0xc -> :sswitch_0
+        0x22 -> :sswitch_0
+        0x23 -> :sswitch_0
+        0x24 -> :sswitch_0
+        0x25 -> :sswitch_0
+        0x26 -> :sswitch_0
+    .end sparse-switch
 .end method
 
 .method public static isNetworkTypeValid(I)Z
@@ -323,14 +408,35 @@
     .parameter "networkType"
 
     .prologue
-    .line 344
+    .line 443
     if-ltz p0, :cond_0
 
-    const/16 v0, 0xd
+    const/16 v0, 0x28
 
     if-gt p0, v0, :cond_0
 
     const/4 v0, 0x1
+
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public static isRadioNumValid(I)Z
+    .locals 1
+    .parameter "radioNum"
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 1082
+    if-ltz p0, :cond_0
+
+    if-gt p0, v0, :cond_0
 
     :goto_0
     return v0
@@ -348,7 +454,7 @@
     .parameter "info"
 
     .prologue
-    .line 938
+    .line 1061
     :try_start_0
     iget-object v0, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -356,11 +462,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 941
+    .line 1064
     :goto_0
     return-void
 
-    .line 939
+    .line 1062
     :catch_0
     move-exception v0
 
@@ -371,7 +477,7 @@
     .locals 2
 
     .prologue
-    .line 459
+    .line 573
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -381,15 +487,15 @@
 
     move-result-object v1
 
-    .line 461
+    .line 575
     :goto_0
     return-object v1
 
-    .line 460
+    .line 574
     :catch_0
     move-exception v0
 
-    .line 461
+    .line 575
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -400,7 +506,7 @@
     .locals 2
 
     .prologue
-    .line 425
+    .line 539
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -410,15 +516,15 @@
 
     move-result-object v1
 
-    .line 427
+    .line 541
     :goto_0
     return-object v1
 
-    .line 426
+    .line 540
     :catch_0
     move-exception v0
 
-    .line 427
+    .line 541
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -430,7 +536,7 @@
     .parameter "uid"
 
     .prologue
-    .line 434
+    .line 548
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -440,15 +546,15 @@
 
     move-result-object v1
 
-    .line 436
+    .line 550
     :goto_0
     return-object v1
 
-    .line 435
+    .line 549
     :catch_0
     move-exception v0
 
-    .line 436
+    .line 550
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -459,7 +565,7 @@
     .locals 2
 
     .prologue
-    .line 622
+    .line 736
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -469,15 +575,15 @@
 
     move-result-object v1
 
-    .line 624
+    .line 738
     :goto_0
     return-object v1
 
-    .line 623
+    .line 737
     :catch_0
     move-exception v0
 
-    .line 624
+    .line 738
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -488,7 +594,7 @@
     .locals 2
 
     .prologue
-    .line 450
+    .line 564
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -498,15 +604,15 @@
 
     move-result-object v1
 
-    .line 452
+    .line 566
     :goto_0
     return-object v1
 
-    .line 451
+    .line 565
     :catch_0
     move-exception v0
 
-    .line 452
+    .line 566
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -519,7 +625,7 @@
     .end annotation
 
     .prologue
-    .line 595
+    .line 709
     const/4 v0, 0x1
 
     return v0
@@ -529,7 +635,7 @@
     .locals 2
 
     .prologue
-    .line 861
+    .line 984
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -539,15 +645,15 @@
 
     move-result-object v1
 
-    .line 863
+    .line 986
     :goto_0
     return-object v1
 
-    .line 862
+    .line 985
     :catch_0
     move-exception v0
 
-    .line 863
+    .line 986
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -559,7 +665,7 @@
     .parameter "iface"
 
     .prologue
-    .line 811
+    .line 934
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -569,15 +675,15 @@
 
     move-result v1
 
-    .line 813
+    .line 936
     :goto_0
     return v1
 
-    .line 812
+    .line 935
     :catch_0
     move-exception v0
 
-    .line 813
+    .line 936
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x2
 
@@ -589,7 +695,7 @@
     .parameter "networkType"
 
     .prologue
-    .line 468
+    .line 582
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -599,15 +705,15 @@
 
     move-result-object v1
 
-    .line 470
+    .line 584
     :goto_0
     return-object v1
 
-    .line 469
+    .line 583
     :catch_0
     move-exception v0
 
-    .line 470
+    .line 584
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -618,7 +724,7 @@
     .locals 2
 
     .prologue
-    .line 636
+    .line 750
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -628,15 +734,45 @@
 
     move-result v1
 
-    .line 638
+    .line 752
     :goto_0
     return v1
 
-    .line 637
+    .line 751
     :catch_0
     move-exception v0
 
-    .line 638
+    .line 752
+    .local v0, e:Landroid/os/RemoteException;
+    const/4 v1, 0x1
+
+    goto :goto_0
+.end method
+
+.method public getMobileDataEnabledGemini(I)Z
+    .locals 2
+    .parameter "slotId"
+
+    .prologue
+    .line 1138
+    :try_start_0
+    iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
+
+    invoke-interface {v1, p1}, Landroid/net/IConnectivityManager;->getMobileDataEnabledGemini(I)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 1140
+    :goto_0
+    return v1
+
+    .line 1139
+    :catch_0
+    move-exception v0
+
+    .line 1140
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x1
 
@@ -648,7 +784,7 @@
     .parameter "networkType"
 
     .prologue
-    .line 442
+    .line 556
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -658,15 +794,15 @@
 
     move-result-object v1
 
-    .line 444
+    .line 558
     :goto_0
     return-object v1
 
-    .line 443
+    .line 557
     :catch_0
     move-exception v0
 
-    .line 444
+    .line 558
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -677,7 +813,7 @@
     .locals 2
 
     .prologue
-    .line 409
+    .line 523
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -687,15 +823,15 @@
 
     move-result v1
 
-    .line 411
+    .line 525
     :goto_0
     return v1
 
-    .line 410
+    .line 524
     :catch_0
     move-exception v0
 
-    .line 411
+    .line 525
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, -0x1
 
@@ -706,7 +842,7 @@
     .locals 2
 
     .prologue
-    .line 873
+    .line 996
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -716,15 +852,15 @@
 
     move-result-object v1
 
-    .line 875
+    .line 998
     :goto_0
     return-object v1
 
-    .line 874
+    .line 997
     :catch_0
     move-exception v0
 
-    .line 875
+    .line 998
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -735,7 +871,7 @@
     .locals 2
 
     .prologue
-    .line 763
+    .line 877
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -745,15 +881,15 @@
 
     move-result-object v1
 
-    .line 765
+    .line 879
     :goto_0
     return-object v1
 
-    .line 764
+    .line 878
     :catch_0
     move-exception v0
 
-    .line 765
+    .line 879
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -766,7 +902,7 @@
     .locals 2
 
     .prologue
-    .line 673
+    .line 787
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -776,15 +912,15 @@
 
     move-result-object v1
 
-    .line 675
+    .line 789
     :goto_0
     return-object v1
 
-    .line 674
+    .line 788
     :catch_0
     move-exception v0
 
-    .line 675
+    .line 789
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -797,7 +933,7 @@
     .locals 2
 
     .prologue
-    .line 741
+    .line 855
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -807,15 +943,15 @@
 
     move-result-object v1
 
-    .line 743
+    .line 857
     :goto_0
     return-object v1
 
-    .line 742
+    .line 856
     :catch_0
     move-exception v0
 
-    .line 743
+    .line 857
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -828,7 +964,7 @@
     .locals 2
 
     .prologue
-    .line 752
+    .line 866
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -838,15 +974,15 @@
 
     move-result-object v1
 
-    .line 754
+    .line 868
     :goto_0
     return-object v1
 
-    .line 753
+    .line 867
     :catch_0
     move-exception v0
 
-    .line 754
+    .line 868
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -859,7 +995,7 @@
     .locals 2
 
     .prologue
-    .line 684
+    .line 798
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -869,15 +1005,15 @@
 
     move-result-object v1
 
-    .line 686
+    .line 800
     :goto_0
     return-object v1
 
-    .line 685
+    .line 799
     :catch_0
     move-exception v0
 
-    .line 686
+    .line 800
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -890,7 +1026,7 @@
     .locals 2
 
     .prologue
-    .line 695
+    .line 809
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -900,15 +1036,15 @@
 
     move-result-object v1
 
-    .line 697
+    .line 811
     :goto_0
     return-object v1
 
-    .line 696
+    .line 810
     :catch_0
     move-exception v0
 
-    .line 697
+    .line 811
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -917,11 +1053,40 @@
     goto :goto_0
 .end method
 
+.method public getTetheringIpv6Enable()Z
+    .locals 2
+
+    .prologue
+    .line 1177
+    :try_start_0
+    iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
+
+    invoke-interface {v1}, Landroid/net/IConnectivityManager;->getTetheringIpv6Enable()Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 1179
+    :goto_0
+    return v1
+
+    .line 1178
+    :catch_0
+    move-exception v0
+
+    .line 1179
+    .local v0, e:Landroid/os/RemoteException;
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
 .method public isActiveNetworkMetered()Z
     .locals 2
 
     .prologue
-    .line 918
+    .line 1041
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -931,15 +1096,15 @@
 
     move-result v1
 
-    .line 920
+    .line 1043
     :goto_0
     return v1
 
-    .line 919
+    .line 1042
     :catch_0
     move-exception v0
 
-    .line 920
+    .line 1043
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -951,7 +1116,7 @@
     .parameter "networkType"
 
     .prologue
-    .line 904
+    .line 1027
     :try_start_0
     iget-object v0, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -961,16 +1126,45 @@
 
     move-result v0
 
-    .line 906
+    .line 1029
     :goto_0
     return v0
 
-    .line 905
+    .line 1028
     :catch_0
     move-exception v0
 
-    .line 906
+    .line 1029
     const/4 v0, 0x0
+
+    goto :goto_0
+.end method
+
+.method public isTetheringChangeDone()Z
+    .locals 2
+
+    .prologue
+    .line 1070
+    :try_start_0
+    iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
+
+    invoke-interface {v1}, Landroid/net/IConnectivityManager;->isTetheringChangeDone()Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 1072
+    :goto_0
+    return v1
+
+    .line 1071
+    :catch_0
+    move-exception v0
+
+    .line 1072
+    .local v0, e:Landroid/os/RemoteException;
+    const/4 v1, 0x0
 
     goto :goto_0
 .end method
@@ -979,7 +1173,7 @@
     .locals 2
 
     .prologue
-    .line 730
+    .line 844
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -989,15 +1183,15 @@
 
     move-result v1
 
-    .line 732
+    .line 846
     :goto_0
     return v1
 
-    .line 731
+    .line 845
     :catch_0
     move-exception v0
 
-    .line 732
+    .line 846
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -1010,7 +1204,7 @@
     .parameter "percentage"
 
     .prologue
-    .line 839
+    .line 962
     :try_start_0
     iget-object v0, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1018,11 +1212,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 842
+    .line 965
     :goto_0
     return-void
 
-    .line 840
+    .line 963
     :catch_0
     move-exception v0
 
@@ -1034,7 +1228,7 @@
     .parameter "forWhom"
 
     .prologue
-    .line 825
+    .line 948
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1042,18 +1236,18 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 826
+    .line 949
     const/4 v1, 0x1
 
-    .line 828
+    .line 951
     :goto_0
     return v1
 
-    .line 827
+    .line 950
     :catch_0
     move-exception v0
 
-    .line 828
+    .line 951
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -1066,19 +1260,19 @@
     .parameter "hostAddress"
 
     .prologue
-    .line 547
+    .line 661
     invoke-static {p2}, Landroid/net/NetworkUtils;->intToInetAddress(I)Ljava/net/InetAddress;
 
     move-result-object v0
 
-    .line 549
+    .line 663
     .local v0, inetAddress:Ljava/net/InetAddress;
     if-nez v0, :cond_0
 
-    .line 550
+    .line 664
     const/4 v1, 0x0
 
-    .line 553
+    .line 667
     :goto_0
     return v1
 
@@ -1096,12 +1290,12 @@
     .parameter "hostAddress"
 
     .prologue
-    .line 567
+    .line 681
     invoke-virtual {p2}, Ljava/net/InetAddress;->getAddress()[B
 
     move-result-object v0
 
-    .line 569
+    .line 683
     .local v0, address:[B
     :try_start_0
     iget-object v2, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
@@ -1112,15 +1306,15 @@
 
     move-result v2
 
-    .line 571
+    .line 685
     :goto_0
     return v2
 
-    .line 570
+    .line 684
     :catch_0
     move-exception v1
 
-    .line 571
+    .line 685
     .local v1, e:Landroid/os/RemoteException;
     const/4 v2, 0x0
 
@@ -1134,7 +1328,7 @@
     .end annotation
 
     .prologue
-    .line 611
+    .line 725
     return-void
 .end method
 
@@ -1144,7 +1338,7 @@
     .parameter "met"
 
     .prologue
-    .line 886
+    .line 1009
     :try_start_0
     iget-object v0, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1152,11 +1346,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 889
+    .line 1012
     :goto_0
     return-void
 
-    .line 887
+    .line 1010
     :catch_0
     move-exception v0
 
@@ -1168,7 +1362,7 @@
     .parameter "p"
 
     .prologue
-    .line 850
+    .line 973
     :try_start_0
     iget-object v0, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1176,11 +1370,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 853
+    .line 976
     :goto_0
     return-void
 
-    .line 851
+    .line 974
     :catch_0
     move-exception v0
 
@@ -1192,7 +1386,7 @@
     .parameter "enabled"
 
     .prologue
-    .line 651
+    .line 765
     :try_start_0
     iget-object v0, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1200,13 +1394,43 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 654
+    .line 768
     :goto_0
     return-void
 
-    .line 652
+    .line 766
     :catch_0
     move-exception v0
+
+    goto :goto_0
+.end method
+
+.method public setMobileDataEnabledGemini(I)Z
+    .locals 2
+    .parameter "slotId"
+
+    .prologue
+    .line 1154
+    :try_start_0
+    iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
+
+    invoke-interface {v1, p1}, Landroid/net/IConnectivityManager;->setMobileDataEnabledGemini(I)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 1156
+    :goto_0
+    return v1
+
+    .line 1155
+    :catch_0
+    move-exception v0
+
+    .line 1156
+    .local v0, e:Landroid/os/RemoteException;
+    const/4 v1, 0x1
 
     goto :goto_0
 .end method
@@ -1216,7 +1440,7 @@
     .parameter "preference"
 
     .prologue
-    .line 402
+    .line 516
     :try_start_0
     iget-object v0, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1224,11 +1448,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 405
+    .line 519
     :goto_0
     return-void
 
-    .line 403
+    .line 517
     :catch_0
     move-exception v0
 
@@ -1241,7 +1465,7 @@
     .parameter "turnOn"
 
     .prologue
-    .line 486
+    .line 600
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1251,15 +1475,15 @@
 
     move-result v1
 
-    .line 488
+    .line 602
     :goto_0
     return v1
 
-    .line 487
+    .line 601
     :catch_0
     move-exception v0
 
-    .line 488
+    .line 602
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -1271,7 +1495,7 @@
     .parameter "turnOn"
 
     .prologue
-    .line 477
+    .line 591
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1281,15 +1505,69 @@
 
     move-result v1
 
-    .line 479
+    .line 593
     :goto_0
     return v1
 
-    .line 478
+    .line 592
     :catch_0
     move-exception v0
 
-    .line 479
+    .line 593
+    .local v0, e:Landroid/os/RemoteException;
+    const/4 v1, 0x0
+
+    goto :goto_0
+.end method
+
+.method public setTetheringIpv6Enable(Z)V
+    .locals 1
+    .parameter "enable"
+
+    .prologue
+    .line 1166
+    :try_start_0
+    iget-object v0, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
+
+    invoke-interface {v0, p1}, Landroid/net/IConnectivityManager;->setTetheringIpv6Enable(Z)V
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 1170
+    :goto_0
+    return-void
+
+    .line 1167
+    :catch_0
+    move-exception v0
+
+    goto :goto_0
+.end method
+
+.method public setUsbInternet(Z)Z
+    .locals 2
+    .parameter "enable"
+
+    .prologue
+    .line 1191
+    :try_start_0
+    iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
+
+    invoke-interface {v1, p1}, Landroid/net/IConnectivityManager;->setUsbInternet(Z)Z
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 1193
+    :goto_0
+    return v1
+
+    .line 1192
+    :catch_0
+    move-exception v0
+
+    .line 1193
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -1301,7 +1579,7 @@
     .parameter "enable"
 
     .prologue
-    .line 774
+    .line 888
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1311,15 +1589,15 @@
 
     move-result v1
 
-    .line 776
+    .line 890
     :goto_0
     return v1
 
-    .line 775
+    .line 889
     :catch_0
     move-exception v0
 
-    .line 776
+    .line 890
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x2
 
@@ -1332,7 +1610,7 @@
     .parameter "feature"
 
     .prologue
-    .line 507
+    .line 621
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1346,15 +1624,51 @@
 
     move-result v1
 
-    .line 510
+    .line 624
     :goto_0
     return v1
 
-    .line 509
+    .line 623
     :catch_0
     move-exception v0
 
-    .line 510
+    .line 624
+    .local v0, e:Landroid/os/RemoteException;
+    const/4 v1, -0x1
+
+    goto :goto_0
+.end method
+
+.method public startUsingNetworkFeatureGemini(ILjava/lang/String;I)I
+    .locals 3
+    .parameter "networkType"
+    .parameter "feature"
+    .parameter "radioNum"
+
+    .prologue
+    .line 1099
+    :try_start_0
+    iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
+
+    new-instance v2, Landroid/os/Binder;
+
+    invoke-direct {v2}, Landroid/os/Binder;-><init>()V
+
+    invoke-interface {v1, p1, p2, v2, p3}, Landroid/net/IConnectivityManager;->startUsingNetworkFeatureGemini(ILjava/lang/String;Landroid/os/IBinder;I)I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 1102
+    :goto_0
+    return v1
+
+    .line 1101
+    :catch_0
+    move-exception v0
+
+    .line 1102
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, -0x1
 
@@ -1367,7 +1681,7 @@
     .parameter "feature"
 
     .prologue
-    .line 529
+    .line 643
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1377,15 +1691,47 @@
 
     move-result v1
 
-    .line 531
+    .line 645
     :goto_0
     return v1
 
-    .line 530
+    .line 644
     :catch_0
     move-exception v0
 
-    .line 531
+    .line 645
+    .local v0, e:Landroid/os/RemoteException;
+    const/4 v1, -0x1
+
+    goto :goto_0
+.end method
+
+.method public stopUsingNetworkFeatureGemini(ILjava/lang/String;I)I
+    .locals 2
+    .parameter "networkType"
+    .parameter "feature"
+    .parameter "radioNum"
+
+    .prologue
+    .line 1120
+    :try_start_0
+    iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
+
+    invoke-interface {v1, p1, p2, p3}, Landroid/net/IConnectivityManager;->stopUsingNetworkFeatureGemini(ILjava/lang/String;I)I
+    :try_end_0
+    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result v1
+
+    .line 1122
+    :goto_0
+    return v1
+
+    .line 1121
+    :catch_0
+    move-exception v0
+
+    .line 1122
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, -0x1
 
@@ -1397,7 +1743,7 @@
     .parameter "iface"
 
     .prologue
-    .line 707
+    .line 821
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1407,15 +1753,15 @@
 
     move-result v1
 
-    .line 709
+    .line 823
     :goto_0
     return v1
 
-    .line 708
+    .line 822
     :catch_0
     move-exception v0
 
-    .line 709
+    .line 823
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x2
 
@@ -1427,7 +1773,7 @@
     .parameter "iface"
 
     .prologue
-    .line 719
+    .line 833
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1437,15 +1783,15 @@
 
     move-result v1
 
-    .line 721
+    .line 835
     :goto_0
     return v1
 
-    .line 720
+    .line 834
     :catch_0
     move-exception v0
 
-    .line 721
+    .line 835
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x2
 
@@ -1456,7 +1802,7 @@
     .locals 2
 
     .prologue
-    .line 927
+    .line 1050
     :try_start_0
     iget-object v1, p0, Landroid/net/ConnectivityManager;->mService:Landroid/net/IConnectivityManager;
 
@@ -1466,15 +1812,15 @@
 
     move-result v1
 
-    .line 929
+    .line 1052
     :goto_0
     return v1
 
-    .line 928
+    .line 1051
     :catch_0
     move-exception v0
 
-    .line 929
+    .line 1052
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 

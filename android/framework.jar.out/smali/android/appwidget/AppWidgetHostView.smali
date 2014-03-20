@@ -289,22 +289,22 @@
     .parameter "views"
 
     .prologue
-    .line 463
+    .line 467
     invoke-virtual {p1}, Landroid/widget/RemoteViews;->getPackage()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 464
+    .line 468
     .local v1, packageName:Ljava/lang/String;
     if-nez v1, :cond_0
 
     iget-object v2, p0, Landroid/appwidget/AppWidgetHostView;->mContext:Landroid/content/Context;
 
-    .line 471
+    .line 475
     :goto_0
     return-object v2
 
-    .line 468
+    .line 472
     :cond_0
     :try_start_0
     iget-object v2, p0, Landroid/appwidget/AppWidgetHostView;->mContext:Landroid/content/Context;
@@ -319,11 +319,11 @@
 
     goto :goto_0
 
-    .line 469
+    .line 473
     :catch_0
     move-exception v0
 
-    .line 470
+    .line 474
     .local v0, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     const-string v2, "AppWidgetHostView"
 
@@ -353,7 +353,7 @@
 
     invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 471
+    .line 475
     iget-object v2, p0, Landroid/appwidget/AppWidgetHostView;->mContext:Landroid/content/Context;
 
     goto :goto_0
@@ -528,7 +528,7 @@
     .parameter "drawingTime"
 
     .prologue
-    .line 510
+    .line 514
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result v0
@@ -602,21 +602,21 @@
     .locals 13
 
     .prologue
-    .line 537
+    .line 541
     const/4 v1, 0x0
 
-    .line 538
+    .line 542
     .local v1, defaultView:Landroid/view/View;
     const/4 v3, 0x0
 
-    .line 541
+    .line 545
     .local v3, exception:Ljava/lang/Exception;
     :try_start_0
     iget-object v10, p0, Landroid/appwidget/AppWidgetHostView;->mInfo:Landroid/appwidget/AppWidgetProviderInfo;
 
     if-eqz v10, :cond_4
 
-    .line 542
+    .line 547
     iget-object v10, p0, Landroid/appwidget/AppWidgetHostView;->mContext:Landroid/content/Context;
 
     iget-object v11, p0, Landroid/appwidget/AppWidgetHostView;->mInfo:Landroid/appwidget/AppWidgetProviderInfo;
@@ -627,17 +627,19 @@
 
     move-result-object v11
 
-    const/4 v12, 0x4
+    iget-object v12, p0, Landroid/appwidget/AppWidgetHostView;->mInfo:Landroid/appwidget/AppWidgetProviderInfo;
 
-    invoke-virtual {v10, v11, v12}, Landroid/content/Context;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
+    iget-boolean v12, v12, Landroid/appwidget/AppWidgetProviderInfo;->hasUsedCustomerView:Z
+
+    invoke-static {v10, v11, v12}, Landroid/appwidget/AppWidgetContext;->newWidgetContext(Landroid/content/Context;Ljava/lang/String;Z)Landroid/content/Context;
 
     move-result-object v9
 
-    .line 544
+    .line 549
     .local v9, theirContext:Landroid/content/Context;
     iput-object v9, p0, Landroid/appwidget/AppWidgetHostView;->mRemoteContext:Landroid/content/Context;
 
-    .line 545
+    .line 550
     const-string v10, "layout_inflater"
 
     invoke-virtual {v9, v10}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -646,25 +648,25 @@
 
     check-cast v4, Landroid/view/LayoutInflater;
 
-    .line 547
+    .line 552
     .local v4, inflater:Landroid/view/LayoutInflater;
     invoke-virtual {v4, v9}, Landroid/view/LayoutInflater;->cloneInContext(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v4
 
-    .line 548
+    .line 553
     sget-object v10, Landroid/appwidget/AppWidgetHostView;->sInflaterFilter:Landroid/view/LayoutInflater$Filter;
 
     invoke-virtual {v4, v10}, Landroid/view/LayoutInflater;->setFilter(Landroid/view/LayoutInflater$Filter;)V
 
-    .line 549
+    .line 554
     iget-object v10, p0, Landroid/appwidget/AppWidgetHostView;->mContext:Landroid/content/Context;
 
     invoke-static {v10}, Landroid/appwidget/AppWidgetManager;->getInstance(Landroid/content/Context;)Landroid/appwidget/AppWidgetManager;
 
     move-result-object v7
 
-    .line 550
+    .line 555
     .local v7, manager:Landroid/appwidget/AppWidgetManager;
     iget v10, p0, Landroid/appwidget/AppWidgetHostView;->mAppWidgetId:I
 
@@ -672,13 +674,13 @@
 
     move-result-object v8
 
-    .line 552
+    .line 557
     .local v8, options:Landroid/os/Bundle;
     iget-object v10, p0, Landroid/appwidget/AppWidgetHostView;->mInfo:Landroid/appwidget/AppWidgetProviderInfo;
 
     iget v6, v10, Landroid/appwidget/AppWidgetProviderInfo;->initialLayout:I
 
-    .line 553
+    .line 558
     .local v6, layoutId:I
     const-string v10, "appWidgetCategory"
 
@@ -688,29 +690,29 @@
 
     if-eqz v10, :cond_0
 
-    .line 554
+    .line 559
     const-string v10, "appWidgetCategory"
 
     invoke-virtual {v8, v10}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
     move-result v0
 
-    .line 555
+    .line 560
     .local v0, category:I
     const/4 v10, 0x2
 
     if-ne v0, v10, :cond_0
 
-    .line 556
+    .line 561
     iget-object v10, p0, Landroid/appwidget/AppWidgetHostView;->mInfo:Landroid/appwidget/AppWidgetProviderInfo;
 
     iget v5, v10, Landroid/appwidget/AppWidgetProviderInfo;->initialKeyguardLayout:I
 
-    .line 559
+    .line 564
     .local v5, kgLayoutId:I
     if-nez v5, :cond_3
 
-    .line 562
+    .line 567
     .end local v0           #category:I
     .end local v5           #kgLayoutId:I
     :cond_0
@@ -724,7 +726,7 @@
 
     move-result-object v1
 
-    .line 572
+    .line 577
     .end local v4           #inflater:Landroid/view/LayoutInflater;
     .end local v6           #layoutId:I
     .end local v7           #manager:Landroid/appwidget/AppWidgetManager;
@@ -733,7 +735,7 @@
     :goto_1
     if-eqz v3, :cond_1
 
-    .line 573
+    .line 578
     const-string v10, "AppWidgetHostView"
 
     new-instance v11, Ljava/lang/StringBuilder;
@@ -772,16 +774,16 @@
 
     invoke-static {v10, v11}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 576
+    .line 581
     :cond_1
     if-nez v1, :cond_2
 
-    .line 578
+    .line 583
     invoke-virtual {p0}, Landroid/appwidget/AppWidgetHostView;->getErrorView()Landroid/view/View;
 
     move-result-object v1
 
-    .line 581
+    .line 586
     :cond_2
     return-object v1
 
@@ -795,10 +797,10 @@
     :cond_3
     move v6, v5
 
-    .line 559
+    .line 564
     goto :goto_0
 
-    .line 564
+    .line 569
     .end local v0           #category:I
     .end local v4           #inflater:Landroid/view/LayoutInflater;
     .end local v5           #kgLayoutId:I
@@ -819,23 +821,23 @@
 
     goto :goto_1
 
-    .line 566
+    .line 571
     :catch_0
     move-exception v2
 
-    .line 567
+    .line 572
     .local v2, e:Landroid/content/pm/PackageManager$NameNotFoundException;
     move-object v3, v2
 
-    .line 570
+    .line 575
     goto :goto_1
 
-    .line 568
+    .line 573
     .end local v2           #e:Landroid/content/pm/PackageManager$NameNotFoundException;
     :catch_1
     move-exception v2
 
-    .line 569
+    .line 574
     .local v2, e:Ljava/lang/RuntimeException;
     move-object v3, v2
 
@@ -848,20 +850,20 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 588
+    .line 593
     new-instance v0, Landroid/widget/TextView;
 
     iget-object v1, p0, Landroid/appwidget/AppWidgetHostView;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 589
+    .line 594
     .local v0, tv:Landroid/widget/TextView;
     const v1, 0x1040470
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
 
-    .line 591
+    .line 596
     const/16 v1, 0x7f
 
     invoke-static {v1, v2, v2, v2}, Landroid/graphics/Color;->argb(IIII)I
@@ -870,7 +872,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBackgroundColor(I)V
 
-    .line 592
+    .line 597
     return-object v0
 .end method
 
@@ -879,10 +881,10 @@
     .parameter "info"
 
     .prologue
-    .line 597
+    .line 602
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 598
+    .line 603
     const-class v0, Landroid/appwidget/AppWidgetHostView;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -891,7 +893,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 599
+    .line 604
     return-void
 .end method
 
@@ -902,34 +904,34 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 520
+    .line 524
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 521
+    .line 525
     .local v0, requested:Landroid/widget/FrameLayout$LayoutParams;
     if-nez v0, :cond_0
 
-    .line 522
+    .line 526
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
 
     .end local v0           #requested:Landroid/widget/FrameLayout$LayoutParams;
     invoke-direct {v0, v1, v1}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    .line 526
+    .line 530
     .restart local v0       #requested:Landroid/widget/FrameLayout$LayoutParams;
     :cond_0
     const/16 v1, 0x11
 
     iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
-    .line 527
+    .line 531
     invoke-virtual {p1, v0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 528
+    .line 532
     return-void
 .end method
 
@@ -1045,7 +1047,7 @@
 
     if-ne v5, v6, :cond_1
 
-    .line 434
+    .line 438
     :cond_0
     :goto_0
     return-void
@@ -1064,52 +1066,52 @@
     .line 371
     iput v6, p0, Landroid/appwidget/AppWidgetHostView;->mViewMode:I
 
-    .line 405
+    .line 409
     :goto_1
     if-nez v0, :cond_2
 
-    .line 406
+    .line 410
     iget v5, p0, Landroid/appwidget/AppWidgetHostView;->mViewMode:I
 
     if-eq v5, v8, :cond_0
 
-    .line 410
+    .line 414
     const-string v5, "AppWidgetHostView"
 
     const-string/jumbo v6, "updateAppWidget couldn\'t find any view, using error view"
 
     invoke-static {v5, v6, v2}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 411
+    .line 415
     invoke-virtual {p0}, Landroid/appwidget/AppWidgetHostView;->getErrorView()Landroid/view/View;
 
     move-result-object v0
 
-    .line 412
+    .line 416
     iput v8, p0, Landroid/appwidget/AppWidgetHostView;->mViewMode:I
 
-    .line 415
+    .line 419
     :cond_2
     if-nez v4, :cond_3
 
-    .line 416
+    .line 420
     invoke-virtual {p0, v0}, Landroid/appwidget/AppWidgetHostView;->prepareView(Landroid/view/View;)V
 
-    .line 417
+    .line 421
     invoke-virtual {p0, v0}, Landroid/appwidget/AppWidgetHostView;->addView(Landroid/view/View;)V
 
-    .line 420
+    .line 424
     :cond_3
     iget-object v5, p0, Landroid/appwidget/AppWidgetHostView;->mView:Landroid/view/View;
 
     if-eq v5, v0, :cond_0
 
-    .line 421
+    .line 425
     iget-object v5, p0, Landroid/appwidget/AppWidgetHostView;->mView:Landroid/view/View;
 
     invoke-virtual {p0, v5}, Landroid/appwidget/AppWidgetHostView;->removeView(Landroid/view/View;)V
 
-    .line 422
+    .line 426
     iput-object v0, p0, Landroid/appwidget/AppWidgetHostView;->mView:Landroid/view/View;
 
     goto :goto_0
@@ -1135,8 +1137,15 @@
 
     if-ne v3, v5, :cond_5
 
-    .line 382
+    .line 383
     :try_start_0
+    iget-object v5, p0, Landroid/appwidget/AppWidgetHostView;->mInfo:Landroid/appwidget/AppWidgetProviderInfo;
+
+    iget-boolean v5, v5, Landroid/appwidget/AppWidgetProviderInfo;->hasUsedCustomerView:Z
+
+    invoke-virtual {p1, v5}, Landroid/widget/RemoteViews;->setHasUsedCustomerView(Z)V
+
+    .line 384
     iget-object v5, p0, Landroid/appwidget/AppWidgetHostView;->mContext:Landroid/content/Context;
 
     iget-object v6, p0, Landroid/appwidget/AppWidgetHostView;->mView:Landroid/view/View;
@@ -1145,21 +1154,28 @@
 
     invoke-virtual {p1, v5, v6, v7}, Landroid/widget/RemoteViews;->reapply(Landroid/content/Context;Landroid/view/View;Landroid/widget/RemoteViews$OnClickHandler;)V
 
-    .line 383
+    .line 385
     iget-object v0, p0, Landroid/appwidget/AppWidgetHostView;->mView:Landroid/view/View;
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 384
+    .line 386
     const/4 v4, 0x1
 
-    .line 392
+    .line 394
     :cond_5
     :goto_2
     if-nez v0, :cond_6
 
-    .line 394
+    .line 397
     :try_start_1
+    iget-object v5, p0, Landroid/appwidget/AppWidgetHostView;->mInfo:Landroid/appwidget/AppWidgetProviderInfo;
+
+    iget-boolean v5, v5, Landroid/appwidget/AppWidgetProviderInfo;->hasUsedCustomerView:Z
+
+    invoke-virtual {p1, v5}, Landroid/widget/RemoteViews;->setHasUsedCustomerView(Z)V
+
+    .line 398
     iget-object v5, p0, Landroid/appwidget/AppWidgetHostView;->mContext:Landroid/content/Context;
 
     iget-object v6, p0, Landroid/appwidget/AppWidgetHostView;->mOnClickHandler:Landroid/widget/RemoteViews$OnClickHandler;
@@ -1170,34 +1186,34 @@
 
     move-result-object v0
 
-    .line 401
+    .line 405
     :cond_6
     :goto_3
     iput v3, p0, Landroid/appwidget/AppWidgetHostView;->mLayoutId:I
 
-    .line 402
+    .line 406
     const/4 v5, 0x1
 
     iput v5, p0, Landroid/appwidget/AppWidgetHostView;->mViewMode:I
 
     goto :goto_1
 
-    .line 386
+    .line 388
     :catch_0
     move-exception v1
 
-    .line 387
+    .line 389
     .local v1, e:Ljava/lang/RuntimeException;
     move-object v2, v1
 
     goto :goto_2
 
-    .line 396
+    .line 400
     .end local v1           #e:Ljava/lang/RuntimeException;
     :catch_1
     move-exception v1
 
-    .line 397
+    .line 401
     .restart local v1       #e:Ljava/lang/RuntimeException;
     move-object v2, v1
 
@@ -1492,12 +1508,12 @@
     .parameter "viewId"
 
     .prologue
-    .line 441
+    .line 445
     invoke-virtual {p0, p1}, Landroid/appwidget/AppWidgetHostView;->findViewById(I)Landroid/view/View;
 
     move-result-object v3
 
-    .line 442
+    .line 446
     .local v3, v:Landroid/view/View;
     if-eqz v3, :cond_0
 
@@ -1507,16 +1523,16 @@
 
     move-object v1, v3
 
-    .line 443
+    .line 447
     check-cast v1, Landroid/widget/AdapterView;
 
-    .line 444
+    .line 448
     .local v1, adapterView:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     invoke-virtual {v1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
 
     move-result-object v0
 
-    .line 445
+    .line 449
     .local v0, adapter:Landroid/widget/Adapter;
     instance-of v4, v0, Landroid/widget/BaseAdapter;
 
@@ -1524,14 +1540,14 @@
 
     move-object v2, v0
 
-    .line 446
+    .line 450
     check-cast v2, Landroid/widget/BaseAdapter;
 
-    .line 447
+    .line 451
     .local v2, baseAdapter:Landroid/widget/BaseAdapter;
     invoke-virtual {v2}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
-    .line 455
+    .line 459
     .end local v0           #adapter:Landroid/widget/Adapter;
     .end local v1           #adapterView:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     .end local v2           #baseAdapter:Landroid/widget/BaseAdapter;
@@ -1539,7 +1555,7 @@
     :goto_0
     return-void
 
-    .line 448
+    .line 452
     .restart local v0       #adapter:Landroid/widget/Adapter;
     .restart local v1       #adapterView:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     :cond_1
@@ -1549,7 +1565,7 @@
 
     if-eqz v4, :cond_0
 
-    .line 452
+    .line 456
     check-cast v1, Landroid/widget/RemoteViewsAdapter$RemoteAdapterConnectionCallback;
 
     .end local v1           #adapterView:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"

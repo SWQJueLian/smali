@@ -2247,7 +2247,7 @@
     .line 2070
     new-instance v2, Landroid/util/Pair;
 
-    const-string v4, "main"
+    const-string/jumbo v4, "main"
 
     iget-object v5, p0, Landroid/database/sqlite/SQLiteDatabase;->mConfigurationLocked:Landroid/database/sqlite/SQLiteDatabaseConfiguration;
 
@@ -3036,7 +3036,7 @@
     :try_start_2
     new-instance v7, Landroid/util/Pair;
 
-    const-string v8, "main"
+    const-string/jumbo v8, "main"
 
     invoke-virtual {p0}, Landroid/database/sqlite/SQLiteDatabase;->getPath()Ljava/lang/String;
 
@@ -4222,7 +4222,7 @@
     .line 1745
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    const-string v3, "locale must not be null."
+    const-string/jumbo v3, "locale must not be null."
 
     invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

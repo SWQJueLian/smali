@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 865
+    .line 902
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iput p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->val$behavior:I
@@ -46,14 +46,14 @@
     .locals 3
 
     .prologue
-    .line 868
+    .line 905
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mRecentAppsDialog:Lcom/android/internal/policy/impl/RecentApplicationsDialog;
 
     if-nez v0, :cond_0
 
-    .line 869
+    .line 906
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     new-instance v1, Lcom/android/internal/policy/impl/RecentApplicationsDialog;
@@ -66,7 +66,7 @@
 
     iput-object v1, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mRecentAppsDialog:Lcom/android/internal/policy/impl/RecentApplicationsDialog;
 
-    .line 871
+    .line 908
     :cond_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -78,17 +78,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 872
+    .line 909
     iget v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->val$behavior:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 902
+    .line 939
     :goto_0
     :pswitch_0
     return-void
 
-    .line 875
+    .line 912
     :pswitch_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -98,7 +98,7 @@
 
     goto :goto_0
 
-    .line 878
+    .line 915
     :pswitch_2
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -108,7 +108,7 @@
 
     goto :goto_0
 
-    .line 885
+    .line 922
     :cond_1
     iget v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->val$behavior:I
 
@@ -116,7 +116,7 @@
 
     goto :goto_0
 
-    .line 887
+    .line 924
     :pswitch_3
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 891
+    .line 928
     :pswitch_4
     :try_start_0
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
@@ -139,7 +139,7 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 894
+    .line 931
     :goto_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$4;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -149,13 +149,13 @@
 
     goto :goto_0
 
-    .line 892
+    .line 929
     :catch_0
     move-exception v0
 
     goto :goto_1
 
-    .line 872
+    .line 909
     nop
 
     :pswitch_data_0
@@ -166,7 +166,7 @@
         :pswitch_2
     .end packed-switch
 
-    .line 885
+    .line 922
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_3

@@ -32,7 +32,7 @@
 
     const/4 v1, 0x2
 
-    const-string v2, "mask"
+    const-string/jumbo v2, "mask"
 
     aput-object v2, v0, v1
 

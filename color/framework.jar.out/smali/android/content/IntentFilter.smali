@@ -2059,7 +2059,7 @@
     .line 1324
     invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v6, "mPriority="
+    const-string/jumbo v6, "mPriority="
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2967,7 +2967,7 @@
     if-eqz v7, :cond_3
 
     .line 1218
-    const-string v7, "name"
+    const-string/jumbo v7, "name"
 
     invoke-interface {p1, v10, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -2999,7 +2999,7 @@
     if-eqz v7, :cond_4
 
     .line 1223
-    const-string v7, "name"
+    const-string/jumbo v7, "name"
 
     invoke-interface {p1, v10, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -3026,7 +3026,7 @@
     if-eqz v7, :cond_5
 
     .line 1228
-    const-string v7, "name"
+    const-string/jumbo v7, "name"
 
     invoke-interface {p1, v10, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -3062,7 +3062,7 @@
     if-eqz v7, :cond_6
 
     .line 1236
-    const-string v7, "name"
+    const-string/jumbo v7, "name"
 
     invoke-interface {p1, v10, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -3125,7 +3125,7 @@
     if-eqz v7, :cond_a
 
     .line 1247
-    const-string v7, "literal"
+    const-string/jumbo v7, "literal"
 
     invoke-interface {p1, v10, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -3508,7 +3508,7 @@
     invoke-interface {p1, v7, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 1152
-    const-string v6, "name"
+    const-string/jumbo v6, "name"
 
     iget-object v5, p0, Landroid/content/IntentFilter;->mActions:Ljava/util/ArrayList;
 
@@ -3548,7 +3548,7 @@
     invoke-interface {p1, v7, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 1158
-    const-string v6, "name"
+    const-string/jumbo v6, "name"
 
     iget-object v5, p0, Landroid/content/IntentFilter;->mCategories:Ljava/util/ArrayList;
 
@@ -3626,7 +3626,7 @@
 
     .line 1166
     :cond_2
-    const-string v5, "name"
+    const-string/jumbo v5, "name"
 
     invoke-interface {p1, v7, v5, v4}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -3659,7 +3659,7 @@
     invoke-interface {p1, v7, v5}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 1172
-    const-string v6, "name"
+    const-string/jumbo v6, "name"
 
     iget-object v5, p0, Landroid/content/IntentFilter;->mDataSchemes:Ljava/util/ArrayList;
 
@@ -3796,7 +3796,7 @@
 
     .line 1191
     :pswitch_0
-    const-string v5, "literal"
+    const-string/jumbo v5, "literal"
 
     invoke-virtual {v3}, Landroid/os/PatternMatcher;->getPath()Ljava/lang/String;
 
@@ -3836,8 +3836,6 @@
     return-void
 
     .line 1189
-    nop
-
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

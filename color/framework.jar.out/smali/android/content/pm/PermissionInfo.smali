@@ -270,7 +270,7 @@
 
     .line 141
     :pswitch_1
-    const-string v0, "normal"
+    const-string/jumbo v0, "normal"
 
     .line 142
     goto :goto_0
@@ -289,6 +289,8 @@
     goto :goto_0
 
     .line 136
+    nop
+
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1

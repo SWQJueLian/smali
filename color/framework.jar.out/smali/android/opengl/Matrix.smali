@@ -52,7 +52,7 @@
     .line 319
     new-instance v9, Ljava/lang/IllegalArgumentException;
 
-    const-string v10, "left == right"
+    const-string/jumbo v10, "left == right"
 
     invoke-direct {v9, v10}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -82,7 +82,7 @@
     .line 325
     new-instance v9, Ljava/lang/IllegalArgumentException;
 
-    const-string v10, "near == far"
+    const-string/jumbo v10, "near == far"
 
     invoke-direct {v9, v10}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -99,7 +99,7 @@
     .line 328
     new-instance v9, Ljava/lang/IllegalArgumentException;
 
-    const-string v10, "near <= 0.0f"
+    const-string/jumbo v10, "near <= 0.0f"
 
     invoke-direct {v9, v10}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -1087,7 +1087,7 @@
     .line 266
     new-instance v9, Ljava/lang/IllegalArgumentException;
 
-    const-string v10, "left == right"
+    const-string/jumbo v10, "left == right"
 
     invoke-direct {v9, v10}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -1117,7 +1117,7 @@
     .line 272
     new-instance v9, Ljava/lang/IllegalArgumentException;
 
-    const-string v10, "near == far"
+    const-string/jumbo v10, "near == far"
 
     invoke-direct {v9, v10}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

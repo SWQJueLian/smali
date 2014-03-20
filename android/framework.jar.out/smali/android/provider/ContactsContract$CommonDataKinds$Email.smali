@@ -47,7 +47,7 @@
     .locals 2
 
     .prologue
-    .line 5599
+    .line 5776
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "emails"
@@ -58,7 +58,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 5617
+    .line 5794
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "lookup"
@@ -69,7 +69,7 @@
 
     sput-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_LOOKUP_URI:Landroid/net/Uri;
 
-    .line 5637
+    .line 5814
     sget-object v0, Landroid/provider/ContactsContract$CommonDataKinds$Email;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v1, "filter"
@@ -87,7 +87,7 @@
     .locals 0
 
     .prologue
-    .line 5584
+    .line 5761
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -100,7 +100,7 @@
     .parameter "label"
 
     .prologue
-    .line 5678
+    .line 5855
     if-nez p1, :cond_0
 
     invoke-static {p2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -109,19 +109,19 @@
 
     if-nez v1, :cond_0
 
-    .line 5682
+    .line 5859
     .end local p2
     :goto_0
     return-object p2
 
-    .line 5681
+    .line 5858
     .restart local p2
     :cond_0
     invoke-static {p1}, Landroid/provider/ContactsContract$CommonDataKinds$Email;->getTypeLabelResource(I)I
 
     move-result v0
 
-    .line 5682
+    .line 5859
     .local v0, labelRes:I
     invoke-virtual {p0, v0}, Landroid/content/res/Resources;->getText(I)Ljava/lang/CharSequence;
 
@@ -135,40 +135,40 @@
     .parameter "type"
 
     .prologue
-    .line 5662
+    .line 5839
     packed-switch p0, :pswitch_data_0
 
-    .line 5667
+    .line 5844
     const v0, 0x10402af
 
     :goto_0
     return v0
 
-    .line 5663
+    .line 5840
     :pswitch_0
     const v0, 0x10402b0
 
     goto :goto_0
 
-    .line 5664
+    .line 5841
     :pswitch_1
     const v0, 0x10402b1
 
     goto :goto_0
 
-    .line 5665
+    .line 5842
     :pswitch_2
     const v0, 0x10402b2
 
     goto :goto_0
 
-    .line 5666
+    .line 5843
     :pswitch_3
     const v0, 0x10402b3
 
     goto :goto_0
 
-    .line 5662
+    .line 5839
     nop
 
     :pswitch_data_0

@@ -1,101 +1,126 @@
-.class synthetic Lcom/android/internal/telephony/CallManager$2;
+.class Lcom/android/internal/telephony/CallManager$2;
 .super Ljava/lang/Object;
 .source "CallManager.java"
 
+# interfaces
+.implements Ljava/lang/Runnable;
+
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/internal/telephony/CallManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/internal/telephony/CallManager;->setAudioMode(I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
+    accessFlags = 0x0
     name = null
 .end annotation
 
 
-# static fields
-.field static final synthetic $SwitchMap$com$android$internal$telephony$PhoneConstants$State:[I
+# instance fields
+.field final synthetic this$0:Lcom/android/internal/telephony/CallManager;
+
+.field final synthetic val$value:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method constructor <init>(Lcom/android/internal/telephony/CallManager;I)V
+    .locals 0
+    .parameter
+    .parameter
 
     .prologue
-    .line 378
-    invoke-static {}, Lcom/android/internal/telephony/PhoneConstants$State;->values()[Lcom/android/internal/telephony/PhoneConstants$State;
+    .line 2674
+    iput-object p1, p0, Lcom/android/internal/telephony/CallManager$2;->this$0:Lcom/android/internal/telephony/CallManager;
+
+    iput p2, p0, Lcom/android/internal/telephony/CallManager$2;->val$value:I
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public run()V
+    .locals 7
+
+    .prologue
+    .line 2676
+    const-string v4, "/sys/devices/platform/Accdet_Driver/driver/accdet_call_state"
+
+    const/4 v5, 0x0
+
+    new-array v5, v5, [Ljava/lang/Object;
+
+    invoke-static {v4, v5}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
-    array-length v0, v0
-
-    new-array v0, v0, [I
-
-    sput-object v0, Lcom/android/internal/telephony/CallManager$2;->$SwitchMap$com$android$internal$telephony$PhoneConstants$State:[I
-
+    .line 2678
+    .local v0, callStateFilePath:Ljava/lang/String;
     :try_start_0
-    sget-object v0, Lcom/android/internal/telephony/CallManager$2;->$SwitchMap$com$android$internal$telephony$PhoneConstants$State:[I
+    iget v4, p0, Lcom/android/internal/telephony/CallManager$2;->val$value:I
 
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->RINGING:Lcom/android/internal/telephony/PhoneConstants$State;
+    invoke-static {v4}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
-    invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneConstants$State;->ordinal()I
+    move-result-object v3
 
-    move-result v1
+    .line 2679
+    .local v3, state:Ljava/lang/String;
+    new-instance v2, Ljava/io/FileWriter;
 
-    const/4 v2, 0x1
+    invoke-direct {v2, v0}, Ljava/io/FileWriter;-><init>(Ljava/lang/String;)V
 
-    aput v2, v0, v1
+    .line 2680
+    .local v2, fw:Ljava/io/FileWriter;
+    invoke-virtual {v2, v3}, Ljava/io/FileWriter;->write(Ljava/lang/String;)V
+
+    .line 2681
+    invoke-virtual {v2}, Ljava/io/FileWriter;->close()V
+
+    .line 2682
+    const-string v4, "CallManager"
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "Call state for Accdet is "
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v5
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 2686
+    .end local v2           #fw:Ljava/io/FileWriter;
+    .end local v3           #state:Ljava/lang/String;
     :goto_0
-    :try_start_1
-    sget-object v0, Lcom/android/internal/telephony/CallManager$2;->$SwitchMap$com$android$internal$telephony$PhoneConstants$State:[I
-
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->OFFHOOK:Lcom/android/internal/telephony/PhoneConstants$State;
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneConstants$State;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x2
-
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    :goto_1
-    :try_start_2
-    sget-object v0, Lcom/android/internal/telephony/CallManager$2;->$SwitchMap$com$android$internal$telephony$PhoneConstants$State:[I
-
-    sget-object v1, Lcom/android/internal/telephony/PhoneConstants$State;->IDLE:Lcom/android/internal/telephony/PhoneConstants$State;
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/PhoneConstants$State;->ordinal()I
-
-    move-result v1
-
-    const/4 v2, 0x3
-
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_0
-
-    :goto_2
     return-void
 
+    .line 2683
     :catch_0
-    move-exception v0
+    move-exception v1
 
-    goto :goto_2
+    .line 2684
+    .local v1, e:Ljava/lang/Exception;
+    const-string v4, "CallManager"
 
-    :catch_1
-    move-exception v0
+    const-string v5, ""
 
-    goto :goto_1
-
-    :catch_2
-    move-exception v0
+    invoke-static {v4, v5, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
 .end method

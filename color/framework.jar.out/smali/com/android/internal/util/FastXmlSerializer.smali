@@ -1488,7 +1488,7 @@
 
     .line 326
     :cond_0
-    const-string v0, "no"
+    const-string/jumbo v0, "no"
 
     goto :goto_0
 .end method

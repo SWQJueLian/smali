@@ -4599,7 +4599,7 @@
     .line 1090
     .end local v11           #i$:Ljava/util/Iterator;
     :cond_1
-    const-string v28, "memory low: "
+    const-string/jumbo v28, "memory low: "
 
     move-object/from16 v0, p1
 
@@ -4898,7 +4898,7 @@
     if-eqz v28, :cond_4
 
     .line 1114
-    const-string v28, "next alarm time: "
+    const-string/jumbo v28, "next alarm time: "
 
     move-object/from16 v0, p1
 
@@ -5153,7 +5153,7 @@
     .end local v19           #now:J
     .end local v22           #sb:Ljava/lang/StringBuilder;
     :cond_2
-    const-string v28, "not known yet"
+    const-string/jumbo v28, "not known yet"
 
     move-object/from16 v0, p1
 
@@ -5166,13 +5166,13 @@
     .line 1111
     .restart local v19       #now:J
     :cond_3
-    const-string v28, "not "
+    const-string/jumbo v28, "not "
 
     goto/16 :goto_2
 
     .line 1119
     :cond_4
-    const-string v28, "no alarm is scheduled (there had better not be any pending syncs)"
+    const-string/jumbo v28, "no alarm is scheduled (there had better not be any pending syncs)"
 
     move-object/from16 v0, p1
 
@@ -5929,12 +5929,12 @@
 
     if-nez v28, :cond_b
 
-    const-string v28, "not syncable"
+    const-string/jumbo v28, "not syncable"
 
     goto/16 :goto_7
 
     :cond_b
-    const-string v28, "not initialized"
+    const-string/jumbo v28, "not initialized"
 
     goto/16 :goto_7
 
@@ -6529,7 +6529,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "not retrying sync operation because SYNC_EXTRAS_DO_NOT_RETRY was specified "
+    const-string/jumbo v3, "not retrying sync operation because SYNC_EXTRAS_DO_NOT_RETRY was specified "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6621,7 +6621,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "not retrying sync operation because it retried too many times: "
+    const-string/jumbo v3, "not retrying sync operation because it retried too many times: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -6783,7 +6783,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "not retrying sync operation because the error is a hard error: "
+    const-string/jumbo v3, "not retrying sync operation because the error is a hard error: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

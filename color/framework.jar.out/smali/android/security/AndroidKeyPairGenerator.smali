@@ -89,7 +89,7 @@
     invoke-virtual {v11, v8}, Landroid/security/KeyStore;->generate(Ljava/lang/String;)Z
 
     .line 90
-    const-string v11, "keystore"
+    const-string/jumbo v11, "keystore"
 
     invoke-static {v11}, Lorg/apache/harmony/xnet/provider/jsse/OpenSSLEngine;->getInstance(Ljava/lang/String;)Lorg/apache/harmony/xnet/provider/jsse/OpenSSLEngine;
 
@@ -300,7 +300,7 @@
     .local v4, e:Ljava/security/spec/InvalidKeySpecException;
     new-instance v11, Ljava/lang/IllegalStateException;
 
-    const-string v12, "keystore returned invalid key encoding"
+    const-string/jumbo v12, "keystore returned invalid key encoding"
 
     invoke-direct {v11, v12, v4}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
@@ -394,7 +394,7 @@
     .line 151
     new-instance v1, Ljava/security/InvalidAlgorithmParameterException;
 
-    const-string v2, "must supply params of type AndroidKeyPairGenericSpec"
+    const-string/jumbo v2, "must supply params of type AndroidKeyPairGenericSpec"
 
     invoke-direct {v1, v2}, Ljava/security/InvalidAlgorithmParameterException;-><init>(Ljava/lang/String;)V
 

@@ -57,21 +57,21 @@
     .parameter "maxInterval"
 
     .prologue
-    .line 599
+    .line 616
     iput-object p1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 600
+    .line 617
     iput p4, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mMaxInterval:I
 
-    .line 601
+    .line 618
     iput p3, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mMinInterval:I
 
-    .line 602
+    .line 619
     iput-object p2, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mLocalProfile:Landroid/net/sip/SipProfile;
 
-    .line 603
+    .line 620
     return-void
 .end method
 
@@ -79,7 +79,7 @@
     .locals 2
 
     .prologue
-    .line 669
+    .line 686
     iget v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mMaxInterval:I
 
     iget v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mMinInterval:I
@@ -105,12 +105,12 @@
     .locals 5
 
     .prologue
-    .line 653
+    .line 670
     iget-object v2, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
     monitor-enter v2
 
-    .line 655
+    .line 672
     :try_start_0
     iget-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mSession:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
@@ -118,11 +118,11 @@
 
     monitor-exit v2
 
-    .line 666
+    .line 683
     :goto_0
     return-void
 
-    .line 657
+    .line 674
     :cond_0
     const-string v1, "SipKeepAliveInterval"
 
@@ -150,18 +150,18 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 659
+    .line 676
     :try_start_1
     iget-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mSession:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
     invoke-virtual {v1}, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->stopKeepAliveProcess()V
 
-    .line 660
+    .line 677
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mPassCount:I
 
-    .line 661
+    .line 678
     iget-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mSession:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
     iget v3, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mInterval:I
@@ -171,7 +171,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljavax/sip/SipException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 665
+    .line 682
     :goto_1
     :try_start_2
     monitor-exit v2
@@ -187,11 +187,11 @@
 
     throw v1
 
-    .line 662
+    .line 679
     :catch_0
     move-exception v0
 
-    .line 663
+    .line 680
     .local v0, e:Ljavax/sip/SipException;
     :try_start_3
     const-string v1, "SipKeepAliveInterval"
@@ -209,15 +209,15 @@
     .locals 4
 
     .prologue
-    .line 732
+    .line 749
     iget-object v2, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
     monitor-enter v2
 
-    .line 733
+    .line 750
     const/16 v0, 0x78
 
-    .line 734
+    .line 751
     .local v0, interval:I
     :try_start_0
     iget-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
@@ -229,7 +229,7 @@
 
     invoke-virtual {v1, p0}, Lcom/android/server/sip/SipWakeupTimer;->cancel(Ljava/lang/Runnable;)V
 
-    .line 735
+    .line 752
     iget-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
     #getter for: Lcom/android/server/sip/SipService;->mTimer:Lcom/android/server/sip/SipWakeupTimer;
@@ -241,13 +241,13 @@
 
     invoke-virtual {v1, v3, p0}, Lcom/android/server/sip/SipWakeupTimer;->set(ILjava/lang/Runnable;)V
 
-    .line 736
+    .line 753
     monitor-exit v2
 
-    .line 737
+    .line 754
     return-void
 
-    .line 736
+    .line 753
     :catchall_0
     move-exception v1
 
@@ -266,7 +266,7 @@
     .parameter "description"
 
     .prologue
-    .line 720
+    .line 737
     const-string v0, "SipKeepAliveInterval"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -289,27 +289,27 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 721
+    .line 738
     invoke-direct {p0}, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->restartLater()V
 
-    .line 722
+    .line 739
     return-void
 .end method
 
 .method public onResponse(Z)V
-    .locals 3
+    .locals 4
     .parameter "portChanged"
 
     .prologue
-    .line 675
+    .line 692
     iget-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
     monitor-enter v1
 
-    .line 676
+    .line 693
     if-nez p1, :cond_2
 
-    .line 677
+    .line 694
     :try_start_0
     iget v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mPassCount:I
 
@@ -323,11 +323,11 @@
 
     monitor-exit v1
 
-    .line 715
+    .line 732
     :goto_0
     return-void
 
-    .line 680
+    .line 697
     :cond_0
     iget-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
@@ -338,7 +338,7 @@
 
     if-lez v0, :cond_1
 
-    .line 681
+    .line 698
     iget-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
     iget-object v2, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
@@ -351,7 +351,7 @@
     #setter for: Lcom/android/server/sip/SipService;->mLastGoodKeepAliveInterval:I
     invoke-static {v0, v2}, Lcom/android/server/sip/SipService;->access$1002(Lcom/android/server/sip/SipService;I)I
 
-    .line 683
+    .line 700
     :cond_1
     iget-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
@@ -362,13 +362,43 @@
     #setter for: Lcom/android/server/sip/SipService;->mKeepAliveInterval:I
     invoke-static {v0, v2}, Lcom/android/server/sip/SipService;->access$902(Lcom/android/server/sip/SipService;I)I
 
-    .line 688
+    .line 702
+    const-string v0, "SipKeepAliveInterval"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "measured good keepalive interval: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
+
+    #getter for: Lcom/android/server/sip/SipService;->mKeepAliveInterval:I
+    invoke-static {v3}, Lcom/android/server/sip/SipService;->access$900(Lcom/android/server/sip/SipService;)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 705
     iget-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
     #calls: Lcom/android/server/sip/SipService;->onKeepAliveIntervalChanged()V
     invoke-static {v0}, Lcom/android/server/sip/SipService;->access$1100(Lcom/android/server/sip/SipService;)V
 
-    .line 693
+    .line 710
     :goto_1
     invoke-direct {p0}, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->checkTermination()Z
 
@@ -376,10 +406,10 @@
 
     if-eqz v0, :cond_3
 
-    .line 695
+    .line 712
     invoke-virtual {p0}, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->stop()V
 
-    .line 700
+    .line 717
     iget-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
     iget v2, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mMinInterval:I
@@ -387,7 +417,37 @@
     #setter for: Lcom/android/server/sip/SipService;->mKeepAliveInterval:I
     invoke-static {v0, v2}, Lcom/android/server/sip/SipService;->access$902(Lcom/android/server/sip/SipService;I)I
 
-    .line 714
+    .line 719
+    const-string v0, "SipKeepAliveInterval"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "measured keepalive interval: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
+
+    #getter for: Lcom/android/server/sip/SipService;->mKeepAliveInterval:I
+    invoke-static {v3}, Lcom/android/server/sip/SipService;->access$900(Lcom/android/server/sip/SipService;)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 731
     :goto_2
     monitor-exit v1
 
@@ -402,7 +462,7 @@
 
     throw v0
 
-    .line 691
+    .line 708
     :cond_2
     :try_start_1
     iget v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mInterval:I
@@ -411,7 +471,7 @@
 
     goto :goto_1
 
-    .line 707
+    .line 724
     :cond_3
     iget v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mMaxInterval:I
 
@@ -423,7 +483,49 @@
 
     iput v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mInterval:I
 
-    .line 712
+    .line 726
+    const-string v0, "SipKeepAliveInterval"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "current interval: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
+
+    #getter for: Lcom/android/server/sip/SipService;->mKeepAliveInterval:I
+    invoke-static {v3}, Lcom/android/server/sip/SipService;->access$900(Lcom/android/server/sip/SipService;)I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    const-string v3, ", test new interval: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    iget v3, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mInterval:I
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 729
     invoke-direct {p0}, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->restart()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
@@ -435,7 +537,7 @@
     .locals 1
 
     .prologue
-    .line 727
+    .line 744
     iget-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
     #getter for: Lcom/android/server/sip/SipService;->mTimer:Lcom/android/server/sip/SipWakeupTimer;
@@ -445,10 +547,10 @@
 
     invoke-virtual {v0, p0}, Lcom/android/server/sip/SipWakeupTimer;->cancel(Ljava/lang/Runnable;)V
 
-    .line 728
+    .line 745
     invoke-direct {p0}, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->restart()V
 
-    .line 729
+    .line 746
     return-void
 .end method
 
@@ -456,25 +558,25 @@
     .locals 7
 
     .prologue
-    .line 606
+    .line 623
     iget-object v2, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
     monitor-enter v2
 
-    .line 607
+    .line 624
     :try_start_0
     iget-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mSession:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
     if-eqz v1, :cond_0
 
-    .line 608
+    .line 625
     monitor-exit v2
 
-    .line 636
+    .line 653
     :goto_0
     return-void
 
-    .line 611
+    .line 628
     :cond_0
     iget v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mMaxInterval:I
 
@@ -486,12 +588,12 @@
 
     iput v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mInterval:I
 
-    .line 612
+    .line 629
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mPassCount:I
 
-    .line 615
+    .line 632
     iget v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mInterval:I
 
     const/16 v3, 0xa
@@ -504,7 +606,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 616
+    .line 633
     :cond_1
     const-string v1, "SipKeepAliveInterval"
 
@@ -548,12 +650,12 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 618
+    .line 635
     monitor-exit v2
 
     goto :goto_0
 
-    .line 635
+    .line 652
     :catchall_0
     move-exception v1
 
@@ -563,7 +665,7 @@
 
     throw v1
 
-    .line 622
+    .line 639
     :cond_2
     :try_start_1
     const-string v1, "SipKeepAliveInterval"
@@ -590,7 +692,7 @@
 
     invoke-static {v1, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 624
+    .line 641
     new-instance v1, Lcom/android/server/sip/SipService$SipSessionGroupExt;
 
     iget-object v3, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
@@ -605,7 +707,7 @@
 
     iput-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mGroup:Lcom/android/server/sip/SipService$SipSessionGroupExt;
 
-    .line 627
+    .line 644
     iget-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mGroup:Lcom/android/server/sip/SipService$SipSessionGroupExt;
 
     new-instance v3, Lcom/android/server/sip/SipWakeupTimer;
@@ -628,7 +730,7 @@
 
     invoke-virtual {v1, v3}, Lcom/android/server/sip/SipService$SipSessionGroupExt;->setWakeupTimer(Lcom/android/server/sip/SipWakeupTimer;)V
 
-    .line 629
+    .line 646
     iget-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mGroup:Lcom/android/server/sip/SipService$SipSessionGroupExt;
 
     const/4 v3, 0x0
@@ -641,7 +743,7 @@
 
     iput-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mSession:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
-    .line 631
+    .line 648
     iget-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mSession:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
     iget v3, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mInterval:I
@@ -651,18 +753,18 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 635
+    .line 652
     :goto_1
     :try_start_2
     monitor-exit v2
 
     goto/16 :goto_0
 
-    .line 632
+    .line 649
     :catch_0
     move-exception v0
 
-    .line 633
+    .line 650
     .local v0, t:Ljava/lang/Throwable;
     const/4 v1, -0x4
 
@@ -681,44 +783,44 @@
     .locals 2
 
     .prologue
-    .line 639
+    .line 656
     iget-object v1, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
     monitor-enter v1
 
-    .line 640
+    .line 657
     :try_start_0
     iget-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mSession:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
     if-eqz v0, :cond_0
 
-    .line 641
+    .line 658
     iget-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mSession:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
     invoke-virtual {v0}, Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;->stopKeepAliveProcess()V
 
-    .line 642
+    .line 659
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mSession:Lcom/android/server/sip/SipSessionGroup$SipSessionImpl;
 
-    .line 644
+    .line 661
     :cond_0
     iget-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mGroup:Lcom/android/server/sip/SipService$SipSessionGroupExt;
 
     if-eqz v0, :cond_1
 
-    .line 645
+    .line 662
     iget-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mGroup:Lcom/android/server/sip/SipService$SipSessionGroupExt;
 
     invoke-virtual {v0}, Lcom/android/server/sip/SipService$SipSessionGroupExt;->close()V
 
-    .line 646
+    .line 663
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->mGroup:Lcom/android/server/sip/SipService$SipSessionGroupExt;
 
-    .line 648
+    .line 665
     :cond_1
     iget-object v0, p0, Lcom/android/server/sip/SipService$IntervalMeasurementProcess;->this$0:Lcom/android/server/sip/SipService;
 
@@ -729,13 +831,13 @@
 
     invoke-virtual {v0, p0}, Lcom/android/server/sip/SipWakeupTimer;->cancel(Ljava/lang/Runnable;)V
 
-    .line 649
+    .line 666
     monitor-exit v1
 
-    .line 650
+    .line 667
     return-void
 
-    .line 649
+    .line 666
     :catchall_0
     move-exception v0
 

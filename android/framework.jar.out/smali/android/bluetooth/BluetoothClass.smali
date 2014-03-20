@@ -31,6 +31,10 @@
 
 .field public static final PROFILE_A2DP:I = 0x1
 
+.field public static final PROFILE_BPP:I = 0x6
+
+.field public static final PROFILE_FMP:I = 0x7
+
 .field public static final PROFILE_HEADSET:I = 0x0
 
 .field public static final PROFILE_HID:I = 0x3
@@ -89,33 +93,36 @@
 .end method
 
 .method public doesClassMatch(I)Z
-    .locals 4
+    .locals 5
     .parameter "profile"
 
     .prologue
-    const/high16 v2, 0x4
+    const/high16 v4, 0x10
+
+    const/high16 v3, 0x4
 
     const/4 v1, 0x0
 
     const/4 v0, 0x1
 
-    .line 297
+    .line 309
     if-ne p1, v0, :cond_2
 
-    .line 298
-    invoke-virtual {p0, v2}, Landroid/bluetooth/BluetoothClass;->hasService(I)Z
+    .line 310
+    invoke-virtual {p0, v3}, Landroid/bluetooth/BluetoothClass;->hasService(I)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    .line 360
+    .line 384
     :cond_0
     :goto_0
+    :pswitch_0
     :sswitch_0
     return v0
 
-    .line 304
+    .line 316
     :cond_1
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
@@ -125,21 +132,21 @@
 
     move v0, v1
 
-    .line 311
+    .line 323
     goto :goto_0
 
-    .line 313
+    .line 325
     :cond_2
     if-nez p1, :cond_3
 
-    .line 316
-    invoke-virtual {p0, v2}, Landroid/bluetooth/BluetoothClass;->hasService(I)Z
+    .line 328
+    invoke-virtual {p0, v3}, Landroid/bluetooth/BluetoothClass;->hasService(I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 320
+    .line 332
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
     move-result v2
@@ -148,25 +155,23 @@
 
     move v0, v1
 
-    .line 326
+    .line 338
     goto :goto_0
 
-    .line 328
+    .line 340
     :cond_3
     const/4 v2, 0x2
 
     if-ne p1, v2, :cond_4
 
-    .line 329
-    const/high16 v2, 0x10
-
-    invoke-virtual {p0, v2}, Landroid/bluetooth/BluetoothClass;->hasService(I)Z
+    .line 341
+    invoke-virtual {p0, v4}, Landroid/bluetooth/BluetoothClass;->hasService(I)Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 333
+    .line 345
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
     move-result v2
@@ -175,16 +180,16 @@
 
     move v0, v1
 
-    .line 349
+    .line 361
     goto :goto_0
 
-    .line 351
+    .line 363
     :cond_4
     const/4 v2, 0x3
 
     if-ne p1, v2, :cond_5
 
-    .line 352
+    .line 364
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
     move-result v2
@@ -199,7 +204,7 @@
 
     goto :goto_0
 
-    .line 353
+    .line 365
     :cond_5
     const/4 v2, 0x4
 
@@ -209,7 +214,7 @@
 
     if-ne p1, v2, :cond_7
 
-    .line 355
+    .line 367
     :cond_6
     const/high16 v2, 0x2
 
@@ -219,7 +224,7 @@
 
     if-nez v2, :cond_0
 
-    .line 358
+    .line 370
     invoke-virtual {p0}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
 
     move-result v2
@@ -234,13 +239,47 @@
 
     goto :goto_0
 
+    .line 371
     :cond_7
+    const/4 v2, 0x6
+
+    if-ne p1, v2, :cond_9
+
+    .line 372
+    invoke-virtual {p0, v3}, Landroid/bluetooth/BluetoothClass;->hasService(I)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_8
+
+    invoke-virtual {p0, v4}, Landroid/bluetooth/BluetoothClass;->hasService(I)Z
+
+    move-result v2
+
+    if-nez v2, :cond_0
+
+    .line 377
+    :cond_8
+    invoke-virtual {p0}, Landroid/bluetooth/BluetoothClass;->getDeviceClass()I
+
+    move-result v2
+
+    and-int/lit16 v2, v2, 0x1f80
+
+    packed-switch v2, :pswitch_data_0
+
     move v0, v1
 
-    .line 360
+    .line 381
     goto :goto_0
 
-    .line 304
+    :cond_9
+    move v0, v1
+
+    .line 384
+    goto :goto_0
+
+    .line 316
     :sswitch_data_0
     .sparse-switch
         0x414 -> :sswitch_0
@@ -249,7 +288,7 @@
         0x428 -> :sswitch_0
     .end sparse-switch
 
-    .line 320
+    .line 332
     :sswitch_data_1
     .sparse-switch
         0x404 -> :sswitch_0
@@ -257,7 +296,7 @@
         0x420 -> :sswitch_0
     .end sparse-switch
 
-    .line 333
+    .line 345
     :sswitch_data_2
     .sparse-switch
         0x100 -> :sswitch_0
@@ -274,6 +313,12 @@
         0x210 -> :sswitch_0
         0x214 -> :sswitch_0
     .end sparse-switch
+
+    .line 377
+    :pswitch_data_0
+    .packed-switch 0x680
+        :pswitch_0
+    .end packed-switch
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
@@ -309,7 +354,7 @@
     .locals 1
 
     .prologue
-    .line 271
+    .line 279
     iget v0, p0, Landroid/bluetooth/BluetoothClass;->mClass:I
 
     and-int/lit16 v0, v0, 0x1ffc
@@ -321,7 +366,7 @@
     .locals 1
 
     .prologue
-    .line 258
+    .line 266
     iget v0, p0, Landroid/bluetooth/BluetoothClass;->mClass:I
 
     and-int/lit16 v0, v0, 0x1f00

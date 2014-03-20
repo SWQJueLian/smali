@@ -175,7 +175,7 @@
 
     .line 137
     :pswitch_1
-    const-string v0, "modem"
+    const-string/jumbo v0, "modem"
 
     goto :goto_0
 
@@ -187,7 +187,7 @@
 
     .line 141
     :pswitch_3
-    const-string v0, "java_ril"
+    const-string/jumbo v0, "java_ril"
 
     goto :goto_0
 

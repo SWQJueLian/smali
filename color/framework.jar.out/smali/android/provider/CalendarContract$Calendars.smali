@@ -82,7 +82,7 @@
 
     const/4 v1, 0x5
 
-    const-string v2, "maxReminders"
+    const-string/jumbo v2, "maxReminders"
 
     aput-object v2, v0, v1
 

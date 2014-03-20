@@ -30,16 +30,16 @@
     .parameter "trackerHandler"
 
     .prologue
-    .line 568
+    .line 685
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 569
+    .line 686
     iput-object p1, p0, Lcom/android/server/ConnectivityService$DefaultNetworkFactory;->mContext:Landroid/content/Context;
 
-    .line 570
+    .line 687
     iput-object p2, p0, Lcom/android/server/ConnectivityService$DefaultNetworkFactory;->mTrackerHandler:Landroid/os/Handler;
 
-    .line 571
+    .line 688
     return-void
 .end method
 
@@ -51,12 +51,12 @@
     .parameter "config"
 
     .prologue
-    .line 575
+    .line 692
     iget v0, p2, Landroid/net/NetworkConfig;->radio:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 589
+    .line 706
     :pswitch_0
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -84,7 +84,7 @@
 
     throw v0
 
-    .line 577
+    .line 694
     :pswitch_1
     new-instance v0, Landroid/net/wifi/WifiStateTracker;
 
@@ -92,11 +92,11 @@
 
     invoke-direct {v0, p1, v1}, Landroid/net/wifi/WifiStateTracker;-><init>(ILjava/lang/String;)V
 
-    .line 587
+    .line 704
     :goto_0
     return-object v0
 
-    .line 579
+    .line 696
     :pswitch_2
     new-instance v0, Landroid/net/MobileDataStateTracker;
 
@@ -106,7 +106,7 @@
 
     goto :goto_0
 
-    .line 581
+    .line 698
     :pswitch_3
     new-instance v0, Landroid/net/DummyDataStateTracker;
 
@@ -116,7 +116,7 @@
 
     goto :goto_0
 
-    .line 583
+    .line 700
     :pswitch_4
     invoke-static {}, Landroid/bluetooth/BluetoothTetheringDataTracker;->getInstance()Landroid/bluetooth/BluetoothTetheringDataTracker;
 
@@ -124,20 +124,20 @@
 
     goto :goto_0
 
-    .line 585
+    .line 702
     :pswitch_5
     iget-object v0, p0, Lcom/android/server/ConnectivityService$DefaultNetworkFactory;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/server/ConnectivityService$DefaultNetworkFactory;->mTrackerHandler:Landroid/os/Handler;
 
     #calls: Lcom/android/server/ConnectivityService;->makeWimaxStateTracker(Landroid/content/Context;Landroid/os/Handler;)Landroid/net/NetworkStateTracker;
-    invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$100(Landroid/content/Context;Landroid/os/Handler;)Landroid/net/NetworkStateTracker;
+    invoke-static {v0, v1}, Lcom/android/server/ConnectivityService;->access$200(Landroid/content/Context;Landroid/os/Handler;)Landroid/net/NetworkStateTracker;
 
     move-result-object v0
 
     goto :goto_0
 
-    .line 587
+    .line 704
     :pswitch_6
     invoke-static {}, Landroid/net/EthernetDataTracker;->getInstance()Landroid/net/EthernetDataTracker;
 
@@ -145,7 +145,7 @@
 
     goto :goto_0
 
-    .line 575
+    .line 692
     nop
 
     :pswitch_data_0

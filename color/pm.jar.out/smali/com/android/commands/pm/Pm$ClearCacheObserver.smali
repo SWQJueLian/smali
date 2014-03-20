@@ -25,7 +25,7 @@
     .locals 0
 
     .prologue
-    .line 1311
+    .line 1304
     invoke-direct {p0}, Landroid/content/pm/IPackageDataObserver$Stub;-><init>()V
 
     return-void
@@ -44,28 +44,28 @@
     .end annotation
 
     .prologue
-    .line 1317
+    .line 1310
     monitor-enter p0
 
-    .line 1318
+    .line 1311
     const/4 v0, 0x1
 
     :try_start_0
     iput-boolean v0, p0, Lcom/android/commands/pm/Pm$ClearCacheObserver;->finished:Z
 
-    .line 1319
+    .line 1312
     iput-boolean p2, p0, Lcom/android/commands/pm/Pm$ClearCacheObserver;->result:Z
 
-    .line 1320
+    .line 1313
     invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
 
-    .line 1321
+    .line 1314
     monitor-exit p0
 
-    .line 1322
+    .line 1315
     return-void
 
-    .line 1321
+    .line 1314
     :catchall_0
     move-exception v0
 

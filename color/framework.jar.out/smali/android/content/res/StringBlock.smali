@@ -432,7 +432,7 @@
     .line 186
     new-instance v17, Landroid/text/style/TypefaceSpan;
 
-    const-string v18, "monospace"
+    const-string/jumbo v18, "monospace"
 
     invoke-direct/range {v17 .. v18}, Landroid/text/style/TypefaceSpan;-><init>(Ljava/lang/String;)V
 
@@ -1708,7 +1708,7 @@
 
     .line 126
     :cond_f
-    const-string v7, "li"
+    const-string/jumbo v7, "li"
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1726,7 +1726,7 @@
 
     .line 128
     :cond_10
-    const-string v7, "marquee"
+    const-string/jumbo v7, "marquee"
 
     invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

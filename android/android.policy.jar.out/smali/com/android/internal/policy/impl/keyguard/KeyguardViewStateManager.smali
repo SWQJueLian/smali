@@ -12,6 +12,8 @@
 
 .field private static final SCREEN_ON_RING_HINT_DELAY:I = 0x12c
 
+.field private static final TAG:Ljava/lang/String; = "KeyguardViewStateManager"
+
 .field static final TRANSPORT_GONE:I = 0x0
 
 .field static final TRANSPORT_INVISIBLE:I = 0x1
@@ -61,20 +63,20 @@
 
     const/4 v2, -0x1
 
-    .line 54
+    .line 56
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 30
+    .line 32
     new-array v0, v1, [I
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTmpPoint:[I
 
-    .line 31
+    .line 33
     new-array v0, v1, [I
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTmpLoc:[I
 
-    .line 36
+    .line 38
     new-instance v0, Landroid/os/Handler;
 
     invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
@@ -85,35 +87,35 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mMainQueue:Landroid/os/Handler;
 
-    .line 43
+    .line 45
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTransportState:I
 
-    .line 45
+    .line 47
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mLastScrollState:I
 
-    .line 48
+    .line 50
     iput v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mPageListeningToSlider:I
 
-    .line 49
+    .line 51
     iput v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mCurrentPage:I
 
-    .line 50
+    .line 52
     iput v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mPageIndexOnPageBeginMoving:I
 
-    .line 52
+    .line 54
     iput v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeTop:I
 
-    .line 291
+    .line 295
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager$1;
 
     invoke-direct {v0, p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager$1;-><init>(Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;)V
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mHideHintsRunnable:Ljava/lang/Runnable;
 
-    .line 55
+    .line 57
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardHostView:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
-    .line 56
+    .line 58
     return-void
 .end method
 
@@ -149,17 +151,17 @@
 
     const/4 v1, 0x0
 
-    .line 179
+    .line 183
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTmpPoint:[I
 
     aput v1, v0, v1
 
-    .line 180
+    .line 184
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTmpPoint:[I
 
     aput p2, v0, v2
 
-    .line 181
+    .line 185
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     check-cast v0, Landroid/view/View;
@@ -168,7 +170,7 @@
 
     invoke-direct {p0, v0, p1, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mapPoint(Landroid/view/View;Landroid/view/View;[I)V
 
-    .line 182
+    .line 186
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTmpPoint:[I
 
     aget v0, v0, v2
@@ -187,40 +189,40 @@
 
     const/4 v6, 0x0
 
-    .line 194
+    .line 198
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTmpLoc:[I
 
     invoke-virtual {p1, v4}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 196
+    .line 200
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTmpLoc:[I
 
     aget v2, v4, v6
 
-    .line 197
+    .line 201
     .local v2, x:I
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTmpLoc:[I
 
     aget v3, v4, v7
 
-    .line 199
+    .line 203
     .local v3, y:I
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTmpLoc:[I
 
     invoke-virtual {p2, v4}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 200
+    .line 204
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTmpLoc:[I
 
     aget v0, v4, v6
 
-    .line 201
+    .line 205
     .local v0, vX:I
     iget-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTmpLoc:[I
 
     aget v1, v4, v7
 
-    .line 203
+    .line 207
     .local v1, vY:I
     aget v4, p3, v6
 
@@ -230,7 +232,7 @@
 
     aput v4, p3, v6
 
-    .line 204
+    .line 208
     aget v4, p3, v7
 
     sub-int v5, v3, v1
@@ -239,7 +241,7 @@
 
     aput v4, p3, v7
 
-    .line 205
+    .line 209
     return-void
 .end method
 
@@ -247,7 +249,7 @@
     .locals 2
 
     .prologue
-    .line 69
+    .line 71
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     if-eqz v0, :cond_0
@@ -256,7 +258,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 70
+    .line 72
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;->isChallengeOverlapping()Z
@@ -265,19 +267,19 @@
 
     if-eqz v0, :cond_1
 
-    .line 71
+    .line 73
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->setOnlyAllowEdgeSwipes(Z)V
 
-    .line 76
+    .line 78
     :cond_0
     :goto_0
     return-void
 
-    .line 73
+    .line 75
     :cond_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
@@ -292,22 +294,22 @@
     .locals 1
 
     .prologue
-    .line 208
+    .line 212
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardHostView:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     if-eqz v0, :cond_0
 
-    .line 209
+    .line 213
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardHostView:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->onUserActivityTimeoutChanged()V
 
-    .line 210
+    .line 214
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardHostView:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->userActivity()V
 
-    .line 212
+    .line 216
     :cond_0
     return-void
 .end method
@@ -319,7 +321,7 @@
     .parameter "duration"
 
     .prologue
-    .line 109
+    .line 111
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardSecurityContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityView;
 
     check-cast v0, Landroid/view/View;
@@ -338,7 +340,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 110
+    .line 112
     return-void
 .end method
 
@@ -347,7 +349,7 @@
     .parameter "duration"
 
     .prologue
-    .line 105
+    .line 107
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardSecurityContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityView;
 
     check-cast v0, Landroid/view/View;
@@ -366,7 +368,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
-    .line 106
+    .line 108
     return-void
 .end method
 
@@ -374,7 +376,7 @@
     .locals 1
 
     .prologue
-    .line 318
+    .line 323
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTransportState:I
 
     return v0
@@ -384,7 +386,7 @@
     .locals 1
 
     .prologue
-    .line 101
+    .line 103
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;->isBouncing()Z
@@ -398,19 +400,19 @@
     .locals 1
 
     .prologue
-    .line 86
+    .line 88
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     if-eqz v0, :cond_0
 
-    .line 87
+    .line 89
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;->isChallengeOverlapping()Z
 
     move-result v0
 
-    .line 89
+    .line 91
     :goto_0
     return v0
 
@@ -424,19 +426,19 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 81
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     if-eqz v0, :cond_0
 
-    .line 80
+    .line 82
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;->isChallengeShowing()Z
 
     move-result v0
 
-    .line 82
+    .line 84
     :goto_0
     return v0
 
@@ -451,31 +453,31 @@
     .parameter "bouncerActive"
 
     .prologue
-    .line 324
+    .line 329
     if-eqz p1, :cond_1
 
-    .line 325
+    .line 330
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->zoomOutToBouncer()V
 
-    .line 332
+    .line 337
     :cond_0
     :goto_0
     return-void
 
-    .line 327
+    .line 332
     :cond_1
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->zoomInFromBouncer()V
 
-    .line 328
+    .line 333
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardHostView:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     if-eqz v0, :cond_0
 
-    .line 329
+    .line 334
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardHostView:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     const/4 v1, 0x0
@@ -486,12 +488,10 @@
 .end method
 
 .method public onPageBeginMoving()V
-    .locals 4
+    .locals 3
 
     .prologue
-    const/4 v3, 0x0
-
-    .line 113
+    .line 115
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     invoke-interface {v1}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;->isChallengeOverlapping()Z
@@ -506,16 +506,16 @@
 
     if-eqz v1, :cond_0
 
-    .line 115
+    .line 117
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     check-cast v0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 
-    .line 116
+    .line 118
     .local v0, scl:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->fadeOutChallenge()V
 
-    .line 117
+    .line 119
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getCurrentPage()I
@@ -524,40 +524,39 @@
 
     iput v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mPageIndexOnPageBeginMoving:I
 
-    .line 121
+    .line 124
     .end local v0           #scl:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardHostView:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     if-eqz v1, :cond_1
 
-    .line 122
+    .line 125
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardHostView:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->clearAppWidgetToShow()V
 
-    .line 123
+    .line 126
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardHostView:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
-    invoke-virtual {v1, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->setOnDismissAction(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$OnDismissAction;)V
+    const/4 v2, 0x0
 
-    .line 125
+    invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->setOnDismissAction(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$OnDismissAction;)V
+
+    .line 128
     :cond_1
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mHideHintsRunnable:Ljava/lang/Runnable;
 
     if-eqz v1, :cond_2
 
-    .line 126
+    .line 129
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mMainQueue:Landroid/os/Handler;
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mHideHintsRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v1, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 127
-    iput-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mHideHintsRunnable:Ljava/lang/Runnable;
-
-    .line 129
+    .line 133
     :cond_2
     return-void
 .end method
@@ -566,12 +565,12 @@
     .locals 1
 
     .prologue
-    .line 132
+    .line 136
     const/4 v0, -0x1
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mPageIndexOnPageBeginMoving:I
 
-    .line 133
+    .line 137
     return-void
 .end method
 
@@ -581,16 +580,16 @@
     .parameter "newPageIndex"
 
     .prologue
-    .line 158
+    .line 162
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mCurrentPage:I
 
     if-ne v3, p2, :cond_0
 
-    .line 176
+    .line 180
     :goto_0
     return-void
 
-    .line 160
+    .line 164
     :cond_0
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
@@ -600,7 +599,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 161
+    .line 165
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     iget v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mCurrentPage:I
@@ -609,7 +608,7 @@
 
     move-result-object v2
 
-    .line 162
+    .line 166
     .local v2, prevPage:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     if-eqz v2, :cond_1
 
@@ -629,10 +628,10 @@
 
     if-eq v3, v4, :cond_1
 
-    .line 164
+    .line 168
     invoke-virtual {v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->resetSize()V
 
-    .line 167
+    .line 171
     :cond_1
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
@@ -640,7 +639,7 @@
 
     move-result-object v1
 
-    .line 168
+    .line 172
     .local v1, newCurPage:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
@@ -648,7 +647,7 @@
 
     move-result v0
 
-    .line 169
+    .line 173
     .local v0, challengeOverlapping:Z
     if-eqz v0, :cond_2
 
@@ -662,10 +661,10 @@
 
     if-eq v3, p2, :cond_2
 
-    .line 171
+    .line 175
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->shrinkWidget()V
 
-    .line 175
+    .line 179
     .end local v0           #challengeOverlapping:Z
     .end local v1           #newCurPage:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     .end local v2           #prevPage:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
@@ -683,7 +682,7 @@
     .prologue
     const/4 v4, -0x1
 
-    .line 136
+    .line 140
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     if-eqz v2, :cond_0
@@ -694,10 +693,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 137
+    .line 141
     instance-of v0, p1, Lcom/android/internal/policy/impl/keyguard/CameraWidgetFrame;
 
-    .line 138
+    .line 142
     .local v0, isCameraPage:Z
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
@@ -710,7 +709,7 @@
     :goto_0
     invoke-virtual {v2, v3}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->setChallengeInteractive(Z)V
 
-    .line 143
+    .line 147
     .end local v0           #isCameraPage:Z
     :cond_0
     iget v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mPageIndexOnPageBeginMoving:I
@@ -729,29 +728,29 @@
 
     if-eqz v2, :cond_1
 
-    .line 145
+    .line 149
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     check-cast v1, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 
-    .line 146
+    .line 150
     .local v1, scl:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->fadeInChallenge()V
 
-    .line 147
+    .line 151
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     invoke-virtual {v2, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->setWidgetToResetOnPageFadeOut(I)V
 
-    .line 149
+    .line 153
     .end local v1           #scl:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
     :cond_1
     iput v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mPageIndexOnPageBeginMoving:I
 
-    .line 150
+    .line 154
     return-void
 
-    .line 138
+    .line 142
     .restart local v0       #isCameraPage:Z
     :cond_2
     const/4 v3, 0x0
@@ -765,10 +764,10 @@
     .parameter "challengeTop"
 
     .prologue
-    .line 284
+    .line 288
     iput p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeTop:I
 
-    .line 285
+    .line 289
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     iget v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mPageListeningToSlider:I
@@ -777,7 +776,7 @@
 
     move-result-object v0
 
-    .line 286
+    .line 290
     .local v0, frame:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     if-eqz v0, :cond_0
 
@@ -787,7 +786,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 287
+    .line 291
     iget v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeTop:I
 
     invoke-direct {p0, v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->getChallengeTopRelativeToFrame(Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;I)I
@@ -796,7 +795,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->adjustFrame(I)V
 
-    .line 289
+    .line 293
     :cond_0
     return-void
 .end method
@@ -808,7 +807,7 @@
     .prologue
     const/4 v4, 0x3
 
-    .line 216
+    .line 220
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     if-eqz v2, :cond_0
@@ -817,12 +816,12 @@
 
     if-nez v2, :cond_1
 
-    .line 280
+    .line 284
     :cond_0
     :goto_0
     return-void
 
-    .line 218
+    .line 222
     :cond_1
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
@@ -830,11 +829,11 @@
 
     move-result v0
 
-    .line 220
+    .line 224
     .local v0, challengeOverlapping:Z
     if-nez p1, :cond_8
 
-    .line 221
+    .line 225
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mPageListeningToSlider:I
@@ -843,14 +842,14 @@
 
     move-result-object v1
 
-    .line 222
+    .line 226
     .local v1, frame:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     if-eqz v1, :cond_0
 
-    .line 224
+    .line 228
     if-nez v0, :cond_2
 
-    .line 225
+    .line 229
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     invoke-virtual {v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->isPageMoving()Z
@@ -859,13 +858,13 @@
 
     if-nez v2, :cond_6
 
-    .line 226
+    .line 230
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->resetSize()V
 
-    .line 227
+    .line 231
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->userActivity()V
 
-    .line 232
+    .line 236
     :cond_2
     :goto_1
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->isSmall()Z
@@ -874,25 +873,25 @@
 
     if-eqz v2, :cond_3
 
-    .line 235
+    .line 239
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->getSmallFrameHeight()I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->setFrameHeight(I)V
 
-    .line 237
+    .line 241
     :cond_3
     if-eq p1, v4, :cond_4
 
-    .line 238
+    .line 242
     invoke-virtual {v1, p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->hideFrame(Ljava/lang/Object;)V
 
-    .line 240
+    .line 244
     :cond_4
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->updateEdgeSwiping()V
 
-    .line 242
+    .line 246
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     invoke-interface {v2}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;->isChallengeShowing()Z
@@ -901,20 +900,20 @@
 
     if-eqz v2, :cond_7
 
-    .line 243
+    .line 247
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardSecurityContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityView;
 
     const/4 v3, 0x2
 
     invoke-interface {v2, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityView;->onResume(I)V
 
-    .line 247
+    .line 251
     :goto_2
     const/4 v2, -0x1
 
     iput v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mPageListeningToSlider:I
 
-    .line 279
+    .line 283
     .end local v1           #frame:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     :cond_5
     :goto_3
@@ -922,7 +921,7 @@
 
     goto :goto_0
 
-    .line 229
+    .line 233
     .restart local v1       #frame:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     :cond_6
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
@@ -933,7 +932,7 @@
 
     goto :goto_1
 
-    .line 245
+    .line 249
     :cond_7
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardSecurityContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityView;
 
@@ -941,14 +940,14 @@
 
     goto :goto_2
 
-    .line 248
+    .line 252
     .end local v1           #frame:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     :cond_8
     iget v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mLastScrollState:I
 
     if-nez v2, :cond_5
 
-    .line 252
+    .line 256
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     invoke-virtual {v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getNextPage()I
@@ -957,7 +956,7 @@
 
     iput v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mPageListeningToSlider:I
 
-    .line 253
+    .line 257
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mPageListeningToSlider:I
@@ -966,11 +965,11 @@
 
     move-result-object v1
 
-    .line 254
+    .line 258
     .restart local v1       #frame:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     if-eqz v1, :cond_0
 
-    .line 257
+    .line 261
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     invoke-interface {v2}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;->isBouncing()Z
@@ -979,13 +978,13 @@
 
     if-nez v2, :cond_b
 
-    .line 258
+    .line 262
     if-eq p1, v4, :cond_9
 
-    .line 259
+    .line 263
     invoke-virtual {v1, p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->showFrame(Ljava/lang/Object;)V
 
-    .line 264
+    .line 268
     :cond_9
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->isSmall()Z
 
@@ -993,7 +992,7 @@
 
     if-nez v2, :cond_a
 
-    .line 266
+    .line 270
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     invoke-virtual {v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getNextPage()I
@@ -1002,12 +1001,12 @@
 
     iput v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mPageListeningToSlider:I
 
-    .line 267
+    .line 271
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->shrinkWidget(Z)V
 
-    .line 277
+    .line 281
     :cond_a
     :goto_4
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardSecurityContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityView;
@@ -1016,7 +1015,7 @@
 
     goto :goto_3
 
-    .line 270
+    .line 274
     :cond_b
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->isSmall()Z
 
@@ -1024,7 +1023,7 @@
 
     if-nez v2, :cond_a
 
-    .line 272
+    .line 276
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     invoke-virtual {v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getNextPage()I
@@ -1041,13 +1040,13 @@
     .parameter "layout"
 
     .prologue
-    .line 64
+    .line 66
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
-    .line 65
+    .line 67
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->updateEdgeSwiping()V
 
-    .line 66
+    .line 68
     return-void
 .end method
 
@@ -1056,13 +1055,13 @@
     .parameter "pagedView"
 
     .prologue
-    .line 59
+    .line 61
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
-    .line 60
+    .line 62
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->updateEdgeSwiping()V
 
-    .line 61
+    .line 63
     return-void
 .end method
 
@@ -1071,10 +1070,10 @@
     .parameter "container"
 
     .prologue
-    .line 93
+    .line 95
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardSecurityContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityView;
 
-    .line 94
+    .line 96
     return-void
 .end method
 
@@ -1083,10 +1082,10 @@
     .parameter "state"
 
     .prologue
-    .line 314
+    .line 319
     iput p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mTransportState:I
 
-    .line 315
+    .line 320
     return-void
 .end method
 
@@ -1095,12 +1094,12 @@
     .parameter "show"
 
     .prologue
-    .line 97
+    .line 99
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mChallengeLayout:Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/ChallengeLayout;->showBouncer()V
 
-    .line 98
+    .line 100
     return-void
 .end method
 
@@ -1108,7 +1107,7 @@
     .locals 4
 
     .prologue
-    .line 301
+    .line 306
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mMainQueue:Landroid/os/Handler;
 
     new-instance v1, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager$2;
@@ -1119,17 +1118,17 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 307
+    .line 312
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardWidgetPager:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->showInitialPageHints()V
 
-    .line 308
+    .line 313
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mHideHintsRunnable:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 309
+    .line 314
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mMainQueue:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mHideHintsRunnable:Ljava/lang/Runnable;
@@ -1138,7 +1137,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 311
+    .line 316
     :cond_0
     return-void
 .end method

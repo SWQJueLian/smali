@@ -226,7 +226,7 @@
 
     move-result-object v5
 
-    const-string v6, "msecs"
+    const-string/jumbo v6, "msecs"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -300,8 +300,6 @@
     throw v4
 
     .line 94
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

@@ -42,6 +42,8 @@
 
 .field static final TRANSACTION_getBestProvider:I = 0xe
 
+.field static final TRANSACTION_getFileTime:I = 0x1d
+
 .field static final TRANSACTION_getFromLocation:I = 0x9
 
 .field static final TRANSACTION_getFromLocationName:I = 0xa
@@ -81,6 +83,8 @@
 .field static final TRANSACTION_setTestProviderLocation:I = 0x14
 
 .field static final TRANSACTION_setTestProviderStatus:I = 0x18
+
+.field static final TRANSACTION_updateEPOFile:I = 0x1e
 
 
 # direct methods
@@ -157,7 +161,7 @@
 .end method
 
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    .locals 31
+    .locals 32
     .parameter "code"
     .parameter "data"
     .parameter "reply"
@@ -172,7 +176,7 @@
     .line 43
     sparse-switch p1, :sswitch_data_0
 
-    .line 498
+    .line 523
     invoke-super/range {p0 .. p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v2
@@ -600,14 +604,14 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/location/ILocationManager$Stub;->getLastLocation(Landroid/location/LocationRequest;Ljava/lang/String;)Landroid/location/Location;
 
-    move-result-object v29
+    move-result-object v30
 
     .line 159
-    .local v29, _result:Landroid/location/Location;
+    .local v30, _result:Landroid/location/Location;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 160
-    if-eqz v29, :cond_9
+    if-eqz v30, :cond_9
 
     .line 161
     const/4 v2, 0x1
@@ -619,7 +623,7 @@
     .line 162
     const/4 v2, 0x1
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v30
 
     move-object/from16 v1, p3
 
@@ -634,7 +638,7 @@
     .line 154
     .end local v3           #_arg0:Landroid/location/LocationRequest;
     .end local v5           #_arg1:Ljava/lang/String;
-    .end local v29           #_result:Landroid/location/Location;
+    .end local v30           #_result:Landroid/location/Location;
     :cond_8
     const/4 v3, 0x0
 
@@ -643,7 +647,7 @@
 
     .line 165
     .restart local v5       #_arg1:Ljava/lang/String;
-    .restart local v29       #_result:Landroid/location/Location;
+    .restart local v30       #_result:Landroid/location/Location;
     :cond_9
     const/4 v2, 0x0
 
@@ -656,7 +660,7 @@
     .line 171
     .end local v3           #_arg0:Landroid/location/LocationRequest;
     .end local v5           #_arg1:Ljava/lang/String;
-    .end local v29           #_result:Landroid/location/Location;
+    .end local v30           #_result:Landroid/location/Location;
     :sswitch_6
     const-string v2, "android.location.ILocationManager"
 
@@ -679,14 +683,14 @@
 
     invoke-virtual {v0, v3}, Landroid/location/ILocationManager$Stub;->addGpsStatusListener(Landroid/location/IGpsStatusListener;)Z
 
-    move-result v29
+    move-result v30
 
     .line 175
-    .local v29, _result:Z
+    .local v30, _result:Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 176
-    if-eqz v29, :cond_a
+    if-eqz v30, :cond_a
 
     const/4 v2, 0x1
 
@@ -708,7 +712,7 @@
 
     .line 181
     .end local v3           #_arg0:Landroid/location/IGpsStatusListener;
-    .end local v29           #_result:Z
+    .end local v30           #_result:Z
     :sswitch_7
     const-string v2, "android.location.ILocationManager"
 
@@ -751,14 +755,14 @@
     .line 191
     invoke-virtual/range {p0 .. p0}, Landroid/location/ILocationManager$Stub;->geocoderIsPresent()Z
 
-    move-result v29
+    move-result v30
 
     .line 192
-    .restart local v29       #_result:Z
+    .restart local v30       #_result:Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 193
-    if-eqz v29, :cond_b
+    if-eqz v30, :cond_b
 
     const/4 v2, 0x1
 
@@ -779,7 +783,7 @@
     goto :goto_c
 
     .line 198
-    .end local v29           #_result:Z
+    .end local v30           #_result:Z
     :sswitch_9
     const-string v2, "android.location.ILocationManager"
 
@@ -836,16 +840,16 @@
     .line 214
     invoke-virtual/range {v2 .. v9}, Landroid/location/ILocationManager$Stub;->getFromLocation(DDILandroid/location/GeocoderParams;Ljava/util/List;)Ljava/lang/String;
 
-    move-result-object v29
+    move-result-object v30
 
     .line 215
-    .local v29, _result:Ljava/lang/String;
+    .local v30, _result:Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 216
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v29
+    move-object/from16 v1, v30
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
@@ -862,7 +866,7 @@
     .line 210
     .end local v8           #_arg3:Landroid/location/GeocoderParams;
     .end local v9           #_arg4:Ljava/util/List;,"Ljava/util/List<Landroid/location/Address;>;"
-    .end local v29           #_result:Ljava/lang/String;
+    .end local v30           #_result:Ljava/lang/String;
     :cond_c
     const/4 v8, 0x0
 
@@ -952,16 +956,16 @@
     .line 244
     invoke-virtual/range {v10 .. v22}, Landroid/location/ILocationManager$Stub;->getFromLocationName(Ljava/lang/String;DDDDILandroid/location/GeocoderParams;Ljava/util/List;)Ljava/lang/String;
 
-    move-result-object v29
+    move-result-object v30
 
     .line 245
-    .restart local v29       #_result:Ljava/lang/String;
+    .restart local v30       #_result:Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 246
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v29
+    move-object/from16 v1, v30
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
@@ -980,7 +984,7 @@
     .line 240
     .end local v21           #_arg6:Landroid/location/GeocoderParams;
     .end local v22           #_arg7:Ljava/util/List;,"Ljava/util/List<Landroid/location/Address;>;"
-    .end local v29           #_result:Ljava/lang/String;
+    .end local v30           #_result:Ljava/lang/String;
     :cond_d
     const/16 v21, 0x0
 
@@ -1019,14 +1023,14 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/location/ILocationManager$Stub;->sendNiResponse(II)Z
 
-    move-result v29
+    move-result v30
 
     .line 258
-    .local v29, _result:Z
+    .local v30, _result:Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 259
-    if-eqz v29, :cond_e
+    if-eqz v30, :cond_e
 
     const/4 v2, 0x1
 
@@ -1049,7 +1053,7 @@
     .line 264
     .end local v3           #_arg0:I
     .end local v5           #_arg1:I
-    .end local v29           #_result:Z
+    .end local v30           #_result:Z
     :sswitch_c
     const-string v2, "android.location.ILocationManager"
 
@@ -1060,16 +1064,16 @@
     .line 265
     invoke-virtual/range {p0 .. p0}, Landroid/location/ILocationManager$Stub;->getAllProviders()Ljava/util/List;
 
-    move-result-object v30
+    move-result-object v31
 
     .line 266
-    .local v30, _result:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    .local v31, _result:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 267
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v30
+    move-object/from16 v1, v31
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
@@ -1079,7 +1083,7 @@
     goto/16 :goto_0
 
     .line 272
-    .end local v30           #_result:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    .end local v31           #_result:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     :sswitch_d
     const-string v2, "android.location.ILocationManager"
 
@@ -1123,16 +1127,16 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/location/ILocationManager$Stub;->getProviders(Landroid/location/Criteria;Z)Ljava/util/List;
 
-    move-result-object v30
+    move-result-object v31
 
     .line 283
-    .restart local v30       #_result:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    .restart local v31       #_result:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 284
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v30
+    move-object/from16 v1, v31
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
 
@@ -1144,7 +1148,7 @@
     .line 278
     .end local v3           #_arg0:Landroid/location/Criteria;
     .end local v5           #_arg1:Z
-    .end local v30           #_result:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
+    .end local v31           #_result:Ljava/util/List;,"Ljava/util/List<Ljava/lang/String;>;"
     :cond_f
     const/4 v3, 0x0
 
@@ -1202,16 +1206,16 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/location/ILocationManager$Stub;->getBestProvider(Landroid/location/Criteria;Z)Ljava/lang/String;
 
-    move-result-object v29
+    move-result-object v30
 
     .line 300
-    .local v29, _result:Ljava/lang/String;
+    .local v30, _result:Ljava/lang/String;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 301
     move-object/from16 v0, p3
 
-    move-object/from16 v1, v29
+    move-object/from16 v1, v30
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
@@ -1223,7 +1227,7 @@
     .line 295
     .end local v3           #_arg0:Landroid/location/Criteria;
     .end local v5           #_arg1:Z
-    .end local v29           #_result:Ljava/lang/String;
+    .end local v30           #_result:Ljava/lang/String;
     :cond_11
     const/4 v3, 0x0
 
@@ -1276,14 +1280,14 @@
 
     invoke-virtual {v0, v3, v5}, Landroid/location/ILocationManager$Stub;->providerMeetsCriteria(Ljava/lang/String;Landroid/location/Criteria;)Z
 
-    move-result v29
+    move-result v30
 
     .line 317
-    .local v29, _result:Z
+    .local v30, _result:Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 318
-    if-eqz v29, :cond_14
+    if-eqz v30, :cond_14
 
     const/4 v2, 0x1
 
@@ -1299,7 +1303,7 @@
 
     .line 314
     .end local v5           #_arg1:Landroid/location/Criteria;
-    .end local v29           #_result:Z
+    .end local v30           #_result:Z
     :cond_13
     const/4 v5, 0x0
 
@@ -1307,7 +1311,7 @@
     goto :goto_14
 
     .line 318
-    .restart local v29       #_result:Z
+    .restart local v30       #_result:Z
     :cond_14
     const/4 v2, 0x0
 
@@ -1316,7 +1320,7 @@
     .line 323
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v5           #_arg1:Landroid/location/Criteria;
-    .end local v29           #_result:Z
+    .end local v30           #_result:Z
     :sswitch_10
     const-string v2, "android.location.ILocationManager"
 
@@ -1335,14 +1339,14 @@
 
     invoke-virtual {v0, v3}, Landroid/location/ILocationManager$Stub;->getProviderProperties(Ljava/lang/String;)Lcom/android/internal/location/ProviderProperties;
 
-    move-result-object v29
+    move-result-object v30
 
     .line 327
-    .local v29, _result:Lcom/android/internal/location/ProviderProperties;
+    .local v30, _result:Lcom/android/internal/location/ProviderProperties;
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 328
-    if-eqz v29, :cond_15
+    if-eqz v30, :cond_15
 
     .line 329
     const/4 v2, 0x1
@@ -1354,7 +1358,7 @@
     .line 330
     const/4 v2, 0x1
 
-    move-object/from16 v0, v29
+    move-object/from16 v0, v30
 
     move-object/from16 v1, p3
 
@@ -1378,7 +1382,7 @@
 
     .line 339
     .end local v3           #_arg0:Ljava/lang/String;
-    .end local v29           #_result:Lcom/android/internal/location/ProviderProperties;
+    .end local v30           #_result:Lcom/android/internal/location/ProviderProperties;
     :sswitch_11
     const-string v2, "android.location.ILocationManager"
 
@@ -1397,14 +1401,14 @@
 
     invoke-virtual {v0, v3}, Landroid/location/ILocationManager$Stub;->isProviderEnabled(Ljava/lang/String;)Z
 
-    move-result v29
+    move-result v30
 
     .line 343
-    .local v29, _result:Z
+    .local v30, _result:Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 344
-    if-eqz v29, :cond_16
+    if-eqz v30, :cond_16
 
     const/4 v2, 0x1
 
@@ -1426,7 +1430,7 @@
 
     .line 349
     .end local v3           #_arg0:Ljava/lang/String;
-    .end local v29           #_result:Z
+    .end local v30           #_result:Z
     :sswitch_12
     const-string v2, "android.location.ILocationManager"
 
@@ -1822,14 +1826,14 @@
 
     invoke-virtual {v0, v3, v5, v7}, Landroid/location/ILocationManager$Stub;->sendExtraCommand(Ljava/lang/String;Ljava/lang/String;Landroid/os/Bundle;)Z
 
-    move-result v29
+    move-result v30
 
     .line 461
-    .restart local v29       #_result:Z
+    .restart local v30       #_result:Z
     invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
 
     .line 462
-    if-eqz v29, :cond_1c
+    if-eqz v30, :cond_1c
 
     const/4 v2, 0x1
 
@@ -1863,7 +1867,7 @@
 
     .line 458
     .end local v7           #_arg2:Landroid/os/Bundle;
-    .end local v29           #_result:Z
+    .end local v30           #_result:Z
     :cond_1b
     const/4 v7, 0x0
 
@@ -1871,7 +1875,7 @@
     goto :goto_1c
 
     .line 462
-    .restart local v29       #_result:Z
+    .restart local v30       #_result:Z
     :cond_1c
     const/4 v2, 0x0
 
@@ -1891,7 +1895,7 @@
     .end local v3           #_arg0:Ljava/lang/String;
     .end local v5           #_arg1:Ljava/lang/String;
     .end local v7           #_arg2:Landroid/os/Bundle;
-    .end local v29           #_result:Z
+    .end local v30           #_result:Z
     :sswitch_1b
     const-string v2, "android.location.ILocationManager"
 
@@ -1990,9 +1994,100 @@
 
     goto/16 :goto_0
 
-    .line 43
-    nop
+    .line 499
+    .end local v3           #_arg0:Landroid/location/ILocationListener;
+    :sswitch_1d
+    const-string v2, "android.location.ILocationManager"
 
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 501
+    invoke-virtual/range {p2 .. p2}, Landroid/os/Parcel;->readInt()I
+
+    move-result v29
+
+    .line 502
+    .local v29, _arg0_length:I
+    if-gez v29, :cond_20
+
+    .line 503
+    const/4 v3, 0x0
+
+    .line 508
+    .local v3, _arg0:[J
+    :goto_21
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v3}, Landroid/location/ILocationManager$Stub;->getFileTime([J)I
+
+    move-result v30
+
+    .line 509
+    .local v30, _result:I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 510
+    move-object/from16 v0, p3
+
+    move/from16 v1, v30
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 511
+    move-object/from16 v0, p3
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeLongArray([J)V
+
+    .line 512
+    const/4 v2, 0x1
+
+    goto/16 :goto_0
+
+    .line 506
+    .end local v3           #_arg0:[J
+    .end local v30           #_result:I
+    :cond_20
+    move/from16 v0, v29
+
+    new-array v3, v0, [J
+
+    .restart local v3       #_arg0:[J
+    goto :goto_21
+
+    .line 516
+    .end local v3           #_arg0:[J
+    .end local v29           #_arg0_length:I
+    :sswitch_1e
+    const-string v2, "android.location.ILocationManager"
+
+    move-object/from16 v0, p2
+
+    invoke-virtual {v0, v2}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
+
+    .line 517
+    invoke-virtual/range {p0 .. p0}, Landroid/location/ILocationManager$Stub;->updateEPOFile()I
+
+    move-result v30
+
+    .line 518
+    .restart local v30       #_result:I
+    invoke-virtual/range {p3 .. p3}, Landroid/os/Parcel;->writeNoException()V
+
+    .line 519
+    move-object/from16 v0, p3
+
+    move/from16 v1, v30
+
+    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 520
+    const/4 v2, 0x1
+
+    goto/16 :goto_0
+
+    .line 43
     :sswitch_data_0
     .sparse-switch
         0x1 -> :sswitch_1
@@ -2023,6 +2118,8 @@
         0x1a -> :sswitch_1a
         0x1b -> :sswitch_1b
         0x1c -> :sswitch_1c
+        0x1d -> :sswitch_1d
+        0x1e -> :sswitch_1e
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

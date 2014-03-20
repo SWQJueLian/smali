@@ -351,7 +351,7 @@
     .parameter "prop"
 
     .prologue
-    .line 450
+    .line 458
     invoke-virtual {p0}, Landroid/net/LinkProperties;->getRoutes()Ljava/util/Collection;
 
     move-result-object v2
@@ -374,7 +374,7 @@
 
     check-cast v1, Landroid/net/RouteInfo;
 
-    .line 452
+    .line 460
     .local v1, route:Landroid/net/RouteInfo;
     invoke-virtual {v1}, Landroid/net/RouteInfo;->isDefaultRoute()Z
 
@@ -390,7 +390,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 453
+    .line 461
     invoke-virtual {v1}, Landroid/net/RouteInfo;->getGateway()Ljava/net/InetAddress;
 
     move-result-object v2
@@ -401,7 +401,7 @@
 
     return-object v2
 
-    .line 457
+    .line 465
     .end local v1           #route:Landroid/net/RouteInfo;
     :cond_1
     new-instance v2, Ljava/lang/IllegalStateException;
@@ -414,46 +414,53 @@
 .end method
 
 .method private hideNotification()V
-    .locals 4
+    .locals 5
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    .line 430
-    iget-boolean v1, p0, Lcom/android/server/connectivity/Vpn;->mEnableNotif:Z
+    .line 433
+    iput-object v2, p0, Lcom/android/server/connectivity/Vpn;->mStatusIntent:Landroid/app/PendingIntent;
 
-    if-nez v1, :cond_1
+    .line 435
+    iget-object v2, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
 
-    .line 439
+    const-string v3, "notification"
+
+    invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/app/NotificationManager;
+
+    .line 438
+    .local v1, nm:Landroid/app/NotificationManager;
+    if-eqz v1, :cond_0
+
+    .line 442
+    const/4 v2, 0x0
+
+    const v3, 0x1080608
+
+    :try_start_0
+    sget-object v4, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
+
+    invoke-virtual {v1, v2, v3, v4}, Landroid/app/NotificationManager;->cancelAsUser(Ljava/lang/String;ILandroid/os/UserHandle;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 447
     :cond_0
     :goto_0
     return-void
 
-    .line 431
-    :cond_1
-    iput-object v3, p0, Lcom/android/server/connectivity/Vpn;->mStatusIntent:Landroid/app/PendingIntent;
+    .line 443
+    :catch_0
+    move-exception v0
 
-    .line 433
-    iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mContext:Landroid/content/Context;
-
-    const-string v2, "notification"
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/app/NotificationManager;
-
-    .line 436
-    .local v0, nm:Landroid/app/NotificationManager;
-    if-eqz v0, :cond_0
-
-    .line 437
-    const v1, 0x1080608
-
-    sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
-
-    invoke-virtual {v0, v3, v1, v2}, Landroid/app/NotificationManager;->cancelAsUser(Ljava/lang/String;ILandroid/os/UserHandle;)V
+    .line 444
+    .local v0, e:Ljava/lang/Exception;
+    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
 
     goto :goto_0
 .end method
@@ -659,46 +666,46 @@
     .parameter "mtpd"
 
     .prologue
-    .line 569
+    .line 577
     monitor-enter p0
 
     :try_start_0
     invoke-virtual {p0}, Lcom/android/server/connectivity/Vpn;->stopLegacyVpn()V
 
-    .line 572
+    .line 580
     const/4 v0, 0x0
 
     const-string v1, "[Legacy VPN]"
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/connectivity/Vpn;->prepare(Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 573
+    .line 581
     sget-object v0, Landroid/net/NetworkInfo$DetailedState;->CONNECTING:Landroid/net/NetworkInfo$DetailedState;
 
     const-string v1, "startLegacyVpn"
 
     invoke-direct {p0, v0, v1}, Lcom/android/server/connectivity/Vpn;->updateState(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;)V
 
-    .line 576
+    .line 584
     new-instance v0, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;-><init>(Lcom/android/server/connectivity/Vpn;Lcom/android/internal/net/VpnConfig;[Ljava/lang/String;[Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/android/server/connectivity/Vpn;->mLegacyVpnRunner:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
-    .line 577
+    .line 585
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mLegacyVpnRunner:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
     invoke-virtual {v0}, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;->start()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 578
+    .line 586
     monitor-exit p0
 
     return-void
 
-    .line 569
+    .line 577
     :catchall_0
     move-exception v0
 
@@ -1543,12 +1550,12 @@
     .locals 1
 
     .prologue
-    .line 610
+    .line 618
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mLegacyVpnRunner:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
     if-eqz v0, :cond_0
 
-    .line 611
+    .line 619
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mLegacyVpnRunner:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
     #getter for: Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;->mConfig:Lcom/android/internal/net/VpnConfig;
@@ -1556,7 +1563,7 @@
 
     move-result-object v0
 
-    .line 613
+    .line 621
     :goto_0
     return-object v0
 
@@ -1570,13 +1577,13 @@
     .locals 2
 
     .prologue
-    .line 597
+    .line 605
     monitor-enter p0
 
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/connectivity/Vpn;->enforceControlPermission()V
 
-    .line 598
+    .line 606
     iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mLegacyVpnRunner:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1585,21 +1592,21 @@
 
     const/4 v0, 0x0
 
-    .line 606
+    .line 614
     :cond_0
     :goto_0
     monitor-exit p0
 
     return-object v0
 
-    .line 600
+    .line 608
     :cond_1
     :try_start_1
     new-instance v0, Lcom/android/internal/net/LegacyVpnInfo;
 
     invoke-direct {v0}, Lcom/android/internal/net/LegacyVpnInfo;-><init>()V
 
-    .line 601
+    .line 609
     .local v0, info:Lcom/android/internal/net/LegacyVpnInfo;
     iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mLegacyVpnRunner:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
@@ -1612,7 +1619,7 @@
 
     iput-object v1, v0, Lcom/android/internal/net/LegacyVpnInfo;->key:Ljava/lang/String;
 
-    .line 602
+    .line 610
     iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-static {v1}, Lcom/android/internal/net/LegacyVpnInfo;->stateFromNetworkInfo(Landroid/net/NetworkInfo;)I
@@ -1621,7 +1628,7 @@
 
     iput v1, v0, Lcom/android/internal/net/LegacyVpnInfo;->state:I
 
-    .line 603
+    .line 611
     iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mNetworkInfo:Landroid/net/NetworkInfo;
 
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->isConnected()Z
@@ -1630,7 +1637,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 604
+    .line 612
     iget-object v1, p0, Lcom/android/server/connectivity/Vpn;->mStatusIntent:Landroid/app/PendingIntent;
 
     iput-object v1, v0, Lcom/android/internal/net/LegacyVpnInfo;->intent:Landroid/app/PendingIntent;
@@ -1639,7 +1646,7 @@
 
     goto :goto_0
 
-    .line 597
+    .line 605
     .end local v0           #info:Lcom/android/internal/net/LegacyVpnInfo;
     :catchall_0
     move-exception v1
@@ -2030,7 +2037,7 @@
     .parameter "egress"
 
     .prologue
-    .line 465
+    .line 473
     invoke-virtual {p2}, Landroid/security/KeyStore;->state()Landroid/security/KeyStore$State;
 
     move-result-object v10
@@ -2039,7 +2046,7 @@
 
     if-eq v10, v11, :cond_0
 
-    .line 466
+    .line 474
     new-instance v10, Ljava/lang/IllegalStateException;
 
     const-string v11, "KeyStore isn\'t unlocked"
@@ -2048,35 +2055,35 @@
 
     throw v10
 
-    .line 469
+    .line 477
     :cond_0
     invoke-virtual {p3}, Landroid/net/LinkProperties;->getInterfaceName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 470
+    .line 478
     .local v3, iface:Ljava/lang/String;
     invoke-static {p3}, Lcom/android/server/connectivity/Vpn;->findLegacyVpnGateway(Landroid/net/LinkProperties;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 473
+    .line 481
     .local v2, gateway:Ljava/lang/String;
     const-string v5, ""
 
-    .line 474
+    .line 482
     .local v5, privateKey:Ljava/lang/String;
     const-string v8, ""
 
-    .line 475
+    .line 483
     .local v8, userCert:Ljava/lang/String;
     const-string v0, ""
 
-    .line 476
+    .line 484
     .local v0, caCert:Ljava/lang/String;
     const-string v7, ""
 
-    .line 477
+    .line 485
     .local v7, serverCert:Ljava/lang/String;
     iget-object v10, p1, Lcom/android/internal/net/VpnProfile;->ipsecUserCert:Ljava/lang/String;
 
@@ -2086,7 +2093,7 @@
 
     if-nez v10, :cond_1
 
-    .line 478
+    .line 486
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2107,7 +2114,7 @@
 
     move-result-object v5
 
-    .line 479
+    .line 487
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2132,13 +2139,13 @@
 
     move-result-object v9
 
-    .line 480
+    .line 488
     .local v9, value:[B
     if-nez v9, :cond_5
 
     const/4 v8, 0x0
 
-    .line 482
+    .line 490
     .end local v9           #value:[B
     :cond_1
     :goto_0
@@ -2150,7 +2157,7 @@
 
     if-nez v10, :cond_2
 
-    .line 483
+    .line 491
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2175,13 +2182,13 @@
 
     move-result-object v9
 
-    .line 484
+    .line 492
     .restart local v9       #value:[B
     if-nez v9, :cond_6
 
     const/4 v0, 0x0
 
-    .line 486
+    .line 494
     .end local v9           #value:[B
     :cond_2
     :goto_1
@@ -2193,7 +2200,7 @@
 
     if-nez v10, :cond_3
 
-    .line 487
+    .line 495
     new-instance v10, Ljava/lang/StringBuilder;
 
     invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
@@ -2218,13 +2225,13 @@
 
     move-result-object v9
 
-    .line 488
+    .line 496
     .restart local v9       #value:[B
     if-nez v9, :cond_7
 
     const/4 v7, 0x0
 
-    .line 490
+    .line 498
     .end local v9           #value:[B
     :cond_3
     :goto_2
@@ -2236,7 +2243,7 @@
 
     if-nez v7, :cond_8
 
-    .line 491
+    .line 499
     :cond_4
     new-instance v10, Ljava/lang/IllegalStateException;
 
@@ -2246,7 +2253,7 @@
 
     throw v10
 
-    .line 480
+    .line 488
     .restart local v9       #value:[B
     :cond_5
     new-instance v8, Ljava/lang/String;
@@ -2258,7 +2265,7 @@
 
     goto :goto_0
 
-    .line 484
+    .line 492
     .restart local v8       #userCert:Ljava/lang/String;
     :cond_6
     new-instance v0, Ljava/lang/String;
@@ -2270,7 +2277,7 @@
 
     goto :goto_1
 
-    .line 488
+    .line 496
     .restart local v0       #caCert:Ljava/lang/String;
     :cond_7
     new-instance v7, Ljava/lang/String;
@@ -2282,59 +2289,59 @@
 
     goto :goto_2
 
-    .line 495
+    .line 503
     .end local v9           #value:[B
     .restart local v7       #serverCert:Ljava/lang/String;
     :cond_8
     const/4 v6, 0x0
 
-    .line 496
+    .line 504
     .local v6, racoon:[Ljava/lang/String;
     iget v10, p1, Lcom/android/internal/net/VpnProfile;->type:I
 
     packed-switch v10, :pswitch_data_0
 
-    .line 530
+    .line 538
     :goto_3
     const/4 v4, 0x0
 
-    .line 531
+    .line 539
     .local v4, mtpd:[Ljava/lang/String;
     iget v10, p1, Lcom/android/internal/net/VpnProfile;->type:I
 
     packed-switch v10, :pswitch_data_1
 
-    .line 552
+    .line 560
     :goto_4
     new-instance v1, Lcom/android/internal/net/VpnConfig;
 
     invoke-direct {v1}, Lcom/android/internal/net/VpnConfig;-><init>()V
 
-    .line 553
+    .line 561
     .local v1, config:Lcom/android/internal/net/VpnConfig;
     const/4 v10, 0x1
 
     iput-boolean v10, v1, Lcom/android/internal/net/VpnConfig;->legacy:Z
 
-    .line 554
+    .line 562
     iget-object v10, p1, Lcom/android/internal/net/VpnProfile;->key:Ljava/lang/String;
 
     iput-object v10, v1, Lcom/android/internal/net/VpnConfig;->user:Ljava/lang/String;
 
-    .line 555
+    .line 563
     iput-object v3, v1, Lcom/android/internal/net/VpnConfig;->interfaze:Ljava/lang/String;
 
-    .line 556
+    .line 564
     iget-object v10, p1, Lcom/android/internal/net/VpnProfile;->name:Ljava/lang/String;
 
     iput-object v10, v1, Lcom/android/internal/net/VpnConfig;->session:Ljava/lang/String;
 
-    .line 557
+    .line 565
     iget-object v10, p1, Lcom/android/internal/net/VpnProfile;->routes:Ljava/lang/String;
 
     iput-object v10, v1, Lcom/android/internal/net/VpnConfig;->routes:Ljava/lang/String;
 
-    .line 558
+    .line 566
     iget-object v10, p1, Lcom/android/internal/net/VpnProfile;->dnsServers:Ljava/lang/String;
 
     invoke-virtual {v10}, Ljava/lang/String;->isEmpty()Z
@@ -2343,7 +2350,7 @@
 
     if-nez v10, :cond_9
 
-    .line 559
+    .line 567
     iget-object v10, p1, Lcom/android/internal/net/VpnProfile;->dnsServers:Ljava/lang/String;
 
     const-string v11, " +"
@@ -2358,7 +2365,7 @@
 
     iput-object v10, v1, Lcom/android/internal/net/VpnConfig;->dnsServers:Ljava/util/List;
 
-    .line 561
+    .line 569
     :cond_9
     iget-object v10, p1, Lcom/android/internal/net/VpnProfile;->searchDomains:Ljava/lang/String;
 
@@ -2368,7 +2375,7 @@
 
     if-nez v10, :cond_a
 
-    .line 562
+    .line 570
     iget-object v10, p1, Lcom/android/internal/net/VpnProfile;->searchDomains:Ljava/lang/String;
 
     const-string v11, " +"
@@ -2383,14 +2390,14 @@
 
     iput-object v10, v1, Lcom/android/internal/net/VpnConfig;->searchDomains:Ljava/util/List;
 
-    .line 565
+    .line 573
     :cond_a
     invoke-direct {p0, v1, v6, v4}, Lcom/android/server/connectivity/Vpn;->startLegacyVpn(Lcom/android/internal/net/VpnConfig;[Ljava/lang/String;[Ljava/lang/String;)V
 
-    .line 566
+    .line 574
     return-void
 
-    .line 498
+    .line 506
     .end local v1           #config:Lcom/android/internal/net/VpnConfig;
     .end local v4           #mtpd:[Ljava/lang/String;
     :pswitch_0
@@ -2433,11 +2440,11 @@
 
     aput-object v11, v6, v10
 
-    .line 502
+    .line 510
     .restart local v6       #racoon:[Ljava/lang/String;
     goto :goto_3
 
-    .line 504
+    .line 512
     :pswitch_1
     const/16 v10, 0x8
 
@@ -2482,11 +2489,11 @@
 
     aput-object v11, v6, v10
 
-    .line 508
+    .line 516
     .restart local v6       #racoon:[Ljava/lang/String;
     goto/16 :goto_3
 
-    .line 510
+    .line 518
     :pswitch_2
     const/16 v10, 0x9
 
@@ -2543,11 +2550,11 @@
 
     aput-object v2, v6, v10
 
-    .line 514
+    .line 522
     .restart local v6       #racoon:[Ljava/lang/String;
     goto/16 :goto_3
 
-    .line 516
+    .line 524
     :pswitch_3
     const/16 v10, 0xb
 
@@ -2608,11 +2615,11 @@
 
     aput-object v2, v6, v10
 
-    .line 520
+    .line 528
     .restart local v6       #racoon:[Ljava/lang/String;
     goto/16 :goto_3
 
-    .line 522
+    .line 530
     :pswitch_4
     const/16 v10, 0x9
 
@@ -2668,7 +2675,7 @@
     .restart local v6       #racoon:[Ljava/lang/String;
     goto/16 :goto_3
 
-    .line 533
+    .line 541
     .restart local v4       #mtpd:[Ljava/lang/String;
     :pswitch_5
     const/16 v10, 0x14
@@ -2799,18 +2806,18 @@
     :goto_5
     aput-object v10, v4, v11
 
-    .line 540
+    .line 548
     .restart local v4       #mtpd:[Ljava/lang/String;
     goto/16 :goto_4
 
-    .line 533
+    .line 541
     .end local v4           #mtpd:[Ljava/lang/String;
     :cond_b
     const-string v10, "nomppe"
 
     goto :goto_5
 
-    .line 543
+    .line 551
     .restart local v4       #mtpd:[Ljava/lang/String;
     :pswitch_6
     const/16 v10, 0x14
@@ -2939,7 +2946,7 @@
     .restart local v4       #mtpd:[Ljava/lang/String;
     goto/16 :goto_4
 
-    .line 496
+    .line 504
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -2949,7 +2956,7 @@
         :pswitch_4
     .end packed-switch
 
-    .line 531
+    .line 539
     :pswitch_data_1
     .packed-switch 0x0
         :pswitch_5
@@ -2970,7 +2977,7 @@
     .locals 2
 
     .prologue
-    .line 581
+    .line 589
     monitor-enter p0
 
     :try_start_0
@@ -2978,36 +2985,36 @@
 
     if-eqz v0, :cond_0
 
-    .line 582
+    .line 590
     iget-object v0, p0, Lcom/android/server/connectivity/Vpn;->mLegacyVpnRunner:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
     invoke-virtual {v0}, Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;->exit()V
 
-    .line 583
+    .line 591
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/connectivity/Vpn;->mLegacyVpnRunner:Lcom/android/server/connectivity/Vpn$LegacyVpnRunner;
 
-    .line 585
+    .line 593
     const-string v1, "LegacyVpnRunner"
 
     monitor-enter v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 588
+    .line 596
     :try_start_1
     monitor-exit v1
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 590
+    .line 598
     :cond_0
     monitor-exit p0
 
     return-void
 
-    .line 588
+    .line 596
     :catchall_0
     move-exception v0
 
@@ -3021,7 +3028,7 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 581
+    .line 589
     :catchall_1
     move-exception v0
 

@@ -1228,7 +1228,7 @@
 
     move-result-object v2
 
-    const-string v3, "name"
+    const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1270,7 +1270,7 @@
 
     move-result-object v2
 
-    const-string v3, "name"
+    const-string/jumbo v3, "name"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2711,7 +2711,7 @@
 
     .line 542
     .local v12, entry:Ljava/util/Map$Entry;,"Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
-    const-string v2, "name"
+    const-string/jumbo v2, "name"
 
     invoke-interface {v12}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 

@@ -756,7 +756,7 @@
 
     move-result-object v5
 
-    const-string v6, "item"
+    const-string/jumbo v6, "item"
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -950,7 +950,7 @@
 
     move-result-object v5
 
-    const-string v6, "item"
+    const-string/jumbo v6, "item"
 
     invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1500,7 +1500,7 @@
     const/4 v7, 0x0
 
     .line 773
-    const-string v5, "name"
+    const-string/jumbo v5, "name"
 
     invoke-interface {p0, v6, v5}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -1740,7 +1740,7 @@
     .line 805
     .end local v1           #res:Ljava/lang/Integer;
     :cond_8
-    const-string v5, "long"
+    const-string/jumbo v5, "long"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1867,7 +1867,7 @@
     .line 819
     .end local v1           #res:[I
     :cond_d
-    const-string v5, "map"
+    const-string/jumbo v5, "map"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1879,7 +1879,7 @@
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     .line 821
-    const-string v5, "map"
+    const-string/jumbo v5, "map"
 
     invoke-static {p0, v5, p1}, Lcom/android/internal/util/XmlUtils;->readThisMapXml(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;[Ljava/lang/String;)Ljava/util/HashMap;
 
@@ -1894,7 +1894,7 @@
     .line 825
     .end local v1           #res:Ljava/util/HashMap;
     :cond_e
-    const-string v5, "list"
+    const-string/jumbo v5, "list"
 
     invoke-virtual {v2, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -1906,7 +1906,7 @@
     invoke-interface {p0}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     .line 827
-    const-string v5, "list"
+    const-string/jumbo v5, "list"
 
     invoke-static {p0, v5, p1}, Lcom/android/internal/util/XmlUtils;->readThisListXml(Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;[Ljava/lang/String;)Ljava/util/ArrayList;
 
@@ -2343,7 +2343,7 @@
     if-eqz p1, :cond_1
 
     .line 333
-    const-string v5, "name"
+    const-string/jumbo v5, "name"
 
     invoke-interface {p2, v7, v5, p1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2486,7 +2486,7 @@
     if-eqz p1, :cond_1
 
     .line 378
-    const-string v2, "name"
+    const-string/jumbo v2, "name"
 
     invoke-interface {p2, v4, v2, p1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2512,7 +2512,7 @@
     if-ge v1, v0, :cond_2
 
     .line 385
-    const-string v2, "item"
+    const-string/jumbo v2, "item"
 
     invoke-interface {p2, v4, v2}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2528,7 +2528,7 @@
     invoke-interface {p2, v4, v2, v3}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
     .line 387
-    const-string v2, "item"
+    const-string/jumbo v2, "item"
 
     invoke-interface {p2, v4, v2}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2629,7 +2629,7 @@
 
     .line 274
     :cond_0
-    const-string v2, "list"
+    const-string/jumbo v2, "list"
 
     invoke-interface {p2, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2637,7 +2637,7 @@
     if-eqz p1, :cond_1
 
     .line 276
-    const-string v2, "name"
+    const-string/jumbo v2, "name"
 
     invoke-interface {p2, v3, v2, p1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2670,7 +2670,7 @@
 
     .line 286
     :cond_2
-    const-string v2, "list"
+    const-string/jumbo v2, "list"
 
     invoke-interface {p2, v3, v2}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2772,7 +2772,7 @@
 
     .line 238
     .local v1, i:Ljava/util/Iterator;
-    const-string v3, "map"
+    const-string/jumbo v3, "map"
 
     invoke-interface {p2, v5, v3}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2780,7 +2780,7 @@
     if-eqz p1, :cond_1
 
     .line 240
-    const-string v3, "name"
+    const-string/jumbo v3, "name"
 
     invoke-interface {p2, v5, v3, p1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2819,7 +2819,7 @@
     .line 248
     .end local v0           #e:Ljava/util/Map$Entry;
     :cond_2
-    const-string v3, "map"
+    const-string/jumbo v3, "map"
 
     invoke-interface {p2, v5, v3}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2868,7 +2868,7 @@
     if-eqz p1, :cond_1
 
     .line 299
-    const-string v2, "name"
+    const-string/jumbo v2, "name"
 
     invoke-interface {p2, v3, v2, p1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2933,7 +2933,7 @@
     if-eqz p1, :cond_0
 
     .line 416
-    const-string v1, "name"
+    const-string/jumbo v1, "name"
 
     invoke-interface {p2, v3, v1, p1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -2964,7 +2964,7 @@
     if-eqz p1, :cond_2
 
     .line 423
-    const-string v1, "name"
+    const-string/jumbo v1, "name"
 
     invoke-interface {p2, v3, v1, p1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -3001,7 +3001,7 @@
     if-eqz p1, :cond_4
 
     .line 470
-    const-string v1, "name"
+    const-string/jumbo v1, "name"
 
     invoke-interface {p2, v3, v1, p1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
@@ -3028,7 +3028,7 @@
     if-eqz v1, :cond_6
 
     .line 431
-    const-string v0, "long"
+    const-string/jumbo v0, "long"
 
     .restart local v0       #typeStr:Ljava/lang/String;
     goto :goto_1
@@ -3167,7 +3167,7 @@
     if-eqz p1, :cond_f
 
     .line 459
-    const-string v1, "name"
+    const-string/jumbo v1, "name"
 
     invoke-interface {p2, v3, v1, p1}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 

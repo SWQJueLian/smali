@@ -335,7 +335,7 @@
 
     new-instance v12, Ljava/lang/IllegalStateException;
 
-    const-string v13, "nextRestorePackage not called"
+    const-string/jumbo v13, "nextRestorePackage not called"
 
     invoke-direct {v12, v13}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

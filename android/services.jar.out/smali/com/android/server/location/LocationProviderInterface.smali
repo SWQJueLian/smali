@@ -13,6 +13,9 @@
 .method public abstract enable()V
 .end method
 
+.method public abstract getFileTime([J)I
+.end method
+
 .method public abstract getName()Ljava/lang/String;
 .end method
 
@@ -35,4 +38,7 @@
 .end method
 
 .method public abstract switchUser(I)V
+.end method
+
+.method public abstract updateEPOFile()I
 .end method

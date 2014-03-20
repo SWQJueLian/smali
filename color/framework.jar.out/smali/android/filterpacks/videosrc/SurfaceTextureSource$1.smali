@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 259
+    .line 260
     iput-object p1, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource$1;->this$0:Landroid/filterpacks/videosrc/SurfaceTextureSource;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "surfaceTexture"
 
     .prologue
-    .line 261
+    .line 262
     invoke-static {}, Landroid/filterpacks/videosrc/SurfaceTextureSource;->access$000()Z
 
     move-result v0
@@ -55,7 +55,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 262
+    .line 263
     :cond_0
     iget-object v0, p0, Landroid/filterpacks/videosrc/SurfaceTextureSource$1;->this$0:Landroid/filterpacks/videosrc/SurfaceTextureSource;
 
@@ -66,6 +66,6 @@
 
     invoke-virtual {v0}, Landroid/os/ConditionVariable;->open()V
 
-    .line 263
+    .line 264
     return-void
 .end method

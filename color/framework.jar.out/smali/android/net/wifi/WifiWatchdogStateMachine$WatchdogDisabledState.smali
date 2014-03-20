@@ -111,7 +111,7 @@
 
     .line 510
     .local v0, intent:Landroid/content/Intent;
-    const-string v3, "networkInfo"
+    const-string/jumbo v3, "networkInfo"
 
     invoke-virtual {v0, v3}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -160,8 +160,6 @@
     goto :goto_0
 
     .line 503
-    nop
-
     :pswitch_data_0
     .packed-switch 0x21001
         :pswitch_0

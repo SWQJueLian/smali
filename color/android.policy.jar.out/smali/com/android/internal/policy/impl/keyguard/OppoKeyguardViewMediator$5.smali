@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1326
+    .line 1532
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,362 +35,728 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 9
+    .locals 11
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    const/4 v7, 0x0
-
-    .line 1329
+    .line 1535
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 1330
+    .line 1536
     .local v0, action:Ljava/lang/String;
-    const-string v6, "com.android.internal.policy.impl.PhoneWindowManager.DELAYED_KEYGUARD"
+    const-string v7, "com.android.internal.policy.impl.PhoneWindowManager.DELAYED_KEYGUARD"
 
-    invoke-virtual {v6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_2
+
+    .line 1537
+    const-string v7, "seq"
+
+    const/4 v8, 0x0
+
+    invoke-virtual {p2, v7, v8}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
     move-result v6
 
-    if-eqz v6, :cond_2
+    .line 1540
+    .local v6, sequence:I
+    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
-    .line 1331
-    const-string v6, "seq"
+    monitor-enter v8
 
-    invoke-virtual {p2, v6, v7}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v5
-
-    .line 1334
-    .local v5, sequence:I
+    .line 1541
+    :try_start_0
     iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
-    monitor-enter v7
-
-    .line 1335
-    :try_start_0
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
-
     #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mDelayedShowingSequence:I
-    invoke-static {v6}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1800(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)I
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2200(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)I
 
-    move-result v6
+    move-result v7
 
-    if-ne v6, v5, :cond_0
+    if-ne v7, v6, :cond_0
 
-    .line 1337
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+    .line 1543
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
-    const/4 v8, 0x1
+    const/4 v9, 0x1
 
     #setter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mSuppressNextLockSound:Z
-    invoke-static {v6, v8}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1902(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
+    invoke-static {v7, v9}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2302(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
 
-    .line 1338
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+    .line 1544
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     #calls: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->doKeyguardLocked()V
-    invoke-static {v6}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$800(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)V
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$800(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)V
 
-    .line 1340
+    .line 1546
     :cond_0
-    monitor-exit v7
+    monitor-exit v8
 
-    .line 1400
-    .end local v5           #sequence:I
+    .line 1653
+    .end local v6           #sequence:I
     :cond_1
     :goto_0
     return-void
 
-    .line 1340
-    .restart local v5       #sequence:I
+    .line 1546
+    .restart local v6       #sequence:I
     :catchall_0
-    move-exception v6
+    move-exception v7
 
-    monitor-exit v7
+    monitor-exit v8
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v6
+    throw v7
 
-    .line 1341
-    .end local v5           #sequence:I
+    .line 1549
+    .end local v6           #sequence:I
     :cond_2
-    const-string v6, "android.intent.action.PHONE_STATE"
+    const-string v7, "com.mediatek.dm.LAWMO_LOCK"
 
-    invoke-virtual {v6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_4
+    if-eqz v7, :cond_3
 
-    .line 1342
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+    .line 1550
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
-    const-string v7, "state"
-
-    invoke-virtual {p2, v7}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mContext:Landroid/content/Context;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$200(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/content/Context;
 
     move-result-object v7
 
-    #setter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mPhoneState:Ljava/lang/String;
-    invoke-static {v6, v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2002(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
 
-    .line 1344
+    move-result-object v7
+
+    const/4 v8, 0x1
+
+    invoke-virtual {v7, v8}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->setDmLocked(Z)V
+
+    .line 1551
+    const-string v7, "OppoKeyguardViewMediator"
+
+    const-string v8, "OMADM_LAWMO_LOCK received, KEYGUARD_DM_LOCKED"
+
+    invoke-static {v7, v8}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1552
     iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
-    monitor-enter v7
+    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mHandler:Landroid/os/Handler;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1500(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/os/Handler;
 
-    .line 1345
-    :try_start_1
-    sget-object v6, Landroid/telephony/TelephonyManager;->EXTRA_STATE_IDLE:Ljava/lang/String;
+    move-result-object v7
 
-    iget-object v8, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+    const/16 v8, 0x3e9
 
-    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mPhoneState:Ljava/lang/String;
-    invoke-static {v8}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2000(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Ljava/lang/String;
+    invoke-virtual {v7, v8}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
 
-    move-result-object v8
+    move-result-object v5
 
-    invoke-virtual {v6, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 1553
+    .local v5, msg:Landroid/os/Message;
+    const/4 v7, 0x1
 
-    move-result v6
+    iput v7, v5, Landroid/os/Message;->arg1:I
 
-    if-eqz v6, :cond_3
-
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
-
-    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mScreenOn:Z
-    invoke-static {v6}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$400(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Z
-
-    move-result v6
-
-    if-nez v6, :cond_3
-
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
-
-    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mExternallyEnabled:Z
-    invoke-static {v6}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$500(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_3
-
-    .line 1356
-    :cond_3
-    monitor-exit v7
+    .line 1554
+    invoke-virtual {v5}, Landroid/os/Message;->sendToTarget()V
 
     goto :goto_0
 
-    :catchall_1
-    move-exception v6
+    .line 1555
+    .end local v5           #msg:Landroid/os/Message;
+    :cond_3
+    const-string v7, "com.mediatek.dm.LAWMO_UNLOCK"
 
-    monitor-exit v7
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    throw v6
+    move-result v7
 
-    .line 1360
-    :cond_4
-    const-string v6, "com.android.policy.keyguard_changed"
+    if-eqz v7, :cond_4
 
-    invoke-virtual {v6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_6
-
-    .line 1361
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+    .line 1556
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mContext:Landroid/content/Context;
-    invoke-static {v6}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$200(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/content/Context;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$200(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/content/Context;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v6}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->getInstance(Landroid/content/Context;)Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;
+
+    move-result-object v7
+
+    const/4 v8, 0x0
+
+    invoke-virtual {v7, v8}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->setDmLocked(Z)V
+
+    .line 1557
+    const-string v7, "OppoKeyguardViewMediator"
+
+    const-string v8, "OMADM_LAWMO_UNLOCK received, KEYGUARD_DM_LOCKED"
+
+    invoke-static {v7, v8}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1558
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mHandler:Landroid/os/Handler;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1500(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/os/Handler;
+
+    move-result-object v7
+
+    const/16 v8, 0x3e9
+
+    invoke-virtual {v7, v8}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+    move-result-object v5
+
+    .line 1559
+    .restart local v5       #msg:Landroid/os/Message;
+    const/4 v7, 0x0
+
+    iput v7, v5, Landroid/os/Message;->arg1:I
+
+    .line 1560
+    invoke-virtual {v5}, Landroid/os/Message;->sendToTarget()V
+
+    goto :goto_0
+
+    .line 1567
+    .end local v5           #msg:Landroid/os/Message;
+    :cond_4
+    const-string v7, "com.android.policy.keyguard_changed"
+
+    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_6
+
+    .line 1568
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mContext:Landroid/content/Context;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$200(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/content/Context;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v4
 
-    .line 1362
+    .line 1569
     .local v4, mResolver:Landroid/content/ContentResolver;
-    const-string v6, "oppo_unlock_change_pkg"
+    const-string v7, "oppo_unlock_change_pkg"
 
-    invoke-static {v4, v6}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v7}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 1364
+    .line 1571
     .local v2, currentUnlockService:Ljava/lang/String;
-    const-string v6, "oppo_unlock_change_process"
+    const-string v7, "oppo_unlock_change_process"
 
-    invoke-static {v4, v6}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v7}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1367
+    .line 1574
     .local v1, currentUnlockProcess:Ljava/lang/String;
     if-eqz v2, :cond_5
 
-    .line 1368
-    const-string v6, "com.oppo.OppoPasswordUnlock.OppoPasswordUnlockService"
+    .line 1575
+    const-string v7, "com.oppo.OppoPasswordUnlock.OppoPasswordUnlockService"
 
-    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v7
 
-    if-nez v6, :cond_5
+    if-nez v7, :cond_5
 
-    const-string v6, "com.oppo.OppoPatternUnlock.OppoPatternUnlockService"
+    const-string v7, "com.oppo.OppoPatternUnlock.OppoPatternUnlockService"
 
-    invoke-virtual {v2, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v7
 
-    if-nez v6, :cond_5
+    if-nez v7, :cond_5
 
-    .line 1370
-    const-string v6, "OppoKeyguardViewMediator"
+    .line 1577
+    const-string v7, "OppoKeyguardViewMediator"
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "put as backup: currentUnlockService = "
+    const-string v9, "put as backup: currentUnlockService = "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v7, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v7, v8}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1371
-    const-string v6, "oppo_unlock_pkg_back"
+    .line 1578
+    const-string v7, "oppo_unlock_pkg_back"
 
-    invoke-static {v4, v6, v2}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v4, v7, v2}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 1373
-    const-string v6, "oppo_unlock_process_back"
+    .line 1580
+    const-string v7, "oppo_unlock_process_back"
 
-    invoke-static {v4, v6, v1}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v4, v7, v1}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 1378
+    .line 1585
     :cond_5
     new-instance v3, Landroid/content/Intent;
 
-    const-string v6, "com.oppo.ACTION_STOP_UNLOCK_SERVICE"
+    const-string v7, "com.oppo.ACTION_STOP_UNLOCK_SERVICE"
 
-    invoke-direct {v3, v6}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v7}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 1379
+    .line 1586
     .local v3, mCurrentService:Landroid/content/Intent;
-    const-string v6, "SERVICE_NAME"
+    const-string v7, "SERVICE_NAME"
 
-    invoke-virtual {v3, v6, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v3, v7, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1380
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
-
-    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mContext:Landroid/content/Context;
-    invoke-static {v6}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$200(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/content/Context;
-
-    move-result-object v6
-
-    invoke-virtual {v6, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
-
-    .line 1381
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+    .line 1587
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mContext:Landroid/content/Context;
-    invoke-static {v6}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$200(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/content/Context;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$200(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/content/Context;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v6, v3}, Landroid/content/Context;->stopService(Landroid/content/Intent;)Z
+    invoke-virtual {v7, v3}, Landroid/content/Context;->sendBroadcast(Landroid/content/Intent;)V
 
-    .line 1383
-    const-string v6, "OppoKeyguardViewMediator"
+    .line 1588
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
-    const-string v7, "put as current: currentUnlockService = com.oppo.OppoPasswordUnlock.OppoPasswordUnlockService"
+    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mContext:Landroid/content/Context;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$200(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/content/Context;
 
-    invoke-static {v6, v7}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-result-object v7
 
-    .line 1384
-    const-string v6, "oppo_unlock_change_pkg"
+    invoke-virtual {v7, v3}, Landroid/content/Context;->stopService(Landroid/content/Intent;)Z
 
-    const-string v7, "com.oppo.OppoPasswordUnlock.OppoPasswordUnlockService"
+    .line 1591
+    const-string v7, "oppo_unlock_change_pkg"
 
-    invoke-static {v4, v6, v7}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+    const-string v8, "com.oppo.OppoPasswordUnlock.OppoPasswordUnlockService"
 
-    .line 1386
-    const-string v6, "oppo_unlock_change_process"
+    invoke-static {v4, v7, v8}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
 
-    const-string v7, "com.oppo.OppoPasswordUnlock"
+    .line 1593
+    const-string v7, "oppo_unlock_change_process"
 
-    invoke-static {v4, v6, v7}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+    const-string v8, "com.oppo.OppoPasswordUnlock"
 
-    .line 1388
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+    invoke-static {v4, v7, v8}, Landroid/provider/Settings$System;->putString(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;)Z
+
+    .line 1595
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     #calls: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->showApkLockscreen()V
-    invoke-static {v6}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2100(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)V
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2400(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)V
 
     goto/16 :goto_0
 
-    .line 1389
+    .line 1596
     .end local v1           #currentUnlockProcess:Ljava/lang/String;
     .end local v2           #currentUnlockService:Ljava/lang/String;
     .end local v3           #mCurrentService:Landroid/content/Intent;
     .end local v4           #mResolver:Landroid/content/ContentResolver;
     :cond_6
-    const-string v6, "android.intent.action.ACTION_PREBOOT_IPO"
+    const-string v7, "android.intent.action.ACTION_SHUTDOWN_IPO"
 
-    invoke-virtual {v6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v7
 
-    if-eqz v6, :cond_1
+    if-eqz v7, :cond_8
 
-    .line 1391
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+    .line 1598
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$300(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Lcom/android/internal/widget/LockPatternUtils;
+
+    move-result-object v7
+
+    invoke-virtual {v7}, Lcom/android/internal/widget/LockPatternUtils;->isSecure()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_7
+
+    .line 1600
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    const/4 v8, 0x1
+
+    #setter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mSimApkShowSecureApk:Z
+    invoke-static {v7, v8}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1402(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
+
+    .line 1603
+    :cond_7
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    const/4 v8, 0x1
+
+    #setter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mSuppressNextLockSound:Z
+    invoke-static {v7, v8}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2302(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
+
+    .line 1604
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    const/4 v8, 0x1
 
     #setter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mIsShutdown:Z
-    invoke-static {v6, v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2202(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
+    invoke-static {v7, v8}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2502(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
 
-    .line 1393
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+    .line 1606
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    const/4 v8, 0x1
+
+    #setter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mSimUnlocked:Z
+    invoke-static {v7, v8}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2602(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
+
+    goto/16 :goto_0
+
+    .line 1607
+    :cond_8
+    const-string v7, "android.intent.action.ACTION_PREBOOT_IPO"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_a
+
+    .line 1609
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    const/4 v8, 0x0
+
+    #setter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mIsShutdown:Z
+    invoke-static {v7, v8}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2502(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
+
+    .line 1611
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mLockScreenManager:Lcom/oppo/individuationsettings/unlocker/ILockScreenManager;
-    invoke-static {v6}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1700(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Lcom/oppo/individuationsettings/unlocker/ILockScreenManager;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2100(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Lcom/oppo/individuationsettings/unlocker/ILockScreenManager;
 
-    move-result-object v6
+    move-result-object v7
 
-    if-nez v6, :cond_7
+    if-nez v7, :cond_9
 
-    .line 1394
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+    .line 1612
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    const/4 v8, 0x0
 
     #calls: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->bindToLockscreenManager(Z)Z
-    invoke-static {v6, v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2300(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
+    invoke-static {v7, v8}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2700(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
 
-    .line 1396
-    :cond_7
-    iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+    .line 1614
+    :cond_9
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     #calls: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->doKeyguardLocked()V
-    invoke-static {v6}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$800(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)V
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$800(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)V
+
+    goto/16 :goto_0
+
+    .line 1618
+    :cond_a
+    const-string v7, "android.intent.action.ACTION_BOOT_IPO"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_d
+
+    .line 1619
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    const/4 v8, 0x1
+
+    #setter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mIsIPOBoot:Z
+    invoke-static {v7, v8}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2802(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
+
+    .line 1620
+    const-string v7, "OppoKeyguardViewMediator"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "IPO_DISABLE: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    const-string v9, "  alarmBoot: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->isAlarmBoot()Z
+
+    move-result v9
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1621
+    invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->isAlarmBoot()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_c
+
+    .line 1629
+    invoke-static {}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1300()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_b
+
+    .line 1630
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    const/4 v8, 0x1
+
+    #setter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mSuppressNextLockSound:Z
+    invoke-static {v7, v8}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2302(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
+
+    .line 1632
+    :cond_b
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    #calls: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->hideApkLockscreen()V
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2900(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)V
+
+    goto/16 :goto_0
+
+    .line 1634
+    :cond_c
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    invoke-virtual {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->isAlarmUnlockScreen()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    .line 1635
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mHandler:Landroid/os/Handler;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1500(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/os/Handler;
+
+    move-result-object v7
+
+    const/16 v8, 0x74
+
+    invoke-virtual {v7, v8}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    goto/16 :goto_0
+
+    .line 1637
+    :cond_d
+    const-string v7, "android.intent.action.LAUNCH_POWEROFF_ALARM"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_e
+
+    .line 1638
+    const-string v7, "OppoKeyguardViewMediator"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "LAUNCH_PWROFF_ALARM: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1639
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mHandler:Landroid/os/Handler;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1500(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/os/Handler;
+
+    move-result-object v7
+
+    const/16 v8, 0x73
+
+    const-wide/16 v9, 0x5dc
+
+    invoke-virtual {v7, v8, v9, v10}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+
+    goto/16 :goto_0
+
+    .line 1640
+    :cond_e
+    const-string v7, "android.intent.action.normal.boot"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_f
+
+    .line 1641
+    const-string v7, "OppoKeyguardViewMediator"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "NORMAL_BOOT_ACTION: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1642
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mHandler:Landroid/os/Handler;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1500(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/os/Handler;
+
+    move-result-object v7
+
+    const/16 v8, 0x74
+
+    const-wide/16 v9, 0x5dc
+
+    invoke-virtual {v7, v8, v9, v10}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+
+    goto/16 :goto_0
+
+    .line 1643
+    :cond_f
+    const-string v7, "android.intent.action.normal.shutdown"
+
+    invoke-virtual {v7, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    .line 1646
+    const-string v7, "OppoKeyguardViewMediator"
+
+    new-instance v8, Ljava/lang/StringBuilder;
+
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v9, "ACTION_SHUTDOWN: "
+
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v7, v8}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 1647
+    invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardUpdateMonitor;->isAlarmBoot()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_1
+
+    .line 1648
+    iget-object v7, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$5;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+
+    #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mHandler:Landroid/os/Handler;
+    invoke-static {v7}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1500(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/os/Handler;
+
+    move-result-object v7
+
+    const/4 v8, 0x3
+
+    invoke-virtual {v7, v8}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+    .line 1649
+    const-string v7, "sys.boot.reason"
+
+    const-string v8, "0"
+
+    invoke-static {v7, v8}, Landroid/os/SystemProperties;->set(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_0
 .end method

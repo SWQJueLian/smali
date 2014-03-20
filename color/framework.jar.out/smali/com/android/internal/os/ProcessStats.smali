@@ -2733,7 +2733,7 @@
     invoke-virtual {v3, v4, v5}, Ljava/io/PrintWriter;->print(J)V
 
     .line 693
-    const-string v2, "ms to "
+    const-string/jumbo v2, "ms to "
 
     invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -2747,7 +2747,7 @@
     invoke-virtual {v3, v4, v5}, Ljava/io/PrintWriter;->print(J)V
 
     .line 695
-    const-string v2, "ms ago"
+    const-string/jumbo v2, "ms ago"
 
     invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -3070,7 +3070,7 @@
     invoke-virtual {v3, v4, v5}, Ljava/io/PrintWriter;->print(J)V
 
     .line 698
-    const-string v2, "ms to "
+    const-string/jumbo v2, "ms to "
 
     invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -3084,7 +3084,7 @@
     invoke-virtual {v3, v4, v5}, Ljava/io/PrintWriter;->print(J)V
 
     .line 700
-    const-string v2, "ms later"
+    const-string/jumbo v2, "ms later"
 
     invoke-virtual {v3, v2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 

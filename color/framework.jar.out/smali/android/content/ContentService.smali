@@ -169,7 +169,7 @@
 
     const-string v1, "android.permission.WRITE_SYNC_SETTINGS"
 
-    const-string v3, "no permission to write the sync settings"
+    const-string/jumbo v3, "no permission to write the sync settings"
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -661,7 +661,7 @@
 
     const-string v4, "android.permission.READ_SYNC_STATS"
 
-    const-string v5, "no permission to read the sync stats"
+    const-string/jumbo v5, "no permission to read the sync stats"
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -717,7 +717,7 @@
 
     const-string v5, "android.permission.READ_SYNC_SETTINGS"
 
-    const-string v6, "no permission to read the sync settings"
+    const-string/jumbo v6, "no permission to read the sync settings"
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -789,7 +789,7 @@
 
     const-string v5, "android.permission.READ_SYNC_SETTINGS"
 
-    const-string v6, "no permission to read the sync settings"
+    const-string/jumbo v6, "no permission to read the sync settings"
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -875,7 +875,7 @@
 
     const-string v4, "android.permission.READ_SYNC_SETTINGS"
 
-    const-string v5, "no permission to read the sync settings"
+    const-string/jumbo v5, "no permission to read the sync settings"
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -975,7 +975,7 @@
 
     const-string v5, "android.permission.READ_SYNC_SETTINGS"
 
-    const-string v6, "no permission to read the sync settings"
+    const-string/jumbo v6, "no permission to read the sync settings"
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1049,7 +1049,7 @@
 
     const-string v5, "android.permission.READ_SYNC_STATS"
 
-    const-string v6, "no permission to read the sync stats"
+    const-string/jumbo v6, "no permission to read the sync stats"
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1123,7 +1123,7 @@
 
     const-string v5, "android.permission.READ_SYNC_STATS"
 
-    const-string v6, "no permission to read the sync stats"
+    const-string/jumbo v6, "no permission to read the sync stats"
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1197,7 +1197,7 @@
 
     const-string v5, "android.permission.READ_SYNC_STATS"
 
-    const-string v6, "no permission to read the sync stats"
+    const-string/jumbo v6, "no permission to read the sync stats"
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1389,7 +1389,7 @@
 
     const-string v2, "android.permission.INTERACT_ACROSS_USERS_FULL"
 
-    const-string v3, "no permission to notify other users"
+    const-string/jumbo v3, "no permission to notify other users"
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1884,7 +1884,7 @@
 
     const-string v1, "android.permission.INTERACT_ACROSS_USERS_FULL"
 
-    const-string v2, "no permission to observe other users\' provider view"
+    const-string/jumbo v2, "no permission to observe other users\' provider view"
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -1995,7 +1995,7 @@
 
     const-string v4, "android.permission.WRITE_SYNC_SETTINGS"
 
-    const-string v5, "no permission to write the sync settings"
+    const-string/jumbo v5, "no permission to write the sync settings"
 
     invoke-virtual {v3, v4, v5}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -2165,7 +2165,7 @@
 
     const-string v5, "android.permission.WRITE_SYNC_SETTINGS"
 
-    const-string v6, "no permission to write the sync settings"
+    const-string/jumbo v6, "no permission to write the sync settings"
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -2227,7 +2227,7 @@
 
     const-string v5, "android.permission.WRITE_SYNC_SETTINGS"
 
-    const-string v6, "no permission to write the sync settings"
+    const-string/jumbo v6, "no permission to write the sync settings"
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -2291,7 +2291,7 @@
 
     const-string v5, "android.permission.WRITE_SYNC_SETTINGS"
 
-    const-string v6, "no permission to write the sync settings"
+    const-string/jumbo v6, "no permission to write the sync settings"
 
     invoke-virtual {v4, v5, v6}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 

@@ -46,14 +46,14 @@
     .line 168
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 299
+    .line 300
     new-instance v0, Landroid/telephony/PhoneStateListener$1;
 
     invoke-direct {v0, p0}, Landroid/telephony/PhoneStateListener$1;-><init>(Landroid/telephony/PhoneStateListener;)V
 
     iput-object v0, p0, Landroid/telephony/PhoneStateListener;->callback:Lcom/android/internal/telephony/IPhoneStateListener;
 
-    .line 349
+    .line 350
     new-instance v0, Landroid/telephony/PhoneStateListener$2;
 
     invoke-direct {v0, p0}, Landroid/telephony/PhoneStateListener$2;-><init>(Landroid/telephony/PhoneStateListener;)V
@@ -66,6 +66,16 @@
 
 
 # virtual methods
+.method public getCallback()Lcom/android/internal/telephony/IPhoneStateListener;
+    .locals 1
+
+    .prologue
+    .line 396
+    iget-object v0, p0, Landroid/telephony/PhoneStateListener;->callback:Lcom/android/internal/telephony/IPhoneStateListener;
+
+    return-object v0
+.end method
+
 .method public onCallForwardingIndicatorChanged(Z)V
     .locals 0
     .parameter "cfi"
@@ -99,7 +109,7 @@
     .end annotation
 
     .prologue
-    .line 293
+    .line 294
     .local p1, cellInfo:Ljava/util/List;,"Ljava/util/List<Landroid/telephony/CellInfo;>;"
     return-void
 .end method

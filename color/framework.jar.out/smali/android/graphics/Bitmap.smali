@@ -2746,7 +2746,7 @@
     .line 1297
     new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string v1, "native writeToParcel failed"
+    const-string/jumbo v1, "native writeToParcel failed"
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 

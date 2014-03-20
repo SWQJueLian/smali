@@ -39,7 +39,7 @@
     .parameter
 
     .prologue
-    .line 11005
+    .line 11858
     iput-object p1, p0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,13 +53,13 @@
     .locals 2
 
     .prologue
-    .line 11010
+    .line 11863
     iget v0, p0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->cur:I
 
     iget-object v1, p0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     #getter for: Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
-    invoke-static {v1}, Lcom/android/server/wm/WindowManagerService;->access$2400(Lcom/android/server/wm/WindowManagerService;)Landroid/util/SparseArray;
+    invoke-static {v1}, Lcom/android/server/wm/WindowManagerService;->access$2500(Lcom/android/server/wm/WindowManagerService;)Landroid/util/SparseArray;
 
     move-result-object v1
 
@@ -84,18 +84,18 @@
     .locals 3
 
     .prologue
-    .line 11015
+    .line 11868
     invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->hasNext()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 11016
+    .line 11869
     iget-object v0, p0, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->this$0:Lcom/android/server/wm/WindowManagerService;
 
     #getter for: Lcom/android/server/wm/WindowManagerService;->mDisplayContents:Landroid/util/SparseArray;
-    invoke-static {v0}, Lcom/android/server/wm/WindowManagerService;->access$2400(Lcom/android/server/wm/WindowManagerService;)Landroid/util/SparseArray;
+    invoke-static {v0}, Lcom/android/server/wm/WindowManagerService;->access$2500(Lcom/android/server/wm/WindowManagerService;)Landroid/util/SparseArray;
 
     move-result-object v0
 
@@ -113,7 +113,7 @@
 
     return-object v0
 
-    .line 11018
+    .line 11871
     :cond_0
     new-instance v0, Ljava/util/NoSuchElementException;
 
@@ -126,7 +126,7 @@
     .locals 1
 
     .prologue
-    .line 11005
+    .line 11858
     invoke-virtual {p0}, Lcom/android/server/wm/WindowManagerService$DisplayContentsIterator;->next()Lcom/android/server/wm/DisplayContent;
 
     move-result-object v0
@@ -138,7 +138,7 @@
     .locals 2
 
     .prologue
-    .line 11023
+    .line 11876
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "AllDisplayContentIterator.remove not implemented"

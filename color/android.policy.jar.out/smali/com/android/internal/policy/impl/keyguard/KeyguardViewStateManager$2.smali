@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 301
+    .line 306
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 304
+    .line 309
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->mKeyguardSecurityContainer:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityView;
@@ -51,6 +51,6 @@
 
     invoke-interface {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityView;->showUsabilityHint()V
 
-    .line 305
+    .line 310
     return-void
 .end method

@@ -310,7 +310,7 @@
     :cond_0
     new-instance v1, Ljava/lang/RuntimeException;
 
-    const-string v2, "not a float!"
+    const-string/jumbo v2, "not a float!"
 
     invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
