@@ -171,13 +171,15 @@
 
     .line 87
     :pswitch_2
-    const-string/jumbo v4, "monospace"
+    const-string v4, "monospace"
 
     iput-object v4, p0, Landroid/text/style/TextAppearanceSpan;->mTypeface:Ljava/lang/String;
 
     goto :goto_0
 
     .line 77
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

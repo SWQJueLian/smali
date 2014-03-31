@@ -108,8 +108,6 @@
     return-object v0
 .end method
 
-
-# virtual methods
 .method public get(Ljava/lang/String;I[I)Lcom/android/server/AttributeCache$Entry;
     .locals 9
     .parameter "packageName"
@@ -416,4 +414,25 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
+.end method
+# virtual methods
+.method public get(ILjava/lang/String;I[I)Lcom/android/server/AttributeCache$Entry;
+    .locals 1
+    .parameter "userId"
+    .parameter "packageName"
+    .parameter "resId"
+    .parameter "styleable"
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
+        note = "Jianjun.Dan@Plf.SDK,2014.03.04 :add for QCOM and MTK with Google source code differences "
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->QCOM:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+
+    .prologue
+    .line 145
+    invoke-virtual {p0, p2, p3, p4}, Lcom/android/server/AttributeCache;->get(Ljava/lang/String;I[I)Lcom/android/server/AttributeCache$Entry;
+
+    move-result-object v0
+
+    return-object v0
 .end method

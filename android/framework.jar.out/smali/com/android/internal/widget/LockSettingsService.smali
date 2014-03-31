@@ -57,8 +57,8 @@
 
     sput-object v0, Lcom/android/internal/widget/LockSettingsService;->COLUMNS_FOR_QUERY:[Ljava/lang/String;
 
-    .line 389
-    const/16 v0, 0x12
+    .line 387
+    const/16 v0, 0x10
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -108,59 +108,47 @@
 
     const/16 v1, 0x8
 
-    const-string v2, "lockscreen.weak_fallback"
+    const-string v2, "lockscreen.biometric_weak_fallback"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    const-string v2, "lockscreen.weak_fallback_for"
+    const-string v2, "lockscreen.biometricweakeverchosen"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
 
-    const-string v2, "lockscreen.voice_weak_fallback_set"
+    const-string v2, "lockscreen.power_button_instantly_locks"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xb
 
-    const-string v2, "lockscreen.biometricweakeverchosen"
+    const-string v2, "lockscreen.passwordhistory"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xc
 
-    const-string v2, "lockscreen.power_button_instantly_locks"
+    const-string v2, "lock_pattern_autolock"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xd
 
-    const-string v2, "lockscreen.passwordhistory"
+    const-string v2, "lock_biometric_weak_flags"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xe
 
-    const-string v2, "lock_pattern_autolock"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    const-string v2, "lock_biometric_weak_flags"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x10
-
     const-string v2, "lock_pattern_visible_pattern"
 
     aput-object v2, v0, v1
 
-    const/16 v1, 0x11
+    const/16 v1, 0xf
 
     const-string v2, "lock_pattern_tactile_feedback_enabled"
 
@@ -662,10 +650,10 @@
 
     const/4 v5, 0x0
 
-    .line 334
+    .line 332
     move-object v9, p2
 
-    .line 335
+    .line 333
     .local v9, result:Ljava/lang/String;
     iget-object v1, p0, Lcom/android/internal/widget/LockSettingsService;->mOpenHelper:Lcom/android/internal/widget/LockSettingsService$DatabaseHelper;
 
@@ -673,7 +661,7 @@
 
     move-result-object v0
 
-    .line 336
+    .line 334
     .local v0, db:Landroid/database/sqlite/SQLiteDatabase;
     const-string v1, "locksettings"
 
@@ -706,23 +694,23 @@
     .local v8, cursor:Landroid/database/Cursor;
     if-eqz v8, :cond_1
 
-    .line 340
+    .line 338
     invoke-interface {v8}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 341
+    .line 339
     invoke-interface {v8, v10}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v9
 
-    .line 343
+    .line 341
     :cond_0
     invoke-interface {v8}, Landroid/database/Cursor;->close()V
 
-    .line 345
+    .line 343
     :cond_1
     return-object v9
 .end method
@@ -755,11 +743,11 @@
 
     invoke-virtual {v1, v2, v3}, Ljava/io/RandomAccessFile;->setLength(J)V
 
-    .line 305
+    .line 303
     :goto_0
     invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
 
-    .line 309
+    .line 307
     .end local v1           #raf:Ljava/io/RandomAccessFile;
     :goto_1
     return-void
@@ -772,24 +760,17 @@
     array-length v3, p2
 
     invoke-virtual {v1, p2, v2, v3}, Ljava/io/RandomAccessFile;->write([BII)V
-
-    .line 303
-    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->getFD()Ljava/io/FileDescriptor;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/io/FileDescriptor;->sync()V
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 306
+    .line 304
     .end local v1           #raf:Ljava/io/RandomAccessFile;
     :catch_0
     move-exception v0
 
-    .line 307
+    .line 305
     .local v0, ioe:Ljava/io/IOException;
     const-string v2, "LockSettingsService"
 
@@ -824,18 +805,18 @@
     .parameter "userId"
 
     .prologue
-    .line 316
+    .line 314
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 317
+    .line 315
     .local v0, cv:Landroid/content/ContentValues;
     const-string/jumbo v1, "name"
 
     invoke-virtual {v0, v1, p2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 318
+    .line 316
     const-string/jumbo v1, "user"
 
     invoke-static {p4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -844,15 +825,15 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 319
+    .line 317
     const-string/jumbo v1, "value"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 321
+    .line 319
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
 
-    .line 323
+    .line 321
     :try_start_0
     const-string v1, "locksettings"
 
@@ -876,25 +857,25 @@
 
     invoke-virtual {p1, v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
 
-    .line 325
+    .line 323
     const-string v1, "locksettings"
 
     const/4 v2, 0x0
 
     invoke-virtual {p1, v1, v2, v0}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
 
-    .line 326
+    .line 324
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 328
+    .line 326
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
 
-    .line 330
+    .line 328
     return-void
 
-    .line 328
+    .line 326
     :catchall_0
     move-exception v1
 
@@ -910,7 +891,7 @@
     .parameter "userId"
 
     .prologue
-    .line 312
+    .line 310
     iget-object v0, p0, Lcom/android/internal/widget/LockSettingsService;->mOpenHelper:Lcom/android/internal/widget/LockSettingsService$DatabaseHelper;
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockSettingsService$DatabaseHelper;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
@@ -919,7 +900,7 @@
 
     invoke-direct {p0, v0, p1, p2, p3}, Lcom/android/internal/widget/LockSettingsService;->writeToDb(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 313
+    .line 311
     return-void
 .end method
 

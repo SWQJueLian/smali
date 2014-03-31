@@ -21,17 +21,17 @@
     .parameter "e"
 
     .prologue
-    .line 104
+    .line 48
     invoke-virtual {p1}, Lcom/android/internal/telephony/CommandException$Error;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 105
+    .line 49
     iput-object p1, p0, Lcom/android/internal/telephony/CommandException;->e:Lcom/android/internal/telephony/CommandException$Error;
 
-    .line 106
+    .line 50
     return-void
 .end method
 
@@ -40,10 +40,11 @@
     .parameter "ril_errno"
 
     .prologue
-    .line 110
-    sparse-switch p0, :sswitch_data_0
+    .line 54
+    packed-switch p0, :pswitch_data_0
 
-    .line 177
+    .line 87
+    :pswitch_0
     const-string v0, "GSM"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -66,7 +67,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 178
+    .line 88
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->INVALID_RESPONSE:Lcom/android/internal/telephony/CommandException$Error;
@@ -76,14 +77,14 @@
     :goto_0
     return-object v0
 
-    .line 111
-    :sswitch_0
+    .line 55
+    :pswitch_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 113
-    :sswitch_1
+    .line 57
+    :pswitch_2
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->INVALID_RESPONSE:Lcom/android/internal/telephony/CommandException$Error;
@@ -92,8 +93,8 @@
 
     goto :goto_0
 
-    .line 115
-    :sswitch_2
+    .line 59
+    :pswitch_3
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->RADIO_NOT_AVAILABLE:Lcom/android/internal/telephony/CommandException$Error;
@@ -102,8 +103,8 @@
 
     goto :goto_0
 
-    .line 117
-    :sswitch_3
+    .line 61
+    :pswitch_4
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->GENERIC_FAILURE:Lcom/android/internal/telephony/CommandException$Error;
@@ -112,8 +113,8 @@
 
     goto :goto_0
 
-    .line 119
-    :sswitch_4
+    .line 63
+    :pswitch_5
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->PASSWORD_INCORRECT:Lcom/android/internal/telephony/CommandException$Error;
@@ -122,8 +123,8 @@
 
     goto :goto_0
 
-    .line 121
-    :sswitch_5
+    .line 65
+    :pswitch_6
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->SIM_PIN2:Lcom/android/internal/telephony/CommandException$Error;
@@ -132,8 +133,8 @@
 
     goto :goto_0
 
-    .line 123
-    :sswitch_6
+    .line 67
+    :pswitch_7
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->SIM_PUK2:Lcom/android/internal/telephony/CommandException$Error;
@@ -142,8 +143,8 @@
 
     goto :goto_0
 
-    .line 125
-    :sswitch_7
+    .line 69
+    :pswitch_8
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->REQUEST_NOT_SUPPORTED:Lcom/android/internal/telephony/CommandException$Error;
@@ -152,8 +153,8 @@
 
     goto :goto_0
 
-    .line 127
-    :sswitch_8
+    .line 71
+    :pswitch_9
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->OP_NOT_ALLOWED_DURING_VOICE_CALL:Lcom/android/internal/telephony/CommandException$Error;
@@ -162,8 +163,8 @@
 
     goto :goto_0
 
-    .line 129
-    :sswitch_9
+    .line 73
+    :pswitch_a
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->OP_NOT_ALLOWED_BEFORE_REG_NW:Lcom/android/internal/telephony/CommandException$Error;
@@ -172,8 +173,8 @@
 
     goto :goto_0
 
-    .line 131
-    :sswitch_a
+    .line 75
+    :pswitch_b
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->SMS_FAIL_RETRY:Lcom/android/internal/telephony/CommandException$Error;
@@ -182,8 +183,8 @@
 
     goto :goto_0
 
-    .line 133
-    :sswitch_b
+    .line 77
+    :pswitch_c
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->SIM_ABSENT:Lcom/android/internal/telephony/CommandException$Error;
@@ -192,8 +193,8 @@
 
     goto :goto_0
 
-    .line 135
-    :sswitch_c
+    .line 79
+    :pswitch_d
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->SUBSCRIPTION_NOT_AVAILABLE:Lcom/android/internal/telephony/CommandException$Error;
@@ -202,8 +203,8 @@
 
     goto :goto_0
 
-    .line 137
-    :sswitch_d
+    .line 81
+    :pswitch_e
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->MODE_NOT_SUPPORTED:Lcom/android/internal/telephony/CommandException$Error;
@@ -212,8 +213,8 @@
 
     goto :goto_0
 
-    .line 139
-    :sswitch_e
+    .line 83
+    :pswitch_f
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->FDN_CHECK_FAILURE:Lcom/android/internal/telephony/CommandException$Error;
@@ -222,8 +223,8 @@
 
     goto :goto_0
 
-    .line 141
-    :sswitch_f
+    .line 85
+    :pswitch_10
     new-instance v0, Lcom/android/internal/telephony/CommandException;
 
     sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->ILLEGAL_SIM_OR_ME:Lcom/android/internal/telephony/CommandException$Error;
@@ -232,191 +233,29 @@
 
     goto :goto_0
 
-    .line 144
-    :sswitch_10
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
+    .line 54
+    nop
 
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->MISSING_RESOURCE:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 146
-    :sswitch_11
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->NO_SUCH_ELEMENT:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 148
-    :sswitch_12
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->INVALID_PARAMETER:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 152
-    :sswitch_13
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->REQUEST_CANCELLED:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 154
-    :sswitch_14
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->CALL_BARRED:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 156
-    :sswitch_15
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->DIAL_STRING_TOO_LONG:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 158
-    :sswitch_16
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->TEXT_STRING_TOO_LONG:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 160
-    :sswitch_17
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->SIM_MEM_FULL:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 162
-    :sswitch_18
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->BT_SAP_UNDEFINED:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 164
-    :sswitch_19
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->BT_SAP_NOT_ACCESSIBLE:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 166
-    :sswitch_1a
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->BT_SAP_CARD_REMOVED:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 168
-    :sswitch_1b
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->ADDITIONAL_NUMBER_STRING_TOO_LONG:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 170
-    :sswitch_1c
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->ADN_LIST_NOT_EXIST:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 172
-    :sswitch_1d
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->EMAIL_SIZE_LIMIT:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 174
-    :sswitch_1e
-    new-instance v0, Lcom/android/internal/telephony/CommandException;
-
-    sget-object v1, Lcom/android/internal/telephony/CommandException$Error;->EMAIL_NAME_TOOLONG:Lcom/android/internal/telephony/CommandException$Error;
-
-    invoke-direct {v0, v1}, Lcom/android/internal/telephony/CommandException;-><init>(Lcom/android/internal/telephony/CommandException$Error;)V
-
-    goto/16 :goto_0
-
-    .line 110
-    :sswitch_data_0
-    .sparse-switch
-        -0x1 -> :sswitch_1
-        0x0 -> :sswitch_0
-        0x1 -> :sswitch_2
-        0x2 -> :sswitch_3
-        0x3 -> :sswitch_4
-        0x4 -> :sswitch_5
-        0x5 -> :sswitch_6
-        0x6 -> :sswitch_7
-        0x7 -> :sswitch_13
-        0x8 -> :sswitch_8
-        0x9 -> :sswitch_9
-        0xa -> :sswitch_a
-        0xb -> :sswitch_b
-        0xc -> :sswitch_c
-        0xd -> :sswitch_d
-        0xe -> :sswitch_e
-        0xf -> :sswitch_f
-        0x10 -> :sswitch_10
-        0x11 -> :sswitch_11
-        0x12 -> :sswitch_12
-        0x3e9 -> :sswitch_15
-        0x3ea -> :sswitch_16
-        0x3eb -> :sswitch_17
-        0x3ec -> :sswitch_14
-        0x3ed -> :sswitch_1d
-        0x3ee -> :sswitch_1e
-        0x3f2 -> :sswitch_1b
-        0x3f3 -> :sswitch_1c
-        0x7d1 -> :sswitch_18
-        0x7d2 -> :sswitch_19
-        0x7d3 -> :sswitch_1a
-    .end sparse-switch
+    :pswitch_data_0
+    .packed-switch -0x1
+        :pswitch_2
+        :pswitch_1
+        :pswitch_3
+        :pswitch_4
+        :pswitch_5
+        :pswitch_6
+        :pswitch_7
+        :pswitch_8
+        :pswitch_0
+        :pswitch_9
+        :pswitch_a
+        :pswitch_b
+        :pswitch_c
+        :pswitch_d
+        :pswitch_e
+        :pswitch_f
+        :pswitch_10
+    .end packed-switch
 .end method
 
 
@@ -425,7 +264,7 @@
     .locals 1
 
     .prologue
-    .line 183
+    .line 93
     iget-object v0, p0, Lcom/android/internal/telephony/CommandException;->e:Lcom/android/internal/telephony/CommandException$Error;
 
     return-object v0

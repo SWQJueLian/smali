@@ -19,8 +19,6 @@
 
 .field public static final NONE:I = 0x0
 
-.field public static final SMS4:I = 0x3
-
 .field public static final TKIP:I = 0x1
 
 .field public static final strings:[Ljava/lang/String; = null
@@ -33,8 +31,8 @@
     .locals 3
 
     .prologue
-    .line 233
-    const/4 v0, 0x4
+    .line 208
+    const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -56,12 +54,6 @@
 
     aput-object v2, v0, v1
 
-    const/4 v1, 0x3
-
-    const-string v2, "SMS4"
-
-    aput-object v2, v0, v1
-
     sput-object v0, Landroid/net/wifi/WifiConfiguration$PairwiseCipher;->strings:[Ljava/lang/String;
 
     return-void
@@ -71,7 +63,7 @@
     .locals 0
 
     .prologue
-    .line 217
+    .line 197
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

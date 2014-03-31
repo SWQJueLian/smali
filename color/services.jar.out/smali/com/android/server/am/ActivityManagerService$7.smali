@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 5454
+    .line 4880
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$7;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-direct {p0, p1}, Lcom/android/server/am/ActivityManagerService$ForegroundToken;-><init>(Lcom/android/server/am/ActivityManagerService;)V
@@ -38,11 +38,11 @@
     .locals 1
 
     .prologue
-    .line 5456
+    .line 4882
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$7;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     invoke-virtual {v0, p0}, Lcom/android/server/am/ActivityManagerService;->foregroundTokenDied(Lcom/android/server/am/ActivityManagerService$ForegroundToken;)V
 
-    .line 5457
+    .line 4883
     return-void
 .end method

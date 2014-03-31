@@ -17,8 +17,6 @@
 # instance fields
 .field activity:Landroid/app/Activity;
 
-.field mHandoverUseCase:Ljava/lang/String;
-
 .field ndefMessage:Landroid/nfc/NdefMessage;
 
 .field ndefMessageCallback:Landroid/nfc/NfcAdapter$CreateNdefMessageCallback;
@@ -43,7 +41,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 118
+    .line 113
     iput-object p1, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->this$0:Landroid/nfc/NfcActivityManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,10 +66,7 @@
     .line 112
     iput-object v1, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->uris:[Landroid/net/Uri;
 
-    .line 115
-    iput-object v1, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->mHandoverUseCase:Ljava/lang/String;
-
-    .line 119
+    .line 114
     invoke-virtual {p2}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -82,7 +77,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 120
+    .line 115
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string v1, "activity is already destroyed"
@@ -91,7 +86,7 @@
 
     throw v0
 
-    .line 124
+    .line 119
     :cond_0
     invoke-virtual {p2}, Landroid/app/Activity;->isResumed()Z
 
@@ -99,17 +94,17 @@
 
     iput-boolean v0, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->resumed:Z
 
-    .line 126
+    .line 121
     iput-object p2, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->activity:Landroid/app/Activity;
 
-    .line 127
+    .line 122
     invoke-virtual {p2}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/nfc/NfcActivityManager;->registerApplication(Landroid/app/Application;)V
 
-    .line 128
+    .line 123
     return-void
 .end method
 
@@ -121,7 +116,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 130
+    .line 125
     iget-object v0, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->this$0:Landroid/nfc/NfcActivityManager;
 
     iget-object v1, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->activity:Landroid/app/Activity;
@@ -132,30 +127,30 @@
 
     invoke-virtual {v0, v1}, Landroid/nfc/NfcActivityManager;->unregisterApplication(Landroid/app/Application;)V
 
-    .line 131
+    .line 126
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->resumed:Z
 
-    .line 132
+    .line 127
     iput-object v2, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->activity:Landroid/app/Activity;
 
-    .line 133
+    .line 128
     iput-object v2, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->ndefMessage:Landroid/nfc/NdefMessage;
 
-    .line 134
+    .line 129
     iput-object v2, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->ndefMessageCallback:Landroid/nfc/NfcAdapter$CreateNdefMessageCallback;
 
-    .line 135
+    .line 130
     iput-object v2, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->onNdefPushCompleteCallback:Landroid/nfc/NfcAdapter$OnNdefPushCompleteCallback;
 
-    .line 136
+    .line 131
     iput-object v2, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->uriCallback:Landroid/nfc/NfcAdapter$CreateBeamUrisCallback;
 
-    .line 137
+    .line 132
     iput-object v2, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->uris:[Landroid/net/Uri;
 
-    .line 138
+    .line 133
     return-void
 .end method
 
@@ -163,7 +158,7 @@
     .locals 7
 
     .prologue
-    .line 141
+    .line 136
     new-instance v5, Ljava/lang/StringBuilder;
 
     const-string v6, "["
@@ -176,7 +171,7 @@
 
     move-result-object v3
 
-    .line 142
+    .line 137
     .local v3, s:Ljava/lang/StringBuilder;
     iget-object v5, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->ndefMessage:Landroid/nfc/NdefMessage;
 
@@ -200,7 +195,7 @@
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 143
+    .line 138
     iget-object v5, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->uriCallback:Landroid/nfc/NfcAdapter$CreateBeamUrisCallback;
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
@@ -211,12 +206,12 @@
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 144
+    .line 139
     iget-object v5, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->uris:[Landroid/net/Uri;
 
     if-eqz v5, :cond_0
 
-    .line 145
+    .line 140
     iget-object v0, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->uris:[Landroid/net/Uri;
 
     .local v0, arr$:[Landroid/net/Uri;
@@ -231,7 +226,7 @@
 
     aget-object v4, v0, v1
 
-    .line 146
+    .line 141
     .local v4, uri:Landroid/net/Uri;
     iget-object v5, p0, Landroid/nfc/NfcActivityManager$NfcActivityState;->onNdefPushCompleteCallback:Landroid/nfc/NfcAdapter$OnNdefPushCompleteCallback;
 
@@ -253,12 +248,12 @@
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 145
+    .line 140
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 149
+    .line 144
     .end local v0           #arr$:[Landroid/net/Uri;
     .end local v1           #i$:I
     .end local v2           #len$:I

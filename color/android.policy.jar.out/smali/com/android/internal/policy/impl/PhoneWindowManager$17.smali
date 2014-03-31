@@ -1,11 +1,11 @@
 .class Lcom/android/internal/policy/impl/PhoneWindowManager$17;
-.super Landroid/content/BroadcastReceiver;
+.super Landroid/os/IRemoteCallback$Stub;
 .source "PhoneWindowManager.java"
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/internal/policy/impl/PhoneWindowManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/internal/policy/impl/PhoneWindowManager;->waitForKeyguardWindowDrawn(Landroid/os/IBinder;Landroid/view/WindowManagerPolicy$ScreenOnListener;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,52 +17,48 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
+.field final synthetic val$screenOnListener:Landroid/view/WindowManagerPolicy$ScreenOnListener;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
+.method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/view/WindowManagerPolicy$ScreenOnListener;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 4069
+    .line 3909
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$17;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$17;->val$screenOnListener:Landroid/view/WindowManagerPolicy$ScreenOnListener;
+
+    invoke-direct {p0}, Landroid/os/IRemoteCallback$Stub;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public sendResult(Landroid/os/Bundle;)V
     .locals 2
-    .parameter "context"
-    .parameter "intent"
+    .parameter "data"
 
     .prologue
-    .line 4072
-    const-string v0, "android.intent.action.USER_SWITCHED"
+    .line 3912
+    const-string v0, "WindowManager"
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    const-string v1, "Lock screen displayed!"
 
-    move-result-object v1
+    invoke-static {v0, v1}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 4077
+    .line 3913
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$17;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mSettingsObserver:Lcom/android/internal/policy/impl/PhoneWindowManager$SettingsObserver;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$17;->val$screenOnListener:Landroid/view/WindowManagerPolicy$ScreenOnListener;
 
-    const/4 v1, 0x0
+    #calls: Lcom/android/internal/policy/impl/PhoneWindowManager;->finishScreenTurningOn(Landroid/view/WindowManagerPolicy$ScreenOnListener;)V
+    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$600(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/view/WindowManagerPolicy$ScreenOnListener;)V
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager$SettingsObserver;->onChange(Z)V
-
-    .line 4079
-    :cond_0
+    .line 3914
     return-void
 .end method

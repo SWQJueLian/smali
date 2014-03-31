@@ -68,7 +68,7 @@
 
     sput-boolean v0, Landroid/net/NetworkTemplate;->sForceAllNetworkTypes:Z
 
-    .line 356
+    .line 343
     new-instance v0, Landroid/net/NetworkTemplate$1;
 
     invoke-direct {v0}, Landroid/net/NetworkTemplate$1;-><init>()V
@@ -85,19 +85,19 @@
     .parameter "networkId"
 
     .prologue
-    .line 149
+    .line 138
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 150
+    .line 139
     iput p1, p0, Landroid/net/NetworkTemplate;->mMatchRule:I
 
-    .line 151
+    .line 140
     iput-object p2, p0, Landroid/net/NetworkTemplate;->mSubscriberId:Ljava/lang/String;
 
-    .line 152
+    .line 141
     iput-object p3, p0, Landroid/net/NetworkTemplate;->mNetworkId:Ljava/lang/String;
 
-    .line 153
+    .line 142
     return-void
 .end method
 
@@ -106,31 +106,31 @@
     .parameter "in"
 
     .prologue
-    .line 155
+    .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 156
+    .line 145
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/net/NetworkTemplate;->mMatchRule:I
 
-    .line 157
+    .line 146
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/NetworkTemplate;->mSubscriberId:Ljava/lang/String;
 
-    .line 158
+    .line 147
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/net/NetworkTemplate;->mNetworkId:Ljava/lang/String;
 
-    .line 159
+    .line 148
     return-void
 .end method
 
@@ -152,7 +152,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 142
+    .line 131
     new-instance v0, Landroid/net/NetworkTemplate;
 
     const/4 v1, 0x5
@@ -169,7 +169,7 @@
     .end annotation
 
     .prologue
-    .line 96
+    .line 85
     new-instance v0, Landroid/net/NetworkTemplate;
 
     const/4 v1, 0x2
@@ -188,7 +188,7 @@
     .end annotation
 
     .prologue
-    .line 105
+    .line 94
     new-instance v0, Landroid/net/NetworkTemplate;
 
     const/4 v1, 0x3
@@ -217,31 +217,13 @@
     return-object v0
 .end method
 
-.method public static buildTemplateMobileAllGemini(Ljava/lang/String;J)Landroid/net/NetworkTemplate;
-    .locals 3
-    .parameter "subscriberId"
-    .parameter "simId"
-
-    .prologue
-    .line 86
-    new-instance v0, Landroid/net/NetworkTemplate;
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, p0, v2}, Landroid/net/NetworkTemplate;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
-    return-object v0
-.end method
-
 .method public static buildTemplateMobileWildcard()Landroid/net/NetworkTemplate;
     .locals 3
 
     .prologue
     const/4 v2, 0x0
 
-    .line 113
+    .line 102
     new-instance v0, Landroid/net/NetworkTemplate;
 
     const/4 v1, 0x6
@@ -257,7 +239,7 @@
     .end annotation
 
     .prologue
-    .line 126
+    .line 115
     invoke-static {}, Landroid/net/NetworkTemplate;->buildTemplateWifiWildcard()Landroid/net/NetworkTemplate;
 
     move-result-object v0
@@ -270,7 +252,7 @@
     .parameter "networkId"
 
     .prologue
-    .line 134
+    .line 123
     new-instance v0, Landroid/net/NetworkTemplate;
 
     const/4 v1, 0x4
@@ -288,7 +270,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 121
+    .line 110
     new-instance v0, Landroid/net/NetworkTemplate;
 
     const/4 v1, 0x7
@@ -302,7 +284,7 @@
     .locals 2
 
     .prologue
-    .line 351
+    .line 338
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string v1, "Unable to enforce 3G_LOWER template on combined data."
@@ -330,58 +312,58 @@
     .parameter "matchRule"
 
     .prologue
-    .line 329
+    .line 316
     packed-switch p0, :pswitch_data_0
 
-    .line 345
+    .line 332
     const-string v0, "UNKNOWN"
 
     :goto_0
     return-object v0
 
-    .line 331
+    .line 318
     :pswitch_0
     const-string v0, "MOBILE_3G_LOWER"
 
     goto :goto_0
 
-    .line 333
+    .line 320
     :pswitch_1
     const-string v0, "MOBILE_4G"
 
     goto :goto_0
 
-    .line 335
+    .line 322
     :pswitch_2
     const-string v0, "MOBILE_ALL"
 
     goto :goto_0
 
-    .line 337
+    .line 324
     :pswitch_3
     const-string v0, "WIFI"
 
     goto :goto_0
 
-    .line 339
+    .line 326
     :pswitch_4
     const-string v0, "ETHERNET"
 
     goto :goto_0
 
-    .line 341
+    .line 328
     :pswitch_5
     const-string v0, "MOBILE_WILDCARD"
 
     goto :goto_0
 
-    .line 343
+    .line 330
     :pswitch_6
     const-string v0, "WIFI_WILDCARD"
 
     goto :goto_0
 
-    .line 329
+    .line 316
     nop
 
     :pswitch_data_0
@@ -401,17 +383,17 @@
     .parameter "ident"
 
     .prologue
-    .line 304
+    .line 291
     iget v0, p1, Landroid/net/NetworkIdentity;->mType:I
 
     const/16 v1, 0x9
 
     if-ne v0, v1, :cond_0
 
-    .line 305
+    .line 292
     const/4 v0, 0x1
 
-    .line 307
+    .line 294
     :goto_0
     return v0
 
@@ -428,14 +410,14 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 244
+    .line 231
     iget v1, p1, Landroid/net/NetworkIdentity;->mType:I
 
     const/4 v2, 0x6
 
     if-ne v1, v2, :cond_1
 
-    .line 248
+    .line 235
     :cond_0
     :goto_0
     return v0
@@ -479,22 +461,22 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 257
+    .line 244
     invoke-static {}, Landroid/net/NetworkTemplate;->ensureSubtypeAvailable()V
 
-    .line 258
+    .line 245
     iget v1, p1, Landroid/net/NetworkIdentity;->mType:I
 
     const/4 v2, 0x6
 
     if-ne v1, v2, :cond_1
 
-    .line 268
+    .line 255
     :cond_0
     :goto_0
     return v0
 
-    .line 260
+    .line 247
     :cond_1
     invoke-direct {p0, p1}, Landroid/net/NetworkTemplate;->matchesMobile(Landroid/net/NetworkIdentity;)Z
 
@@ -502,7 +484,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 261
+    .line 248
     iget v1, p1, Landroid/net/NetworkIdentity;->mSubType:I
 
     invoke-static {v1}, Landroid/telephony/TelephonyManager;->getNetworkClass(I)I
@@ -513,13 +495,13 @@
 
     goto :goto_0
 
-    .line 265
+    .line 252
     :pswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 261
+    .line 248
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
@@ -535,22 +517,22 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 275
+    .line 262
     invoke-static {}, Landroid/net/NetworkTemplate;->ensureSubtypeAvailable()V
 
-    .line 276
+    .line 263
     iget v1, p1, Landroid/net/NetworkIdentity;->mType:I
 
     const/4 v2, 0x6
 
     if-ne v1, v2, :cond_0
 
-    .line 285
+    .line 272
     :goto_0
     :pswitch_0
     return v0
 
-    .line 279
+    .line 266
     :cond_0
     invoke-direct {p0, p1}, Landroid/net/NetworkTemplate;->matchesMobile(Landroid/net/NetworkIdentity;)Z
 
@@ -558,7 +540,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 280
+    .line 267
     iget v1, p1, Landroid/net/NetworkIdentity;->mSubType:I
 
     invoke-static {v1}, Landroid/telephony/TelephonyManager;->getNetworkClass(I)I
@@ -567,13 +549,13 @@
 
     packed-switch v1, :pswitch_data_0
 
-    .line 285
+    .line 272
     :cond_1
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 280
+    .line 267
     nop
 
     :pswitch_data_0
@@ -589,14 +571,14 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 311
+    .line 298
     iget v1, p1, Landroid/net/NetworkIdentity;->mType:I
 
     const/4 v2, 0x6
 
     if-ne v1, v2, :cond_1
 
-    .line 314
+    .line 301
     :cond_0
     :goto_0
     return v0
@@ -626,18 +608,18 @@
     .parameter "ident"
 
     .prologue
-    .line 292
+    .line 279
     iget v0, p1, Landroid/net/NetworkIdentity;->mType:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 296
+    .line 283
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 294
+    .line 281
     :pswitch_0
     iget-object v0, p0, Landroid/net/NetworkTemplate;->mNetworkId:Ljava/lang/String;
 
@@ -649,7 +631,7 @@
 
     goto :goto_0
 
-    .line 292
+    .line 279
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0
@@ -661,24 +643,24 @@
     .parameter "ident"
 
     .prologue
-    .line 319
+    .line 306
     iget v0, p1, Landroid/net/NetworkIdentity;->mType:I
 
     sparse-switch v0, :sswitch_data_0
 
-    .line 324
+    .line 311
     const/4 v0, 0x0
 
     :goto_0
     return v0
 
-    .line 322
+    .line 309
     :sswitch_0
     const/4 v0, 0x1
 
     goto :goto_0
 
-    .line 319
+    .line 306
     nop
 
     :sswitch_data_0
@@ -694,7 +676,7 @@
     .locals 1
 
     .prologue
-    .line 170
+    .line 159
     const/4 v0, 0x0
 
     return v0
@@ -707,17 +689,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 195
+    .line 182
     instance-of v2, p1, Landroid/net/NetworkTemplate;
 
     if-eqz v2, :cond_0
 
     move-object v0, p1
 
-    .line 196
+    .line 183
     check-cast v0, Landroid/net/NetworkTemplate;
 
-    .line 197
+    .line 184
     .local v0, other:Landroid/net/NetworkTemplate;
     iget v2, p0, Landroid/net/NetworkTemplate;->mMatchRule:I
 
@@ -747,7 +729,7 @@
 
     const/4 v1, 0x1
 
-    .line 201
+    .line 188
     .end local v0           #other:Landroid/net/NetworkTemplate;
     :cond_0
     return v1
@@ -757,7 +739,7 @@
     .locals 1
 
     .prologue
-    .line 205
+    .line 192
     iget v0, p0, Landroid/net/NetworkTemplate;->mMatchRule:I
 
     return v0
@@ -767,7 +749,7 @@
     .locals 1
 
     .prologue
-    .line 213
+    .line 200
     iget-object v0, p0, Landroid/net/NetworkTemplate;->mNetworkId:Ljava/lang/String;
 
     return-object v0
@@ -777,7 +759,7 @@
     .locals 1
 
     .prologue
-    .line 209
+    .line 196
     iget-object v0, p0, Landroid/net/NetworkTemplate;->mSubscriberId:Ljava/lang/String;
 
     return-object v0
@@ -787,7 +769,7 @@
     .locals 3
 
     .prologue
-    .line 189
+    .line 177
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/Object;
@@ -826,12 +808,12 @@
     .parameter "ident"
 
     .prologue
-    .line 220
+    .line 207
     iget v0, p0, Landroid/net/NetworkTemplate;->mMatchRule:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 236
+    .line 223
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "unknown network template"
@@ -840,17 +822,17 @@
 
     throw v0
 
-    .line 222
+    .line 209
     :pswitch_0
     invoke-direct {p0, p1}, Landroid/net/NetworkTemplate;->matchesMobile(Landroid/net/NetworkIdentity;)Z
 
     move-result v0
 
-    .line 234
+    .line 221
     :goto_0
     return v0
 
-    .line 224
+    .line 211
     :pswitch_1
     invoke-direct {p0, p1}, Landroid/net/NetworkTemplate;->matchesMobile3gLower(Landroid/net/NetworkIdentity;)Z
 
@@ -858,7 +840,7 @@
 
     goto :goto_0
 
-    .line 226
+    .line 213
     :pswitch_2
     invoke-direct {p0, p1}, Landroid/net/NetworkTemplate;->matchesMobile4g(Landroid/net/NetworkIdentity;)Z
 
@@ -866,7 +848,7 @@
 
     goto :goto_0
 
-    .line 228
+    .line 215
     :pswitch_3
     invoke-direct {p0, p1}, Landroid/net/NetworkTemplate;->matchesWifi(Landroid/net/NetworkIdentity;)Z
 
@@ -874,7 +856,7 @@
 
     goto :goto_0
 
-    .line 230
+    .line 217
     :pswitch_4
     invoke-direct {p0, p1}, Landroid/net/NetworkTemplate;->matchesEthernet(Landroid/net/NetworkIdentity;)Z
 
@@ -882,7 +864,7 @@
 
     goto :goto_0
 
-    .line 232
+    .line 219
     :pswitch_5
     invoke-direct {p0, p1}, Landroid/net/NetworkTemplate;->matchesMobileWildcard(Landroid/net/NetworkIdentity;)Z
 
@@ -890,7 +872,7 @@
 
     goto :goto_0
 
-    .line 234
+    .line 221
     :pswitch_6
     invoke-direct {p0, p1}, Landroid/net/NetworkTemplate;->matchesWifiWildcard(Landroid/net/NetworkIdentity;)Z
 
@@ -898,7 +880,7 @@
 
     goto :goto_0
 
-    .line 220
+    .line 207
     nop
 
     :pswitch_data_0
@@ -917,16 +899,16 @@
     .locals 3
 
     .prologue
-    .line 175
+    .line 164
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "NetworkTemplate: "
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 176
+    .line 165
     .local v0, builder:Ljava/lang/StringBuilder;
-    const-string/jumbo v1, "matchRule="
+    const-string v1, "matchRule="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -940,12 +922,12 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 177
+    .line 166
     iget-object v1, p0, Landroid/net/NetworkTemplate;->mSubscriberId:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 178
+    .line 167
     const-string v1, ", subscriberId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -960,13 +942,13 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 180
+    .line 169
     :cond_0
     iget-object v1, p0, Landroid/net/NetworkTemplate;->mNetworkId:Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
-    .line 181
+    .line 170
     const-string v1, ", networkId="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -977,7 +959,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 183
+    .line 172
     :cond_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -992,21 +974,21 @@
     .parameter "flags"
 
     .prologue
-    .line 163
+    .line 152
     iget v0, p0, Landroid/net/NetworkTemplate;->mMatchRule:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 164
+    .line 153
     iget-object v0, p0, Landroid/net/NetworkTemplate;->mSubscriberId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 165
+    .line 154
     iget-object v0, p0, Landroid/net/NetworkTemplate;->mNetworkId:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 166
+    .line 155
     return-void
 .end method

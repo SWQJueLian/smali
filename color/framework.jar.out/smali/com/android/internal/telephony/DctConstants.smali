@@ -17,11 +17,7 @@
 
 .field public static final APN_CBS_ID:I = 0x7
 
-.field protected static final APN_CMMAIL_ID:I = 0xe
-
 .field public static final APN_DEFAULT_ID:I = 0x0
-
-.field protected static final APN_DM_ID:I = 0xb
 
 .field public static final APN_DUN_ID:I = 0x3
 
@@ -33,21 +29,13 @@
 
 .field public static final APN_INVALID_ID:I = -0x1
 
-.field protected static final APN_MAX_ID:I = 0xf
-
 .field public static final APN_MMS_ID:I = 0x1
 
-.field protected static final APN_NET_ID:I = 0xd
-
-.field protected static final APN_NUM_TYPES:I = 0x10
-
-.field protected static final APN_RCSE_ID:I = 0xf
+.field public static final APN_NUM_TYPES:I = 0x8
 
 .field public static final APN_SUPL_ID:I = 0x2
 
 .field public static final APN_TYPE_KEY:Ljava/lang/String; = "apnType"
-
-.field protected static final APN_WAP_ID:I = 0xc
 
 .field public static final BASE:I = 0x42000
 
@@ -89,19 +77,11 @@
 
 .field public static final EVENT_ENABLE_NEW_APN:I = 0x4200d
 
-.field public static final EVENT_FD_MODE_SET:I = 0x42028
-
-.field public static final EVENT_GET_AVAILABLE_NETWORK_DONE:I = 0x42027
-
 .field public static final EVENT_ICC_CHANGED:I = 0x42021
 
 .field public static final EVENT_LINK_STATE_CHANGED:I = 0x4200a
 
-.field public static final EVENT_NW_RAT_CHANGED:I = 0x42025
-
 .field public static final EVENT_POLL_PDP:I = 0x42005
-
-.field public static final EVENT_PS_RAT_CHANGED:I = 0x42026
 
 .field public static final EVENT_PS_RESTRICT_DISABLED:I = 0x42017
 
@@ -123,12 +103,6 @@
 
 .field public static final EVENT_ROAMING_ON:I = 0x4200b
 
-.field public static final EVENT_SCRI_CMD_RESULT:I = 0x42024
-
-.field public static final EVENT_SCRI_RESULT:I = 0x42022
-
-.field public static final EVENT_SCRI_RETRY_TIMER:I = 0x42023
-
 .field public static final EVENT_SET_INTERNAL_DATA_ENABLE:I = 0x4201b
 
 .field public static final EVENT_TRY_SETUP_DATA:I = 0x42003
@@ -145,12 +119,12 @@
     .locals 1
 
     .prologue
-    .line 131
+    .line 112
     const-string v0, "com.android.internal.telephony"
 
     sput-object v0, Lcom/android/internal/telephony/DctConstants;->ACTION_DATA_CONNECTION_TRACKER_MESSENGER:Ljava/lang/String;
 
-    .line 133
+    .line 114
     const-string v0, "EXTRA_MESSENGER"
 
     sput-object v0, Lcom/android/internal/telephony/DctConstants;->EXTRA_MESSENGER:Ljava/lang/String;

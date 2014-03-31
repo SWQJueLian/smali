@@ -32,7 +32,7 @@
     .locals 1
 
     .prologue
-    .line 46
+    .line 50
     const-string v0, "content://call_log"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -48,10 +48,10 @@
     .locals 0
 
     .prologue
-    .line 40
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 55
+    .line 59
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .locals 1
 
     .prologue
-    .line 40
+    .line 44
     sget-boolean v0, Landroid/provider/oppo/CallLog;->isMtkSupport:Z
 
     return v0
@@ -70,7 +70,7 @@
     .parameter "x0"
 
     .prologue
-    .line 40
+    .line 44
     sput-boolean p0, Landroid/provider/oppo/CallLog;->isMtkSupport:Z
 
     return p0
@@ -80,7 +80,7 @@
     .locals 1
 
     .prologue
-    .line 40
+    .line 44
     sget-boolean v0, Landroid/provider/oppo/CallLog;->isMtkGeminiSupport:Z
 
     return v0
@@ -91,7 +91,7 @@
     .parameter "x0"
 
     .prologue
-    .line 40
+    .line 44
     sput-boolean p0, Landroid/provider/oppo/CallLog;->isMtkGeminiSupport:Z
 
     return p0

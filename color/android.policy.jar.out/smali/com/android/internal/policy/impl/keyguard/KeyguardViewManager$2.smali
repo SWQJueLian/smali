@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 459
+    .line 400
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
 
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$2;->val$lastView:Lcom/android/internal/policy/impl/keyguard/KeyguardViewBase;
@@ -43,52 +43,25 @@
 
 # virtual methods
 .method public run()V
-    .locals 4
+    .locals 3
 
     .prologue
-    .line 462
+    .line 403
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
 
     monitor-enter v1
 
-    .line 463
+    .line 404
     :try_start_0
-    invoke-static {}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->access$100()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "hide() runnable lastView="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$2;->val$lastView:Lcom/android/internal/policy/impl/keyguard/KeyguardViewBase;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 464
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$2;->val$lastView:Lcom/android/internal/policy/impl/keyguard/KeyguardViewBase;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewBase;->cleanUp()V
 
-    .line 465
+    .line 405
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->mKeyguardHost:Landroid/widget/FrameLayout;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->access$200(Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;)Landroid/widget/FrameLayout;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->access$000(Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;)Landroid/widget/FrameLayout;
 
     move-result-object v0
 
@@ -96,13 +69,13 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 466
+    .line 406
     monitor-exit v1
 
-    .line 467
+    .line 407
     return-void
 
-    .line 466
+    .line 406
     :catchall_0
     move-exception v0
 

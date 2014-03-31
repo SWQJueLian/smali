@@ -268,7 +268,7 @@
 
     new-array v3, v11, [Ljava/lang/String;
 
-    const-string/jumbo v1, "mailto:"
+    const-string v1, "mailto:"
 
     aput-object v1, v3, v10
 

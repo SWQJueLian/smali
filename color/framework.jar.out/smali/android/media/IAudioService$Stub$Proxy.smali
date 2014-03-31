@@ -27,13 +27,13 @@
     .parameter "remote"
 
     .prologue
-    .line 810
+    .line 757
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 811
+    .line 758
     iput-object p1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    .line 812
+    .line 759
     return-void
 .end method
 
@@ -50,25 +50,25 @@
     .end annotation
 
     .prologue
-    .line 1451
+    .line 1398
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1452
+    .line 1399
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1455
+    .line 1402
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1456
+    .line 1403
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/media/IAudioFocusDispatcher;->asBinder()Landroid/os/IBinder;
@@ -78,10 +78,10 @@
     :goto_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1457
+    .line 1404
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1458
+    .line 1405
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x28
@@ -90,40 +90,40 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1459
+    .line 1406
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1460
+    .line 1407
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1463
+    .line 1410
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1464
+    .line 1411
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1466
+    .line 1413
     return v2
 
-    .line 1456
+    .line 1403
     .end local v2           #_result:I
     :cond_0
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 1463
+    .line 1410
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1464
+    .line 1411
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -140,25 +140,25 @@
     .end annotation
 
     .prologue
-    .line 839
+    .line 786
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 841
+    .line 788
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.media.IAudioService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 842
+    .line 789
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 843
+    .line 790
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 844
+    .line 791
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x2
@@ -171,13 +171,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 847
+    .line 794
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 849
+    .line 796
     return-void
 
-    .line 847
+    .line 794
     :catchall_0
     move-exception v1
 
@@ -197,31 +197,31 @@
     .end annotation
 
     .prologue
-    .line 886
+    .line 833
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 887
+    .line 834
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 889
+    .line 836
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 890
+    .line 837
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 891
+    .line 838
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 892
+    .line 839
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x5
@@ -230,27 +230,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 893
+    .line 840
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 896
+    .line 843
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 897
+    .line 844
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 899
+    .line 846
     return-void
 
-    .line 896
+    .line 843
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 897
+    .line 844
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -268,34 +268,34 @@
     .end annotation
 
     .prologue
-    .line 869
+    .line 816
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 870
+    .line 817
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 872
+    .line 819
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 873
+    .line 820
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 874
+    .line 821
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 875
+    .line 822
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 876
+    .line 823
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x4
@@ -304,27 +304,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 877
+    .line 824
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 880
+    .line 827
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 881
+    .line 828
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 883
+    .line 830
     return-void
 
-    .line 880
+    .line 827
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 881
+    .line 828
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -342,34 +342,34 @@
     .end annotation
 
     .prologue
-    .line 852
+    .line 799
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 853
+    .line 800
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 855
+    .line 802
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 856
+    .line 803
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 857
+    .line 804
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 858
+    .line 805
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 859
+    .line 806
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x3
@@ -378,27 +378,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 860
+    .line 807
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 863
+    .line 810
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 864
+    .line 811
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 866
+    .line 813
     return-void
 
-    .line 863
+    .line 810
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 864
+    .line 811
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -415,31 +415,31 @@
     .end annotation
 
     .prologue
-    .line 823
+    .line 770
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 824
+    .line 771
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 826
+    .line 773
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 827
+    .line 774
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 828
+    .line 775
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 829
+    .line 776
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x1
@@ -448,27 +448,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 830
+    .line 777
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 833
+    .line 780
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 834
+    .line 781
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 836
+    .line 783
     return-void
 
-    .line 833
+    .line 780
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 834
+    .line 781
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -478,7 +478,7 @@
     .locals 1
 
     .prologue
-    .line 815
+    .line 762
     iget-object v0, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     return-object v0
@@ -494,32 +494,32 @@
     .end annotation
 
     .prologue
-    .line 1485
+    .line 1432
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1487
+    .line 1434
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.media.IAudioService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1488
+    .line 1435
     if-eqz p1, :cond_0
 
-    .line 1489
+    .line 1436
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1490
+    .line 1437
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/view/KeyEvent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1495
+    .line 1442
     :goto_0
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -533,13 +533,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1498
+    .line 1445
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1500
+    .line 1447
     return-void
 
-    .line 1493
+    .line 1440
     :cond_0
     const/4 v1, 0x0
 
@@ -550,7 +550,7 @@
 
     goto :goto_0
 
-    .line 1498
+    .line 1445
     :catchall_0
     move-exception v1
 
@@ -569,38 +569,38 @@
     .end annotation
 
     .prologue
-    .line 1503
+    .line 1450
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1504
+    .line 1451
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1506
+    .line 1453
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1507
+    .line 1454
     if-eqz p1, :cond_0
 
-    .line 1508
+    .line 1455
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1509
+    .line 1456
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/view/KeyEvent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1514
+    .line 1461
     :goto_0
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -610,21 +610,21 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1515
+    .line 1462
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1518
+    .line 1465
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1519
+    .line 1466
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1521
+    .line 1468
     return-void
 
-    .line 1512
+    .line 1459
     :cond_0
     const/4 v2, 0x0
 
@@ -635,117 +635,16 @@
 
     goto :goto_0
 
-    .line 1518
+    .line 1465
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1519
+    .line 1466
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
-.end method
-
-.method public enableHDMIAudio(ZLandroid/os/IBinder;)Z
-    .locals 7
-    .parameter "enabled"
-    .parameter "cb"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    .line 1959
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1960
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1963
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v4, "android.media.IAudioService"
-
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1964
-    if-eqz p1, :cond_0
-
-    move v4, v2
-
-    :goto_0
-    invoke-virtual {v0, v4}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1965
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    .line 1966
-    iget-object v4, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v5, 0x45
-
-    const/4 v6, 0x0
-
-    invoke-interface {v4, v5, v0, v1, v6}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1967
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1968
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v4
-
-    if-eqz v4, :cond_1
-
-    .line 1971
-    .local v2, _result:Z
-    :goto_1
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1972
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1974
-    return v2
-
-    .end local v2           #_result:Z
-    :cond_0
-    move v4, v3
-
-    .line 1964
-    goto :goto_0
-
-    :cond_1
-    move v2, v3
-
-    .line 1968
-    goto :goto_1
-
-    .line 1971
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1972
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
 .end method
 
 .method public forceVolumeControlStream(ILandroid/os/IBinder;)V
@@ -759,31 +658,31 @@
     .end annotation
 
     .prologue
-    .line 1777
+    .line 1724
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1778
+    .line 1725
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1780
+    .line 1727
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1781
+    .line 1728
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1782
+    .line 1729
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1783
+    .line 1730
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x3b
@@ -792,27 +691,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1784
+    .line 1731
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1787
+    .line 1734
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1788
+    .line 1735
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1790
+    .line 1737
     return-void
 
-    .line 1787
+    .line 1734
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1788
+    .line 1735
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -822,7 +721,7 @@
     .locals 1
 
     .prologue
-    .line 819
+    .line 766
     const-string v0, "android.media.IAudioService"
 
     return-object v0
@@ -837,25 +736,25 @@
     .end annotation
 
     .prologue
-    .line 1121
+    .line 1068
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1122
+    .line 1069
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1125
+    .line 1072
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1126
+    .line 1073
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x13
@@ -864,34 +763,34 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1127
+    .line 1074
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1128
+    .line 1075
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1131
+    .line 1078
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1132
+    .line 1079
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1134
+    .line 1081
     return v2
 
-    .line 1131
+    .line 1078
     .end local v2           #_result:I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1132
+    .line 1079
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -907,238 +806,31 @@
     .end annotation
 
     .prologue
-    .line 1103
+    .line 1050
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1104
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1107
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.media.IAudioService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1108
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1109
-    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x12
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1110
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1111
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1114
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1115
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1117
-    return v2
-
-    .line 1114
-    .end local v2           #_result:I
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1115
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getMasterMaxVolume()I
-    .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1086
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1087
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1090
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.media.IAudioService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1091
-    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x11
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1092
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1093
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1096
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1097
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1099
-    return v2
-
-    .line 1096
-    .end local v2           #_result:I
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1097
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getMasterStreamType()I
-    .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1825
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1826
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1829
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.media.IAudioService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1830
-    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x3e
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1831
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1832
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1835
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1836
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1838
-    return v2
-
-    .line 1835
-    .end local v2           #_result:I
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1836
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getMasterVolume()I
-    .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
     .line 1051
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1052
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
+
+    .line 1054
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.media.IAudioService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 1055
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.media.IAudioService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 1056
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
-    const/16 v4, 0xf
+    const/16 v4, 0x12
 
     const/4 v5, 0x0
 
@@ -1177,431 +869,8 @@
     throw v3
 .end method
 
-.method public getMode()I
+.method public getMasterMaxVolume()I
     .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1238
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1239
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1242
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.media.IAudioService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1243
-    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x1a
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1244
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1245
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1248
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1249
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1251
-    return v2
-
-    .line 1248
-    .end local v2           #_result:I
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1249
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getRemoteStreamMaxVolume()I
-    .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1700
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1701
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1704
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.media.IAudioService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1705
-    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x36
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1706
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1707
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1710
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1711
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1713
-    return v2
-
-    .line 1710
-    .end local v2           #_result:I
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1711
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getRemoteStreamVolume()I
-    .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1717
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1718
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1721
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.media.IAudioService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1722
-    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x37
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1723
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1724
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1727
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1728
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1730
-    return v2
-
-    .line 1727
-    .end local v2           #_result:I
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1728
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getRingerMode()I
-    .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1153
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1154
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1157
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.media.IAudioService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1158
-    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x15
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1159
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1160
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1163
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1164
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1166
-    return v2
-
-    .line 1163
-    .end local v2           #_result:I
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1164
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getRingtonePlayer()Landroid/media/IRingtonePlayer;
-    .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1808
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1809
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1812
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.media.IAudioService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1813
-    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x3d
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1814
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1815
-    invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
-
-    move-result-object v3
-
-    invoke-static {v3}, Landroid/media/IRingtonePlayer$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/IRingtonePlayer;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result-object v2
-
-    .line 1818
-    .local v2, _result:Landroid/media/IRingtonePlayer;
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1819
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1821
-    return-object v2
-
-    .line 1818
-    .end local v2           #_result:Landroid/media/IRingtonePlayer;
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1819
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getStreamMaxVolume(I)I
-    .locals 6
-    .parameter "streamType"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1068
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1069
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1072
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.media.IAudioService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1073
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1074
-    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x10
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1075
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1076
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v2
-
-    .line 1079
-    .local v2, _result:I
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1080
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1082
-    return v2
-
-    .line 1079
-    .end local v2           #_result:I
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1080
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public getStreamVolume(I)I
-    .locals 6
-    .parameter "streamType"
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -1628,9 +897,639 @@
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
     .line 1038
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x11
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     .line 1039
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 1040
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 1043
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1044
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 1046
+    return v2
+
+    .line 1043
+    .end local v2           #_result:I
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1044
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getMasterStreamType()I
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1772
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1773
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1776
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.media.IAudioService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1777
+    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x3e
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 1778
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 1779
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 1782
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1783
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 1785
+    return v2
+
+    .line 1782
+    .end local v2           #_result:I
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1783
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getMasterVolume()I
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 998
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 999
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1002
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.media.IAudioService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1003
+    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0xf
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 1004
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 1005
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 1008
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1009
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 1011
+    return v2
+
+    .line 1008
+    .end local v2           #_result:I
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1009
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getMode()I
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1185
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1186
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1189
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.media.IAudioService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1190
+    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x1a
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 1191
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 1192
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 1195
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1196
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 1198
+    return v2
+
+    .line 1195
+    .end local v2           #_result:I
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1196
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getRemoteStreamMaxVolume()I
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1647
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1648
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1651
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.media.IAudioService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1652
+    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x36
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 1653
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 1654
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 1657
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1658
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 1660
+    return v2
+
+    .line 1657
+    .end local v2           #_result:I
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1658
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getRemoteStreamVolume()I
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1664
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1665
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1668
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.media.IAudioService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1669
+    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x37
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 1670
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 1671
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 1674
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1675
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 1677
+    return v2
+
+    .line 1674
+    .end local v2           #_result:I
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1675
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getRingerMode()I
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1100
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1101
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1104
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.media.IAudioService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1105
+    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x15
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 1106
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 1107
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 1110
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1111
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 1113
+    return v2
+
+    .line 1110
+    .end local v2           #_result:I
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1111
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getRingtonePlayer()Landroid/media/IRingtonePlayer;
+    .locals 6
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1755
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1756
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1759
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.media.IAudioService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1760
+    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x3d
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 1761
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 1762
+    invoke-virtual {v1}, Landroid/os/Parcel;->readStrongBinder()Landroid/os/IBinder;
+
+    move-result-object v3
+
+    invoke-static {v3}, Landroid/media/IRingtonePlayer$Stub;->asInterface(Landroid/os/IBinder;)Landroid/media/IRingtonePlayer;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result-object v2
+
+    .line 1765
+    .local v2, _result:Landroid/media/IRingtonePlayer;
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1766
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 1768
+    return-object v2
+
+    .line 1765
+    .end local v2           #_result:Landroid/media/IRingtonePlayer;
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1766
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getStreamMaxVolume(I)I
+    .locals 6
+    .parameter "streamType"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 1015
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 1016
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 1019
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.media.IAudioService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 1020
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1021
+    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
+
+    const/16 v4, 0x10
+
+    const/4 v5, 0x0
+
+    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
+
+    .line 1022
+    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
+
+    .line 1023
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    move-result v2
+
+    .line 1026
+    .local v2, _result:I
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1027
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    .line 1029
+    return v2
+
+    .line 1026
+    .end local v2           #_result:I
+    :catchall_0
+    move-exception v3
+
+    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
+
+    .line 1027
+    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
+
+    throw v3
+.end method
+
+.method public getStreamVolume(I)I
+    .locals 6
+    .parameter "streamType"
+    .annotation system Ldalvik/annotation/Throws;
+        value = {
+            Landroid/os/RemoteException;
+        }
+    .end annotation
+
+    .prologue
+    .line 980
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v0
+
+    .line 981
+    .local v0, _data:Landroid/os/Parcel;
+    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
+
+    move-result-object v1
+
+    .line 984
+    .local v1, _reply:Landroid/os/Parcel;
+    :try_start_0
+    const-string v3, "android.media.IAudioService"
+
+    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
+
+    .line 985
+    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 986
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0xe
@@ -1639,34 +1538,34 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1040
+    .line 987
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1041
+    .line 988
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1044
+    .line 991
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1045
+    .line 992
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1047
+    .line 994
     return v2
 
-    .line 1044
+    .line 991
     .end local v2           #_result:I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1045
+    .line 992
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1682,28 +1581,28 @@
     .end annotation
 
     .prologue
-    .line 1186
+    .line 1133
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1187
+    .line 1134
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1190
+    .line 1137
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1191
+    .line 1138
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1192
+    .line 1139
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x17
@@ -1712,34 +1611,34 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1193
+    .line 1140
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1194
+    .line 1141
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1197
+    .line 1144
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1198
+    .line 1145
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1200
+    .line 1147
     return v2
 
-    .line 1197
+    .line 1144
     .end local v2           #_result:I
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1198
+    .line 1145
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1756,25 +1655,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1398
+    .line 1345
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1399
+    .line 1346
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1402
+    .line 1349
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1403
+    .line 1350
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x25
@@ -1783,10 +1682,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1404
+    .line 1351
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1405
+    .line 1352
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1797,25 +1696,25 @@
 
     const/4 v2, 0x1
 
-    .line 1408
+    .line 1355
     .local v2, _result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1409
+    .line 1356
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1411
+    .line 1358
     return v2
 
-    .line 1408
+    .line 1355
     .end local v2           #_result:Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1409
+    .line 1356
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1832,25 +1731,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1366
+    .line 1313
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1367
+    .line 1314
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1370
+    .line 1317
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1371
+    .line 1318
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x23
@@ -1859,10 +1758,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1372
+    .line 1319
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1373
+    .line 1320
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1873,25 +1772,25 @@
 
     const/4 v2, 0x1
 
-    .line 1376
+    .line 1323
     .local v2, _result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1377
+    .line 1324
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1379
+    .line 1326
     return v2
 
-    .line 1376
+    .line 1323
     .end local v2           #_result:Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1377
+    .line 1324
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1908,25 +1807,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1907
+    .line 1854
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1908
+    .line 1855
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1911
+    .line 1858
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1912
+    .line 1859
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x42
@@ -1935,10 +1834,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1913
+    .line 1860
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1914
+    .line 1861
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -1949,25 +1848,25 @@
 
     const/4 v2, 0x1
 
-    .line 1917
+    .line 1864
     .local v2, _result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1918
+    .line 1865
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1920
+    .line 1867
     return v2
 
-    .line 1917
+    .line 1864
     .end local v2           #_result:Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1918
+    .line 1865
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -1984,25 +1883,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1016
+    .line 963
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1017
+    .line 964
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1020
+    .line 967
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1021
+    .line 968
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0xd
@@ -2011,10 +1910,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1022
+    .line 969
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1023
+    .line 970
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2025,25 +1924,25 @@
 
     const/4 v2, 0x1
 
-    .line 1026
+    .line 973
     .local v2, _result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1027
+    .line 974
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1029
+    .line 976
     return v2
 
-    .line 1026
+    .line 973
     .end local v2           #_result:Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1027
+    .line 974
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2060,25 +1959,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1334
+    .line 1281
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1335
+    .line 1282
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1338
+    .line 1285
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1339
+    .line 1286
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x21
@@ -2087,10 +1986,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1340
+    .line 1287
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1341
+    .line 1288
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2101,25 +2000,25 @@
 
     const/4 v2, 0x1
 
-    .line 1344
+    .line 1291
     .local v2, _result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1345
+    .line 1292
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1347
+    .line 1294
     return v2
 
-    .line 1344
+    .line 1291
     .end local v2           #_result:Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1345
+    .line 1292
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2137,28 +2036,28 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 981
+    .line 928
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 982
+    .line 929
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 985
+    .line 932
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 986
+    .line 933
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 987
+    .line 934
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0xb
@@ -2167,10 +2066,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 988
+    .line 935
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 989
+    .line 936
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2181,94 +2080,28 @@
 
     const/4 v2, 0x1
 
-    .line 992
+    .line 939
     .local v2, _result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 993
+    .line 940
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 995
+    .line 942
     return v2
 
-    .line 992
+    .line 939
     .end local v2           #_result:Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 993
+    .line 940
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
-.end method
-
-.method public listenRingerModeAndVolume(Lcom/mediatek/common/audioprofile/IAudioProfileListener;I)V
-    .locals 5
-    .parameter "callback"
-    .parameter "event"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 1995
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1997
-    .local v0, _data:Landroid/os/Parcel;
-    :try_start_0
-    const-string v2, "android.media.IAudioService"
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1998
-    if-eqz p1, :cond_0
-
-    invoke-interface {p1}, Lcom/mediatek/common/audioprofile/IAudioProfileListener;->asBinder()Landroid/os/IBinder;
-
-    move-result-object v1
-
-    :cond_0
-    invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    .line 1999
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 2000
-    iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v2, 0x47
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x1
-
-    invoke-interface {v1, v2, v0, v3, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 2003
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 2005
-    return-void
-
-    .line 2003
-    :catchall_0
-    move-exception v1
-
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v1
 .end method
 
 .method public loadSoundEffects()Z
@@ -2282,25 +2115,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1280
+    .line 1227
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1281
+    .line 1228
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1284
+    .line 1231
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1285
+    .line 1232
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x1d
@@ -2309,10 +2142,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1286
+    .line 1233
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1287
+    .line 1234
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -2323,25 +2156,25 @@
 
     const/4 v2, 0x1
 
-    .line 1290
+    .line 1237
     .local v2, _result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1291
+    .line 1238
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1293
+    .line 1240
     return v2
 
-    .line 1290
+    .line 1237
     .end local v2           #_result:Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1291
+    .line 1238
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -2357,22 +2190,22 @@
     .end annotation
 
     .prologue
-    .line 1255
+    .line 1202
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1257
+    .line 1204
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.media.IAudioService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1258
+    .line 1205
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1259
+    .line 1206
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x1b
@@ -2385,13 +2218,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1262
+    .line 1209
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1264
+    .line 1211
     return-void
 
-    .line 1262
+    .line 1209
     :catchall_0
     move-exception v1
 
@@ -2411,25 +2244,25 @@
     .end annotation
 
     .prologue
-    .line 1267
+    .line 1214
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1269
+    .line 1216
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.media.IAudioService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1270
+    .line 1217
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1271
+    .line 1218
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeFloat(F)V
 
-    .line 1272
+    .line 1219
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x1c
@@ -2442,13 +2275,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1275
+    .line 1222
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1277
+    .line 1224
     return-void
 
-    .line 1275
+    .line 1222
     :catchall_0
     move-exception v1
 
@@ -2467,32 +2300,32 @@
     .end annotation
 
     .prologue
-    .line 1574
+    .line 1521
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1576
+    .line 1523
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.media.IAudioService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1577
+    .line 1524
     if-eqz p1, :cond_0
 
-    .line 1578
+    .line 1525
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1579
+    .line 1526
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1584
+    .line 1531
     :goto_0
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -2506,13 +2339,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1587
+    .line 1534
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1589
+    .line 1536
     return-void
 
-    .line 1582
+    .line 1529
     :cond_0
     const/4 v1, 0x0
 
@@ -2523,7 +2356,7 @@
 
     goto :goto_0
 
-    .line 1587
+    .line 1534
     :catchall_0
     move-exception v1
 
@@ -2543,46 +2376,46 @@
     .end annotation
 
     .prologue
-    .line 1524
+    .line 1471
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1526
+    .line 1473
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.media.IAudioService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1527
+    .line 1474
     if-eqz p1, :cond_0
 
-    .line 1528
+    .line 1475
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1529
+    .line 1476
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/app/PendingIntent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1534
+    .line 1481
     :goto_0
     if-eqz p2, :cond_1
 
-    .line 1535
+    .line 1482
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1536
+    .line 1483
     const/4 v1, 0x0
 
     invoke-virtual {p2, v0, v1}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1541
+    .line 1488
     :goto_1
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -2596,13 +2429,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1544
+    .line 1491
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1546
+    .line 1493
     return-void
 
-    .line 1532
+    .line 1479
     :cond_0
     const/4 v1, 0x0
 
@@ -2613,7 +2446,7 @@
 
     goto :goto_0
 
-    .line 1544
+    .line 1491
     :catchall_0
     move-exception v1
 
@@ -2621,7 +2454,7 @@
 
     throw v1
 
-    .line 1539
+    .line 1486
     :cond_1
     const/4 v1, 0x0
 
@@ -2645,38 +2478,38 @@
     .end annotation
 
     .prologue
-    .line 1603
+    .line 1550
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1604
+    .line 1551
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1607
+    .line 1554
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1608
+    .line 1555
     if-eqz p1, :cond_0
 
-    .line 1609
+    .line 1556
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1610
+    .line 1557
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/app/PendingIntent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1615
+    .line 1562
     :goto_0
     if-eqz p2, :cond_1
 
@@ -2687,10 +2520,10 @@
     :goto_1
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1616
+    .line 1563
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1617
+    .line 1564
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x30
@@ -2699,27 +2532,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1618
+    .line 1565
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1619
+    .line 1566
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1622
+    .line 1569
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1623
+    .line 1570
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1625
+    .line 1572
     return v2
 
-    .line 1613
+    .line 1560
     .end local v2           #_result:I
     :cond_0
     const/4 v3, 0x0
@@ -2731,18 +2564,18 @@
 
     goto :goto_0
 
-    .line 1622
+    .line 1569
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1623
+    .line 1570
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
 
-    .line 1615
+    .line 1562
     :cond_1
     const/4 v3, 0x0
 
@@ -2761,19 +2594,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1648
+    .line 1595
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1650
+    .line 1597
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1651
+    .line 1598
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/media/IRemoteControlDisplay;->asBinder()Landroid/os/IBinder;
@@ -2783,7 +2616,7 @@
     :cond_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1652
+    .line 1599
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x32
@@ -2796,13 +2629,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1655
+    .line 1602
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1657
+    .line 1604
     return-void
 
-    .line 1655
+    .line 1602
     :catchall_0
     move-exception v1
 
@@ -2824,22 +2657,22 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1734
+    .line 1681
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1736
+    .line 1683
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1737
+    .line 1684
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1738
+    .line 1685
     if-eqz p2, :cond_0
 
     invoke-interface {p2}, Landroid/media/IRemoteVolumeObserver;->asBinder()Landroid/os/IBinder;
@@ -2849,7 +2682,7 @@
     :cond_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1739
+    .line 1686
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x38
@@ -2862,13 +2695,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1742
+    .line 1689
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1744
+    .line 1691
     return-void
 
-    .line 1742
+    .line 1689
     :catchall_0
     move-exception v1
 
@@ -2886,19 +2719,19 @@
     .end annotation
 
     .prologue
-    .line 1308
+    .line 1255
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1310
+    .line 1257
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.media.IAudioService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1311
+    .line 1258
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x1f
@@ -2911,13 +2744,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1314
+    .line 1261
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1316
+    .line 1263
     return-void
 
-    .line 1314
+    .line 1261
     :catchall_0
     move-exception v1
 
@@ -2940,19 +2773,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1672
+    .line 1619
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1674
+    .line 1621
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1675
+    .line 1622
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/media/IRemoteControlDisplay;->asBinder()Landroid/os/IBinder;
@@ -2962,13 +2795,13 @@
     :cond_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1676
+    .line 1623
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1677
+    .line 1624
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1678
+    .line 1625
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x34
@@ -2981,13 +2814,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1681
+    .line 1628
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1683
+    .line 1630
     return-void
 
-    .line 1681
+    .line 1628
     :catchall_0
     move-exception v1
 
@@ -3011,34 +2844,34 @@
     .end annotation
 
     .prologue
-    .line 1428
+    .line 1375
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1429
+    .line 1376
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1432
+    .line 1379
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1433
+    .line 1380
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1434
+    .line 1381
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1435
+    .line 1382
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1436
+    .line 1383
     if-eqz p4, :cond_0
 
     invoke-interface {p4}, Landroid/media/IAudioFocusDispatcher;->asBinder()Landroid/os/IBinder;
@@ -3048,13 +2881,13 @@
     :goto_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1437
+    .line 1384
     invoke-virtual {v0, p5}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1438
+    .line 1385
     invoke-virtual {v0, p6}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1439
+    .line 1386
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x27
@@ -3063,273 +2896,43 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1440
+    .line 1387
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1441
+    .line 1388
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1444
+    .line 1391
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1445
+    .line 1392
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1447
+    .line 1394
     return v2
 
-    .line 1436
+    .line 1383
     .end local v2           #_result:I
     :cond_0
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 1444
+    .line 1391
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1445
+    .line 1392
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
-.end method
-
-.method public setAudioPathOutofFMTx()Z
-    .locals 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 1942
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1943
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1946
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.media.IAudioService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1947
-    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x44
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1948
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1949
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    const/4 v2, 0x1
-
-    .line 1952
-    .local v2, _result:Z
-    :cond_0
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1953
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1955
-    return v2
-
-    .line 1952
-    .end local v2           #_result:Z
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1953
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public setAudioPathToFMTx(Landroid/os/IBinder;)Z
-    .locals 6
-    .parameter "cb"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 1924
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1925
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1928
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v3, "android.media.IAudioService"
-
-    invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1929
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
-
-    .line 1930
-    iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v4, 0x43
-
-    const/4 v5, 0x0
-
-    invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1931
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-
-    .line 1932
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    move-result v3
-
-    if-eqz v3, :cond_0
-
-    const/4 v2, 0x1
-
-    .line 1935
-    .local v2, _result:Z
-    :cond_0
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1936
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1938
-    return v2
-
-    .line 1935
-    .end local v2           #_result:Z
-    :catchall_0
-    move-exception v3
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1936
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v3
-.end method
-
-.method public setAudioProfileStreamVolume(III)V
-    .locals 5
-    .parameter "streamType"
-    .parameter "index"
-    .parameter "flags"
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-
-    .prologue
-    .line 1978
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v0
-
-    .line 1979
-    .local v0, _data:Landroid/os/Parcel;
-    invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
-
-    move-result-object v1
-
-    .line 1981
-    .local v1, _reply:Landroid/os/Parcel;
-    :try_start_0
-    const-string v2, "android.media.IAudioService"
-
-    invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
-
-    .line 1982
-    invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1983
-    invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1984
-    invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1985
-    iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
-
-    const/16 v3, 0x46
-
-    const/4 v4, 0x0
-
-    invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
-
-    .line 1986
-    invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 1989
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1990
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    .line 1992
-    return-void
-
-    .line 1989
-    :catchall_0
-    move-exception v2
-
-    invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
-
-    .line 1990
-    invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
-
-    throw v2
 .end method
 
 .method public setBluetoothA2dpDeviceConnectionState(Landroid/bluetooth/BluetoothDevice;I)I
@@ -3343,42 +2946,42 @@
     .end annotation
 
     .prologue
-    .line 1859
+    .line 1806
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1860
+    .line 1807
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1863
+    .line 1810
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1864
+    .line 1811
     if-eqz p1, :cond_0
 
-    .line 1865
+    .line 1812
     const/4 v3, 0x1
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1866
+    .line 1813
     const/4 v3, 0x0
 
     invoke-virtual {p1, v0, v3}, Landroid/bluetooth/BluetoothDevice;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1871
+    .line 1818
     :goto_0
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1872
+    .line 1819
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x40
@@ -3387,27 +2990,27 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1873
+    .line 1820
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1874
+    .line 1821
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result v2
 
-    .line 1877
+    .line 1824
     .local v2, _result:I
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1878
+    .line 1825
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1880
+    .line 1827
     return v2
 
-    .line 1869
+    .line 1816
     .end local v2           #_result:I
     :cond_0
     const/4 v3, 0x0
@@ -3419,13 +3022,13 @@
 
     goto :goto_0
 
-    .line 1877
+    .line 1824
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1878
+    .line 1825
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -3443,25 +3046,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1383
+    .line 1330
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1384
+    .line 1331
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1386
+    .line 1333
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1387
+    .line 1334
     if-eqz p1, :cond_0
 
     const/4 v2, 0x1
@@ -3469,7 +3072,7 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1388
+    .line 1335
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x24
@@ -3478,27 +3081,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1389
+    .line 1336
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1392
+    .line 1339
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1393
+    .line 1340
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1395
+    .line 1342
     return-void
 
-    .line 1392
+    .line 1339
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1393
+    .line 1340
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -3516,25 +3119,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1351
+    .line 1298
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1352
+    .line 1299
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1354
+    .line 1301
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1355
+    .line 1302
     if-eqz p1, :cond_0
 
     const/4 v2, 0x1
@@ -3542,7 +3145,7 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1356
+    .line 1303
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x22
@@ -3551,27 +3154,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1357
+    .line 1304
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1360
+    .line 1307
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1361
+    .line 1308
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1363
+    .line 1310
     return-void
 
-    .line 1360
+    .line 1307
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1361
+    .line 1308
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -3591,25 +3194,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 999
+    .line 946
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1000
+    .line 947
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1002
+    .line 949
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1003
+    .line 950
     if-eqz p1, :cond_0
 
     const/4 v2, 0x1
@@ -3617,13 +3220,13 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1004
+    .line 951
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1005
+    .line 952
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1006
+    .line 953
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0xc
@@ -3632,27 +3235,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1007
+    .line 954
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1010
+    .line 957
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1011
+    .line 958
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1013
+    .line 960
     return-void
 
-    .line 1010
+    .line 957
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1011
+    .line 958
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -3669,31 +3272,31 @@
     .end annotation
 
     .prologue
-    .line 931
+    .line 878
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 932
+    .line 879
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 934
+    .line 881
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 935
+    .line 882
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 936
+    .line 883
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 937
+    .line 884
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x8
@@ -3702,27 +3305,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 938
+    .line 885
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 941
+    .line 888
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 942
+    .line 889
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 944
+    .line 891
     return-void
 
-    .line 941
+    .line 888
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 942
+    .line 889
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -3739,31 +3342,31 @@
     .end annotation
 
     .prologue
-    .line 1222
+    .line 1169
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1223
+    .line 1170
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1225
+    .line 1172
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1226
+    .line 1173
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1227
+    .line 1174
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1228
+    .line 1175
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x19
@@ -3772,27 +3375,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1229
+    .line 1176
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1232
+    .line 1179
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1233
+    .line 1180
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1235
+    .line 1182
     return-void
 
-    .line 1232
+    .line 1179
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1233
+    .line 1180
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -3810,28 +3413,28 @@
     .end annotation
 
     .prologue
-    .line 1686
+    .line 1633
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1688
+    .line 1635
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.media.IAudioService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1689
+    .line 1636
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1690
+    .line 1637
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1691
+    .line 1638
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1692
+    .line 1639
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x35
@@ -3844,13 +3447,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1695
+    .line 1642
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1697
+    .line 1644
     return-void
 
-    .line 1695
+    .line 1642
     :catchall_0
     move-exception v1
 
@@ -3869,22 +3472,22 @@
     .end annotation
 
     .prologue
-    .line 919
+    .line 866
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 921
+    .line 868
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.media.IAudioService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 922
+    .line 869
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 923
+    .line 870
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v2, 0x7
@@ -3897,13 +3500,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 926
+    .line 873
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 928
+    .line 875
     return-void
 
-    .line 926
+    .line 873
     :catchall_0
     move-exception v1
 
@@ -3925,28 +3528,28 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 1415
+    .line 1362
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1417
+    .line 1364
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1418
+    .line 1365
     if-eqz p1, :cond_0
 
     :goto_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1419
+    .line 1366
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1420
+    .line 1367
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x26
@@ -3959,19 +3562,19 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1423
+    .line 1370
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1425
+    .line 1372
     return-void
 
-    .line 1418
+    .line 1365
     :cond_0
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 1423
+    .line 1370
     :catchall_0
     move-exception v1
 
@@ -3990,28 +3593,28 @@
     .end annotation
 
     .prologue
-    .line 1138
+    .line 1085
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1139
+    .line 1086
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1141
+    .line 1088
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1142
+    .line 1089
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1143
+    .line 1090
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x14
@@ -4020,27 +3623,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1144
+    .line 1091
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1147
+    .line 1094
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1148
+    .line 1095
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1150
+    .line 1097
     return-void
 
-    .line 1147
+    .line 1094
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1148
+    .line 1095
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4056,25 +3659,25 @@
     .end annotation
 
     .prologue
-    .line 1793
+    .line 1740
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1794
+    .line 1741
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1796
+    .line 1743
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1797
+    .line 1744
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/media/IRingtonePlayer;->asBinder()Landroid/os/IBinder;
@@ -4084,7 +3687,7 @@
     :goto_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1798
+    .line 1745
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x3c
@@ -4093,33 +3696,33 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1799
+    .line 1746
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1802
+    .line 1749
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1803
+    .line 1750
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1805
+    .line 1752
     return-void
 
-    .line 1797
+    .line 1744
     :cond_0
     const/4 v2, 0x0
 
     goto :goto_0
 
-    .line 1802
+    .line 1749
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1803
+    .line 1750
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4137,25 +3740,25 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1319
+    .line 1266
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1320
+    .line 1267
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1322
+    .line 1269
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1323
+    .line 1270
     if-eqz p1, :cond_0
 
     const/4 v2, 0x1
@@ -4163,7 +3766,7 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1324
+    .line 1271
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x20
@@ -4172,27 +3775,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1325
+    .line 1272
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1328
+    .line 1275
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1329
+    .line 1276
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1331
+    .line 1278
     return-void
 
-    .line 1328
+    .line 1275
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1329
+    .line 1276
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4212,28 +3815,28 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 964
+    .line 911
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 965
+    .line 912
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 967
+    .line 914
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 968
+    .line 915
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 969
+    .line 916
     if-eqz p2, :cond_0
 
     const/4 v2, 0x1
@@ -4241,10 +3844,10 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 970
+    .line 917
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 971
+    .line 918
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0xa
@@ -4253,27 +3856,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 972
+    .line 919
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 975
+    .line 922
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 976
+    .line 923
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 978
+    .line 925
     return-void
 
-    .line 975
+    .line 922
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 976
+    .line 923
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4293,28 +3896,28 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 947
+    .line 894
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 948
+    .line 895
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 950
+    .line 897
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 951
+    .line 898
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 952
+    .line 899
     if-eqz p2, :cond_0
 
     const/4 v2, 0x1
@@ -4322,10 +3925,10 @@
     :cond_0
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 953
+    .line 900
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 954
+    .line 901
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x9
@@ -4334,27 +3937,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 955
+    .line 902
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 958
+    .line 905
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 959
+    .line 906
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 961
+    .line 908
     return-void
 
-    .line 958
+    .line 905
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 959
+    .line 906
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4372,34 +3975,34 @@
     .end annotation
 
     .prologue
-    .line 902
+    .line 849
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 903
+    .line 850
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 905
+    .line 852
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 906
+    .line 853
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 907
+    .line 854
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 908
+    .line 855
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 909
+    .line 856
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/4 v3, 0x6
@@ -4408,27 +4011,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 910
+    .line 857
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 913
+    .line 860
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 914
+    .line 861
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 916
+    .line 863
     return-void
 
-    .line 913
+    .line 860
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 914
+    .line 861
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4445,31 +4048,31 @@
     .end annotation
 
     .prologue
-    .line 1170
+    .line 1117
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1171
+    .line 1118
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1173
+    .line 1120
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1174
+    .line 1121
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1175
+    .line 1122
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1176
+    .line 1123
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x16
@@ -4478,27 +4081,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1177
+    .line 1124
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1180
+    .line 1127
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1181
+    .line 1128
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1183
+    .line 1130
     return-void
 
-    .line 1180
+    .line 1127
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1181
+    .line 1128
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4516,34 +4119,34 @@
     .end annotation
 
     .prologue
-    .line 1842
+    .line 1789
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1843
+    .line 1790
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1845
+    .line 1792
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1846
+    .line 1793
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1847
+    .line 1794
     invoke-virtual {v0, p2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1848
+    .line 1795
     invoke-virtual {v0, p3}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1849
+    .line 1796
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x3f
@@ -4552,27 +4155,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1850
+    .line 1797
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1853
+    .line 1800
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1854
+    .line 1801
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1856
+    .line 1803
     return-void
 
-    .line 1853
+    .line 1800
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1854
+    .line 1801
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4590,28 +4193,28 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 1204
+    .line 1151
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1205
+    .line 1152
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1208
+    .line 1155
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1209
+    .line 1156
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1210
+    .line 1157
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x18
@@ -4620,10 +4223,10 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1211
+    .line 1158
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1212
+    .line 1159
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -4634,25 +4237,25 @@
 
     const/4 v2, 0x1
 
-    .line 1215
+    .line 1162
     .local v2, _result:Z
     :cond_0
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1216
+    .line 1163
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1218
+    .line 1165
     return v2
 
-    .line 1215
+    .line 1162
     .end local v2           #_result:Z
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1216
+    .line 1163
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -4668,28 +4271,28 @@
     .end annotation
 
     .prologue
-    .line 1747
+    .line 1694
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1748
+    .line 1695
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1750
+    .line 1697
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1751
+    .line 1698
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1752
+    .line 1699
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x39
@@ -4698,27 +4301,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1753
+    .line 1700
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1756
+    .line 1703
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1757
+    .line 1704
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1759
+    .line 1706
     return-void
 
-    .line 1756
+    .line 1703
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1757
+    .line 1704
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4734,25 +4337,25 @@
     .end annotation
 
     .prologue
-    .line 1884
+    .line 1831
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1885
+    .line 1832
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1888
+    .line 1835
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v3, "android.media.IAudioService"
 
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1889
+    .line 1836
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/media/IAudioRoutesObserver;->asBinder()Landroid/os/IBinder;
@@ -4762,7 +4365,7 @@
     :goto_0
     invoke-virtual {v0, v3}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1890
+    .line 1837
     iget-object v3, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v4, 0x41
@@ -4771,17 +4374,17 @@
 
     invoke-interface {v3, v4, v0, v1, v5}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1891
+    .line 1838
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
 
-    .line 1892
+    .line 1839
     invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 1893
+    .line 1840
     sget-object v3, Landroid/media/AudioRoutesInfo;->CREATOR:Landroid/os/Parcelable$Creator;
 
     invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
@@ -4792,39 +4395,39 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1900
+    .line 1847
     .local v2, _result:Landroid/media/AudioRoutesInfo;
     :goto_1
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1901
+    .line 1848
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1903
+    .line 1850
     return-object v2
 
-    .line 1889
+    .line 1836
     .end local v2           #_result:Landroid/media/AudioRoutesInfo;
     :cond_0
     const/4 v3, 0x0
 
     goto :goto_0
 
-    .line 1896
+    .line 1843
     :cond_1
     const/4 v2, 0x0
 
     .restart local v2       #_result:Landroid/media/AudioRoutesInfo;
     goto :goto_1
 
-    .line 1900
+    .line 1847
     .end local v2           #_result:Landroid/media/AudioRoutesInfo;
     :catchall_0
     move-exception v3
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1901
+    .line 1848
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v3
@@ -4840,28 +4443,28 @@
     .end annotation
 
     .prologue
-    .line 1762
+    .line 1709
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1763
+    .line 1710
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1765
+    .line 1712
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1766
+    .line 1713
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1767
+    .line 1714
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x3a
@@ -4870,27 +4473,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1768
+    .line 1715
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1771
+    .line 1718
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1772
+    .line 1719
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1774
+    .line 1721
     return-void
 
-    .line 1771
+    .line 1718
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1772
+    .line 1719
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -4905,19 +4508,19 @@
     .end annotation
 
     .prologue
-    .line 1297
+    .line 1244
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1299
+    .line 1246
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.media.IAudioService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1300
+    .line 1247
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x1e
@@ -4930,13 +4533,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1303
+    .line 1250
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1305
+    .line 1252
     return-void
 
-    .line 1303
+    .line 1250
     :catchall_0
     move-exception v1
 
@@ -4955,28 +4558,28 @@
     .end annotation
 
     .prologue
-    .line 1470
+    .line 1417
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1471
+    .line 1418
     .local v0, _data:Landroid/os/Parcel;
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v1
 
-    .line 1473
+    .line 1420
     .local v1, _reply:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1474
+    .line 1421
     invoke-virtual {v0, p1}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 1475
+    .line 1422
     iget-object v2, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v3, 0x29
@@ -4985,27 +4588,27 @@
 
     invoke-interface {v2, v3, v0, v1, v4}, Landroid/os/IBinder;->transact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
-    .line 1476
+    .line 1423
     invoke-virtual {v1}, Landroid/os/Parcel;->readException()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1479
+    .line 1426
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1480
+    .line 1427
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1482
+    .line 1429
     return-void
 
-    .line 1479
+    .line 1426
     :catchall_0
     move-exception v2
 
     invoke-virtual {v1}, Landroid/os/Parcel;->recycle()V
 
-    .line 1480
+    .line 1427
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
     throw v2
@@ -5020,19 +4623,19 @@
     .end annotation
 
     .prologue
-    .line 1592
+    .line 1539
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1594
+    .line 1541
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.media.IAudioService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1595
+    .line 1542
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x2f
@@ -5045,13 +4648,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1598
+    .line 1545
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1600
+    .line 1547
     return-void
 
-    .line 1598
+    .line 1545
     :catchall_0
     move-exception v1
 
@@ -5071,46 +4674,46 @@
     .end annotation
 
     .prologue
-    .line 1549
+    .line 1496
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1551
+    .line 1498
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v1, "android.media.IAudioService"
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1552
+    .line 1499
     if-eqz p1, :cond_0
 
-    .line 1553
+    .line 1500
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1554
+    .line 1501
     const/4 v1, 0x0
 
     invoke-virtual {p1, v0, v1}, Landroid/app/PendingIntent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1559
+    .line 1506
     :goto_0
     if-eqz p2, :cond_1
 
-    .line 1560
+    .line 1507
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1561
+    .line 1508
     const/4 v1, 0x0
 
     invoke-virtual {p2, v0, v1}, Landroid/content/ComponentName;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1566
+    .line 1513
     :goto_1
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
@@ -5124,13 +4727,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1569
+    .line 1516
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1571
+    .line 1518
     return-void
 
-    .line 1557
+    .line 1504
     :cond_0
     const/4 v1, 0x0
 
@@ -5141,7 +4744,7 @@
 
     goto :goto_0
 
-    .line 1569
+    .line 1516
     :catchall_0
     move-exception v1
 
@@ -5149,7 +4752,7 @@
 
     throw v1
 
-    .line 1564
+    .line 1511
     :cond_1
     const/4 v1, 0x0
 
@@ -5174,32 +4777,32 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1629
+    .line 1576
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1631
+    .line 1578
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1632
+    .line 1579
     if-eqz p1, :cond_1
 
-    .line 1633
+    .line 1580
     const/4 v2, 0x1
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1634
+    .line 1581
     const/4 v2, 0x0
 
     invoke-virtual {p1, v0, v2}, Landroid/app/PendingIntent;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1639
+    .line 1586
     :goto_0
     if-eqz p2, :cond_0
 
@@ -5210,7 +4813,7 @@
     :cond_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1640
+    .line 1587
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x31
@@ -5223,13 +4826,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1643
+    .line 1590
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1645
+    .line 1592
     return-void
 
-    .line 1637
+    .line 1584
     :cond_1
     const/4 v2, 0x0
 
@@ -5240,7 +4843,7 @@
 
     goto :goto_0
 
-    .line 1643
+    .line 1590
     :catchall_0
     move-exception v1
 
@@ -5261,19 +4864,19 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1660
+    .line 1607
     invoke-static {}, Landroid/os/Parcel;->obtain()Landroid/os/Parcel;
 
     move-result-object v0
 
-    .line 1662
+    .line 1609
     .local v0, _data:Landroid/os/Parcel;
     :try_start_0
     const-string v2, "android.media.IAudioService"
 
     invoke-virtual {v0, v2}, Landroid/os/Parcel;->writeInterfaceToken(Ljava/lang/String;)V
 
-    .line 1663
+    .line 1610
     if-eqz p1, :cond_0
 
     invoke-interface {p1}, Landroid/media/IRemoteControlDisplay;->asBinder()Landroid/os/IBinder;
@@ -5283,7 +4886,7 @@
     :cond_0
     invoke-virtual {v0, v1}, Landroid/os/Parcel;->writeStrongBinder(Landroid/os/IBinder;)V
 
-    .line 1664
+    .line 1611
     iget-object v1, p0, Landroid/media/IAudioService$Stub$Proxy;->mRemote:Landroid/os/IBinder;
 
     const/16 v2, 0x33
@@ -5296,13 +4899,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1667
+    .line 1614
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 1669
+    .line 1616
     return-void
 
-    .line 1667
+    .line 1614
     :catchall_0
     move-exception v1
 

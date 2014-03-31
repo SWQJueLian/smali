@@ -63,14 +63,6 @@
     .end annotation
 .end method
 
-.method public abstract removeToken(Landroid/os/IBinder;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setDreamComponents([Landroid/content/ComponentName;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

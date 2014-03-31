@@ -1,11 +1,14 @@
 .class Lcom/android/internal/policy/impl/PhoneWindowManager$16;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "PhoneWindowManager.java"
+
+# interfaces
+.implements Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager$ShowListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/internal/policy/impl/PhoneWindowManager;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/internal/policy/impl/PhoneWindowManager;->waitForKeyguard(Landroid/view/WindowManagerPolicy$ScreenOnListener;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,88 +20,41 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
+.field final synthetic val$screenOnListener:Landroid/view/WindowManagerPolicy$ScreenOnListener;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
+.method constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/view/WindowManagerPolicy$ScreenOnListener;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 4054
+    .line 3888
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$16;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    iput-object p2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$16;->val$screenOnListener:Landroid/view/WindowManagerPolicy$ScreenOnListener;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+.method public onShown(Landroid/os/IBinder;)V
     .locals 2
-    .parameter "context"
-    .parameter "intent"
+    .parameter "windowToken"
 
     .prologue
-    .line 4057
-    const-string v0, "android.intent.action.DREAMING_STARTED"
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 4058
+    .line 3891
     iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$16;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
-    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
+    iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$16;->val$screenOnListener:Landroid/view/WindowManagerPolicy$ScreenOnListener;
 
-    if-eqz v0, :cond_0
+    #calls: Lcom/android/internal/policy/impl/PhoneWindowManager;->waitForKeyguardWindowDrawn(Landroid/os/IBinder;Landroid/view/WindowManagerPolicy$ScreenOnListener;)V
+    invoke-static {v0, p1, v1}, Lcom/android/internal/policy/impl/PhoneWindowManager;->access$500(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/os/IBinder;Landroid/view/WindowManagerPolicy$ScreenOnListener;)V
 
-    .line 4059
-    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$16;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
-
-    invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->onDreamingStarted()V
-
-    .line 4066
-    :cond_0
-    :goto_0
+    .line 3892
     return-void
-
-    .line 4061
-    :cond_1
-    const-string v0, "android.intent.action.DREAMING_STOPPED"
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 4062
-    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$16;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
-
-    if-eqz v0, :cond_0
-
-    .line 4063
-    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$16;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
-
-    iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mKeyguardMediator:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
-
-    invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->onDreamingStopped()V
-
-    goto :goto_0
 .end method

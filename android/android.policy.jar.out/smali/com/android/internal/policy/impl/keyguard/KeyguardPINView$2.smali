@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 87
+    .line 81
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 90
+    .line 84
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->mPasswordEntry:Landroid/widget/TextView;
@@ -53,7 +53,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 91
+    .line 85
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->mPasswordEntry:Landroid/widget/TextView;
@@ -62,7 +62,7 @@
 
     move-result-object v0
 
-    .line 92
+    .line 86
     .local v0, str:Ljava/lang/CharSequence;
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
 
@@ -70,7 +70,7 @@
 
     if-lez v1, :cond_0
 
-    .line 93
+    .line 87
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
     iget-object v1, v1, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->mPasswordEntry:Landroid/widget/TextView;
@@ -89,13 +89,13 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 96
+    .line 90
     .end local v0           #str:Ljava/lang/CharSequence;
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView$2;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;
 
     invoke-virtual {v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardPINView;->doHapticKeyClick()V
 
-    .line 97
+    .line 91
     return-void
 .end method

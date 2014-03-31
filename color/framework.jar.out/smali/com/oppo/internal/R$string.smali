@@ -133,6 +133,8 @@
 
 .field public static final android_month_year:I = 0xc0404ab
 
+.field public static final android_noApplications:I = 0xc04052a
+
 .field public static final android_noon:I = 0xc0404a5
 
 .field public static final android_number_picker_increment_scroll_action:I = 0xc040459
@@ -187,10 +189,6 @@
 
 .field public static final android_time_wday_date:I = 0xc0404b7
 
-.field public static final android_twelve_hour_time_format:I = 0xc0404bc
-
-.field public static final android_twenty_four_hour_time_format:I = 0xc0404bb
-
 .field public static final android_usb_storage_message:I = 0xc040021
 
 .field public static final android_usb_storage_notification_message:I = 0xc040022
@@ -224,6 +222,8 @@
 .field public static final android_wday1_date1_wday2_date2:I = 0xc0404b2
 
 .field public static final android_wday_date:I = 0xc0404b8
+
+.field public static final android_whichApplication:I = 0xc040529
 
 .field public static final imProtocolFBM:I = 0xc0404c2
 
@@ -260,6 +260,8 @@
 .field public static final oppo_day_month_year_wday:I = 0xc04049d
 
 .field public static final oppo_day_year_month_wday:I = 0xc04049e
+
+.field public static final oppo_edittext_search:I = 0xc040528
 
 .field public static final oppo_flip_frame_step:I = 0xc040400
 
@@ -463,6 +465,10 @@
 
 .field public static final oppo_touchsearch_side_keys_prefix:I = 0xc040408
 
+.field public static final oppo_twelve_hour_time_format:I = 0xc0404bc
+
+.field public static final oppo_twenty_four_hour_time_format:I = 0xc0404bb
+
 .field public static final oppo_usb_charge:I = 0xc040435
 
 .field public static final oppo_usb_mtp:I = 0xc04043a
@@ -497,7 +503,7 @@
     .locals 0
 
     .prologue
-    .line 1916
+    .line 2018
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

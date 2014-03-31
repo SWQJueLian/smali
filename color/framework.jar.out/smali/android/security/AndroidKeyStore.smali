@@ -1974,7 +1974,7 @@
 
     .line 81
     :cond_0
-    const-string/jumbo v3, "keystore"
+    const-string v3, "keystore"
 
     invoke-static {v3}, Lorg/apache/harmony/xnet/provider/jsse/OpenSSLEngine;->getInstance(Ljava/lang/String;)Lorg/apache/harmony/xnet/provider/jsse/OpenSSLEngine;
 

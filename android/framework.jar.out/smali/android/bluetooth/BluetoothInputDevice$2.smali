@@ -1,6 +1,9 @@
 .class Landroid/bluetooth/BluetoothInputDevice$2;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "BluetoothInputDevice.java"
+
+# interfaces
+.implements Landroid/content/ServiceConnection;
 
 
 # annotations
@@ -24,90 +27,111 @@
     .parameter
 
     .prologue
-    .line 216
+    .line 455
     iput-object p1, p0, Landroid/bluetooth/BluetoothInputDevice$2;->this$0:Landroid/bluetooth/BluetoothInputDevice;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
-    .parameter "context"
-    .parameter "intent"
+.method public onServiceConnected(Landroid/content/ComponentName;Landroid/os/IBinder;)V
+    .locals 3
+    .parameter "className"
+    .parameter "service"
 
     .prologue
-    .line 219
-    const-string v0, "android.bluetooth.input.profile.action.ACTION_BIND_SERVICE"
+    .line 457
+    const-string v0, "BluetoothInputDevice"
 
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    const-string v1, "Proxy object connected"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 458
+    iget-object v0, p0, Landroid/bluetooth/BluetoothInputDevice$2;->this$0:Landroid/bluetooth/BluetoothInputDevice;
+
+    invoke-static {p2}, Landroid/bluetooth/IBluetoothInputDevice$Stub;->asInterface(Landroid/os/IBinder;)Landroid/bluetooth/IBluetoothInputDevice;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    #setter for: Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
+    invoke-static {v0, v1}, Landroid/bluetooth/BluetoothInputDevice;->access$102(Landroid/bluetooth/BluetoothInputDevice;Landroid/bluetooth/IBluetoothInputDevice;)Landroid/bluetooth/IBluetoothInputDevice;
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 220
-    const-string v0, "BluetoothInputDevice"
-
-    const-string/jumbo v1, "receiver receives ACTION_BIND_SERVICE intent"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 221
-    const-string v0, "BluetoothInputDevice"
-
-    const-string v1, "Bind to Bluetooth HID Service"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 222
+    .line 460
     iget-object v0, p0, Landroid/bluetooth/BluetoothInputDevice$2;->this$0:Landroid/bluetooth/BluetoothInputDevice;
 
-    #getter for: Landroid/bluetooth/BluetoothInputDevice;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Landroid/bluetooth/BluetoothInputDevice;->access$200(Landroid/bluetooth/BluetoothInputDevice;)Landroid/content/Context;
+    #getter for: Landroid/bluetooth/BluetoothInputDevice;->mServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
+    invoke-static {v0}, Landroid/bluetooth/BluetoothInputDevice;->access$300(Landroid/bluetooth/BluetoothInputDevice;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
     move-result-object v0
 
-    new-instance v1, Landroid/content/Intent;
+    if-eqz v0, :cond_0
 
-    const-class v2, Landroid/bluetooth/IBluetoothHid;
+    .line 461
+    iget-object v0, p0, Landroid/bluetooth/BluetoothInputDevice$2;->this$0:Landroid/bluetooth/BluetoothInputDevice;
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    #getter for: Landroid/bluetooth/BluetoothInputDevice;->mServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
+    invoke-static {v0}, Landroid/bluetooth/BluetoothInputDevice;->access$300(Landroid/bluetooth/BluetoothInputDevice;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    const/4 v1, 0x4
 
     iget-object v2, p0, Landroid/bluetooth/BluetoothInputDevice$2;->this$0:Landroid/bluetooth/BluetoothInputDevice;
 
-    #getter for: Landroid/bluetooth/BluetoothInputDevice;->mConnection:Landroid/content/ServiceConnection;
-    invoke-static {v2}, Landroid/bluetooth/BluetoothInputDevice;->access$100(Landroid/bluetooth/BluetoothInputDevice;)Landroid/content/ServiceConnection;
+    invoke-interface {v0, v1, v2}, Landroid/bluetooth/BluetoothProfile$ServiceListener;->onServiceConnected(ILandroid/bluetooth/BluetoothProfile;)V
 
-    move-result-object v2
+    .line 463
+    :cond_0
+    return-void
+.end method
 
-    const/4 v3, 0x0
+.method public onServiceDisconnected(Landroid/content/ComponentName;)V
+    .locals 2
+    .parameter "className"
 
-    invoke-virtual {v0, v1, v2, v3}, Landroid/content/Context;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 224
+    .prologue
+    .line 465
     const-string v0, "BluetoothInputDevice"
 
-    const-string v1, "Could not bind to Bluetooth HID Service"
+    const-string v1, "Proxy object disconnected"
 
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 227
+    .line 466
+    iget-object v0, p0, Landroid/bluetooth/BluetoothInputDevice$2;->this$0:Landroid/bluetooth/BluetoothInputDevice;
+
+    const/4 v1, 0x0
+
+    #setter for: Landroid/bluetooth/BluetoothInputDevice;->mService:Landroid/bluetooth/IBluetoothInputDevice;
+    invoke-static {v0, v1}, Landroid/bluetooth/BluetoothInputDevice;->access$102(Landroid/bluetooth/BluetoothInputDevice;Landroid/bluetooth/IBluetoothInputDevice;)Landroid/bluetooth/IBluetoothInputDevice;
+
+    .line 467
+    iget-object v0, p0, Landroid/bluetooth/BluetoothInputDevice$2;->this$0:Landroid/bluetooth/BluetoothInputDevice;
+
+    #getter for: Landroid/bluetooth/BluetoothInputDevice;->mServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
+    invoke-static {v0}, Landroid/bluetooth/BluetoothInputDevice;->access$300(Landroid/bluetooth/BluetoothInputDevice;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_0
+
+    .line 468
+    iget-object v0, p0, Landroid/bluetooth/BluetoothInputDevice$2;->this$0:Landroid/bluetooth/BluetoothInputDevice;
+
+    #getter for: Landroid/bluetooth/BluetoothInputDevice;->mServiceListener:Landroid/bluetooth/BluetoothProfile$ServiceListener;
+    invoke-static {v0}, Landroid/bluetooth/BluetoothInputDevice;->access$300(Landroid/bluetooth/BluetoothInputDevice;)Landroid/bluetooth/BluetoothProfile$ServiceListener;
+
+    move-result-object v0
+
+    const/4 v1, 0x4
+
+    invoke-interface {v0, v1}, Landroid/bluetooth/BluetoothProfile$ServiceListener;->onServiceDisconnected(I)V
+
+    .line 470
     :cond_0
     return-void
 .end method

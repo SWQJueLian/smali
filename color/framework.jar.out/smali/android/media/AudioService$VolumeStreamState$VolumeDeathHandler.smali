@@ -32,15 +32,15 @@
     .parameter "cb"
 
     .prologue
-    .line 3027
+    .line 2937
     iput-object p1, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 3028
+    .line 2938
     iput-object p2, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mICallback:Landroid/os/IBinder;
 
-    .line 3029
+    .line 2939
     return-void
 .end method
 
@@ -49,7 +49,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3023
+    .line 2933
     iget v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mMuteCount:I
 
     return v0
@@ -61,7 +61,7 @@
     .parameter "x1"
 
     .prologue
-    .line 3023
+    .line 2933
     iput p1, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mMuteCount:I
 
     return p1
@@ -72,7 +72,7 @@
     .parameter "x0"
 
     .prologue
-    .line 3023
+    .line 2933
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mICallback:Landroid/os/IBinder;
 
     return-object v0
@@ -84,7 +84,7 @@
     .locals 3
 
     .prologue
-    .line 3108
+    .line 3018
     const-string v0, "AudioService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -114,22 +114,22 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3109
+    .line 3019
     iget v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mMuteCount:I
 
     if-eqz v0, :cond_0
 
-    .line 3111
+    .line 3021
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mMuteCount:I
 
-    .line 3112
+    .line 3022
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mute(Z)V
 
-    .line 3114
+    .line 3024
     :cond_0
     return-void
 .end method
@@ -145,28 +145,28 @@
 
     const/4 v3, 0x0
 
-    .line 3033
+    .line 2943
     if-eqz p1, :cond_5
 
-    .line 3034
+    .line 2944
     iget v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mMuteCount:I
 
     if-nez v0, :cond_4
 
-    .line 3038
+    .line 2948
     :try_start_0
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mICallback:Landroid/os/IBinder;
 
     if-eqz v0, :cond_0
 
-    .line 3039
+    .line 2949
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mICallback:Landroid/os/IBinder;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->linkToDeath(Landroid/os/IBinder$DeathRecipient;I)V
 
-    .line 3041
+    .line 2951
     :cond_0
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
@@ -177,7 +177,7 @@
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 3043
+    .line 2953
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
     #calls: Landroid/media/AudioService$VolumeStreamState;->muteCount()I
@@ -187,7 +187,7 @@
 
     if-nez v0, :cond_3
 
-    .line 3044
+    .line 2954
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
     #getter for: Landroid/media/AudioService$VolumeStreamState;->mIndex:Ljava/util/concurrent/ConcurrentHashMap;
@@ -199,13 +199,13 @@
 
     move-result-object v11
 
-    .line 3045
+    .line 2955
     .local v11, set:Ljava/util/Set;
     invoke-interface {v11}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v10
 
-    .line 3046
+    .line 2956
     .local v10, i:Ljava/util/Iterator;
     :goto_0
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
@@ -214,14 +214,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 3047
+    .line 2957
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Ljava/util/Map$Entry;
 
-    .line 3048
+    .line 2958
     .local v9, entry:Ljava/util/Map$Entry;
     invoke-interface {v9}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -233,7 +233,7 @@
 
     move-result v7
 
-    .line 3049
+    .line 2959
     .local v7, device:I
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
@@ -247,7 +247,7 @@
 
     goto :goto_0
 
-    .line 3058
+    .line 2968
     .end local v7           #device:I
     .end local v9           #entry:Ljava/util/Map$Entry;
     .end local v10           #i:Ljava/util/Iterator;
@@ -255,17 +255,17 @@
     :catch_0
     move-exception v8
 
-    .line 3060
+    .line 2970
     .local v8, e:Landroid/os/RemoteException;
     invoke-virtual {p0}, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->binderDied()V
 
-    .line 3105
+    .line 3015
     .end local v8           #e:Landroid/os/RemoteException;
     :cond_1
     :goto_1
     return-void
 
-    .line 3051
+    .line 2961
     .restart local v10       #i:Ljava/util/Iterator;
     .restart local v11       #set:Ljava/util/Set;
     :cond_2
@@ -296,7 +296,7 @@
     :try_end_1
     .catch Landroid/os/RemoteException; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 3066
+    .line 2976
     .end local v10           #i:Ljava/util/Iterator;
     .end local v11           #set:Ljava/util/Set;
     :cond_3
@@ -309,7 +309,7 @@
 
     goto :goto_1
 
-    .line 3064
+    .line 2974
     :cond_4
     const-string v0, "AudioService"
 
@@ -348,13 +348,13 @@
 
     goto :goto_2
 
-    .line 3068
+    .line 2978
     :cond_5
     iget v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mMuteCount:I
 
     if-nez v0, :cond_6
 
-    .line 3069
+    .line 2979
     const-string v0, "AudioService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -386,7 +386,7 @@
 
     goto :goto_1
 
-    .line 3071
+    .line 2981
     :cond_6
     iget v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mMuteCount:I
 
@@ -394,12 +394,12 @@
 
     iput v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mMuteCount:I
 
-    .line 3072
+    .line 2982
     iget v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mMuteCount:I
 
     if-nez v0, :cond_1
 
-    .line 3074
+    .line 2984
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
     #getter for: Landroid/media/AudioService$VolumeStreamState;->mDeathHandlers:Ljava/util/ArrayList;
@@ -409,17 +409,17 @@
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 3076
+    .line 2986
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mICallback:Landroid/os/IBinder;
 
     if-eqz v0, :cond_7
 
-    .line 3077
+    .line 2987
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->mICallback:Landroid/os/IBinder;
 
     invoke-interface {v0, p0, v3}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 3079
+    .line 2989
     :cond_7
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
@@ -430,7 +430,7 @@
 
     if-nez v0, :cond_1
 
-    .line 3082
+    .line 2992
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
     iget-object v0, v0, Landroid/media/AudioService$VolumeStreamState;->this$0:Landroid/media/AudioService;
@@ -459,7 +459,7 @@
 
     if-ne v0, v2, :cond_1
 
-    .line 3084
+    .line 2994
     :cond_8
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
@@ -472,13 +472,13 @@
 
     move-result-object v11
 
-    .line 3085
+    .line 2995
     .restart local v11       #set:Ljava/util/Set;
     invoke-interface {v11}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v10
 
-    .line 3086
+    .line 2996
     .restart local v10       #i:Ljava/util/Iterator;
     :goto_3
     invoke-interface {v10}, Ljava/util/Iterator;->hasNext()Z
@@ -487,14 +487,14 @@
 
     if-eqz v0, :cond_9
 
-    .line 3087
+    .line 2997
     invoke-interface {v10}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v9
 
     check-cast v9, Ljava/util/Map$Entry;
 
-    .line 3088
+    .line 2998
     .restart local v9       #entry:Ljava/util/Map$Entry;
     invoke-interface {v9}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
@@ -506,7 +506,7 @@
 
     move-result v7
 
-    .line 3089
+    .line 2999
     .restart local v7       #device:I
     iget-object v0, p0, Landroid/media/AudioService$VolumeStreamState$VolumeDeathHandler;->this$1:Landroid/media/AudioService$VolumeStreamState;
 
@@ -522,7 +522,7 @@
 
     goto :goto_3
 
-    .line 3094
+    .line 3004
     .end local v7           #device:I
     .end local v9           #entry:Ljava/util/Map$Entry;
     :cond_9

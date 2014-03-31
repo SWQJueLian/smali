@@ -85,7 +85,7 @@
     if-eqz v0, :cond_0
 
     .line 163
-    const-string/jumbo v1, "ndefmaxlength"
+    const-string v1, "ndefmaxlength"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
@@ -94,7 +94,7 @@
     iput v1, p0, Landroid/nfc/tech/Ndef;->mMaxNdefSize:I
 
     .line 164
-    const-string/jumbo v1, "ndefcardstate"
+    const-string v1, "ndefcardstate"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 
@@ -103,7 +103,7 @@
     iput v1, p0, Landroid/nfc/tech/Ndef;->mCardState:I
 
     .line 165
-    const-string/jumbo v1, "ndefmsg"
+    const-string v1, "ndefmsg"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
@@ -114,7 +114,7 @@
     iput-object v1, p0, Landroid/nfc/tech/Ndef;->mNdefMsg:Landroid/nfc/NdefMessage;
 
     .line 166
-    const-string/jumbo v1, "ndeftype"
+    const-string v1, "ndeftype"
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getInt(Ljava/lang/String;)I
 

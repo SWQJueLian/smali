@@ -30,18 +30,18 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 1155
+    .line 1039
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1156
+    .line 1040
     iput-object p1, p0, Landroid/webkit/WebViewCore$FindAllRequest;->mSearchText:Ljava/lang/String;
 
-    .line 1157
+    .line 1041
     iput v0, p0, Landroid/webkit/WebViewCore$FindAllRequest;->mMatchCount:I
 
-    .line 1158
+    .line 1042
     iput v0, p0, Landroid/webkit/WebViewCore$FindAllRequest;->mMatchIndex:I
 
-    .line 1159
+    .line 1043
     return-void
 .end method

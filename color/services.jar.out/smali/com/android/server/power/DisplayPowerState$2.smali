@@ -1,5 +1,5 @@
 .class final Lcom/android/server/power/DisplayPowerState$2;
-.super Landroid/util/FloatProperty;
+.super Landroid/util/IntProperty;
 .source "DisplayPowerState.java"
 
 
@@ -15,7 +15,7 @@
 
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Landroid/util/FloatProperty",
+        "Landroid/util/IntProperty",
         "<",
         "Lcom/android/server/power/DisplayPowerState;",
         ">;"
@@ -29,25 +29,25 @@
     .parameter "x0"
 
     .prologue
-    .line 138
-    invoke-direct {p0, p1}, Landroid/util/FloatProperty;-><init>(Ljava/lang/String;)V
+    .line 112
+    invoke-direct {p0, p1}, Landroid/util/IntProperty;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public get(Lcom/android/server/power/DisplayPowerState;)Ljava/lang/Float;
+.method public get(Lcom/android/server/power/DisplayPowerState;)Ljava/lang/Integer;
     .locals 1
     .parameter "object"
 
     .prologue
-    .line 146
-    invoke-virtual {p1}, Lcom/android/server/power/DisplayPowerState;->getElectronBeamLevel()F
+    .line 120
+    invoke-virtual {p1}, Lcom/android/server/power/DisplayPowerState;->getScreenBrightness()I
 
     move-result v0
 
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
@@ -59,41 +59,41 @@
     .parameter "x0"
 
     .prologue
-    .line 138
+    .line 112
     check-cast p1, Lcom/android/server/power/DisplayPowerState;
 
     .end local p1
-    invoke-virtual {p0, p1}, Lcom/android/server/power/DisplayPowerState$2;->get(Lcom/android/server/power/DisplayPowerState;)Ljava/lang/Float;
+    invoke-virtual {p0, p1}, Lcom/android/server/power/DisplayPowerState$2;->get(Lcom/android/server/power/DisplayPowerState;)Ljava/lang/Integer;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public setValue(Lcom/android/server/power/DisplayPowerState;F)V
+.method public setValue(Lcom/android/server/power/DisplayPowerState;I)V
     .locals 0
     .parameter "object"
     .parameter "value"
 
     .prologue
-    .line 141
-    invoke-virtual {p1, p2}, Lcom/android/server/power/DisplayPowerState;->setElectronBeamLevel(F)V
+    .line 115
+    invoke-virtual {p1, p2}, Lcom/android/server/power/DisplayPowerState;->setScreenBrightness(I)V
 
-    .line 142
+    .line 116
     return-void
 .end method
 
-.method public bridge synthetic setValue(Ljava/lang/Object;F)V
+.method public bridge synthetic setValue(Ljava/lang/Object;I)V
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 138
+    .line 112
     check-cast p1, Lcom/android/server/power/DisplayPowerState;
 
     .end local p1
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/power/DisplayPowerState$2;->setValue(Lcom/android/server/power/DisplayPowerState;F)V
+    invoke-virtual {p0, p1, p2}, Lcom/android/server/power/DisplayPowerState$2;->setValue(Lcom/android/server/power/DisplayPowerState;I)V
 
     return-void
 .end method

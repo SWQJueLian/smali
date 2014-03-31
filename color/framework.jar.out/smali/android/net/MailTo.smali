@@ -56,7 +56,7 @@
     .line 51
     if-eqz p0, :cond_0
 
-    const-string/jumbo v0, "mailto:"
+    const-string v0, "mailto:"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -116,7 +116,7 @@
 
     .line 72
     :cond_1
-    const-string/jumbo v13, "mailto:"
+    const-string v13, "mailto:"
 
     invoke-virtual {v13}, Ljava/lang/String;->length()I
 
@@ -398,7 +398,7 @@
     .line 154
     new-instance v2, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v3, "mailto:"
+    const-string v3, "mailto:"
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 

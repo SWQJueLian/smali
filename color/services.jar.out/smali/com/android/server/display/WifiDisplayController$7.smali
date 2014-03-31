@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/display/WifiDisplayController;->reportFeatureState()V
+    value = Lcom/android/server/display/WifiDisplayController;->handleScanFinished()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/display/WifiDisplayController;
 
-.field final synthetic val$featureState:I
+.field final synthetic val$displays:[Landroid/hardware/display/WifiDisplay;
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/display/WifiDisplayController;I)V
+.method constructor <init>(Lcom/android/server/display/WifiDisplayController;[Landroid/hardware/display/WifiDisplay;)V
     .locals 0
     .parameter
     .parameter
 
     .prologue
-    .line 432
+    .line 390
     iput-object p1, p0, Lcom/android/server/display/WifiDisplayController$7;->this$0:Lcom/android/server/display/WifiDisplayController;
 
-    iput p2, p0, Lcom/android/server/display/WifiDisplayController$7;->val$featureState:I
+    iput-object p2, p0, Lcom/android/server/display/WifiDisplayController$7;->val$displays:[Landroid/hardware/display/WifiDisplay;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,46 +43,21 @@
 
 # virtual methods
 .method public run()V
-    .locals 3
+    .locals 2
 
     .prologue
-    .line 435
-    const-string v0, "WifiDisplayController"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "callback onFeatureStateChanged(): featureState = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/server/display/WifiDisplayController$7;->val$featureState:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 436
+    .line 393
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$7;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     #getter for: Lcom/android/server/display/WifiDisplayController;->mListener:Lcom/android/server/display/WifiDisplayController$Listener;
-    invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$800(Lcom/android/server/display/WifiDisplayController;)Lcom/android/server/display/WifiDisplayController$Listener;
+    invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$400(Lcom/android/server/display/WifiDisplayController;)Lcom/android/server/display/WifiDisplayController$Listener;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/android/server/display/WifiDisplayController$7;->val$featureState:I
+    iget-object v1, p0, Lcom/android/server/display/WifiDisplayController$7;->val$displays:[Landroid/hardware/display/WifiDisplay;
 
-    invoke-interface {v0, v1}, Lcom/android/server/display/WifiDisplayController$Listener;->onFeatureStateChanged(I)V
+    invoke-interface {v0, v1}, Lcom/android/server/display/WifiDisplayController$Listener;->onScanFinished([Landroid/hardware/display/WifiDisplay;)V
 
-    .line 437
+    .line 394
     return-void
 .end method

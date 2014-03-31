@@ -267,7 +267,7 @@
     invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 152
-    const-string/jumbo v4, "java.vm.version"
+    const-string v4, "java.vm.version"
 
     invoke-static {v4}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
@@ -390,7 +390,7 @@
     .line 197
     .local v0, cl:Ljava/lang/Class;,"Ljava/lang/Class<*>;"
     :try_start_1
-    const-string/jumbo v4, "main"
+    const-string v4, "main"
 
     const/4 v5, 0x1
 

@@ -37,13 +37,9 @@
 
 .field mServiceState:Landroid/telephony/ServiceState;
 
-.field mServiceState2:Landroid/telephony/ServiceState;
-
 .field private mServiceStateEventWhat:I
 
 .field mSignalStrength:Landroid/telephony/SignalStrength;
-
-.field mSignalStrength2:Landroid/telephony/SignalStrength;
 
 .field private mTarget:Landroid/os/Handler;
 
@@ -55,50 +51,36 @@
     .locals 1
 
     .prologue
-    .line 104
+    .line 63
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
-    .line 84
+    .line 49
     sget-object v0, Lcom/android/internal/telephony/PhoneConstants$State;->IDLE:Lcom/android/internal/telephony/PhoneConstants$State;
 
     iput-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mPhoneState:Lcom/android/internal/telephony/PhoneConstants$State;
 
-    .line 85
+    .line 50
     new-instance v0, Landroid/telephony/ServiceState;
 
     invoke-direct {v0}, Landroid/telephony/ServiceState;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mServiceState:Landroid/telephony/ServiceState;
 
-    .line 86
+    .line 51
     new-instance v0, Landroid/telephony/SignalStrength;
 
     invoke-direct {v0}, Landroid/telephony/SignalStrength;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mSignalStrength:Landroid/telephony/SignalStrength;
 
-    .line 89
-    new-instance v0, Landroid/telephony/ServiceState;
-
-    invoke-direct {v0}, Landroid/telephony/ServiceState;-><init>()V
-
-    iput-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mServiceState2:Landroid/telephony/ServiceState;
-
-    .line 90
-    new-instance v0, Landroid/telephony/SignalStrength;
-
-    invoke-direct {v0}, Landroid/telephony/SignalStrength;-><init>()V
-
-    iput-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mSignalStrength2:Landroid/telephony/SignalStrength;
-
-    .line 105
+    .line 64
     new-instance v0, Landroid/content/IntentFilter;
 
     invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
 
     iput-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mFilter:Landroid/content/IntentFilter;
 
-    .line 106
+    .line 65
     return-void
 .end method
 
@@ -108,16 +90,16 @@
     .parameter "target"
 
     .prologue
-    .line 109
+    .line 68
     invoke-direct {p0}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;-><init>()V
 
-    .line 110
+    .line 69
     invoke-virtual {p0, p1}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->setContext(Landroid/content/Context;)V
 
-    .line 111
+    .line 70
     invoke-virtual {p0, p2}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->setTarget(Landroid/os/Handler;)V
 
-    .line 112
+    .line 71
     return-void
 .end method
 
@@ -127,7 +109,7 @@
     .locals 1
 
     .prologue
-    .line 168
+    .line 133
     iget v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
     and-int/lit8 v0, v0, 0x1
@@ -149,7 +131,7 @@
     .locals 1
 
     .prologue
-    .line 178
+    .line 143
     iget v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
     and-int/lit8 v0, v0, 0x2
@@ -171,7 +153,7 @@
     .locals 1
 
     .prologue
-    .line 188
+    .line 153
     iget v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
     and-int/lit8 v0, v0, 0x4
@@ -193,14 +175,14 @@
     .locals 2
 
     .prologue
-    .line 123
+    .line 82
     iget v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-nez v0, :cond_0
 
-    .line 124
+    .line 83
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "client must call notifyPhoneCallState(int)"
@@ -209,7 +191,7 @@
 
     throw v0
 
-    .line 127
+    .line 86
     :cond_0
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mPhoneState:Lcom/android/internal/telephony/PhoneConstants$State;
 
@@ -217,32 +199,17 @@
 .end method
 
 .method public getServiceState()Landroid/telephony/ServiceState;
-    .locals 1
-
-    .prologue
-    .line 132
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->getServiceStateGemini(I)Landroid/telephony/ServiceState;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getServiceStateGemini(I)Landroid/telephony/ServiceState;
     .locals 2
-    .parameter "simId"
 
     .prologue
-    .line 254
+    .line 90
     iget v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-nez v0, :cond_0
 
-    .line 255
+    .line 91
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "client must call notifyServiceState(int)"
@@ -251,145 +218,69 @@
 
     throw v0
 
-    .line 259
+    .line 94
     :cond_0
-    if-nez p1, :cond_1
-
-    .line 260
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mServiceState:Landroid/telephony/ServiceState;
 
-    .line 262
-    :goto_0
     return-object v0
-
-    :cond_1
-    iget-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mServiceState2:Landroid/telephony/ServiceState;
-
-    goto :goto_0
 .end method
 
 .method public getSignalStrengthDbm()I
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 157
-    const/4 v0, 0x0
+    .line 119
+    iget v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->getSignalStrengthDbmGemini(I)I
+    and-int/lit8 v0, v0, 0x4
+
+    if-nez v0, :cond_0
+
+    .line 120
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "client must call notifySignalStrength(int)"
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 123
+    :cond_0
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mSignalStrength:Landroid/telephony/SignalStrength;
+
+    invoke-virtual {v0}, Landroid/telephony/SignalStrength;->getDbm()I
 
     move-result v0
 
     return v0
-.end method
-
-.method public getSignalStrengthDbmGemini(I)I
-    .locals 4
-    .parameter "simId"
-
-    .prologue
-    .line 282
-    iget v2, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
-
-    and-int/lit8 v2, v2, 0x4
-
-    if-nez v2, :cond_0
-
-    .line 283
-    new-instance v2, Ljava/lang/RuntimeException;
-
-    const-string v3, "client must call notifySignalStrength(int)"
-
-    invoke-direct {v2, v3}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v2
-
-    .line 287
-    :cond_0
-    const/4 v0, -0x1
-
-    .line 290
-    .local v0, dBm:I
-    if-nez p1, :cond_1
-
-    .line 291
-    iget-object v1, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mSignalStrength:Landroid/telephony/SignalStrength;
-
-    .line 295
-    .local v1, tempSignalStrength:Landroid/telephony/SignalStrength;
-    :goto_0
-    invoke-virtual {v1}, Landroid/telephony/SignalStrength;->getDbm()I
-
-    move-result v2
-
-    return v2
-
-    .line 293
-    .end local v1           #tempSignalStrength:Landroid/telephony/SignalStrength;
-    :cond_1
-    iget-object v1, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mSignalStrength2:Landroid/telephony/SignalStrength;
-
-    .restart local v1       #tempSignalStrength:Landroid/telephony/SignalStrength;
-    goto :goto_0
-.end method
-
-.method public getSignalStrengthGemini(I)I
-    .locals 3
-    .parameter "simId"
-
-    .prologue
-    .line 266
-    iget v1, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
-
-    and-int/lit8 v1, v1, 0x4
-
-    if-nez v1, :cond_0
-
-    .line 267
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    const-string v2, "client must call notifySignalStrength(int)"
-
-    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 273
-    :cond_0
-    if-nez p1, :cond_1
-
-    .line 274
-    iget-object v1, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mSignalStrength:Landroid/telephony/SignalStrength;
-
-    invoke-virtual {v1}, Landroid/telephony/SignalStrength;->getAsuLevel()I
-
-    move-result v0
-
-    .line 278
-    .local v0, gsmSignalStrength:I
-    :goto_0
-    return v0
-
-    .line 276
-    .end local v0           #gsmSignalStrength:I
-    :cond_1
-    iget-object v1, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mSignalStrength2:Landroid/telephony/SignalStrength;
-
-    invoke-virtual {v1}, Landroid/telephony/SignalStrength;->getAsuLevel()I
-
-    move-result v0
-
-    .restart local v0       #gsmSignalStrength:I
-    goto :goto_0
 .end method
 
 .method public getSignalStrengthLevelAsu()I
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 144
-    const/4 v0, 0x0
+    .line 104
+    iget v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
-    invoke-virtual {p0, v0}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->getSignalStrengthGemini(I)I
+    and-int/lit8 v0, v0, 0x4
+
+    if-nez v0, :cond_0
+
+    .line 105
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string v1, "client must call notifySignalStrength(int)"
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 108
+    :cond_0
+    iget-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mSignalStrength:Landroid/telephony/SignalStrength;
+
+    invoke-virtual {v0}, Landroid/telephony/SignalStrength;->getAsuLevel()I
 
     move-result v0
 
@@ -401,24 +292,24 @@
     .parameter "eventWhat"
 
     .prologue
-    .line 162
+    .line 127
     iget v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
     or-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
-    .line 163
+    .line 128
     iput p1, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mPhoneStateEventWhat:I
 
-    .line 164
+    .line 129
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mFilter:Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.PHONE_STATE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 165
+    .line 130
     return-void
 .end method
 
@@ -427,24 +318,24 @@
     .parameter "eventWhat"
 
     .prologue
-    .line 172
+    .line 137
     iget v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
     or-int/lit8 v0, v0, 0x2
 
     iput v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
-    .line 173
+    .line 138
     iput p1, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mServiceStateEventWhat:I
 
-    .line 174
+    .line 139
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mFilter:Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.SERVICE_STATE"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 175
+    .line 140
     return-void
 .end method
 
@@ -453,288 +344,252 @@
     .parameter "eventWhat"
 
     .prologue
-    .line 182
+    .line 147
     iget v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
     or-int/lit8 v0, v0, 0x4
 
     iput v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mWants:I
 
-    .line 183
+    .line 148
     iput p1, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mAsuEventWhat:I
 
-    .line 184
+    .line 149
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mFilter:Landroid/content/IntentFilter;
 
     const-string v1, "android.intent.action.SIG_STR"
 
     invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
-    .line 185
+    .line 150
     return-void
 .end method
 
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 9
+    .locals 7
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 201
+    .line 166
     invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 204
+    .line 169
     .local v0, action:Ljava/lang/String;
     :try_start_0
-    const-string v6, "android.intent.action.SIG_STR"
+    const-string v4, "android.intent.action.SIG_STR"
 
-    invoke-virtual {v6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v4
 
-    if-eqz v6, :cond_2
+    if-eqz v4, :cond_1
 
-    .line 206
+    .line 170
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-static {v6}, Landroid/telephony/SignalStrength;->newFromBundle(Landroid/os/Bundle;)Landroid/telephony/SignalStrength;
+    invoke-static {v4}, Landroid/telephony/SignalStrength;->newFromBundle(Landroid/os/Bundle;)Landroid/telephony/SignalStrength;
 
-    move-result-object v5
+    move-result-object v4
 
-    .line 208
-    .local v5, tempSignalStrength:Landroid/telephony/SignalStrength;
-    invoke-virtual {v5}, Landroid/telephony/SignalStrength;->getMySimId()I
+    iput-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mSignalStrength:Landroid/telephony/SignalStrength;
 
-    move-result v6
+    .line 172
+    iget-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
 
-    if-nez v6, :cond_1
-
-    .line 209
-    iput-object v5, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mSignalStrength:Landroid/telephony/SignalStrength;
-
-    .line 214
-    :goto_0
-    iget-object v6, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
-
-    if-eqz v6, :cond_0
+    if-eqz v4, :cond_0
 
     invoke-virtual {p0}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->getNotifySignalStrength()Z
 
-    move-result v6
+    move-result v4
 
-    if-eqz v6, :cond_0
+    if-eqz v4, :cond_0
 
-    .line 215
-    iget-object v6, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
+    .line 173
+    iget-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
 
-    iget v7, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mAsuEventWhat:I
+    iget v5, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mAsuEventWhat:I
 
-    invoke-static {v6, v7}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
+    invoke-static {v4, v5}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
 
     move-result-object v2
 
-    .line 216
+    .line 174
     .local v2, message:Landroid/os/Message;
-    iget-object v6, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
+    iget-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
 
-    invoke-virtual {v6, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+    invoke-virtual {v4, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 250
+    .line 201
     .end local v2           #message:Landroid/os/Message;
-    .end local v5           #tempSignalStrength:Landroid/telephony/SignalStrength;
     :cond_0
-    :goto_1
+    :goto_0
     return-void
 
-    .line 211
-    .restart local v5       #tempSignalStrength:Landroid/telephony/SignalStrength;
+    .line 176
     :cond_1
-    iput-object v5, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mSignalStrength2:Landroid/telephony/SignalStrength;
+    const-string v4, "android.intent.action.PHONE_STATE"
+
+    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_2
+
+    .line 179
+    const-string v4, "state"
+
+    invoke-virtual {p2, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 180
+    .local v3, phoneState:Ljava/lang/String;
+    const-class v4, Lcom/android/internal/telephony/PhoneConstants$State;
+
+    invoke-static {v4, v3}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/android/internal/telephony/PhoneConstants$State;
+
+    iput-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mPhoneState:Lcom/android/internal/telephony/PhoneConstants$State;
+
+    .line 183
+    iget-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
+
+    if-eqz v4, :cond_0
+
+    invoke-virtual {p0}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->getNotifyPhoneCallState()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_0
+
+    .line 184
+    iget-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
+
+    iget v5, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mPhoneStateEventWhat:I
+
+    invoke-static {v4, v5}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
+
+    move-result-object v2
+
+    .line 186
+    .restart local v2       #message:Landroid/os/Message;
+    iget-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
+
+    invoke-virtual {v4, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
 
-    .line 246
-    .end local v5           #tempSignalStrength:Landroid/telephony/SignalStrength;
+    .line 197
+    .end local v2           #message:Landroid/os/Message;
+    .end local v3           #phoneState:Ljava/lang/String;
     :catch_0
     move-exception v1
 
-    .line 247
+    .line 198
     .local v1, ex:Ljava/lang/Exception;
-    const-string v6, "PHONE"
+    const-string v4, "PHONE"
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v8, "[PhoneStateIntentRecv] caught "
+    const-string v6, "[PhoneStateIntentRecv] caught "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-static {v6, v7}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 248
+    .line 199
     invoke-virtual {v1}, Ljava/lang/Exception;->printStackTrace()V
 
-    goto :goto_1
+    goto :goto_0
 
-    .line 218
+    .line 188
     .end local v1           #ex:Ljava/lang/Exception;
     :cond_2
     :try_start_1
-    const-string v6, "android.intent.action.PHONE_STATE"
+    const-string v4, "android.intent.action.SERVICE_STATE"
 
-    invoke-virtual {v6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v4
 
-    if-eqz v6, :cond_3
+    if-eqz v4, :cond_0
 
-    .line 221
-    const-string v6, "state"
-
-    invoke-virtual {p2, v6}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 222
-    .local v3, phoneState:Ljava/lang/String;
-    const-class v6, Lcom/android/internal/telephony/PhoneConstants$State;
-
-    invoke-static {v6, v3}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    move-result-object v6
-
-    check-cast v6, Lcom/android/internal/telephony/PhoneConstants$State;
-
-    iput-object v6, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mPhoneState:Lcom/android/internal/telephony/PhoneConstants$State;
-
-    .line 225
-    iget-object v6, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
-
-    if-eqz v6, :cond_0
-
-    invoke-virtual {p0}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->getNotifyPhoneCallState()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    .line 226
-    iget-object v6, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
-
-    iget v7, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mPhoneStateEventWhat:I
-
-    invoke-static {v6, v7}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
-
-    move-result-object v2
-
-    .line 228
-    .restart local v2       #message:Landroid/os/Message;
-    iget-object v6, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
-
-    invoke-virtual {v6, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    goto :goto_1
-
-    .line 230
-    .end local v2           #message:Landroid/os/Message;
-    .end local v3           #phoneState:Ljava/lang/String;
-    :cond_3
-    const-string v6, "android.intent.action.SERVICE_STATE"
-
-    invoke-virtual {v6, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_0
-
-    .line 232
+    .line 189
     invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
-
-    move-result-object v6
-
-    invoke-static {v6}, Landroid/telephony/ServiceState;->newFromBundle(Landroid/os/Bundle;)Landroid/telephony/ServiceState;
 
     move-result-object v4
 
-    .line 234
-    .local v4, tempServiceState:Landroid/telephony/ServiceState;
-    invoke-virtual {v4}, Landroid/telephony/ServiceState;->getMySimId()I
+    invoke-static {v4}, Landroid/telephony/ServiceState;->newFromBundle(Landroid/os/Bundle;)Landroid/telephony/ServiceState;
 
-    move-result v6
+    move-result-object v4
 
-    if-nez v6, :cond_4
-
-    .line 235
     iput-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mServiceState:Landroid/telephony/ServiceState;
 
-    .line 240
-    :goto_2
-    iget-object v6, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
+    .line 191
+    iget-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
 
-    if-eqz v6, :cond_0
+    if-eqz v4, :cond_0
 
     invoke-virtual {p0}, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->getNotifyServiceState()Z
 
-    move-result v6
+    move-result v4
 
-    if-eqz v6, :cond_0
+    if-eqz v4, :cond_0
 
-    .line 241
-    iget-object v6, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
+    .line 192
+    iget-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
 
-    iget v7, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mServiceStateEventWhat:I
+    iget v5, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mServiceStateEventWhat:I
 
-    invoke-static {v6, v7}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
+    invoke-static {v4, v5}, Landroid/os/Message;->obtain(Landroid/os/Handler;I)Landroid/os/Message;
 
     move-result-object v2
 
-    .line 243
+    .line 194
     .restart local v2       #message:Landroid/os/Message;
-    iget-object v6, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
+    iget-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
 
-    invoke-virtual {v6, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
-
-    goto :goto_1
-
-    .line 237
-    .end local v2           #message:Landroid/os/Message;
-    :cond_4
-    iput-object v4, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mServiceState2:Landroid/telephony/ServiceState;
+    invoke-virtual {v4, v2}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    goto :goto_2
+    goto :goto_0
 .end method
 
 .method public registerIntent()V
     .locals 2
 
     .prologue
-    .line 192
+    .line 157
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mContext:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mFilter:Landroid/content/IntentFilter;
 
     invoke-virtual {v0, p0, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 193
+    .line 158
     return-void
 .end method
 
@@ -743,10 +598,10 @@
     .parameter "c"
 
     .prologue
-    .line 115
+    .line 74
     iput-object p1, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mContext:Landroid/content/Context;
 
-    .line 116
+    .line 75
     return-void
 .end method
 
@@ -755,10 +610,10 @@
     .parameter "h"
 
     .prologue
-    .line 119
+    .line 78
     iput-object p1, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mTarget:Landroid/os/Handler;
 
-    .line 120
+    .line 79
     return-void
 .end method
 
@@ -766,11 +621,11 @@
     .locals 1
 
     .prologue
-    .line 196
+    .line 161
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneStateIntentReceiver;->mContext:Landroid/content/Context;
 
     invoke-virtual {v0, p0}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 197
+    .line 162
     return-void
 .end method

@@ -7,8 +7,8 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/android/server/power/DisplayPowerController;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/android/server/power/DisplayPowerController;->dump(Ljava/io/PrintWriter;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,15 +20,20 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/power/DisplayPowerController;
 
+.field final synthetic val$pw:Ljava/io/PrintWriter;
+
 
 # direct methods
-.method constructor <init>(Lcom/android/server/power/DisplayPowerController;)V
+.method constructor <init>(Lcom/android/server/power/DisplayPowerController;Ljava/io/PrintWriter;)V
     .locals 0
+    .parameter
     .parameter
 
     .prologue
-    .line 1278
+    .line 1179
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerController$6;->this$0:Lcom/android/server/power/DisplayPowerController;
+
+    iput-object p2, p0, Lcom/android/server/power/DisplayPowerController$6;->val$pw:Ljava/io/PrintWriter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,19 +43,17 @@
 
 # virtual methods
 .method public run()V
-    .locals 1
+    .locals 2
 
     .prologue
-    .line 1281
+    .line 1182
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$6;->this$0:Lcom/android/server/power/DisplayPowerController;
 
-    #getter for: Lcom/android/server/power/DisplayPowerController;->mCallbacks:Lcom/android/server/power/DisplayPowerController$Callbacks;
-    invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$300(Lcom/android/server/power/DisplayPowerController;)Lcom/android/server/power/DisplayPowerController$Callbacks;
+    iget-object v1, p0, Lcom/android/server/power/DisplayPowerController$6;->val$pw:Ljava/io/PrintWriter;
 
-    move-result-object v0
+    #calls: Lcom/android/server/power/DisplayPowerController;->dumpLocal(Ljava/io/PrintWriter;)V
+    invoke-static {v0, v1}, Lcom/android/server/power/DisplayPowerController;->access$200(Lcom/android/server/power/DisplayPowerController;Ljava/io/PrintWriter;)V
 
-    invoke-interface {v0}, Lcom/android/server/power/DisplayPowerController$Callbacks;->onProximityNegative()V
-
-    .line 1282
+    .line 1183
     return-void
 .end method

@@ -266,7 +266,7 @@
     .locals 2
 
     .prologue
-    .line 599
+    .line 584
     :try_start_0
     iget-object v1, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
@@ -276,15 +276,15 @@
 
     move-result v1
 
-    .line 601
+    .line 586
     :goto_0
     return v1
 
-    .line 600
+    .line 585
     :catch_0
     move-exception v0
 
-    .line 601
+    .line 586
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -296,7 +296,7 @@
     .parameter "level"
 
     .prologue
-    .line 578
+    .line 563
     :try_start_0
     iget-object v1, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
@@ -306,15 +306,15 @@
 
     move-result v1
 
-    .line 580
+    .line 565
     :goto_0
     return v1
 
-    .line 579
+    .line 564
     :catch_0
     move-exception v0
 
-    .line 580
+    .line 565
     .local v0, e:Landroid/os/RemoteException;
     const/4 v1, 0x0
 
@@ -367,7 +367,7 @@
     .parameter "reason"
 
     .prologue
-    .line 616
+    .line 601
     :try_start_0
     iget-object v0, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
 
@@ -379,11 +379,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 619
+    .line 604
     :goto_0
     return-void
 
-    .line 617
+    .line 602
     :catch_0
     move-exception v0
 
@@ -408,30 +408,6 @@
     return-void
 
     .line 549
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
-.end method
-
-.method public setBacklightBrightnessOff(Z)V
-    .locals 1
-    .parameter "enable"
-
-    .prologue
-    .line 563
-    :try_start_0
-    iget-object v0, p0, Landroid/os/PowerManager;->mService:Landroid/os/IPowerManager;
-
-    invoke-interface {v0, p1}, Landroid/os/IPowerManager;->setBacklightBrightnessOff(Z)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 566
-    :goto_0
-    return-void
-
-    .line 564
     :catch_0
     move-exception v0
 

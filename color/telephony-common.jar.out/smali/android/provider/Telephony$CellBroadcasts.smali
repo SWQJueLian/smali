@@ -62,8 +62,6 @@
 
 .field public static final SERVICE_CATEGORY:Ljava/lang/String; = "service_category"
 
-.field public static final SIM_ID:Ljava/lang/String; = "sim_id"
-
 .field public static final V1_MESSAGE_CODE:Ljava/lang/String; = "message_code"
 
 .field public static final V1_MESSAGE_IDENTIFIER:Ljava/lang/String; = "message_id"
@@ -74,7 +72,7 @@
     .locals 3
 
     .prologue
-    .line 3322
+    .line 1836
     const-string v0, "content://cellbroadcasts"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -83,8 +81,8 @@
 
     sput-object v0, Landroid/provider/Telephony$CellBroadcasts;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 3467
-    const/16 v0, 0x15
+    .line 1976
+    const/16 v0, 0x14
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -156,59 +154,53 @@
 
     const/16 v1, 0xb
 
-    const-string v2, "sim_id"
+    const-string v2, "format"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xc
 
-    const-string v2, "format"
+    const-string v2, "priority"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xd
 
-    const-string v2, "priority"
+    const-string v2, "etws_warning_type"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xe
 
-    const-string v2, "etws_warning_type"
+    const-string v2, "cmas_message_class"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xf
 
-    const-string v2, "cmas_message_class"
+    const-string v2, "cmas_category"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x10
 
-    const-string v2, "cmas_category"
+    const-string v2, "cmas_response_type"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x11
 
-    const-string v2, "cmas_response_type"
+    const-string v2, "cmas_severity"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x12
 
-    const-string v2, "cmas_severity"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x13
-
     const-string v2, "cmas_urgency"
 
     aput-object v2, v0, v1
 
-    const/16 v1, 0x14
+    const/16 v1, 0x13
 
     const-string v2, "cmas_certainty"
 
@@ -223,7 +215,7 @@
     .locals 0
 
     .prologue
-    .line 3317
+    .line 1831
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

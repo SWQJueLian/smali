@@ -75,6 +75,8 @@
 
 .field public static final oppo_dialog_max_height:I = 0xc050402
 
+.field public static final oppo_dialog_max_height_landscape:I = 0xc05044b
+
 .field public static final oppo_dialog_title_text_size:I = 0xc050016
 
 .field public static final oppo_edittext_text_size:I = 0xc050019
@@ -185,8 +187,6 @@
 
 .field public static final oppo_searchview_text_size:I = 0xc05043b
 
-.field public static final oppo_searchview_voice_padding_right:I = 0xc05044a
-
 .field public static final oppo_shortcutbutton_text_size:I = 0xc05000e
 
 .field public static final oppo_tabwidget_default_text_size:I = 0xc050405
@@ -225,6 +225,8 @@
 
 .field public static final oppo_touchsearch_right_margin:I = 0xc050406
 
+.field public static final oppo_volume_marginTop:I = 0xc05044a
+
 .field public static final oppo_volume_panel_expand_button_margin_left:I = 0xc050442
 
 .field public static final oppo_volume_panel_expand_button_padding_right:I = 0xc050449
@@ -249,7 +251,7 @@
     .locals 0
 
     .prologue
-    .line 1286
+    .line 1327
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

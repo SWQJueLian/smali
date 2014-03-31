@@ -619,7 +619,7 @@
     if-nez v3, :cond_0
 
     .line 60
-    const-string/jumbo v3, "javascript:"
+    const-string v3, "javascript:"
 
     invoke-virtual {p0, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
@@ -991,7 +991,7 @@
     .line 222
     if-eqz p0, :cond_0
 
-    const-string/jumbo v0, "javascript:"
+    const-string v0, "javascript:"
 
     invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 

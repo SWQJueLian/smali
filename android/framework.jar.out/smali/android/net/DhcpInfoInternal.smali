@@ -112,41 +112,6 @@
     return-void
 .end method
 
-.method public clear()V
-    .locals 2
-
-    .prologue
-    const/4 v1, 0x0
-
-    const/4 v0, 0x0
-
-    .line 169
-    iput-object v0, p0, Landroid/net/DhcpInfoInternal;->ipAddress:Ljava/lang/String;
-
-    .line 170
-    iput v1, p0, Landroid/net/DhcpInfoInternal;->prefixLength:I
-
-    .line 171
-    iput-object v0, p0, Landroid/net/DhcpInfoInternal;->dns1:Ljava/lang/String;
-
-    .line 172
-    iput-object v0, p0, Landroid/net/DhcpInfoInternal;->dns2:Ljava/lang/String;
-
-    .line 173
-    iput-object v0, p0, Landroid/net/DhcpInfoInternal;->serverAddress:Ljava/lang/String;
-
-    .line 174
-    iput v1, p0, Landroid/net/DhcpInfoInternal;->leaseDuration:I
-
-    .line 175
-    iget-object v0, p0, Landroid/net/DhcpInfoInternal;->mRoutes:Ljava/util/Collection;
-
-    invoke-interface {v0}, Ljava/util/Collection;->clear()V
-
-    .line 176
-    return-void
-.end method
-
 .method public getRoutes()Ljava/util/Collection;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;

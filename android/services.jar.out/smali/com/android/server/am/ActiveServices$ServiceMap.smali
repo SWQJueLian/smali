@@ -49,17 +49,17 @@
     .locals 1
 
     .prologue
-    .line 127
+    .line 124
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 129
+    .line 126
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
     iput-object v0, p0, Lcom/android/server/am/ActiveServices$ServiceMap;->mServicesByNamePerUser:Landroid/util/SparseArray;
 
-    .line 131
+    .line 128
     new-instance v0, Landroid/util/SparseArray;
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
@@ -74,7 +74,7 @@
     .parameter "x0"
 
     .prologue
-    .line 127
+    .line 124
     iget-object v0, p0, Lcom/android/server/am/ActiveServices$ServiceMap;->mServicesByNamePerUser:Landroid/util/SparseArray;
 
     return-object v0
@@ -95,7 +95,7 @@
     .end annotation
 
     .prologue
-    .line 190
+    .line 187
     iget-object v1, p0, Lcom/android/server/am/ActiveServices$ServiceMap;->mServicesByNamePerUser:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -104,23 +104,23 @@
 
     check-cast v0, Ljava/util/HashMap;
 
-    .line 191
+    .line 188
     .local v0, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/content/ComponentName;Lcom/android/server/am/ServiceRecord;>;"
     if-nez v0, :cond_0
 
-    .line 192
+    .line 189
     new-instance v0, Ljava/util/HashMap;
 
     .end local v0           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/content/ComponentName;Lcom/android/server/am/ServiceRecord;>;"
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 193
+    .line 190
     .restart local v0       #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/content/ComponentName;Lcom/android/server/am/ServiceRecord;>;"
     iget-object v1, p0, Lcom/android/server/am/ActiveServices$ServiceMap;->mServicesByNamePerUser:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 195
+    .line 192
     :cond_0
     return-object v0
 .end method
@@ -140,7 +140,7 @@
     .end annotation
 
     .prologue
-    .line 200
+    .line 197
     iget-object v1, p0, Lcom/android/server/am/ActiveServices$ServiceMap;->mServicesByIntentPerUser:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
@@ -149,23 +149,23 @@
 
     check-cast v0, Ljava/util/HashMap;
 
-    .line 202
+    .line 199
     .local v0, map:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/content/Intent$FilterComparison;Lcom/android/server/am/ServiceRecord;>;"
     if-nez v0, :cond_0
 
-    .line 203
+    .line 200
     new-instance v0, Ljava/util/HashMap;
 
     .end local v0           #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/content/Intent$FilterComparison;Lcom/android/server/am/ServiceRecord;>;"
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    .line 204
+    .line 201
     .restart local v0       #map:Ljava/util/HashMap;,"Ljava/util/HashMap<Landroid/content/Intent$FilterComparison;Lcom/android/server/am/ServiceRecord;>;"
     iget-object v1, p0, Lcom/android/server/am/ActiveServices$ServiceMap;->mServicesByIntentPerUser:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 206
+    .line 203
     :cond_0
     return-object v0
 .end method
@@ -186,7 +186,7 @@
     .end annotation
 
     .prologue
-    .line 186
+    .line 183
     invoke-direct {p0, p1}, Lcom/android/server/am/ActiveServices$ServiceMap;->getServices(I)Ljava/util/HashMap;
 
     move-result-object v0
@@ -203,7 +203,7 @@
     .parameter "filter"
 
     .prologue
-    .line 154
+    .line 151
     const/4 v0, -0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/android/server/am/ActiveServices$ServiceMap;->getServiceByIntent(Landroid/content/Intent$FilterComparison;I)Lcom/android/server/am/ServiceRecord;
@@ -214,51 +214,12 @@
 .end method
 
 .method getServiceByIntent(Landroid/content/Intent$FilterComparison;I)Lcom/android/server/am/ServiceRecord;
-    .locals 3
+    .locals 1
     .parameter "filter"
     .parameter "callingUser"
 
     .prologue
-    .line 148
-    sget-boolean v0, Lcom/android/server/am/ActiveServices;->DEBUG_MU:Z
-
-    if-eqz v0, :cond_0
-
-    .line 149
-    const-string v0, "ActivityManagerServiceMU"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "getServiceByIntent("
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "), callingUser = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 150
-    :cond_0
+    .line 147
     invoke-direct {p0, p2}, Lcom/android/server/am/ActiveServices$ServiceMap;->getServicesByIntent(I)Ljava/util/HashMap;
 
     move-result-object v0
@@ -277,7 +238,7 @@
     .parameter "name"
 
     .prologue
-    .line 143
+    .line 140
     const/4 v0, -0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/android/server/am/ActiveServices$ServiceMap;->getServiceByName(Landroid/content/ComponentName;I)Lcom/android/server/am/ServiceRecord;
@@ -288,51 +249,12 @@
 .end method
 
 .method getServiceByName(Landroid/content/ComponentName;I)Lcom/android/server/am/ServiceRecord;
-    .locals 3
+    .locals 1
     .parameter "name"
     .parameter "callingUser"
 
     .prologue
-    .line 137
-    sget-boolean v0, Lcom/android/server/am/ActiveServices;->DEBUG_MU:Z
-
-    if-eqz v0, :cond_0
-
-    .line 138
-    const-string v0, "ActivityManagerServiceMU"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "getServiceByName("
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "), callingUser = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 139
-    :cond_0
+    .line 136
     invoke-direct {p0, p2}, Lcom/android/server/am/ActiveServices$ServiceMap;->getServices(I)Ljava/util/HashMap;
 
     move-result-object v0
@@ -353,14 +275,14 @@
     .parameter "value"
 
     .prologue
-    .line 165
+    .line 162
     invoke-direct {p0, p2}, Lcom/android/server/am/ActiveServices$ServiceMap;->getServicesByIntent(I)Ljava/util/HashMap;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 166
+    .line 163
     return-void
 .end method
 
@@ -371,24 +293,24 @@
     .parameter "value"
 
     .prologue
-    .line 159
+    .line 156
     invoke-direct {p0, p2}, Lcom/android/server/am/ActiveServices$ServiceMap;->getServices(I)Ljava/util/HashMap;
 
     move-result-object v0
 
     invoke-virtual {v0, p1, p3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 160
+    .line 157
     return-void
 .end method
 
 .method removeServiceByIntent(Landroid/content/Intent$FilterComparison;I)V
-    .locals 4
+    .locals 2
     .parameter "filter"
     .parameter "callingUser"
 
     .prologue
-    .line 178
+    .line 175
     invoke-direct {p0, p2}, Lcom/android/server/am/ActiveServices$ServiceMap;->getServicesByIntent(I)Ljava/util/HashMap;
 
     move-result-object v1
@@ -401,65 +323,16 @@
 
     .line 179
     .local v0, removed:Lcom/android/server/am/ServiceRecord;
-    sget-boolean v1, Lcom/android/server/am/ActiveServices;->DEBUG_MU:Z
-
-    if-eqz v1, :cond_0
-
-    .line 180
-    const-string v1, "ActivityManagerServiceMU"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "removeServiceByIntent user="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " intent="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " removed="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 182
-    :cond_0
     return-void
 .end method
 
 .method removeServiceByName(Landroid/content/ComponentName;I)V
-    .locals 4
+    .locals 2
     .parameter "name"
     .parameter "callingUser"
 
     .prologue
-    .line 170
+    .line 167
     invoke-direct {p0, p2}, Lcom/android/server/am/ActiveServices$ServiceMap;->getServices(I)Ljava/util/HashMap;
 
     move-result-object v1
@@ -472,54 +345,5 @@
 
     .line 171
     .local v0, removed:Lcom/android/server/am/ServiceRecord;
-    sget-boolean v1, Lcom/android/server/am/ActiveServices;->DEBUG_MU:Z
-
-    if-eqz v1, :cond_0
-
-    .line 172
-    const-string v1, "ActivityManager"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "removeServiceByName user="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " name="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string v3, " removed="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 174
-    :cond_0
     return-void
 .end method

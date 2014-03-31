@@ -169,7 +169,7 @@
 
     .line 155
     .local v0, view:Landroid/view/View;
-    const v1, 0x10208f5
+    const v1, 0x102033b
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -321,7 +321,7 @@
 
     .line 160
     :pswitch_data_0
-    .packed-switch 0x1020842
+    .packed-switch 0x102028e
         :pswitch_1
         :pswitch_0
     .end packed-switch
@@ -354,7 +354,7 @@
     invoke-virtual {v0, v1}, Landroid/accounts/GrantCredentialsPermissionActivity;->setTitle(I)V
 
     .line 57
-    const-string/jumbo v17, "layout_inflater"
+    const-string v17, "layout_inflater"
 
     move-object/from16 v0, p0
 
@@ -522,7 +522,7 @@
 
     .line 91
     .local v4, accountTypeLabel:Ljava/lang/String;
-    const v17, 0x102083f
+    const v17, 0x102028b
 
     move-object/from16 v0, p0
 
@@ -586,7 +586,7 @@
     invoke-virtual {v0, v1, v2, v7, v3}, Landroid/accounts/AccountManager;->getAuthTokenLabel(Ljava/lang/String;Ljava/lang/String;Landroid/accounts/AccountManagerCallback;Landroid/os/Handler;)Landroid/accounts/AccountManagerFuture;
 
     .line 116
-    const v17, 0x1020843
+    const v17, 0x102028f
 
     move-object/from16 v0, p0
 
@@ -603,7 +603,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 117
-    const v17, 0x1020842
+    const v17, 0x102028e
 
     move-object/from16 v0, p0
 
@@ -620,7 +620,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 119
-    const v17, 0x102083b
+    const v17, 0x1020287
 
     move-object/from16 v0, p0
 
@@ -742,7 +742,7 @@
     .end local v12           #packageLabel:Ljava/lang/String;
     .end local v15           #pkg:Ljava/lang/String;
     :cond_3
-    const v17, 0x102083e
+    const v17, 0x102028a
 
     move-object/from16 v0, p0
 
@@ -769,7 +769,7 @@
     invoke-virtual/range {v17 .. v18}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 132
-    const v17, 0x102083d
+    const v17, 0x1020289
 
     move-object/from16 v0, p0
 

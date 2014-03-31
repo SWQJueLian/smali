@@ -1,5 +1,5 @@
 .class public abstract Lcom/android/internal/telephony/SmsMessageBase$SubmitPduBase;
-.super Lcom/android/internal/telephony/SmsMessageBase$PduBase;
+.super Ljava/lang/Object;
 .source "SmsMessageBase.java"
 
 
@@ -14,13 +14,19 @@
 .end annotation
 
 
+# instance fields
+.field public encodedMessage:[B
+
+.field public encodedScAddress:[B
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 117
-    invoke-direct {p0}, Lcom/android/internal/telephony/SmsMessageBase$PduBase;-><init>()V
+    .line 90
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
@@ -31,7 +37,7 @@
     .locals 2
 
     .prologue
-    .line 119
+    .line 95
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

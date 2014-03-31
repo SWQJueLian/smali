@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 913
+    .line 1128
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerController$3;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,12 +41,16 @@
     .locals 1
 
     .prologue
-    .line 916
+    .line 1131
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$3;->this$0:Lcom/android/server/power/DisplayPowerController;
 
-    #calls: Lcom/android/server/power/DisplayPowerController;->sendUpdatePowerState()V
-    invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$200(Lcom/android/server/power/DisplayPowerController;)V
+    #getter for: Lcom/android/server/power/DisplayPowerController;->mCallbacks:Lcom/android/server/power/DisplayPowerController$Callbacks;
+    invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$100(Lcom/android/server/power/DisplayPowerController;)Lcom/android/server/power/DisplayPowerController$Callbacks;
 
-    .line 917
+    move-result-object v0
+
+    invoke-interface {v0}, Lcom/android/server/power/DisplayPowerController$Callbacks;->onStateChanged()V
+
+    .line 1132
     return-void
 .end method

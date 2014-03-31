@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 696
+    .line 687
     iput-object p1, p0, Landroid/webkit/CallbackProxy$7;->this$0:Landroid/webkit/CallbackProxy;
 
     iput-object p2, p0, Landroid/webkit/CallbackProxy$7;->val$res:Landroid/webkit/JsPromptResult;
@@ -48,11 +48,11 @@
     .parameter "whichButton"
 
     .prologue
-    .line 700
+    .line 691
     iget-object v0, p0, Landroid/webkit/CallbackProxy$7;->val$res:Landroid/webkit/JsPromptResult;
 
     invoke-virtual {v0}, Landroid/webkit/JsPromptResult;->cancel()V
 
-    .line 701
+    .line 692
     return-void
 .end method

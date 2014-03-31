@@ -30,17 +30,17 @@
     .parameter "_permission"
 
     .prologue
-    .line 705
+    .line 682
     iput-object p1, p0, Lcom/android/server/am/ActiveServices$ServiceLookupResult;->this$0:Lcom/android/server/am/ActiveServices;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 706
+    .line 683
     iput-object p2, p0, Lcom/android/server/am/ActiveServices$ServiceLookupResult;->record:Lcom/android/server/am/ServiceRecord;
 
-    .line 707
+    .line 684
     iput-object p3, p0, Lcom/android/server/am/ActiveServices$ServiceLookupResult;->permission:Ljava/lang/String;
 
-    .line 708
+    .line 685
     return-void
 .end method

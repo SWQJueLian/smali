@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2606
+    .line 2318
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$DockReceiver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2606
+    .line 2318
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService$DockReceiver;-><init>(Lcom/android/server/power/PowerManagerService;)V
 
     return-void
@@ -52,17 +52,17 @@
     .parameter "intent"
 
     .prologue
-    .line 2609
+    .line 2321
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$DockReceiver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mLock:Ljava/lang/Object;
-    invoke-static {v1}, Lcom/android/server/power/PowerManagerService;->access$800(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
+    invoke-static {v1}, Lcom/android/server/power/PowerManagerService;->access$1200(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
 
     move-result-object v2
 
     monitor-enter v2
 
-    .line 2610
+    .line 2322
     :try_start_0
     const-string v1, "android.intent.extra.DOCK_STATE"
 
@@ -72,44 +72,44 @@
 
     move-result v0
 
-    .line 2612
+    .line 2324
     .local v0, dockState:I
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$DockReceiver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mDockState:I
-    invoke-static {v1}, Lcom/android/server/power/PowerManagerService;->access$2700(Lcom/android/server/power/PowerManagerService;)I
+    invoke-static {v1}, Lcom/android/server/power/PowerManagerService;->access$1700(Lcom/android/server/power/PowerManagerService;)I
 
     move-result v1
 
     if-eq v1, v0, :cond_0
 
-    .line 2613
+    .line 2325
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$DockReceiver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #setter for: Lcom/android/server/power/PowerManagerService;->mDockState:I
-    invoke-static {v1, v0}, Lcom/android/server/power/PowerManagerService;->access$2702(Lcom/android/server/power/PowerManagerService;I)I
+    invoke-static {v1, v0}, Lcom/android/server/power/PowerManagerService;->access$1702(Lcom/android/server/power/PowerManagerService;I)I
 
-    .line 2614
+    .line 2326
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$DockReceiver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     const/16 v3, 0x800
 
-    invoke-static {v1, v3}, Lcom/android/server/power/PowerManagerService;->access$1376(Lcom/android/server/power/PowerManagerService;I)I
+    invoke-static {v1, v3}, Lcom/android/server/power/PowerManagerService;->access$776(Lcom/android/server/power/PowerManagerService;I)I
 
-    .line 2615
+    .line 2327
     iget-object v1, p0, Lcom/android/server/power/PowerManagerService$DockReceiver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #calls: Lcom/android/server/power/PowerManagerService;->updatePowerStateLocked()V
-    invoke-static {v1}, Lcom/android/server/power/PowerManagerService;->access$1900(Lcom/android/server/power/PowerManagerService;)V
+    invoke-static {v1}, Lcom/android/server/power/PowerManagerService;->access$800(Lcom/android/server/power/PowerManagerService;)V
 
-    .line 2617
+    .line 2329
     :cond_0
     monitor-exit v2
 
-    .line 2618
+    .line 2330
     return-void
 
-    .line 2617
+    .line 2329
     .end local v0           #dockState:I
     :catchall_0
     move-exception v1

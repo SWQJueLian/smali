@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 721
+    .line 630
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$4$1;->this$1:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$4;
 
     iput-object p2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$4$1;->val$view:Landroid/view/View;
@@ -58,7 +58,7 @@
     .prologue
     const/4 v9, 0x0
 
-    .line 725
+    .line 634
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$4$1;->val$view:Landroid/view/View;
 
@@ -66,7 +66,7 @@
 
     move-result-object v0
 
-    .line 726
+    .line 635
     .local v0, context:Landroid/content/Context;
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$4$1;->val$view:Landroid/view/View;
 
@@ -90,7 +90,7 @@
 
     move-result-object v8
 
-    .line 729
+    .line 638
     .local v8, opts:Landroid/app/ActivityOptions;
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$4$1;->val$pendingIntent:Landroid/app/PendingIntent;
 
@@ -115,17 +115,17 @@
     .catch Landroid/content/IntentSender$SendIntentException; {:try_start_0 .. :try_end_0} :catch_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
 
-    .line 739
+    .line 648
     .end local v0           #context:Landroid/content/Context;
     .end local v8           #opts:Landroid/app/ActivityOptions;
     :goto_0
     return v9
 
-    .line 733
+    .line 642
     :catch_0
     move-exception v7
 
-    .line 734
+    .line 643
     .local v7, e:Landroid/content/IntentSender$SendIntentException;
     const-string v1, "KeyguardHostView"
 
@@ -135,12 +135,12 @@
 
     goto :goto_0
 
-    .line 735
+    .line 644
     .end local v7           #e:Landroid/content/IntentSender$SendIntentException;
     :catch_1
     move-exception v7
 
-    .line 736
+    .line 645
     .local v7, e:Ljava/lang/Exception;
     const-string v1, "KeyguardHostView"
 

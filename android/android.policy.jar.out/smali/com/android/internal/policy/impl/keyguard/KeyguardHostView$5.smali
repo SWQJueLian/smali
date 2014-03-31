@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 758
+    .line 666
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$5;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "securityVerified"
 
     .prologue
-    .line 792
+    .line 700
     return-void
 .end method
 
@@ -50,17 +50,7 @@
     .locals 1
 
     .prologue
-    .line 787
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public hasOnDismissAction()Z
-    .locals 1
-
-    .prologue
-    .line 807
+    .line 695
     const/4 v0, 0x0
 
     return v0
@@ -70,7 +60,7 @@
     .locals 1
 
     .prologue
-    .line 782
+    .line 690
     const/4 v0, 0x0
 
     return v0
@@ -80,7 +70,7 @@
     .locals 0
 
     .prologue
-    .line 778
+    .line 686
     return-void
 .end method
 
@@ -88,7 +78,7 @@
     .locals 0
 
     .prologue
-    .line 774
+    .line 682
     return-void
 .end method
 
@@ -97,7 +87,7 @@
     .parameter "action"
 
     .prologue
-    .line 770
+    .line 678
     return-void
 .end method
 
@@ -105,25 +95,7 @@
     .locals 0
 
     .prologue
-    .line 766
-    return-void
-.end method
-
-.method public updateClipChildren(Z)V
-    .locals 0
-    .parameter "clipChildren"
-
-    .prologue
-    .line 802
-    return-void
-.end method
-
-.method public updateKeyguardLayerVisibility(Z)V
-    .locals 0
-    .parameter "visible"
-
-    .prologue
-    .line 797
+    .line 674
     return-void
 .end method
 
@@ -132,6 +104,6 @@
     .parameter "timeout"
 
     .prologue
-    .line 762
+    .line 670
     return-void
 .end method

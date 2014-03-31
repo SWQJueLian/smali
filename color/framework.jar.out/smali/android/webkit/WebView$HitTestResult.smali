@@ -45,10 +45,6 @@
 # instance fields
 .field private mExtra:Ljava/lang/String;
 
-.field private mImageAnchorUrl:Ljava/lang/String;
-
-.field private mTouchHighlightRect:Landroid/graphics/Rect;
-
 .field private mType:I
 
 
@@ -57,20 +53,15 @@
     .locals 1
 
     .prologue
-    .line 406
+    .line 394
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 400
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Landroid/webkit/WebView$HitTestResult;->mTouchHighlightRect:Landroid/graphics/Rect;
-
-    .line 407
+    .line 395
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
 
-    .line 408
+    .line 396
     return-void
 .end method
 
@@ -80,28 +71,8 @@
     .locals 1
 
     .prologue
-    .line 442
+    .line 430
     iget-object v0, p0, Landroid/webkit/WebView$HitTestResult;->mExtra:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public getImageAnchorUrlExtra()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 457
-    iget-object v0, p0, Landroid/webkit/WebView$HitTestResult;->mImageAnchorUrl:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public getTouchHighlightRect()Landroid/graphics/Rect;
-    .locals 1
-
-    .prologue
-    .line 477
-    iget-object v0, p0, Landroid/webkit/WebView$HitTestResult;->mTouchHighlightRect:Landroid/graphics/Rect;
 
     return-object v0
 .end method
@@ -110,7 +81,7 @@
     .locals 1
 
     .prologue
-    .line 431
+    .line 419
     iget v0, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
 
     return v0
@@ -121,34 +92,10 @@
     .parameter "extra"
 
     .prologue
-    .line 421
+    .line 409
     iput-object p1, p0, Landroid/webkit/WebView$HitTestResult;->mExtra:Ljava/lang/String;
 
-    .line 422
-    return-void
-.end method
-
-.method public setImageAnchorUrlExtra(Ljava/lang/String;)V
-    .locals 0
-    .parameter "imageAnchorUrl"
-
-    .prologue
-    .line 450
-    iput-object p1, p0, Landroid/webkit/WebView$HitTestResult;->mImageAnchorUrl:Ljava/lang/String;
-
-    .line 451
-    return-void
-.end method
-
-.method public setTouchHighlightRect(Landroid/graphics/Rect;)V
-    .locals 0
-    .parameter "r"
-
-    .prologue
-    .line 468
-    iput-object p1, p0, Landroid/webkit/WebView$HitTestResult;->mTouchHighlightRect:Landroid/graphics/Rect;
-
-    .line 469
+    .line 410
     return-void
 .end method
 
@@ -157,9 +104,9 @@
     .parameter "type"
 
     .prologue
-    .line 414
+    .line 402
     iput p1, p0, Landroid/webkit/WebView$HitTestResult;->mType:I
 
-    .line 415
+    .line 403
     return-void
 .end method

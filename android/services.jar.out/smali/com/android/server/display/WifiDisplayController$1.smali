@@ -25,7 +25,7 @@
     .parameter "x0"
 
     .prologue
-    .line 219
+    .line 168
     iput-object p1, p0, Lcom/android/server/display/WifiDisplayController$1;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
@@ -41,12 +41,12 @@
     .parameter "uri"
 
     .prologue
-    .line 222
+    .line 171
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayController$1;->this$0:Lcom/android/server/display/WifiDisplayController;
 
     #calls: Lcom/android/server/display/WifiDisplayController;->updateSettings()V
     invoke-static {v0}, Lcom/android/server/display/WifiDisplayController;->access$000(Lcom/android/server/display/WifiDisplayController;)V
 
-    .line 223
+    .line 172
     return-void
 .end method

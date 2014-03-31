@@ -43,7 +43,7 @@
 
     const/4 v1, 0x2
 
-    const-string/jumbo v2, "moderate"
+    const-string v2, "moderate"
 
     aput-object v2, v0, v1
 

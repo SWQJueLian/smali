@@ -31,7 +31,7 @@
     .parameter
 
     .prologue
-    .line 1817
+    .line 1751
     iput-object p1, p0, Landroid/media/AudioService$SoundPoolCallback;->this$0:Landroid/media/AudioService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -45,7 +45,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1817
+    .line 1751
     invoke-direct {p0, p1}, Landroid/media/AudioService$SoundPoolCallback;-><init>(Landroid/media/AudioService;)V
 
     return-void
@@ -60,7 +60,7 @@
     .parameter "status"
 
     .prologue
-    .line 1832
+    .line 1766
     iget-object v0, p0, Landroid/media/AudioService$SoundPoolCallback;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mSoundEffectsLock:Ljava/lang/Object;
@@ -70,20 +70,20 @@
 
     monitor-enter v1
 
-    .line 1833
+    .line 1767
     if-eqz p3, :cond_0
 
-    .line 1834
+    .line 1768
     :try_start_0
     iput p3, p0, Landroid/media/AudioService$SoundPoolCallback;->mStatus:I
 
-    .line 1836
+    .line 1770
     :cond_0
     iget v0, p0, Landroid/media/AudioService$SoundPoolCallback;->mLastSample:I
 
     if-ne p2, v0, :cond_1
 
-    .line 1837
+    .line 1771
     iget-object v0, p0, Landroid/media/AudioService$SoundPoolCallback;->this$0:Landroid/media/AudioService;
 
     #getter for: Landroid/media/AudioService;->mSoundEffectsLock:Ljava/lang/Object;
@@ -93,14 +93,14 @@
 
     invoke-virtual {v0}, Ljava/lang/Object;->notify()V
 
-    .line 1839
+    .line 1773
     :cond_1
     monitor-exit v1
 
-    .line 1840
+    .line 1774
     return-void
 
-    .line 1839
+    .line 1773
     :catchall_0
     move-exception v0
 
@@ -116,10 +116,10 @@
     .parameter "sample"
 
     .prologue
-    .line 1828
+    .line 1762
     iput p1, p0, Landroid/media/AudioService$SoundPoolCallback;->mLastSample:I
 
-    .line 1829
+    .line 1763
     return-void
 .end method
 
@@ -127,7 +127,7 @@
     .locals 1
 
     .prologue
-    .line 1824
+    .line 1758
     iget v0, p0, Landroid/media/AudioService$SoundPoolCallback;->mStatus:I
 
     return v0

@@ -61,7 +61,7 @@
     .local v0, weights:[F
     iget-object v1, p0, Landroid/filterpacks/imageproc/SepiaFilter;->mProgram:Landroid/filterfw/core/Program;
 
-    const-string/jumbo v2, "matrix"
+    const-string v2, "matrix"
 
     invoke-virtual {v1, v2, v0}, Landroid/filterfw/core/Program;->setHostValue(Ljava/lang/String;Ljava/lang/Object;)V
 
@@ -69,6 +69,8 @@
     return-void
 
     .line 106
+    nop
+
     :array_0
     .array-data 0x4
         0x0t 0x40t 0xc9t 0x3et

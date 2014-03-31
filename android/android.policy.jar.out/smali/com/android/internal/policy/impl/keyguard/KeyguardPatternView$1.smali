@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 83
+    .line 82
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 1
 
     .prologue
-    .line 85
+    .line 84
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardPatternView;->mLockPatternView:Lcom/android/internal/widget/LockPatternView;
@@ -51,6 +51,6 @@
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternView;->clearPattern()V
 
-    .line 86
+    .line 85
     return-void
 .end method

@@ -622,7 +622,7 @@
     invoke-virtual {v2}, Landroid/os/Message;->sendToTarget()V
 
     .line 152
-    const-string/jumbo v4, "network_management"
+    const-string v4, "network_management"
 
     invoke-static {v4}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 
@@ -763,7 +763,7 @@
 
     .prologue
     .line 405
-    const-string/jumbo v0, "net.tcp.buffersize.wifi"
+    const-string v0, "net.tcp.buffersize.wifi"
 
     return-object v0
 .end method
@@ -1001,7 +1001,7 @@
     iput-object p2, p0, Landroid/net/EthernetDataTracker;->mCsHandler:Landroid/os/Handler;
 
     .line 214
-    const-string/jumbo v8, "network_management"
+    const-string v8, "network_management"
 
     invoke-static {v8}, Landroid/os/ServiceManager;->getService(Ljava/lang/String;)Landroid/os/IBinder;
 

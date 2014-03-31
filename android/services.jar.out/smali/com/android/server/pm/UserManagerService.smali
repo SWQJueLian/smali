@@ -589,7 +589,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 511
+    .line 505
     new-instance v0, Landroid/content/pm/UserInfo;
 
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService;->mContext:Landroid/content/Context;
@@ -610,27 +610,27 @@
 
     invoke-direct {v0, v4, v1, v2, v3}, Landroid/content/pm/UserInfo;-><init>(ILjava/lang/String;Ljava/lang/String;I)V
 
-    .line 514
+    .line 508
     .local v0, primary:Landroid/content/pm/UserInfo;
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v4, v0}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 515
+    .line 509
     const/16 v1, 0xa
 
     iput v1, p0, Lcom/android/server/pm/UserManagerService;->mNextSerialNumber:I
 
-    .line 516
+    .line 510
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->updateUserIdsLocked()V
 
-    .line 518
+    .line 512
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->writeUserListLocked()V
 
-    .line 519
+    .line 513
     invoke-direct {p0, v0}, Lcom/android/server/pm/UserManagerService;->writeUserLocked(Landroid/content/pm/UserInfo;)V
 
-    .line 520
+    .line 514
     return-void
 .end method
 
@@ -666,23 +666,23 @@
     .locals 4
 
     .prologue
-    .line 914
+    .line 908
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService;->mPackagesLock:Ljava/lang/Object;
 
     monitor-enter v2
 
-    .line 915
+    .line 909
     :try_start_0
     iget v0, p0, Lcom/android/server/pm/UserManagerService;->mNextUserId:I
 
-    .line 916
+    .line 910
     .local v0, i:I
     :goto_0
     const v1, 0x7fffffff
 
     if-ge v0, v1, :cond_0
 
-    .line 917
+    .line 911
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
 
     invoke-virtual {v1, v0}, Landroid/util/SparseArray;->indexOfKey(I)I
@@ -703,24 +703,24 @@
 
     if-nez v1, :cond_1
 
-    .line 922
+    .line 916
     :cond_0
     add-int/lit8 v1, v0, 0x1
 
     iput v1, p0, Lcom/android/server/pm/UserManagerService;->mNextUserId:I
 
-    .line 923
+    .line 917
     monitor-exit v2
 
     return v0
 
-    .line 920
+    .line 914
     :cond_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 924
+    .line 918
     .end local v0           #i:I
     :catchall_0
     move-exception v1
@@ -835,23 +835,23 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 687
+    .line 681
     const/4 v2, 0x0
 
     invoke-interface {p1, v2, p2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 688
+    .line 682
     .local v1, valueString:Ljava/lang/String;
     if-nez v1, :cond_0
 
-    .line 692
+    .line 686
     .end local p3
     :goto_0
     return p3
 
-    .line 690
+    .line 684
     .restart local p3
     :cond_0
     :try_start_0
@@ -863,11 +863,11 @@
 
     goto :goto_0
 
-    .line 691
+    .line 685
     :catch_0
     move-exception v0
 
-    .line 692
+    .line 686
     .local v0, nfe:Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method
@@ -879,23 +879,23 @@
     .parameter "defaultValue"
 
     .prologue
-    .line 697
+    .line 691
     const/4 v2, 0x0
 
     invoke-interface {p1, v2, p2}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 698
+    .line 692
     .local v1, valueString:Ljava/lang/String;
     if-nez v1, :cond_0
 
-    .line 702
+    .line 696
     .end local p3
     :goto_0
     return-wide p3
 
-    .line 700
+    .line 694
     .restart local p3
     :cond_0
     :try_start_0
@@ -907,11 +907,11 @@
 
     goto :goto_0
 
-    .line 701
+    .line 695
     :catch_0
     move-exception v0
 
-    .line 702
+    .line 696
     .local v0, nfe:Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method
@@ -921,38 +921,38 @@
     .parameter "id"
 
     .prologue
-    .line 613
+    .line 607
     const/4 v7, 0x0
 
-    .line 614
+    .line 608
     .local v7, flags:I
     move/from16 v14, p1
 
-    .line 615
+    .line 609
     .local v14, serialNumber:I
     const/4 v11, 0x0
 
-    .line 616
+    .line 610
     .local v11, name:Ljava/lang/String;
     const/4 v8, 0x0
 
-    .line 617
+    .line 611
     .local v8, iconPath:Ljava/lang/String;
     const-wide/16 v4, 0x0
 
-    .line 618
+    .line 612
     .local v4, creationTime:J
     const-wide/16 v9, 0x0
 
-    .line 619
+    .line 613
     .local v9, lastLoggedInTime:J
     const/4 v13, 0x0
 
-    .line 621
+    .line 615
     .local v13, partial:Z
     const/4 v6, 0x0
 
-    .line 623
+    .line 617
     .local v6, fis:Ljava/io/FileInputStream;
     :try_start_0
     new-instance v17, Landroid/util/AtomicFile;
@@ -995,18 +995,18 @@
 
     invoke-direct {v0, v1}, Landroid/util/AtomicFile;-><init>(Ljava/io/File;)V
 
-    .line 625
+    .line 619
     .local v17, userFile:Landroid/util/AtomicFile;
     invoke-virtual/range {v17 .. v17}, Landroid/util/AtomicFile;->openRead()Ljava/io/FileInputStream;
 
     move-result-object v6
 
-    .line 626
+    .line 620
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v12
 
-    .line 627
+    .line 621
     .local v12, parser:Lorg/xmlpull/v1/XmlPullParser;
     const/16 v20, 0x0
 
@@ -1014,7 +1014,7 @@
 
     invoke-interface {v12, v6, v0}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 630
+    .line 624
     :cond_0
     invoke-interface {v12}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -1037,7 +1037,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 634
+    .line 628
     :cond_1
     const/16 v20, 0x2
 
@@ -1047,7 +1047,7 @@
 
     if-eq v0, v1, :cond_3
 
-    .line 635
+    .line 629
     const-string v20, "UserManagerService"
 
     new-instance v21, Ljava/lang/StringBuilder;
@@ -1078,19 +1078,19 @@
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_3
 
-    .line 636
+    .line 630
     const/16 v18, 0x0
 
-    .line 676
+    .line 670
     if-eqz v6, :cond_2
 
-    .line 678
+    .line 672
     :try_start_1
     invoke-virtual {v6}, Ljava/io/FileInputStream;->close()V
     :try_end_1
     .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_5
 
-    .line 683
+    .line 677
     .end local v12           #parser:Lorg/xmlpull/v1/XmlPullParser;
     .end local v16           #type:I
     .end local v17           #userFile:Landroid/util/AtomicFile;
@@ -1098,7 +1098,7 @@
     :goto_0
     return-object v18
 
-    .line 639
+    .line 633
     .restart local v12       #parser:Lorg/xmlpull/v1/XmlPullParser;
     .restart local v16       #type:I
     .restart local v17       #userFile:Landroid/util/AtomicFile;
@@ -1124,7 +1124,7 @@
 
     if-eqz v20, :cond_7
 
-    .line 640
+    .line 634
     const-string v20, "id"
 
     const/16 v21, -0x1
@@ -1139,13 +1139,13 @@
 
     move-result v15
 
-    .line 641
+    .line 635
     .local v15, storedId:I
     move/from16 v0, p1
 
     if-eq v15, v0, :cond_4
 
-    .line 642
+    .line 636
     const-string v20, "UserManagerService"
 
     const-string v21, "User id does not match the file name"
@@ -1156,13 +1156,13 @@
     .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_2
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_2 .. :try_end_2} :catch_3
 
-    .line 643
+    .line 637
     const/16 v18, 0x0
 
-    .line 676
+    .line 670
     if-eqz v6, :cond_2
 
-    .line 678
+    .line 672
     :try_start_3
     invoke-virtual {v6}, Ljava/io/FileInputStream;->close()V
     :try_end_3
@@ -1170,13 +1170,13 @@
 
     goto :goto_0
 
-    .line 679
+    .line 673
     :catch_0
     move-exception v20
 
     goto :goto_0
 
-    .line 645
+    .line 639
     :cond_4
     :try_start_4
     const-string v20, "serialNumber"
@@ -1191,7 +1191,7 @@
 
     move-result v14
 
-    .line 646
+    .line 640
     const-string v20, "flags"
 
     const/16 v21, 0x0
@@ -1206,7 +1206,7 @@
 
     move-result v7
 
-    .line 647
+    .line 641
     const/16 v20, 0x0
 
     const-string v21, "icon"
@@ -1219,7 +1219,7 @@
 
     move-result-object v8
 
-    .line 648
+    .line 642
     const-string v20, "created"
 
     const-wide/16 v21, 0x0
@@ -1234,7 +1234,7 @@
 
     move-result-wide v4
 
-    .line 649
+    .line 643
     const-string v20, "lastLoggedIn"
 
     const-wide/16 v21, 0x0
@@ -1249,7 +1249,7 @@
 
     move-result-wide v9
 
-    .line 650
+    .line 644
     const/16 v20, 0x0
 
     const-string v21, "partial"
@@ -1262,7 +1262,7 @@
 
     move-result-object v19
 
-    .line 651
+    .line 645
     .local v19, valueString:Ljava/lang/String;
     const-string v20, "true"
 
@@ -1276,10 +1276,10 @@
 
     if-eqz v20, :cond_5
 
-    .line 652
+    .line 646
     const/4 v13, 0x1
 
-    .line 656
+    .line 650
     :cond_5
     invoke-interface {v12}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -1301,7 +1301,7 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 658
+    .line 652
     :cond_6
     const/16 v20, 0x2
 
@@ -1323,12 +1323,12 @@
 
     if-eqz v20, :cond_7
 
-    .line 659
+    .line 653
     invoke-interface {v12}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
     move-result v16
 
-    .line 660
+    .line 654
     const/16 v20, 0x4
 
     move/from16 v0, v16
@@ -1337,12 +1337,12 @@
 
     if-ne v0, v1, :cond_7
 
-    .line 661
+    .line 655
     invoke-interface {v12}, Lorg/xmlpull/v1/XmlPullParser;->getText()Ljava/lang/String;
 
     move-result-object v11
 
-    .line 666
+    .line 660
     .end local v15           #storedId:I
     .end local v19           #valueString:Ljava/lang/String;
     :cond_7
@@ -1354,23 +1354,23 @@
 
     invoke-direct {v0, v1, v11, v8, v7}, Landroid/content/pm/UserInfo;-><init>(ILjava/lang/String;Ljava/lang/String;I)V
 
-    .line 667
+    .line 661
     .local v18, userInfo:Landroid/content/pm/UserInfo;
     move-object/from16 v0, v18
 
     iput v14, v0, Landroid/content/pm/UserInfo;->serialNumber:I
 
-    .line 668
+    .line 662
     move-object/from16 v0, v18
 
     iput-wide v4, v0, Landroid/content/pm/UserInfo;->creationTime:J
 
-    .line 669
+    .line 663
     move-object/from16 v0, v18
 
     iput-wide v9, v0, Landroid/content/pm/UserInfo;->lastLoggedInTime:J
 
-    .line 670
+    .line 664
     move-object/from16 v0, v18
 
     iput-boolean v13, v0, Landroid/content/pm/UserInfo;->partial:Z
@@ -1379,10 +1379,10 @@
     .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_4 .. :try_end_4} :catch_3
 
-    .line 676
+    .line 670
     if-eqz v6, :cond_2
 
-    .line 678
+    .line 672
     :try_start_5
     invoke-virtual {v6}, Ljava/io/FileInputStream;->close()V
     :try_end_5
@@ -1390,13 +1390,13 @@
 
     goto/16 :goto_0
 
-    .line 679
+    .line 673
     :catch_1
     move-exception v20
 
     goto/16 :goto_0
 
-    .line 673
+    .line 667
     .end local v12           #parser:Lorg/xmlpull/v1/XmlPullParser;
     .end local v16           #type:I
     .end local v17           #userFile:Landroid/util/AtomicFile;
@@ -1404,30 +1404,30 @@
     :catch_2
     move-exception v20
 
-    .line 676
+    .line 670
     if-eqz v6, :cond_8
 
-    .line 678
+    .line 672
     :try_start_6
     invoke-virtual {v6}, Ljava/io/FileInputStream;->close()V
     :try_end_6
     .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_6
 
-    .line 683
+    .line 677
     :cond_8
     :goto_1
     const/16 v18, 0x0
 
     goto/16 :goto_0
 
-    .line 674
+    .line 668
     :catch_3
     move-exception v20
 
-    .line 676
+    .line 670
     if-eqz v6, :cond_8
 
-    .line 678
+    .line 672
     :try_start_7
     invoke-virtual {v6}, Ljava/io/FileInputStream;->close()V
     :try_end_7
@@ -1435,30 +1435,30 @@
 
     goto :goto_1
 
-    .line 679
+    .line 673
     :catch_4
     move-exception v20
 
     goto :goto_1
 
-    .line 676
+    .line 670
     :catchall_0
     move-exception v20
 
     if-eqz v6, :cond_9
 
-    .line 678
+    .line 672
     :try_start_8
     invoke-virtual {v6}, Ljava/io/FileInputStream;->close()V
     :try_end_8
     .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_7
 
-    .line 680
+    .line 674
     :cond_9
     :goto_2
     throw v20
 
-    .line 679
+    .line 673
     .restart local v12       #parser:Lorg/xmlpull/v1/XmlPullParser;
     .restart local v16       #type:I
     .restart local v17       #userFile:Landroid/util/AtomicFile;
@@ -1485,22 +1485,22 @@
     .locals 2
 
     .prologue
-    .line 411
+    .line 405
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService;->mPackagesLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 412
+    .line 406
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->readUserListLocked()V
 
-    .line 413
+    .line 407
     monitor-exit v1
 
-    .line 414
+    .line 408
     return-void
 
-    .line 413
+    .line 407
     :catchall_0
     move-exception v0
 
@@ -1519,12 +1519,12 @@
 
     const/4 v12, 0x1
 
-    .line 417
+    .line 411
     const/4 v10, 0x0
 
     iput-boolean v10, p0, Lcom/android/server/pm/UserManagerService;->mGuestEnabled:Z
 
-    .line 418
+    .line 412
     iget-object v10, p0, Lcom/android/server/pm/UserManagerService;->mUserListFile:Ljava/io/File;
 
     invoke-virtual {v10}, Ljava/io/File;->exists()Z
@@ -1533,19 +1533,19 @@
 
     if-nez v10, :cond_1
 
-    .line 419
+    .line 413
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->fallbackToSingleUserLocked()V
 
-    .line 482
+    .line 476
     :cond_0
     :goto_0
     return-void
 
-    .line 422
+    .line 416
     :cond_1
     const/4 v0, 0x0
 
-    .line 423
+    .line 417
     .local v0, fis:Ljava/io/FileInputStream;
     new-instance v8, Landroid/util/AtomicFile;
 
@@ -1553,25 +1553,25 @@
 
     invoke-direct {v8, v10}, Landroid/util/AtomicFile;-><init>(Ljava/io/File;)V
 
-    .line 425
+    .line 419
     .local v8, userListFile:Landroid/util/AtomicFile;
     :try_start_0
     invoke-virtual {v8}, Landroid/util/AtomicFile;->openRead()Ljava/io/FileInputStream;
 
     move-result-object v0
 
-    .line 426
+    .line 420
     invoke-static {}, Landroid/util/Xml;->newPullParser()Lorg/xmlpull/v1/XmlPullParser;
 
     move-result-object v4
 
-    .line 427
+    .line 421
     .local v4, parser:Lorg/xmlpull/v1/XmlPullParser;
     const/4 v10, 0x0
 
     invoke-interface {v4, v0, v10}, Lorg/xmlpull/v1/XmlPullParser;->setInput(Ljava/io/InputStream;Ljava/lang/String;)V
 
-    .line 430
+    .line 424
     :cond_2
     invoke-interface {v4}, Lorg/xmlpull/v1/XmlPullParser;->next()I
 
@@ -1582,28 +1582,28 @@
 
     if-ne v6, v12, :cond_2
 
-    .line 434
+    .line 428
     :cond_3
     if-eq v6, v13, :cond_4
 
-    .line 435
+    .line 429
     const-string v10, "UserManagerService"
 
     const-string v11, "Unable to read user list"
 
     invoke-static {v10, v11}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 436
+    .line 430
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->fallbackToSingleUserLocked()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_0 .. :try_end_0} :catch_4
 
-    .line 475
+    .line 469
     if-eqz v0, :cond_0
 
-    .line 477
+    .line 471
     :try_start_1
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_1
@@ -1611,20 +1611,20 @@
 
     goto :goto_0
 
-    .line 478
+    .line 472
     :catch_0
     move-exception v10
 
     goto :goto_0
 
-    .line 440
+    .line 434
     :cond_4
     const/4 v10, -0x1
 
     :try_start_2
     iput v10, p0, Lcom/android/server/pm/UserManagerService;->mNextSerialNumber:I
 
-    .line 441
+    .line 435
     invoke-interface {v4}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v10
@@ -1637,7 +1637,7 @@
 
     if-eqz v10, :cond_6
 
-    .line 442
+    .line 436
     const/4 v10, 0x0
 
     const-string v11, "nextSerialNumber"
@@ -1646,18 +1646,18 @@
 
     move-result-object v3
 
-    .line 443
+    .line 437
     .local v3, lastSerialNumber:Ljava/lang/String;
     if-eqz v3, :cond_5
 
-    .line 444
+    .line 438
     invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v10
 
     iput v10, p0, Lcom/android/server/pm/UserManagerService;->mNextSerialNumber:I
 
-    .line 446
+    .line 440
     :cond_5
     const/4 v10, 0x0
 
@@ -1667,18 +1667,18 @@
 
     move-result-object v9
 
-    .line 447
+    .line 441
     .local v9, versionNumber:Ljava/lang/String;
     if-eqz v9, :cond_6
 
-    .line 448
+    .line 442
     invoke-static {v9}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     move-result v10
 
     iput v10, p0, Lcom/android/server/pm/UserManagerService;->mUserVersion:I
 
-    .line 452
+    .line 446
     .end local v3           #lastSerialNumber:Ljava/lang/String;
     .end local v9           #versionNumber:Ljava/lang/String;
     :cond_6
@@ -1689,7 +1689,7 @@
 
     if-eq v6, v12, :cond_9
 
-    .line 453
+    .line 447
     if-ne v6, v13, :cond_6
 
     invoke-interface {v4}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
@@ -1704,7 +1704,7 @@
 
     if-eqz v10, :cond_6
 
-    .line 454
+    .line 448
     const/4 v10, 0x0
 
     const-string v11, "id"
@@ -1713,7 +1713,7 @@
 
     move-result-object v1
 
-    .line 455
+    .line 449
     .local v1, id:Ljava/lang/String;
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
@@ -1723,30 +1723,30 @@
 
     move-result-object v7
 
-    .line 457
+    .line 451
     .local v7, user:Landroid/content/pm/UserInfo;
     if-eqz v7, :cond_6
 
-    .line 458
+    .line 452
     iget-object v10, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
 
     iget v11, v7, Landroid/content/pm/UserInfo;->id:I
 
     invoke-virtual {v10, v11, v7}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 459
+    .line 453
     invoke-virtual {v7}, Landroid/content/pm/UserInfo;->isGuest()Z
 
     move-result v10
 
     if-eqz v10, :cond_7
 
-    .line 460
+    .line 454
     const/4 v10, 0x1
 
     iput-boolean v10, p0, Lcom/android/server/pm/UserManagerService;->mGuestEnabled:Z
 
-    .line 462
+    .line 456
     :cond_7
     iget v10, p0, Lcom/android/server/pm/UserManagerService;->mNextSerialNumber:I
 
@@ -1758,7 +1758,7 @@
 
     if-gt v10, v11, :cond_6
 
-    .line 463
+    .line 457
     :cond_8
     iget v10, v7, Landroid/content/pm/UserInfo;->id:I
 
@@ -1772,7 +1772,7 @@
 
     goto :goto_1
 
-    .line 470
+    .line 464
     .end local v1           #id:Ljava/lang/String;
     .end local v4           #parser:Lorg/xmlpull/v1/XmlPullParser;
     .end local v6           #type:I
@@ -1780,17 +1780,17 @@
     :catch_1
     move-exception v2
 
-    .line 471
+    .line 465
     .local v2, ioe:Ljava/io/IOException;
     :try_start_3
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->fallbackToSingleUserLocked()V
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 475
+    .line 469
     if-eqz v0, :cond_0
 
-    .line 477
+    .line 471
     :try_start_4
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_4
@@ -1798,13 +1798,13 @@
 
     goto/16 :goto_0
 
-    .line 478
+    .line 472
     :catch_2
     move-exception v10
 
     goto/16 :goto_0
 
-    .line 468
+    .line 462
     .end local v2           #ioe:Ljava/io/IOException;
     .restart local v4       #parser:Lorg/xmlpull/v1/XmlPullParser;
     .restart local v6       #type:I
@@ -1812,17 +1812,17 @@
     :try_start_5
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->updateUserIdsLocked()V
 
-    .line 469
+    .line 463
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->upgradeIfNecessary()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
     .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
     .catch Lorg/xmlpull/v1/XmlPullParserException; {:try_start_5 .. :try_end_5} :catch_4
 
-    .line 475
+    .line 469
     if-eqz v0, :cond_0
 
-    .line 477
+    .line 471
     :try_start_6
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_6
@@ -1830,29 +1830,29 @@
 
     goto/16 :goto_0
 
-    .line 478
+    .line 472
     :catch_3
     move-exception v10
 
     goto/16 :goto_0
 
-    .line 472
+    .line 466
     .end local v4           #parser:Lorg/xmlpull/v1/XmlPullParser;
     .end local v6           #type:I
     :catch_4
     move-exception v5
 
-    .line 473
+    .line 467
     .local v5, pe:Lorg/xmlpull/v1/XmlPullParserException;
     :try_start_7
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->fallbackToSingleUserLocked()V
     :try_end_7
     .catchall {:try_start_7 .. :try_end_7} :catchall_0
 
-    .line 475
+    .line 469
     if-eqz v0, :cond_0
 
-    .line 477
+    .line 471
     :try_start_8
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_8
@@ -1860,31 +1860,31 @@
 
     goto/16 :goto_0
 
-    .line 478
+    .line 472
     :catch_5
     move-exception v10
 
     goto/16 :goto_0
 
-    .line 475
+    .line 469
     .end local v5           #pe:Lorg/xmlpull/v1/XmlPullParserException;
     :catchall_0
     move-exception v10
 
     if-eqz v0, :cond_a
 
-    .line 477
+    .line 471
     :try_start_9
     invoke-virtual {v0}, Ljava/io/FileInputStream;->close()V
     :try_end_9
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_6
 
-    .line 479
+    .line 473
     :cond_a
     :goto_2
     throw v10
 
-    .line 478
+    .line 472
     :catch_6
     move-exception v11
 
@@ -1896,19 +1896,19 @@
     .parameter "parent"
 
     .prologue
-    .line 839
+    .line 833
     invoke-virtual {p1}, Ljava/io/File;->isDirectory()Z
 
     move-result v6
 
     if-eqz v6, :cond_0
 
-    .line 840
+    .line 834
     invoke-virtual {p1}, Ljava/io/File;->list()[Ljava/lang/String;
 
     move-result-object v3
 
-    .line 841
+    .line 835
     .local v3, files:[Ljava/lang/String;
     move-object v0, v3
 
@@ -1924,22 +1924,22 @@
 
     aget-object v2, v0, v4
 
-    .line 842
+    .line 836
     .local v2, filename:Ljava/lang/String;
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, p1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 843
+    .line 837
     .local v1, child:Ljava/io/File;
     invoke-direct {p0, v1}, Lcom/android/server/pm/UserManagerService;->removeDirectoryRecursive(Ljava/io/File;)V
 
-    .line 841
+    .line 835
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 846
+    .line 840
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #child:Ljava/io/File;
     .end local v2           #filename:Ljava/lang/String;
@@ -1949,7 +1949,7 @@
     :cond_0
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
-    .line 847
+    .line 841
     return-void
 .end method
 
@@ -1958,17 +1958,17 @@
     .parameter "userHandle"
 
     .prologue
-    .line 824
+    .line 818
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService;->mPm:Lcom/android/server/pm/PackageManagerService;
 
     invoke-virtual {v1, p1}, Lcom/android/server/pm/PackageManagerService;->cleanUpUserLILPw(I)V
 
-    .line 827
+    .line 821
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->remove(I)V
 
-    .line 828
+    .line 822
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService;->mRemovingUserIds:Ljava/util/HashSet;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1977,7 +1977,7 @@
 
     invoke-virtual {v1, v2}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
-    .line 830
+    .line 824
     new-instance v0, Landroid/util/AtomicFile;
 
     new-instance v1, Ljava/io/File;
@@ -2006,24 +2006,24 @@
 
     invoke-direct {v0, v1}, Landroid/util/AtomicFile;-><init>(Ljava/io/File;)V
 
-    .line 831
+    .line 825
     .local v0, userFile:Landroid/util/AtomicFile;
     invoke-virtual {v0}, Landroid/util/AtomicFile;->delete()V
 
-    .line 833
+    .line 827
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->writeUserListLocked()V
 
-    .line 834
+    .line 828
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->updateUserIdsLocked()V
 
-    .line 835
+    .line 829
     invoke-static {p1}, Landroid/os/Environment;->getUserSystemDirectory(I)Ljava/io/File;
 
     move-result-object v1
 
     invoke-direct {p0, v1}, Lcom/android/server/pm/UserManagerService;->removeDirectoryRecursive(Ljava/io/File;)V
 
-    .line 836
+    .line 830
     return-void
 .end method
 
@@ -2067,10 +2067,10 @@
     .locals 6
 
     .prologue
-    .line 872
+    .line 866
     const/4 v4, 0x0
 
-    .line 873
+    .line 867
     .local v4, num:I
     const/4 v0, 0x0
 
@@ -2084,7 +2084,7 @@
 
     if-ge v0, v5, :cond_1
 
-    .line 874
+    .line 868
     iget-object v5, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2097,24 +2097,24 @@
 
     if-nez v5, :cond_0
 
-    .line 875
+    .line 869
     add-int/lit8 v4, v4, 0x1
 
-    .line 873
+    .line 867
     :cond_0
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 878
+    .line 872
     :cond_1
     new-array v3, v4, [I
 
-    .line 879
+    .line 873
     .local v3, newUsers:[I
     const/4 v1, 0x0
 
-    .line 880
+    .line 874
     .local v1, n:I
     const/4 v0, 0x0
 
@@ -2127,7 +2127,7 @@
 
     if-ge v0, v5, :cond_3
 
-    .line 881
+    .line 875
     iget-object v5, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2140,7 +2140,7 @@
 
     if-nez v5, :cond_2
 
-    .line 882
+    .line 876
     add-int/lit8 v2, v1, 0x1
 
     .end local v1           #n:I
@@ -2155,7 +2155,7 @@
 
     move v1, v2
 
-    .line 880
+    .line 874
     .end local v2           #n:I
     .restart local v1       #n:I
     :cond_2
@@ -2163,11 +2163,11 @@
 
     goto :goto_1
 
-    .line 885
+    .line 879
     :cond_3
     iput-object v3, p0, Lcom/android/server/pm/UserManagerService;->mUserIds:[I
 
-    .line 886
+    .line 880
     return-void
 .end method
 
@@ -2177,14 +2177,14 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 489
+    .line 483
     iget v1, p0, Lcom/android/server/pm/UserManagerService;->mUserVersion:I
 
-    .line 490
+    .line 484
     .local v1, userVersion:I
     if-ge v1, v5, :cond_1
 
-    .line 492
+    .line 486
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
 
     const/4 v3, 0x0
@@ -2195,7 +2195,7 @@
 
     check-cast v0, Landroid/content/pm/UserInfo;
 
-    .line 493
+    .line 487
     .local v0, user:Landroid/content/pm/UserInfo;
     const-string v2, "Primary"
 
@@ -2207,7 +2207,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 494
+    .line 488
     iget-object v2, p0, Lcom/android/server/pm/UserManagerService;->mContext:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -2222,19 +2222,19 @@
 
     iput-object v2, v0, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
-    .line 495
+    .line 489
     invoke-direct {p0, v0}, Lcom/android/server/pm/UserManagerService;->writeUserLocked(Landroid/content/pm/UserInfo;)V
 
-    .line 497
+    .line 491
     :cond_0
     const/4 v1, 0x1
 
-    .line 500
+    .line 494
     .end local v0           #user:Landroid/content/pm/UserInfo;
     :cond_1
     if-ge v1, v5, :cond_2
 
-    .line 501
+    .line 495
     const-string v2, "UserManagerService"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -2269,15 +2269,15 @@
 
     invoke-static {v2, v3}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 507
+    .line 501
     :goto_0
     return-void
 
-    .line 504
+    .line 498
     :cond_2
     iput v1, p0, Lcom/android/server/pm/UserManagerService;->mUserVersion:I
 
-    .line 505
+    .line 499
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->writeUserListLocked()V
 
     goto :goto_0
@@ -2290,19 +2290,6 @@
 
     .prologue
     .line 366
-    if-nez p2, :cond_0
-
-    .line 367
-    const/4 v4, 0x0
-
-    iput-object v4, p1, Landroid/content/pm/UserInfo;->iconPath:Ljava/lang/String;
-
-    .line 393
-    :goto_0
-    return-void
-
-    .line 372
-    :cond_0
     :try_start_0
     new-instance v0, Ljava/io/File;
 
@@ -2316,7 +2303,7 @@
 
     invoke-direct {v0, v4, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 373
+    .line 367
     .local v0, dir:Ljava/io/File;
     new-instance v2, Ljava/io/File;
 
@@ -2324,18 +2311,18 @@
 
     invoke-direct {v2, v0, v4}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 374
+    .line 368
     .local v2, file:Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v4
 
-    if-nez v4, :cond_1
+    if-nez v4, :cond_0
 
-    .line 375
+    .line 369
     invoke-virtual {v0}, Ljava/io/File;->mkdir()Z
 
-    .line 376
+    .line 370
     invoke-virtual {v0}, Ljava/io/File;->getPath()Ljava/lang/String;
 
     move-result-object v4
@@ -2348,8 +2335,8 @@
 
     invoke-static {v4, v5, v6, v7}, Landroid/os/FileUtils;->setPermissions(Ljava/lang/String;III)I
 
-    .line 382
-    :cond_1
+    .line 376
+    :cond_0
     sget-object v4, Landroid/graphics/Bitmap$CompressFormat;->PNG:Landroid/graphics/Bitmap$CompressFormat;
 
     const/16 v5, 0x64
@@ -2363,41 +2350,37 @@
 
     move-result v4
 
-    if-eqz v4, :cond_2
+    if-eqz v4, :cond_1
 
-    .line 383
+    .line 377
     invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v4
 
     iput-object v4, p1, Landroid/content/pm/UserInfo;->iconPath:Ljava/lang/String;
     :try_end_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 386
-    :cond_2
+    .line 380
+    :cond_1
     :try_start_1
     invoke-virtual {v3}, Ljava/io/FileOutputStream;->close()V
     :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :goto_0
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
+    .catch Ljava/io/FileNotFoundException; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 387
-    :catch_0
-    move-exception v4
-
-    goto :goto_0
-
-    .line 390
     .end local v0           #dir:Ljava/io/File;
     .end local v2           #file:Ljava/io/File;
     .end local v3           #os:Ljava/io/FileOutputStream;
-    :catch_1
+    :goto_0
+    return-void
+
+    .line 384
+    :catch_0
     move-exception v1
 
-    .line 391
+    .line 385
     .local v1, e:Ljava/io/FileNotFoundException;
     const-string v4, "UserManagerService"
 
@@ -2406,16 +2389,26 @@
     invoke-static {v4, v5, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_0
+
+    .line 381
+    .end local v1           #e:Ljava/io/FileNotFoundException;
+    .restart local v0       #dir:Ljava/io/File;
+    .restart local v2       #file:Ljava/io/File;
+    .restart local v3       #os:Ljava/io/FileOutputStream;
+    :catch_1
+    move-exception v4
+
+    goto :goto_0
 .end method
 
 .method private writeUserListLocked()V
     .locals 10
 
     .prologue
-    .line 579
+    .line 573
     const/4 v2, 0x0
 
-    .line 580
+    .line 574
     .local v2, fos:Ljava/io/FileOutputStream;
     new-instance v6, Landroid/util/AtomicFile;
 
@@ -2423,31 +2416,31 @@
 
     invoke-direct {v6, v7}, Landroid/util/AtomicFile;-><init>(Ljava/io/File;)V
 
-    .line 582
+    .line 576
     .local v6, userListFile:Landroid/util/AtomicFile;
     :try_start_0
     invoke-virtual {v6}, Landroid/util/AtomicFile;->startWrite()Ljava/io/FileOutputStream;
 
     move-result-object v2
 
-    .line 583
+    .line 577
     new-instance v0, Ljava/io/BufferedOutputStream;
 
     invoke-direct {v0, v2}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 586
+    .line 580
     .local v0, bos:Ljava/io/BufferedOutputStream;
     new-instance v4, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v4}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 587
+    .line 581
     .local v4, serializer:Lorg/xmlpull/v1/XmlSerializer;
     const-string v7, "utf-8"
 
     invoke-interface {v4, v0, v7}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 588
+    .line 582
     const/4 v7, 0x0
 
     const/4 v8, 0x1
@@ -2458,21 +2451,21 @@
 
     invoke-interface {v4, v7, v8}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 589
+    .line 583
     const-string v7, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     const/4 v8, 0x1
 
     invoke-interface {v4, v7, v8}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
-    .line 591
+    .line 585
     const/4 v7, 0x0
 
     const-string v8, "users"
 
     invoke-interface {v4, v7, v8}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 592
+    .line 586
     const/4 v7, 0x0
 
     const-string v8, "nextSerialNumber"
@@ -2485,7 +2478,7 @@
 
     invoke-interface {v4, v7, v8, v9}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 593
+    .line 587
     const/4 v7, 0x0
 
     const-string v8, "version"
@@ -2498,7 +2491,7 @@
 
     invoke-interface {v4, v7, v8, v9}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 595
+    .line 589
     const/4 v3, 0x0
 
     .local v3, i:I
@@ -2511,7 +2504,7 @@
 
     if-ge v3, v7, :cond_0
 
-    .line 596
+    .line 590
     iget-object v7, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
 
     invoke-virtual {v7, v3}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -2520,7 +2513,7 @@
 
     check-cast v5, Landroid/content/pm/UserInfo;
 
-    .line 597
+    .line 591
     .local v5, user:Landroid/content/pm/UserInfo;
     const/4 v7, 0x0
 
@@ -2528,7 +2521,7 @@
 
     invoke-interface {v4, v7, v8}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 598
+    .line 592
     const/4 v7, 0x0
 
     const-string v8, "id"
@@ -2541,19 +2534,19 @@
 
     invoke-interface {v4, v7, v8, v9}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 599
+    .line 593
     const/4 v7, 0x0
 
     const-string v8, "user"
 
     invoke-interface {v4, v7, v8}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 595
+    .line 589
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 602
+    .line 596
     .end local v5           #user:Landroid/content/pm/UserInfo;
     :cond_0
     const/4 v7, 0x0
@@ -2562,30 +2555,30 @@
 
     invoke-interface {v4, v7, v8}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 604
+    .line 598
     invoke-interface {v4}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
-    .line 605
+    .line 599
     invoke-virtual {v6, v2}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 610
+    .line 604
     .end local v0           #bos:Ljava/io/BufferedOutputStream;
     .end local v3           #i:I
     .end local v4           #serializer:Lorg/xmlpull/v1/XmlSerializer;
     :goto_1
     return-void
 
-    .line 606
+    .line 600
     :catch_0
     move-exception v1
 
-    .line 607
+    .line 601
     .local v1, e:Ljava/lang/Exception;
     invoke-virtual {v6, v2}, Landroid/util/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
 
-    .line 608
+    .line 602
     const-string v7, "UserManagerService"
 
     const-string v8, "Error writing user list"
@@ -2600,10 +2593,10 @@
     .parameter "userInfo"
 
     .prologue
-    .line 530
+    .line 524
     const/4 v1, 0x0
 
-    .line 531
+    .line 525
     .local v1, fos:Ljava/io/FileOutputStream;
     new-instance v4, Landroid/util/AtomicFile;
 
@@ -2635,31 +2628,31 @@
 
     invoke-direct {v4, v5}, Landroid/util/AtomicFile;-><init>(Ljava/io/File;)V
 
-    .line 533
+    .line 527
     .local v4, userFile:Landroid/util/AtomicFile;
     :try_start_0
     invoke-virtual {v4}, Landroid/util/AtomicFile;->startWrite()Ljava/io/FileOutputStream;
 
     move-result-object v1
 
-    .line 534
+    .line 528
     new-instance v0, Ljava/io/BufferedOutputStream;
 
     invoke-direct {v0, v1}, Ljava/io/BufferedOutputStream;-><init>(Ljava/io/OutputStream;)V
 
-    .line 537
+    .line 531
     .local v0, bos:Ljava/io/BufferedOutputStream;
     new-instance v3, Lcom/android/internal/util/FastXmlSerializer;
 
     invoke-direct {v3}, Lcom/android/internal/util/FastXmlSerializer;-><init>()V
 
-    .line 538
+    .line 532
     .local v3, serializer:Lorg/xmlpull/v1/XmlSerializer;
     const-string v5, "utf-8"
 
     invoke-interface {v3, v0, v5}, Lorg/xmlpull/v1/XmlSerializer;->setOutput(Ljava/io/OutputStream;Ljava/lang/String;)V
 
-    .line 539
+    .line 533
     const/4 v5, 0x0
 
     const/4 v6, 0x1
@@ -2670,21 +2663,21 @@
 
     invoke-interface {v3, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->startDocument(Ljava/lang/String;Ljava/lang/Boolean;)V
 
-    .line 540
+    .line 534
     const-string v5, "http://xmlpull.org/v1/doc/features.html#indent-output"
 
     const/4 v6, 0x1
 
     invoke-interface {v3, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->setFeature(Ljava/lang/String;Z)V
 
-    .line 542
+    .line 536
     const/4 v5, 0x0
 
     const-string v6, "user"
 
     invoke-interface {v3, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 543
+    .line 537
     const/4 v5, 0x0
 
     const-string v6, "id"
@@ -2697,7 +2690,7 @@
 
     invoke-interface {v3, v5, v6, v7}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 544
+    .line 538
     const/4 v5, 0x0
 
     const-string v6, "serialNumber"
@@ -2710,7 +2703,7 @@
 
     invoke-interface {v3, v5, v6, v7}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 545
+    .line 539
     const/4 v5, 0x0
 
     const-string v6, "flags"
@@ -2723,7 +2716,7 @@
 
     invoke-interface {v3, v5, v6, v7}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 546
+    .line 540
     const/4 v5, 0x0
 
     const-string v6, "created"
@@ -2736,7 +2729,7 @@
 
     invoke-interface {v3, v5, v6, v7}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 547
+    .line 541
     const/4 v5, 0x0
 
     const-string v6, "lastLoggedIn"
@@ -2749,12 +2742,12 @@
 
     invoke-interface {v3, v5, v6, v7}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 549
+    .line 543
     iget-object v5, p1, Landroid/content/pm/UserInfo;->iconPath:Ljava/lang/String;
 
     if-eqz v5, :cond_0
 
-    .line 550
+    .line 544
     const/4 v5, 0x0
 
     const-string v6, "icon"
@@ -2763,13 +2756,13 @@
 
     invoke-interface {v3, v5, v6, v7}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 552
+    .line 546
     :cond_0
     iget-boolean v5, p1, Landroid/content/pm/UserInfo;->partial:Z
 
     if-eqz v5, :cond_1
 
-    .line 553
+    .line 547
     const/4 v5, 0x0
 
     const-string v6, "partial"
@@ -2778,7 +2771,7 @@
 
     invoke-interface {v3, v5, v6, v7}, Lorg/xmlpull/v1/XmlSerializer;->attribute(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 556
+    .line 550
     :cond_1
     const/4 v5, 0x0
 
@@ -2786,44 +2779,44 @@
 
     invoke-interface {v3, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->startTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 557
+    .line 551
     iget-object v5, p1, Landroid/content/pm/UserInfo;->name:Ljava/lang/String;
 
     invoke-interface {v3, v5}, Lorg/xmlpull/v1/XmlSerializer;->text(Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 558
+    .line 552
     const/4 v5, 0x0
 
     const-string v6, "name"
 
     invoke-interface {v3, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 560
+    .line 554
     const/4 v5, 0x0
 
     const-string v6, "user"
 
     invoke-interface {v3, v5, v6}, Lorg/xmlpull/v1/XmlSerializer;->endTag(Ljava/lang/String;Ljava/lang/String;)Lorg/xmlpull/v1/XmlSerializer;
 
-    .line 562
+    .line 556
     invoke-interface {v3}, Lorg/xmlpull/v1/XmlSerializer;->endDocument()V
 
-    .line 563
+    .line 557
     invoke-virtual {v4, v1}, Landroid/util/AtomicFile;->finishWrite(Ljava/io/FileOutputStream;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 568
+    .line 562
     .end local v0           #bos:Ljava/io/BufferedOutputStream;
     .end local v3           #serializer:Lorg/xmlpull/v1/XmlSerializer;
     :goto_0
     return-void
 
-    .line 564
+    .line 558
     :catch_0
     move-exception v2
 
-    .line 565
+    .line 559
     .local v2, ioe:Ljava/lang/Exception;
     const-string v5, "UserManagerService"
 
@@ -2859,7 +2852,7 @@
 
     invoke-static {v5, v6}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 566
+    .line 560
     invoke-virtual {v4, v1}, Landroid/util/AtomicFile;->failWrite(Ljava/io/FileOutputStream;)V
 
     goto :goto_0
@@ -2875,17 +2868,17 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 708
+    .line 702
     const-string v8, "Only the system can create users"
 
     invoke-static {v8}, Lcom/android/server/pm/UserManagerService;->checkManageUsersPermission(Ljava/lang/String;)V
 
-    .line 710
+    .line 704
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v1
 
-    .line 713
+    .line 707
     .local v1, ident:J
     :try_start_0
     iget-object v9, p0, Lcom/android/server/pm/UserManagerService;->mInstallLock:Ljava/lang/Object;
@@ -2894,7 +2887,7 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    .line 714
+    .line 708
     :try_start_1
     iget-object v10, p0, Lcom/android/server/pm/UserManagerService;->mPackagesLock:Ljava/lang/Object;
 
@@ -2902,7 +2895,7 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
-    .line 715
+    .line 709
     :try_start_2
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->isUserLimitReachedLocked()Z
 
@@ -2919,21 +2912,21 @@
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 740
+    .line 734
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 742
+    .line 736
     :goto_0
     return-object v6
 
-    .line 716
+    .line 710
     :cond_0
     :try_start_4
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->getNextAvailableIdLocked()I
 
     move-result v5
 
-    .line 717
+    .line 711
     .local v5, userId:I
     new-instance v6, Landroid/content/pm/UserInfo;
 
@@ -2941,7 +2934,7 @@
 
     invoke-direct {v6, v5, p1, v8, p2}, Landroid/content/pm/UserInfo;-><init>(ILjava/lang/String;Ljava/lang/String;I)V
 
-    .line 718
+    .line 712
     .local v6, userInfo:Landroid/content/pm/UserInfo;
     new-instance v7, Ljava/io/File;
 
@@ -2953,7 +2946,7 @@
 
     invoke-direct {v7, v8, v11}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    .line 719
+    .line 713
     .local v7, userPath:Ljava/io/File;
     iget v8, p0, Lcom/android/server/pm/UserManagerService;->mNextSerialNumber:I
 
@@ -2963,12 +2956,12 @@
 
     iput v8, v6, Landroid/content/pm/UserInfo;->serialNumber:I
 
-    .line 720
+    .line 714
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v3
 
-    .line 721
+    .line 715
     .local v3, now:J
     const-wide v11, 0xdc46c32800L
 
@@ -2980,12 +2973,12 @@
     :goto_1
     iput-wide v3, v6, Landroid/content/pm/UserInfo;->creationTime:J
 
-    .line 722
+    .line 716
     const/4 v8, 0x1
 
     iput-boolean v8, v6, Landroid/content/pm/UserInfo;->partial:Z
 
-    .line 723
+    .line 717
     iget v8, v6, Landroid/content/pm/UserInfo;->id:I
 
     invoke-static {v8}, Landroid/os/Environment;->getUserSystemDirectory(I)Ljava/io/File;
@@ -2994,48 +2987,48 @@
 
     invoke-virtual {v8}, Ljava/io/File;->mkdirs()Z
 
-    .line 724
+    .line 718
     iget-object v8, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
 
     invoke-virtual {v8, v5, v6}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 
-    .line 725
+    .line 719
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->writeUserListLocked()V
 
-    .line 726
+    .line 720
     invoke-direct {p0, v6}, Lcom/android/server/pm/UserManagerService;->writeUserLocked(Landroid/content/pm/UserInfo;)V
 
-    .line 727
+    .line 721
     iget-object v8, p0, Lcom/android/server/pm/UserManagerService;->mPm:Lcom/android/server/pm/PackageManagerService;
 
     invoke-virtual {v8, v5, v7}, Lcom/android/server/pm/PackageManagerService;->createNewUserLILPw(ILjava/io/File;)V
 
-    .line 728
+    .line 722
     const/4 v8, 0x0
 
     iput-boolean v8, v6, Landroid/content/pm/UserInfo;->partial:Z
 
-    .line 729
+    .line 723
     invoke-direct {p0, v6}, Lcom/android/server/pm/UserManagerService;->writeUserLocked(Landroid/content/pm/UserInfo;)V
 
-    .line 730
+    .line 724
     invoke-direct {p0}, Lcom/android/server/pm/UserManagerService;->updateUserIdsLocked()V
 
-    .line 731
+    .line 725
     monitor-exit v10
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_0
 
-    .line 732
+    .line 726
     :try_start_5
     monitor-exit v9
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_1
 
-    .line 733
+    .line 727
     if-eqz v6, :cond_1
 
-    .line 734
+    .line 728
     :try_start_6
     new-instance v0, Landroid/content/Intent;
 
@@ -3043,7 +3036,7 @@
 
     invoke-direct {v0, v8}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 735
+    .line 729
     .local v0, addedIntent:Landroid/content/Intent;
     const-string v8, "android.intent.extra.user_handle"
 
@@ -3051,7 +3044,7 @@
 
     invoke-virtual {v0, v8, v9}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 736
+    .line 730
     iget-object v8, p0, Lcom/android/server/pm/UserManagerService;->mContext:Landroid/content/Context;
 
     sget-object v9, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
@@ -3062,21 +3055,21 @@
     :try_end_6
     .catchall {:try_start_6 .. :try_end_6} :catchall_2
 
-    .line 740
+    .line 734
     .end local v0           #addedIntent:Landroid/content/Intent;
     :cond_1
     invoke-static {v1, v2}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     goto :goto_0
 
-    .line 721
+    .line 715
     .restart local v3       #now:J
     :cond_2
     const-wide/16 v3, 0x0
 
     goto :goto_1
 
-    .line 731
+    .line 725
     .end local v3           #now:J
     .end local v5           #userId:I
     .end local v6           #userInfo:Landroid/content/pm/UserInfo;
@@ -3092,7 +3085,7 @@
     :try_start_8
     throw v8
 
-    .line 732
+    .line 726
     :catchall_1
     move-exception v8
 
@@ -3105,7 +3098,7 @@
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_2
 
-    .line 740
+    .line 734
     :catchall_2
     move-exception v8
 
@@ -3123,7 +3116,7 @@
     .prologue
     const-wide/16 v9, 0x0
 
-    .line 929
+    .line 923
     iget-object v5, p0, Lcom/android/server/pm/UserManagerService;->mContext:Landroid/content/Context;
 
     const-string v6, "android.permission.DUMP"
@@ -3134,7 +3127,7 @@
 
     if-eqz v5, :cond_0
 
-    .line 931
+    .line 925
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -3185,35 +3178,35 @@
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 970
+    .line 964
     :goto_0
     return-void
 
-    .line 939
+    .line 933
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
-    .line 940
+    .line 934
     .local v1, now:J
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 941
+    .line 935
     .local v3, sb:Ljava/lang/StringBuilder;
     iget-object v6, p0, Lcom/android/server/pm/UserManagerService;->mPackagesLock:Ljava/lang/Object;
 
     monitor-enter v6
 
-    .line 942
+    .line 936
     :try_start_0
     const-string v5, "Users:"
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 943
+    .line 937
     const/4 v0, 0x0
 
     .local v0, i:I
@@ -3226,7 +3219,7 @@
 
     if-ge v0, v5, :cond_6
 
-    .line 944
+    .line 938
     iget-object v5, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
 
     invoke-virtual {v5, v0}, Landroid/util/SparseArray;->valueAt(I)Ljava/lang/Object;
@@ -3235,17 +3228,17 @@
 
     check-cast v4, Landroid/content/pm/UserInfo;
 
-    .line 945
+    .line 939
     .local v4, user:Landroid/content/pm/UserInfo;
     if-nez v4, :cond_1
 
-    .line 943
+    .line 937
     :goto_2
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
 
-    .line 946
+    .line 940
     :cond_1
     const-string v5, "  "
 
@@ -3261,7 +3254,7 @@
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 947
+    .line 941
     iget-object v5, p0, Lcom/android/server/pm/UserManagerService;->mRemovingUserIds:Ljava/util/HashSet;
 
     iget-object v7, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
@@ -3284,7 +3277,7 @@
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 948
+    .line 942
     :cond_2
     iget-boolean v5, v4, Landroid/content/pm/UserInfo;->partial:Z
 
@@ -3294,48 +3287,48 @@
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 949
+    .line 943
     :cond_3
     invoke-virtual {p2}, Ljava/io/PrintWriter;->println()V
 
-    .line 950
+    .line 944
     const-string v5, "    Created: "
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 951
+    .line 945
     iget-wide v7, v4, Landroid/content/pm/UserInfo;->creationTime:J
 
     cmp-long v5, v7, v9
 
     if-nez v5, :cond_4
 
-    .line 952
+    .line 946
     const-string v5, "<unknown>"
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 959
+    .line 953
     :goto_3
     const-string v5, "    Last logged in: "
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 960
+    .line 954
     iget-wide v7, v4, Landroid/content/pm/UserInfo;->lastLoggedInTime:J
 
     cmp-long v5, v7, v9
 
     if-nez v5, :cond_5
 
-    .line 961
+    .line 955
     const-string v5, "<unknown>"
 
     invoke-virtual {p2, v5}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
     goto :goto_2
 
-    .line 969
+    .line 963
     .end local v0           #i:I
     .end local v4           #user:Landroid/content/pm/UserInfo;
     :catchall_0
@@ -3347,7 +3340,7 @@
 
     throw v5
 
-    .line 954
+    .line 948
     .restart local v0       #i:I
     .restart local v4       #user:Landroid/content/pm/UserInfo;
     :cond_4
@@ -3356,47 +3349,47 @@
     :try_start_1
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 955
+    .line 949
     iget-wide v7, v4, Landroid/content/pm/UserInfo;->creationTime:J
 
     sub-long v7, v1, v7
 
     invoke-static {v7, v8, v3}, Landroid/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 956
+    .line 950
     const-string v5, " ago"
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 957
+    .line 951
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     goto :goto_3
 
-    .line 963
+    .line 957
     :cond_5
     const/4 v5, 0x0
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->setLength(I)V
 
-    .line 964
+    .line 958
     iget-wide v7, v4, Landroid/content/pm/UserInfo;->lastLoggedInTime:J
 
     sub-long v7, v1, v7
 
     invoke-static {v7, v8, v3}, Landroid/util/TimeUtils;->formatDuration(JLjava/lang/StringBuilder;)V
 
-    .line 965
+    .line 959
     const-string v5, " ago"
 
     invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 966
+    .line 960
     invoke-virtual {p2, v3}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
     goto/16 :goto_2
 
-    .line 969
+    .line 963
     .end local v4           #user:Landroid/content/pm/UserInfo;
     :cond_6
     monitor-exit v6
@@ -3444,12 +3437,12 @@
     .parameter "userHandle"
 
     .prologue
-    .line 789
+    .line 783
     invoke-static {}, Landroid/os/Binder;->clearCallingIdentity()J
 
     move-result-wide v9
 
-    .line 791
+    .line 785
     .local v9, ident:J
     :try_start_0
     new-instance v1, Landroid/content/Intent;
@@ -3458,13 +3451,13 @@
 
     invoke-direct {v1, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 792
+    .line 786
     .local v1, addedIntent:Landroid/content/Intent;
     const-string v0, "android.intent.extra.user_handle"
 
     invoke-virtual {v1, v0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 793
+    .line 787
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService;->mContext:Landroid/content/Context;
 
     sget-object v2, Landroid/os/UserHandle;->ALL:Landroid/os/UserHandle;
@@ -3487,13 +3480,13 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 818
+    .line 812
     invoke-static {v9, v10}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
-    .line 820
+    .line 814
     return-void
 
-    .line 818
+    .line 812
     .end local v1           #addedIntent:Landroid/content/Intent;
     :catchall_0
     move-exception v0
@@ -3508,12 +3501,12 @@
     .parameter "userSerialNumber"
 
     .prologue
-    .line 859
+    .line 853
     iget-object v5, p0, Lcom/android/server/pm/UserManagerService;->mPackagesLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 860
+    .line 854
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService;->mUserIds:[I
 
@@ -3529,7 +3522,7 @@
 
     aget v3, v0, v1
 
-    .line 861
+    .line 855
     .local v3, userId:I
     invoke-direct {p0, v3}, Lcom/android/server/pm/UserManagerService;->getUserInfoLocked(I)Landroid/content/pm/UserInfo;
 
@@ -3541,19 +3534,19 @@
 
     monitor-exit v5
 
-    .line 864
+    .line 858
     .end local v3           #userId:I
     :goto_1
     return v3
 
-    .line 860
+    .line 854
     .restart local v3       #userId:I
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 864
+    .line 858
     .end local v3           #userId:I
     :cond_1
     const/4 v3, -0x1
@@ -3562,7 +3555,7 @@
 
     goto :goto_1
 
-    .line 865
+    .line 859
     .end local v0           #arr$:[I
     .end local v1           #i$:I
     .end local v2           #len$:I
@@ -3685,12 +3678,12 @@
     .locals 2
 
     .prologue
-    .line 401
+    .line 395
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService;->mPackagesLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 402
+    .line 396
     :try_start_0
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService;->mUserIds:[I
 
@@ -3698,7 +3691,7 @@
 
     return-object v0
 
-    .line 403
+    .line 397
     :catchall_0
     move-exception v0
 
@@ -3713,7 +3706,7 @@
     .locals 1
 
     .prologue
-    .line 407
+    .line 401
     iget-object v0, p0, Lcom/android/server/pm/UserManagerService;->mUserIds:[I
 
     return-object v0
@@ -3760,12 +3753,12 @@
     .parameter "userHandle"
 
     .prologue
-    .line 851
+    .line 845
     iget-object v1, p0, Lcom/android/server/pm/UserManagerService;->mPackagesLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 852
+    .line 846
     :try_start_0
     invoke-virtual {p0, p1}, Lcom/android/server/pm/UserManagerService;->exists(I)Z
 
@@ -3777,7 +3770,7 @@
 
     monitor-exit v1
 
-    .line 853
+    .line 847
     :goto_0
     return v0
 
@@ -3792,7 +3785,7 @@
 
     goto :goto_0
 
-    .line 854
+    .line 848
     :catchall_0
     move-exception v0
 
@@ -4055,17 +4048,17 @@
 
     const/4 v4, 0x0
 
-    .line 751
+    .line 745
     const-string v5, "Only the system can remove users"
 
     invoke-static {v5}, Lcom/android/server/pm/UserManagerService;->checkManageUsersPermission(Ljava/lang/String;)V
 
-    .line 753
+    .line 747
     iget-object v5, p0, Lcom/android/server/pm/UserManagerService;->mPackagesLock:Ljava/lang/Object;
 
     monitor-enter v5
 
-    .line 754
+    .line 748
     :try_start_0
     iget-object v6, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
 
@@ -4075,21 +4068,21 @@
 
     check-cast v2, Landroid/content/pm/UserInfo;
 
-    .line 755
+    .line 749
     .local v2, user:Landroid/content/pm/UserInfo;
     if-eqz p1, :cond_0
 
     if-nez v2, :cond_1
 
-    .line 756
+    .line 750
     :cond_0
     monitor-exit v5
 
-    .line 782
+    .line 776
     :goto_0
     return v4
 
-    .line 758
+    .line 752
     :cond_1
     iget-object v6, p0, Lcom/android/server/pm/UserManagerService;->mRemovingUserIds:Ljava/util/HashSet;
 
@@ -4099,20 +4092,20 @@
 
     invoke-virtual {v6, v7}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 762
+    .line 756
     const/4 v6, 0x1
 
     iput-boolean v6, v2, Landroid/content/pm/UserInfo;->partial:Z
 
-    .line 763
+    .line 757
     invoke-direct {p0, v2}, Lcom/android/server/pm/UserManagerService;->writeUserLocked(Landroid/content/pm/UserInfo;)V
 
-    .line 764
+    .line 758
     monitor-exit v5
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 768
+    .line 762
     :try_start_1
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -4128,7 +4121,7 @@
 
     move-result v1
 
-    .line 782
+    .line 776
     .local v1, res:I
     if-nez v1, :cond_2
 
@@ -4137,7 +4130,7 @@
 
     goto :goto_0
 
-    .line 764
+    .line 758
     .end local v1           #res:I
     .end local v2           #user:Landroid/content/pm/UserInfo;
     :catchall_0
@@ -4150,12 +4143,12 @@
 
     throw v3
 
-    .line 778
+    .line 772
     .restart local v2       #user:Landroid/content/pm/UserInfo;
     :catch_0
     move-exception v0
 
-    .line 779
+    .line 773
     .local v0, e:Landroid/os/RemoteException;
     goto :goto_0
 
@@ -4164,7 +4157,7 @@
     :cond_2
     move v3, v4
 
-    .line 782
+    .line 776
     goto :goto_1
 .end method
 
@@ -4499,12 +4492,12 @@
     .parameter "userId"
 
     .prologue
-    .line 893
+    .line 887
     iget-object v4, p0, Lcom/android/server/pm/UserManagerService;->mPackagesLock:Ljava/lang/Object;
 
     monitor-enter v4
 
-    .line 894
+    .line 888
     :try_start_0
     iget-object v3, p0, Lcom/android/server/pm/UserManagerService;->mUsers:Landroid/util/SparseArray;
 
@@ -4514,13 +4507,13 @@
 
     check-cast v2, Landroid/content/pm/UserInfo;
 
-    .line 895
+    .line 889
     .local v2, user:Landroid/content/pm/UserInfo;
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 896
+    .line 890
     .local v0, now:J
     if-eqz v2, :cond_0
 
@@ -4528,7 +4521,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 897
+    .line 891
     :cond_0
     const-string v3, "UserManagerService"
 
@@ -4552,14 +4545,14 @@
 
     invoke-static {v3, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 898
+    .line 892
     monitor-exit v4
 
-    .line 905
+    .line 899
     :goto_0
     return-void
 
-    .line 900
+    .line 894
     :cond_1
     const-wide v5, 0xdc46c32800L
 
@@ -4567,13 +4560,13 @@
 
     if-lez v3, :cond_2
 
-    .line 901
+    .line 895
     iput-wide v0, v2, Landroid/content/pm/UserInfo;->lastLoggedInTime:J
 
-    .line 902
+    .line 896
     invoke-direct {p0, v2}, Lcom/android/server/pm/UserManagerService;->writeUserLocked(Landroid/content/pm/UserInfo;)V
 
-    .line 904
+    .line 898
     :cond_2
     monitor-exit v4
 

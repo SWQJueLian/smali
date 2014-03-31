@@ -230,7 +230,7 @@
 
     .prologue
     .line 108
-    const-string/jumbo v0, "net.tcp.buffersize.unknown"
+    const-string v0, "net.tcp.buffersize.unknown"
 
     return-object v0
 .end method

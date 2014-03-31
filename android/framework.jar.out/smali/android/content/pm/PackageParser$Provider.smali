@@ -27,13 +27,13 @@
     .parameter "_info"
 
     .prologue
-    .line 3713
+    .line 3692
     invoke-direct {p0, p1, p2}, Landroid/content/pm/PackageParser$Component;-><init>(Landroid/content/pm/PackageParser$ParseComponentArgs;Landroid/content/pm/ComponentInfo;)V
 
-    .line 3714
+    .line 3693
     iput-object p2, p0, Landroid/content/pm/PackageParser$Provider;->info:Landroid/content/pm/ProviderInfo;
 
-    .line 3715
+    .line 3694
     iget-object v0, p0, Landroid/content/pm/PackageParser$Provider;->info:Landroid/content/pm/ProviderInfo;
 
     iget-object v1, p1, Landroid/content/pm/PackageParser$ParseComponentArgs;->owner:Landroid/content/pm/PackageParser$Package;
@@ -42,12 +42,12 @@
 
     iput-object v1, v0, Landroid/content/pm/ProviderInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 3716
+    .line 3695
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/content/pm/PackageParser$Provider;->syncable:Z
 
-    .line 3717
+    .line 3696
     return-void
 .end method
 
@@ -56,20 +56,20 @@
     .parameter "existingProvider"
 
     .prologue
-    .line 3720
+    .line 3699
     invoke-direct {p0, p1}, Landroid/content/pm/PackageParser$Component;-><init>(Landroid/content/pm/PackageParser$Component;)V
 
-    .line 3721
+    .line 3700
     iget-object v0, p1, Landroid/content/pm/PackageParser$Provider;->info:Landroid/content/pm/ProviderInfo;
 
     iput-object v0, p0, Landroid/content/pm/PackageParser$Provider;->info:Landroid/content/pm/ProviderInfo;
 
-    .line 3722
+    .line 3701
     iget-boolean v0, p1, Landroid/content/pm/PackageParser$Provider;->syncable:Z
 
     iput-boolean v0, p0, Landroid/content/pm/PackageParser$Provider;->syncable:Z
 
-    .line 3723
+    .line 3702
     return-void
 .end method
 
@@ -80,15 +80,15 @@
     .parameter "packageName"
 
     .prologue
-    .line 3726
+    .line 3705
     invoke-super {p0, p1}, Landroid/content/pm/PackageParser$Component;->setPackageName(Ljava/lang/String;)V
 
-    .line 3727
+    .line 3706
     iget-object v0, p0, Landroid/content/pm/PackageParser$Provider;->info:Landroid/content/pm/ProviderInfo;
 
     iput-object p1, v0, Landroid/content/pm/ProviderInfo;->packageName:Ljava/lang/String;
 
-    .line 3728
+    .line 3707
     return-void
 .end method
 
@@ -96,7 +96,7 @@
     .locals 2
 
     .prologue
-    .line 3731
+    .line 3710
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

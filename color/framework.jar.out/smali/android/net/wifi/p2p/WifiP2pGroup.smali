@@ -863,7 +863,7 @@
 
     .line 265
     .local v2, sbuf:Ljava/lang/StringBuffer;
-    const-string/jumbo v3, "network: "
+    const-string v3, "network: "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuffer;->append(Ljava/lang/String;)Ljava/lang/StringBuffer;
 

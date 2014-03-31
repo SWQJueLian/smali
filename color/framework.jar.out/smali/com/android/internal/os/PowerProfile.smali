@@ -239,7 +239,7 @@
     .line 183
     const/4 v11, 0x0
 
-    const-string/jumbo v12, "name"
+    const-string v12, "name"
 
     invoke-interface {v6, v11, v12}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -249,7 +249,7 @@
 
     .line 184
     :cond_4
-    const-string/jumbo v11, "item"
+    const-string v11, "item"
 
     invoke-virtual {v3, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -275,7 +275,7 @@
 
     const/4 v11, 0x0
 
-    const-string/jumbo v12, "name"
+    const-string v12, "name"
 
     invoke-interface {v6, v11, v12}, Landroid/content/res/XmlResourceParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -323,7 +323,7 @@
     .line 194
     :goto_1
     :try_start_3
-    const-string/jumbo v11, "item"
+    const-string v11, "item"
 
     invoke-virtual {v3, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

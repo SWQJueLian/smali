@@ -119,14 +119,6 @@
     .end annotation
 .end method
 
-.method public abstract getMobileDataEnabledGemini(I)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getNetworkInfo(I)Landroid/net/NetworkInfo;
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -207,14 +199,6 @@
     .end annotation
 .end method
 
-.method public abstract getTetheringIpv6Enable()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract isActiveNetworkMetered()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -224,14 +208,6 @@
 .end method
 
 .method public abstract isNetworkSupported(I)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract isTetheringChangeDone()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -319,14 +295,6 @@
     .end annotation
 .end method
 
-.method public abstract setMobileDataEnabledGemini(I)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setNetworkPreference(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -359,22 +327,6 @@
     .end annotation
 .end method
 
-.method public abstract setTetheringIpv6Enable(Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setUsbInternet(Z)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setUsbTethering(Z)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -399,23 +351,7 @@
     .end annotation
 .end method
 
-.method public abstract startUsingNetworkFeatureGemini(ILjava/lang/String;Landroid/os/IBinder;I)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract stopUsingNetworkFeature(ILjava/lang/String;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract stopUsingNetworkFeatureGemini(ILjava/lang/String;I)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

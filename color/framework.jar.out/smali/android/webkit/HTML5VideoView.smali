@@ -941,26 +941,6 @@
     return-void
 .end method
 
-.method public setVolume(F)V
-    .locals 1
-    .parameter "volume"
-
-    .prologue
-    .line 385
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
-
-    if-eqz v0, :cond_0
-
-    .line 386
-    sget-object v0, Landroid/webkit/HTML5VideoView;->mPlayer:Landroid/media/MediaPlayer;
-
-    invoke-virtual {v0, p1, p1}, Landroid/media/MediaPlayer;->setVolume(FF)V
-
-    .line 388
-    :cond_0
-    return-void
-.end method
-
 .method public showControllerInFullScreen()V
     .locals 0
 

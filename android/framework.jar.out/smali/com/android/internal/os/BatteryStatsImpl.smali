@@ -685,7 +685,7 @@
     iput v2, p0, Lcom/android/internal/os/BatteryStatsImpl;->mPhoneSignalStrengthBinRaw:I
 
     .line 233
-    const/4 v0, 0x6
+    const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
 
@@ -987,7 +987,7 @@
     iput v2, p0, Lcom/android/internal/os/BatteryStatsImpl;->mPhoneSignalStrengthBinRaw:I
 
     .line 233
-    const/4 v0, 0x6
+    const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
 
@@ -1130,13 +1130,13 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;)V
-    .locals 11
+    .locals 10
     .parameter "filename"
 
     .prologue
-    const-wide/16 v9, 0x0
+    const/4 v9, 0x5
 
-    const/4 v2, 0x4
+    const/4 v3, 0x4
 
     const/4 v8, 0x0
 
@@ -1267,7 +1267,9 @@
     iput-boolean v8, p0, Lcom/android/internal/os/BatteryStatsImpl;->mHistoryOverflow:Z
 
     .line 187
-    iput-wide v9, p0, Lcom/android/internal/os/BatteryStatsImpl;->mLastHistoryTime:J
+    const-wide/16 v1, 0x0
+
+    iput-wide v1, p0, Lcom/android/internal/os/BatteryStatsImpl;->mLastHistoryTime:J
 
     .line 189
     new-instance v1, Landroid/os/BatteryStats$HistoryItem;
@@ -1280,9 +1282,7 @@
     iput v7, p0, Lcom/android/internal/os/BatteryStatsImpl;->mScreenBrightnessBin:I
 
     .line 218
-    const/4 v1, 0x5
-
-    new-array v1, v1, [Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
+    new-array v1, v9, [Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
 
     iput-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl;->mScreenBrightnessTimer:[Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
 
@@ -1293,9 +1293,7 @@
     iput v7, p0, Lcom/android/internal/os/BatteryStatsImpl;->mPhoneSignalStrengthBinRaw:I
 
     .line 233
-    const/4 v1, 0x6
-
-    new-array v1, v1, [Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
+    new-array v1, v9, [Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
 
     iput-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl;->mPhoneSignalStrengthsTimer:[Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
 
@@ -1313,25 +1311,27 @@
     iput v7, p0, Lcom/android/internal/os/BatteryStatsImpl;->mWifiOnUid:I
 
     .line 284
-    iput-wide v9, p0, Lcom/android/internal/os/BatteryStatsImpl;->mLastWriteTime:J
+    const-wide/16 v1, 0x0
+
+    iput-wide v1, p0, Lcom/android/internal/os/BatteryStatsImpl;->mLastWriteTime:J
 
     .line 287
-    new-array v1, v2, [J
+    new-array v1, v3, [J
 
     iput-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl;->mMobileDataTx:[J
 
     .line 288
-    new-array v1, v2, [J
+    new-array v1, v3, [J
 
     iput-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl;->mMobileDataRx:[J
 
     .line 289
-    new-array v1, v2, [J
+    new-array v1, v3, [J
 
     iput-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl;->mTotalDataTx:[J
 
     .line 290
-    new-array v1, v2, [J
+    new-array v1, v3, [J
 
     iput-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl;->mTotalDataRx:[J
 
@@ -1482,9 +1482,7 @@
 
     .local v0, i:I
     :goto_0
-    const/4 v1, 0x5
-
-    if-ge v0, v1, :cond_0
+    if-ge v0, v9, :cond_0
 
     .line 4090
     iget-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl;->mScreenBrightnessTimer:[Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
@@ -1529,9 +1527,7 @@
     const/4 v0, 0x0
 
     :goto_1
-    const/4 v1, 0x6
-
-    if-ge v0, v1, :cond_1
+    if-ge v0, v9, :cond_1
 
     .line 4095
     iget-object v1, p0, Lcom/android/internal/os/BatteryStatsImpl;->mPhoneSignalStrengthsTimer:[Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
@@ -1654,10 +1650,14 @@
     invoke-virtual {p0}, Lcom/android/internal/os/BatteryStatsImpl;->initTimes()V
 
     .line 4108
-    iput-wide v9, p0, Lcom/android/internal/os/BatteryStatsImpl;->mTrackBatteryPastUptime:J
+    const-wide/16 v1, 0x0
+
+    iput-wide v1, p0, Lcom/android/internal/os/BatteryStatsImpl;->mTrackBatteryPastUptime:J
 
     .line 4109
-    iput-wide v9, p0, Lcom/android/internal/os/BatteryStatsImpl;->mTrackBatteryPastRealtime:J
+    const-wide/16 v1, 0x0
+
+    iput-wide v1, p0, Lcom/android/internal/os/BatteryStatsImpl;->mTrackBatteryPastRealtime:J
 
     .line 4110
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -3192,7 +3192,7 @@
     const/4 v9, 0x0
 
     :goto_2
-    const/16 v26, 0x6
+    const/16 v26, 0x5
 
     move/from16 v0, v26
 
@@ -10846,7 +10846,7 @@
     const/4 v9, 0x0
 
     :goto_1
-    const/4 v2, 0x6
+    const/4 v2, 0x5
 
     if-ge v9, v2, :cond_2
 
@@ -11916,9 +11916,11 @@
 .end method
 
 .method public resetAllStatsLocked()V
-    .locals 5
+    .locals 6
 
     .prologue
+    const/4 v5, 0x5
+
     const/4 v4, 0x0
 
     .line 4259
@@ -11937,9 +11939,7 @@
 
     .local v0, i:I
     :goto_0
-    const/4 v3, 0x5
-
-    if-ge v0, v3, :cond_0
+    if-ge v0, v5, :cond_0
 
     .line 4263
     iget-object v3, p0, Lcom/android/internal/os/BatteryStatsImpl;->mScreenBrightnessTimer:[Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
@@ -11978,9 +11978,7 @@
     const/4 v0, 0x0
 
     :goto_1
-    const/4 v3, 0x6
-
-    if-ge v0, v3, :cond_1
+    if-ge v0, v5, :cond_1
 
     .line 4270
     iget-object v3, p0, Lcom/android/internal/os/BatteryStatsImpl;->mPhoneSignalStrengthsTimer:[Lcom/android/internal/os/BatteryStatsImpl$StopwatchTimer;
@@ -13117,7 +13115,7 @@
 
     .local v0, i:I
     :goto_0
-    const/4 v1, 0x6
+    const/4 v1, 0x5
 
     if-ge v0, v1, :cond_2
 
@@ -13875,7 +13873,7 @@
     const/16 v22, 0x0
 
     :goto_1
-    const/16 v35, 0x6
+    const/16 v35, 0x5
 
     move/from16 v0, v22
 
@@ -15504,7 +15502,7 @@
     const/4 v8, 0x0
 
     :goto_1
-    const/16 v17, 0x6
+    const/16 v17, 0x5
 
     move/from16 v0, v17
 

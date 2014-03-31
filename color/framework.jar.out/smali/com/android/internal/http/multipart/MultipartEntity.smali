@@ -63,7 +63,7 @@
     iput-boolean v0, p0, Lcom/android/internal/http/multipart/MultipartEntity;->contentConsumed:Z
 
     .line 143
-    const-string/jumbo v0, "multipart/form-data"
+    const-string v0, "multipart/form-data"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/http/multipart/MultipartEntity;->setContentType(Ljava/lang/String;)V
 
@@ -310,7 +310,7 @@
     .line 197
     new-instance v0, Ljava/lang/StringBuffer;
 
-    const-string/jumbo v1, "multipart/form-data"
+    const-string v1, "multipart/form-data"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuffer;-><init>(Ljava/lang/String;)V
 

@@ -41,8 +41,6 @@
 
 .field public static final AUTO_TIME:Ljava/lang/String; = "auto_time"
 
-.field public static final AUTO_TIME_GPS:Ljava/lang/String; = "auto_time_gps"
-
 .field public static final AUTO_TIME_ZONE:Ljava/lang/String; = "auto_time_zone"
 
 .field public static final BATTERY_DISCHARGE_DURATION_THRESHOLD:Ljava/lang/String; = "battery_discharge_duration_threshold"
@@ -84,8 +82,6 @@
 .field public static final DATA_ACTIVITY_TIMEOUT_WIFI:Ljava/lang/String; = "data_activity_timeout_wifi"
 
 .field public static final DATA_ROAMING:Ljava/lang/String; = "data_roaming"
-
-.field public static final DATA_ROAMING_2:Ljava/lang/String; = "data_roaming_2"
 
 .field public static final DATA_STALL_ALARM_AGGRESSIVE_DELAY_IN_MS:Ljava/lang/String; = "data_stall_alarm_aggressive_delay_in_ms"
 
@@ -241,8 +237,6 @@
 
 .field public static final PREFERRED_NETWORK_MODE:Ljava/lang/String; = "preferred_network_mode"
 
-.field public static final PREFERRED_NETWORK_MODE_2:Ljava/lang/String; = "preferred_network_mode_2"
-
 .field public static final RADIO_BLUETOOTH:Ljava/lang/String; = "bluetooth"
 
 .field public static final RADIO_CELL:Ljava/lang/String; = "cell"
@@ -385,7 +379,7 @@
     .locals 5
 
     .prologue
-    .line 5059
+    .line 4197
     const-string v0, "content://settings/global"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -394,7 +388,7 @@
 
     sput-object v0, Landroid/provider/Settings$Global;->CONTENT_URI:Landroid/net/Uri;
 
-    .line 6293
+    .line 5400
     const/16 v0, 0xf
 
     new-array v0, v0, [Ljava/lang/String;
@@ -407,7 +401,7 @@
 
     const/4 v1, 0x1
 
-    const-string/jumbo v2, "mode_ringer"
+    const-string v2, "mode_ringer"
 
     aput-object v2, v0, v1
 
@@ -491,7 +485,7 @@
 
     sput-object v0, Landroid/provider/Settings$Global;->SETTINGS_TO_BACKUP:[Ljava/lang/String;
 
-    .line 6312
+    .line 5419
     new-instance v0, Landroid/provider/Settings$NameValueCache;
 
     const-string/jumbo v1, "sys.settings_global_version"
@@ -513,7 +507,7 @@
     .locals 0
 
     .prologue
-    .line 5052
+    .line 4189
     invoke-direct {p0}, Landroid/provider/Settings$NameValueTable;-><init>()V
 
     return-void
@@ -524,7 +518,7 @@
     .parameter "address"
 
     .prologue
-    .line 6129
+    .line 5267
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -555,7 +549,7 @@
     .parameter "address"
 
     .prologue
-    .line 6121
+    .line 5259
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -586,7 +580,7 @@
     .parameter "address"
 
     .prologue
-    .line 6137
+    .line 5275
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -623,23 +617,23 @@
     .end annotation
 
     .prologue
-    .line 6546
+    .line 5653
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 6547
+    .line 5654
     .local v1, v:Ljava/lang/String;
     if-nez v1, :cond_0
 
-    .line 6548
+    .line 5655
     new-instance v2, Landroid/provider/Settings$SettingNotFoundException;
 
     invoke-direct {v2, p1}, Landroid/provider/Settings$SettingNotFoundException;-><init>(Ljava/lang/String;)V
 
     throw v2
 
-    .line 6551
+    .line 5658
     :cond_0
     :try_start_0
     invoke-static {v1}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
@@ -650,11 +644,11 @@
 
     return v2
 
-    .line 6552
+    .line 5659
     :catch_0
     move-exception v0
 
-    .line 6553
+    .line 5660
     .local v0, e:Ljava/lang/NumberFormatException;
     new-instance v2, Landroid/provider/Settings$SettingNotFoundException;
 
@@ -670,12 +664,12 @@
     .parameter "def"
 
     .prologue
-    .line 6518
+    .line 5625
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 6520
+    .line 5627
     .local v1, v:Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -686,18 +680,18 @@
 
     move-result p2
 
-    .line 6522
+    .line 5629
     .end local p2
     :cond_0
     :goto_0
     return p2
 
-    .line 6521
+    .line 5628
     .restart local p2
     :catch_0
     move-exception v0
 
-    .line 6522
+    .line 5629
     .local v0, e:Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method
@@ -713,12 +707,12 @@
     .end annotation
 
     .prologue
-    .line 6409
+    .line 5516
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 6411
+    .line 5518
     .local v1, v:Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
@@ -729,11 +723,11 @@
 
     return v2
 
-    .line 6412
+    .line 5519
     :catch_0
     move-exception v0
 
-    .line 6413
+    .line 5520
     .local v0, e:Ljava/lang/NumberFormatException;
     new-instance v2, Landroid/provider/Settings$SettingNotFoundException;
 
@@ -749,12 +743,12 @@
     .parameter "def"
 
     .prologue
-    .line 6381
+    .line 5488
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 6383
+    .line 5490
     .local v1, v:Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -765,18 +759,18 @@
 
     move-result p2
 
-    .line 6385
+    .line 5492
     .end local p2
     :cond_0
     :goto_0
     return p2
 
-    .line 6384
+    .line 5491
     .restart local p2
     :catch_0
     move-exception v0
 
-    .line 6385
+    .line 5492
     .local v0, e:Ljava/lang/NumberFormatException;
     goto :goto_0
 .end method
@@ -792,12 +786,12 @@
     .end annotation
 
     .prologue
-    .line 6478
+    .line 5585
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 6480
+    .line 5587
     .local v1, valString:Ljava/lang/String;
     :try_start_0
     invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -808,11 +802,11 @@
 
     return-wide v2
 
-    .line 6481
+    .line 5588
     :catch_0
     move-exception v0
 
-    .line 6482
+    .line 5589
     .local v0, e:Ljava/lang/NumberFormatException;
     new-instance v2, Landroid/provider/Settings$SettingNotFoundException;
 
@@ -828,12 +822,12 @@
     .parameter "def"
 
     .prologue
-    .line 6449
+    .line 5556
     invoke-static {p0, p1}, Landroid/provider/Settings$Global;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 6452
+    .line 5559
     .local v1, valString:Ljava/lang/String;
     if-eqz v1, :cond_0
 
@@ -844,7 +838,7 @@
 
     move-result-wide v2
 
-    .line 6456
+    .line 5563
     .local v2, value:J
     :goto_0
     return-wide v2
@@ -853,14 +847,14 @@
     :cond_0
     move-wide v2, p2
 
-    .line 6452
+    .line 5559
     goto :goto_0
 
-    .line 6453
+    .line 5560
     :catch_0
     move-exception v0
 
-    .line 6454
+    .line 5561
     .local v0, e:Ljava/lang/NumberFormatException;
     move-wide v2, p2
 
@@ -874,7 +868,7 @@
     .parameter "name"
 
     .prologue
-    .line 6325
+    .line 5432
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -893,7 +887,7 @@
     .parameter "userHandle"
 
     .prologue
-    .line 6331
+    .line 5438
     sget-object v0, Landroid/provider/Settings$Global;->sNameValueCache:Landroid/provider/Settings$NameValueCache;
 
     invoke-virtual {v0, p0, p1, p2}, Landroid/provider/Settings$NameValueCache;->getStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;I)Ljava/lang/String;
@@ -908,7 +902,7 @@
     .parameter "name"
 
     .prologue
-    .line 6363
+    .line 5470
     sget-object v0, Landroid/provider/Settings$Global;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0, p0}, Landroid/provider/Settings$Global;->getUriFor(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
@@ -925,7 +919,7 @@
     .parameter "value"
 
     .prologue
-    .line 6571
+    .line 5678
     invoke-static {p2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
 
     move-result-object v0
@@ -944,7 +938,7 @@
     .parameter "value"
 
     .prologue
-    .line 6431
+    .line 5538
     invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -963,7 +957,7 @@
     .parameter "value"
 
     .prologue
-    .line 6500
+    .line 5607
     invoke-static {p2, p3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v0
@@ -982,7 +976,7 @@
     .parameter "value"
 
     .prologue
-    .line 6343
+    .line 5450
     invoke-static {}, Landroid/os/UserHandle;->myUserId()I
 
     move-result v0
@@ -995,57 +989,14 @@
 .end method
 
 .method public static putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z
-    .locals 3
+    .locals 1
     .parameter "resolver"
     .parameter "name"
     .parameter "value"
     .parameter "userHandle"
 
     .prologue
-    .line 6350
-    const-string v0, "Provider/Settings"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Global.putString(name="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", value="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " for "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 6353
+    .line 5460
     sget-object v0, Landroid/provider/Settings$Global;->sNameValueCache:Landroid/provider/Settings$NameValueCache;
 
     invoke-virtual {v0, p0, p1, p2, p3}, Landroid/provider/Settings$NameValueCache;->putStringForUser(Landroid/content/ContentResolver;Ljava/lang/String;Ljava/lang/String;I)Z

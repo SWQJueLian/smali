@@ -55,14 +55,6 @@
     .end annotation
 .end method
 
-.method public abstract checkAPKSignatures(Ljava/lang/String;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract checkPermission(Ljava/lang/String;Ljava/lang/String;)I
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -128,14 +120,6 @@
 .end method
 
 .method public abstract deletePackage(Ljava/lang/String;Landroid/content/pm/IPackageDeleteObserver;I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract enforceDexOpt(Ljava/lang/String;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

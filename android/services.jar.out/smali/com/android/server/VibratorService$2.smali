@@ -35,11 +35,17 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 0
+    .locals 1
     .parameter "context"
     .parameter "intent"
 
     .prologue
+    .line 156
+    iget-object v0, p0, Lcom/android/server/VibratorService$2;->this$0:Lcom/android/server/VibratorService;
+
+    #calls: Lcom/android/server/VibratorService;->updateInputDeviceVibrators()V
+    invoke-static {v0}, Lcom/android/server/VibratorService;->access$400(Lcom/android/server/VibratorService;)V
+
     .line 157
     return-void
 .end method

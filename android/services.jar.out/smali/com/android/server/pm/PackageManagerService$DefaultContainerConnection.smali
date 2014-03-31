@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 471
+    .line 446
     iput-object p1, p0, Lcom/android/server/pm/PackageManagerService$DefaultContainerConnection;->this$0:Lcom/android/server/pm/PackageManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,24 +43,12 @@
     .parameter "service"
 
     .prologue
-    .line 473
-    sget-boolean v1, Lcom/android/server/pm/PackageManagerService;->DEBUG_SD_INSTALL:Z
-
-    if-eqz v1, :cond_0
-
-    const-string v1, "PackageManager"
-
-    const-string v2, "onServiceConnected"
-
-    invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 474
-    :cond_0
+    .line 449
     invoke-static {p2}, Lcom/android/internal/app/IMediaContainerService$Stub;->asInterface(Landroid/os/IBinder;)Lcom/android/internal/app/IMediaContainerService;
 
     move-result-object v0
 
-    .line 476
+    .line 451
     .local v0, imcs:Lcom/android/internal/app/IMediaContainerService;
     iget-object v1, p0, Lcom/android/server/pm/PackageManagerService$DefaultContainerConnection;->this$0:Lcom/android/server/pm/PackageManagerService;
 
@@ -78,27 +66,15 @@
 
     invoke-virtual {v1, v2}, Lcom/android/server/pm/PackageManagerService$PackageHandler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 477
+    .line 452
     return-void
 .end method
 
 .method public onServiceDisconnected(Landroid/content/ComponentName;)V
-    .locals 2
+    .locals 0
     .parameter "name"
 
     .prologue
-    .line 480
-    sget-boolean v0, Lcom/android/server/pm/PackageManagerService;->DEBUG_SD_INSTALL:Z
-
-    if-eqz v0, :cond_0
-
-    const-string v0, "PackageManager"
-
-    const-string v1, "onServiceDisconnected"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 481
-    :cond_0
+    .line 456
     return-void
 .end method

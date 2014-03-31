@@ -111,6 +111,22 @@
 
 .field public static final oppo_alertdialog_button_background:I = 0xc08001c
 
+.field public static final oppo_alertdialog_button_left:I = 0xc0804c5
+
+.field public static final oppo_alertdialog_button_left_focus:I = 0xc0804c9
+
+.field public static final oppo_alertdialog_button_middle:I = 0xc0804c6
+
+.field public static final oppo_alertdialog_button_middle_focus:I = 0xc0804ca
+
+.field public static final oppo_alertdialog_button_right:I = 0xc0804c7
+
+.field public static final oppo_alertdialog_button_right_focus:I = 0xc0804cb
+
+.field public static final oppo_alertdialog_button_single:I = 0xc0804c4
+
+.field public static final oppo_alertdialog_button_single_focus:I = 0xc0804c8
+
 .field public static final oppo_alertdialog_content_background:I = 0xc08001d
 
 .field public static final oppo_alertdialog_content_full_background:I = 0xc08001e
@@ -216,6 +232,34 @@
 .field public static final oppo_ic_notification_ime_default:I = 0xc08045e
 
 .field public static final oppo_ic_text_dot:I = 0xc08047e
+
+.field public static final oppo_ic_volume_alarm:I = 0xc0804be
+
+.field public static final oppo_ic_volume_alarm_mute:I = 0xc0804bf
+
+.field public static final oppo_ic_volume_bt:I = 0xc0804bc
+
+.field public static final oppo_ic_volume_bt_mute:I = 0xc0804bd
+
+.field public static final oppo_ic_volume_media:I = 0xc0804b4
+
+.field public static final oppo_ic_volume_media_mute:I = 0xc0804b5
+
+.field public static final oppo_ic_volume_notification:I = 0xc0804c0
+
+.field public static final oppo_ic_volume_notification_mute:I = 0xc0804c1
+
+.field public static final oppo_ic_volume_phone:I = 0xc0804b6
+
+.field public static final oppo_ic_volume_ring_notif:I = 0xc0804b7
+
+.field public static final oppo_ic_volume_ring_notif_mute:I = 0xc0804b8
+
+.field public static final oppo_ic_volume_ring_notif_vibrate:I = 0xc0804b9
+
+.field public static final oppo_ic_volume_vol:I = 0xc0804ba
+
+.field public static final oppo_ic_volume_vol_mute:I = 0xc0804bb
 
 .field public static final oppo_indicator_code_lock_drag_direction_green_up:I = 0xc080426
 
@@ -361,23 +405,39 @@
 
 .field public static final oppo_searchview_edit_background:I = 0xc080021
 
-.field public static final oppo_searchview_voice:I = 0xc0804a8
-
 .field public static final oppo_seek_thumb:I = 0xc080467
 
 .field public static final oppo_shortcutbutton_separator:I = 0xc08042d
 
-.field public static final oppo_smartwake_next:I = 0xc0804a5
+.field public static final oppo_smartwake_double_vertical:I = 0xc0804a6
 
-.field public static final oppo_smartwake_o:I = 0xc0804a1
+.field public static final oppo_smartwake_dtu_vertical:I = 0xc0804ac
 
-.field public static final oppo_smartwake_pause:I = 0xc0804a6
+.field public static final oppo_smartwake_left_arrow:I = 0xc0804a4
 
-.field public static final oppo_smartwake_pre:I = 0xc0804a4
+.field public static final oppo_smartwake_ltr_vertical:I = 0xc0804a9
 
-.field public static final oppo_smartwake_triangle:I = 0xc0804a3
+.field public static final oppo_smartwake_m:I = 0xc0804ad
 
-.field public static final oppo_smartwake_v:I = 0xc0804a2
+.field public static final oppo_smartwake_o:I = 0xc0804a3
+
+.field public static final oppo_smartwake_o_opposite:I = 0xc0804c3
+
+.field public static final oppo_smartwake_opposite_v:I = 0xc0804a2
+
+.field public static final oppo_smartwake_right_arrow:I = 0xc0804a5
+
+.field public static final oppo_smartwake_rtl_vertical:I = 0xc0804aa
+
+.field public static final oppo_smartwake_s:I = 0xc0804af
+
+.field public static final oppo_smartwake_utd_vertical:I = 0xc0804ab
+
+.field public static final oppo_smartwake_v:I = 0xc0804a1
+
+.field public static final oppo_smartwake_w:I = 0xc0804ae
+
+.field public static final oppo_smartwake_z:I = 0xc0804b0
 
 .field public static final oppo_stat_notify_wifi_in_range:I = 0xc080465
 
@@ -423,7 +483,15 @@
 
 .field public static final oppo_touchsearch_touch_bg:I = 0xc08040d
 
+.field public static final oppo_volume_panel_bg:I = 0xc0804c2
+
 .field public static final oppo_volume_panel_expand_settings:I = 0xc0804a7
+
+.field public static final oppo_volume_progress_bg:I = 0xc0804b3
+
+.field public static final oppo_volume_progress_left:I = 0xc0804b1
+
+.field public static final oppo_volume_progress_right:I = 0xc0804b2
 
 
 # direct methods
@@ -431,7 +499,7 @@
     .locals 0
 
     .prologue
-    .line 1457
+    .line 1499
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

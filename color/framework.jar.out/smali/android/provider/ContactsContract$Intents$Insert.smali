@@ -67,8 +67,6 @@
 
 .field public static final SECONDARY_PHONE_TYPE:Ljava/lang/String; = "secondary_phone_type"
 
-.field public static final SIP_ADDRESS:Ljava/lang/String; = "sip_address"
-
 .field public static final TERTIARY_EMAIL:Ljava/lang/String; = "tertiary_email"
 
 .field public static final TERTIARY_EMAIL_TYPE:Ljava/lang/String; = "tertiary_email_type"
@@ -83,7 +81,7 @@
     .locals 0
 
     .prologue
-    .line 8352
+    .line 8111
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

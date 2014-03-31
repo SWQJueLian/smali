@@ -16,10 +16,6 @@
 
 .field public static final BNEP:Landroid/os/ParcelUuid;
 
-.field public static final BipResponder:Landroid/os/ParcelUuid;
-
-.field public static final BppReceiver:Landroid/os/ParcelUuid;
-
 .field public static final HSP:Landroid/os/ParcelUuid;
 
 .field public static final HSP_AG:Landroid/os/ParcelUuid;
@@ -32,15 +28,11 @@
 
 .field public static final NAP:Landroid/os/ParcelUuid;
 
-.field public static final ObexFileTransfer:Landroid/os/ParcelUuid;
-
 .field public static final ObexObjectPush:Landroid/os/ParcelUuid;
 
 .field public static final PANU:Landroid/os/ParcelUuid;
 
 .field public static final PBAP_PSE:Landroid/os/ParcelUuid;
-
-.field public static final Proximity:Landroid/os/ParcelUuid;
 
 .field public static final RESERVED_UUIDS:[Landroid/os/ParcelUuid;
 
@@ -186,42 +178,6 @@
     sput-object v0, Landroid/bluetooth/BluetoothUuid;->PBAP_PSE:Landroid/os/ParcelUuid;
 
     .line 68
-    const-string v0, "00001118-0000-1000-8000-00805F9B34FB"
-
-    invoke-static {v0}, Landroid/os/ParcelUuid;->fromString(Ljava/lang/String;)Landroid/os/ParcelUuid;
-
-    move-result-object v0
-
-    sput-object v0, Landroid/bluetooth/BluetoothUuid;->BppReceiver:Landroid/os/ParcelUuid;
-
-    .line 70
-    const-string v0, "0000111B-0000-1000-8000-00805F9B34FB"
-
-    invoke-static {v0}, Landroid/os/ParcelUuid;->fromString(Ljava/lang/String;)Landroid/os/ParcelUuid;
-
-    move-result-object v0
-
-    sput-object v0, Landroid/bluetooth/BluetoothUuid;->BipResponder:Landroid/os/ParcelUuid;
-
-    .line 72
-    const-string v0, "00001803-0000-1000-8000-00805F9B34FB"
-
-    invoke-static {v0}, Landroid/os/ParcelUuid;->fromString(Ljava/lang/String;)Landroid/os/ParcelUuid;
-
-    move-result-object v0
-
-    sput-object v0, Landroid/bluetooth/BluetoothUuid;->Proximity:Landroid/os/ParcelUuid;
-
-    .line 74
-    const-string v0, "00001106-0000-1000-8000-00805F9B34FB"
-
-    invoke-static {v0}, Landroid/os/ParcelUuid;->fromString(Ljava/lang/String;)Landroid/os/ParcelUuid;
-
-    move-result-object v0
-
-    sput-object v0, Landroid/bluetooth/BluetoothUuid;->ObexFileTransfer:Landroid/os/ParcelUuid;
-
-    .line 78
     const/16 v0, 0xa
 
     new-array v0, v0, [Landroid/os/ParcelUuid;
@@ -311,21 +267,21 @@
 
     const/4 v5, 0x1
 
-    .line 178
+    .line 168
     if-nez p0, :cond_1
 
     if-nez p1, :cond_1
 
-    .line 190
+    .line 180
     :cond_0
     :goto_0
     return v5
 
-    .line 180
+    .line 170
     :cond_1
     if-nez p0, :cond_2
 
-    .line 181
+    .line 171
     array-length v7, p1
 
     if-eqz v7, :cond_0
@@ -334,11 +290,11 @@
 
     goto :goto_0
 
-    .line 184
+    .line 174
     :cond_2
     if-eqz p1, :cond_0
 
-    .line 186
+    .line 176
     new-instance v4, Ljava/util/HashSet;
 
     invoke-static {p0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -347,7 +303,7 @@
 
     invoke-direct {v4, v7}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 187
+    .line 177
     .local v4, uuidSet:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/os/ParcelUuid;>;"
     move-object v0, p1
 
@@ -363,7 +319,7 @@
 
     aget-object v3, v0, v1
 
-    .line 188
+    .line 178
     .local v3, uuid:Landroid/os/ParcelUuid;
     invoke-virtual {v4, v3}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
@@ -375,7 +331,7 @@
 
     goto :goto_0
 
-    .line 187
+    .line 177
     :cond_3
     add-int/lit8 v1, v1, 0x1
 
@@ -392,21 +348,21 @@
 
     const/4 v5, 0x1
 
-    .line 152
+    .line 142
     if-nez p0, :cond_1
 
     if-nez p1, :cond_1
 
-    .line 166
+    .line 156
     :cond_0
     :goto_0
     return v5
 
-    .line 154
+    .line 144
     :cond_1
     if-nez p0, :cond_2
 
-    .line 155
+    .line 145
     array-length v7, p1
 
     if-eqz v7, :cond_0
@@ -415,11 +371,11 @@
 
     goto :goto_0
 
-    .line 158
+    .line 148
     :cond_2
     if-nez p1, :cond_3
 
-    .line 159
+    .line 149
     array-length v7, p0
 
     if-eqz v7, :cond_0
@@ -428,7 +384,7 @@
 
     goto :goto_0
 
-    .line 162
+    .line 152
     :cond_3
     new-instance v4, Ljava/util/HashSet;
 
@@ -438,7 +394,7 @@
 
     invoke-direct {v4, v7}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 163
+    .line 153
     .local v4, uuidSet:Ljava/util/HashSet;,"Ljava/util/HashSet<Landroid/os/ParcelUuid;>;"
     move-object v0, p1
 
@@ -454,7 +410,7 @@
 
     aget-object v3, v0, v1
 
-    .line 164
+    .line 154
     .local v3, uuid:Landroid/os/ParcelUuid;
     invoke-virtual {v4, v3}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
@@ -462,7 +418,7 @@
 
     if-nez v7, :cond_0
 
-    .line 163
+    .line 153
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
@@ -471,7 +427,7 @@
     :cond_4
     move v5, v6
 
-    .line 166
+    .line 156
     goto :goto_0
 .end method
 
@@ -480,12 +436,12 @@
     .parameter "parcelUuid"
 
     .prologue
-    .line 201
+    .line 191
     invoke-virtual {p0}, Landroid/os/ParcelUuid;->getUuid()Ljava/util/UUID;
 
     move-result-object v0
 
-    .line 202
+    .line 192
     .local v0, uuid:Ljava/util/UUID;
     invoke-virtual {v0}, Ljava/util/UUID;->getMostSignificantBits()J
 
@@ -499,7 +455,7 @@
 
     ushr-long v1, v3, v5
 
-    .line 203
+    .line 193
     .local v1, value:J
     long-to-int v3, v1
 
@@ -511,7 +467,7 @@
     .parameter "uuid"
 
     .prologue
-    .line 91
+    .line 81
     sget-object v0, Landroid/bluetooth/BluetoothUuid;->AdvAudioDist:Landroid/os/ParcelUuid;
 
     invoke-virtual {p0, v0}, Landroid/os/ParcelUuid;->equals(Ljava/lang/Object;)Z
@@ -526,7 +482,7 @@
     .parameter "uuid"
 
     .prologue
-    .line 87
+    .line 77
     sget-object v0, Landroid/bluetooth/BluetoothUuid;->AudioSink:Landroid/os/ParcelUuid;
 
     invoke-virtual {p0, v0}, Landroid/os/ParcelUuid;->equals(Ljava/lang/Object;)Z
@@ -541,7 +497,7 @@
     .parameter "uuid"
 
     .prologue
-    .line 83
+    .line 73
     sget-object v0, Landroid/bluetooth/BluetoothUuid;->AudioSource:Landroid/os/ParcelUuid;
 
     invoke-virtual {p0, v0}, Landroid/os/ParcelUuid;->equals(Ljava/lang/Object;)Z
@@ -556,7 +512,7 @@
     .parameter "uuid"
 
     .prologue
-    .line 103
+    .line 93
     sget-object v0, Landroid/bluetooth/BluetoothUuid;->AvrcpController:Landroid/os/ParcelUuid;
 
     invoke-virtual {p0, v0}, Landroid/os/ParcelUuid;->equals(Ljava/lang/Object;)Z
@@ -571,7 +527,7 @@
     .parameter "uuid"
 
     .prologue
-    .line 107
+    .line 97
     sget-object v0, Landroid/bluetooth/BluetoothUuid;->AvrcpTarget:Landroid/os/ParcelUuid;
 
     invoke-virtual {p0, v0}, Landroid/os/ParcelUuid;->equals(Ljava/lang/Object;)Z
@@ -586,7 +542,7 @@
     .parameter "uuid"
 
     .prologue
-    .line 123
+    .line 113
     sget-object v0, Landroid/bluetooth/BluetoothUuid;->BNEP:Landroid/os/ParcelUuid;
 
     invoke-virtual {p0, v0}, Landroid/os/ParcelUuid;->equals(Ljava/lang/Object;)Z
@@ -601,7 +557,7 @@
     .parameter "uuid"
 
     .prologue
-    .line 95
+    .line 85
     sget-object v0, Landroid/bluetooth/BluetoothUuid;->Handsfree:Landroid/os/ParcelUuid;
 
     invoke-virtual {p0, v0}, Landroid/os/ParcelUuid;->equals(Ljava/lang/Object;)Z
@@ -616,7 +572,7 @@
     .parameter "uuid"
 
     .prologue
-    .line 99
+    .line 89
     sget-object v0, Landroid/bluetooth/BluetoothUuid;->HSP:Landroid/os/ParcelUuid;
 
     invoke-virtual {p0, v0}, Landroid/os/ParcelUuid;->equals(Ljava/lang/Object;)Z
@@ -631,7 +587,7 @@
     .parameter "uuid"
 
     .prologue
-    .line 111
+    .line 101
     sget-object v0, Landroid/bluetooth/BluetoothUuid;->Hid:Landroid/os/ParcelUuid;
 
     invoke-virtual {p0, v0}, Landroid/os/ParcelUuid;->equals(Ljava/lang/Object;)Z
@@ -646,7 +602,7 @@
     .parameter "uuid"
 
     .prologue
-    .line 119
+    .line 109
     sget-object v0, Landroid/bluetooth/BluetoothUuid;->NAP:Landroid/os/ParcelUuid;
 
     invoke-virtual {p0, v0}, Landroid/os/ParcelUuid;->equals(Ljava/lang/Object;)Z
@@ -661,7 +617,7 @@
     .parameter "uuid"
 
     .prologue
-    .line 115
+    .line 105
     sget-object v0, Landroid/bluetooth/BluetoothUuid;->PANU:Landroid/os/ParcelUuid;
 
     invoke-virtual {p0, v0}, Landroid/os/ParcelUuid;->equals(Ljava/lang/Object;)Z
@@ -681,7 +637,7 @@
 
     const/4 v4, 0x0
 
-    .line 132
+    .line 122
     if-eqz p0, :cond_0
 
     array-length v6, p0
@@ -693,16 +649,16 @@
 
     move v4, v5
 
-    .line 141
+    .line 131
     :cond_1
     :goto_0
     return v4
 
-    .line 135
+    .line 125
     :cond_2
     if-eqz p0, :cond_1
 
-    .line 138
+    .line 128
     move-object v0, p0
 
     .local v0, arr$:[Landroid/os/ParcelUuid;
@@ -717,7 +673,7 @@
 
     aget-object v1, v0, v2
 
-    .line 139
+    .line 129
     .local v1, element:Landroid/os/ParcelUuid;
     invoke-virtual {v1, p1}, Landroid/os/ParcelUuid;->equals(Ljava/lang/Object;)Z
 
@@ -729,7 +685,7 @@
 
     goto :goto_0
 
-    .line 138
+    .line 128
     :cond_3
     add-int/lit8 v2, v2, 0x1
 

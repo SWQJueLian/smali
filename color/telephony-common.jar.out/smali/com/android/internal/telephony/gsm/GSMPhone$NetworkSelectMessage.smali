@@ -23,13 +23,23 @@
 
 
 # direct methods
-.method protected constructor <init>()V
+.method private constructor <init>()V
     .locals 0
 
     .prologue
-    .line 1227
+    .line 993
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1229
+    return-void
+.end method
+
+.method synthetic constructor <init>(Lcom/android/internal/telephony/gsm/GSMPhone$1;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 993
+    invoke-direct {p0}, Lcom/android/internal/telephony/gsm/GSMPhone$NetworkSelectMessage;-><init>()V
+
     return-void
 .end method

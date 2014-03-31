@@ -144,7 +144,7 @@
 
     sput v0, Landroid/text/Layout;->MAX_EMOJI:I
 
-    .line 1876
+    .line 1867
     :goto_0
     new-instance v0, Landroid/graphics/Rect;
 
@@ -152,7 +152,7 @@
 
     sput-object v0, Landroid/text/Layout;->sTempRect:Landroid/graphics/Rect;
 
-    .line 1906
+    .line 1897
     new-instance v0, Landroid/text/Layout$Directions;
 
     new-array v1, v4, [I
@@ -163,7 +163,7 @@
 
     sput-object v0, Landroid/text/Layout;->DIRS_ALL_LEFT_TO_RIGHT:Landroid/text/Layout$Directions;
 
-    .line 1908
+    .line 1899
     new-instance v0, Landroid/text/Layout$Directions;
 
     new-array v1, v4, [I
@@ -174,7 +174,7 @@
 
     sput-object v0, Landroid/text/Layout;->DIRS_ALL_RIGHT_TO_LEFT:Landroid/text/Layout$Directions;
 
-    .line 1911
+    .line 1902
     new-array v0, v3, [C
 
     const/16 v1, 0x2026
@@ -183,7 +183,7 @@
 
     sput-object v0, Landroid/text/Layout;->ELLIPSIS_NORMAL:[C
 
-    .line 1912
+    .line 1903
     new-array v0, v3, [C
 
     const/16 v1, 0x2025
@@ -203,7 +203,7 @@
 
     goto :goto_0
 
-    .line 1906
+    .line 1897
     nop
 
     :array_0
@@ -212,7 +212,7 @@
         0xfft 0xfft 0xfft 0x3t
     .end array-data
 
-    .line 1908
+    .line 1899
     :array_1
     .array-data 0x4
         0x0t 0x0t 0x0t 0x0t
@@ -269,7 +269,7 @@
     .line 135
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1873
+    .line 1864
     sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
     iput-object v0, p0, Landroid/text/Layout;->mAlignment:Landroid/text/Layout$Alignment;
@@ -6384,16 +6384,6 @@
     add-int/lit8 v1, v1, 0x2
 
     goto :goto_1
-.end method
-
-.method public isSingleLineRtoL()Z
-    .locals 1
-
-    .prologue
-    .line 1866
-    const/4 v0, 0x0
-
-    return v0
 .end method
 
 .method protected final isSpanned()Z

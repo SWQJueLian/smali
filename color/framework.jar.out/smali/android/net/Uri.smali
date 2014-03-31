@@ -1006,7 +1006,7 @@
     .line 1665
     new-instance v8, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v9, "key"
+    const-string v9, "key"
 
     invoke-direct {v8, v9}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -1325,7 +1325,7 @@
     .line 1602
     new-instance v8, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v9, "key"
+    const-string v9, "key"
 
     invoke-direct {v8, v9}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -1687,7 +1687,7 @@
 
     if-nez v5, :cond_0
 
-    const-string/jumbo v5, "mailto"
+    const-string v5, "mailto"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 

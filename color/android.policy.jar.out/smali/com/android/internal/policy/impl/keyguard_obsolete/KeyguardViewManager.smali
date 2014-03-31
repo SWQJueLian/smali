@@ -627,7 +627,7 @@
     .line 160
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard_obsolete/KeyguardViewManager;->mKeyguardView:Lcom/android/internal/policy/impl/keyguard_obsolete/KeyguardViewBase;
 
-    const v2, 0x1020243
+    const v2, 0x1020241
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/keyguard_obsolete/KeyguardViewBase;->setId(I)V
 

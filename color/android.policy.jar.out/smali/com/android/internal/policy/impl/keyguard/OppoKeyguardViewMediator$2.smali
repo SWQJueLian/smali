@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 663
+    .line 509
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,14 +42,14 @@
     .parameter "authenticated"
 
     .prologue
-    .line 677
+    .line 523
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, p1, v1}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->keyguardDone(ZZ)V
 
-    .line 678
+    .line 524
     return-void
 .end method
 
@@ -57,11 +57,11 @@
     .locals 2
 
     .prologue
-    .line 681
+    .line 527
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1500(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1400(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -69,7 +69,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
 
-    .line 682
+    .line 528
     return-void
 .end method
 
@@ -77,15 +77,15 @@
     .locals 2
 
     .prologue
-    .line 696
+    .line 542
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     const/4 v1, 0x1
 
     #setter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mKeyguardDonePending:Z
-    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$2002(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
+    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1602(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;Z)Z
 
-    .line 697
+    .line 543
     return-void
 .end method
 
@@ -93,17 +93,17 @@
     .locals 1
 
     .prologue
-    .line 691
+    .line 537
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mKeyguardViewManager:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1900(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1500(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->updateUserActivityTimeout()V
 
-    .line 692
+    .line 538
     return-void
 .end method
 
@@ -112,17 +112,17 @@
     .parameter "needsInput"
 
     .prologue
-    .line 686
+    .line 532
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->mKeyguardViewManager:Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1900(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->access$1500(Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;)Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->setNeedsInput(Z)V
 
-    .line 687
+    .line 533
     return-void
 .end method
 
@@ -130,12 +130,12 @@
     .locals 1
 
     .prologue
-    .line 669
+    .line 515
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->userActivity()V
 
-    .line 670
+    .line 516
     return-void
 .end method
 
@@ -144,12 +144,12 @@
     .parameter "holdMs"
 
     .prologue
-    .line 673
+    .line 519
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->userActivity(J)V
 
-    .line 674
+    .line 520
     return-void
 .end method
 
@@ -157,11 +157,11 @@
     .locals 1
 
     .prologue
-    .line 665
+    .line 511
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator$2;->this$0:Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/OppoKeyguardViewMediator;->wakeUp()V
 
-    .line 666
+    .line 512
     return-void
 .end method

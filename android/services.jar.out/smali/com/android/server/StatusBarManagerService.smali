@@ -1014,35 +1014,6 @@
     return v2
 .end method
 
-.method public hideSIMIndicator()V
-    .locals 1
-
-    .prologue
-    .line 662
-    iget-object v0, p0, Lcom/android/server/StatusBarManagerService;->mBar:Lcom/android/internal/statusbar/IStatusBar;
-
-    if-eqz v0, :cond_0
-
-    .line 664
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/StatusBarManagerService;->mBar:Lcom/android/internal/statusbar/IStatusBar;
-
-    invoke-interface {v0}, Lcom/android/internal/statusbar/IStatusBar;->hideSIMIndicator()V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 668
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 665
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
-.end method
-
 .method manageDisableListLocked(IILandroid/os/IBinder;Ljava/lang/String;)V
     .locals 7
     .parameter "userId"
@@ -2206,66 +2177,6 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
-.end method
-
-.method public showApplicationGuide(Ljava/lang/String;)V
-    .locals 1
-    .parameter "appName"
-
-    .prologue
-    .line 674
-    iget-object v0, p0, Lcom/android/server/StatusBarManagerService;->mBar:Lcom/android/internal/statusbar/IStatusBar;
-
-    if-eqz v0, :cond_0
-
-    .line 676
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/StatusBarManagerService;->mBar:Lcom/android/internal/statusbar/IStatusBar;
-
-    invoke-interface {v0, p1}, Lcom/android/internal/statusbar/IStatusBar;->showApplicationGuide(Ljava/lang/String;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 680
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 677
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
-.end method
-
-.method public showSIMIndicator(Ljava/lang/String;)V
-    .locals 1
-    .parameter "businessType"
-
-    .prologue
-    .line 653
-    iget-object v0, p0, Lcom/android/server/StatusBarManagerService;->mBar:Lcom/android/internal/statusbar/IStatusBar;
-
-    if-eqz v0, :cond_0
-
-    .line 655
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/StatusBarManagerService;->mBar:Lcom/android/internal/statusbar/IStatusBar;
-
-    invoke-interface {v0, p1}, Lcom/android/internal/statusbar/IStatusBar;->showSIMIndicator(Ljava/lang/String;)V
-    :try_end_0
-    .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 659
-    :cond_0
-    :goto_0
-    return-void
-
-    .line 656
-    :catch_0
-    move-exception v0
-
-    goto :goto_0
 .end method
 
 .method public toggleRecentApps()V

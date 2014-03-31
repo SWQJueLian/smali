@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 514
+    .line 473
     iput-object p1, p0, Lcom/android/server/location/GpsLocationProvider$3;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 8
 
     .prologue
-    .line 517
+    .line 476
     iget-object v1, p0, Lcom/android/server/location/GpsLocationProvider$3;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     #getter for: Lcom/android/server/location/GpsLocationProvider;->mContext:Landroid/content/Context;
@@ -57,7 +57,7 @@
 
     check-cast v0, Landroid/location/LocationManager;
 
-    .line 519
+    .line 478
     .local v0, locManager:Landroid/location/LocationManager;
     const-string v1, "passive"
 
@@ -86,6 +86,6 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/location/LocationManager;->requestLocationUpdates(Ljava/lang/String;JFLandroid/location/LocationListener;Landroid/os/Looper;)V
 
-    .line 521
+    .line 480
     return-void
 .end method

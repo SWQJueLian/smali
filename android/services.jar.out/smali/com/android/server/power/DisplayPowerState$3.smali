@@ -1,6 +1,9 @@
-.class final Lcom/android/server/power/DisplayPowerState$3;
-.super Landroid/util/IntProperty;
+.class Lcom/android/server/power/DisplayPowerState$3;
+.super Ljava/lang/Object;
 .source "DisplayPowerState.java"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -9,91 +12,111 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroid/util/IntProperty",
-        "<",
-        "Lcom/android/server/power/DisplayPowerState;",
-        ">;"
-    }
-.end annotation
+
+# instance fields
+.field final synthetic this$0:Lcom/android/server/power/DisplayPowerState;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;)V
+.method constructor <init>(Lcom/android/server/power/DisplayPowerState;)V
     .locals 0
-    .parameter "x0"
+    .parameter
 
     .prologue
-    .line 151
-    invoke-direct {p0, p1}, Landroid/util/IntProperty;-><init>(Ljava/lang/String;)V
+    .line 300
+    iput-object p1, p0, Lcom/android/server/power/DisplayPowerState$3;->this$0:Lcom/android/server/power/DisplayPowerState;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public get(Lcom/android/server/power/DisplayPowerState;)Ljava/lang/Integer;
-    .locals 1
-    .parameter "object"
+.method public run()V
+    .locals 3
 
     .prologue
-    .line 159
-    invoke-virtual {p1}, Lcom/android/server/power/DisplayPowerState;->getScreenBrightness()I
+    const/4 v0, 0x0
+
+    .line 303
+    iget-object v1, p0, Lcom/android/server/power/DisplayPowerState$3;->this$0:Lcom/android/server/power/DisplayPowerState;
+
+    #setter for: Lcom/android/server/power/DisplayPowerState;->mScreenUpdatePending:Z
+    invoke-static {v1, v0}, Lcom/android/server/power/DisplayPowerState;->access$102(Lcom/android/server/power/DisplayPowerState;Z)Z
+
+    .line 305
+    iget-object v1, p0, Lcom/android/server/power/DisplayPowerState$3;->this$0:Lcom/android/server/power/DisplayPowerState;
+
+    #getter for: Lcom/android/server/power/DisplayPowerState;->mScreenOn:Z
+    invoke-static {v1}, Lcom/android/server/power/DisplayPowerState;->access$200(Lcom/android/server/power/DisplayPowerState;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/power/DisplayPowerState$3;->this$0:Lcom/android/server/power/DisplayPowerState;
+
+    #getter for: Lcom/android/server/power/DisplayPowerState;->mElectronBeamLevel:F
+    invoke-static {v1}, Lcom/android/server/power/DisplayPowerState;->access$300(Lcom/android/server/power/DisplayPowerState;)F
+
+    move-result v1
+
+    const/4 v2, 0x0
+
+    cmpl-float v1, v1, v2
+
+    if-lez v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/power/DisplayPowerState$3;->this$0:Lcom/android/server/power/DisplayPowerState;
+
+    #getter for: Lcom/android/server/power/DisplayPowerState;->mScreenBrightness:I
+    invoke-static {v1}, Lcom/android/server/power/DisplayPowerState;->access$400(Lcom/android/server/power/DisplayPowerState;)I
 
     move-result v0
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 306
+    .local v0, brightness:I
+    :cond_0
+    iget-object v1, p0, Lcom/android/server/power/DisplayPowerState$3;->this$0:Lcom/android/server/power/DisplayPowerState;
 
-    move-result-object v0
+    #getter for: Lcom/android/server/power/DisplayPowerState;->mPhotonicModulator:Lcom/android/server/power/DisplayPowerState$PhotonicModulator;
+    invoke-static {v1}, Lcom/android/server/power/DisplayPowerState;->access$500(Lcom/android/server/power/DisplayPowerState;)Lcom/android/server/power/DisplayPowerState$PhotonicModulator;
 
-    return-object v0
-.end method
+    move-result-object v1
 
-.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-    .parameter "x0"
+    iget-object v2, p0, Lcom/android/server/power/DisplayPowerState$3;->this$0:Lcom/android/server/power/DisplayPowerState;
 
-    .prologue
-    .line 151
-    check-cast p1, Lcom/android/server/power/DisplayPowerState;
+    #getter for: Lcom/android/server/power/DisplayPowerState;->mScreenOn:Z
+    invoke-static {v2}, Lcom/android/server/power/DisplayPowerState;->access$200(Lcom/android/server/power/DisplayPowerState;)Z
 
-    .end local p1
-    invoke-virtual {p0, p1}, Lcom/android/server/power/DisplayPowerState$3;->get(Lcom/android/server/power/DisplayPowerState;)Ljava/lang/Integer;
+    move-result v2
 
-    move-result-object v0
+    invoke-virtual {v1, v2, v0}, Lcom/android/server/power/DisplayPowerState$PhotonicModulator;->setState(ZI)Z
 
-    return-object v0
-.end method
+    move-result v1
 
-.method public setValue(Lcom/android/server/power/DisplayPowerState;I)V
-    .locals 0
-    .parameter "object"
-    .parameter "value"
+    if-eqz v1, :cond_1
 
-    .prologue
-    .line 154
-    invoke-virtual {p1, p2}, Lcom/android/server/power/DisplayPowerState;->setScreenBrightness(I)V
+    .line 307
+    iget-object v1, p0, Lcom/android/server/power/DisplayPowerState$3;->this$0:Lcom/android/server/power/DisplayPowerState;
 
-    .line 155
-    return-void
-.end method
+    const/4 v2, 0x1
 
-.method public bridge synthetic setValue(Ljava/lang/Object;I)V
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
+    #setter for: Lcom/android/server/power/DisplayPowerState;->mScreenReady:Z
+    invoke-static {v1, v2}, Lcom/android/server/power/DisplayPowerState;->access$602(Lcom/android/server/power/DisplayPowerState;Z)Z
 
-    .prologue
-    .line 151
-    check-cast p1, Lcom/android/server/power/DisplayPowerState;
+    .line 308
+    iget-object v1, p0, Lcom/android/server/power/DisplayPowerState$3;->this$0:Lcom/android/server/power/DisplayPowerState;
 
-    .end local p1
-    invoke-virtual {p0, p1, p2}, Lcom/android/server/power/DisplayPowerState$3;->setValue(Lcom/android/server/power/DisplayPowerState;I)V
+    #calls: Lcom/android/server/power/DisplayPowerState;->invokeCleanListenerIfNeeded()V
+    invoke-static {v1}, Lcom/android/server/power/DisplayPowerState;->access$700(Lcom/android/server/power/DisplayPowerState;)V
 
+    .line 310
+    :cond_1
     return-void
 .end method

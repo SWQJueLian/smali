@@ -151,7 +151,7 @@
 
     .line 90
     :goto_0
-    const v0, 0x102089e
+    const v0, 0x10202ea
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -162,7 +162,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard_obsolete/SimUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
     .line 91
-    const v0, 0x10208a0
+    const v0, 0x10202ec
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -173,7 +173,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard_obsolete/SimUnlockScreen;->mPinText:Landroid/widget/TextView;
 
     .line 92
-    const v0, 0x10208a1
+    const v0, 0x10202ed
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +187,7 @@
     invoke-virtual {v0, p0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 95
-    const v0, 0x1020858
+    const v0, 0x10202a4
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/SimUnlockScreen;->findViewById(I)Landroid/view/View;
 

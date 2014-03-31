@@ -215,7 +215,7 @@
     :cond_0
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "match substring must be non-empty"
+    const-string v2, "match substring must be non-empty"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

@@ -10,8 +10,6 @@
 
 .field askedCompatMode:Z
 
-.field ignoreFromRecent:Z
-
 .field intent:Landroid/content/Intent;
 
 .field lastActiveTime:J
@@ -39,26 +37,21 @@
     .parameter "_intent"
 
     .prologue
-    .line 50
+    .line 43
     invoke-direct {p0}, Lcom/android/server/am/ThumbnailHolder;-><init>()V
 
-    .line 51
+    .line 44
     iput p1, p0, Lcom/android/server/am/TaskRecord;->taskId:I
 
-    .line 52
+    .line 45
     iget-object v0, p2, Landroid/content/pm/ActivityInfo;->taskAffinity:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/android/server/am/TaskRecord;->affinity:Ljava/lang/String;
 
-    .line 53
+    .line 46
     invoke-virtual {p0, p3, p2}, Lcom/android/server/am/TaskRecord;->setIntent(Landroid/content/Intent;Landroid/content/pm/ActivityInfo;)V
 
-    .line 54
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/android/server/am/TaskRecord;->ignoreFromRecent:Z
-
-    .line 55
+    .line 47
     return-void
 .end method
 
@@ -78,7 +71,7 @@
 
     const/4 v2, 0x0
 
-    .line 117
+    .line 109
     iget v0, p0, Lcom/android/server/am/TaskRecord;->numActivities:I
 
     if-nez v0, :cond_0
@@ -91,7 +84,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 118
+    .line 110
     :cond_0
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -103,7 +96,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(I)V
 
-    .line 119
+    .line 111
     const-string v0, " rootWasReset="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -112,7 +105,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Z)V
 
-    .line 120
+    .line 112
     const-string v0, " userId="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -121,13 +114,13 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(I)V
 
-    .line 122
+    .line 114
     :cond_1
     iget-object v0, p0, Lcom/android/server/am/TaskRecord;->affinity:Ljava/lang/String;
 
     if-eqz v0, :cond_2
 
-    .line 123
+    .line 115
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "affinity="
@@ -138,18 +131,18 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 125
+    .line 117
     :cond_2
     iget-object v0, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
     if-eqz v0, :cond_3
 
-    .line 126
+    .line 118
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1, v7}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 127
+    .line 119
     .local v1, sb:Ljava/lang/StringBuilder;
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -157,7 +150,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 128
+    .line 120
     iget-object v0, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
     move v4, v2
@@ -166,29 +159,29 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/Intent;->toShortString(Ljava/lang/StringBuilder;ZZZZ)V
 
-    .line 129
+    .line 121
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 130
+    .line 122
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 132
+    .line 124
     .end local v1           #sb:Ljava/lang/StringBuilder;
     :cond_3
     iget-object v0, p0, Lcom/android/server/am/TaskRecord;->affinityIntent:Landroid/content/Intent;
 
     if-eqz v0, :cond_4
 
-    .line 133
+    .line 125
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1, v7}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 134
+    .line 126
     .restart local v1       #sb:Ljava/lang/StringBuilder;
     invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -196,7 +189,7 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 135
+    .line 127
     iget-object v0, p0, Lcom/android/server/am/TaskRecord;->affinityIntent:Landroid/content/Intent;
 
     move v4, v2
@@ -205,31 +198,31 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/Intent;->toShortString(Ljava/lang/StringBuilder;ZZZZ)V
 
-    .line 136
+    .line 128
     invoke-virtual {v1, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 137
+    .line 129
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 139
+    .line 131
     .end local v1           #sb:Ljava/lang/StringBuilder;
     :cond_4
     iget-object v0, p0, Lcom/android/server/am/TaskRecord;->origActivity:Landroid/content/ComponentName;
 
     if-eqz v0, :cond_5
 
-    .line 140
+    .line 132
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "origActivity="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 141
+    .line 133
     iget-object v0, p0, Lcom/android/server/am/TaskRecord;->origActivity:Landroid/content/ComponentName;
 
     invoke-virtual {v0}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
@@ -238,20 +231,20 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 143
+    .line 135
     :cond_5
     iget-object v0, p0, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
     if-eqz v0, :cond_6
 
-    .line 144
+    .line 136
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "realActivity="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 145
+    .line 137
     iget-object v0, p0, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
     invoke-virtual {v0}, Landroid/content/ComponentName;->flattenToShortString()Ljava/lang/String;
@@ -260,13 +253,13 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 147
+    .line 139
     :cond_6
     iget-boolean v0, p0, Lcom/android/server/am/TaskRecord;->askedCompatMode:Z
 
     if-nez v0, :cond_7
 
-    .line 148
+    .line 140
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "askedCompatMode="
@@ -277,7 +270,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
 
-    .line 150
+    .line 142
     :cond_7
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
@@ -289,7 +282,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/Object;)V
 
-    .line 151
+    .line 143
     const-string v0, " lastDescription="
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
@@ -298,7 +291,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/Object;)V
 
-    .line 152
+    .line 144
     invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
     const-string v0, "lastActiveTime="
@@ -309,12 +302,12 @@
 
     invoke-virtual {p1, v2, v3}, Ljava/io/PrintWriter;->print(J)V
 
-    .line 153
+    .line 145
     const-string v0, " (inactive for "
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
 
-    .line 154
+    .line 146
     invoke-virtual {p0}, Lcom/android/server/am/TaskRecord;->getInactiveDuration()J
 
     move-result-wide v2
@@ -329,18 +322,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 155
-    invoke-virtual {p1, p2}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    const-string v0, "ignoreFromRecent="
-
-    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->print(Ljava/lang/String;)V
-
-    iget-boolean v0, p0, Lcom/android/server/am/TaskRecord;->ignoreFromRecent:Z
-
-    invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Z)V
-
-    .line 156
+    .line 147
     return-void
 .end method
 
@@ -348,7 +330,7 @@
     .locals 4
 
     .prologue
-    .line 62
+    .line 54
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
@@ -361,25 +343,25 @@
 .end method
 
 .method setIntent(Landroid/content/Intent;Landroid/content/pm/ActivityInfo;)V
-    .locals 7
+    .locals 6
     .parameter "_intent"
     .parameter "info"
 
     .prologue
     const/4 v4, 0x0
 
-    .line 66
+    .line 58
     iput-object v4, p0, Lcom/android/server/am/TaskRecord;->stringName:Ljava/lang/String;
 
-    .line 68
+    .line 60
     iget-object v3, p2, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
 
-    if-nez v3, :cond_6
+    if-nez v3, :cond_5
 
-    .line 69
+    .line 61
     if-eqz p1, :cond_1
 
-    .line 73
+    .line 65
     invoke-virtual {p1}, Landroid/content/Intent;->getSelector()Landroid/content/Intent;
 
     move-result-object v3
@@ -392,68 +374,30 @@
 
     if-eqz v3, :cond_1
 
-    .line 74
+    .line 66
     :cond_0
     new-instance v0, Landroid/content/Intent;
 
     invoke-direct {v0, p1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 75
+    .line 67
     .end local p1
     .local v0, _intent:Landroid/content/Intent;
     invoke-virtual {v0, v4}, Landroid/content/Intent;->setSelector(Landroid/content/Intent;)V
 
-    .line 76
+    .line 68
     invoke-virtual {v0, v4}, Landroid/content/Intent;->setSourceBounds(Landroid/graphics/Rect;)V
 
     move-object p1, v0
 
-    .line 79
+    .line 73
     .end local v0           #_intent:Landroid/content/Intent;
     .restart local p1
     :cond_1
-    sget-boolean v3, Lcom/android/server/am/ActivityManagerService;->DEBUG_TASKS:Z
-
-    if-eqz v3, :cond_2
-
-    const-string v3, "ActivityManager"
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "Setting Intent of "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string v6, " to "
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v3, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 81
-    :cond_2
     iput-object p1, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    .line 82
-    if-eqz p1, :cond_5
+    .line 74
+    if-eqz p1, :cond_4
 
     invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
@@ -462,14 +406,14 @@
     :goto_0
     iput-object v3, p0, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
-    .line 83
+    .line 75
     iput-object v4, p0, Lcom/android/server/am/TaskRecord;->origActivity:Landroid/content/ComponentName;
 
-    .line 104
+    .line 96
     :goto_1
     iget-object v3, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_2
 
     iget-object v3, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
@@ -481,20 +425,20 @@
 
     and-int/2addr v3, v4
 
-    if-eqz v3, :cond_3
+    if-eqz v3, :cond_2
 
-    .line 108
+    .line 100
     const/4 v3, 0x1
 
     iput-boolean v3, p0, Lcom/android/server/am/TaskRecord;->rootWasReset:Z
 
-    .line 111
-    :cond_3
+    .line 103
+    :cond_2
     iget-object v3, p2, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    if-eqz v3, :cond_4
+    if-eqz v3, :cond_3
 
-    .line 112
+    .line 104
     iget-object v3, p2, Landroid/content/pm/ActivityInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
     iget v3, v3, Landroid/content/pm/ApplicationInfo;->uid:I
@@ -505,18 +449,18 @@
 
     iput v3, p0, Lcom/android/server/am/TaskRecord;->userId:I
 
-    .line 114
-    :cond_4
+    .line 106
+    :cond_3
     return-void
 
-    :cond_5
+    :cond_4
     move-object v3, v4
 
-    .line 82
+    .line 74
     goto :goto_0
 
-    .line 85
-    :cond_6
+    .line 77
+    :cond_5
     new-instance v1, Landroid/content/ComponentName;
 
     iget-object v3, p2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
@@ -525,70 +469,32 @@
 
     invoke-direct {v1, v3, v5}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 87
+    .line 79
     .local v1, targetComponent:Landroid/content/ComponentName;
-    if-eqz p1, :cond_8
+    if-eqz p1, :cond_6
 
-    .line 88
+    .line 80
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2, p1}, Landroid/content/Intent;-><init>(Landroid/content/Intent;)V
 
-    .line 89
+    .line 81
     .local v2, targetIntent:Landroid/content/Intent;
     invoke-virtual {v2, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
-    .line 90
+    .line 82
     invoke-virtual {v2, v4}, Landroid/content/Intent;->setSelector(Landroid/content/Intent;)V
 
-    .line 91
+    .line 83
     invoke-virtual {v2, v4}, Landroid/content/Intent;->setSourceBounds(Landroid/graphics/Rect;)V
 
-    .line 92
-    sget-boolean v3, Lcom/android/server/am/ActivityManagerService;->DEBUG_TASKS:Z
-
-    if-eqz v3, :cond_7
-
-    const-string v3, "ActivityManager"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Setting Intent of "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " to target "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 94
-    :cond_7
+    .line 86
     iput-object v2, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    .line 95
+    .line 87
     iput-object v1, p0, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
-    .line 96
+    .line 88
     invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
 
     move-result-object v3
@@ -597,15 +503,15 @@
 
     goto :goto_1
 
-    .line 98
+    .line 90
     .end local v2           #targetIntent:Landroid/content/Intent;
-    :cond_8
+    :cond_6
     iput-object v4, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
-    .line 99
+    .line 91
     iput-object v1, p0, Lcom/android/server/am/TaskRecord;->realActivity:Landroid/content/ComponentName;
 
-    .line 100
+    .line 92
     new-instance v3, Landroid/content/ComponentName;
 
     iget-object v4, p2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
@@ -623,19 +529,19 @@
     .locals 2
 
     .prologue
-    .line 159
+    .line 150
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->stringName:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 160
+    .line 151
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->stringName:Ljava/lang/String;
 
-    .line 182
+    .line 173
     :goto_0
     return-object v1
 
-    .line 162
+    .line 153
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -643,13 +549,13 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 163
+    .line 154
     .local v0, sb:Ljava/lang/StringBuilder;
     const-string v1, "TaskRecord{"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 164
+    .line 155
     invoke-static {p0}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
 
     move-result v1
@@ -660,48 +566,48 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 165
+    .line 156
     const-string v1, " #"
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 166
+    .line 157
     iget v1, p0, Lcom/android/server/am/TaskRecord;->taskId:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 167
+    .line 158
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->affinity:Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
-    .line 168
+    .line 159
     const-string v1, " A "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 169
+    .line 160
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->affinity:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 179
+    .line 170
     :goto_1
     const-string v1, " U "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 180
+    .line 171
     iget v1, p0, Lcom/android/server/am/TaskRecord;->userId:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 181
+    .line 172
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 182
+    .line 173
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -710,18 +616,18 @@
 
     goto :goto_0
 
-    .line 170
+    .line 161
     :cond_1
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
     if-eqz v1, :cond_2
 
-    .line 171
+    .line 162
     const-string v1, " I "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 172
+    .line 163
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->intent:Landroid/content/Intent;
 
     invoke-virtual {v1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
@@ -736,18 +642,18 @@
 
     goto :goto_1
 
-    .line 173
+    .line 164
     :cond_2
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->affinityIntent:Landroid/content/Intent;
 
     if-eqz v1, :cond_3
 
-    .line 174
+    .line 165
     const-string v1, " aI "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 175
+    .line 166
     iget-object v1, p0, Lcom/android/server/am/TaskRecord;->affinityIntent:Landroid/content/Intent;
 
     invoke-virtual {v1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
@@ -762,7 +668,7 @@
 
     goto :goto_1
 
-    .line 177
+    .line 168
     :cond_3
     const-string v1, " ??"
 
@@ -775,13 +681,13 @@
     .locals 2
 
     .prologue
-    .line 58
+    .line 50
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lcom/android/server/am/TaskRecord;->lastActiveTime:J
 
-    .line 59
+    .line 51
     return-void
 .end method

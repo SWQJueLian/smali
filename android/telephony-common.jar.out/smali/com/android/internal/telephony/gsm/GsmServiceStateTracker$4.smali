@@ -1,5 +1,5 @@
-.class Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;
-.super Landroid/database/ContentObserver;
+.class synthetic Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;
+.super Ljava/lang/Object;
 .source "GsmServiceStateTracker.java"
 
 
@@ -9,96 +9,72 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1008
     name = null
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
+# static fields
+.field static final synthetic $SwitchMap$com$android$internal$telephony$CommandsInterface$RadioState:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;Landroid/os/Handler;)V
-    .locals 0
-    .parameter
-    .parameter "x0"
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 338
-    iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;->this$0:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
-
-    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public onChange(Z)V
-    .locals 2
-    .parameter "selfChange"
-
-    .prologue
-    .line 341
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;->this$0:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
-
-    const-string v1, "Data Connection Sim Setting changed"
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->log(Ljava/lang/String;)V
-
-    .line 342
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;->this$0:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
-
-    #getter for: Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mServiceStateExt:Lcom/mediatek/common/telephony/IServiceStateExt;
-    invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->access$200(Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;)Lcom/mediatek/common/telephony/IServiceStateExt;
+    .line 744
+    invoke-static {}, Lcom/android/internal/telephony/CommandsInterface$RadioState;->values()[Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/mediatek/common/telephony/IServiceStateExt;->needEMMRRS()Z
+    array-length v0, v0
 
-    move-result v0
+    new-array v0, v0, [I
 
-    if-eqz v0, :cond_0
+    sput-object v0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;->$SwitchMap$com$android$internal$telephony$CommandsInterface$RadioState:[I
 
-    .line 343
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;->this$0:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
+    :try_start_0
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;->$SwitchMap$com$android$internal$telephony$CommandsInterface$RadioState:[I
 
-    #getter for: Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->mSimId:I
-    invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->access$300(Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;)I
+    sget-object v1, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RADIO_UNAVAILABLE:Lcom/android/internal/telephony/CommandsInterface$RadioState;
 
-    move-result v0
-
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;->this$0:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
-
-    #calls: Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->getDataConnectionSimId()I
-    invoke-static {v1}, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->access$400(Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;)I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/CommandsInterface$RadioState;->ordinal()I
 
     move-result v1
 
-    if-ne v0, v1, :cond_1
+    const/4 v2, 0x1
 
-    .line 344
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;->this$0:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_1
 
-    const/16 v1, 0x6a
-
-    #calls: Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->getEINFO(I)V
-    invoke-static {v0, v1}, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->access$500(Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;I)V
-
-    .line 349
-    :cond_0
     :goto_0
+    :try_start_1
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;->$SwitchMap$com$android$internal$telephony$CommandsInterface$RadioState:[I
+
+    sget-object v1, Lcom/android/internal/telephony/CommandsInterface$RadioState;->RADIO_OFF:Lcom/android/internal/telephony/CommandsInterface$RadioState;
+
+    invoke-virtual {v1}, Lcom/android/internal/telephony/CommandsInterface$RadioState;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x2
+
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_0
+
+    :goto_1
     return-void
 
-    .line 346
-    :cond_1
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker$4;->this$0:Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;
+    :catch_0
+    move-exception v0
 
-    const/16 v1, 0x69
+    goto :goto_1
 
-    #calls: Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->getEINFO(I)V
-    invoke-static {v0, v1}, Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;->access$500(Lcom/android/internal/telephony/gsm/GsmServiceStateTracker;I)V
+    :catch_1
+    move-exception v0
 
     goto :goto_0
 .end method

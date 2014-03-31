@@ -25,20 +25,20 @@
     .parameter "phone"
 
     .prologue
-    .line 76
+    .line 41
     invoke-direct {p0}, Lcom/android/internal/telephony/IPhoneSubInfo$Stub;-><init>()V
 
-    .line 77
+    .line 42
     iput-object p1, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
-    .line 78
+    .line 43
     invoke-interface {p1}, Lcom/android/internal/telephony/Phone;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
-    .line 79
+    .line 44
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .locals 0
 
     .prologue
-    .line 82
+    .line 47
     return-void
 .end method
 
@@ -59,7 +59,7 @@
     .parameter "args"
 
     .prologue
-    .line 233
+    .line 193
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.DUMP"
@@ -70,7 +70,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 235
+    .line 195
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -109,17 +109,17 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 244
+    .line 204
     :goto_0
     return-void
 
-    .line 241
+    .line 201
     :cond_0
     const-string v0, "Phone Subscriber Info:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 242
+    .line 202
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -146,7 +146,7 @@
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 243
+    .line 203
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -180,13 +180,13 @@
     .locals 3
 
     .prologue
-    .line 86
+    .line 51
     :try_start_0
     invoke-super {p0}, Lcom/android/internal/telephony/IPhoneSubInfo$Stub;->finalize()V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 90
+    .line 55
     :goto_0
     const-string v1, "PHONE"
 
@@ -194,14 +194,14 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 91
+    .line 56
     return-void
 
-    .line 87
+    .line 52
     :catch_0
     move-exception v0
 
-    .line 88
+    .line 53
     .local v0, throwable:Ljava/lang/Throwable;
     const-string v1, "PHONE"
 
@@ -216,7 +216,7 @@
     .locals 4
 
     .prologue
-    .line 171
+    .line 131
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.CALL_PRIVILEGED"
@@ -225,14 +225,14 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 173
+    .line 133
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v1}, Lcom/android/internal/telephony/Phone;->getVoiceMailNumber()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 174
+    .line 134
     .local v0, number:Ljava/lang/String;
     const-string v1, "PHONE"
 
@@ -240,7 +240,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 175
+    .line 135
     return-object v0
 .end method
 
@@ -248,7 +248,7 @@
     .locals 3
 
     .prologue
-    .line 97
+    .line 62
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -257,7 +257,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 98
+    .line 63
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getDeviceId()Ljava/lang/String;
@@ -271,7 +271,7 @@
     .locals 3
 
     .prologue
-    .line 106
+    .line 71
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -280,7 +280,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 107
+    .line 72
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getDeviceSvn()Ljava/lang/String;
@@ -294,7 +294,7 @@
     .locals 3
 
     .prologue
-    .line 122
+    .line 87
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -303,7 +303,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 123
+    .line 88
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getIccSerialNumber()Ljava/lang/String;
@@ -317,7 +317,7 @@
     .locals 4
 
     .prologue
-    .line 206
+    .line 166
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.READ_PRIVILEGED_PHONE_STATE"
@@ -326,23 +326,23 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 208
+    .line 168
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v1}, Lcom/android/internal/telephony/Phone;->getIsimRecords()Lcom/android/internal/telephony/ims/IsimRecords;
 
     move-result-object v0
 
-    .line 209
+    .line 169
     .local v0, isim:Lcom/android/internal/telephony/ims/IsimRecords;
     if-eqz v0, :cond_0
 
-    .line 210
+    .line 170
     invoke-interface {v0}, Lcom/android/internal/telephony/ims/IsimRecords;->getIsimDomain()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 212
+    .line 172
     :goto_0
     return-object v1
 
@@ -356,7 +356,7 @@
     .locals 4
 
     .prologue
-    .line 191
+    .line 151
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.READ_PRIVILEGED_PHONE_STATE"
@@ -365,23 +365,23 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 193
+    .line 153
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v1}, Lcom/android/internal/telephony/Phone;->getIsimRecords()Lcom/android/internal/telephony/ims/IsimRecords;
 
     move-result-object v0
 
-    .line 194
+    .line 154
     .local v0, isim:Lcom/android/internal/telephony/ims/IsimRecords;
     if-eqz v0, :cond_0
 
-    .line 195
+    .line 155
     invoke-interface {v0}, Lcom/android/internal/telephony/ims/IsimRecords;->getIsimImpi()Ljava/lang/String;
 
     move-result-object v1
 
-    .line 197
+    .line 157
     :goto_0
     return-object v1
 
@@ -395,7 +395,7 @@
     .locals 4
 
     .prologue
-    .line 222
+    .line 182
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v2, "android.permission.READ_PRIVILEGED_PHONE_STATE"
@@ -404,23 +404,23 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 224
+    .line 184
     iget-object v1, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v1}, Lcom/android/internal/telephony/Phone;->getIsimRecords()Lcom/android/internal/telephony/ims/IsimRecords;
 
     move-result-object v0
 
-    .line 225
+    .line 185
     .local v0, isim:Lcom/android/internal/telephony/ims/IsimRecords;
     if-eqz v0, :cond_0
 
-    .line 226
+    .line 186
     invoke-interface {v0}, Lcom/android/internal/telephony/ims/IsimRecords;->getIsimImpu()[Ljava/lang/String;
 
     move-result-object v1
 
-    .line 228
+    .line 188
     :goto_0
     return-object v1
 
@@ -434,7 +434,7 @@
     .locals 3
 
     .prologue
-    .line 138
+    .line 103
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -443,7 +443,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 139
+    .line 104
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getLine1AlphaTag()Ljava/lang/String;
@@ -457,7 +457,7 @@
     .locals 3
 
     .prologue
-    .line 130
+    .line 95
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -466,7 +466,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 131
+    .line 96
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getLine1Number()Ljava/lang/String;
@@ -480,7 +480,7 @@
     .locals 3
 
     .prologue
-    .line 146
+    .line 111
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -489,7 +489,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 147
+    .line 112
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getMsisdn()Ljava/lang/String;
@@ -503,7 +503,7 @@
     .locals 3
 
     .prologue
-    .line 114
+    .line 79
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -512,7 +512,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 115
+    .line 80
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getSubscriberId()Ljava/lang/String;
@@ -526,7 +526,7 @@
     .locals 3
 
     .prologue
-    .line 182
+    .line 142
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
     const-string v1, "android.permission.READ_PHONE_STATE"
@@ -535,7 +535,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 183
+    .line 143
     iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
     invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getVoiceMailAlphaTag()Ljava/lang/String;
@@ -546,24 +546,37 @@
 .end method
 
 .method public getVoiceMailNumber()Ljava/lang/String;
-    .locals 3
+    .locals 4
 
     .prologue
-    .line 154
-    iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
+    .line 119
+    iget-object v1, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mContext:Landroid/content/Context;
 
-    const-string v1, "android.permission.READ_PHONE_STATE"
+    const-string v2, "android.permission.READ_PHONE_STATE"
 
-    const-string v2, "Requires READ_PHONE_STATE"
+    const-string v3, "Requires READ_PHONE_STATE"
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v2, v3}, Landroid/content/Context;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 161
-    iget-object v0, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
+    .line 120
+    iget-object v1, p0, Lcom/android/internal/telephony/PhoneSubInfo;->mPhone:Lcom/android/internal/telephony/Phone;
 
-    invoke-interface {v0}, Lcom/android/internal/telephony/Phone;->getVoiceMailNumber()Ljava/lang/String;
+    invoke-interface {v1}, Lcom/android/internal/telephony/Phone;->getVoiceMailNumber()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/telephony/PhoneNumberUtils;->extractNetworkPortion(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 121
+    .local v0, number:Ljava/lang/String;
+    const-string v1, "PHONE"
+
+    const-string v2, "VM: PhoneSubInfo.getVoiceMailNUmber: "
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 122
     return-object v0
 .end method

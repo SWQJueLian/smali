@@ -14,8 +14,6 @@
 
 .field public static final APPWIDGET_SERVICE:Ljava/lang/String; = "appwidget"
 
-.field public static final AUDIOPROFILE_SERVICE:Ljava/lang/String; = "audioprofile"
-
 .field public static final AUDIO_SERVICE:Ljava/lang/String; = "audio"
 
 .field public static final BACKUP_SERVICE:Ljava/lang/String; = "backup"
@@ -100,10 +98,6 @@
     .end annotation
 .end field
 
-.field public static final MTK_AGPS_SERVICE:Ljava/lang/String; = "mtk-agps"
-
-.field public static final MTK_EPO_CLIENT_SERVICE:Ljava/lang/String; = "mtk-epo-client"
-
 .field public static final NETWORKMANAGEMENT_SERVICE:Ljava/lang/String; = "network_management"
 
 .field public static final NETWORK_POLICY_SERVICE:Ljava/lang/String; = "netpolicy"
@@ -119,8 +113,6 @@
 .field public static final POWER_SERVICE:Ljava/lang/String; = "power"
 
 .field public static final SCHEDULING_POLICY_SERVICE:Ljava/lang/String; = "scheduling_policy"
-
-.field public static final SEARCH_ENGINE_SERVICE:Ljava/lang/String; = "search_engine"
 
 .field public static final SEARCH_SERVICE:Ljava/lang/String; = "search"
 
@@ -444,7 +436,7 @@
     .locals 1
 
     .prologue
-    .line 2758
+    .line 2726
     const/4 v0, 0x0
 
     return v0
@@ -773,7 +765,7 @@
     .end annotation
 
     .prologue
-    .line 2767
+    .line 2735
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v2
@@ -784,7 +776,7 @@
 
     move-result-object v1
 
-    .line 2768
+    .line 2736
     .local v1, typedArray:Landroid/content/res/TypedArray;
     const/4 v2, 0x1
 
@@ -794,10 +786,10 @@
 
     move-result v0
 
-    .line 2769
+    .line 2737
     .local v0, isOppoTheme:Z
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 2770
+    .line 2738
     return v0
 .end method

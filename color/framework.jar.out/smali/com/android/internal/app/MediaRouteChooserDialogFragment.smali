@@ -273,7 +273,7 @@
     invoke-super {p0, p1}, Landroid/app/DialogFragment;->onAttach(Landroid/app/Activity;)V
 
     .line 100
-    const-string/jumbo v0, "media_router"
+    const-string v0, "media_router"
 
     invoke-virtual {p1, v0}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -340,7 +340,7 @@
 
     .line 176
     .local v1, layout:Landroid/view/View;
-    const v3, 0x10208cf
+    const v3, 0x1020319
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -351,7 +351,7 @@
     iput-object v3, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mVolumeIcon:Landroid/widget/ImageView;
 
     .line 177
-    const v3, 0x10208d0
+    const v3, 0x102031a
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -379,7 +379,7 @@
     if-eqz v3, :cond_0
 
     .line 182
-    const v3, 0x10208d1
+    const v3, 0x102031b
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

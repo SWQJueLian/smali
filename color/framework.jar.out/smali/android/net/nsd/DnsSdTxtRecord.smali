@@ -1016,7 +1016,7 @@
     .local v1, e:Ljava/io/UnsupportedEncodingException;
     new-instance v6, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v7, "key should be US-ASCII"
+    const-string v7, "key should be US-ASCII"
 
     invoke-direct {v6, v7}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

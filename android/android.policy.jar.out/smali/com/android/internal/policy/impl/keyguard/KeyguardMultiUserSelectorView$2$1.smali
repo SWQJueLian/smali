@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 143
+    .line 139
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView$2$1;->this$1:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView$2;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .locals 4
 
     .prologue
-    .line 146
+    .line 142
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -58,7 +58,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 148
+    .line 144
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -78,15 +78,15 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 156
+    .line 152
     :goto_0
     return-void
 
-    .line 150
+    .line 146
     :catch_0
     move-exception v0
 
-    .line 151
+    .line 147
     .local v0, re:Landroid/os/RemoteException;
     const-string v1, "KeyguardMultiUserSelectorView"
 
@@ -112,7 +112,7 @@
 
     goto :goto_0
 
-    .line 154
+    .line 150
     .end local v0           #re:Landroid/os/RemoteException;
     :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView$2$1;->this$1:Lcom/android/internal/policy/impl/keyguard/KeyguardMultiUserSelectorView$2;

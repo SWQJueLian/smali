@@ -140,7 +140,7 @@
 
     .line 92
     :goto_0
-    const v0, 0x10202ec
+    const v0, 0x10202ea
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/SimPukUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -151,7 +151,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard_obsolete/SimPukUnlockScreen;->mHeaderText:Landroid/widget/TextView;
 
     .line 94
-    const v0, 0x10202f5
+    const v0, 0x10202f3
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/SimPukUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -162,7 +162,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard_obsolete/SimPukUnlockScreen;->mPukText:Landroid/widget/TextView;
 
     .line 95
-    const v0, 0x10202ee
+    const v0, 0x10202ec
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/SimPukUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -173,7 +173,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard_obsolete/SimPukUnlockScreen;->mPinText:Landroid/widget/TextView;
 
     .line 96
-    const v0, 0x10202f6
+    const v0, 0x10202f4
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/SimPukUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -182,7 +182,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard_obsolete/SimPukUnlockScreen;->mDelPukButton:Landroid/view/View;
 
     .line 97
-    const v0, 0x10202e8
+    const v0, 0x10202e6
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/SimPukUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -191,7 +191,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard_obsolete/SimPukUnlockScreen;->mDelPinButton:Landroid/view/View;
 
     .line 98
-    const v0, 0x10202a6
+    const v0, 0x10202a4
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/SimPukUnlockScreen;->findViewById(I)Landroid/view/View;
 

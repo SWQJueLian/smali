@@ -15,14 +15,6 @@
 
 
 # virtual methods
-.method public abstract allowIncomingConnect(Landroid/bluetooth/BluetoothDevice;Z)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract connect(Landroid/bluetooth/BluetoothDevice;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -31,23 +23,7 @@
     .end annotation
 .end method
 
-.method public abstract connectSinkInternal(Landroid/bluetooth/BluetoothDevice;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract disconnect(Landroid/bluetooth/BluetoothDevice;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract disconnectSinkInternal(Landroid/bluetooth/BluetoothDevice;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;
@@ -107,14 +83,6 @@
     .end annotation
 .end method
 
-.method public abstract getState()I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract isA2dpPlaying(Landroid/bluetooth/BluetoothDevice;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -123,31 +91,7 @@
     .end annotation
 .end method
 
-.method public abstract resumeSink(Landroid/bluetooth/BluetoothDevice;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setAudioPathToAudioTrack(Landroid/os/IBinder;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setPriority(Landroid/bluetooth/BluetoothDevice;I)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract suspendSink(Landroid/bluetooth/BluetoothDevice;)Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

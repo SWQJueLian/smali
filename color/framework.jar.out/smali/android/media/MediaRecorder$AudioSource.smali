@@ -19,10 +19,6 @@
 
 .field public static final DEFAULT:I = 0x0
 
-.field public static final FM:I = 0x63
-
-.field public static final MATV:I = 0x62
-
 .field public static final MIC:I = 0x1
 
 .field public static final REMOTE_SUBMIX_SOURCE:I = 0x8
@@ -48,7 +44,7 @@
     .parameter
 
     .prologue
-    .line 153
+    .line 149
     iput-object p1, p0, Landroid/media/MediaRecorder$AudioSource;->this$0:Landroid/media/MediaRecorder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V

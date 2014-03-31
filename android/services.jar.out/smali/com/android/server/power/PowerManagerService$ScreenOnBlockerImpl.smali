@@ -29,7 +29,7 @@
     .parameter
 
     .prologue
-    .line 2826
+    .line 2515
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,7 +43,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2826
+    .line 2515
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;-><init>(Lcom/android/server/power/PowerManagerService;)V
 
     return-void
@@ -52,13 +52,13 @@
 
 # virtual methods
 .method public acquire()V
-    .locals 3
+    .locals 1
 
     .prologue
-    .line 2837
+    .line 2526
     monitor-enter p0
 
-    .line 2838
+    .line 2527
     :try_start_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
@@ -66,38 +66,13 @@
 
     iput v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
-    .line 2840
-    const-string v0, "PowerManagerService"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Screen on blocked: mNestCount="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2842
+    .line 2531
     monitor-exit p0
 
-    .line 2843
+    .line 2532
     return-void
 
-    .line 2842
+    .line 2531
     :catchall_0
     move-exception v0
 
@@ -112,10 +87,10 @@
     .locals 1
 
     .prologue
-    .line 2830
+    .line 2519
     monitor-enter p0
 
-    .line 2831
+    .line 2520
     :try_start_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
@@ -133,7 +108,7 @@
 
     goto :goto_0
 
-    .line 2832
+    .line 2521
     :catchall_0
     move-exception v0
 
@@ -148,10 +123,10 @@
     .locals 3
 
     .prologue
-    .line 2847
+    .line 2536
     monitor-enter p0
 
-    .line 2848
+    .line 2537
     :try_start_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
@@ -159,12 +134,12 @@
 
     iput v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
-    .line 2849
+    .line 2538
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
     if-gez v0, :cond_0
 
-    .line 2850
+    .line 2539
     const-string v0, "PowerManagerService"
 
     const-string v1, "Screen on blocker was released without being acquired!"
@@ -175,22 +150,22 @@
 
     invoke-static {v0, v1, v2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 2852
+    .line 2541
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
-    .line 2854
+    .line 2543
     :cond_0
     iget v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
 
     if-nez v0, :cond_1
 
-    .line 2855
+    .line 2544
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mHandler:Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$3600(Lcom/android/server/power/PowerManagerService;)Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$2600(Lcom/android/server/power/PowerManagerService;)Lcom/android/server/power/PowerManagerService$PowerManagerHandler;
 
     move-result-object v0
 
@@ -198,39 +173,14 @@
 
     invoke-virtual {v0, v1}, Lcom/android/server/power/PowerManagerService$PowerManagerHandler;->sendEmptyMessage(I)Z
 
-    .line 2858
+    .line 2549
     :cond_1
-    const-string v0, "PowerManagerService"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Screen on unblocked: mNestCount="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Lcom/android/server/power/PowerManagerService$ScreenOnBlockerImpl;->mNestCount:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 2860
     monitor-exit p0
 
-    .line 2861
+    .line 2550
     return-void
 
-    .line 2860
+    .line 2549
     :catchall_0
     move-exception v0
 
@@ -245,10 +195,10 @@
     .locals 2
 
     .prologue
-    .line 2865
+    .line 2554
     monitor-enter p0
 
-    .line 2866
+    .line 2555
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -296,7 +246,7 @@
 
     goto :goto_0
 
-    .line 2867
+    .line 2556
     :catchall_0
     move-exception v0
 

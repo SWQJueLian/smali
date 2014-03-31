@@ -53,41 +53,41 @@
 
     const/4 v1, -0x1
 
-    .line 2775
+    .line 2780
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2766
+    .line 2771
     const-string v0, ""
 
     iput-object v0, p0, Landroid/provider/oppo/Telephony$SIMInfo;->mDisplayName:Ljava/lang/String;
 
-    .line 2768
+    .line 2773
     const-string v0, ""
 
     iput-object v0, p0, Landroid/provider/oppo/Telephony$SIMInfo;->mNumber:Ljava/lang/String;
 
-    .line 2769
+    .line 2774
     const/4 v0, 0x1
 
     iput v0, p0, Landroid/provider/oppo/Telephony$SIMInfo;->mDispalyNumberFormat:I
 
-    .line 2771
+    .line 2776
     iput v2, p0, Landroid/provider/oppo/Telephony$SIMInfo;->mDataRoaming:I
 
-    .line 2772
+    .line 2777
     iput v1, p0, Landroid/provider/oppo/Telephony$SIMInfo;->mSlot:I
 
-    .line 2773
+    .line 2778
     sget-object v0, Landroid/provider/oppo/Telephony;->SIMBackgroundRes:[I
 
     aget v0, v0, v2
 
     iput v0, p0, Landroid/provider/oppo/Telephony$SIMInfo;->mSimBackgroundRes:I
 
-    .line 2774
+    .line 2779
     iput v1, p0, Landroid/provider/oppo/Telephony$SIMInfo;->mWapPush:I
 
-    .line 2776
+    .line 2781
     return-void
 .end method
 
@@ -96,12 +96,12 @@
     .parameter "cursor"
 
     .prologue
-    .line 2834
+    .line 2838
     new-instance v0, Landroid/provider/oppo/Telephony$SIMInfo;
 
     invoke-direct {v0}, Landroid/provider/oppo/Telephony$SIMInfo;-><init>()V
 
-    .line 2835
+    .line 2839
     .local v0, info:Landroid/provider/oppo/Telephony$SIMInfo;
     const-string v2, "_id"
 
@@ -115,7 +115,7 @@
 
     iput-wide v2, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mSimId:J
 
-    .line 2836
+    .line 2840
     const-string v2, "icc_id"
 
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -128,7 +128,7 @@
 
     iput-object v2, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mICCId:Ljava/lang/String;
 
-    .line 2837
+    .line 2841
     const-string v2, "display_name"
 
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -141,7 +141,7 @@
 
     iput-object v2, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mDisplayName:Ljava/lang/String;
 
-    .line 2838
+    .line 2842
     const-string v2, "name_source"
 
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -154,7 +154,7 @@
 
     iput v2, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mNameSource:I
 
-    .line 2839
+    .line 2843
     const-string v2, "number"
 
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -167,7 +167,7 @@
 
     iput-object v2, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mNumber:Ljava/lang/String;
 
-    .line 2840
+    .line 2844
     const-string v2, "display_number_format"
 
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -180,7 +180,7 @@
 
     iput v2, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mDispalyNumberFormat:I
 
-    .line 2841
+    .line 2845
     const-string v2, "color"
 
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -193,7 +193,7 @@
 
     iput v2, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mColor:I
 
-    .line 2842
+    .line 2846
     const-string v2, "data_roaming"
 
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -206,7 +206,7 @@
 
     iput v2, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mDataRoaming:I
 
-    .line 2843
+    .line 2847
     const-string v2, "slot"
 
     invoke-interface {p0, v2}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -219,12 +219,12 @@
 
     iput v2, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mSlot:I
 
-    .line 2844
+    .line 2848
     sget-object v2, Landroid/provider/oppo/Telephony;->SIMBackgroundRes:[I
 
     array-length v1, v2
 
-    .line 2845
+    .line 2849
     .local v1, size:I
     iget v2, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mColor:I
 
@@ -234,7 +234,7 @@
 
     if-ge v2, v1, :cond_0
 
-    .line 2846
+    .line 2850
     sget-object v2, Landroid/provider/oppo/Telephony;->SIMBackgroundRes:[I
 
     iget v3, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mColor:I
@@ -243,7 +243,7 @@
 
     iput v2, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mSimBackgroundRes:I
 
-    .line 2848
+    .line 2852
     :cond_0
     const-string v2, "wap_push"
 
@@ -257,7 +257,7 @@
 
     iput v2, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mWapPush:I
 
-    .line 2849
+    .line 2853
     return-object v0
 .end method
 
@@ -269,12 +269,12 @@
     .prologue
     const-wide/16 v4, 0x0
 
-    .line 2785
+    .line 2790
     new-instance v6, Landroid/provider/oppo/Telephony$SIMInfo;
 
     invoke-direct {v6}, Landroid/provider/oppo/Telephony$SIMInfo;-><init>()V
 
-    .line 2786
+    .line 2791
     .local v6, info:Landroid/provider/oppo/Telephony$SIMInfo;
     const-string v0, "_id"
 
@@ -288,7 +288,7 @@
 
     iput-wide v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mSimId:J
 
-    .line 2787
+    .line 2792
     const-string v0, "icc_id"
 
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -301,20 +301,7 @@
 
     iput-object v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mICCId:Ljava/lang/String;
 
-    .line 2788
-    const-string v0, "slot"
-
-    invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
-
-    move-result v0
-
-    invoke-interface {p0, v0}, Landroid/database/Cursor;->getInt(I)I
-
-    move-result v0
-
-    iput v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mSlot:I
-
-    .line 2791
+    .line 2794
     const-string v0, "display_name"
 
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -325,7 +312,7 @@
 
     move-result-object v7
 
-    .line 2792
+    .line 2795
     .local v7, name:Ljava/lang/String;
     const-string v0, "Telephony"
 
@@ -373,7 +360,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 2793
+    .line 2796
     if-eqz v7, :cond_1
 
     const-string v0, "SIM1"
@@ -390,12 +377,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 2794
+    .line 2797
     const-string v0, "SIM2"
 
     iput-object v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mDisplayName:Ljava/lang/String;
 
-    .line 2795
+    .line 2798
     const-string v1, "SIM2"
 
     iget-wide v2, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mSimId:J
@@ -404,7 +391,7 @@
 
     invoke-static/range {v0 .. v5}, Landroid/provider/oppo/Telephony$SIMInfo;->setDisplayNameEx(Landroid/content/Context;Ljava/lang/String;JJ)I
 
-    .line 2820
+    .line 2823
     :goto_0
     const-string v0, "name_source"
 
@@ -418,7 +405,7 @@
 
     iput v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mNameSource:I
 
-    .line 2821
+    .line 2824
     const-string v0, "number"
 
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -431,7 +418,7 @@
 
     iput-object v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mNumber:Ljava/lang/String;
 
-    .line 2822
+    .line 2825
     const-string v0, "display_number_format"
 
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -444,7 +431,7 @@
 
     iput v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mDispalyNumberFormat:I
 
-    .line 2823
+    .line 2826
     const-string v0, "color"
 
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -457,7 +444,7 @@
 
     iput v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mColor:I
 
-    .line 2824
+    .line 2827
     const-string v0, "data_roaming"
 
     invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
@@ -470,12 +457,25 @@
 
     iput v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mDataRoaming:I
 
-    .line 2825
+    .line 2828
+    const-string v0, "slot"
+
+    invoke-interface {p0, v0}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    move-result v0
+
+    invoke-interface {p0, v0}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v0
+
+    iput v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mSlot:I
+
+    .line 2829
     sget-object v0, Landroid/provider/oppo/Telephony;->SIMBackgroundRes:[I
 
     array-length v8, v0
 
-    .line 2826
+    .line 2830
     .local v8, size:I
     iget v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mColor:I
 
@@ -485,7 +485,7 @@
 
     if-ge v0, v8, :cond_0
 
-    .line 2827
+    .line 2831
     sget-object v0, Landroid/provider/oppo/Telephony;->SIMBackgroundRes:[I
 
     iget v1, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mColor:I
@@ -494,7 +494,7 @@
 
     iput v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mSimBackgroundRes:I
 
-    .line 2829
+    .line 2833
     :cond_0
     const-string v0, "wap_push"
 
@@ -508,10 +508,10 @@
 
     iput v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mWapPush:I
 
-    .line 2830
+    .line 2834
     return-object v6
 
-    .line 2796
+    .line 2799
     .end local v8           #size:I
     :cond_1
     if-eqz v7, :cond_2
@@ -528,12 +528,12 @@
 
     if-nez v0, :cond_2
 
-    .line 2797
+    .line 2800
     const-string v0, "SIM1"
 
     iput-object v0, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mDisplayName:Ljava/lang/String;
 
-    .line 2798
+    .line 2801
     const-string v1, "SIM1"
 
     iget-wide v2, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mSimId:J
@@ -542,13 +542,13 @@
 
     invoke-static/range {v0 .. v5}, Landroid/provider/oppo/Telephony$SIMInfo;->setDisplayNameEx(Landroid/content/Context;Ljava/lang/String;JJ)I
 
-    goto :goto_0
+    goto/16 :goto_0
 
-    .line 2800
+    .line 2803
     :cond_2
     iput-object v7, v6, Landroid/provider/oppo/Telephony$SIMInfo;->mDisplayName:Ljava/lang/String;
 
-    goto :goto_0
+    goto/16 :goto_0
 .end method
 
 .method public static getAllSIMCount(Landroid/content/Context;)I
@@ -558,7 +558,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3126
+    .line 3130
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -575,11 +575,11 @@
 
     move-result-object v6
 
-    .line 3129
+    .line 3133
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_1
 
-    .line 3130
+    .line 3134
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
     :try_end_0
@@ -587,37 +587,37 @@
 
     move-result v0
 
-    .line 3133
+    .line 3137
     if-eqz v6, :cond_0
 
-    .line 3134
+    .line 3138
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 3137
+    .line 3141
     :cond_0
     :goto_0
     return v0
 
-    .line 3133
+    .line 3137
     :cond_1
     if-eqz v6, :cond_2
 
-    .line 3134
+    .line 3138
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 3137
+    .line 3141
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 3133
+    .line 3137
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_3
 
-    .line 3134
+    .line 3138
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
@@ -642,12 +642,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2896
+    .line 2900
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2897
+    .line 2901
     .local v7, simList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/provider/oppo/Telephony$SIMInfo;>;"
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -665,11 +665,11 @@
 
     move-result-object v6
 
-    .line 2900
+    .line 2904
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_1
 
-    .line 2901
+    .line 2905
     :goto_0
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
@@ -678,7 +678,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2908
+    .line 2912
     invoke-static {v6, p0}, Landroid/provider/oppo/Telephony$SIMInfo;->fromCursor(Landroid/database/Cursor;Landroid/content/Context;)Landroid/provider/oppo/Telephony$SIMInfo;
 
     move-result-object v0
@@ -689,26 +689,26 @@
 
     goto :goto_0
 
-    .line 2913
+    .line 2917
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_0
 
-    .line 2914
+    .line 2918
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_0
     throw v0
 
-    .line 2913
+    .line 2917
     :cond_1
     if-eqz v6, :cond_2
 
-    .line 2914
+    .line 2918
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 2917
+    .line 2921
     :cond_2
     return-object v7
 .end method
@@ -720,7 +720,7 @@
     .parameter "name"
 
     .prologue
-    .line 3406
+    .line 3410
     const/4 v2, 0x0
 
     move-object/from16 v0, p0
@@ -729,7 +729,7 @@
 
     move-result-object v10
 
-    .line 3407
+    .line 3411
     .local v10, default_name:Ljava/lang/String;
     new-instance v15, Ljava/lang/StringBuilder;
 
@@ -737,11 +737,11 @@
 
     invoke-direct {v15, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 3408
+    .line 3412
     .local v15, sb:Ljava/lang/StringBuilder;
     if-nez p3, :cond_1
 
-    .line 3409
+    .line 3413
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -762,13 +762,13 @@
 
     invoke-static {v15, v2}, Landroid/database/DatabaseUtils;->appendEscapedSQLString(Ljava/lang/StringBuilder;Ljava/lang/String;)V
 
-    .line 3413
+    .line 3417
     :goto_0
     const-string v2, " AND ("
 
     invoke-virtual {v15, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3414
+    .line 3418
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -791,12 +791,12 @@
 
     invoke-virtual {v15, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3415
+    .line 3419
     const-string v2, ")"
 
     invoke-virtual {v15, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3417
+    .line 3421
     invoke-virtual/range {p0 .. p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -831,21 +831,21 @@
 
     move-result-object v9
 
-    .line 3419
+    .line 3423
     .local v9, cursor:Landroid/database/Cursor;
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
 
-    .line 3420
+    .line 3424
     .local v8, array:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
     const/4 v13, 0x1
 
-    .line 3421
+    .line 3425
     .local v13, index:I
     if-eqz v9, :cond_3
 
-    .line 3422
+    .line 3426
     :cond_0
     :goto_1
     invoke-interface {v9}, Landroid/database/Cursor;->moveToNext()Z
@@ -854,36 +854,36 @@
 
     if-eqz v2, :cond_2
 
-    .line 3423
+    .line 3427
     const/4 v2, 0x1
 
     invoke-interface {v9, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 3425
+    .line 3429
     .local v11, display_name:Ljava/lang/String;
     if-eqz v11, :cond_0
 
-    .line 3426
+    .line 3430
     invoke-virtual {v11}, Ljava/lang/String;->length()I
 
     move-result v14
 
-    .line 3427
+    .line 3431
     .local v14, length:I
     const/4 v2, 0x2
 
     if-lt v14, v2, :cond_0
 
-    .line 3428
+    .line 3432
     add-int/lit8 v2, v14, -0x2
 
     invoke-virtual {v11, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v16
 
-    .line 3429
+    .line 3433
     .local v16, sub:Ljava/lang/String;
     invoke-static/range {v16 .. v16}, Landroid/text/TextUtils;->isDigitsOnly(Ljava/lang/CharSequence;)Z
 
@@ -891,7 +891,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 3430
+    .line 3434
     invoke-static/range {v16 .. v16}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
 
     move-result-object v2
@@ -900,7 +900,7 @@
 
     move-result-wide v17
 
-    .line 3431
+    .line 3435
     .local v17, value:J
     invoke-static/range {v17 .. v18}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -910,7 +910,7 @@
 
     goto :goto_1
 
-    .line 3411
+    .line 3415
     .end local v8           #array:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
     .end local v9           #cursor:Landroid/database/Cursor;
     .end local v11           #display_name:Ljava/lang/String;
@@ -943,14 +943,14 @@
 
     goto/16 :goto_0
 
-    .line 3436
+    .line 3440
     .restart local v8       #array:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Ljava/lang/Long;>;"
     .restart local v9       #cursor:Landroid/database/Cursor;
     .restart local v13       #index:I
     :cond_2
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
-    .line 3438
+    .line 3442
     :cond_3
     const/4 v12, 0x1
 
@@ -960,7 +960,7 @@
 
     if-gt v12, v2, :cond_5
 
-    .line 3439
+    .line 3443
     int-to-long v2, v12
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -973,16 +973,16 @@
 
     if-eqz v2, :cond_4
 
-    .line 3438
+    .line 3442
     add-int/lit8 v12, v12, 0x1
 
     goto :goto_2
 
-    .line 3442
+    .line 3446
     :cond_4
     move v13, v12
 
-    .line 3446
+    .line 3450
     :cond_5
     return v13
 .end method
@@ -993,19 +993,19 @@
     .parameter "slot"
 
     .prologue
-    .line 3073
+    .line 3077
     invoke-static {p0, p1}, Landroid/provider/oppo/Telephony$SIMInfo;->getSIMInfoBySlot(Landroid/content/Context;I)Landroid/provider/oppo/Telephony$SIMInfo;
 
     move-result-object v0
 
-    .line 3074
+    .line 3078
     .local v0, simInfo:Landroid/provider/oppo/Telephony$SIMInfo;
     if-eqz v0, :cond_0
 
-    .line 3075
+    .line 3079
     iget-wide v1, v0, Landroid/provider/oppo/Telephony$SIMInfo;->mSimId:J
 
-    .line 3076
+    .line 3080
     :goto_0
     return-wide v1
 
@@ -1022,7 +1022,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3107
+    .line 3111
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
@@ -1039,11 +1039,11 @@
 
     move-result-object v6
 
-    .line 3110
+    .line 3114
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_1
 
-    .line 3111
+    .line 3115
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->getCount()I
     :try_end_0
@@ -1051,37 +1051,37 @@
 
     move-result v0
 
-    .line 3114
+    .line 3118
     if-eqz v6, :cond_0
 
-    .line 3115
+    .line 3119
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 3118
+    .line 3122
     :cond_0
     :goto_0
     return v0
 
-    .line 3114
+    .line 3118
     :cond_1
     if-eqz v6, :cond_2
 
-    .line 3115
+    .line 3119
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 3118
+    .line 3122
     :cond_2
     const/4 v0, 0x0
 
     goto :goto_0
 
-    .line 3114
+    .line 3118
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_3
 
-    .line 3115
+    .line 3119
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
@@ -1106,12 +1106,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2858
+    .line 2862
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2866
+    .line 2870
     .local v7, simList:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/provider/oppo/Telephony$SIMInfo;>;"
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1129,11 +1129,11 @@
 
     move-result-object v6
 
-    .line 2870
+    .line 2874
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_1
 
-    .line 2871
+    .line 2875
     :goto_0
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToNext()Z
@@ -1142,7 +1142,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 2878
+    .line 2882
     invoke-static {v6, p0}, Landroid/provider/oppo/Telephony$SIMInfo;->fromCursor(Landroid/database/Cursor;Landroid/content/Context;)Landroid/provider/oppo/Telephony$SIMInfo;
 
     move-result-object v0
@@ -1153,26 +1153,26 @@
 
     goto :goto_0
 
-    .line 2883
+    .line 2887
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_0
 
-    .line 2884
+    .line 2888
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_0
     throw v0
 
-    .line 2883
+    .line 2887
     :cond_1
     if-eqz v6, :cond_2
 
-    .line 2884
+    .line 2888
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 2887
+    .line 2891
     :cond_2
     return-object v7
 .end method
@@ -1185,15 +1185,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 3020
+    .line 3024
     if-nez p1, :cond_1
 
-    .line 3041
+    .line 3045
     :cond_0
     :goto_0
     return-object v2
 
-    .line 3021
+    .line 3025
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1217,11 +1217,11 @@
 
     move-result-object v6
 
-    .line 3024
+    .line 3028
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_2
 
-    .line 3025
+    .line 3029
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -1229,37 +1229,37 @@
 
     if-eqz v0, :cond_2
 
-    .line 3032
+    .line 3036
     invoke-static {v6, p0}, Landroid/provider/oppo/Telephony$SIMInfo;->fromCursor(Landroid/database/Cursor;Landroid/content/Context;)Landroid/provider/oppo/Telephony$SIMInfo;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
-    .line 3037
+    .line 3041
     if-eqz v6, :cond_0
 
-    .line 3038
+    .line 3042
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 3037
+    .line 3041
     :cond_2
     if-eqz v6, :cond_0
 
-    .line 3038
+    .line 3042
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 3037
+    .line 3041
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_3
 
-    .line 3038
+    .line 3042
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
@@ -1274,19 +1274,19 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2927
+    .line 2931
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
 
     if-gtz v0, :cond_1
 
-    .line 2950
+    .line 2954
     :cond_0
     :goto_0
     return-object v2
 
-    .line 2928
+    .line 2932
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1308,11 +1308,11 @@
 
     move-result-object v6
 
-    .line 2931
+    .line 2935
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_2
 
-    .line 2932
+    .line 2936
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -1320,37 +1320,37 @@
 
     if-eqz v0, :cond_2
 
-    .line 2939
+    .line 2943
     invoke-static {v6, p0}, Landroid/provider/oppo/Telephony$SIMInfo;->fromCursor(Landroid/database/Cursor;Landroid/content/Context;)Landroid/provider/oppo/Telephony$SIMInfo;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
-    .line 2946
+    .line 2950
     if-eqz v6, :cond_0
 
-    .line 2947
+    .line 2951
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 2946
+    .line 2950
     :cond_2
     if-eqz v6, :cond_0
 
-    .line 2947
+    .line 2951
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 2946
+    .line 2950
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_3
 
-    .line 2947
+    .line 2951
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
@@ -1365,15 +1365,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2960
+    .line 2964
     if-nez p1, :cond_1
 
-    .line 2981
+    .line 2985
     :cond_0
     :goto_0
     return-object v2
 
-    .line 2961
+    .line 2965
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1397,11 +1397,11 @@
 
     move-result-object v6
 
-    .line 2964
+    .line 2968
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_2
 
-    .line 2965
+    .line 2969
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -1409,37 +1409,37 @@
 
     if-eqz v0, :cond_2
 
-    .line 2972
+    .line 2976
     invoke-static {v6, p0}, Landroid/provider/oppo/Telephony$SIMInfo;->fromCursor(Landroid/database/Cursor;Landroid/content/Context;)Landroid/provider/oppo/Telephony$SIMInfo;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
-    .line 2977
+    .line 2981
     if-eqz v6, :cond_0
 
-    .line 2978
+    .line 2982
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 2977
+    .line 2981
     :cond_2
     if-eqz v6, :cond_0
 
-    .line 2978
+    .line 2982
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 2977
+    .line 2981
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_3
 
-    .line 2978
+    .line 2982
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
@@ -1454,15 +1454,15 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2990
+    .line 2994
     if-gez p1, :cond_1
 
-    .line 3011
+    .line 3015
     :cond_0
     :goto_0
     return-object v2
 
-    .line 2991
+    .line 2995
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1490,11 +1490,11 @@
 
     move-result-object v6
 
-    .line 2994
+    .line 2998
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_2
 
-    .line 2995
+    .line 2999
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -1502,37 +1502,37 @@
 
     if-eqz v0, :cond_2
 
-    .line 3002
+    .line 3006
     invoke-static {v6, p0}, Landroid/provider/oppo/Telephony$SIMInfo;->fromCursor(Landroid/database/Cursor;Landroid/content/Context;)Landroid/provider/oppo/Telephony$SIMInfo;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     move-result-object v2
 
-    .line 3007
+    .line 3011
     if-eqz v6, :cond_0
 
-    .line 3008
+    .line 3012
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 3007
+    .line 3011
     :cond_2
     if-eqz v6, :cond_0
 
-    .line 3008
+    .line 3012
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 3007
+    .line 3011
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_3
 
-    .line 3008
+    .line 3012
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
@@ -1551,7 +1551,7 @@
 
     const/4 v3, 0x0
 
-    .line 3050
+    .line 3054
     const-wide/16 v0, 0x0
 
     cmp-long v0, p1, v0
@@ -1560,12 +1560,12 @@
 
     move v0, v7
 
-    .line 3064
+    .line 3068
     :cond_0
     :goto_0
     return v0
 
-    .line 3051
+    .line 3055
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1593,11 +1593,11 @@
 
     move-result-object v6
 
-    .line 3054
+    .line 3058
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_2
 
-    .line 3055
+    .line 3059
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -1605,7 +1605,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 3056
+    .line 3060
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -1614,34 +1614,34 @@
 
     move-result v0
 
-    .line 3060
+    .line 3064
     if-eqz v6, :cond_0
 
-    .line 3061
+    .line 3065
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 3060
+    .line 3064
     :cond_2
     if-eqz v6, :cond_3
 
-    .line 3061
+    .line 3065
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
     move v0, v7
 
-    .line 3064
+    .line 3068
     goto :goto_0
 
-    .line 3060
+    .line 3064
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_4
 
-    .line 3061
+    .line 3065
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_4
@@ -1660,17 +1660,17 @@
 
     const/4 v5, 0x0
 
-    .line 3085
+    .line 3089
     if-nez p1, :cond_1
 
     move v0, v7
 
-    .line 3099
+    .line 3103
     :cond_0
     :goto_0
     return v0
 
-    .line 3086
+    .line 3090
     :cond_1
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
@@ -1696,11 +1696,11 @@
 
     move-result-object v6
 
-    .line 3089
+    .line 3093
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_2
 
-    .line 3090
+    .line 3094
     :try_start_0
     invoke-interface {v6}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -1708,7 +1708,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 3091
+    .line 3095
     const/4 v0, 0x0
 
     invoke-interface {v6, v0}, Landroid/database/Cursor;->getInt(I)I
@@ -1717,34 +1717,34 @@
 
     move-result v0
 
-    .line 3095
+    .line 3099
     if-eqz v6, :cond_0
 
-    .line 3096
+    .line 3100
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     goto :goto_0
 
-    .line 3095
+    .line 3099
     :cond_2
     if-eqz v6, :cond_3
 
-    .line 3096
+    .line 3100
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_3
     move v0, v7
 
-    .line 3099
+    .line 3103
     goto :goto_0
 
-    .line 3095
+    .line 3099
     :catchall_0
     move-exception v0
 
     if-eqz v6, :cond_4
 
-    .line 3096
+    .line 3100
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_4
@@ -1756,12 +1756,12 @@
     .parameter "index"
 
     .prologue
-    .line 3398
+    .line 3402
     const/16 v0, 0xa
 
     if-ge p0, v0, :cond_0
 
-    .line 3399
+    .line 3403
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1780,7 +1780,7 @@
 
     move-result-object v0
 
-    .line 3401
+    .line 3405
     :goto_0
     return-object v0
 
@@ -1799,10 +1799,10 @@
     .parameter "slot"
 
     .prologue
-    .line 3291
+    .line 3295
     if-nez p1, :cond_0
 
-    .line 3292
+    .line 3296
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     const-string v2, "ICCId should not null."
@@ -1811,17 +1811,17 @@
 
     throw v1
 
-    .line 3295
+    .line 3299
     :cond_0
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
-    .line 3296
+    .line 3300
     .local v0, resolver:Landroid/content/ContentResolver;
     const-string v3, "icc_id=?"
 
-    .line 3297
+    .line 3301
     .local v3, selection:Ljava/lang/String;
     sget-object v1, Landroid/provider/oppo/Telephony$SimInfo;->CONTENT_URI:Landroid/net/Uri;
 
@@ -1855,7 +1855,7 @@
 
     move-result-object v6
 
-    .line 3299
+    .line 3303
     .local v6, cursor:Landroid/database/Cursor;
     if-eqz v6, :cond_1
 
@@ -1866,19 +1866,19 @@
 
     if-nez v1, :cond_4
 
-    .line 3300
+    .line 3304
     :cond_1
     new-instance v11, Landroid/content/ContentValues;
 
     invoke-direct {v11}, Landroid/content/ContentValues;-><init>()V
 
-    .line 3301
+    .line 3305
     .local v11, values:Landroid/content/ContentValues;
     const-string v1, "icc_id"
 
     invoke-virtual {v11, v1, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3302
+    .line 3306
     const-string v1, "color"
 
     const/4 v2, -0x1
@@ -1889,7 +1889,7 @@
 
     invoke-virtual {v11, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3303
+    .line 3307
     const-string v1, "slot"
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1898,7 +1898,7 @@
 
     invoke-virtual {v11, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3304
+    .line 3308
     sget-object v1, Landroid/provider/oppo/Telephony$SimInfo;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v0, v1, v11}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
@@ -1907,21 +1907,21 @@
 
     move-result-object v10
 
-    .line 3317
+    .line 3321
     .end local v11           #values:Landroid/content/ContentValues;
     .local v10, uri:Landroid/net/Uri;
     :cond_2
     :goto_0
     if-eqz v6, :cond_3
 
-    .line 3318
+    .line 3322
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    .line 3322
+    .line 3326
     :cond_3
     return-object v10
 
-    .line 3307
+    .line 3311
     .end local v10           #uri:Landroid/net/Uri;
     :cond_4
     const/4 v1, 0x0
@@ -1931,7 +1931,7 @@
 
     move-result-wide v8
 
-    .line 3308
+    .line 3312
     .local v8, simId:J
     const/4 v1, 0x1
 
@@ -1939,7 +1939,7 @@
 
     move-result v7
 
-    .line 3309
+    .line 3313
     .local v7, oldSlot:I
     sget-object v1, Landroid/provider/oppo/Telephony$SimInfo;->CONTENT_URI:Landroid/net/Uri;
 
@@ -1947,18 +1947,18 @@
 
     move-result-object v10
 
-    .line 3310
+    .line 3314
     .restart local v10       #uri:Landroid/net/Uri;
     if-eq p2, v7, :cond_2
 
-    .line 3311
+    .line 3315
     new-instance v11, Landroid/content/ContentValues;
 
     const/4 v1, 0x1
 
     invoke-direct {v11, v1}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 3312
+    .line 3316
     .restart local v11       #values:Landroid/content/ContentValues;
     const-string v1, "slot"
 
@@ -1968,7 +1968,7 @@
 
     invoke-virtual {v11, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3313
+    .line 3317
     const/4 v1, 0x0
 
     const/4 v2, 0x0
@@ -1979,7 +1979,7 @@
 
     goto :goto_0
 
-    .line 3317
+    .line 3321
     .end local v7           #oldSlot:I
     .end local v8           #simId:J
     .end local v10           #uri:Landroid/net/Uri;
@@ -1989,7 +1989,7 @@
 
     if-eqz v6, :cond_5
 
-    .line 3318
+    .line 3322
     invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
     :cond_5
@@ -2005,12 +2005,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 3232
+    .line 3236
     sget-object v2, Landroid/provider/oppo/Telephony;->SIMBackgroundRes:[I
 
     array-length v0, v2
 
-    .line 3233
+    .line 3237
     .local v0, size:I
     if-ltz p1, :cond_0
 
@@ -2025,11 +2025,11 @@
     :cond_0
     const/4 v2, -0x1
 
-    .line 3236
+    .line 3240
     :goto_0
     return v2
 
-    .line 3234
+    .line 3238
     :cond_1
     new-instance v1, Landroid/content/ContentValues;
 
@@ -2037,7 +2037,7 @@
 
     invoke-direct {v1, v2}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 3235
+    .line 3239
     .local v1, value:Landroid/content/ContentValues;
     const-string v2, "color"
 
@@ -2047,7 +2047,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3236
+    .line 3240
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v2
@@ -2074,7 +2074,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3263
+    .line 3267
     if-ltz p1, :cond_0
 
     const-wide/16 v1, 0x0
@@ -2086,11 +2086,11 @@
     :cond_0
     const/4 v1, -0x1
 
-    .line 3266
+    .line 3270
     :goto_0
     return v1
 
-    .line 3264
+    .line 3268
     :cond_1
     new-instance v0, Landroid/content/ContentValues;
 
@@ -2098,7 +2098,7 @@
 
     invoke-direct {v0, v1}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 3265
+    .line 3269
     .local v0, value:Landroid/content/ContentValues;
     const-string v1, "data_roaming"
 
@@ -2108,7 +2108,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3266
+    .line 3270
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -2137,7 +2137,7 @@
 
     const/4 v1, -0x1
 
-    .line 3348
+    .line 3352
     const-wide/16 v2, 0x0
 
     cmp-long v2, p1, v2
@@ -2146,29 +2146,29 @@
 
     if-nez p3, :cond_1
 
-    .line 3362
+    .line 3366
     :cond_0
     :goto_0
     return v1
 
-    .line 3355
+    .line 3359
     :cond_1
     if-eqz p3, :cond_0
 
-    .line 3356
+    .line 3360
     new-instance v0, Landroid/content/ContentValues;
 
     const/4 v1, 0x1
 
     invoke-direct {v0, v1}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 3357
+    .line 3361
     .local v0, value:Landroid/content/ContentValues;
     const-string v1, "display_name"
 
     invoke-virtual {v0, v1, p3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3358
+    .line 3362
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -2194,7 +2194,7 @@
     .parameter "nameSource"
 
     .prologue
-    .line 3392
+    .line 3396
     invoke-static {p0, p1, p2, p3}, Landroid/provider/oppo/Telephony$SIMInfo;->setDefaultName(Landroid/content/Context;JLjava/lang/String;)I
 
     move-result v0
@@ -2211,7 +2211,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3248
+    .line 3252
     if-ltz p1, :cond_0
 
     const-wide/16 v1, 0x0
@@ -2223,11 +2223,11 @@
     :cond_0
     const/4 v1, -0x1
 
-    .line 3251
+    .line 3255
     :goto_0
     return v1
 
-    .line 3249
+    .line 3253
     :cond_1
     new-instance v0, Landroid/content/ContentValues;
 
@@ -2235,7 +2235,7 @@
 
     invoke-direct {v0, v1}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 3250
+    .line 3254
     .local v0, value:Landroid/content/ContentValues;
     const-string v1, "display_number_format"
 
@@ -2245,7 +2245,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3251
+    .line 3255
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -2272,7 +2272,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3148
+    .line 3152
     if-eqz p1, :cond_0
 
     const-wide/16 v1, 0x0
@@ -2284,11 +2284,11 @@
     :cond_0
     const/4 v1, -0x1
 
-    .line 3169
+    .line 3173
     :goto_0
     return v1
 
-    .line 3167
+    .line 3171
     :cond_1
     new-instance v0, Landroid/content/ContentValues;
 
@@ -2296,13 +2296,13 @@
 
     invoke-direct {v0, v1}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 3168
+    .line 3172
     .local v0, value:Landroid/content/ContentValues;
     const-string v1, "display_name"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3169
+    .line 3173
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -2330,7 +2330,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 3182
+    .line 3186
     const-string v1, "Telephony"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -2373,7 +2373,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 3183
+    .line 3187
     if-eqz p1, :cond_0
 
     const-wide/16 v1, 0x0
@@ -2385,11 +2385,11 @@
     :cond_0
     const/4 v1, -0x1
 
-    .line 3206
+    .line 3210
     :goto_0
     return v1
 
-    .line 3203
+    .line 3207
     :cond_1
     new-instance v0, Landroid/content/ContentValues;
 
@@ -2397,13 +2397,13 @@
 
     invoke-direct {v0, v1}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 3204
+    .line 3208
     .local v0, value:Landroid/content/ContentValues;
     const-string v1, "display_name"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3205
+    .line 3209
     const-string v1, "name_source"
 
     invoke-static {p4, p5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -2412,7 +2412,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 3206
+    .line 3210
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -2439,7 +2439,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 3217
+    .line 3221
     if-eqz p1, :cond_0
 
     const-wide/16 v1, 0x0
@@ -2451,11 +2451,11 @@
     :cond_0
     const/4 v1, -0x1
 
-    .line 3220
+    .line 3224
     :goto_0
     return v1
 
-    .line 3218
+    .line 3222
     :cond_1
     new-instance v0, Landroid/content/ContentValues;
 
@@ -2463,13 +2463,13 @@
 
     invoke-direct {v0, v1}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 3219
+    .line 3223
     .local v0, value:Landroid/content/ContentValues;
     const-string v1, "number"
 
     invoke-virtual {v0, v1, p1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3220
+    .line 3224
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1
@@ -2500,7 +2500,7 @@
 
     const/4 v1, -0x1
 
-    .line 3275
+    .line 3279
     if-gt p1, v4, :cond_0
 
     if-lt p1, v1, :cond_0
@@ -2511,18 +2511,18 @@
 
     if-gtz v2, :cond_1
 
-    .line 3280
+    .line 3284
     :cond_0
     :goto_0
     return v1
 
-    .line 3278
+    .line 3282
     :cond_1
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0, v4}, Landroid/content/ContentValues;-><init>(I)V
 
-    .line 3279
+    .line 3283
     .local v0, value:Landroid/content/ContentValues;
     const-string v1, "wap_push"
 
@@ -2532,7 +2532,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    .line 3280
+    .line 3284
     invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v1

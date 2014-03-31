@@ -38,24 +38,6 @@
     return v0
 .end method
 
-.method public oppoGetMobileDataEnabledGemini(I)Z
-    .locals 1
-    .parameter "simId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "get mobile data enabled state, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
-
-    .prologue
-    .line 52
-    invoke-virtual {p0, p1}, Landroid/net/OppoConnectivityManager;->getMobileDataEnabledGemini(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public oppoGetTetherableBluetoothRegexs()[Ljava/lang/String;
     .locals 1
 
@@ -99,64 +81,6 @@
     .prologue
     .line 45
     invoke-virtual {p0, p1}, Landroid/net/OppoConnectivityManager;->isNetworkSupported(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public oppoSetMobileDataEnabledGemini(I)Z
-    .locals 1
-    .parameter "slotId"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "set mobile data enabled, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
-
-    .prologue
-    .line 59
-    invoke-virtual {p0, p1}, Landroid/net/OppoConnectivityManager;->setMobileDataEnabledGemini(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public oppoStartUsingNetworkFeatureGemini(ILjava/lang/String;I)I
-    .locals 1
-    .parameter "networkType"
-    .parameter "feature"
-    .parameter "radioNum"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "start using network feature, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
-
-    .prologue
-    .line 66
-    invoke-virtual {p0, p1, p2, p3}, Landroid/net/OppoConnectivityManager;->startUsingNetworkFeatureGemini(ILjava/lang/String;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public oppoStopUsingNetworkFeatureGemini(ILjava/lang/String;I)I
-    .locals 1
-    .parameter "networkType"
-    .parameter "feature"
-    .parameter "radioNum"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "stop using network feature, only for MTK platform"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->OPPO:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
-
-    .prologue
-    .line 73
-    invoke-virtual {p0, p1, p2, p3}, Landroid/net/OppoConnectivityManager;->stopUsingNetworkFeatureGemini(ILjava/lang/String;I)I
 
     move-result v0
 

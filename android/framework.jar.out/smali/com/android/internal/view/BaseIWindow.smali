@@ -57,16 +57,6 @@
     return-void
 .end method
 
-.method public dispatchPositionChanged(II)V
-    .locals 0
-    .parameter "left"
-    .parameter "top"
-
-    .prologue
-    .line 114
-    return-void
-.end method
-
 .method public dispatchScreenState(Z)V
     .locals 0
     .parameter "on"
@@ -171,23 +161,6 @@
 
     .prologue
     .line 108
-    return-void
-.end method
-
-.method public dumpInputDispatchingStatus()V
-    .locals 0
-
-    .prologue
-    .line 124
-    return-void
-.end method
-
-.method public enableLog(Z)V
-    .locals 0
-    .parameter "enable"
-
-    .prologue
-    .line 120
     return-void
 .end method
 

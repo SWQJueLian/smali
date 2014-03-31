@@ -116,9 +116,9 @@
 
 .field private static final JID_RESOURCE_PREFIX:Ljava/lang/String; = "android"
 
-.field private static final LOCAL_LOGV:Z = true
+.field private static final LOCAL_LOGV:Z = false
 
-.field private static final TAG:Ljava/lang/String; = "Provider/Settings"
+.field private static final TAG:Ljava/lang/String; = "Settings"
 
 
 # direct methods
@@ -126,10 +126,10 @@
     .locals 0
 
     .prologue
-    .line 67
+    .line 64
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 6551
+    .line 5622
     return-void
 .end method
 
@@ -138,7 +138,7 @@
     .parameter "androidId"
 
     .prologue
-    .line 6756
+    .line 5827
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

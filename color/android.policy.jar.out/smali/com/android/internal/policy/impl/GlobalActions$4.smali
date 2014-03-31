@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 383
+    .line 334
     iput-object p1, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -54,7 +54,7 @@
     .end annotation
 
     .prologue
-    .line 387
+    .line 338
     .local p1, parent:Landroid/widget/AdapterView;,"Landroid/widget/AdapterView<*>;"
     iget-object v0, p0, Lcom/android/internal/policy/impl/GlobalActions$4;->this$0:Lcom/android/internal/policy/impl/GlobalActions;
 

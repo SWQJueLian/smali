@@ -25,17 +25,17 @@
     .parameter "looper"
 
     .prologue
-    .line 581
+    .line 572
     iput-object p1, p0, Lcom/android/server/display/WifiDisplayAdapter$WifiDisplayHandler;->this$0:Lcom/android/server/display/WifiDisplayAdapter;
 
-    .line 582
+    .line 573
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p2, v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;Z)V
 
-    .line 583
+    .line 574
     return-void
 .end method
 
@@ -46,16 +46,16 @@
     .parameter "msg"
 
     .prologue
-    .line 587
+    .line 578
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 596
+    .line 587
     :goto_0
     return-void
 
-    .line 589
+    .line 580
     :pswitch_0
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayAdapter$WifiDisplayHandler;->this$0:Lcom/android/server/display/WifiDisplayAdapter;
 
@@ -64,7 +64,7 @@
 
     goto :goto_0
 
-    .line 593
+    .line 584
     :pswitch_1
     iget-object v0, p0, Lcom/android/server/display/WifiDisplayAdapter$WifiDisplayHandler;->this$0:Lcom/android/server/display/WifiDisplayAdapter;
 
@@ -73,7 +73,7 @@
 
     goto :goto_0
 
-    .line 587
+    .line 578
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

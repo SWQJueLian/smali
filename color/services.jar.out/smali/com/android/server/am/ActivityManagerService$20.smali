@@ -36,7 +36,7 @@
     .parameter
 
     .prologue
-    .line 15297
+    .line 14571
     iput-object p1, p0, Lcom/android/server/am/ActivityManagerService$20;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     iput-object p2, p0, Lcom/android/server/am/ActivityManagerService$20;->val$uss:Lcom/android/server/am/UserStartedState;
@@ -65,12 +65,12 @@
     .parameter "sendingUser"
 
     .prologue
-    .line 15302
+    .line 14576
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService$20;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     monitor-enter v1
 
-    .line 15303
+    .line 14577
     :try_start_0
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$20;->val$uss:Lcom/android/server/am/UserStartedState;
 
@@ -80,14 +80,14 @@
 
     if-eq v0, v2, :cond_0
 
-    .line 15305
+    .line 14579
     monitor-exit v1
 
-    .line 15312
+    .line 14586
     :goto_0
     return-void
 
-    .line 15307
+    .line 14581
     :cond_0
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$20;->val$uss:Lcom/android/server/am/UserStartedState;
 
@@ -95,12 +95,12 @@
 
     iput v2, v0, Lcom/android/server/am/UserStartedState;->mState:I
 
-    .line 15308
+    .line 14582
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 15309
+    .line 14583
     iget-object v0, p0, Lcom/android/server/am/ActivityManagerService$20;->this$0:Lcom/android/server/am/ActivityManagerService;
 
     const/4 v1, 0x0
@@ -136,7 +136,7 @@
 
     goto :goto_0
 
-    .line 15308
+    .line 14582
     :catchall_0
     move-exception v0
 

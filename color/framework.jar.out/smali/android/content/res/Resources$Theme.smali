@@ -34,17 +34,17 @@
     .parameter
 
     .prologue
-    .line 1438
+    .line 1398
     iput-object p1, p0, Landroid/content/res/Resources$Theme;->this$0:Landroid/content/res/Resources;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1439
+    .line 1399
     iget-object v0, p1, Landroid/content/res/Resources;->mAssets:Landroid/content/res/AssetManager;
 
     iput-object v0, p0, Landroid/content/res/Resources$Theme;->mAssets:Landroid/content/res/AssetManager;
 
-    .line 1440
+    .line 1400
     iget-object v0, p0, Landroid/content/res/Resources$Theme;->mAssets:Landroid/content/res/AssetManager;
 
     invoke-virtual {v0}, Landroid/content/res/AssetManager;->createTheme()I
@@ -53,7 +53,7 @@
 
     iput v0, p0, Landroid/content/res/Resources$Theme;->mTheme:I
 
-    .line 1441
+    .line 1401
     return-void
 .end method
 
@@ -65,12 +65,12 @@
     .parameter "force"
 
     .prologue
-    .line 1194
+    .line 1154
     iget v0, p0, Landroid/content/res/Resources$Theme;->mTheme:I
 
     invoke-static {v0, p1, p2}, Landroid/content/res/AssetManager;->applyThemeStyle(IIZ)V
 
-    .line 1195
+    .line 1155
     return-void
 .end method
 
@@ -81,12 +81,12 @@
     .parameter "prefix"
 
     .prologue
-    .line 1430
+    .line 1390
     iget v0, p0, Landroid/content/res/Resources$Theme;->mTheme:I
 
     invoke-static {v0, p1, p2, p3}, Landroid/content/res/AssetManager;->dumpTheme(IILjava/lang/String;Ljava/lang/String;)V
 
-    .line 1431
+    .line 1391
     return-void
 .end method
 
@@ -99,17 +99,17 @@
     .end annotation
 
     .prologue
-    .line 1434
+    .line 1394
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 1435
+    .line 1395
     iget-object v0, p0, Landroid/content/res/Resources$Theme;->mAssets:Landroid/content/res/AssetManager;
 
     iget v1, p0, Landroid/content/res/Resources$Theme;->mTheme:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/AssetManager;->releaseTheme(I)V
 
-    .line 1436
+    .line 1396
     return-void
 .end method
 
@@ -126,10 +126,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1260
+    .line 1220
     array-length v8, p2
 
-    .line 1261
+    .line 1221
     .local v8, len:I
     iget-object v0, p0, Landroid/content/res/Resources$Theme;->this$0:Landroid/content/res/Resources;
 
@@ -138,11 +138,11 @@
 
     move-result-object v7
 
-    .line 1262
+    .line 1222
     .local v7, array:Landroid/content/res/TypedArray;
     iput-object p2, v7, Landroid/content/res/TypedArray;->mRsrcs:[I
 
-    .line 1264
+    .line 1224
     iget v0, p0, Landroid/content/res/Resources$Theme;->mTheme:I
 
     iget-object v5, v7, Landroid/content/res/TypedArray;->mData:[I
@@ -157,7 +157,7 @@
 
     invoke-static/range {v0 .. v6}, Landroid/content/res/AssetManager;->applyStyle(IIII[I[I[I)Z
 
-    .line 1292
+    .line 1252
     return-object v7
 .end method
 
@@ -169,10 +169,10 @@
     .parameter "defStyleRes"
 
     .prologue
-    .line 1345
+    .line 1305
     array-length v8, p2
 
-    .line 1346
+    .line 1306
     .local v8, len:I
     iget-object v0, p0, Landroid/content/res/Resources$Theme;->this$0:Landroid/content/res/Resources;
 
@@ -184,10 +184,10 @@
     .local v7, array:Landroid/content/res/TypedArray;
     move-object v9, p1
 
-    .line 1352
+    .line 1312
     check-cast v9, Landroid/content/res/XmlBlock$Parser;
 
-    .line 1353
+    .line 1313
     .local v9, parser:Landroid/content/res/XmlBlock$Parser;
     iget v0, p0, Landroid/content/res/Resources$Theme;->mTheme:I
 
@@ -208,16 +208,16 @@
 
     invoke-static/range {v0 .. v6}, Landroid/content/res/AssetManager;->applyStyle(IIII[I[I[I)Z
 
-    .line 1358
+    .line 1318
     iput-object p2, v7, Landroid/content/res/TypedArray;->mRsrcs:[I
 
-    .line 1359
+    .line 1319
     iput-object v9, v7, Landroid/content/res/TypedArray;->mXml:Landroid/content/res/XmlBlock$Parser;
 
-    .line 1390
+    .line 1350
     return-object v7
 
-    .line 1353
+    .line 1313
     :cond_0
     const/4 v3, 0x0
 
@@ -231,10 +231,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1230
+    .line 1190
     array-length v8, p1
 
-    .line 1231
+    .line 1191
     .local v8, len:I
     iget-object v0, p0, Landroid/content/res/Resources$Theme;->this$0:Landroid/content/res/Resources;
 
@@ -243,11 +243,11 @@
 
     move-result-object v7
 
-    .line 1232
+    .line 1192
     .local v7, array:Landroid/content/res/TypedArray;
     iput-object p1, v7, Landroid/content/res/TypedArray;->mRsrcs:[I
 
-    .line 1233
+    .line 1193
     iget v0, p0, Landroid/content/res/Resources$Theme;->mTheme:I
 
     iget-object v5, v7, Landroid/content/res/TypedArray;->mData:[I
@@ -262,7 +262,7 @@
 
     invoke-static/range {v0 .. v6}, Landroid/content/res/AssetManager;->applyStyle(IIII[I[I[I)Z
 
-    .line 1235
+    .line 1195
     return-object v7
 .end method
 
@@ -273,7 +273,7 @@
     .parameter "resolveRefs"
 
     .prologue
-    .line 1412
+    .line 1372
     iget-object v1, p0, Landroid/content/res/Resources$Theme;->mAssets:Landroid/content/res/AssetManager;
 
     iget v2, p0, Landroid/content/res/Resources$Theme;->mTheme:I
@@ -282,7 +282,7 @@
 
     move-result v0
 
-    .line 1419
+    .line 1379
     .local v0, got:Z
     return v0
 .end method
@@ -292,13 +292,13 @@
     .parameter "other"
 
     .prologue
-    .line 1207
+    .line 1167
     iget v0, p0, Landroid/content/res/Resources$Theme;->mTheme:I
 
     iget v1, p1, Landroid/content/res/Resources$Theme;->mTheme:I
 
     invoke-static {v0, v1}, Landroid/content/res/AssetManager;->copyTheme(II)V
 
-    .line 1208
+    .line 1168
     return-void
 .end method

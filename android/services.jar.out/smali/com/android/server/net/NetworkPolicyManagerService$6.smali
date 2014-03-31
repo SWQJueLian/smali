@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 541
+    .line 497
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,69 +35,53 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 4
+    .locals 2
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    const/4 v3, -0x1
+    .line 503
+    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    .line 547
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->maybeRefreshTrustedTime()V
+    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$700(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    move-result-object v0
-
-    .line 548
-    .local v0, action:Ljava/lang/String;
-    const-string v2, "android.intent.extra.user_handle"
-
-    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v1
-
-    .line 549
-    .local v1, userId:I
-    if-ne v1, v3, :cond_0
-
-    .line 559
-    :goto_0
-    return-void
-
-    .line 553
-    :cond_0
-    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
-
-    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->removePoliciesForUserLocked(I)V
-    invoke-static {v2, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$800(Lcom/android/server/net/NetworkPolicyManagerService;I)V
-
-    .line 556
-    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+    .line 504
+    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mRulesLock:Ljava/lang/Object;
-    invoke-static {v2}, Lcom/android/server/net/NetworkPolicyManagerService;->access$400(Lcom/android/server/net/NetworkPolicyManagerService;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$100(Lcom/android/server/net/NetworkPolicyManagerService;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
-    monitor-enter v3
+    monitor-enter v1
 
-    .line 557
+    .line 505
     :try_start_0
-    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateRulesForRestrictBackgroundLocked()V
-    invoke-static {v2}, Lcom/android/server/net/NetworkPolicyManagerService;->access$900(Lcom/android/server/net/NetworkPolicyManagerService;)V
+    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateNetworkEnabledLocked()V
+    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$800(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
-    .line 558
-    monitor-exit v3
+    .line 506
+    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$6;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
-    goto :goto_0
+    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateNotificationsLocked()V
+    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$900(Lcom/android/server/net/NetworkPolicyManagerService;)V
 
+    .line 507
+    monitor-exit v1
+
+    .line 508
+    return-void
+
+    .line 507
     :catchall_0
-    move-exception v2
+    move-exception v0
 
-    monitor-exit v3
+    monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v2
+    throw v0
 .end method

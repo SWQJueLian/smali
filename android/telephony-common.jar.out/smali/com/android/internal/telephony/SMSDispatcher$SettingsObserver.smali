@@ -28,21 +28,21 @@
     .parameter "context"
 
     .prologue
-    .line 458
+    .line 240
     invoke-direct {p0, p1}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
 
-    .line 459
+    .line 241
     iput-object p2, p0, Lcom/android/internal/telephony/SMSDispatcher$SettingsObserver;->mPremiumSmsRule:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    .line 460
+    .line 242
     iput-object p3, p0, Lcom/android/internal/telephony/SMSDispatcher$SettingsObserver;->mContext:Landroid/content/Context;
 
-    .line 461
+    .line 243
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/SMSDispatcher$SettingsObserver;->onChange(Z)V
 
-    .line 462
+    .line 244
     return-void
 .end method
 
@@ -53,7 +53,7 @@
     .parameter "selfChange"
 
     .prologue
-    .line 466
+    .line 248
     iget-object v0, p0, Lcom/android/internal/telephony/SMSDispatcher$SettingsObserver;->mPremiumSmsRule:Ljava/util/concurrent/atomic/AtomicInteger;
 
     iget-object v1, p0, Lcom/android/internal/telephony/SMSDispatcher$SettingsObserver;->mContext:Landroid/content/Context;
@@ -72,6 +72,6 @@
 
     invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
 
-    .line 468
+    .line 250
     return-void
 .end method

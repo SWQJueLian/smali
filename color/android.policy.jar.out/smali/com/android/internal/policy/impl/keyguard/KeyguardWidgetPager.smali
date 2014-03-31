@@ -682,107 +682,71 @@
     .parameter "show"
 
     .prologue
-    .line 635
+    .line 632
     const/4 v0, -0x1
 
     invoke-virtual {p0, p1, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->animateOutlinesAndSidePages(ZI)V
 
-    .line 636
+    .line 633
     return-void
 .end method
 
 .method animateOutlinesAndSidePages(ZI)V
-    .locals 12
+    .locals 13
     .parameter "show"
     .parameter "duration"
 
     .prologue
-    .line 647
-    const-string v9, "KeyguardWidgetPager"
+    const/4 v12, 0x1
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    const/4 v11, 0x0
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v11, "animateOutlinesAndSidePages show="
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    const-string v11, ", duration="
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    invoke-static {v9, v10}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 648
+    .line 644
     iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mChildrenOutlineFadeAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v9, :cond_0
 
-    .line 649
-    const-string v9, "KeyguardWidgetPager"
-
-    const-string v10, "animateOutlinesAndSidePages mChildrenOutlineFadeAnimation != null, cancel it"
-
-    invoke-static {v9, v10}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 650
+    .line 645
     iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mChildrenOutlineFadeAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v9}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 651
+    .line 646
     const/4 v9, 0x0
 
     iput-object v9, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mChildrenOutlineFadeAnimation:Landroid/animation/AnimatorSet;
 
-    .line 653
+    .line 648
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getChildCount()I
 
     move-result v4
 
-    .line 655
+    .line 650
     .local v4, count:I
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 657
+    .line 652
     .local v2, anims:Ljava/util/ArrayList;,"Ljava/util/ArrayList<Landroid/animation/Animator;>;"
     const/4 v9, -0x1
 
     if-ne p2, v9, :cond_1
 
-    .line 658
+    .line 653
     if-eqz p1, :cond_2
 
     const/16 p2, 0x64
 
-    .line 662
+    .line 657
     :cond_1
     :goto_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getNextPage()I
 
     move-result v5
 
-    .line 663
+    .line 658
     .local v5, curPage:I
     const/4 v8, 0x0
 
@@ -790,32 +754,28 @@
     :goto_1
     if-ge v8, v4, :cond_6
 
-    .line 665
+    .line 660
     if-eqz p1, :cond_3
 
-    .line 666
+    .line 661
     iget v9, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mScreenCenter:I
 
     invoke-virtual {p0, v9, v8}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getAlphaForPage(II)F
 
     move-result v6
 
-    .line 672
+    .line 667
     .local v6, finalContentAlpha:F
     :goto_2
     invoke-virtual {p0, v8}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getWidgetPageAt(I)Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
 
     move-result-object v3
 
-    .line 674
+    .line 669
     .local v3, child:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     const-string v9, "contentAlpha"
 
-    const/4 v10, 0x1
-
-    new-array v10, v10, [F
-
-    const/4 v11, 0x0
+    new-array v10, v12, [F
 
     aput v6, v10, v11
 
@@ -823,25 +783,21 @@
 
     move-result-object v1
 
-    .line 675
+    .line 670
     .local v1, alpha:Landroid/animation/PropertyValuesHolder;
-    const/4 v9, 0x1
+    new-array v9, v12, [Landroid/animation/PropertyValuesHolder;
 
-    new-array v9, v9, [Landroid/animation/PropertyValuesHolder;
-
-    const/4 v10, 0x0
-
-    aput-object v1, v9, v10
+    aput-object v1, v9, v11
 
     invoke-static {v3, v9}, Landroid/animation/ObjectAnimator;->ofPropertyValuesHolder(Ljava/lang/Object;[Landroid/animation/PropertyValuesHolder;)Landroid/animation/ObjectAnimator;
 
     move-result-object v0
 
-    .line 676
+    .line 671
     .local v0, a:Landroid/animation/ObjectAnimator;
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 678
+    .line 673
     if-eqz p1, :cond_5
 
     iget v9, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mScreenCenter:I
@@ -850,17 +806,17 @@
 
     move-result v7
 
-    .line 679
+    .line 674
     .local v7, finalOutlineAlpha:F
     :goto_3
     invoke-virtual {v3, p0, p1, v7, p2}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->fadeFrame(Ljava/lang/Object;ZFI)V
 
-    .line 663
+    .line 658
     add-int/lit8 v8, v8, 0x1
 
     goto :goto_1
 
-    .line 658
+    .line 653
     .end local v0           #a:Landroid/animation/ObjectAnimator;
     .end local v1           #alpha:Landroid/animation/PropertyValuesHolder;
     .end local v3           #child:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
@@ -873,7 +829,7 @@
 
     goto :goto_0
 
-    .line 667
+    .line 662
     .restart local v5       #curPage:I
     .restart local v8       #i:I
     :cond_3
@@ -881,13 +837,13 @@
 
     if-ne v8, v5, :cond_4
 
-    .line 668
+    .line 663
     const/high16 v6, 0x3f80
 
     .restart local v6       #finalContentAlpha:F
     goto :goto_2
 
-    .line 670
+    .line 665
     .end local v6           #finalContentAlpha:F
     :cond_4
     const/4 v6, 0x0
@@ -895,7 +851,7 @@
     .restart local v6       #finalContentAlpha:F
     goto :goto_2
 
-    .line 678
+    .line 673
     .restart local v0       #a:Landroid/animation/ObjectAnimator;
     .restart local v1       #alpha:Landroid/animation/PropertyValuesHolder;
     .restart local v3       #child:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
@@ -904,7 +860,7 @@
 
     goto :goto_3
 
-    .line 682
+    .line 677
     .end local v0           #a:Landroid/animation/ObjectAnimator;
     .end local v1           #alpha:Landroid/animation/PropertyValuesHolder;
     .end local v3           #child:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
@@ -916,19 +872,19 @@
 
     iput-object v9, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mChildrenOutlineFadeAnimation:Landroid/animation/AnimatorSet;
 
-    .line 683
+    .line 678
     iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mChildrenOutlineFadeAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v9, v2}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 685
+    .line 680
     iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mChildrenOutlineFadeAnimation:Landroid/animation/AnimatorSet;
 
     int-to-long v10, p2
 
     invoke-virtual {v9, v10, v11}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 686
+    .line 681
     iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mChildrenOutlineFadeAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v10, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager$3;
@@ -937,12 +893,12 @@
 
     invoke-virtual {v9, v10}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 710
+    .line 703
     iget-object v9, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mChildrenOutlineFadeAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v9}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 711
+    .line 704
     return-void
 .end method
 
@@ -1203,17 +1159,17 @@
     .parameter "view"
 
     .prologue
-    .line 742
+    .line 735
     instance-of v0, p1, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
 
     if-eqz v0, :cond_0
 
-    .line 743
+    .line 736
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->indexOfChild(Landroid/view/View;)I
 
     move-result v0
 
-    .line 746
+    .line 739
     :goto_0
     return v0
 
@@ -1235,29 +1191,22 @@
     .locals 1
 
     .prologue
-    .line 643
+    .line 640
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mWidgetToResetAfterFadeOut:I
 
     return v0
 .end method
 
 .method hideOutlinesAndSidePages()V
-    .locals 2
+    .locals 1
 
     .prologue
-    .line 562
-    const-string v0, "KeyguardWidgetPager"
-
-    const-string v1, "hideOutlinesAndSidePages"
-
-    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 563
+    .line 561
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->animateOutlinesAndSidePages(Z)V
 
-    .line 564
+    .line 562
     return-void
 .end method
 
@@ -1266,12 +1215,12 @@
     .parameter "pageIndex"
 
     .prologue
-    .line 813
+    .line 806
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 814
+    .line 807
     .local v0, v:Landroid/view/View;
     if-eqz v0, :cond_0
 
@@ -1279,7 +1228,7 @@
 
     move-result v1
 
-    const v2, 0x1020859
+    const v2, 0x10202a5
 
     if-ne v1, v2, :cond_0
 
@@ -1299,12 +1248,12 @@
     .parameter "pageIndex"
 
     .prologue
-    .line 818
+    .line 811
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 819
+    .line 812
     .local v0, v:Landroid/view/View;
     if-eqz v0, :cond_0
 
@@ -1505,15 +1454,15 @@
     .locals 1
 
     .prologue
-    .line 594
+    .line 591
     invoke-super {p0}, Lcom/android/internal/policy/impl/keyguard/PagedView;->onAttachedToWindow()V
 
-    .line 595
+    .line 592
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mHasMeasure:Z
 
-    .line 596
+    .line 593
     return-void
 .end method
 
@@ -1522,17 +1471,17 @@
     .parameter "bouncerActive"
 
     .prologue
-    .line 759
+    .line 752
     if-eqz p1, :cond_0
 
-    .line 760
+    .line 753
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->zoomOutToBouncer()V
 
-    .line 764
+    .line 757
     :goto_0
     return-void
 
-    .line 762
+    .line 755
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->zoomInFromBouncer()V
 
@@ -1608,10 +1557,10 @@
     .parameter "bottom"
 
     .prologue
-    .line 600
+    .line 597
     invoke-super/range {p0 .. p5}, Lcom/android/internal/policy/impl/keyguard/PagedView;->onLayout(ZIIII)V
 
-    .line 601
+    .line 598
     return-void
 .end method
 
@@ -1624,7 +1573,7 @@
 
     const/4 v2, 0x0
 
-    .line 716
+    .line 709
     iget-object v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mViewStateManager:Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;
 
     invoke-virtual {v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardViewStateManager;->isChallengeShowing()Z
@@ -1643,7 +1592,7 @@
 
     move v0, v1
 
-    .line 718
+    .line 711
     .local v0, isChallengeOverlapping:Z
     :goto_0
     if-nez v0, :cond_1
@@ -1654,7 +1603,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 721
+    .line 714
     :goto_1
     return v1
 
@@ -1662,14 +1611,14 @@
     :cond_0
     move v0, v2
 
-    .line 716
+    .line 709
     goto :goto_0
 
     .restart local v0       #isChallengeOverlapping:Z
     :cond_1
     move v1, v2
 
-    .line 721
+    .line 714
     goto :goto_1
 .end method
 
@@ -1679,10 +1628,10 @@
     .parameter "heightMeasureSpec"
 
     .prologue
-    .line 604
+    .line 601
     const/4 v4, -0x1
 
-    .line 605
+    .line 602
     .local v4, maxChallengeTop:I
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getParent()Landroid/view/ViewParent;
 
@@ -1690,11 +1639,11 @@
 
     check-cast v5, Landroid/view/View;
 
-    .line 606
+    .line 603
     .local v5, parent:Landroid/view/View;
     const/4 v0, 0x0
 
-    .line 610
+    .line 607
     .local v0, challengeShowing:Z
     invoke-virtual {v5}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -1704,20 +1653,20 @@
 
     if-eqz v8, :cond_1
 
-    .line 611
+    .line 608
     invoke-virtual {v5}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v6
 
     check-cast v6, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 
-    .line 612
+    .line 609
     .local v6, scl:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
     invoke-virtual {v6}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->getMaxChallengeTop()I
 
     move-result v7
 
-    .line 616
+    .line 613
     .local v7, top:I
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getPaddingTop()I
 
@@ -1725,17 +1674,17 @@
 
     sub-int v4, v7, v8
 
-    .line 617
+    .line 614
     invoke-virtual {v6}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->isChallengeShowing()Z
 
     move-result v0
 
-    .line 619
+    .line 616
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getChildCount()I
 
     move-result v1
 
-    .line 620
+    .line 617
     .local v1, count:I
     const/4 v3, 0x0
 
@@ -1743,16 +1692,16 @@
     :goto_0
     if-ge v3, v1, :cond_1
 
-    .line 621
+    .line 618
     invoke-virtual {p0, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getWidgetPageAt(I)Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
 
     move-result-object v2
 
-    .line 622
+    .line 619
     .local v2, frame:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     invoke-virtual {v2, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->setMaxChallengeTop(I)V
 
-    .line 625
+    .line 622
     if-eqz v0, :cond_0
 
     iget v8, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mCurrentPage:I
@@ -1763,16 +1712,16 @@
 
     if-nez v8, :cond_0
 
-    .line 626
+    .line 623
     invoke-virtual {v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->shrinkWidget()V
 
-    .line 620
+    .line 617
     :cond_0
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 630
+    .line 627
     .end local v1           #count:I
     .end local v2           #frame:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     .end local v3           #i:I
@@ -1781,12 +1730,12 @@
     :cond_1
     invoke-super {p0, p1, p2}, Lcom/android/internal/policy/impl/keyguard/PagedView;->onMeasure(II)V
 
-    .line 631
+    .line 628
     const/4 v8, 0x1
 
     iput-boolean v8, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mHasMeasure:Z
 
-    .line 632
+    .line 629
     return-void
 .end method
 
@@ -2161,47 +2110,47 @@
     .parameter "view"
 
     .prologue
-    .line 725
+    .line 718
     instance-of v2, p1, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
 
     if-eqz v2, :cond_0
 
-    .line 726
+    .line 719
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->removeView(Landroid/view/View;)V
 
-    .line 739
+    .line 732
     :goto_0
     return-void
 
-    .line 730
+    .line 723
     :cond_0
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getWidgetPageIndex(Landroid/view/View;)I
 
     move-result v1
 
-    .line 731
+    .line 724
     .local v1, pos:I
     const/4 v2, -0x1
 
     if-eq v1, v2, :cond_1
 
-    .line 732
+    .line 725
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
 
-    .line 733
+    .line 726
     .local v0, frame:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     invoke-virtual {v0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->removeView(Landroid/view/View;)V
 
-    .line 734
+    .line 727
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->removeView(Landroid/view/View;)V
 
     goto :goto_0
 
-    .line 736
+    .line 729
     .end local v0           #frame:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     :cond_1
     const-string v2, "KeyguardWidgetPager"
@@ -2452,10 +2401,10 @@
     .parameter "duration"
 
     .prologue
-    .line 767
+    .line 760
     iput p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mBouncerZoomInOutDuration:I
 
-    .line 768
+    .line 761
     return-void
 .end method
 
@@ -2476,13 +2425,13 @@
     .parameter "currentPage"
 
     .prologue
-    .line 588
+    .line 585
     invoke-super {p0, p1}, Lcom/android/internal/policy/impl/keyguard/PagedView;->setCurrentPage(I)V
 
-    .line 589
+    .line 586
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->updateWidgetFramesImportantForAccessibility()V
 
-    .line 590
+    .line 587
     return-void
 .end method
 
@@ -2504,16 +2453,16 @@
     .parameter "isHovering"
 
     .prologue
-    .line 752
+    .line 745
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getWidgetPageAt(I)Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
 
     move-result-object v0
 
-    .line 753
+    .line 746
     .local v0, child:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     invoke-virtual {v0, p2}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->setIsHoveringOverDeleteDropTarget(Z)V
 
-    .line 754
+    .line 747
     return-void
 .end method
 
@@ -2534,10 +2483,10 @@
     .parameter "widget"
 
     .prologue
-    .line 639
+    .line 636
     iput p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mWidgetToResetAfterFadeOut:I
 
-    .line 640
+    .line 637
     return-void
 .end method
 
@@ -2546,7 +2495,7 @@
     .parameter "childIndex"
 
     .prologue
-    .line 824
+    .line 817
     invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->isCameraPage(I)Z
 
     move-result v0
@@ -2576,66 +2525,31 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 567
+    .line 565
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getChildCount()I
 
     move-result v1
 
-    .line 568
+    .line 566
     .local v1, count:I
-    const-string v3, "KeyguardWidgetPager"
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "showInitialPageHints childCount="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, ", mCurrentPage="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    iget v5, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mCurrentPage:I
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 569
     const/4 v2, 0x0
 
     .local v2, i:I
     :goto_0
     if-ge v2, v1, :cond_1
 
-    .line 570
+    .line 567
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getWidgetPageAt(I)Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
 
     move-result-object v0
 
-    .line 571
+    .line 568
     .local v0, child:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mCurrentPage:I
 
     if-eq v2, v3, :cond_0
 
-    .line 572
+    .line 569
     const/4 v3, 0x1
 
     const v4, 0x3f19999a
@@ -2644,49 +2558,42 @@
 
     invoke-virtual {v0, p0, v3, v4, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->fadeFrame(Ljava/lang/Object;ZFI)V
 
-    .line 574
+    .line 571
     invoke-virtual {v0, v6}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->setContentAlpha(F)V
 
-    .line 569
+    .line 566
     :goto_1
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_0
 
-    .line 576
+    .line 573
     :cond_0
     invoke-virtual {v0, v6}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->setBackgroundAlpha(F)V
 
-    .line 577
+    .line 574
     const/high16 v3, 0x3f80
 
     invoke-virtual {v0, v3}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;->setContentAlpha(F)V
 
     goto :goto_1
 
-    .line 580
+    .line 577
     .end local v0           #child:Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetFrame;
     :cond_1
     return-void
 .end method
 
 .method showOutlinesAndSidePages()V
-    .locals 2
+    .locals 1
 
     .prologue
     .line 557
-    const-string v0, "KeyguardWidgetPager"
-
-    const-string v1, "showOutlinesAndSidePages"
-
-    invoke-static {v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardUtils;->xlogD(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 558
     const/4 v0, 0x1
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->animateOutlinesAndSidePages(Z)V
 
-    .line 559
+    .line 558
     return-void
 .end method
 
@@ -2702,14 +2609,14 @@
     .locals 2
 
     .prologue
-    .line 583
+    .line 580
     const/4 v0, 0x1
 
     const/4 v1, -0x1
 
     invoke-virtual {p0, v0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->animateOutlinesAndSidePages(ZI)V
 
-    .line 584
+    .line 581
     return-void
 .end method
 
@@ -2723,7 +2630,7 @@
 
     const/high16 v5, 0x3f80
 
-    .line 772
+    .line 765
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     if-eqz v1, :cond_0
@@ -2736,12 +2643,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 773
+    .line 766
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 775
+    .line 768
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getCurrentPage()I
 
@@ -2751,7 +2658,7 @@
 
     move-result-object v0
 
-    .line 776
+    .line 769
     .local v0, currentPage:Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getScaleX()F
 
@@ -2769,7 +2676,7 @@
 
     if-gez v1, :cond_2
 
-    .line 777
+    .line 770
     :cond_1
     new-instance v1, Landroid/animation/AnimatorSet;
 
@@ -2777,7 +2684,7 @@
 
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
-    .line 778
+    .line 771
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     const/4 v2, 0x2
@@ -2810,7 +2717,7 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 781
+    .line 774
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     iget v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mBouncerZoomInOutDuration:I
@@ -2819,7 +2726,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 782
+    .line 775
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     new-instance v2, Landroid/view/animation/DecelerateInterpolator;
@@ -2830,12 +2737,12 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 783
+    .line 776
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v1}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 785
+    .line 778
     :cond_2
     return-void
 .end method
@@ -2852,7 +2759,7 @@
 
     const/4 v7, 0x0
 
-    .line 789
+    .line 782
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     if-eqz v2, :cond_0
@@ -2865,24 +2772,24 @@
 
     if-eqz v2, :cond_0
 
-    .line 790
+    .line 783
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 792
+    .line 785
     :cond_0
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getCurrentPage()I
 
     move-result v0
 
-    .line 793
+    .line 786
     .local v0, curPage:I
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->getPageAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 794
+    .line 787
     .local v1, currentPage:Landroid/view/View;
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->shouldSetTopAlignedPivotForWidget(I)Z
 
@@ -2890,13 +2797,13 @@
 
     if-eqz v2, :cond_1
 
-    .line 795
+    .line 788
     invoke-virtual {v1, v3}, Landroid/view/View;->setPivotY(F)V
 
-    .line 798
+    .line 791
     invoke-virtual {v1, v3}, Landroid/view/View;->setPivotX(F)V
 
-    .line 799
+    .line 792
     invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v2
@@ -2907,7 +2814,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setPivotX(F)V
 
-    .line 801
+    .line 794
     :cond_1
     invoke-virtual {v1}, Landroid/view/View;->getScaleX()F
 
@@ -2925,14 +2832,14 @@
 
     if-ltz v2, :cond_2
 
-    .line 802
+    .line 795
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
-    .line 803
+    .line 796
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     const/4 v3, 0x2
@@ -2969,7 +2876,7 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 806
+    .line 799
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     iget v3, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mBouncerZoomInOutDuration:I
@@ -2978,7 +2885,7 @@
 
     invoke-virtual {v2, v3, v4}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 807
+    .line 800
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     new-instance v3, Landroid/view/animation/DecelerateInterpolator;
@@ -2989,12 +2896,12 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 808
+    .line 801
     iget-object v2, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardWidgetPager;->mZoomInOutAnim:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v2}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 810
+    .line 803
     :cond_2
     return-void
 .end method

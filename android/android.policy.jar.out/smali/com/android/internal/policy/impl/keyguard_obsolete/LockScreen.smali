@@ -204,7 +204,7 @@
     iput-boolean v0, p0, Lcom/android/internal/policy/impl/keyguard_obsolete/LockScreen;->mSilentMode:Z
 
     .line 480
-    const v0, 0x10202f8
+    const v0, 0x10202f6
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/LockScreen;->findViewById(I)Landroid/view/View;
 

@@ -87,7 +87,7 @@
 
     and-int/lit16 v0, v0, 0xc0
 
-    shr-int/lit8 v0, v0, 0x6
+    ushr-int/lit8 v0, v0, 0x6
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/SmsCbHeader;->geographicalScope:I
 
@@ -195,7 +195,7 @@
 
     and-int/lit16 v0, v0, 0xfe
 
-    shr-int/lit8 v13, v0, 0x1
+    ushr-int/lit8 v13, v0, 0x1
 
     .line 116
     .local v13, warningType:I
@@ -284,7 +284,7 @@
 
     and-int/lit16 v0, v0, 0xf0
 
-    shr-int/lit8 v11, v0, 0x4
+    ushr-int/lit8 v11, v0, 0x4
 
     .line 132
     .local v11, pageIndex:I
@@ -432,7 +432,7 @@
 
     and-int/lit16 v0, v0, 0xc0
 
-    shr-int/lit8 v0, v0, 0x6
+    ushr-int/lit8 v0, v0, 0x6
 
     iput v0, p0, Lcom/android/internal/telephony/gsm/SmsCbHeader;->geographicalScope:I
 

@@ -101,7 +101,7 @@
     .line 57
     iget-object v1, p0, Lcom/android/server/wm/FakeWindowImpl;->mApplicationHandle:Lcom/android/server/input/InputApplicationHandle;
 
-    const-wide v2, 0x1dcd65000L
+    const-wide v2, 0x12a05f200L
 
     iput-wide v2, v1, Lcom/android/server/input/InputApplicationHandle;->dispatchingTimeoutNanos:J
 
@@ -157,7 +157,7 @@
     .line 67
     iget-object v1, p0, Lcom/android/server/wm/FakeWindowImpl;->mWindowHandle:Lcom/android/server/input/InputWindowHandle;
 
-    const-wide v2, 0x1dcd65000L
+    const-wide v2, 0x12a05f200L
 
     iput-wide v2, v1, Lcom/android/server/input/InputWindowHandle;->dispatchingTimeoutNanos:J
 

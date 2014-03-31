@@ -19,10 +19,10 @@
     .locals 0
 
     .prologue
-    .line 37
+    .line 35
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 38
+    .line 36
     return-void
 .end method
 
@@ -31,9 +31,9 @@
     .parameter "other"
 
     .prologue
-    .line 41
+    .line 39
     invoke-direct {p0, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 42
+    .line 40
     return-void
 .end method

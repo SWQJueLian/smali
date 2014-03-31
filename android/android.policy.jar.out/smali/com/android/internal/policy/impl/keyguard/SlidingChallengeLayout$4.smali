@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 174
+    .line 165
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$4;->this$0:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 176
+    .line 167
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout$4;->this$0:Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/SlidingChallengeLayout;->completeChallengeScroll()V
 
-    .line 177
+    .line 168
     return-void
 .end method

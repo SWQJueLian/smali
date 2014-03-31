@@ -1,11 +1,14 @@
 .class Lcom/android/server/power/PowerManagerService$1;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "PowerManagerService.java"
+
+# interfaces
+.implements Lcom/android/server/power/DisplayPowerController$Callbacks;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/power/PowerManagerService;->systemReady(Lcom/android/server/TwilightService;Lcom/android/server/dreams/DreamManagerService;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/power/PowerManagerService;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,241 +27,105 @@
     .parameter
 
     .prologue
-    .line 594
+    .line 1741
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 7
-    .parameter "context"
-    .parameter "intent"
+.method public onProximityNegative()V
+    .locals 6
 
     .prologue
-    const/4 v2, 0x1
-
-    .line 597
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
-
-    #getter for: Lcom/android/server/power/PowerManagerService;->mLock:Ljava/lang/Object;
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$800(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    monitor-enter v6
-
-    .line 598
-    :try_start_0
-    const-string v0, "android.intent.action.ACTION_UNBLANK_IPO"
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1
-
-    .line 600
-    const-string v0, "PowerManagerService"
-
-    const-string v1, "IPO_UNBLANK"
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 602
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
-
-    const/4 v1, 0x1
-
-    #setter for: Lcom/android/server/power/PowerManagerService;->mIPOShutdown:Z
-    invoke-static {v0, v1}, Lcom/android/server/power/PowerManagerService;->access$902(Lcom/android/server/power/PowerManagerService;Z)Z
-
-    .line 603
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v1
-
-    #calls: Lcom/android/server/power/PowerManagerService;->wakeUpNoUpdateLocked(J)Z
-    invoke-static {v0, v1, v2}, Lcom/android/server/power/PowerManagerService;->access$1000(Lcom/android/server/power/PowerManagerService;J)Z
-
-    .line 627
-    :cond_0
-    :goto_0
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
-
-    #calls: Lcom/android/server/power/PowerManagerService;->updatePowerStateLocked()V
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$1900(Lcom/android/server/power/PowerManagerService;)V
-
-    .line 628
-    monitor-exit v6
-
-    .line 629
-    return-void
-
-    .line 604
-    :cond_1
-    const-string v0, "android.intent.action.ACTION_BLANK_IPO"
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 606
-    const-string v0, "PowerManagerService"
-
-    const-string v1, "IPO_BLANK"
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 608
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v1
-
     const/4 v3, 0x0
 
-    #calls: Lcom/android/server/power/PowerManagerService;->goToSleepNoUpdateLocked(JI)Z
-    invoke-static {v0, v1, v2, v3}, Lcom/android/server/power/PowerManagerService;->access$1100(Lcom/android/server/power/PowerManagerService;JI)Z
-
-    goto :goto_0
-
-    .line 628
-    :catchall_0
-    move-exception v0
-
-    monitor-exit v6
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    throw v0
-
-    .line 610
-    :cond_2
-    :try_start_1
-    const-string v0, "android.intent.action.ACTION_BOOT_IPO"
-
-    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 612
-    const-string v0, "PowerManagerService"
-
-    const-string v1, "IPO_BOOT"
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 614
+    .line 1757
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    const/4 v1, 0x0
+    #setter for: Lcom/android/server/power/PowerManagerService;->mProximityPositive:Z
+    invoke-static {v0, v3}, Lcom/android/server/power/PowerManagerService;->access$902(Lcom/android/server/power/PowerManagerService;Z)Z
 
-    #setter for: Lcom/android/server/power/PowerManagerService;->mIPOShutdown:Z
-    invoke-static {v0, v1}, Lcom/android/server/power/PowerManagerService;->access$902(Lcom/android/server/power/PowerManagerService;Z)Z
-
-    .line 615
+    .line 1758
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
 
-    const/4 v1, 0x0
+    const/16 v1, 0x200
 
-    #setter for: Lcom/android/server/power/PowerManagerService;->mIPOFlag:Z
-    invoke-static {v0, v1}, Lcom/android/server/power/PowerManagerService;->access$1202(Lcom/android/server/power/PowerManagerService;Z)Z
+    invoke-static {v0, v1}, Lcom/android/server/power/PowerManagerService;->access$776(Lcom/android/server/power/PowerManagerService;I)I
 
-    .line 616
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
-
-    const/16 v1, 0x1000
-
-    invoke-static {v0, v1}, Lcom/android/server/power/PowerManagerService;->access$1376(Lcom/android/server/power/PowerManagerService;I)I
-
-    .line 617
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
-
-    #getter for: Lcom/android/server/power/PowerManagerService;->mWakefulness:I
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$1400(Lcom/android/server/power/PowerManagerService;)I
-
-    move-result v0
-
-    if-eq v0, v2, :cond_3
-
-    .line 618
+    .line 1759
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v1
-
-    #calls: Lcom/android/server/power/PowerManagerService;->wakeUpNoUpdateLocked(J)Z
-    invoke-static {v0, v1, v2}, Lcom/android/server/power/PowerManagerService;->access$1000(Lcom/android/server/power/PowerManagerService;J)Z
-
-    goto :goto_0
-
-    .line 620
-    :cond_3
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
-
-    #calls: Lcom/android/server/power/PowerManagerService;->sendPendingNotificationsLocked()V
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$1500(Lcom/android/server/power/PowerManagerService;)V
-
-    .line 621
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
-
-    #getter for: Lcom/android/server/power/PowerManagerService;->mNotifier:Lcom/android/server/power/Notifier;
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$1600(Lcom/android/server/power/PowerManagerService;)Lcom/android/server/power/Notifier;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/android/server/power/Notifier;->onWakeUpStarted()V
-
-    .line 622
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
-
-    const/4 v1, 0x1
-
-    #setter for: Lcom/android/server/power/PowerManagerService;->mSendWakeUpFinishedNotificationWhenReady:Z
-    invoke-static {v0, v1}, Lcom/android/server/power/PowerManagerService;->access$1702(Lcom/android/server/power/PowerManagerService;Z)Z
-
-    .line 623
-    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v1
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
 
     const/16 v5, 0x3e8
 
-    #calls: Lcom/android/server/power/PowerManagerService;->userActivityNoUpdateLocked(JIII)Z
-    invoke-static/range {v0 .. v5}, Lcom/android/server/power/PowerManagerService;->access$1800(Lcom/android/server/power/PowerManagerService;JIII)Z
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    move v4, v3
 
-    goto/16 :goto_0
+    #calls: Lcom/android/server/power/PowerManagerService;->userActivityNoUpdateLocked(JIII)Z
+    invoke-static/range {v0 .. v5}, Lcom/android/server/power/PowerManagerService;->access$1000(Lcom/android/server/power/PowerManagerService;JIII)Z
+
+    .line 1761
+    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
+
+    #calls: Lcom/android/server/power/PowerManagerService;->updatePowerStateLocked()V
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$800(Lcom/android/server/power/PowerManagerService;)V
+
+    .line 1762
+    return-void
+.end method
+
+.method public onProximityPositive()V
+    .locals 2
+
+    .prologue
+    .line 1750
+    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
+
+    const/4 v1, 0x1
+
+    #setter for: Lcom/android/server/power/PowerManagerService;->mProximityPositive:Z
+    invoke-static {v0, v1}, Lcom/android/server/power/PowerManagerService;->access$902(Lcom/android/server/power/PowerManagerService;Z)Z
+
+    .line 1751
+    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
+
+    const/16 v1, 0x200
+
+    invoke-static {v0, v1}, Lcom/android/server/power/PowerManagerService;->access$776(Lcom/android/server/power/PowerManagerService;I)I
+
+    .line 1752
+    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
+
+    #calls: Lcom/android/server/power/PowerManagerService;->updatePowerStateLocked()V
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$800(Lcom/android/server/power/PowerManagerService;)V
+
+    .line 1753
+    return-void
+.end method
+
+.method public onStateChanged()V
+    .locals 2
+
+    .prologue
+    .line 1744
+    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
+
+    const/16 v1, 0x8
+
+    invoke-static {v0, v1}, Lcom/android/server/power/PowerManagerService;->access$776(Lcom/android/server/power/PowerManagerService;I)I
+
+    .line 1745
+    iget-object v0, p0, Lcom/android/server/power/PowerManagerService$1;->this$0:Lcom/android/server/power/PowerManagerService;
+
+    #calls: Lcom/android/server/power/PowerManagerService;->updatePowerStateLocked()V
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$800(Lcom/android/server/power/PowerManagerService;)V
+
+    .line 1746
+    return-void
 .end method

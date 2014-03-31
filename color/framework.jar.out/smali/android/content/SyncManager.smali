@@ -4599,7 +4599,7 @@
     .line 1090
     .end local v11           #i$:Ljava/util/Iterator;
     :cond_1
-    const-string/jumbo v28, "memory low: "
+    const-string v28, "memory low: "
 
     move-object/from16 v0, p1
 
@@ -4898,7 +4898,7 @@
     if-eqz v28, :cond_4
 
     .line 1114
-    const-string/jumbo v28, "next alarm time: "
+    const-string v28, "next alarm time: "
 
     move-object/from16 v0, p1
 
@@ -5172,7 +5172,7 @@
 
     .line 1119
     :cond_4
-    const-string/jumbo v28, "no alarm is scheduled (there had better not be any pending syncs)"
+    const-string v28, "no alarm is scheduled (there had better not be any pending syncs)"
 
     move-object/from16 v0, p1
 

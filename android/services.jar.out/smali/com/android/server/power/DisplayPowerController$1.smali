@@ -1,11 +1,14 @@
 .class Lcom/android/server/power/DisplayPowerController$1;
-.super Landroid/content/BroadcastReceiver;
+.super Ljava/lang/Object;
 .source "DisplayPowerController.java"
+
+# interfaces
+.implements Landroid/animation/Animator$AnimatorListener;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/power/DisplayPowerController;-><init>(Landroid/os/Looper;Landroid/content/Context;Lcom/android/server/power/Notifier;Lcom/android/server/LightsService;Lcom/android/server/TwilightService;Lcom/android/server/power/DisplayBlanker;Lcom/android/server/power/DisplayPowerController$Callbacks;Landroid/os/Handler;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/server/power/DisplayPowerController;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -24,45 +27,54 @@
     .parameter
 
     .prologue
-    .line 450
+    .line 540
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerController$1;->this$0:Lcom/android/server/power/DisplayPowerController;
 
-    invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 2
-    .parameter "context"
-    .parameter "intent"
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 0
+    .parameter "animation"
 
     .prologue
-    .line 453
-    invoke-static {}, Lcom/android/server/power/DisplayPowerController;->access$000()Z
+    .line 553
+    return-void
+.end method
 
-    move-result v0
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
+    .parameter "animation"
 
-    if-eqz v0, :cond_0
-
-    .line 454
-    const-string v0, "PowerManagerDisplayController"
-
-    const-string v1, "P_SHUTDWON."
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 456
-    :cond_0
+    .prologue
+    .line 546
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$1;->this$0:Lcom/android/server/power/DisplayPowerController;
 
-    const/4 v1, 0x1
+    #calls: Lcom/android/server/power/DisplayPowerController;->sendUpdatePowerState()V
+    invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$000(Lcom/android/server/power/DisplayPowerController;)V
 
-    #setter for: Lcom/android/server/power/DisplayPowerController;->mShutDownFlag_D:Z
-    invoke-static {v0, v1}, Lcom/android/server/power/DisplayPowerController;->access$102(Lcom/android/server/power/DisplayPowerController;Z)Z
+    .line 547
+    return-void
+.end method
 
-    .line 457
+.method public onAnimationRepeat(Landroid/animation/Animator;)V
+    .locals 0
+    .parameter "animation"
+
+    .prologue
+    .line 550
+    return-void
+.end method
+
+.method public onAnimationStart(Landroid/animation/Animator;)V
+    .locals 0
+    .parameter "animation"
+
+    .prologue
+    .line 543
     return-void
 .end method

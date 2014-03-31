@@ -117,16 +117,16 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 682
+    .line 633
     iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mEglSurface:Landroid/opengl/EGLSurface;
 
     if-nez v1, :cond_0
 
-    .line 689
+    .line 640
     :goto_0
     return v0
 
-    .line 685
+    .line 636
     :cond_0
     iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mEglDisplay:Landroid/opengl/EGLDisplay;
 
@@ -142,14 +142,14 @@
 
     if-nez v1, :cond_1
 
-    .line 686
+    .line 637
     const-string v1, "eglMakeCurrent"
 
     invoke-static {v1}, Lcom/android/server/power/ElectronBeam;->logEglError(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 689
+    .line 640
     :cond_1
     const/4 v0, 0x1
 
@@ -606,7 +606,7 @@
     .parameter "func"
 
     .prologue
-    .line 742
+    .line 693
     const/4 v0, 0x1
 
     invoke-static {p0, v0}, Lcom/android/server/power/ElectronBeam;->checkGlErrors(Ljava/lang/String;Z)Z
@@ -622,10 +622,10 @@
     .parameter "log"
 
     .prologue
-    .line 746
+    .line 697
     const/4 v1, 0x0
 
-    .line 748
+    .line 699
     .local v1, hadError:Z
     :goto_0
     invoke-static {}, Landroid/opengl/GLES10;->glGetError()I
@@ -635,10 +635,10 @@
     .local v0, error:I
     if-eqz v0, :cond_1
 
-    .line 749
+    .line 700
     if-eqz p1, :cond_0
 
-    .line 750
+    .line 701
     const-string v2, "ElectronBeam"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -669,13 +669,13 @@
 
     invoke-static {v2, v3, v4}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 752
+    .line 703
     :cond_0
     const/4 v1, 0x1
 
     goto :goto_0
 
-    .line 754
+    .line 705
     :cond_1
     return v1
 .end method
@@ -867,19 +867,19 @@
 
     const/4 v1, 0x0
 
-    .line 628
+    .line 579
     iget-object v3, p0, Lcom/android/server/power/ElectronBeam;->mEglSurface:Landroid/opengl/EGLSurface;
 
     if-nez v3, :cond_0
 
-    .line 629
+    .line 580
     new-array v0, v2, [I
 
     const/16 v3, 0x3038
 
     aput v3, v0, v1
 
-    .line 632
+    .line 583
     .local v0, eglSurfaceAttribList:[I
     iget-object v3, p0, Lcom/android/server/power/ElectronBeam;->mEglDisplay:Landroid/opengl/EGLDisplay;
 
@@ -893,17 +893,17 @@
 
     iput-object v3, p0, Lcom/android/server/power/ElectronBeam;->mEglSurface:Landroid/opengl/EGLSurface;
 
-    .line 634
+    .line 585
     iget-object v3, p0, Lcom/android/server/power/ElectronBeam;->mEglSurface:Landroid/opengl/EGLSurface;
 
     if-nez v3, :cond_0
 
-    .line 635
+    .line 586
     const-string v2, "eglCreateWindowSurface"
 
     invoke-static {v2}, Lcom/android/server/power/ElectronBeam;->logEglError(Ljava/lang/String;)V
 
-    .line 639
+    .line 590
     .end local v0           #eglSurfaceAttribList:[I
     :goto_0
     return v1
@@ -919,14 +919,14 @@
     .parameter "size"
 
     .prologue
-    .line 732
+    .line 683
     mul-int/lit8 v1, p0, 0x4
 
     invoke-static {v1}, Ljava/nio/ByteBuffer;->allocateDirect(I)Ljava/nio/ByteBuffer;
 
     move-result-object v0
 
-    .line 733
+    .line 684
     .local v0, bb:Ljava/nio/ByteBuffer;
     invoke-static {}, Ljava/nio/ByteOrder;->nativeOrder()Ljava/nio/ByteOrder;
 
@@ -934,7 +934,7 @@
 
     invoke-virtual {v0, v1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
-    .line 734
+    .line 685
     invoke-virtual {v0}, Ljava/nio/ByteBuffer;->asFloatBuffer()Ljava/nio/FloatBuffer;
 
     move-result-object v1
@@ -1200,12 +1200,12 @@
     .locals 2
 
     .prologue
-    .line 643
+    .line 594
     iget-object v0, p0, Lcom/android/server/power/ElectronBeam;->mEglSurface:Landroid/opengl/EGLSurface;
 
     if-eqz v0, :cond_1
 
-    .line 644
+    .line 595
     iget-object v0, p0, Lcom/android/server/power/ElectronBeam;->mEglDisplay:Landroid/opengl/EGLDisplay;
 
     iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mEglSurface:Landroid/opengl/EGLSurface;
@@ -1216,18 +1216,18 @@
 
     if-nez v0, :cond_0
 
-    .line 645
+    .line 596
     const-string v0, "eglDestroySurface"
 
     invoke-static {v0}, Lcom/android/server/power/ElectronBeam;->logEglError(Ljava/lang/String;)V
 
-    .line 647
+    .line 598
     :cond_0
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/power/ElectronBeam;->mEglSurface:Landroid/opengl/EGLSurface;
 
-    .line 649
+    .line 600
     :cond_1
     return-void
 .end method
@@ -1290,15 +1290,15 @@
     .locals 1
 
     .prologue
-    .line 652
+    .line 603
     iget-object v0, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
 
     if-eqz v0, :cond_0
 
-    .line 653
+    .line 604
     invoke-static {}, Landroid/view/Surface;->openTransaction()V
 
-    .line 655
+    .line 606
     :try_start_0
     iget-object v0, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
 
@@ -1306,29 +1306,29 @@
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 657
+    .line 608
     invoke-static {}, Landroid/view/Surface;->closeTransaction()V
 
-    .line 659
+    .line 610
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
 
-    .line 660
+    .line 611
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/power/ElectronBeam;->mSurfaceVisible:Z
 
-    .line 661
+    .line 612
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/server/power/ElectronBeam;->mSurfaceAlpha:F
 
-    .line 663
+    .line 614
     :cond_0
     return-void
 
-    .line 657
+    .line 608
     :catchall_0
     move-exception v0
 
@@ -1341,12 +1341,12 @@
     .locals 4
 
     .prologue
-    .line 693
+    .line 644
     iget-object v0, p0, Lcom/android/server/power/ElectronBeam;->mEglDisplay:Landroid/opengl/EGLDisplay;
 
     if-eqz v0, :cond_0
 
-    .line 694
+    .line 645
     iget-object v0, p0, Lcom/android/server/power/ElectronBeam;->mEglDisplay:Landroid/opengl/EGLDisplay;
 
     sget-object v1, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
@@ -1357,7 +1357,7 @@
 
     invoke-static {v0, v1, v2, v3}, Landroid/opengl/EGL14;->eglMakeCurrent(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;)Z
 
-    .line 697
+    .line 648
     :cond_0
     return-void
 .end method
@@ -1669,7 +1669,7 @@
     .parameter "func"
 
     .prologue
-    .line 738
+    .line 689
     const-string v0, "ElectronBeam"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1704,7 +1704,7 @@
 
     invoke-static {v0, v1, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 739
+    .line 690
     return-void
 .end method
 
@@ -1713,7 +1713,7 @@
     .parameter "value"
 
     .prologue
-    .line 728
+    .line 679
     const/4 v0, 0x1
 
     invoke-static {p0}, Ljava/lang/Integer;->numberOfLeadingZeros(I)I
@@ -1735,10 +1735,10 @@
     .prologue
     const/high16 v4, 0x3f00
 
-    .line 708
+    .line 659
     sub-float v1, p0, v4
 
-    .line 713
+    .line 664
     .local v1, x:F
     invoke-static {v1, p1}, Lcom/android/server/power/ElectronBeam;->sigmoid(FF)F
 
@@ -1746,7 +1746,7 @@
 
     sub-float v2, v3, v4
 
-    .line 717
+    .line 668
     .local v2, y:F
     invoke-static {v4, p1}, Lcom/android/server/power/ElectronBeam;->sigmoid(FF)F
 
@@ -1754,7 +1754,7 @@
 
     sub-float v0, v3, v4
 
-    .line 720
+    .line 671
     .local v0, v:F
     div-float v3, v2, v0
 
@@ -1915,7 +1915,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 666
+    .line 617
     iget-boolean v0, p0, Lcom/android/server/power/ElectronBeam;->mSurfaceVisible:Z
 
     if-eqz v0, :cond_0
@@ -1926,11 +1926,11 @@
 
     if-eqz v0, :cond_1
 
-    .line 667
+    .line 618
     :cond_0
     invoke-static {}, Landroid/view/Surface;->openTransaction()V
 
-    .line 669
+    .line 620
     :try_start_0
     iget-object v0, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
 
@@ -1938,32 +1938,32 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Surface;->setLayer(I)V
 
-    .line 670
+    .line 621
     iget-object v0, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
 
     invoke-virtual {v0, p1}, Landroid/view/Surface;->setAlpha(F)V
 
-    .line 671
+    .line 622
     iget-object v0, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
 
     invoke-virtual {v0}, Landroid/view/Surface;->show()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 673
+    .line 624
     invoke-static {}, Landroid/view/Surface;->closeTransaction()V
 
-    .line 675
+    .line 626
     iput-boolean v2, p0, Lcom/android/server/power/ElectronBeam;->mSurfaceVisible:Z
 
-    .line 676
+    .line 627
     iput p1, p0, Lcom/android/server/power/ElectronBeam;->mSurfaceAlpha:F
 
-    .line 678
+    .line 629
     :cond_1
     return v2
 
-    .line 673
+    .line 624
     :catchall_0
     move-exception v0
 
@@ -1980,7 +1980,7 @@
     .prologue
     const/high16 v1, 0x3f80
 
-    .line 724
+    .line 675
     neg-float v0, p0
 
     mul-float/2addr v0, p1
@@ -2221,15 +2221,15 @@
     .parameter "pw"
 
     .prologue
-    .line 758
+    .line 709
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 759
+    .line 710
     const-string v0, "Electron Beam State:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 760
+    .line 711
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2252,7 +2252,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 761
+    .line 712
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2275,7 +2275,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 762
+    .line 713
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2298,7 +2298,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 763
+    .line 714
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2321,7 +2321,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 764
+    .line 715
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2344,7 +2344,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 765
+    .line 716
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2367,7 +2367,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 766
+    .line 717
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2390,7 +2390,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 767
+    .line 718
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -2413,7 +2413,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 768
+    .line 719
     return-void
 .end method
 
@@ -2534,253 +2534,4 @@
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_1
-.end method
-
-.method public updateToCurrentRotation()Z
-    .locals 6
-
-    .prologue
-    const/4 v0, 0x1
-
-    const/4 v1, 0x0
-
-    .line 580
-    iget-object v2, p0, Lcom/android/server/power/ElectronBeam;->mDisplay:Landroid/view/Display;
-
-    if-eqz v2, :cond_0
-
-    iget-object v2, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
-
-    if-nez v2, :cond_1
-
-    .line 581
-    :cond_0
-    const-string v0, "ElectronBeam"
-
-    const-string v2, "Can not update rotation!"
-
-    invoke-static {v0, v2}, Landroid/util/Slog;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    move v0, v1
-
-    .line 623
-    :goto_0
-    return v0
-
-    .line 585
-    :cond_1
-    const-string v1, "ElectronBeam"
-
-    const-string v2, "updateToCurrentRotation"
-
-    invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 587
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplay:Landroid/view/Display;
-
-    iget-object v2, p0, Lcom/android/server/power/ElectronBeam;->mDisplayInfo:Landroid/view/DisplayInfo;
-
-    invoke-virtual {v1, v2}, Landroid/view/Display;->getDisplayInfo(Landroid/view/DisplayInfo;)Z
-
-    .line 588
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayInfo:Landroid/view/DisplayInfo;
-
-    iget v1, v1, Landroid/view/DisplayInfo;->rotation:I
-
-    iput v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayRotation:I
-
-    .line 589
-    iget v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayRotation:I
-
-    if-eq v1, v0, :cond_2
-
-    iget v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayRotation:I
-
-    const/4 v2, 0x3
-
-    if-ne v1, v2, :cond_3
-
-    .line 591
-    :cond_2
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayInfo:Landroid/view/DisplayInfo;
-
-    iget v1, v1, Landroid/view/DisplayInfo;->logicalHeight:I
-
-    iput v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayWidth:I
-
-    .line 592
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayInfo:Landroid/view/DisplayInfo;
-
-    iget v1, v1, Landroid/view/DisplayInfo;->logicalWidth:I
-
-    iput v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayHeight:I
-
-    .line 598
-    :goto_1
-    invoke-static {}, Landroid/view/Surface;->openTransaction()V
-
-    .line 600
-    :try_start_0
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
-
-    iget v2, p0, Lcom/android/server/power/ElectronBeam;->mDisplayWidth:I
-
-    iget v3, p0, Lcom/android/server/power/ElectronBeam;->mDisplayHeight:I
-
-    invoke-virtual {v1, v2, v3}, Landroid/view/Surface;->setSize(II)V
-
-    .line 602
-    iget v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayRotation:I
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    packed-switch v1, :pswitch_data_0
-
-    .line 621
-    :goto_2
-    invoke-static {}, Landroid/view/Surface;->closeTransaction()V
-
-    goto :goto_0
-
-    .line 594
-    :cond_3
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayInfo:Landroid/view/DisplayInfo;
-
-    iget v1, v1, Landroid/view/DisplayInfo;->logicalWidth:I
-
-    iput v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayWidth:I
-
-    .line 595
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayInfo:Landroid/view/DisplayInfo;
-
-    iget v1, v1, Landroid/view/DisplayInfo;->logicalHeight:I
-
-    iput v1, p0, Lcom/android/server/power/ElectronBeam;->mDisplayHeight:I
-
-    goto :goto_1
-
-    .line 604
-    :pswitch_0
-    :try_start_1
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Landroid/view/Surface;->setPosition(II)V
-
-    .line 605
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
-
-    const/high16 v2, 0x3f80
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/high16 v5, 0x3f80
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/view/Surface;->setMatrix(FFFF)V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    goto :goto_2
-
-    .line 621
-    :catchall_0
-    move-exception v0
-
-    invoke-static {}, Landroid/view/Surface;->closeTransaction()V
-
-    throw v0
-
-    .line 608
-    :pswitch_1
-    :try_start_2
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
-
-    const/4 v2, 0x0
-
-    iget v3, p0, Lcom/android/server/power/ElectronBeam;->mDisplayWidth:I
-
-    invoke-virtual {v1, v2, v3}, Landroid/view/Surface;->setPosition(II)V
-
-    .line 609
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
-
-    const/4 v2, 0x0
-
-    const/high16 v3, -0x4080
-
-    const/high16 v4, 0x3f80
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/view/Surface;->setMatrix(FFFF)V
-
-    goto :goto_2
-
-    .line 612
-    :pswitch_2
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
-
-    iget v2, p0, Lcom/android/server/power/ElectronBeam;->mDisplayWidth:I
-
-    iget v3, p0, Lcom/android/server/power/ElectronBeam;->mDisplayHeight:I
-
-    invoke-virtual {v1, v2, v3}, Landroid/view/Surface;->setPosition(II)V
-
-    .line 613
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
-
-    const/high16 v2, -0x4080
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    const/high16 v5, -0x4080
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/view/Surface;->setMatrix(FFFF)V
-
-    goto :goto_2
-
-    .line 616
-    :pswitch_3
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
-
-    iget v2, p0, Lcom/android/server/power/ElectronBeam;->mDisplayHeight:I
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Landroid/view/Surface;->setPosition(II)V
-
-    .line 617
-    iget-object v1, p0, Lcom/android/server/power/ElectronBeam;->mSurface:Landroid/view/Surface;
-
-    const/4 v2, 0x0
-
-    const/high16 v3, 0x3f80
-
-    const/high16 v4, -0x4080
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/view/Surface;->setMatrix(FFFF)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    goto :goto_2
-
-    .line 602
-    nop
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-        :pswitch_1
-        :pswitch_2
-        :pswitch_3
-    .end packed-switch
 .end method

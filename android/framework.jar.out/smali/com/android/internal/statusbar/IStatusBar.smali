@@ -63,14 +63,6 @@
     .end annotation
 .end method
 
-.method public abstract hideSIMIndicator()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract preloadRecentApps()V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -120,22 +112,6 @@
 .end method
 
 .method public abstract setSystemUiVisibility(II)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract showApplicationGuide(Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract showSIMIndicator(Ljava/lang/String;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

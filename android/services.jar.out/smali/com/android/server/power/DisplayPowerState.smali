@@ -25,12 +25,6 @@
     .end annotation
 .end field
 
-.field public static final IPO_BOOT1:Ljava/lang/String; = "android.intent.action.ACTION_BOOT_IPO"
-
-.field public static final IPO_SHUTDWON1:Ljava/lang/String; = "android.intent.action.ACTION_SHUTDOWN_IPO"
-
-.field public static final IPO_UNBLANK1:Ljava/lang/String; = "android.intent.action.ACTION_UNBLANK_IPO"
-
 .field public static final SCREEN_BRIGHTNESS:Landroid/util/IntProperty; = null
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -42,7 +36,7 @@
     .end annotation
 .end field
 
-.field private static final TAG:Ljava/lang/String; = "PowerManagerDisplayState"
+.field private static final TAG:Ljava/lang/String; = "DisplayPowerState"
 
 
 # instance fields
@@ -51,10 +45,6 @@
 .field private final mChoreographer:Landroid/view/Choreographer;
 
 .field private mCleanListener:Ljava/lang/Runnable;
-
-.field private mContext:Landroid/content/Context;
-
-.field private mDelay:I
 
 .field private final mDisplayBlanker:Lcom/android/server/power/DisplayBlanker;
 
@@ -84,187 +74,145 @@
 
 .field private final mScreenUpdateRunnable:Ljava/lang/Runnable;
 
-.field private mShutDownFlag:Z
-
 
 # direct methods
 .method static constructor <clinit>()V
     .locals 2
 
     .prologue
-    .line 59
-    const/4 v0, 0x1
+    .line 53
+    const/4 v0, 0x0
 
     sput-boolean v0, Lcom/android/server/power/DisplayPowerState;->DEBUG:Z
 
-    .line 137
-    new-instance v0, Lcom/android/server/power/DisplayPowerState$2;
+    .line 98
+    new-instance v0, Lcom/android/server/power/DisplayPowerState$1;
 
     const-string v1, "electronBeamLevel"
 
-    invoke-direct {v0, v1}, Lcom/android/server/power/DisplayPowerState$2;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/android/server/power/DisplayPowerState$1;-><init>(Ljava/lang/String;)V
 
     sput-object v0, Lcom/android/server/power/DisplayPowerState;->ELECTRON_BEAM_LEVEL:Landroid/util/FloatProperty;
 
-    .line 150
-    new-instance v0, Lcom/android/server/power/DisplayPowerState$3;
+    .line 111
+    new-instance v0, Lcom/android/server/power/DisplayPowerState$2;
 
     const-string v1, "screenBrightness"
 
-    invoke-direct {v0, v1}, Lcom/android/server/power/DisplayPowerState$3;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/android/server/power/DisplayPowerState$2;-><init>(Ljava/lang/String;)V
 
     sput-object v0, Lcom/android/server/power/DisplayPowerState;->SCREEN_BRIGHTNESS:Landroid/util/IntProperty;
 
     return-void
 .end method
 
-.method public constructor <init>(Lcom/android/server/power/ElectronBeam;Lcom/android/server/power/DisplayBlanker;Lcom/android/server/LightsService$Light;Landroid/content/Context;)V
-    .locals 5
+.method public constructor <init>(Lcom/android/server/power/ElectronBeam;Lcom/android/server/power/DisplayBlanker;Lcom/android/server/LightsService$Light;)V
+    .locals 3
     .parameter "electronBean"
     .parameter "displayBlanker"
     .parameter "backlight"
-    .parameter "context"
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v2, 0x1
 
-    const/4 v3, 0x1
-
-    const/4 v2, 0x0
-
-    .line 88
+    .line 75
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 84
-    iput-boolean v2, p0, Lcom/android/server/power/DisplayPowerState;->mShutDownFlag:Z
+    .line 300
+    new-instance v0, Lcom/android/server/power/DisplayPowerState$3;
 
-    .line 85
-    iput v2, p0, Lcom/android/server/power/DisplayPowerState;->mDelay:I
+    invoke-direct {v0, p0}, Lcom/android/server/power/DisplayPowerState$3;-><init>(Lcom/android/server/power/DisplayPowerState;)V
 
-    .line 343
-    new-instance v1, Lcom/android/server/power/DisplayPowerState$4;
+    iput-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenUpdateRunnable:Ljava/lang/Runnable;
 
-    invoke-direct {v1, p0}, Lcom/android/server/power/DisplayPowerState$4;-><init>(Lcom/android/server/power/DisplayPowerState;)V
+    .line 313
+    new-instance v0, Lcom/android/server/power/DisplayPowerState$4;
 
-    iput-object v1, p0, Lcom/android/server/power/DisplayPowerState;->mScreenUpdateRunnable:Ljava/lang/Runnable;
+    invoke-direct {v0, p0}, Lcom/android/server/power/DisplayPowerState$4;-><init>(Lcom/android/server/power/DisplayPowerState;)V
 
-    .line 356
-    new-instance v1, Lcom/android/server/power/DisplayPowerState$5;
+    iput-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamDrawRunnable:Ljava/lang/Runnable;
 
-    invoke-direct {v1, p0}, Lcom/android/server/power/DisplayPowerState$5;-><init>(Lcom/android/server/power/DisplayPowerState;)V
+    .line 76
+    new-instance v0, Landroid/os/Handler;
 
-    iput-object v1, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamDrawRunnable:Ljava/lang/Runnable;
+    invoke-direct {v0, v2}, Landroid/os/Handler;-><init>(Z)V
 
-    .line 89
-    new-instance v1, Landroid/os/Handler;
+    iput-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mHandler:Landroid/os/Handler;
 
-    invoke-direct {v1, v3}, Landroid/os/Handler;-><init>(Z)V
-
-    iput-object v1, p0, Lcom/android/server/power/DisplayPowerState;->mHandler:Landroid/os/Handler;
-
-    .line 90
+    .line 77
     invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/android/server/power/DisplayPowerState;->mChoreographer:Landroid/view/Choreographer;
+    iput-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mChoreographer:Landroid/view/Choreographer;
 
-    .line 91
+    .line 78
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeam:Lcom/android/server/power/ElectronBeam;
 
-    .line 92
+    .line 79
     iput-object p2, p0, Lcom/android/server/power/DisplayPowerState;->mDisplayBlanker:Lcom/android/server/power/DisplayBlanker;
 
-    .line 93
+    .line 80
     iput-object p3, p0, Lcom/android/server/power/DisplayPowerState;->mBacklight:Lcom/android/server/LightsService$Light;
 
-    .line 94
-    new-instance v1, Lcom/android/server/power/DisplayPowerState$PhotonicModulator;
+    .line 81
+    new-instance v0, Lcom/android/server/power/DisplayPowerState$PhotonicModulator;
 
-    invoke-direct {v1, p0, v4}, Lcom/android/server/power/DisplayPowerState$PhotonicModulator;-><init>(Lcom/android/server/power/DisplayPowerState;Lcom/android/server/power/DisplayPowerState$1;)V
+    const/4 v1, 0x0
 
-    iput-object v1, p0, Lcom/android/server/power/DisplayPowerState;->mPhotonicModulator:Lcom/android/server/power/DisplayPowerState$PhotonicModulator;
+    invoke-direct {v0, p0, v1}, Lcom/android/server/power/DisplayPowerState$PhotonicModulator;-><init>(Lcom/android/server/power/DisplayPowerState;Lcom/android/server/power/DisplayPowerState$1;)V
 
-    .line 95
-    iput-object p4, p0, Lcom/android/server/power/DisplayPowerState;->mContext:Landroid/content/Context;
+    iput-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mPhotonicModulator:Lcom/android/server/power/DisplayPowerState$PhotonicModulator;
 
-    .line 96
-    new-instance v0, Landroid/content/IntentFilter;
+    .line 89
+    iput-boolean v2, p0, Lcom/android/server/power/DisplayPowerState;->mScreenOn:Z
 
-    invoke-direct {v0}, Landroid/content/IntentFilter;-><init>()V
+    .line 90
+    const/16 v0, 0xff
 
-    .line 104
-    .local v0, filter:Landroid/content/IntentFilter;
-    iput-boolean v3, p0, Lcom/android/server/power/DisplayPowerState;->mScreenOn:Z
+    iput v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenBrightness:I
 
-    .line 105
-    const/16 v1, 0xff
-
-    iput v1, p0, Lcom/android/server/power/DisplayPowerState;->mScreenBrightness:I
-
-    .line 106
+    .line 91
     invoke-direct {p0}, Lcom/android/server/power/DisplayPowerState;->scheduleScreenUpdate()V
 
-    .line 108
-    iput-boolean v2, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamPrepared:Z
+    .line 93
+    const/4 v0, 0x0
 
-    .line 109
-    const/high16 v1, 0x3f80
+    iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamPrepared:Z
 
-    iput v1, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamLevel:F
+    .line 94
+    const/high16 v0, 0x3f80
 
-    .line 110
-    iput-boolean v3, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamReady:Z
+    iput v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamLevel:F
 
-    .line 112
-    const-string v1, "android.intent.action.ACTION_SHUTDOWN_IPO"
+    .line 95
+    iput-boolean v2, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamReady:Z
 
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 113
-    const-string v1, "android.intent.action.ACTION_BOOT_IPO"
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 114
-    const-string v1, "android.intent.action.ACTION_UNBLANK_IPO"
-
-    invoke-virtual {v0, v1}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    .line 115
-    iget-object v1, p0, Lcom/android/server/power/DisplayPowerState;->mContext:Landroid/content/Context;
-
-    new-instance v2, Lcom/android/server/power/DisplayPowerState$1;
-
-    invoke-direct {v2, p0}, Lcom/android/server/power/DisplayPowerState$1;-><init>(Lcom/android/server/power/DisplayPowerState;)V
-
-    iget-object v3, p0, Lcom/android/server/power/DisplayPowerState;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v1, v2, v0, v4, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
-
-    .line 135
+    .line 96
     return-void
 .end method
 
-.method static synthetic access$100()Z
+.method static synthetic access$1000(Lcom/android/server/power/DisplayPowerState;)Lcom/android/server/power/ElectronBeam;
     .locals 1
-
-    .prologue
-    .line 56
-    sget-boolean v0, Lcom/android/server/power/DisplayPowerState;->DEBUG:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1000(Lcom/android/server/power/DisplayPowerState;)V
-    .locals 0
     .parameter "x0"
 
     .prologue
-    .line 56
-    invoke-direct {p0}, Lcom/android/server/power/DisplayPowerState;->invokeCleanListenerIfNeeded()V
+    .line 50
+    iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeam:Lcom/android/server/power/ElectronBeam;
 
-    return-void
+    return-object v0
+.end method
+
+.method static synthetic access$102(Lcom/android/server/power/DisplayPowerState;Z)Z
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 50
+    iput-boolean p1, p0, Lcom/android/server/power/DisplayPowerState;->mScreenUpdatePending:Z
+
+    return p1
 .end method
 
 .method static synthetic access$1102(Lcom/android/server/power/DisplayPowerState;Z)Z
@@ -273,53 +221,29 @@
     .parameter "x1"
 
     .prologue
-    .line 56
-    iput-boolean p1, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamDrawPending:Z
-
-    return p1
-.end method
-
-.method static synthetic access$1200(Lcom/android/server/power/DisplayPowerState;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 56
-    iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamPrepared:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1300(Lcom/android/server/power/DisplayPowerState;)Lcom/android/server/power/ElectronBeam;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 56
-    iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeam:Lcom/android/server/power/ElectronBeam;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1402(Lcom/android/server/power/DisplayPowerState;Z)Z
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 56
+    .line 50
     iput-boolean p1, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamReady:Z
 
     return p1
 .end method
 
-.method static synthetic access$1500(Lcom/android/server/power/DisplayPowerState;)Landroid/os/Handler;
+.method static synthetic access$1200()Z
+    .locals 1
+
+    .prologue
+    .line 50
+    sget-boolean v0, Lcom/android/server/power/DisplayPowerState;->DEBUG:Z
+
+    return v0
+.end method
+
+.method static synthetic access$1900(Lcom/android/server/power/DisplayPowerState;)Lcom/android/server/power/DisplayBlanker;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 56
-    iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mHandler:Landroid/os/Handler;
+    .line 50
+    iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mDisplayBlanker:Lcom/android/server/power/DisplayBlanker;
 
     return-object v0
 .end method
@@ -329,156 +253,121 @@
     .parameter "x0"
 
     .prologue
-    .line 56
-    iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mShutDownFlag:Z
-
-    return v0
-.end method
-
-.method static synthetic access$202(Lcom/android/server/power/DisplayPowerState;Z)Z
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 56
-    iput-boolean p1, p0, Lcom/android/server/power/DisplayPowerState;->mShutDownFlag:Z
-
-    return p1
-.end method
-
-.method static synthetic access$2200(Lcom/android/server/power/DisplayPowerState;)Lcom/android/server/power/DisplayBlanker;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 56
-    iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mDisplayBlanker:Lcom/android/server/power/DisplayBlanker;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2300(Lcom/android/server/power/DisplayPowerState;)Lcom/android/server/LightsService$Light;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 56
-    iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mBacklight:Lcom/android/server/LightsService$Light;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2400(Lcom/android/server/power/DisplayPowerState;)V
-    .locals 0
-    .parameter "x0"
-
-    .prologue
-    .line 56
-    invoke-direct {p0}, Lcom/android/server/power/DisplayPowerState;->postScreenUpdateThreadSafe()V
-
-    return-void
-.end method
-
-.method static synthetic access$300(Lcom/android/server/power/DisplayPowerState;)I
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 56
-    iget v0, p0, Lcom/android/server/power/DisplayPowerState;->mDelay:I
-
-    return v0
-.end method
-
-.method static synthetic access$302(Lcom/android/server/power/DisplayPowerState;I)I
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 56
-    iput p1, p0, Lcom/android/server/power/DisplayPowerState;->mDelay:I
-
-    return p1
-.end method
-
-.method static synthetic access$402(Lcom/android/server/power/DisplayPowerState;Z)Z
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 56
-    iput-boolean p1, p0, Lcom/android/server/power/DisplayPowerState;->mScreenUpdatePending:Z
-
-    return p1
-.end method
-
-.method static synthetic access$500(Lcom/android/server/power/DisplayPowerState;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 56
+    .line 50
     iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenOn:Z
 
     return v0
 .end method
 
-.method static synthetic access$600(Lcom/android/server/power/DisplayPowerState;)F
+.method static synthetic access$2000(Lcom/android/server/power/DisplayPowerState;)Lcom/android/server/LightsService$Light;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 56
+    .line 50
+    iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mBacklight:Lcom/android/server/LightsService$Light;
+
+    return-object v0
+.end method
+
+.method static synthetic access$2100(Lcom/android/server/power/DisplayPowerState;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    invoke-direct {p0}, Lcom/android/server/power/DisplayPowerState;->postScreenUpdateThreadSafe()V
+
+    return-void
+.end method
+
+.method static synthetic access$300(Lcom/android/server/power/DisplayPowerState;)F
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
     iget v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamLevel:F
 
     return v0
 .end method
 
-.method static synthetic access$700(Lcom/android/server/power/DisplayPowerState;)I
+.method static synthetic access$400(Lcom/android/server/power/DisplayPowerState;)I
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 56
+    .line 50
     iget v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenBrightness:I
 
     return v0
 .end method
 
-.method static synthetic access$800(Lcom/android/server/power/DisplayPowerState;)Lcom/android/server/power/DisplayPowerState$PhotonicModulator;
+.method static synthetic access$500(Lcom/android/server/power/DisplayPowerState;)Lcom/android/server/power/DisplayPowerState$PhotonicModulator;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 56
+    .line 50
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mPhotonicModulator:Lcom/android/server/power/DisplayPowerState$PhotonicModulator;
 
     return-object v0
 .end method
 
-.method static synthetic access$902(Lcom/android/server/power/DisplayPowerState;Z)Z
+.method static synthetic access$602(Lcom/android/server/power/DisplayPowerState;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 56
+    .line 50
     iput-boolean p1, p0, Lcom/android/server/power/DisplayPowerState;->mScreenReady:Z
 
     return p1
+.end method
+
+.method static synthetic access$700(Lcom/android/server/power/DisplayPowerState;)V
+    .locals 0
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    invoke-direct {p0}, Lcom/android/server/power/DisplayPowerState;->invokeCleanListenerIfNeeded()V
+
+    return-void
+.end method
+
+.method static synthetic access$802(Lcom/android/server/power/DisplayPowerState;Z)Z
+    .locals 0
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 50
+    iput-boolean p1, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamDrawPending:Z
+
+    return p1
+.end method
+
+.method static synthetic access$900(Lcom/android/server/power/DisplayPowerState;)Z
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 50
+    iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamPrepared:Z
+
+    return v0
 .end method
 
 .method private invokeCleanListenerIfNeeded()V
     .locals 2
 
     .prologue
-    .line 336
+    .line 293
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mCleanListener:Ljava/lang/Runnable;
 
-    .line 337
+    .line 294
     .local v0, listener:Ljava/lang/Runnable;
     if-eqz v0, :cond_0
 
@@ -490,15 +379,15 @@
 
     if-eqz v1, :cond_0
 
-    .line 338
+    .line 295
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/server/power/DisplayPowerState;->mCleanListener:Ljava/lang/Runnable;
 
-    .line 339
+    .line 296
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 341
+    .line 298
     :cond_0
     return-void
 .end method
@@ -507,21 +396,21 @@
     .locals 2
 
     .prologue
-    .line 323
+    .line 280
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerState;->mScreenUpdateRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 324
+    .line 281
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mHandler:Landroid/os/Handler;
 
     iget-object v1, p0, Lcom/android/server/power/DisplayPowerState;->mScreenUpdateRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 325
+    .line 282
     return-void
 .end method
 
@@ -529,17 +418,17 @@
     .locals 4
 
     .prologue
-    .line 328
+    .line 285
     iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamDrawPending:Z
 
     if-nez v0, :cond_0
 
-    .line 329
+    .line 286
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamDrawPending:Z
 
-    .line 330
+    .line 287
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mChoreographer:Landroid/view/Choreographer;
 
     const/4 v1, 0x2
@@ -550,7 +439,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/view/Choreographer;->postCallback(ILjava/lang/Runnable;Ljava/lang/Object;)V
 
-    .line 333
+    .line 290
     :cond_0
     return-void
 .end method
@@ -559,20 +448,20 @@
     .locals 1
 
     .prologue
-    .line 316
+    .line 273
     iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenUpdatePending:Z
 
     if-nez v0, :cond_0
 
-    .line 317
+    .line 274
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenUpdatePending:Z
 
-    .line 318
+    .line 275
     invoke-direct {p0}, Lcom/android/server/power/DisplayPowerState;->postScreenUpdateThreadSafe()V
 
-    .line 320
+    .line 277
     :cond_0
     return-void
 .end method
@@ -583,22 +472,22 @@
     .locals 1
 
     .prologue
-    .line 236
+    .line 197
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeam:Lcom/android/server/power/ElectronBeam;
 
     invoke-virtual {v0}, Lcom/android/server/power/ElectronBeam;->dismiss()V
 
-    .line 237
+    .line 198
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamPrepared:Z
 
-    .line 238
+    .line 199
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamReady:Z
 
-    .line 239
+    .line 200
     return-void
 .end method
 
@@ -607,15 +496,15 @@
     .parameter "pw"
 
     .prologue
-    .line 300
+    .line 257
     invoke-virtual {p1}, Ljava/io/PrintWriter;->println()V
 
-    .line 301
+    .line 258
     const-string v0, "Display Power State:"
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 302
+    .line 259
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -638,7 +527,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 303
+    .line 260
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -661,7 +550,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 304
+    .line 261
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -684,7 +573,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 305
+    .line 262
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -707,7 +596,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 306
+    .line 263
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -730,7 +619,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 307
+    .line 264
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -753,7 +642,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 308
+    .line 265
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -776,7 +665,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 309
+    .line 266
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -799,17 +688,17 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 311
+    .line 268
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mPhotonicModulator:Lcom/android/server/power/DisplayPowerState$PhotonicModulator;
 
     invoke-virtual {v0, p1}, Lcom/android/server/power/DisplayPowerState$PhotonicModulator;->dump(Ljava/io/PrintWriter;)V
 
-    .line 312
+    .line 269
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeam:Lcom/android/server/power/ElectronBeam;
 
     invoke-virtual {v0, p1}, Lcom/android/server/power/ElectronBeam;->dump(Ljava/io/PrintWriter;)V
 
-    .line 313
+    .line 270
     return-void
 .end method
 
@@ -817,7 +706,7 @@
     .locals 1
 
     .prologue
-    .line 280
+    .line 237
     iget v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamLevel:F
 
     return v0
@@ -827,7 +716,7 @@
     .locals 1
 
     .prologue
-    .line 208
+    .line 169
     iget v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenBrightness:I
 
     return v0
@@ -837,7 +726,7 @@
     .locals 1
 
     .prologue
-    .line 182
+    .line 143
     iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenOn:Z
 
     return v0
@@ -852,7 +741,7 @@
 
     const/4 v0, 0x0
 
-    .line 220
+    .line 181
     iget-object v2, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeam:Lcom/android/server/power/ElectronBeam;
 
     invoke-virtual {v2, p1}, Lcom/android/server/power/ElectronBeam;->prepare(I)Z
@@ -861,29 +750,29 @@
 
     if-nez v2, :cond_0
 
-    .line 221
+    .line 182
     iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamPrepared:Z
 
-    .line 222
+    .line 183
     iput-boolean v1, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamReady:Z
 
-    .line 229
+    .line 190
     :goto_0
     return v0
 
-    .line 226
+    .line 187
     :cond_0
     iput-boolean v1, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamPrepared:Z
 
-    .line 227
+    .line 188
     iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamReady:Z
 
-    .line 228
+    .line 189
     invoke-direct {p0}, Lcom/android/server/power/DisplayPowerState;->scheduleElectronBeamDraw()V
 
     move v0, v1
 
-    .line 229
+    .line 190
     goto :goto_0
 .end method
 
@@ -894,20 +783,20 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 259
+    .line 216
     iget v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamLevel:F
 
     cmpl-float v0, v0, p1
 
     if-eqz v0, :cond_2
 
-    .line 260
+    .line 217
     sget-boolean v0, Lcom/android/server/power/DisplayPowerState;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 261
-    const-string v0, "PowerManagerDisplayState"
+    .line 218
+    const-string v0, "DisplayPowerState"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -929,34 +818,34 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 264
+    .line 221
     :cond_0
     iput p1, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamLevel:F
 
-    .line 265
+    .line 222
     iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenOn:Z
 
     if-eqz v0, :cond_1
 
-    .line 266
+    .line 223
     iput-boolean v3, p0, Lcom/android/server/power/DisplayPowerState;->mScreenReady:Z
 
-    .line 267
+    .line 224
     invoke-direct {p0}, Lcom/android/server/power/DisplayPowerState;->scheduleScreenUpdate()V
 
-    .line 269
+    .line 226
     :cond_1
     iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamPrepared:Z
 
     if-eqz v0, :cond_2
 
-    .line 270
+    .line 227
     iput-boolean v3, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeamReady:Z
 
-    .line 271
+    .line 228
     invoke-direct {p0}, Lcom/android/server/power/DisplayPowerState;->scheduleElectronBeamDraw()V
 
-    .line 274
+    .line 231
     :cond_2
     return-void
 .end method
@@ -966,18 +855,18 @@
     .parameter "brightness"
 
     .prologue
-    .line 191
+    .line 152
     iget v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenBrightness:I
 
     if-eq v0, p1, :cond_1
 
-    .line 192
+    .line 153
     sget-boolean v0, Lcom/android/server/power/DisplayPowerState;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 193
-    const-string v0, "PowerManagerDisplayState"
+    .line 154
+    const-string v0, "DisplayPowerState"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -999,24 +888,24 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 196
+    .line 157
     :cond_0
     iput p1, p0, Lcom/android/server/power/DisplayPowerState;->mScreenBrightness:I
 
-    .line 197
+    .line 158
     iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenOn:Z
 
     if-eqz v0, :cond_1
 
-    .line 198
+    .line 159
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenReady:Z
 
-    .line 199
+    .line 160
     invoke-direct {p0}, Lcom/android/server/power/DisplayPowerState;->scheduleScreenUpdate()V
 
-    .line 202
+    .line 163
     :cond_1
     return-void
 .end method
@@ -1026,18 +915,18 @@
     .parameter "on"
 
     .prologue
-    .line 167
+    .line 128
     iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenOn:Z
 
     if-eq v0, p1, :cond_1
 
-    .line 168
+    .line 129
     sget-boolean v0, Lcom/android/server/power/DisplayPowerState;->DEBUG:Z
 
     if-eqz v0, :cond_0
 
-    .line 169
-    const-string v0, "PowerManagerDisplayState"
+    .line 130
+    const-string v0, "DisplayPowerState"
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1059,33 +948,20 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 172
+    .line 133
     :cond_0
     iput-boolean p1, p0, Lcom/android/server/power/DisplayPowerState;->mScreenOn:Z
 
-    .line 173
+    .line 134
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenReady:Z
 
-    .line 174
+    .line 135
     invoke-direct {p0}, Lcom/android/server/power/DisplayPowerState;->scheduleScreenUpdate()V
 
-    .line 176
+    .line 137
     :cond_1
-    return-void
-.end method
-
-.method public updateElectronBeam()V
-    .locals 1
-
-    .prologue
-    .line 242
-    iget-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mElectronBeam:Lcom/android/server/power/ElectronBeam;
-
-    invoke-virtual {v0}, Lcom/android/server/power/ElectronBeam;->updateToCurrentRotation()Z
-
-    .line 243
     return-void
 .end method
 
@@ -1094,7 +970,7 @@
     .parameter "listener"
 
     .prologue
-    .line 290
+    .line 247
     iget-boolean v0, p0, Lcom/android/server/power/DisplayPowerState;->mScreenReady:Z
 
     if-eqz v0, :cond_0
@@ -1103,24 +979,24 @@
 
     if-nez v0, :cond_1
 
-    .line 291
+    .line 248
     :cond_0
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerState;->mCleanListener:Ljava/lang/Runnable;
 
-    .line 292
+    .line 249
     const/4 v0, 0x0
 
-    .line 295
+    .line 252
     :goto_0
     return v0
 
-    .line 294
+    .line 251
     :cond_1
     const/4 v0, 0x0
 
     iput-object v0, p0, Lcom/android/server/power/DisplayPowerState;->mCleanListener:Ljava/lang/Runnable;
 
-    .line 295
+    .line 252
     const/4 v0, 0x1
 
     goto :goto_0

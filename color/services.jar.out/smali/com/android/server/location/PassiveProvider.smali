@@ -118,17 +118,6 @@
     return-void
 .end method
 
-.method public getFileTime([J)I
-    .locals 1
-    .parameter "times"
-
-    .prologue
-    .line 126
-    const/4 v0, -0x1
-
-    return v0
-.end method
-
 .method public getName()Ljava/lang/String;
     .locals 1
 
@@ -226,16 +215,6 @@
     .prologue
     .line 102
     return-void
-.end method
-
-.method public updateEPOFile()I
-    .locals 1
-
-    .prologue
-    .line 130
-    const/4 v0, -0x1
-
-    return v0
 .end method
 
 .method public updateLocation(Landroid/location/Location;)V

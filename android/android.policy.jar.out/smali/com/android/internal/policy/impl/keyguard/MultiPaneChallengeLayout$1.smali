@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 63
+    .line 55
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$1;->this$0:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,11 +42,11 @@
     .parameter "v"
 
     .prologue
-    .line 66
+    .line 58
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout$1;->this$0:Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/MultiPaneChallengeLayout;->hideBouncer()V
 
-    .line 67
+    .line 59
     return-void
 .end method

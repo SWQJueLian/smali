@@ -87,14 +87,6 @@
 
 .field public static final HEALTH_WEIGHING:I = 0x90c
 
-.field public static final IMAGING_CAMERA:I = 0x620
-
-.field public static final IMAGING_DISPLAY:I = 0x610
-
-.field public static final IMAGING_PRINTER:I = 0x680
-
-.field public static final IMAGING_SCANNER:I = 0x640
-
 .field public static final PERIPHERAL_KEYBOARD:I = 0x540
 
 .field public static final PERIPHERAL_KEYBOARD_POINTING:I = 0x5c0

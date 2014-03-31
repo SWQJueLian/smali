@@ -36,10 +36,16 @@
 
 # virtual methods
 .method public onChange(Z)V
-    .locals 0
+    .locals 1
     .parameter "selfChange"
 
     .prologue
+    .line 149
+    iget-object v0, p0, Lcom/android/server/VibratorService$1;->this$0:Lcom/android/server/VibratorService;
+
+    #calls: Lcom/android/server/VibratorService;->updateInputDeviceVibrators()V
+    invoke-static {v0}, Lcom/android/server/VibratorService;->access$400(Lcom/android/server/VibratorService;)V
+
     .line 150
     return-void
 .end method

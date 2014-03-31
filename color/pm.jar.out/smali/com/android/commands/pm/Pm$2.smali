@@ -37,7 +37,7 @@
     .parameter
 
     .prologue
-    .line 390
+    .line 397
     iput-object p1, p0, Lcom/android/commands/pm/Pm$2;->this$0:Lcom/android/commands/pm/Pm;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,7 +53,7 @@
     .parameter "x1"
 
     .prologue
-    .line 390
+    .line 397
     check-cast p1, Ljava/lang/String;
 
     .end local p1
@@ -73,16 +73,16 @@
     .parameter "o2"
 
     .prologue
-    .line 392
+    .line 399
     if-ne p1, p2, :cond_0
 
     const/4 v0, 0x0
 
-    .line 395
+    .line 402
     :goto_0
     return v0
 
-    .line 393
+    .line 400
     :cond_0
     if-nez p1, :cond_1
 
@@ -90,7 +90,7 @@
 
     goto :goto_0
 
-    .line 394
+    .line 401
     :cond_1
     if-nez p2, :cond_2
 
@@ -98,7 +98,7 @@
 
     goto :goto_0
 
-    .line 395
+    .line 402
     :cond_2
     invoke-virtual {p1, p2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 

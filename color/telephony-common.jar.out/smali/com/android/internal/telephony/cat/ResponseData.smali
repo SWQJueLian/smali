@@ -8,7 +8,7 @@
     .locals 0
 
     .prologue
-    .line 66
+    .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -20,21 +20,21 @@
     .parameter "length"
 
     .prologue
-    .line 77
+    .line 42
     const/16 v0, 0x7f
 
     if-le p1, v0, :cond_0
 
-    .line 78
+    .line 43
     const/16 v0, 0x81
 
     invoke-virtual {p0, v0}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 80
+    .line 45
     :cond_0
     invoke-virtual {p0, p1}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
-    .line 81
+    .line 46
     return-void
 .end method
 

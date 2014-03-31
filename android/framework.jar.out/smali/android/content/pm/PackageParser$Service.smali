@@ -34,13 +34,13 @@
     .parameter "_info"
 
     .prologue
-    .line 3675
+    .line 3654
     invoke-direct {p0, p1, p2}, Landroid/content/pm/PackageParser$Component;-><init>(Landroid/content/pm/PackageParser$ParseComponentArgs;Landroid/content/pm/ComponentInfo;)V
 
-    .line 3676
+    .line 3655
     iput-object p2, p0, Landroid/content/pm/PackageParser$Service;->info:Landroid/content/pm/ServiceInfo;
 
-    .line 3677
+    .line 3656
     iget-object v0, p0, Landroid/content/pm/PackageParser$Service;->info:Landroid/content/pm/ServiceInfo;
 
     iget-object v1, p1, Landroid/content/pm/PackageParser$ParseComponentArgs;->owner:Landroid/content/pm/PackageParser$Package;
@@ -49,7 +49,7 @@
 
     iput-object v1, v0, Landroid/content/pm/ServiceInfo;->applicationInfo:Landroid/content/pm/ApplicationInfo;
 
-    .line 3678
+    .line 3657
     return-void
 .end method
 
@@ -60,15 +60,15 @@
     .parameter "packageName"
 
     .prologue
-    .line 3681
+    .line 3660
     invoke-super {p0, p1}, Landroid/content/pm/PackageParser$Component;->setPackageName(Ljava/lang/String;)V
 
-    .line 3682
+    .line 3661
     iget-object v0, p0, Landroid/content/pm/PackageParser$Service;->info:Landroid/content/pm/ServiceInfo;
 
     iput-object p1, v0, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    .line 3683
+    .line 3662
     return-void
 .end method
 
@@ -76,7 +76,7 @@
     .locals 2
 
     .prologue
-    .line 3686
+    .line 3665
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

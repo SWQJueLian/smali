@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 193
+    .line 181
     iput-object p1, p0, Landroid/net/DhcpStateMachine$DefaultState;->this$0:Landroid/net/DhcpStateMachine;
 
     invoke-direct {p0}, Lcom/android/internal/util/State;-><init>()V
@@ -38,7 +38,7 @@
     .locals 2
 
     .prologue
-    .line 196
+    .line 184
     iget-object v0, p0, Landroid/net/DhcpStateMachine$DefaultState;->this$0:Landroid/net/DhcpStateMachine;
 
     #getter for: Landroid/net/DhcpStateMachine;->mContext:Landroid/content/Context;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 197
+    .line 185
     return-void
 .end method
 
@@ -64,47 +64,12 @@
     .parameter "message"
 
     .prologue
-    .line 200
-    const-string v0, "DhcpStateMachine"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Landroid/net/DhcpStateMachine$DefaultState;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Landroid/os/Message;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "\n"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 201
+    .line 189
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 207
+    .line 195
     const-string v0, "DhcpStateMachine"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -127,13 +92,13 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 210
+    .line 198
     :goto_0
     const/4 v0, 0x1
 
     return v0
 
-    .line 203
+    .line 191
     :pswitch_0
     const-string v0, "DhcpStateMachine"
 
@@ -164,7 +129,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 204
+    .line 192
     iget-object v0, p0, Landroid/net/DhcpStateMachine$DefaultState;->this$0:Landroid/net/DhcpStateMachine;
 
     #getter for: Landroid/net/DhcpStateMachine;->mDhcpRenewWakeLock:Landroid/os/PowerManager$WakeLock;
@@ -176,7 +141,7 @@
 
     goto :goto_0
 
-    .line 201
+    .line 189
     nop
 
     :pswitch_data_0

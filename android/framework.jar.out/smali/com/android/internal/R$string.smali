@@ -1367,12 +1367,6 @@
 
 .field public static final status_bar_notification_info_overflow:I = 0x1040017
 
-.field public static final storage_internal:I = 0x10404e5
-
-.field public static final storage_phone:I = 0x104054b
-
-.field public static final storage_sd_card:I = 0x10404e6
-
 .field public static final submit:I = 0x1040492
 
 .field public static final sync_binding_label:I = 0x1040482
@@ -1565,7 +1559,7 @@
     .locals 0
 
     .prologue
-    .line 12898
+    .line 12888
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 1205
+    .line 984
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$7;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;-><init>()V
@@ -38,11 +38,11 @@
     .locals 1
 
     .prologue
-    .line 1213
+    .line 992
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$7;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$1800(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$1300(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
 
     move-result-object v0
 
@@ -53,11 +53,11 @@
     .locals 1
 
     .prologue
-    .line 1208
+    .line 987
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$7;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mContext:Landroid/content/Context;
-    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$1700(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Landroid/content/Context;
+    invoke-static {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->access$1500(Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;)Landroid/content/Context;
 
     move-result-object v0
 
@@ -68,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 1218
+    .line 997
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$7;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;

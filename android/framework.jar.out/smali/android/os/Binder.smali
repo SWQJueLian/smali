@@ -73,15 +73,15 @@
 
     move-result v4
 
-    .line 369
+    .line 366
     .local v4, res:Z
     :goto_0
     invoke-virtual {v3}, Landroid/os/Parcel;->recycle()V
 
-    .line 370
+    .line 367
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    .line 371
+    .line 368
     return v4
 
     .line 352
@@ -91,51 +91,45 @@
 
     .line 353
     .local v1, e:Landroid/os/RemoteException;
-    invoke-virtual {v1}, Landroid/os/RemoteException;->printStackTrace()V
-
-    .line 354
     invoke-virtual {v3, v6}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 355
+    .line 354
     invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeException(Ljava/lang/Exception;)V
 
-    .line 356
+    .line 355
     const/4 v4, 0x1
 
-    .line 368
+    .line 365
     .restart local v4       #res:Z
     goto :goto_0
 
-    .line 357
+    .line 356
     .end local v1           #e:Landroid/os/RemoteException;
     .end local v4           #res:Z
     :catch_1
     move-exception v1
 
-    .line 358
+    .line 357
     .local v1, e:Ljava/lang/RuntimeException;
-    invoke-virtual {v1}, Ljava/lang/RuntimeException;->printStackTrace()V
-
-    .line 359
     invoke-virtual {v3, v6}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 360
+    .line 358
     invoke-virtual {v3, v1}, Landroid/os/Parcel;->writeException(Ljava/lang/Exception;)V
 
-    .line 361
+    .line 359
     const/4 v4, 0x1
 
-    .line 368
+    .line 365
     .restart local v4       #res:Z
     goto :goto_0
 
-    .line 362
+    .line 360
     .end local v1           #e:Ljava/lang/RuntimeException;
     .end local v4           #res:Z
     :catch_2
     move-exception v1
 
-    .line 363
+    .line 361
     .local v1, e:Ljava/lang/OutOfMemoryError;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -143,17 +137,14 @@
 
     invoke-direct {v2, v5, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 364
+    .line 362
     .local v2, re:Ljava/lang/RuntimeException;
-    invoke-virtual {v2}, Ljava/lang/RuntimeException;->printStackTrace()V
-
-    .line 365
     invoke-virtual {v3, v6}, Landroid/os/Parcel;->setDataPosition(I)V
 
-    .line 366
+    .line 363
     invoke-virtual {v3, v2}, Landroid/os/Parcel;->writeException(Ljava/lang/Exception;)V
 
-    .line 367
+    .line 364
     const/4 v4, 0x1
 
     .restart local v4       #res:Z

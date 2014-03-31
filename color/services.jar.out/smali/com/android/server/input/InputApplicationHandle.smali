@@ -10,8 +10,6 @@
 
 .field public name:Ljava/lang/String;
 
-.field public pid:I
-
 .field private ptr:I
 
 
@@ -21,13 +19,13 @@
     .parameter "appWindowToken"
 
     .prologue
-    .line 45
+    .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 43
     iput-object p1, p0, Lcom/android/server/input/InputApplicationHandle;->appWindowToken:Ljava/lang/Object;
 
-    .line 47
+    .line 44
     return-void
 .end method
 
@@ -45,19 +43,19 @@
     .end annotation
 
     .prologue
-    .line 52
+    .line 49
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/input/InputApplicationHandle;->nativeDispose()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 54
+    .line 51
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 56
+    .line 53
     return-void
 
-    .line 54
+    .line 51
     :catchall_0
     move-exception v0
 

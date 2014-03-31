@@ -156,7 +156,7 @@
 
     move-result-object v4
 
-    const-string/jumbo v5, "mask"
+    const-string v5, "mask"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

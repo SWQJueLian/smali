@@ -28,16 +28,12 @@
 
 .field public static final ATTACH_IMAGE:Ljava/lang/String; = "com.android.contacts.action.ATTACH_IMAGE"
 
-.field public static final EXTRA_BROADCAST_RESULT:Ljava/lang/String; = "broadcast_result"
-
 .field public static final EXTRA_CREATE_DESCRIPTION:Ljava/lang/String; = "com.android.contacts.action.CREATE_DESCRIPTION"
 
 .field public static final EXTRA_EXCLUDE_MIMES:Ljava/lang/String; = "exclude_mimes"
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
-
-.field public static final EXTRA_FILTER_SIM_CONTACT:Ljava/lang/String; = "filter_sim_contact"
 
 .field public static final EXTRA_FORCE_CREATE:Ljava/lang/String; = "com.android.contacts.action.FORCE_CREATE"
 
@@ -78,17 +74,15 @@
 
 .field public static final SHOW_OR_CREATE_CONTACT:Ljava/lang/String; = "com.android.contacts.action.SHOW_OR_CREATE_CONTACT"
 
-.field public static final UPDATE_FILTER_CONTACT:Ljava/lang/String; = "android.widget.mmswidget.UPDATE_FILTER_CONTACT"
-
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
     .prologue
-    .line 8056
+    .line 7839
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8352
+    .line 8111
     return-void
 .end method

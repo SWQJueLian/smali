@@ -20,10 +20,10 @@
     .parameter "cursor"
 
     .prologue
-    .line 7313
+    .line 7136
     invoke-direct {p0, p1}, Landroid/content/CursorEntityIterator;-><init>(Landroid/database/Cursor;)V
 
-    .line 7314
+    .line 7137
     return-void
 .end method
 
@@ -39,116 +39,116 @@
     .end annotation
 
     .prologue
-    .line 7319
+    .line 7142
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 7320
+    .line 7143
     .local v0, values:Landroid/content/ContentValues;
     const-string v1, "_id"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7321
+    .line 7144
     const-string v1, "account_name"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7322
+    .line 7145
     const-string v1, "account_type"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7323
+    .line 7146
     const-string v1, "dirty"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7324
+    .line 7147
     const-string/jumbo v1, "version"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7325
+    .line 7148
     const-string/jumbo v1, "sourceid"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7326
+    .line 7149
     const-string/jumbo v1, "res_package"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7327
+    .line 7150
     const-string/jumbo v1, "title"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7328
+    .line 7151
     const-string/jumbo v1, "title_res"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7329
+    .line 7152
     const-string v1, "group_visible"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7330
+    .line 7153
     const-string/jumbo v1, "sync1"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7331
+    .line 7154
     const-string/jumbo v1, "sync2"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7332
+    .line 7155
     const-string/jumbo v1, "sync3"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7333
+    .line 7156
     const-string/jumbo v1, "sync4"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7334
+    .line 7157
     const-string/jumbo v1, "system_id"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7335
+    .line 7158
     const-string v1, "deleted"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7336
+    .line 7159
     const-string/jumbo v1, "notes"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7337
+    .line 7160
     const-string/jumbo v1, "should_sync"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7338
+    .line 7161
     const-string v1, "favorites"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7339
+    .line 7162
     const-string v1, "auto_add"
 
     invoke-static {p1, v0, v1}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 7340
+    .line 7163
     invoke-interface {p1}, Landroid/database/Cursor;->moveToNext()Z
 
-    .line 7341
+    .line 7164
     new-instance v1, Landroid/content/Entity;
 
     invoke-direct {v1, v0}, Landroid/content/Entity;-><init>(Landroid/content/ContentValues;)V

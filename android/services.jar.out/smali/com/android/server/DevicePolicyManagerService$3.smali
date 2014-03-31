@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/DevicePolicyManagerService;->wipeDeviceOrUserLocked(II)V
+    value = Lcom/android/server/DevicePolicyManagerService;->wipeData(II)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -30,7 +30,7 @@
     .parameter
 
     .prologue
-    .line 1891
+    .line 1882
     iput-object p1, p0, Lcom/android/server/DevicePolicyManagerService$3;->this$0:Lcom/android/server/DevicePolicyManagerService;
 
     iput p2, p0, Lcom/android/server/DevicePolicyManagerService$3;->val$userHandle:I
@@ -46,7 +46,7 @@
     .locals 2
 
     .prologue
-    .line 1894
+    .line 1885
     :try_start_0
     invoke-static {}, Landroid/app/ActivityManagerNative;->getDefault()Landroid/app/IActivityManager;
 
@@ -56,7 +56,7 @@
 
     invoke-interface {v0, v1}, Landroid/app/IActivityManager;->switchUser(I)Z
 
-    .line 1895
+    .line 1886
     iget-object v0, p0, Lcom/android/server/DevicePolicyManagerService$3;->this$0:Lcom/android/server/DevicePolicyManagerService;
 
     iget-object v0, v0, Lcom/android/server/DevicePolicyManagerService;->mContext:Landroid/content/Context;
@@ -75,11 +75,11 @@
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1900
+    .line 1891
     :goto_0
     return-void
 
-    .line 1897
+    .line 1888
     :catch_0
     move-exception v0
 

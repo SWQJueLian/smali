@@ -17,10 +17,10 @@
     .parameter "dct"
 
     .prologue
-    .line 46
+    .line 42
     invoke-direct/range {p0 .. p5}, Lcom/android/internal/telephony/DataConnection;-><init>(Lcom/android/internal/telephony/PhoneBase;Ljava/lang/String;ILcom/android/internal/telephony/RetryManager;Lcom/android/internal/telephony/DataConnectionTracker;)V
 
-    .line 47
+    .line 43
     return-void
 .end method
 
@@ -32,7 +32,7 @@
     .parameter "dct"
 
     .prologue
-    .line 59
+    .line 55
     new-instance v0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -69,11 +69,11 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/android/internal/telephony/cdma/CdmaDataConnection;-><init>(Lcom/android/internal/telephony/cdma/CDMAPhone;Ljava/lang/String;ILcom/android/internal/telephony/RetryManager;Lcom/android/internal/telephony/DataConnectionTracker;)V
 
-    .line 61
+    .line 57
     .local v0, cdmaDc:Lcom/android/internal/telephony/cdma/CdmaDataConnection;
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->start()V
 
-    .line 62
+    .line 58
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -98,7 +98,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->log(Ljava/lang/String;)V
 
-    .line 63
+    .line 59
     return-object v0
 .end method
 
@@ -111,15 +111,15 @@
     .parameter "args"
 
     .prologue
-    .line 125
+    .line 121
     const-string v0, "CdmaDataConnection extends:"
 
     invoke-virtual {p2, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 126
+    .line 122
     invoke-super {p0, p1, p2, p3}, Lcom/android/internal/telephony/DataConnection;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 127
+    .line 123
     return-void
 .end method
 
@@ -132,7 +132,7 @@
 
     const/4 v0, 0x0
 
-    .line 109
+    .line 105
     const-string v2, "0.0.0.0"
 
     aget-object v3, p1, v0
@@ -161,7 +161,7 @@
 
     if-nez v2, :cond_0
 
-    .line 114
+    .line 110
     :goto_0
     return v0
 
@@ -176,7 +176,7 @@
     .parameter "s"
 
     .prologue
-    .line 120
+    .line 116
     const-string v0, "CDMA"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -213,199 +213,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 121
-    return-void
-.end method
-
-.method protected logd(Ljava/lang/String;)V
-    .locals 3
-    .parameter "s"
-
-    .prologue
-    .line 132
-    const-string v0, "CDMA"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "[CDC][simId"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->phone:Lcom/android/internal/telephony/PhoneBase;
-
-    invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getMySimId()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "]"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 136
-    return-void
-.end method
-
-.method protected loge(Ljava/lang/String;)V
-    .locals 3
-    .parameter "s"
-
-    .prologue
-    .line 156
-    const-string v0, "CDMA"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "[CDC][simId"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->phone:Lcom/android/internal/telephony/PhoneBase;
-
-    invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getMySimId()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "]"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 160
-    return-void
-.end method
-
-.method protected logi(Ljava/lang/String;)V
-    .locals 3
-    .parameter "s"
-
-    .prologue
-    .line 140
-    const-string v0, "CDMA"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "[CDC][simId"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->phone:Lcom/android/internal/telephony/PhoneBase;
-
-    invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getMySimId()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "]"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 144
-    return-void
-.end method
-
-.method protected logw(Ljava/lang/String;)V
-    .locals 3
-    .parameter "s"
-
-    .prologue
-    .line 148
-    const-string v0, "CDMA"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "[CDC][simId"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->phone:Lcom/android/internal/telephony/PhoneBase;
-
-    invoke-virtual {v2}, Lcom/android/internal/telephony/PhoneBase;->getMySimId()I
-
-    move-result v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "]"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 152
+    .line 117
     return-void
 .end method
 
@@ -420,28 +228,28 @@
 
     const/4 v2, 0x0
 
-    .line 75
+    .line 71
     const-string v0, "CdmaDataConnection Connecting..."
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->log(Ljava/lang/String;)V
 
-    .line 77
+    .line 73
     iget-object v0, p1, Lcom/android/internal/telephony/DataConnection$ConnectionParams;->apn:Lcom/android/internal/telephony/ApnSetting;
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->mApn:Lcom/android/internal/telephony/ApnSetting;
 
-    .line 78
+    .line 74
     iput-wide v4, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->createTime:J
 
-    .line 79
+    .line 75
     iput-wide v4, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->lastFailTime:J
 
-    .line 80
+    .line 76
     sget-object v0, Lcom/android/internal/telephony/DataConnection$FailCause;->NONE:Lcom/android/internal/telephony/DataConnection$FailCause;
 
     iput-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->lastFailCause:Lcom/android/internal/telephony/DataConnection$FailCause;
 
-    .line 82
+    .line 78
     iget-object v0, p1, Lcom/android/internal/telephony/DataConnection$ConnectionParams;->apn:Lcom/android/internal/telephony/ApnSetting;
 
     if-eqz v0, :cond_0
@@ -476,15 +284,15 @@
 
     if-eqz v0, :cond_0
 
-    .line 84
+    .line 80
     const-string v0, "CdmaDataConnection using DUN"
 
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->log(Ljava/lang/String;)V
 
-    .line 85
+    .line 81
     const/4 v9, 0x1
 
-    .line 91
+    .line 87
     .local v9, dataProfile:I
     :goto_0
     const v0, 0x40001
@@ -493,11 +301,11 @@
 
     move-result-object v8
 
-    .line 92
+    .line 88
     .local v8, msg:Landroid/os/Message;
     iput-object p1, v8, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    .line 93
+    .line 89
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CdmaDataConnection;->phone:Lcom/android/internal/telephony/PhoneBase;
 
     iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
@@ -528,10 +336,10 @@
 
     invoke-interface/range {v0 .. v8}, Lcom/android/internal/telephony/CommandsInterface;->setupDataCall(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
-    .line 99
+    .line 95
     return-void
 
-    .line 87
+    .line 83
     .end local v8           #msg:Landroid/os/Message;
     .end local v9           #dataProfile:I
     :cond_0
@@ -545,7 +353,7 @@
     .locals 3
 
     .prologue
-    .line 103
+    .line 99
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

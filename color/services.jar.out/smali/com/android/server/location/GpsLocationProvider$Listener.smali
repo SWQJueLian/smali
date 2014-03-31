@@ -30,15 +30,15 @@
     .parameter "listener"
 
     .prologue
-    .line 881
+    .line 835
     iput-object p1, p0, Lcom/android/server/location/GpsLocationProvider$Listener;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 882
+    .line 836
     iput-object p2, p0, Lcom/android/server/location/GpsLocationProvider$Listener;->mListener:Landroid/location/IGpsStatusListener;
 
-    .line 883
+    .line 837
     return-void
 .end method
 
@@ -48,7 +48,7 @@
     .locals 2
 
     .prologue
-    .line 887
+    .line 841
     invoke-static {}, Lcom/android/server/location/GpsLocationProvider;->access$100()Z
 
     move-result v0
@@ -61,7 +61,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 889
+    .line 843
     :cond_0
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$Listener;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
@@ -72,7 +72,7 @@
 
     monitor-enter v1
 
-    .line 890
+    .line 844
     :try_start_0
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$Listener;->this$0:Lcom/android/server/location/GpsLocationProvider;
 
@@ -83,17 +83,17 @@
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 891
+    .line 845
     monitor-exit v1
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 892
+    .line 846
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$Listener;->mListener:Landroid/location/IGpsStatusListener;
 
     if-eqz v0, :cond_1
 
-    .line 893
+    .line 847
     iget-object v0, p0, Lcom/android/server/location/GpsLocationProvider$Listener;->mListener:Landroid/location/IGpsStatusListener;
 
     invoke-interface {v0}, Landroid/location/IGpsStatusListener;->asBinder()Landroid/os/IBinder;
@@ -104,11 +104,11 @@
 
     invoke-interface {v0, p0, v1}, Landroid/os/IBinder;->unlinkToDeath(Landroid/os/IBinder$DeathRecipient;I)Z
 
-    .line 895
+    .line 849
     :cond_1
     return-void
 
-    .line 891
+    .line 845
     :catchall_0
     move-exception v0
 

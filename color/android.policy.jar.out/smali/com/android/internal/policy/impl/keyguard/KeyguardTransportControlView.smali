@@ -1195,7 +1195,7 @@
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setSelected(Z)V
 
     .line 227
-    const v5, 0x10208ba
+    const v5, 0x1020304
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->findViewById(I)Landroid/view/View;
 
@@ -1206,7 +1206,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->mAlbumArt:Landroid/widget/ImageView;
 
     .line 228
-    const v5, 0x10208bb
+    const v5, 0x1020305
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->findViewById(I)Landroid/view/View;
 
@@ -1217,7 +1217,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->mBtnPrev:Landroid/widget/ImageView;
 
     .line 229
-    const v5, 0x10208bc
+    const v5, 0x1020306
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->findViewById(I)Landroid/view/View;
 
@@ -1228,7 +1228,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->mBtnPlay:Landroid/widget/ImageView;
 
     .line 230
-    const v5, 0x10208bd
+    const v5, 0x1020307
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardTransportControlView;->findViewById(I)Landroid/view/View;
 

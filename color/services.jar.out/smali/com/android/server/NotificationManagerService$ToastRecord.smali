@@ -33,22 +33,22 @@
     .parameter "duration"
 
     .prologue
-    .line 391
+    .line 383
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 392
+    .line 384
     iput p1, p0, Lcom/android/server/NotificationManagerService$ToastRecord;->pid:I
 
-    .line 393
+    .line 385
     iput-object p2, p0, Lcom/android/server/NotificationManagerService$ToastRecord;->pkg:Ljava/lang/String;
 
-    .line 394
+    .line 386
     iput-object p3, p0, Lcom/android/server/NotificationManagerService$ToastRecord;->callback:Landroid/app/ITransientNotification;
 
-    .line 395
+    .line 387
     iput p4, p0, Lcom/android/server/NotificationManagerService$ToastRecord;->duration:I
 
-    .line 396
+    .line 388
     return-void
 .end method
 
@@ -60,7 +60,7 @@
     .parameter "prefix"
 
     .prologue
-    .line 403
+    .line 395
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -79,7 +79,7 @@
 
     invoke-virtual {p1, v0}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 404
+    .line 396
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .locals 2
 
     .prologue
-    .line 409
+    .line 401
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -158,9 +158,9 @@
     .parameter "duration"
 
     .prologue
-    .line 399
+    .line 391
     iput p1, p0, Lcom/android/server/NotificationManagerService$ToastRecord;->duration:I
 
-    .line 400
+    .line 392
     return-void
 .end method

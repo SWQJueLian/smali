@@ -21,64 +21,30 @@
 
 # direct methods
 .method public constructor <init>()V
-    .locals 3
+    .locals 1
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 92
+    .line 76
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 88
-    iput-boolean v1, p0, Landroid/filterfw/core/StopWatchMap;->LOG_MFF_RUNNING_TIMES:Z
+    .line 72
+    const/4 v0, 0x0
 
-    .line 90
+    iput-boolean v0, p0, Landroid/filterfw/core/StopWatchMap;->LOG_MFF_RUNNING_TIMES:Z
+
+    .line 74
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/filterfw/core/StopWatchMap;->mStopWatches:Ljava/util/HashMap;
 
-    .line 93
+    .line 77
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Landroid/filterfw/core/StopWatchMap;->mStopWatches:Ljava/util/HashMap;
 
-    .line 95
-    const-string v0, "debug.swm.log"
-
-    invoke-static {v0, v1}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Landroid/filterfw/core/StopWatchMap;->LOG_MFF_RUNNING_TIMES:Z
-
-    .line 96
-    const-string v0, "MFF"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "StopWatchMap param: log="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-boolean v2, p0, Landroid/filterfw/core/StopWatchMap;->LOG_MFF_RUNNING_TIMES:Z
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 97
+    .line 78
     return-void
 .end method
 
@@ -89,16 +55,16 @@
     .parameter "stopWatchName"
 
     .prologue
-    .line 100
+    .line 81
     iget-boolean v0, p0, Landroid/filterfw/core/StopWatchMap;->LOG_MFF_RUNNING_TIMES:Z
 
     if-nez v0, :cond_0
 
-    .line 107
+    .line 88
     :goto_0
     return-void
 
-    .line 103
+    .line 84
     :cond_0
     iget-object v0, p0, Landroid/filterfw/core/StopWatchMap;->mStopWatches:Ljava/util/HashMap;
 
@@ -108,7 +74,7 @@
 
     if-nez v0, :cond_1
 
-    .line 104
+    .line 85
     iget-object v0, p0, Landroid/filterfw/core/StopWatchMap;->mStopWatches:Ljava/util/HashMap;
 
     new-instance v1, Landroid/filterfw/core/StopWatch;
@@ -117,7 +83,7 @@
 
     invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 106
+    .line 87
     :cond_1
     iget-object v0, p0, Landroid/filterfw/core/StopWatchMap;->mStopWatches:Ljava/util/HashMap;
 
@@ -137,16 +103,16 @@
     .parameter "stopWatchName"
 
     .prologue
-    .line 110
+    .line 91
     iget-boolean v0, p0, Landroid/filterfw/core/StopWatchMap;->LOG_MFF_RUNNING_TIMES:Z
 
     if-nez v0, :cond_0
 
-    .line 118
+    .line 99
     :goto_0
     return-void
 
-    .line 113
+    .line 94
     :cond_0
     iget-object v0, p0, Landroid/filterfw/core/StopWatchMap;->mStopWatches:Ljava/util/HashMap;
 
@@ -156,7 +122,7 @@
 
     if-nez v0, :cond_1
 
-    .line 114
+    .line 95
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -181,7 +147,7 @@
 
     throw v0
 
-    .line 117
+    .line 98
     :cond_1
     iget-object v0, p0, Landroid/filterfw/core/StopWatchMap;->mStopWatches:Ljava/util/HashMap;
 

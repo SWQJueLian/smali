@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/server/dreams/DreamManagerService;->removeToken(Landroid/os/IBinder;)V
+    value = Lcom/android/server/dreams/DreamManagerService;->startDreamLocked(Landroid/content/ComponentName;ZI)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,20 +20,35 @@
 # instance fields
 .field final synthetic this$0:Lcom/android/server/dreams/DreamManagerService;
 
-.field final synthetic val$removeToken:Landroid/os/IBinder;
+.field final synthetic val$isTest:Z
+
+.field final synthetic val$name:Landroid/content/ComponentName;
+
+.field final synthetic val$newToken:Landroid/os/Binder;
+
+.field final synthetic val$userId:I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/server/dreams/DreamManagerService;Landroid/os/IBinder;)V
+.method constructor <init>(Lcom/android/server/dreams/DreamManagerService;Landroid/os/Binder;Landroid/content/ComponentName;ZI)V
     .locals 0
+    .parameter
+    .parameter
+    .parameter
     .parameter
     .parameter
 
     .prologue
-    .line 270
+    .line 303
     iput-object p1, p0, Lcom/android/server/dreams/DreamManagerService$3;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
-    iput-object p2, p0, Lcom/android/server/dreams/DreamManagerService$3;->val$removeToken:Landroid/os/IBinder;
+    iput-object p2, p0, Lcom/android/server/dreams/DreamManagerService$3;->val$newToken:Landroid/os/Binder;
+
+    iput-object p3, p0, Lcom/android/server/dreams/DreamManagerService$3;->val$name:Landroid/content/ComponentName;
+
+    iput-boolean p4, p0, Lcom/android/server/dreams/DreamManagerService$3;->val$isTest:Z
+
+    iput p5, p0, Lcom/android/server/dreams/DreamManagerService$3;->val$userId:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,10 +58,10 @@
 
 # virtual methods
 .method public run()V
-    .locals 2
+    .locals 5
 
     .prologue
-    .line 273
+    .line 306
     iget-object v0, p0, Lcom/android/server/dreams/DreamManagerService$3;->this$0:Lcom/android/server/dreams/DreamManagerService;
 
     #getter for: Lcom/android/server/dreams/DreamManagerService;->mController:Lcom/android/server/dreams/DreamController;
@@ -54,10 +69,16 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/android/server/dreams/DreamManagerService$3;->val$removeToken:Landroid/os/IBinder;
+    iget-object v1, p0, Lcom/android/server/dreams/DreamManagerService$3;->val$newToken:Landroid/os/Binder;
 
-    invoke-virtual {v0, v1}, Lcom/android/server/dreams/DreamController;->removeToken(Landroid/os/IBinder;)V
+    iget-object v2, p0, Lcom/android/server/dreams/DreamManagerService$3;->val$name:Landroid/content/ComponentName;
 
-    .line 274
+    iget-boolean v3, p0, Lcom/android/server/dreams/DreamManagerService$3;->val$isTest:Z
+
+    iget v4, p0, Lcom/android/server/dreams/DreamManagerService$3;->val$userId:I
+
+    invoke-virtual {v0, v1, v2, v3, v4}, Lcom/android/server/dreams/DreamController;->startDream(Landroid/os/Binder;Landroid/content/ComponentName;ZI)V
+
+    .line 307
     return-void
 .end method

@@ -87,14 +87,6 @@
     .end annotation
 .end method
 
-.method public abstract setBacklightBrightnessOff(Z)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract setMaximumScreenOffTimeoutFromDeviceAdmin(I)V
     .annotation system Ldalvik/annotation/Throws;
         value = {

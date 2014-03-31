@@ -16,10 +16,6 @@
 
 .field public static final ACTION_DOWNLOAD_CALIBRATION_DATA:Ljava/lang/String; = "android.intent.action.DOWNLOAD_CALIBRATION_DATA"
 
-.field public static final ACTION_EMT_CALL_STATE_CHANGED:Ljava/lang/String; = "android.intent.action.ACTION_EMT_CALL_STATE_CHANGED"
-
-.field public static final ACTION_NEW_INCOMING_CALL:Ljava/lang/String; = "android.intent.action.NEW_INCOMING_CALL"
-
 .field public static final ACTION_NEW_SIM_DETECTED:Ljava/lang/String; = "android.intent.action.NEW_SIM_DETECTED"
 
 .field public static final ACTION_RADIO_OFF:Ljava/lang/String; = "android.intent.action.RADIO_OFF"
@@ -48,47 +44,9 @@
 
 .field public static final APN_TYPE_WAP:Ljava/lang/String; = "wap"
 
-.field public static final CTA_ENABLE:Z = false
-
 .field public static final DISCONNECT_DATA_FLAG:Ljava/lang/String; = "disconnectPdpFlag"
 
-.field public static final EF_CC:I = 0x4f23
-
-.field public static final EMT_CALL_STATE_ACTIVE:I = 0x2
-
-.field public static final EMT_CALL_STATE_ALERTING:I = 0x5
-
-.field public static final EMT_CALL_STATE_DIALING:I = 0x1
-
-.field public static final EMT_CALL_STATE_ERROR:I = -0x1
-
-.field public static final EMT_CALL_STATE_HOLDING:I = 0x3
-
-.field public static final EMT_CALL_STATE_IDLE:I = 0x0
-
-.field public static final EMT_CALL_STATE_UNKNOWN:I = 0x4
-
-.field public static final EVENT_EM_CALL_STATUS_CHANGED:I = 0x131
-
-.field public static final EVENT_EM_DIAL_DONE:I = 0x12d
-
-.field public static final EVENT_EM_GET_CURRENT_CALLS_DONE:I = 0x12e
-
-.field public static final EVENT_EM_HANGUP_DONE:I = 0x12f
-
-.field public static final EVENT_GET_PCB_DONE:I = 0x132
-
-.field public static final EVENT_POLL_IS_PHB_READY:I = 0x12f
-
-.field public static final EVENT_SEND_UPLINK_DATA_DONE:I = 0x130
-
 .field public static final EXTRA_CALIBRATION_DATA:Ljava/lang/String; = "calibrationData"
-
-.field public static final EXTRA_EMT_CALL_NUMBER:Ljava/lang/String; = "number"
-
-.field public static final EXTRA_EMT_CALL_STATE:Ljava/lang/String; = "state"
-
-.field public static final EXTRA_INCOMING_NUMBER:Ljava/lang/String; = "PHONE_NUMBER"
 
 .field public static final FEATURE_ENABLE_CMMAIL:Ljava/lang/String; = "enableCMMAIL"
 
@@ -114,29 +72,9 @@
 
 .field public static final GEMINI_SIP_CALL:I = -0x1
 
-.field public static final INTENT_VALUE_ICC_ABSENT_REASON:Ljava/lang/String; = "PLUGOUT"
-
-.field public static final INTENT_VALUE_ICC_NOT_READY_REASON:Ljava/lang/String; = "PLUGIN"
-
 .field public static final IS_VT_CALL:Ljava/lang/String; = "isVtCall"
 
-.field public static final MAXNUM_RETRY_SIMRECORD:I = 0x3
-
 .field public static final MULTI_SIM_ID_KEY:Ljava/lang/String; = "simid"
-
-.field public static final OPPO_EVENT_ADN_SIZE_DONE:I = 0x3de
-
-.field public static final OPPO_EVENT_GET_ADN_FIELD_INFO_DONE:I = 0x66
-
-.field public static final OPPO_EVENT_GET_PBC_SIZE_DONE:I = 0x5e
-
-.field public static final OPPO_EVENT_READ_CC_DONE:I = 0x5d
-
-.field public static final OPPO_EVENT_READ_PBC_DONE:I = 0x5c
-
-.field public static final OPPO_EVENT_UPDATE_ADN_DONE:I = 0x5a
-
-.field public static final OPPO_EVENT_UPDATE_PBC_DONE:I = 0x5b
 
 .field public static final OPPO_MAX_PB_EMAIL_LENGTH:I = 0x1e
 
@@ -149,18 +87,6 @@
 .field public static final OPPO_SIMPHONEBOOK_STATE_NOT_READY:I = 0x0
 
 .field public static final OPPO_SIMPHONEBOOK_STATE_READY:I = 0x1
-
-.field public static final PHB_POLL_TIMEOUT:I = 0x3a980
-
-.field public static final PHB_START_POLL_TIME1:I = 0x1d4c0
-
-.field public static final PHB_START_POLL_TIME2:I = 0x3a980
-
-.field public static final POLL_MAX_TIME:I = 0xa
-
-.field public static final PORT_WAP_VCAL_S:I = 0x23f7
-
-.field public static final PORT_WAP_VCARD:I = 0x23f4
 
 .field public static final PROPERTY_CS_NETWORK_TYPE:Ljava/lang/String; = "gsm.cs.network.type"
 
@@ -209,10 +135,6 @@
 .field public static final REASON_PDP_NOT_ACTIVE:Ljava/lang/String; = "pdpNotActive"
 
 .field public static final REASON_POLL_STATE_DONE:Ljava/lang/String; = "pollStateDone"
-
-.field public static final RESULT_BLOCK:I = 0x1
-
-.field public static final RESULT_PASS:I = 0x0
 
 .field public static final SIM_INDICATOR_ABSENT:I = 0x0
 

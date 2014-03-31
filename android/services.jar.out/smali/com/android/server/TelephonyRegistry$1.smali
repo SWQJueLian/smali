@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 183
+    .line 137
     iput-object p1, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     invoke-direct {p0}, Landroid/os/Handler;-><init>()V
@@ -39,16 +39,16 @@
     .parameter "msg"
 
     .prologue
-    .line 186
+    .line 140
     iget v0, p1, Landroid/os/Message;->what:I
 
     packed-switch v0, :pswitch_data_0
 
-    .line 193
+    .line 147
     :goto_0
     return-void
 
-    .line 188
+    .line 142
     :pswitch_0
     const-string v0, "TelephonyRegistry"
 
@@ -74,7 +74,7 @@
 
     invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 189
+    .line 143
     iget-object v0, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
 
     iget-object v1, p0, Lcom/android/server/TelephonyRegistry$1;->this$0:Lcom/android/server/TelephonyRegistry;
@@ -88,7 +88,7 @@
 
     goto :goto_0
 
-    .line 186
+    .line 140
     :pswitch_data_0
     .packed-switch 0x1
         :pswitch_0

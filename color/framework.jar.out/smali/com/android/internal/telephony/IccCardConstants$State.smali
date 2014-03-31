@@ -240,7 +240,7 @@
     .locals 1
 
     .prologue
-    .line 79
+    .line 73
     sget-object v0, Lcom/android/internal/telephony/IccCardConstants$State;->PIN_REQUIRED:Lcom/android/internal/telephony/IccCardConstants$State;
 
     if-eq p0, v0, :cond_0
@@ -258,33 +258,6 @@
     if-eq p0, v0, :cond_0
 
     sget-object v0, Lcom/android/internal/telephony/IccCardConstants$State;->PERM_DISABLED:Lcom/android/internal/telephony/IccCardConstants$State;
-
-    if-ne p0, v0, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :goto_0
-    return v0
-
-    :cond_1
-    const/4 v0, 0x0
-
-    goto :goto_0
-.end method
-
-.method public isLocked()Z
-    .locals 1
-
-    .prologue
-    .line 74
-    invoke-virtual {p0}, Lcom/android/internal/telephony/IccCardConstants$State;->isPinLocked()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    sget-object v0, Lcom/android/internal/telephony/IccCardConstants$State;->NETWORK_LOCKED:Lcom/android/internal/telephony/IccCardConstants$State;
 
     if-ne p0, v0, :cond_1
 

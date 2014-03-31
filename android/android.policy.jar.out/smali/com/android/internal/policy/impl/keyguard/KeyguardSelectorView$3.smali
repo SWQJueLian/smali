@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 134
+    .line 120
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
 
     invoke-direct {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardActivityLauncher;-><init>()V
@@ -38,7 +38,7 @@
     .locals 1
 
     .prologue
-    .line 138
+    .line 124
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
@@ -53,7 +53,7 @@
     .locals 1
 
     .prologue
-    .line 148
+    .line 134
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mContext:Landroid/content/Context;
@@ -68,7 +68,7 @@
     .locals 1
 
     .prologue
-    .line 143
+    .line 129
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView$3;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;
 
     #getter for: Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mLockPatternUtils:Lcom/android/internal/widget/LockPatternUtils;

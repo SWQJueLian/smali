@@ -68,14 +68,14 @@
 
     sget-object v1, Landroid/os/RecoverySystem;->RECOVERY_DIR:Ljava/io/File;
 
-    const-string/jumbo v2, "log"
+    const-string v2, "log"
 
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     sput-object v0, Landroid/os/RecoverySystem;->LOG_FILE:Ljava/io/File;
 
     .line 75
-    const-string/jumbo v0, "last_"
+    const-string v0, "last_"
 
     sput-object v0, Landroid/os/RecoverySystem;->LAST_PREFIX:Ljava/lang/String;
 

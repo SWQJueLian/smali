@@ -110,7 +110,7 @@
     .locals 3
 
     .prologue
-    .line 448
+    .line 440
     iget-boolean v1, p0, Landroid/content/BroadcastReceiver$PendingResult;->mOrderedHint:Z
 
     if-nez v1, :cond_0
@@ -119,12 +119,12 @@
 
     if-eqz v1, :cond_1
 
-    .line 455
+    .line 447
     :cond_0
     :goto_0
     return-void
 
-    .line 451
+    .line 443
     :cond_1
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -132,11 +132,11 @@
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 453
+    .line 445
     .local v0, e:Ljava/lang/RuntimeException;
     invoke-virtual {v0}, Ljava/lang/RuntimeException;->fillInStackTrace()Ljava/lang/Throwable;
 
-    .line 454
+    .line 446
     const-string v1, "BroadcastReceiver"
 
     invoke-virtual {v0}, Ljava/lang/RuntimeException;->getMessage()Ljava/lang/String;
@@ -309,7 +309,7 @@
     .locals 1
 
     .prologue
-    .line 441
+    .line 433
     iget v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mSendingUser:I
 
     return v0
@@ -320,8 +320,6 @@
     .parameter "am"
 
     .prologue
-    const/4 v2, 0x1
-
     .line 408
     monitor-enter p0
 
@@ -340,7 +338,7 @@
 
     throw v0
 
-    .line 436
+    .line 428
     :catchall_0
     move-exception v0
 
@@ -376,52 +374,9 @@
     :cond_1
     iget-boolean v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mOrderedHint:Z
 
-    if-eqz v0, :cond_3
+    if-eqz v0, :cond_2
 
-    .line 420
-    sget-boolean v0, Landroid/app/ActivityThread;->mIsUserBuild:Z
-
-    if-nez v0, :cond_2
-
-    iget v0, p0, Landroid/content/BroadcastReceiver$PendingResult;->mType:I
-
-    if-ne v0, v2, :cond_2
-
-    .line 421
-    const-string v0, "ActivityThread"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "BDC-Calling finishReceiver: IIntentReceiver="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Landroid/content/BroadcastReceiver$PendingResult;->mToken:Landroid/os/IBinder;
-
-    invoke-static {v2}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 427
-    :cond_2
+    .line 419
     iget-object v1, p0, Landroid/content/BroadcastReceiver$PendingResult;->mToken:Landroid/os/IBinder;
 
     iget v2, p0, Landroid/content/BroadcastReceiver$PendingResult;->mResultCode:I
@@ -439,18 +394,18 @@
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
     .catch Landroid/os/RemoteException; {:try_start_2 .. :try_end_2} :catch_0
 
-    .line 436
+    .line 428
     :goto_0
     :try_start_3
     monitor-exit p0
     :try_end_3
     .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
-    .line 437
+    .line 429
     return-void
 
-    .line 432
-    :cond_3
+    .line 424
+    :cond_2
     :try_start_4
     iget-object v1, p0, Landroid/content/BroadcastReceiver$PendingResult;->mToken:Landroid/os/IBinder;
 
@@ -471,7 +426,7 @@
 
     goto :goto_0
 
-    .line 434
+    .line 426
     :catch_0
     move-exception v0
 

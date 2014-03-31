@@ -4,7 +4,6 @@
 
 # interfaces
 .implements Landroid/provider/BaseColumns;
-.implements Landroid/provider/MediaStore$DrmColumns;
 
 
 # annotations

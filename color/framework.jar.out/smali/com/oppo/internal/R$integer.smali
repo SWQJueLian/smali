@@ -15,6 +15,8 @@
 
 
 # static fields
+.field public static final android_config_maxResolverActivityColumns:I = 0xc0d0405
+
 .field public static final android_config_safe_media_volume_index:I = 0xc0d0419
 
 .field public static final android_preference_fragment_scrollbarStyle:I = 0xc0d0000
@@ -65,7 +67,7 @@
     .locals 0
 
     .prologue
-    .line 1808
+    .line 1901
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

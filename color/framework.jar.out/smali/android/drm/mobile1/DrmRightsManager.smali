@@ -360,7 +360,7 @@
     :cond_3
     new-instance v3, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v4, "mimeType must be DRM_MIMETYPE_RIGHTS_XML or DRM_MIMETYPE_RIGHTS_WBXML or DRM_MIMETYPE_MESSAGE"
+    const-string v4, "mimeType must be DRM_MIMETYPE_RIGHTS_XML or DRM_MIMETYPE_RIGHTS_WBXML or DRM_MIMETYPE_MESSAGE"
 
     invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -398,7 +398,7 @@
     .line 115
     new-instance v3, Landroid/drm/mobile1/DrmException;
 
-    const-string/jumbo v4, "nativeInstallDrmRights() returned JNI_DRM_FAILURE"
+    const-string v4, "nativeInstallDrmRights() returned JNI_DRM_FAILURE"
 
     invoke-direct {v3, v4}, Landroid/drm/mobile1/DrmException;-><init>(Ljava/lang/String;)V
 

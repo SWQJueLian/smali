@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 492
+    .line 434
     iput-object p1, p0, Lcom/android/server/net/NetworkPolicyManagerService$3;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -35,51 +35,73 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 3
+    .locals 4
     .parameter "context"
     .parameter "intent"
 
     .prologue
-    .line 495
-    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$3;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+    const/4 v3, -0x1
 
-    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mRulesLock:Ljava/lang/Object;
-    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$400(Lcom/android/server/net/NetworkPolicyManagerService;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    monitor-enter v1
-
-    .line 498
-    :try_start_0
-    iget-object v0, p0, Lcom/android/server/net/NetworkPolicyManagerService$3;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
-
-    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/android/server/net/NetworkPolicyManagerService;->access$300(Lcom/android/server/net/NetworkPolicyManagerService;)Landroid/os/Handler;
+    .line 439
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v0
 
-    const/16 v2, 0x8
+    .line 440
+    .local v0, action:Ljava/lang/String;
+    const-string v2, "android.intent.extra.UID"
 
-    invoke-virtual {v0, v2}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p2, v2, v3}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result-object v0
+    move-result v1
 
-    invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
+    .line 441
+    .local v1, uid:I
+    if-ne v1, v3, :cond_1
 
-    .line 499
-    monitor-exit v1
-
-    .line 500
+    .line 451
+    :cond_0
+    :goto_0
     return-void
 
-    .line 499
-    :catchall_0
-    move-exception v0
+    .line 443
+    :cond_1
+    const-string v2, "android.intent.action.PACKAGE_ADDED"
 
-    monitor-exit v1
+    invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    .line 447
+    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$3;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+
+    #getter for: Lcom/android/server/net/NetworkPolicyManagerService;->mRulesLock:Ljava/lang/Object;
+    invoke-static {v2}, Lcom/android/server/net/NetworkPolicyManagerService;->access$100(Lcom/android/server/net/NetworkPolicyManagerService;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    monitor-enter v3
+
+    .line 448
+    :try_start_0
+    iget-object v2, p0, Lcom/android/server/net/NetworkPolicyManagerService$3;->this$0:Lcom/android/server/net/NetworkPolicyManagerService;
+
+    #calls: Lcom/android/server/net/NetworkPolicyManagerService;->updateRulesForUidLocked(I)V
+    invoke-static {v2, v1}, Lcom/android/server/net/NetworkPolicyManagerService;->access$200(Lcom/android/server/net/NetworkPolicyManagerService;I)V
+
+    .line 449
+    monitor-exit v3
+
+    goto :goto_0
+
+    :catchall_0
+    move-exception v2
+
+    monitor-exit v3
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    throw v0
+    throw v2
 .end method

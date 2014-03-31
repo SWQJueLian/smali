@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 534
+    .line 302
     iput-object p1, p0, Lcom/android/internal/telephony/DataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,19 +41,19 @@
     .locals 4
 
     .prologue
-    .line 537
+    .line 305
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/DataConnectionTracker;->updateDataActivity()V
 
-    .line 539
+    .line 307
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
     iget-boolean v0, v0, Lcom/android/internal/telephony/DataConnectionTracker;->mIsScreenOn:Z
 
     if-eqz v0, :cond_1
 
-    .line 540
+    .line 308
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
     iget-object v1, p0, Lcom/android/internal/telephony/DataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
@@ -70,7 +70,7 @@
 
     iput v1, v0, Lcom/android/internal/telephony/DataConnectionTracker;->mNetStatPollPeriod:I
 
-    .line 548
+    .line 316
     :goto_0
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
@@ -78,7 +78,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 549
+    .line 317
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 
     iget-object v0, v0, Lcom/android/internal/telephony/DataConnectionTracker;->mDataConnectionTracker:Landroid/os/Handler;
@@ -91,11 +91,11 @@
 
     invoke-virtual {v0, p0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 551
+    .line 319
     :cond_0
     return-void
 
-    .line 543
+    .line 311
     :cond_1
     iget-object v0, p0, Lcom/android/internal/telephony/DataConnectionTracker$2;->this$0:Lcom/android/internal/telephony/DataConnectionTracker;
 

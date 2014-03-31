@@ -17,10 +17,6 @@
 # static fields
 .field public static final DATA_SMS_RECEIVED_ACTION:Ljava/lang/String; = "android.intent.action.DATA_SMS_RECEIVED"
 
-.field public static final DM_REGISTER_SMS_RECEIVED_ACTION:Ljava/lang/String; = "android.intent.action.DM_REGISTER_SMS_RECEIVED"
-
-.field public static final MWI_SMS_RECEIVED_ACTION:Ljava/lang/String; = "android.provider.Telephony.MWI_SMS_RECEIVED"
-
 .field public static final RESULT_SMS_GENERIC_ERROR:I = 0x2
 
 .field public static final RESULT_SMS_HANDLED:I = 0x1
@@ -41,8 +37,6 @@
 
 .field public static final SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED_ACTION:Ljava/lang/String; = "android.provider.Telephony.SMS_SERVICE_CATEGORY_PROGRAM_DATA_RECEIVED"
 
-.field public static final SMS_STATE_CHANGED_ACTION:Ljava/lang/String; = "android.provider.Telephony.SMS_STATE_CHANGED"
-
 .field public static final WAP_PUSH_RECEIVED_ACTION:Ljava/lang/String; = "android.provider.Telephony.WAP_PUSH_RECEIVED"
 
 
@@ -51,149 +45,109 @@
     .locals 0
 
     .prologue
-    .line 680
+    .line 498
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 .method public static getMessagesFromIntent(Landroid/content/Intent;)[Landroid/telephony/SmsMessage;
-    .locals 11
+    .locals 8
     .parameter "intent"
 
     .prologue
-    .line 917
-    const-string v8, "pdus"
+    .line 688
+    const-string v7, "pdus"
 
-    invoke-virtual {p0, v8}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
+    invoke-virtual {p0, v7}, Landroid/content/Intent;->getSerializableExtra(Ljava/lang/String;)Ljava/io/Serializable;
 
-    move-result-object v8
+    move-result-object v7
 
-    check-cast v8, [Ljava/lang/Object;
+    check-cast v7, [Ljava/lang/Object;
 
-    move-object v2, v8
+    move-object v2, v7
 
     check-cast v2, [Ljava/lang/Object;
 
-    .line 918
+    .line 689
     .local v2, messages:[Ljava/lang/Object;
-    const-string v8, "format"
+    const-string v7, "format"
 
-    invoke-virtual {p0, v8}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v7}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 921
+    .line 690
     .local v0, format:Ljava/lang/String;
-    if-nez v2, :cond_1
+    array-length v7, v2
 
-    .line 922
-    const/4 v3, 0x0
+    new-array v5, v7, [[B
 
-    .line 945
-    :cond_0
-    return-object v3
-
-    .line 925
-    :cond_1
-    array-length v8, v2
-
-    new-array v5, v8, [[B
-
-    .line 927
+    .line 692
     .local v5, pduObjs:[[B
-    const-string v8, "simId"
-
-    const/4 v9, -0x1
-
-    invoke-virtual {p0, v8, v9}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
-
-    move-result v7
-
-    .line 928
-    .local v7, simId:I
-    const-string v8, "Telephony"
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v10, "Get SmeMessage ID: "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 932
     const/4 v1, 0x0
 
     .local v1, i:I
     :goto_0
-    array-length v8, v2
+    array-length v7, v2
 
-    if-ge v1, v8, :cond_2
+    if-ge v1, v7, :cond_0
 
-    .line 933
-    aget-object v8, v2, v1
+    .line 693
+    aget-object v7, v2, v1
 
-    check-cast v8, [B
+    check-cast v7, [B
 
-    check-cast v8, [B
+    check-cast v7, [B
 
-    aput-object v8, v5, v1
+    aput-object v7, v5, v1
 
-    .line 932
+    .line 692
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 935
-    :cond_2
-    array-length v8, v5
+    .line 695
+    :cond_0
+    array-length v7, v5
 
-    new-array v6, v8, [[B
+    new-array v6, v7, [[B
 
-    .line 936
+    .line 696
     .local v6, pdus:[[B
     array-length v4, v6
 
-    .line 937
+    .line 697
     .local v4, pduCount:I
     new-array v3, v4, [Landroid/telephony/SmsMessage;
 
-    .line 938
+    .line 698
     .local v3, msgs:[Landroid/telephony/SmsMessage;
     const/4 v1, 0x0
 
     :goto_1
-    if-ge v1, v4, :cond_0
+    if-ge v1, v4, :cond_1
 
-    .line 939
-    aget-object v8, v5, v1
+    .line 699
+    aget-object v7, v5, v1
 
-    aput-object v8, v6, v1
+    aput-object v7, v6, v1
 
-    .line 942
-    aget-object v8, v6, v1
+    .line 700
+    aget-object v7, v6, v1
 
-    invoke-static {v8, v0, v7}, Landroid/telephony/gemini/GeminiSmsMessage;->createFromPdu([BLjava/lang/String;I)Landroid/telephony/gemini/GeminiSmsMessage;
+    invoke-static {v7, v0}, Landroid/telephony/SmsMessage;->createFromPdu([BLjava/lang/String;)Landroid/telephony/SmsMessage;
 
-    move-result-object v8
+    move-result-object v7
 
-    aput-object v8, v3, v1
+    aput-object v7, v3, v1
 
-    .line 938
+    .line 698
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_1
+
+    .line 702
+    :cond_1
+    return-object v3
 .end method

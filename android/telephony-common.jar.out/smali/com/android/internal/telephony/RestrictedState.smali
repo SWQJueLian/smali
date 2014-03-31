@@ -16,21 +16,21 @@
     .locals 1
 
     .prologue
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 38
+    .line 37
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/RestrictedState;->setPsRestricted(Z)V
 
-    .line 39
+    .line 38
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/RestrictedState;->setCsNormalRestricted(Z)V
 
-    .line 40
+    .line 39
     invoke-virtual {p0, v0}, Lcom/android/internal/telephony/RestrictedState;->setCsEmergencyRestricted(Z)V
 
-    .line 41
+    .line 40
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 94
+    .line 93
     :try_start_0
     move-object v0, p1
 
@@ -53,25 +53,25 @@
     :try_end_0
     .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 99
+    .line 98
     .local v2, s:Lcom/android/internal/telephony/RestrictedState;
     if-nez p1, :cond_1
 
-    .line 103
+    .line 102
     .end local v2           #s:Lcom/android/internal/telephony/RestrictedState;
     :cond_0
     :goto_0
     return v3
 
-    .line 95
+    .line 94
     :catch_0
     move-exception v1
 
-    .line 96
+    .line 95
     .local v1, ex:Ljava/lang/ClassCastException;
     goto :goto_0
 
-    .line 103
+    .line 102
     .end local v1           #ex:Ljava/lang/ClassCastException;
     .restart local v2       #s:Lcom/android/internal/telephony/RestrictedState;
     :cond_1
@@ -102,7 +102,7 @@
     .locals 1
 
     .prologue
-    .line 54
+    .line 53
     iget-boolean v0, p0, Lcom/android/internal/telephony/RestrictedState;->mCsEmergencyRestricted:Z
 
     return v0
@@ -112,7 +112,7 @@
     .locals 1
 
     .prologue
-    .line 68
+    .line 67
     iget-boolean v0, p0, Lcom/android/internal/telephony/RestrictedState;->mCsNormalRestricted:Z
 
     return v0
@@ -122,7 +122,7 @@
     .locals 1
 
     .prologue
-    .line 86
+    .line 85
     iget-boolean v0, p0, Lcom/android/internal/telephony/RestrictedState;->mCsNormalRestricted:Z
 
     if-eqz v0, :cond_0
@@ -146,7 +146,7 @@
     .locals 1
 
     .prologue
-    .line 82
+    .line 81
     iget-boolean v0, p0, Lcom/android/internal/telephony/RestrictedState;->mPsRestricted:Z
 
     return v0
@@ -157,10 +157,10 @@
     .parameter "csEmergencyRestricted"
 
     .prologue
-    .line 47
+    .line 46
     iput-boolean p1, p0, Lcom/android/internal/telephony/RestrictedState;->mCsEmergencyRestricted:Z
 
-    .line 48
+    .line 47
     return-void
 .end method
 
@@ -169,10 +169,10 @@
     .parameter "csNormalRestricted"
 
     .prologue
-    .line 61
+    .line 60
     iput-boolean p1, p0, Lcom/android/internal/telephony/RestrictedState;->mCsNormalRestricted:Z
 
-    .line 62
+    .line 61
     return-void
 .end method
 
@@ -181,10 +181,10 @@
     .parameter "psRestricted"
 
     .prologue
-    .line 75
+    .line 74
     iput-boolean p1, p0, Lcom/android/internal/telephony/RestrictedState;->mPsRestricted:Z
 
-    .line 76
+    .line 75
     return-void
 .end method
 
@@ -192,10 +192,10 @@
     .locals 3
 
     .prologue
-    .line 110
+    .line 109
     const-string v0, "none"
 
-    .line 112
+    .line 111
     .local v0, csString:Ljava/lang/String;
     iget-boolean v1, p0, Lcom/android/internal/telephony/RestrictedState;->mCsEmergencyRestricted:Z
 
@@ -205,10 +205,10 @@
 
     if-eqz v1, :cond_1
 
-    .line 113
+    .line 112
     const-string v0, "all"
 
-    .line 120
+    .line 119
     :cond_0
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -243,7 +243,7 @@
 
     return-object v1
 
-    .line 114
+    .line 113
     :cond_1
     iget-boolean v1, p0, Lcom/android/internal/telephony/RestrictedState;->mCsEmergencyRestricted:Z
 
@@ -253,12 +253,12 @@
 
     if-nez v1, :cond_2
 
-    .line 115
+    .line 114
     const-string v0, "emergency"
 
     goto :goto_0
 
-    .line 116
+    .line 115
     :cond_2
     iget-boolean v1, p0, Lcom/android/internal/telephony/RestrictedState;->mCsEmergencyRestricted:Z
 
@@ -268,7 +268,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 117
+    .line 116
     const-string v0, "normal call"
 
     goto :goto_0

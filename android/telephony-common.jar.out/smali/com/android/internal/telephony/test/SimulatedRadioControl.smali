@@ -10,9 +10,6 @@
 .method public abstract progressConnectingCallState()V
 .end method
 
-.method public abstract progressConnectingCallState(IIZLjava/lang/String;I)V
-.end method
-
 .method public abstract progressConnectingToActive()V
 .end method
 

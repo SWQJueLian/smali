@@ -34,18 +34,18 @@
 
     const/4 v4, -0x1
 
-    .line 1072
+    .line 1056
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1073
+    .line 1057
     iput p1, p0, Lcom/android/internal/telephony/GsmAlphabet$LanguagePairCount;->languageCode:I
 
-    .line 1074
+    .line 1058
     invoke-static {}, Lcom/android/internal/telephony/GsmAlphabet;->access$000()I
 
     move-result v1
 
-    .line 1075
+    .line 1059
     .local v1, maxSingleShiftCode:I
     add-int/lit8 v3, v1, 0x1
 
@@ -53,14 +53,14 @@
 
     iput-object v3, p0, Lcom/android/internal/telephony/GsmAlphabet$LanguagePairCount;->septetCounts:[I
 
-    .line 1076
+    .line 1060
     add-int/lit8 v3, v1, 0x1
 
     new-array v3, v3, [I
 
     iput-object v3, p0, Lcom/android/internal/telephony/GsmAlphabet$LanguagePairCount;->unencodableCounts:[I
 
-    .line 1079
+    .line 1063
     const/4 v0, 0x1
 
     .local v0, i:I
@@ -70,7 +70,7 @@
     :goto_0
     if-gt v0, v1, :cond_1
 
-    .line 1080
+    .line 1064
     invoke-static {}, Lcom/android/internal/telephony/GsmAlphabet;->access$100()[I
 
     move-result-object v3
@@ -79,16 +79,16 @@
 
     if-ne v3, v0, :cond_0
 
-    .line 1081
+    .line 1065
     add-int/lit8 v2, v2, 0x1
 
-    .line 1079
+    .line 1063
     :goto_1
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_0
 
-    .line 1083
+    .line 1067
     :cond_0
     iget-object v3, p0, Lcom/android/internal/telephony/GsmAlphabet$LanguagePairCount;->septetCounts:[I
 
@@ -96,23 +96,23 @@
 
     goto :goto_1
 
-    .line 1089
+    .line 1073
     :cond_1
     if-ne p1, v5, :cond_3
 
     if-lt v1, v5, :cond_3
 
-    .line 1090
+    .line 1074
     iget-object v3, p0, Lcom/android/internal/telephony/GsmAlphabet$LanguagePairCount;->septetCounts:[I
 
     aput v4, v3, v5
 
-    .line 1094
+    .line 1078
     :cond_2
     :goto_2
     return-void
 
-    .line 1091
+    .line 1075
     :cond_3
     const/4 v3, 0x3
 
@@ -120,7 +120,7 @@
 
     if-lt v1, v6, :cond_2
 
-    .line 1092
+    .line 1076
     iget-object v3, p0, Lcom/android/internal/telephony/GsmAlphabet$LanguagePairCount;->septetCounts:[I
 
     aput v4, v3, v6

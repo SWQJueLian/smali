@@ -836,18 +836,6 @@
     return-void
 .end method
 
-.method public setClipChildrenForNewEventView(Z)V
-    .locals 0
-    .parameter "clipChildren"
-
-    .prologue
-    .line 282
-    invoke-virtual {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityViewFlipper;->setClipChildren(Z)V
-
-    .line 283
-    return-void
-.end method
-
 .method public setKeyguardCallback(Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;)V
     .locals 1
     .parameter "callback"

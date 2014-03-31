@@ -3,7 +3,7 @@
 .source "DisplayPowerController.java"
 
 # interfaces
-.implements Landroid/animation/Animator$AnimatorListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 580
+    .line 804
     iput-object p1, p0, Lcom/android/server/power/DisplayPowerController$2;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,44 +37,16 @@
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 0
-    .parameter "animation"
-
-    .prologue
-    .line 593
-    return-void
-.end method
-
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public run()V
     .locals 1
-    .parameter "animation"
 
     .prologue
-    .line 586
+    .line 807
     iget-object v0, p0, Lcom/android/server/power/DisplayPowerController$2;->this$0:Lcom/android/server/power/DisplayPowerController;
 
     #calls: Lcom/android/server/power/DisplayPowerController;->sendUpdatePowerState()V
-    invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$200(Lcom/android/server/power/DisplayPowerController;)V
+    invoke-static {v0}, Lcom/android/server/power/DisplayPowerController;->access$000(Lcom/android/server/power/DisplayPowerController;)V
 
-    .line 587
-    return-void
-.end method
-
-.method public onAnimationRepeat(Landroid/animation/Animator;)V
-    .locals 0
-    .parameter "animation"
-
-    .prologue
-    .line 590
-    return-void
-.end method
-
-.method public onAnimationStart(Landroid/animation/Animator;)V
-    .locals 0
-    .parameter "animation"
-
-    .prologue
-    .line 583
+    .line 808
     return-void
 .end method

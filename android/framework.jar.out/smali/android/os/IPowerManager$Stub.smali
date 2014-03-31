@@ -42,9 +42,7 @@
 
 .field static final TRANSACTION_releaseWakeLock:I = 0x2
 
-.field static final TRANSACTION_setAttentionLight:I = 0x12
-
-.field static final TRANSACTION_setBacklightBrightnessOff:I = 0x11
+.field static final TRANSACTION_setAttentionLight:I = 0x11
 
 .field static final TRANSACTION_setMaximumScreenOffTimeoutFromDeviceAdmin:I = 0xe
 
@@ -156,7 +154,7 @@
     .line 39
     sparse-switch p1, :sswitch_data_0
 
-    .line 243
+    .line 234
     invoke-super {p0, p1, p2, p3, p4}, Landroid/os/Binder;->onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
 
     move-result v7
@@ -707,61 +705,29 @@
 
     move v0, v7
 
-    .line 227
+    .line 228
     .local v0, _arg0:Z
     :goto_7
-    invoke-virtual {p0, v0}, Landroid/os/IPowerManager$Stub;->setBacklightBrightnessOff(Z)V
-
-    .line 228
-    invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
-
-    goto/16 :goto_0
-
-    .end local v0           #_arg0:Z
-    :cond_8
-    move v0, v6
-
-    .line 226
-    goto :goto_7
-
-    .line 233
-    :sswitch_12
-    const-string v8, "android.os.IPowerManager"
-
-    invoke-virtual {p2, v8}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
-
-    .line 235
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v8
-
-    if-eqz v8, :cond_9
-
-    move v0, v7
-
-    .line 237
-    .restart local v0       #_arg0:Z
-    :goto_8
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    .line 238
+    .line 229
     .local v2, _arg1:I
     invoke-virtual {p0, v0, v2}, Landroid/os/IPowerManager$Stub;->setAttentionLight(ZI)V
 
-    .line 239
+    .line 230
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
     goto/16 :goto_0
 
     .end local v0           #_arg0:Z
     .end local v2           #_arg1:I
-    :cond_9
+    :cond_8
     move v0, v6
 
-    .line 235
-    goto :goto_8
+    .line 226
+    goto :goto_7
 
     .line 39
     :sswitch_data_0
@@ -783,7 +749,6 @@
         0xf -> :sswitch_f
         0x10 -> :sswitch_10
         0x11 -> :sswitch_11
-        0x12 -> :sswitch_12
         0x5f4e5446 -> :sswitch_0
     .end sparse-switch
 .end method

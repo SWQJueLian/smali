@@ -27,33 +27,14 @@
 
 .field public msgCount:I
 
-.field public shiftLangId:I
-
-.field public useLockingShift:Z
-
-.field public useSingleShift:Z
-
 
 # direct methods
 .method public constructor <init>()V
-    .locals 1
+    .locals 0
 
     .prologue
-    const/4 v0, 0x0
-
     .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 120
-    iput-boolean v0, p0, Lcom/android/internal/telephony/GsmAlphabet$TextEncodingDetails;->useSingleShift:Z
-
-    .line 122
-    iput-boolean v0, p0, Lcom/android/internal/telephony/GsmAlphabet$TextEncodingDetails;->useLockingShift:Z
-
-    .line 124
-    const/4 v0, -0x1
-
-    iput v0, p0, Lcom/android/internal/telephony/GsmAlphabet$TextEncodingDetails;->shiftLangId:I
 
     return-void
 .end method
@@ -64,7 +45,7 @@
     .locals 2
 
     .prologue
-    .line 129
+    .line 121
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

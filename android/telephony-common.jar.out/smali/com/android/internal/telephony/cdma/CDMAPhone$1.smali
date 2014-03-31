@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 158
+    .line 135
     iput-object p1, p0, Lcom/android/internal/telephony/cdma/CDMAPhone$1;->this$0:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,11 +41,11 @@
     .locals 1
 
     .prologue
-    .line 161
+    .line 138
     iget-object v0, p0, Lcom/android/internal/telephony/cdma/CDMAPhone$1;->this$0:Lcom/android/internal/telephony/cdma/CDMAPhone;
 
     invoke-virtual {v0}, Lcom/android/internal/telephony/cdma/CDMAPhone;->exitEmergencyCallbackMode()V
 
-    .line 162
+    .line 139
     return-void
 .end method

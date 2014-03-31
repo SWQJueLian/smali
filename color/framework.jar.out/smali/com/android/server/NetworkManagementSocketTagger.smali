@@ -147,7 +147,7 @@
     const/4 v2, 0x0
 
     .line 125
-    const-string/jumbo v1, "net.qtaguid_enabled"
+    const-string v1, "net.qtaguid_enabled"
 
     invoke-static {v1, v2}, Landroid/os/SystemProperties;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -210,7 +210,7 @@
 
     .prologue
     .line 115
-    const-string/jumbo v1, "net.qtaguid_enabled"
+    const-string v1, "net.qtaguid_enabled"
 
     const/4 v2, 0x0
 
@@ -339,7 +339,7 @@
 
     .line 79
     :cond_1
-    const-string/jumbo v1, "net.qtaguid_enabled"
+    const-string v1, "net.qtaguid_enabled"
 
     const/4 v2, 0x0
 
@@ -451,7 +451,7 @@
 
     .line 101
     :cond_1
-    const-string/jumbo v2, "net.qtaguid_enabled"
+    const-string v2, "net.qtaguid_enabled"
 
     const/4 v3, 0x0
 

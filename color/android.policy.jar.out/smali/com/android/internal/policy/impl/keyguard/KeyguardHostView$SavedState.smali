@@ -38,7 +38,7 @@
     .locals 1
 
     .prologue
-    .line 1486
+    .line 1265
     new-instance v0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$SavedState$1;
 
     invoke-direct {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$SavedState$1;-><init>()V
@@ -53,29 +53,29 @@
     .parameter "in"
 
     .prologue
-    .line 1474
+    .line 1253
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
 
-    .line 1467
+    .line 1246
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$SavedState;->appWidgetToShow:I
 
-    .line 1475
+    .line 1254
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$SavedState;->transportState:I
 
-    .line 1476
+    .line 1255
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$SavedState;->appWidgetToShow:I
 
-    .line 1477
+    .line 1256
     return-void
 .end method
 
@@ -85,7 +85,7 @@
     .parameter "x1"
 
     .prologue
-    .line 1465
+    .line 1244
     invoke-direct {p0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$SavedState;-><init>(Landroid/os/Parcel;)V
 
     return-void
@@ -96,15 +96,15 @@
     .parameter "superState"
 
     .prologue
-    .line 1470
+    .line 1249
     invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 1467
+    .line 1246
     const/4 v0, 0x0
 
     iput v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$SavedState;->appWidgetToShow:I
 
-    .line 1471
+    .line 1250
     return-void
 .end method
 
@@ -116,19 +116,19 @@
     .parameter "flags"
 
     .prologue
-    .line 1481
+    .line 1260
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1482
+    .line 1261
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$SavedState;->transportState:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1483
+    .line 1262
     iget v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView$SavedState;->appWidgetToShow:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1484
+    .line 1263
     return-void
 .end method

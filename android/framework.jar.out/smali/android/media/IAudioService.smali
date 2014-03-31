@@ -79,14 +79,6 @@
     .end annotation
 .end method
 
-.method public abstract enableHDMIAudio(ZLandroid/os/IBinder;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract forceVolumeControlStream(ILandroid/os/IBinder;)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -247,14 +239,6 @@
     .end annotation
 .end method
 
-.method public abstract listenRingerModeAndVolume(Lcom/mediatek/common/audioprofile/IAudioProfileListener;I)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract loadSoundEffects()Z
     .annotation system Ldalvik/annotation/Throws;
         value = {
@@ -336,30 +320,6 @@
 .end method
 
 .method public abstract requestAudioFocus(IILandroid/os/IBinder;Landroid/media/IAudioFocusDispatcher;Ljava/lang/String;Ljava/lang/String;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setAudioPathOutofFMTx()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setAudioPathToFMTx(Landroid/os/IBinder;)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract setAudioProfileStreamVolume(III)V
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

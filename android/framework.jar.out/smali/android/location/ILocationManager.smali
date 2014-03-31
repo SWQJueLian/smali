@@ -89,14 +89,6 @@
     .end annotation
 .end method
 
-.method public abstract getFileTime([J)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
 .method public abstract getFromLocation(DDILandroid/location/GeocoderParams;Ljava/util/List;)Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -288,14 +280,6 @@
 .end method
 
 .method public abstract setTestProviderStatus(Ljava/lang/String;ILandroid/os/Bundle;J)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
-.end method
-
-.method public abstract updateEPOFile()I
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Landroid/os/RemoteException;

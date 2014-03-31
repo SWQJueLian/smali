@@ -199,7 +199,7 @@
     invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 140
-    const-string/jumbo v1, "location"
+    const-string v1, "location"
 
     invoke-virtual {p0, v1}, Lcom/android/internal/app/NetInitiatedActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
@@ -319,7 +319,7 @@
     iput-object v3, v2, Lcom/android/internal/app/AlertController$AlertParams;->mTitle:Ljava/lang/CharSequence;
 
     .line 92
-    const-string/jumbo v3, "message"
+    const-string v3, "message"
 
     invoke-virtual {v1, v3}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 

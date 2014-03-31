@@ -500,7 +500,7 @@
 
     if-nez v26, :cond_0
 
-    const-string/jumbo v26, "keep-alive"
+    const-string v26, "keep-alive"
 
     move-object/from16 v0, v26
 

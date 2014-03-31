@@ -23,13 +23,9 @@
 
 .field private static final BOOT_MODE_PROPERTY:Ljava/lang/String; = "ro.bootmode"
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field private static final FUNCTIONS_PATH:Ljava/lang/String; = "/sys/class/android_usb/android0/functions"
-
-.field private static final IPO_POWER_OFF:Ljava/lang/String; = "android.intent.action.ACTION_SHUTDOWN_IPO"
-
-.field private static final IPO_POWER_ON:Ljava/lang/String; = "android.intent.action.ACTION_BOOT_IPO"
 
 .field private static final MASS_STORAGE_FILE_PATH:Ljava/lang/String; = "/sys/class/android_usb/android0/f_mass_storage/lun/file"
 
@@ -41,17 +37,11 @@
 
 .field private static final MSG_SYSTEM_READY:I = 0x3
 
-.field private static final MSG_UPDATE_DISCONNECT_STATE:I = 0x6
-
 .field private static final MSG_UPDATE_STATE:I = 0x0
 
 .field private static final MSG_USER_SWITCHED:I = 0x5
 
-.field private static final MTP_STATE_MATCH:Ljava/lang/String; = "DEVPATH=/devices/virtual/misc/mtp_usb"
-
 .field private static final RNDIS_ETH_ADDR_PATH:Ljava/lang/String; = "/sys/class/android_usb/android0/f_rndis/ethaddr"
-
-.field private static final RNDIS_UPDATE_DELAY:I = 0xafc8
 
 .field private static final STATE_PATH:Ljava/lang/String; = "/sys/class/android_usb/android0/state"
 
@@ -59,23 +49,15 @@
 
 .field private static final UPDATE_DELAY:I = 0x3e8
 
-.field private static final UPDATE_DELAY_BICR:I = 0xbb8
-
 .field private static final USB_STATE_MATCH:Ljava/lang/String; = "DEVPATH=/devices/virtual/android_usb/android0"
 
 
 # instance fields
 .field private mAccessoryStrings:[Ljava/lang/String;
 
-.field private mAcmEnabled:Z
-
 .field private mAdbEnabled:Z
 
-.field private final mAdbUpdateLock:Ljava/util/concurrent/locks/ReentrantLock;
-
 .field private mAudioSourceEnabled:Z
-
-.field private mBatteryChargingUnPlug:Z
 
 .field private mBootCompleted:Z
 
@@ -91,19 +73,7 @@
 
 .field private final mHasUsbAccessory:Z
 
-.field private mHwDisconnected:Z
-
-.field private mIsBicrSet:Z
-
-.field private mIsPcKnowMe:Z
-
-.field private mIsUsbBicrEvo:Z
-
-.field private mIsUserSwitch:Z
-
 .field private final mLock:Ljava/lang/Object;
-
-.field private mMtpAskDisconnect:Z
 
 .field private mNotificationManager:Landroid/app/NotificationManager;
 
@@ -124,15 +94,7 @@
     .end annotation
 .end field
 
-.field private mSettingFunction:Ljava/lang/String;
-
-.field private mSettingUsbBicr:Z
-
-.field private mSettingUsbCharging:Z
-
 .field private final mUEventObserver:Landroid/os/UEventObserver;
-
-.field private mUsbStorageType:Ljava/lang/String;
 
 .field private mUseUsbNotification:Z
 
@@ -142,7 +104,7 @@
     .locals 1
 
     .prologue
-    .line 72
+    .line 66
     const-class v0, Lcom/android/server/usb/UsbDeviceManager;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -155,194 +117,119 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 7
+    .locals 4
     .parameter "context"
 
     .prologue
-    const/4 v6, 0x1
-
-    const/4 v5, 0x0
-
-    .line 197
+    .line 150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 124
-    new-instance v3, Ljava/lang/Object;
+    .line 104
+    new-instance v2, Ljava/lang/Object;
 
-    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
 
-    iput-object v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mLock:Ljava/lang/Object;
+    iput-object v2, p0, Lcom/android/server/usb/UsbDeviceManager;->mLock:Ljava/lang/Object;
 
-    .line 160
-    new-instance v3, Ljava/util/concurrent/locks/ReentrantLock;
+    .line 134
+    new-instance v2, Lcom/android/server/usb/UsbDeviceManager$1;
 
-    invoke-direct {v3}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
+    invoke-direct {v2, p0}, Lcom/android/server/usb/UsbDeviceManager$1;-><init>(Lcom/android/server/usb/UsbDeviceManager;)V
 
-    iput-object v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mAdbUpdateLock:Ljava/util/concurrent/locks/ReentrantLock;
+    iput-object v2, p0, Lcom/android/server/usb/UsbDeviceManager;->mUEventObserver:Landroid/os/UEventObserver;
 
-    .line 180
-    new-instance v3, Lcom/android/server/usb/UsbDeviceManager$1;
-
-    invoke-direct {v3, p0}, Lcom/android/server/usb/UsbDeviceManager$1;-><init>(Lcom/android/server/usb/UsbDeviceManager;)V
-
-    iput-object v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mUEventObserver:Landroid/os/UEventObserver;
-
-    .line 198
+    .line 151
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mContext:Landroid/content/Context;
 
-    .line 199
+    .line 152
     invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mContentResolver:Landroid/content/ContentResolver;
-
-    .line 200
-    iget-object v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
-    .line 202
-    .local v0, pm:Landroid/content/pm/PackageManager;
-    iput-boolean v6, p0, Lcom/android/server/usb/UsbDeviceManager;->mHwDisconnected:Z
-
-    .line 203
-    iput-boolean v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mSettingUsbCharging:Z
-
-    .line 204
-    iput-boolean v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mSettingUsbBicr:Z
-
-    .line 205
-    iput-boolean v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mIsUsbBicrEvo:Z
-
-    .line 206
-    iput-boolean v6, p0, Lcom/android/server/usb/UsbDeviceManager;->mIsPcKnowMe:Z
-
-    .line 207
-    iput-boolean v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mIsUserSwitch:Z
-
-    .line 208
-    iput-boolean v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mBatteryChargingUnPlug:Z
-
-    .line 210
-    iput-boolean v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mMtpAskDisconnect:Z
-
-    .line 212
-    const-string v3, "android.hardware.usb.accessory"
-
-    invoke-virtual {v0, v3}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
-
-    move-result v3
-
-    iput-boolean v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mHasUsbAccessory:Z
-
-    .line 213
-    invoke-static {}, Lcom/android/server/usb/UsbDeviceManager;->initRndisAddress()V
-
-    .line 215
-    const-string v3, "persist.sys.usb.bicr_evo"
-
-    const-string v4, ""
-
-    invoke-static {v3, v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 216
-    .local v2, value:Ljava/lang/String;
-    const-string v3, "yes"
+    iput-object v2, p0, Lcom/android/server/usb/UsbDeviceManager;->mContentResolver:Landroid/content/ContentResolver;
 
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 153
+    iget-object v2, p0, Lcom/android/server/usb/UsbDeviceManager;->mContext:Landroid/content/Context;
 
-    move-result v3
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    if-eqz v3, :cond_0
+    move-result-object v0
 
-    .line 217
-    sget-object v3, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
+    .line 154
+    .local v0, pm:Landroid/content/pm/PackageManager;
+    const-string v2, "android.hardware.usb.accessory"
 
-    const-string v4, "Enable BICR evolution!!"
+    invoke-virtual {v0, v2}, Landroid/content/pm/PackageManager;->hasSystemFeature(Ljava/lang/String;)Z
 
-    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
+    move-result v2
 
-    .line 218
-    iput-boolean v6, p0, Lcom/android/server/usb/UsbDeviceManager;->mIsUsbBicrEvo:Z
+    iput-boolean v2, p0, Lcom/android/server/usb/UsbDeviceManager;->mHasUsbAccessory:Z
 
-    .line 219
-    iput-boolean v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mIsPcKnowMe:Z
+    .line 155
+    invoke-static {}, Lcom/android/server/usb/UsbDeviceManager;->initRndisAddress()V
 
-    .line 222
-    :cond_0
+    .line 157
     invoke-direct {p0}, Lcom/android/server/usb/UsbDeviceManager;->readOemUsbOverrideConfig()V
 
-    .line 225
+    .line 160
     new-instance v1, Landroid/os/HandlerThread;
 
-    const-string v3, "UsbDeviceManager"
+    const-string v2, "UsbDeviceManager"
 
-    const/16 v4, 0xa
+    const/16 v3, 0xa
 
-    invoke-direct {v1, v3, v4}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v1, v2, v3}, Landroid/os/HandlerThread;-><init>(Ljava/lang/String;I)V
 
-    .line 227
+    .line 162
     .local v1, thread:Landroid/os/HandlerThread;
     invoke-virtual {v1}, Landroid/os/HandlerThread;->start()V
 
-    .line 228
-    new-instance v3, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
+    .line 163
+    new-instance v2, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
     invoke-virtual {v1}, Landroid/os/HandlerThread;->getLooper()Landroid/os/Looper;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-direct {v3, p0, v4}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;-><init>(Lcom/android/server/usb/UsbDeviceManager;Landroid/os/Looper;)V
+    invoke-direct {v2, p0, v3}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;-><init>(Lcom/android/server/usb/UsbDeviceManager;Landroid/os/Looper;)V
 
-    iput-object v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
+    iput-object v2, p0, Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
-    .line 230
+    .line 165
     invoke-direct {p0}, Lcom/android/server/usb/UsbDeviceManager;->nativeIsStartRequested()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_1
+    if-eqz v2, :cond_0
 
-    .line 231
-    sget-object v3, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
-
-    const-string v4, "accessory attached at boot"
-
-    invoke-static {v3, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 232
+    .line 167
     invoke-direct {p0}, Lcom/android/server/usb/UsbDeviceManager;->startAccessoryMode()V
 
-    .line 235
+    .line 170
+    :cond_0
+    const-string v2, "1"
+
+    const-string v3, "ro.adb.secure"
+
+    invoke-static {v3}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    .line 171
+    new-instance v2, Lcom/android/server/usb/UsbDebuggingManager;
+
+    invoke-direct {v2, p1}, Lcom/android/server/usb/UsbDebuggingManager;-><init>(Landroid/content/Context;)V
+
+    iput-object v2, p0, Lcom/android/server/usb/UsbDeviceManager;->mDebuggingManager:Lcom/android/server/usb/UsbDebuggingManager;
+
+    .line 173
     :cond_1
-    const-string v3, "1"
-
-    const-string v4, "ro.adb.secure"
-
-    invoke-static {v4}, Landroid/os/SystemProperties;->get(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_2
-
-    .line 236
-    new-instance v3, Lcom/android/server/usb/UsbDebuggingManager;
-
-    invoke-direct {v3, p1}, Lcom/android/server/usb/UsbDebuggingManager;-><init>(Landroid/content/Context;)V
-
-    iput-object v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mDebuggingManager:Lcom/android/server/usb/UsbDebuggingManager;
-
-    .line 238
-    :cond_2
     return-void
 .end method
 
@@ -351,7 +238,7 @@
     .parameter "x0"
 
     .prologue
-    .line 70
+    .line 64
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mContentResolver:Landroid/content/ContentResolver;
 
     return-object v0
@@ -362,278 +249,18 @@
     .parameter "x0"
 
     .prologue
-    .line 70
+    .line 64
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
     return-object v0
 .end method
 
-.method static synthetic access$1100(Lcom/android/server/usb/UsbDeviceManager;)Z
+.method static synthetic access$1000(Lcom/android/server/usb/UsbDeviceManager;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 70
-    iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mHwDisconnected:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1102(Lcom/android/server/usb/UsbDeviceManager;Z)Z
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 70
-    iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mHwDisconnected:Z
-
-    return p1
-.end method
-
-.method static synthetic access$1400(Lcom/android/server/usb/UsbDeviceManager;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
-    iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mBatteryChargingUnPlug:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1402(Lcom/android/server/usb/UsbDeviceManager;Z)Z
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 70
-    iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mBatteryChargingUnPlug:Z
-
-    return p1
-.end method
-
-.method static synthetic access$1700(Lcom/android/server/usb/UsbDeviceManager;Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 70
-    invoke-direct {p0, p1}, Lcom/android/server/usb/UsbDeviceManager;->processOemUsbOverride(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$1800(Lcom/android/server/usb/UsbDeviceManager;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
-    iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mAdbEnabled:Z
-
-    return v0
-.end method
-
-.method static synthetic access$1802(Lcom/android/server/usb/UsbDeviceManager;Z)Z
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 70
-    iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mAdbEnabled:Z
-
-    return p1
-.end method
-
-.method static synthetic access$1900(Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 70
-    invoke-static {p0, p1}, Lcom/android/server/usb/UsbDeviceManager;->containsFunction(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static synthetic access$200()Ljava/lang/String;
-    .locals 1
-
-    .prologue
-    .line 70
-    sget-object v0, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2000(Lcom/android/server/usb/UsbDeviceManager;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
-    iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mAcmEnabled:Z
-
-    return v0
-.end method
-
-.method static synthetic access$2002(Lcom/android/server/usb/UsbDeviceManager;Z)Z
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 70
-    iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mAcmEnabled:Z
-
-    return p1
-.end method
-
-.method static synthetic access$2100(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 70
-    invoke-static {p0, p1}, Lcom/android/server/usb/UsbDeviceManager;->addFunction(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$2200(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 70
-    invoke-static {p0, p1}, Lcom/android/server/usb/UsbDeviceManager;->removeFunction(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method static synthetic access$2300(Lcom/android/server/usb/UsbDeviceManager;)Ljava/lang/String;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
-    iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mSettingFunction:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2302(Lcom/android/server/usb/UsbDeviceManager;Ljava/lang/String;)Ljava/lang/String;
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 70
-    iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mSettingFunction:Ljava/lang/String;
-
-    return-object p1
-.end method
-
-.method static synthetic access$2400(Lcom/android/server/usb/UsbDeviceManager;)Landroid/os/UEventObserver;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
-    iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mUEventObserver:Landroid/os/UEventObserver;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2500(Lcom/android/server/usb/UsbDeviceManager;)Landroid/content/Context;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
-    iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2600(Lcom/android/server/usb/UsbDeviceManager;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
-    iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mIsBicrSet:Z
-
-    return v0
-.end method
-
-.method static synthetic access$2602(Lcom/android/server/usb/UsbDeviceManager;Z)Z
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 70
-    iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mIsBicrSet:Z
-
-    return p1
-.end method
-
-.method static synthetic access$2700(Lcom/android/server/usb/UsbDeviceManager;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
-    iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mMtpAskDisconnect:Z
-
-    return v0
-.end method
-
-.method static synthetic access$2702(Lcom/android/server/usb/UsbDeviceManager;Z)Z
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 70
-    iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mMtpAskDisconnect:Z
-
-    return p1
-.end method
-
-.method static synthetic access$2800(Lcom/android/server/usb/UsbDeviceManager;)Lcom/android/server/usb/UsbDebuggingManager;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
-    iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mDebuggingManager:Lcom/android/server/usb/UsbDebuggingManager;
-
-    return-object v0
-.end method
-
-.method static synthetic access$2900(Lcom/android/server/usb/UsbDeviceManager;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
+    .line 64
     invoke-direct {p0}, Lcom/android/server/usb/UsbDeviceManager;->needsOemUsbOverride()Z
 
     move-result v0
@@ -641,80 +268,97 @@
     return v0
 .end method
 
-.method static synthetic access$300(Lcom/android/server/usb/UsbDeviceManager;)V
-    .locals 0
+.method static synthetic access$1100(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
     .parameter "x0"
+    .parameter "x1"
 
     .prologue
-    .line 70
-    invoke-direct {p0}, Lcom/android/server/usb/UsbDeviceManager;->startAccessoryMode()V
+    .line 64
+    invoke-static {p0, p1}, Lcom/android/server/usb/UsbDeviceManager;->addFunction(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method static synthetic access$3000(Lcom/android/server/usb/UsbDeviceManager;)Z
+.method static synthetic access$1200(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 64
+    invoke-static {p0, p1}, Lcom/android/server/usb/UsbDeviceManager;->removeFunction(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method static synthetic access$1300(Lcom/android/server/usb/UsbDeviceManager;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 70
+    .line 64
     iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mHasUsbAccessory:Z
 
     return v0
 .end method
 
-.method static synthetic access$3100(Lcom/android/server/usb/UsbDeviceManager;)[Ljava/lang/String;
+.method static synthetic access$1400(Lcom/android/server/usb/UsbDeviceManager;)[Ljava/lang/String;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 70
+    .line 64
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mAccessoryStrings:[Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic access$3102(Lcom/android/server/usb/UsbDeviceManager;[Ljava/lang/String;)[Ljava/lang/String;
+.method static synthetic access$1402(Lcom/android/server/usb/UsbDeviceManager;[Ljava/lang/String;)[Ljava/lang/String;
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 70
+    .line 64
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mAccessoryStrings:[Ljava/lang/String;
 
     return-object p1
 .end method
 
-.method static synthetic access$3200(Lcom/android/server/usb/UsbDeviceManager;)Z
+.method static synthetic access$1500(Lcom/android/server/usb/UsbDeviceManager;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 70
+    .line 64
     iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mBootCompleted:Z
 
     return v0
 .end method
 
-.method static synthetic access$3202(Lcom/android/server/usb/UsbDeviceManager;Z)Z
+.method static synthetic access$1502(Lcom/android/server/usb/UsbDeviceManager;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 70
+    .line 64
     iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mBootCompleted:Z
 
     return p1
 .end method
 
-.method static synthetic access$3300(Lcom/android/server/usb/UsbDeviceManager;)Lcom/android/server/usb/UsbSettingsManager;
+.method static synthetic access$1600(Lcom/android/server/usb/UsbDeviceManager;)Lcom/android/server/usb/UsbSettingsManager;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 70
+    .line 64
     invoke-direct {p0}, Lcom/android/server/usb/UsbDeviceManager;->getCurrentSettings()Lcom/android/server/usb/UsbSettingsManager;
 
     move-result-object v0
@@ -722,92 +366,82 @@
     return-object v0
 .end method
 
-.method static synthetic access$3400(Lcom/android/server/usb/UsbDeviceManager;)Z
+.method static synthetic access$1700(Lcom/android/server/usb/UsbDeviceManager;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 70
+    .line 64
     iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mAudioSourceEnabled:Z
 
     return v0
 .end method
 
-.method static synthetic access$3402(Lcom/android/server/usb/UsbDeviceManager;Z)Z
+.method static synthetic access$1702(Lcom/android/server/usb/UsbDeviceManager;Z)Z
     .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 70
+    .line 64
     iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mAudioSourceEnabled:Z
 
     return p1
 .end method
 
-.method static synthetic access$3500(Lcom/android/server/usb/UsbDeviceManager;)Z
+.method static synthetic access$1800(Lcom/android/server/usb/UsbDeviceManager;)Landroid/app/NotificationManager;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 70
-    iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mIsUserSwitch:Z
-
-    return v0
-.end method
-
-.method static synthetic access$3502(Lcom/android/server/usb/UsbDeviceManager;Z)Z
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 70
-    iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mIsUserSwitch:Z
-
-    return p1
-.end method
-
-.method static synthetic access$3600(Lcom/android/server/usb/UsbDeviceManager;)Landroid/app/NotificationManager;
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
+    .line 64
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mNotificationManager:Landroid/app/NotificationManager;
 
     return-object v0
 .end method
 
-.method static synthetic access$3700(Lcom/android/server/usb/UsbDeviceManager;)Z
+.method static synthetic access$1900(Lcom/android/server/usb/UsbDeviceManager;)Z
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 70
+    .line 64
     iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mUseUsbNotification:Z
 
     return v0
 .end method
 
-.method static synthetic access$3800(Lcom/android/server/usb/UsbDeviceManager;)Ljava/lang/String;
-    .locals 1
+.method static synthetic access$200(Lcom/android/server/usb/UsbDeviceManager;)V
+    .locals 0
     .parameter "x0"
 
     .prologue
-    .line 70
-    iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mUsbStorageType:Ljava/lang/String;
+    .line 64
+    invoke-direct {p0}, Lcom/android/server/usb/UsbDeviceManager;->startAccessoryMode()V
+
+    return-void
+.end method
+
+.method static synthetic access$300(Lcom/android/server/usb/UsbDeviceManager;Ljava/lang/String;)Ljava/lang/String;
+    .locals 1
+    .parameter "x0"
+    .parameter "x1"
+
+    .prologue
+    .line 64
+    invoke-direct {p0, p1}, Lcom/android/server/usb/UsbDeviceManager;->processOemUsbOverride(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
 
     return-object v0
 .end method
 
-.method static synthetic access$3900(Lcom/android/server/usb/UsbDeviceManager;)Ljava/util/concurrent/locks/ReentrantLock;
+.method static synthetic access$400()Ljava/lang/String;
     .locals 1
-    .parameter "x0"
 
     .prologue
-    .line 70
-    iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mAdbUpdateLock:Ljava/util/concurrent/locks/ReentrantLock;
+    .line 64
+    sget-object v0, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -817,8 +451,8 @@
     .parameter "x0"
 
     .prologue
-    .line 70
-    iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mSettingUsbCharging:Z
+    .line 64
+    iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mAdbEnabled:Z
 
     return v0
 .end method
@@ -829,76 +463,66 @@
     .parameter "x1"
 
     .prologue
-    .line 70
-    iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mSettingUsbCharging:Z
+    .line 64
+    iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mAdbEnabled:Z
 
     return p1
 .end method
 
-.method static synthetic access$600(Lcom/android/server/usb/UsbDeviceManager;)Z
+.method static synthetic access$600(Ljava/lang/String;Ljava/lang/String;)Z
     .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
-    iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mSettingUsbBicr:Z
-
-    return v0
-.end method
-
-.method static synthetic access$602(Lcom/android/server/usb/UsbDeviceManager;Z)Z
-    .locals 0
     .parameter "x0"
     .parameter "x1"
 
     .prologue
-    .line 70
-    iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mSettingUsbBicr:Z
+    .line 64
+    invoke-static {p0, p1}, Lcom/android/server/usb/UsbDeviceManager;->containsFunction(Ljava/lang/String;Ljava/lang/String;)Z
 
-    return p1
-.end method
-
-.method static synthetic access$700(Lcom/android/server/usb/UsbDeviceManager;)Z
-    .locals 1
-    .parameter "x0"
-
-    .prologue
-    .line 70
-    iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mIsUsbBicrEvo:Z
+    move-result v0
 
     return v0
 .end method
 
-.method static synthetic access$800(Lcom/android/server/usb/UsbDeviceManager;)Z
+.method static synthetic access$700(Lcom/android/server/usb/UsbDeviceManager;)Landroid/os/UEventObserver;
     .locals 1
     .parameter "x0"
 
     .prologue
-    .line 70
-    iget-boolean v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mIsPcKnowMe:Z
+    .line 64
+    iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mUEventObserver:Landroid/os/UEventObserver;
 
-    return v0
+    return-object v0
 .end method
 
-.method static synthetic access$802(Lcom/android/server/usb/UsbDeviceManager;Z)Z
-    .locals 0
+.method static synthetic access$800(Lcom/android/server/usb/UsbDeviceManager;)Landroid/content/Context;
+    .locals 1
     .parameter "x0"
-    .parameter "x1"
 
     .prologue
-    .line 70
-    iput-boolean p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mIsPcKnowMe:Z
+    .line 64
+    iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mContext:Landroid/content/Context;
 
-    return p1
+    return-object v0
+.end method
+
+.method static synthetic access$900(Lcom/android/server/usb/UsbDeviceManager;)Lcom/android/server/usb/UsbDebuggingManager;
+    .locals 1
+    .parameter "x0"
+
+    .prologue
+    .line 64
+    iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mDebuggingManager:Lcom/android/server/usb/UsbDebuggingManager;
+
+    return-object v0
 .end method
 
 .method private static addFunction(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
+    .locals 2
     .parameter "functions"
     .parameter "function"
 
     .prologue
-    .line 353
+    .line 254
     const-string v0, "none"
 
     invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -907,103 +531,28 @@
 
     if-eqz v0, :cond_0
 
-    .line 374
+    .line 263
     .end local p1
     :goto_0
     return-object p1
 
-    .line 357
+    .line 257
     .restart local p1
     :cond_0
-    sget-object v0, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "Add "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, " into "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/mediatek/xlog/SXlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 359
     invoke-static {p0, p1}, Lcom/android/server/usb/UsbDeviceManager;->containsFunction(Ljava/lang/String;Ljava/lang/String;)Z
 
     move-result v0
 
-    if-nez v0, :cond_5
+    if-nez v0, :cond_2
 
-    .line 361
-    const-string v0, "adb"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const-string v0, "rndis"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
-
-    const-string v0, "eem"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    :cond_1
-    const-string v0, "acm"
-
-    invoke-static {p0, v0}, Lcom/android/server/usb/UsbDeviceManager;->containsFunction(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_2
-
-    .line 362
-    const-string v0, "acm"
-
-    invoke-static {p0, v0}, Lcom/android/server/usb/UsbDeviceManager;->removeFunction(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    .line 365
-    :cond_2
+    .line 258
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    if-lez v0, :cond_3
+    if-lez v0, :cond_1
 
-    .line 366
+    .line 259
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1022,8 +571,8 @@
 
     move-result-object p0
 
-    .line 368
-    :cond_3
+    .line 261
+    :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1040,122 +589,38 @@
 
     move-result-object p0
 
-    .line 370
-    const-string v0, "adb"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    const-string v0, "rndis"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_4
-
-    const-string v0, "eem"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    :cond_4
-    const-string v0, "acm"
-
-    invoke-static {p0, v0}, Lcom/android/server/usb/UsbDeviceManager;->containsFunction(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5
-
-    .line 371
-    const-string v0, "acm"
-
-    invoke-static {p0, v0}, Lcom/android/server/usb/UsbDeviceManager;->addFunction(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p0
-
-    :cond_5
+    :cond_2
     move-object p1, p0
 
-    .line 374
-    goto/16 :goto_0
+    .line 263
+    goto :goto_0
 .end method
 
 .method private static containsFunction(Ljava/lang/String;Ljava/lang/String;)Z
-    .locals 7
+    .locals 5
     .parameter "functions"
     .parameter "function"
 
     .prologue
-    const/16 v6, 0x2c
+    const/16 v4, 0x2c
 
     const/4 v2, 0x0
 
-    .line 401
+    .line 290
     invoke-virtual {p0, p1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 403
+    .line 291
     .local v1, index:I
-    sget-object v3, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "Does "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, " contain "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string v5, "? index: "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/mediatek/xlog/SXlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 405
     if-gez v1, :cond_1
 
-    .line 409
+    .line 295
     :cond_0
     :goto_0
     return v2
 
-    .line 406
+    .line 292
     :cond_1
     if-lez v1, :cond_2
 
@@ -1165,9 +630,9 @@
 
     move-result v3
 
-    if-ne v3, v6, :cond_0
+    if-ne v3, v4, :cond_0
 
-    .line 407
+    .line 293
     :cond_2
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
@@ -1175,7 +640,7 @@
 
     add-int v0, v1, v3
 
-    .line 408
+    .line 294
     .local v0, charAfter:I
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
@@ -1187,9 +652,9 @@
 
     move-result v3
 
-    if-ne v3, v6, :cond_0
+    if-ne v3, v4, :cond_0
 
-    .line 409
+    .line 295
     :cond_3
     const/4 v2, 0x1
 
@@ -1200,12 +665,12 @@
     .locals 2
 
     .prologue
-    .line 247
+    .line 182
     iget-object v1, p0, Lcom/android/server/usb/UsbDeviceManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 248
+    .line 183
     :try_start_0
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mCurrentSettings:Lcom/android/server/usb/UsbSettingsManager;
 
@@ -1213,7 +678,7 @@
 
     return-object v0
 
-    .line 249
+    .line 184
     :catchall_0
     move-exception v0
 
@@ -1238,20 +703,20 @@
 
     const/4 v10, 0x0
 
-    .line 332
+    .line 233
     const/4 v0, 0x6
 
-    .line 333
+    .line 234
     .local v0, ETH_ALEN:I
     const/4 v7, 0x6
 
     new-array v2, v7, [I
 
-    .line 335
+    .line 236
     .local v2, address:[I
     aput v11, v2, v10
 
-    .line 337
+    .line 238
     const-string v7, "ro.serialno"
 
     const-string v8, "1234567890ABCDEF"
@@ -1260,13 +725,13 @@
 
     move-result-object v5
 
-    .line 338
+    .line 239
     .local v5, serial:Ljava/lang/String;
     invoke-virtual {v5}, Ljava/lang/String;->length()I
 
     move-result v6
 
-    .line 340
+    .line 241
     .local v6, serialLength:I
     const/4 v4, 0x0
 
@@ -1274,7 +739,7 @@
     :goto_0
     if-ge v4, v6, :cond_0
 
-    .line 341
+    .line 242
     rem-int/lit8 v7, v4, 0x5
 
     add-int/lit8 v7, v7, 0x1
@@ -1289,12 +754,12 @@
 
     aput v8, v2, v7
 
-    .line 340
+    .line 241
     add-int/lit8 v4, v4, 0x1
 
     goto :goto_0
 
-    .line 343
+    .line 244
     :cond_0
     const-string v7, "%02X:%02X:%02X:%02X:%02X:%02X"
 
@@ -1358,7 +823,7 @@
 
     move-result-object v1
 
-    .line 346
+    .line 247
     .local v1, addrString:Ljava/lang/String;
     :try_start_0
     const-string v7, "/sys/class/android_usb/android0/f_rndis/ethaddr"
@@ -1367,15 +832,15 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 350
+    .line 251
     :goto_1
     return-void
 
-    .line 347
+    .line 248
     :catch_0
     move-exception v3
 
-    .line 348
+    .line 249
     .local v3, e:Ljava/io/IOException;
     sget-object v7, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
 
@@ -1404,17 +869,17 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 1326
+    .line 827
     iget-object v2, p0, Lcom/android/server/usb/UsbDeviceManager;->mOemModeMap:Ljava/util/Map;
 
     if-nez v2, :cond_1
 
-    .line 1329
+    .line 830
     :cond_0
     :goto_0
     return v1
 
-    .line 1328
+    .line 829
     :cond_1
     const-string v2, "ro.bootmode"
 
@@ -1424,7 +889,7 @@
 
     move-result-object v0
 
-    .line 1329
+    .line 830
     .local v0, bootMode:Ljava/lang/String;
     iget-object v2, p0, Lcom/android/server/usb/UsbDeviceManager;->mOemModeMap:Ljava/util/Map;
 
@@ -1444,20 +909,20 @@
     .parameter "usbFunctions"
 
     .prologue
-    .line 1333
+    .line 834
     if-eqz p1, :cond_0
 
     iget-object v4, p0, Lcom/android/server/usb/UsbDeviceManager;->mOemModeMap:Ljava/util/Map;
 
     if-nez v4, :cond_1
 
-    .line 1347
+    .line 848
     .end local p1
     :cond_0
     :goto_0
     return-object p1
 
-    .line 1335
+    .line 836
     .restart local p1
     :cond_1
     const-string v4, "ro.bootmode"
@@ -1468,7 +933,7 @@
 
     move-result-object v0
 
-    .line 1337
+    .line 838
     .local v0, bootMode:Ljava/lang/String;
     iget-object v4, p0, Lcom/android/server/usb/UsbDeviceManager;->mOemModeMap:Ljava/util/Map;
 
@@ -1478,11 +943,11 @@
 
     check-cast v2, Ljava/util/List;
 
-    .line 1338
+    .line 839
     .local v2, overrides:Ljava/util/List;,"Ljava/util/List<Landroid/util/Pair<Ljava/lang/String;Ljava/lang/String;>;>;"
     if-eqz v2, :cond_0
 
-    .line 1339
+    .line 840
     invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1501,7 +966,7 @@
 
     check-cast v3, Landroid/util/Pair;
 
-    .line 1340
+    .line 841
     .local v3, pair:Landroid/util/Pair;,"Landroid/util/Pair<Ljava/lang/String;Ljava/lang/String;>;"
     iget-object v4, v3, Landroid/util/Pair;->first:Ljava/lang/Object;
 
@@ -1513,7 +978,7 @@
 
     if-eqz v4, :cond_2
 
-    .line 1341
+    .line 842
     sget-object v5, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1554,7 +1019,7 @@
 
     invoke-static {v5, v4}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1342
+    .line 843
     iget-object v4, v3, Landroid/util/Pair;->second:Ljava/lang/Object;
 
     check-cast v4, Ljava/lang/String;
@@ -1570,7 +1035,7 @@
     .prologue
     const/4 v10, 0x0
 
-    .line 1304
+    .line 805
     iget-object v7, p0, Lcom/android/server/usb/UsbDeviceManager;->mContext:Landroid/content/Context;
 
     invoke-virtual {v7}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1583,11 +1048,11 @@
 
     move-result-object v2
 
-    .line 1307
+    .line 808
     .local v2, configList:[Ljava/lang/String;
     if-eqz v2, :cond_3
 
-    .line 1308
+    .line 809
     move-object v0, v2
 
     .local v0, arr$:[Ljava/lang/String;
@@ -1602,7 +1067,7 @@
 
     aget-object v1, v0, v3
 
-    .line 1309
+    .line 810
     .local v1, config:Ljava/lang/String;
     const-string v7, ":"
 
@@ -1610,7 +1075,7 @@
 
     move-result-object v4
 
-    .line 1310
+    .line 811
     .local v4, items:[Ljava/lang/String;
     array-length v7, v4
 
@@ -1618,19 +1083,19 @@
 
     if-ne v7, v8, :cond_2
 
-    .line 1311
+    .line 812
     iget-object v7, p0, Lcom/android/server/usb/UsbDeviceManager;->mOemModeMap:Ljava/util/Map;
 
     if-nez v7, :cond_0
 
-    .line 1312
+    .line 813
     new-instance v7, Ljava/util/HashMap;
 
     invoke-direct {v7}, Ljava/util/HashMap;-><init>()V
 
     iput-object v7, p0, Lcom/android/server/usb/UsbDeviceManager;->mOemModeMap:Ljava/util/Map;
 
-    .line 1314
+    .line 815
     :cond_0
     iget-object v7, p0, Lcom/android/server/usb/UsbDeviceManager;->mOemModeMap:Ljava/util/Map;
 
@@ -1642,17 +1107,17 @@
 
     check-cast v6, Ljava/util/List;
 
-    .line 1315
+    .line 816
     .local v6, overrideList:Ljava/util/List;
     if-nez v6, :cond_1
 
-    .line 1316
+    .line 817
     new-instance v6, Ljava/util/LinkedList;
 
     .end local v6           #overrideList:Ljava/util/List;
     invoke-direct {v6}, Ljava/util/LinkedList;-><init>()V
 
-    .line 1317
+    .line 818
     .restart local v6       #overrideList:Ljava/util/List;
     iget-object v7, p0, Lcom/android/server/usb/UsbDeviceManager;->mOemModeMap:Ljava/util/Map;
 
@@ -1660,7 +1125,7 @@
 
     invoke-interface {v7, v8, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1319
+    .line 820
     :cond_1
     new-instance v7, Landroid/util/Pair;
 
@@ -1676,14 +1141,14 @@
 
     invoke-interface {v6, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 1308
+    .line 809
     .end local v6           #overrideList:Ljava/util/List;
     :cond_2
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_0
 
-    .line 1323
+    .line 824
     .end local v0           #arr$:[Ljava/lang/String;
     .end local v1           #config:Ljava/lang/String;
     .end local v3           #i$:I
@@ -1699,14 +1164,14 @@
     .parameter "function"
 
     .prologue
-    .line 378
+    .line 267
     const-string v4, ","
 
     invoke-virtual {p0, v4}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v3
 
-    .line 379
+    .line 268
     .local v3, split:[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -1716,7 +1181,7 @@
 
     if-ge v1, v4, :cond_1
 
-    .line 380
+    .line 269
     aget-object v4, v3, v1
 
     invoke-virtual {p1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -1725,18 +1190,18 @@
 
     if-eqz v4, :cond_0
 
-    .line 381
+    .line 270
     const/4 v4, 0x0
 
     aput-object v4, v3, v1
 
-    .line 379
+    .line 268
     :cond_0
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 
-    .line 384
+    .line 273
     :cond_1
     array-length v4, v3
 
@@ -1750,20 +1215,20 @@
 
     if-nez v4, :cond_2
 
-    .line 385
+    .line 274
     const-string v4, "none"
 
-    .line 397
+    .line 286
     :goto_1
     return-object v4
 
-    .line 387
+    .line 276
     :cond_2
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 388
+    .line 277
     .local v0, builder:Ljava/lang/StringBuilder;
     const/4 v1, 0x0
 
@@ -1772,36 +1237,36 @@
 
     if-ge v1, v4, :cond_5
 
-    .line 389
+    .line 278
     aget-object v2, v3, v1
 
-    .line 390
+    .line 279
     .local v2, s:Ljava/lang/String;
     if-eqz v2, :cond_4
 
-    .line 391
+    .line 280
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v4
 
     if-lez v4, :cond_3
 
-    .line 392
+    .line 281
     const-string v4, ","
 
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 394
+    .line 283
     :cond_3
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 388
+    .line 277
     :cond_4
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_2
 
-    .line 397
+    .line 286
     .end local v2           #s:Ljava/lang/String;
     :cond_5
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1819,14 +1284,14 @@
 
     const/4 v4, 0x0
 
-    .line 307
+    .line 208
     invoke-direct {p0}, Lcom/android/server/usb/UsbDeviceManager;->nativeGetAccessoryStrings()[Ljava/lang/String;
 
     move-result-object v5
 
     iput-object v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mAccessoryStrings:[Ljava/lang/String;
 
-    .line 308
+    .line 209
     invoke-direct {p0}, Lcom/android/server/usb/UsbDeviceManager;->nativeGetAudioMode()I
 
     move-result v5
@@ -1835,7 +1300,7 @@
 
     move v1, v3
 
-    .line 310
+    .line 211
     .local v1, enableAudio:Z
     :goto_0
     iget-object v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mAccessoryStrings:[Ljava/lang/String;
@@ -1856,29 +1321,29 @@
 
     move v0, v3
 
-    .line 313
+    .line 214
     .local v0, enableAccessory:Z
     :goto_1
     const/4 v2, 0x0
 
-    .line 315
+    .line 216
     .local v2, functions:Ljava/lang/String;
     if-eqz v0, :cond_4
 
     if-eqz v1, :cond_4
 
-    .line 316
+    .line 217
     const-string v2, "accessory,audio_source"
 
-    .line 324
+    .line 225
     :cond_0
     :goto_2
     if-eqz v2, :cond_1
 
-    .line 325
+    .line 226
     invoke-virtual {p0, v2, v4}, Lcom/android/server/usb/UsbDeviceManager;->setCurrentFunctions(Ljava/lang/String;Z)V
 
-    .line 327
+    .line 228
     :cond_1
     return-void
 
@@ -1888,32 +1353,32 @@
     :cond_2
     move v1, v4
 
-    .line 308
+    .line 209
     goto :goto_0
 
     .restart local v1       #enableAudio:Z
     :cond_3
     move v0, v4
 
-    .line 310
+    .line 211
     goto :goto_1
 
-    .line 318
+    .line 219
     .restart local v0       #enableAccessory:Z
     .restart local v2       #functions:Ljava/lang/String;
     :cond_4
     if-eqz v0, :cond_5
 
-    .line 319
+    .line 220
     const-string v2, "accessory"
 
     goto :goto_2
 
-    .line 320
+    .line 221
     :cond_5
     if-eqz v1, :cond_0
 
-    .line 321
+    .line 222
     const-string v2, "audio_source"
 
     goto :goto_2
@@ -1927,17 +1392,17 @@
     .parameter "publicKey"
 
     .prologue
-    .line 1351
+    .line 852
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mDebuggingManager:Lcom/android/server/usb/UsbDebuggingManager;
 
     if-eqz v0, :cond_0
 
-    .line 1352
+    .line 853
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mDebuggingManager:Lcom/android/server/usb/UsbDebuggingManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usb/UsbDebuggingManager;->allowUsbDebugging(ZLjava/lang/String;)V
 
-    .line 1354
+    .line 855
     :cond_0
     return-void
 .end method
@@ -1946,17 +1411,17 @@
     .locals 1
 
     .prologue
-    .line 1357
+    .line 858
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mDebuggingManager:Lcom/android/server/usb/UsbDebuggingManager;
 
     if-eqz v0, :cond_0
 
-    .line 1358
+    .line 859
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mDebuggingManager:Lcom/android/server/usb/UsbDebuggingManager;
 
     invoke-virtual {v0}, Lcom/android/server/usb/UsbDebuggingManager;->denyUsbDebugging()V
 
-    .line 1360
+    .line 861
     :cond_0
     return-void
 .end method
@@ -1967,28 +1432,28 @@
     .parameter "pw"
 
     .prologue
-    .line 1363
+    .line 864
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
     if-eqz v0, :cond_0
 
-    .line 1364
+    .line 865
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;)V
 
-    .line 1366
+    .line 867
     :cond_0
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mDebuggingManager:Lcom/android/server/usb/UsbDebuggingManager;
 
     if-eqz v0, :cond_1
 
-    .line 1367
+    .line 868
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mDebuggingManager:Lcom/android/server/usb/UsbDebuggingManager;
 
     invoke-virtual {v0, p1, p2}, Lcom/android/server/usb/UsbDebuggingManager;->dump(Ljava/io/FileDescriptor;Ljava/io/PrintWriter;)V
 
-    .line 1369
+    .line 870
     :cond_1
     return-void
 .end method
@@ -1997,7 +1462,7 @@
     .locals 1
 
     .prologue
-    .line 1270
+    .line 771
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
     invoke-virtual {v0}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->getCurrentAccessory()Landroid/hardware/usb/UsbAccessory;
@@ -2012,18 +1477,18 @@
     .parameter "accessory"
 
     .prologue
-    .line 1275
+    .line 776
     iget-object v2, p0, Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
     invoke-virtual {v2}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->getCurrentAccessory()Landroid/hardware/usb/UsbAccessory;
 
     move-result-object v0
 
-    .line 1276
+    .line 777
     .local v0, currentAccessory:Landroid/hardware/usb/UsbAccessory;
     if-nez v0, :cond_0
 
-    .line 1277
+    .line 778
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
     const-string v3, "no accessory attached"
@@ -2032,7 +1497,7 @@
 
     throw v2
 
-    .line 1279
+    .line 780
     :cond_0
     invoke-virtual {v0, p1}, Landroid/hardware/usb/UsbAccessory;->equals(Ljava/lang/Object;)Z
 
@@ -2040,7 +1505,7 @@
 
     if-nez v2, :cond_1
 
-    .line 1280
+    .line 781
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2067,7 +1532,7 @@
 
     move-result-object v1
 
-    .line 1283
+    .line 784
     .local v1, error:Ljava/lang/String;
     new-instance v2, Ljava/lang/IllegalArgumentException;
 
@@ -2075,7 +1540,7 @@
 
     throw v2
 
-    .line 1285
+    .line 786
     .end local v1           #error:Ljava/lang/String;
     :cond_1
     invoke-direct {p0}, Lcom/android/server/usb/UsbDeviceManager;->getCurrentSettings()Lcom/android/server/usb/UsbSettingsManager;
@@ -2084,7 +1549,7 @@
 
     invoke-virtual {v2, p1}, Lcom/android/server/usb/UsbSettingsManager;->checkPermission(Landroid/hardware/usb/UsbAccessory;)V
 
-    .line 1286
+    .line 787
     invoke-direct {p0}, Lcom/android/server/usb/UsbDeviceManager;->nativeOpenAccessory()Landroid/os/ParcelFileDescriptor;
 
     move-result-object v2
@@ -2093,52 +1558,19 @@
 .end method
 
 .method public setCurrentFunctions(Ljava/lang/String;Z)V
-    .locals 3
+    .locals 2
     .parameter "functions"
     .parameter "makeDefault"
 
     .prologue
-    .line 1290
-    sget-object v0, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "setCurrentFunctions("
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ") default: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 1291
+    .line 792
     iget-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
     const/4 v1, 0x2
 
     invoke-virtual {v0, v1, p1, p2}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->sendMessage(ILjava/lang/Object;Z)V
 
-    .line 1292
+    .line 793
     return-void
 .end method
 
@@ -2147,22 +1579,22 @@
     .parameter "settings"
 
     .prologue
-    .line 241
+    .line 176
     iget-object v1, p0, Lcom/android/server/usb/UsbDeviceManager;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 242
+    .line 177
     :try_start_0
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager;->mCurrentSettings:Lcom/android/server/usb/UsbSettingsManager;
 
-    .line 243
+    .line 178
     monitor-exit v1
 
-    .line 244
+    .line 179
     return-void
 
-    .line 243
+    .line 178
     :catchall_0
     move-exception v0
 
@@ -2178,12 +1610,12 @@
     .parameter "path"
 
     .prologue
-    .line 1295
+    .line 796
     if-nez p1, :cond_0
 
     const-string p1, ""
 
-    .line 1297
+    .line 798
     :cond_0
     :try_start_0
     const-string v1, "/sys/class/android_usb/android0/f_mass_storage/lun/file"
@@ -2192,15 +1624,15 @@
     :try_end_0
     .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1301
+    .line 802
     :goto_0
     return-void
 
-    .line 1298
+    .line 799
     :catch_0
     move-exception v0
 
-    .line 1299
+    .line 800
     .local v0, e:Ljava/io/IOException;
     sget-object v1, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
 
@@ -2212,291 +1644,101 @@
 .end method
 
 .method public systemReady()V
-    .locals 10
+    .locals 8
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v4, 0x1
 
-    const/4 v6, 0x1
+    const/4 v5, 0x0
 
-    .line 253
-    sget-object v5, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
+    .line 190
+    iget-object v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mContext:Landroid/content/Context;
 
-    const-string v8, "systemReady"
+    const-string v6, "notification"
 
-    invoke-static {v5, v8}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 255
-    iget-object v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mContext:Landroid/content/Context;
-
-    const-string v8, "notification"
-
-    invoke-virtual {v5, v8}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/app/NotificationManager;
-
-    iput-object v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mNotificationManager:Landroid/app/NotificationManager;
-
-    .line 260
-    const-string v5, "persist.sys.usb.config"
-
-    const-string v8, "mtp"
-
-    invoke-static {v5, v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 261
-    .local v0, config:Ljava/lang/String;
-    const-string v5, "adb"
-
-    invoke-static {v0, v5}, Lcom/android/server/usb/UsbDeviceManager;->removeFunction(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 262
-    const-string v5, "acm"
-
-    invoke-static {v0, v5}, Lcom/android/server/usb/UsbDeviceManager;->removeFunction(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 263
-    const-string v5, "ro.sys.usb.storage.type"
-
-    const-string v8, "mtp"
-
-    invoke-static {v5, v8}, Landroid/os/SystemProperties;->get(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mUsbStorageType:Ljava/lang/String;
-
-    .line 265
-    sget-object v5, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "systemReady - mUsbStorageType: "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    iget-object v9, p0, Lcom/android/server/usb/UsbDeviceManager;->mUsbStorageType:Ljava/lang/String;
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    const-string v9, ", config: "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v5, v8}, Lcom/mediatek/xlog/SXlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 267
-    iget-object v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mUsbStorageType:Ljava/lang/String;
-
-    invoke-static {v5, v0}, Lcom/android/server/usb/UsbDeviceManager;->containsFunction(Ljava/lang/String;Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_0
-
-    .line 268
-    iput-object v0, p0, Lcom/android/server/usb/UsbDeviceManager;->mUsbStorageType:Ljava/lang/String;
-
-    .line 269
-    sget-object v5, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
-
-    const-string v8, "systemReady - mUsbStorageType = config"
-
-    invoke-static {v5, v8}, Lcom/mediatek/xlog/SXlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 271
-    :cond_0
-    iget-object v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mUsbStorageType:Ljava/lang/String;
-
-    const-string v8, "mass_storage"
-
-    invoke-virtual {v5, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_5
-
-    .line 273
-    sget-object v5, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
-
-    const-string v8, "systemReady - UMS only"
-
-    invoke-static {v5, v8}, Lcom/mediatek/xlog/SXlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 275
-    iput-boolean v7, p0, Lcom/android/server/usb/UsbDeviceManager;->mUseUsbNotification:Z
-
-    .line 276
-    const/4 v2, 0x0
-
-    .line 277
-    .local v2, massStorageSupported:Z
-    iget-object v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mContext:Landroid/content/Context;
-
-    invoke-static {v5}, Landroid/os/storage/StorageManager;->from(Landroid/content/Context;)Landroid/os/storage/StorageManager;
+    invoke-virtual {v3, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 278
-    .local v3, storageManager:Landroid/os/storage/StorageManager;
-    invoke-virtual {v3}, Landroid/os/storage/StorageManager;->getVolumeList()[Landroid/os/storage/StorageVolume;
+    check-cast v3, Landroid/app/NotificationManager;
 
-    move-result-object v4
+    iput-object v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mNotificationManager:Landroid/app/NotificationManager;
 
-    .line 280
-    .local v4, volumes:[Landroid/os/storage/StorageVolume;
-    const/4 v1, 0x0
+    .line 195
+    const/4 v0, 0x0
 
-    .local v1, i:I
+    .line 196
+    .local v0, massStorageSupported:Z
+    iget-object v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mContext:Landroid/content/Context;
+
+    invoke-static {v3}, Landroid/os/storage/StorageManager;->from(Landroid/content/Context;)Landroid/os/storage/StorageManager;
+
+    move-result-object v2
+
+    .line 197
+    .local v2, storageManager:Landroid/os/storage/StorageManager;
+    invoke-virtual {v2}, Landroid/os/storage/StorageManager;->getPrimaryVolume()Landroid/os/storage/StorageVolume;
+
+    move-result-object v1
+
+    .line 198
+    .local v1, primary:Landroid/os/storage/StorageVolume;
+    if-eqz v1, :cond_0
+
+    invoke-virtual {v1}, Landroid/os/storage/StorageVolume;->allowMassStorage()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_0
+
+    move v0, v4
+
+    .line 199
     :goto_0
-    array-length v5, v4
+    if-nez v0, :cond_1
 
-    if-ge v1, v5, :cond_1
-
-    .line 281
-    aget-object v5, v4, v1
-
-    invoke-virtual {v5}, Landroid/os/storage/StorageVolume;->allowMassStorage()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_3
-
-    .line 283
-    sget-object v5, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v9, "systemReady - massStorageSupported: "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-static {v5, v8}, Lcom/mediatek/xlog/SXlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 285
-    const/4 v2, 0x1
-
-    .line 290
-    :cond_1
-    if-nez v2, :cond_4
-
-    move v5, v6
+    move v3, v4
 
     :goto_1
-    iput-boolean v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mUseUsbNotification:Z
+    iput-boolean v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mUseUsbNotification:Z
 
-    .line 296
-    .end local v1           #i:I
-    .end local v2           #massStorageSupported:Z
-    .end local v3           #storageManager:Landroid/os/storage/StorageManager;
-    .end local v4           #volumes:[Landroid/os/storage/StorageVolume;
+    .line 202
+    iget-object v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mContentResolver:Landroid/content/ContentResolver;
+
+    const-string v6, "adb_enabled"
+
+    iget-boolean v7, p0, Lcom/android/server/usb/UsbDeviceManager;->mAdbEnabled:Z
+
+    if-eqz v7, :cond_2
+
     :goto_2
-    const-string v5, "charging"
+    invoke-static {v3, v6, v4}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
 
-    invoke-static {v0, v5}, Lcom/android/server/usb/UsbDeviceManager;->containsFunction(Ljava/lang/String;Ljava/lang/String;)Z
+    .line 204
+    iget-object v3, p0, Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
-    move-result v5
+    const/4 v4, 0x3
 
-    if-eqz v5, :cond_2
+    invoke-virtual {v3, v4}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->sendEmptyMessage(I)Z
 
-    .line 297
-    iput-boolean v6, p0, Lcom/android/server/usb/UsbDeviceManager;->mSettingUsbCharging:Z
-
-    .line 301
-    :cond_2
-    iget-object v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mContentResolver:Landroid/content/ContentResolver;
-
-    const-string v8, "adb_enabled"
-
-    iget-boolean v9, p0, Lcom/android/server/usb/UsbDeviceManager;->mAdbEnabled:Z
-
-    if-eqz v9, :cond_6
-
-    :goto_3
-    invoke-static {v5, v8, v6}, Landroid/provider/Settings$Global;->putInt(Landroid/content/ContentResolver;Ljava/lang/String;I)Z
-
-    .line 303
-    iget-object v5, p0, Lcom/android/server/usb/UsbDeviceManager;->mHandler:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
-
-    const/4 v6, 0x3
-
-    invoke-virtual {v5, v6}, Lcom/android/server/usb/UsbDeviceManager$UsbHandler;->sendEmptyMessage(I)Z
-
-    .line 304
+    .line 205
     return-void
 
-    .line 280
-    .restart local v1       #i:I
-    .restart local v2       #massStorageSupported:Z
-    .restart local v3       #storageManager:Landroid/os/storage/StorageManager;
-    .restart local v4       #volumes:[Landroid/os/storage/StorageVolume;
-    :cond_3
-    add-int/lit8 v1, v1, 0x1
+    :cond_0
+    move v0, v5
 
+    .line 198
     goto :goto_0
 
-    :cond_4
-    move v5, v7
+    :cond_1
+    move v3, v5
 
-    .line 290
+    .line 199
     goto :goto_1
 
-    .line 293
-    .end local v1           #i:I
-    .end local v2           #massStorageSupported:Z
-    .end local v3           #storageManager:Landroid/os/storage/StorageManager;
-    .end local v4           #volumes:[Landroid/os/storage/StorageVolume;
-    :cond_5
-    sget-object v5, Lcom/android/server/usb/UsbDeviceManager;->TAG:Ljava/lang/String;
+    :cond_2
+    move v4, v5
 
-    const-string v8, "systemReady - MTP(+UMS)"
-
-    invoke-static {v5, v8}, Lcom/mediatek/xlog/SXlog;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 294
-    iput-boolean v6, p0, Lcom/android/server/usb/UsbDeviceManager;->mUseUsbNotification:Z
-
+    .line 202
     goto :goto_2
-
-    :cond_6
-    move v6, v7
-
-    .line 301
-    goto :goto_3
 .end method

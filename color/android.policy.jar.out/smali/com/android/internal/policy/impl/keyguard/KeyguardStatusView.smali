@@ -10,7 +10,7 @@
 
 .field public static final CHARGING_ICON:I = 0x0
 
-.field private static final DEBUG:Z = true
+.field private static final DEBUG:Z = false
 
 .field public static final LOCK_ICON:I = 0x0
 
@@ -99,7 +99,7 @@
 
     move-result v0
 
-    const v1, 0x10208a9
+    const v1, 0x10202f5
 
     if-eq v0, v1, :cond_1
 
@@ -230,7 +230,7 @@
     iput-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->mDateView:Landroid/widget/TextView;
 
     .line 86
-    const v4, 0x1020897
+    const v4, 0x10202e3
 
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->findViewById(I)Landroid/view/View;
 
@@ -241,7 +241,7 @@
     iput-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->mAlarmStatusView:Landroid/widget/TextView;
 
     .line 87
-    const v4, 0x10208b6
+    const v4, 0x1020301
 
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->findViewById(I)Landroid/view/View;
 
@@ -341,25 +341,6 @@
     invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->refresh()V
 
     .line 103
-    return-void
-.end method
-
-.method public onWindowFocusChanged(Z)V
-    .locals 0
-    .parameter "hasWindowFocus"
-
-    .prologue
-    .line 162
-    invoke-super {p0, p1}, Landroid/widget/GridLayout;->onWindowFocusChanged(Z)V
-
-    .line 163
-    if-eqz p1, :cond_0
-
-    .line 164
-    invoke-virtual {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->refresh()V
-
-    .line 166
-    :cond_0
     return-void
 .end method
 

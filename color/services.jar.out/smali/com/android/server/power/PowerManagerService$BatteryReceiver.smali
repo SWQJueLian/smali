@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 2643
+    .line 2352
     iput-object p1, p0, Lcom/android/server/power/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -38,7 +38,7 @@
     .parameter "x1"
 
     .prologue
-    .line 2643
+    .line 2352
     invoke-direct {p0, p1}, Lcom/android/server/power/PowerManagerService$BatteryReceiver;-><init>(Lcom/android/server/power/PowerManagerService;)V
 
     return-void
@@ -52,30 +52,30 @@
     .parameter "intent"
 
     .prologue
-    .line 2646
+    .line 2355
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #getter for: Lcom/android/server/power/PowerManagerService;->mLock:Ljava/lang/Object;
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$800(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$1200(Lcom/android/server/power/PowerManagerService;)Ljava/lang/Object;
 
     move-result-object v1
 
     monitor-enter v1
 
-    .line 2647
+    .line 2356
     :try_start_0
     iget-object v0, p0, Lcom/android/server/power/PowerManagerService$BatteryReceiver;->this$0:Lcom/android/server/power/PowerManagerService;
 
     #calls: Lcom/android/server/power/PowerManagerService;->handleBatteryStateChangedLocked()V
-    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$2300(Lcom/android/server/power/PowerManagerService;)V
+    invoke-static {v0}, Lcom/android/server/power/PowerManagerService;->access$1300(Lcom/android/server/power/PowerManagerService;)V
 
-    .line 2648
+    .line 2357
     monitor-exit v1
 
-    .line 2649
+    .line 2358
     return-void
 
-    .line 2648
+    .line 2357
     :catchall_0
     move-exception v0
 

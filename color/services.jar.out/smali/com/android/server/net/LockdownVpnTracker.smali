@@ -143,13 +143,13 @@
     .locals 4
 
     .prologue
-    .line 258
+    .line 242
     :try_start_0
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mAcceptedIface:Ljava/lang/String;
 
     if-eqz v1, :cond_0
 
-    .line 259
+    .line 243
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mNetService:Landroid/os/INetworkManagementService;
 
     iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mAcceptedIface:Ljava/lang/String;
@@ -158,18 +158,18 @@
 
     invoke-interface {v1, v2, v3}, Landroid/os/INetworkManagementService;->setFirewallInterfaceRule(Ljava/lang/String;Z)V
 
-    .line 260
+    .line 244
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mAcceptedIface:Ljava/lang/String;
 
-    .line 262
+    .line 246
     :cond_0
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mAcceptedSourceAddr:Ljava/lang/String;
 
     if-eqz v1, :cond_1
 
-    .line 263
+    .line 247
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mNetService:Landroid/os/INetworkManagementService;
 
     iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mAcceptedSourceAddr:Ljava/lang/String;
@@ -178,22 +178,22 @@
 
     invoke-interface {v1, v2, v3}, Landroid/os/INetworkManagementService;->setFirewallEgressSourceRule(Ljava/lang/String;Z)V
 
-    .line 264
+    .line 248
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mAcceptedSourceAddr:Ljava/lang/String;
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 269
+    .line 253
     :cond_1
     return-void
 
-    .line 266
+    .line 250
     :catch_0
     move-exception v0
 
-    .line 267
+    .line 251
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -576,7 +576,7 @@
     .locals 3
 
     .prologue
-    .line 308
+    .line 292
     iget-object v0, p0, Lcom/android/server/net/LockdownVpnTracker;->mContext:Landroid/content/Context;
 
     invoke-static {v0}, Landroid/app/NotificationManager;->from(Landroid/content/Context;)Landroid/app/NotificationManager;
@@ -589,7 +589,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
 
-    .line 309
+    .line 293
     return-void
 .end method
 
@@ -656,74 +656,31 @@
     const/4 v5, 0x1
 
     invoke-interface {v2, v3, v4, v5}, Landroid/os/INetworkManagementService;->setFirewallEgressDestRule(Ljava/lang/String;IZ)V
-
-    .line 198
-    iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mNetService:Landroid/os/INetworkManagementService;
-
-    iget-object v3, p0, Lcom/android/server/net/LockdownVpnTracker;->mProfile:Lcom/android/internal/net/VpnProfile;
-
-    iget-object v3, v3, Lcom/android/internal/net/VpnProfile;->server:Ljava/lang/String;
-
-    const/16 v4, 0x6a5
-
-    const/4 v5, 0x1
-
-    invoke-interface {v2, v3, v4, v5}, Landroid/os/INetworkManagementService;->setFirewallEgressDestRule(Ljava/lang/String;IZ)V
-
-    .line 199
-    iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mProfile:Lcom/android/internal/net/VpnProfile;
-
-    iget v2, v2, Lcom/android/internal/net/VpnProfile;->type:I
-
-    if-nez v2, :cond_0
-
-    .line 200
-    iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mNetService:Landroid/os/INetworkManagementService;
-
-    iget-object v3, p0, Lcom/android/server/net/LockdownVpnTracker;->mProfile:Lcom/android/internal/net/VpnProfile;
-
-    iget-object v3, v3, Lcom/android/internal/net/VpnProfile;->server:Ljava/lang/String;
-
-    const/16 v4, 0x6bb
-
-    const/4 v5, 0x1
-
-    invoke-interface {v2, v3, v4, v5}, Landroid/os/INetworkManagementService;->setFirewallEgressDestRule(Ljava/lang/String;IZ)V
-
-    .line 201
-    iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mNetService:Landroid/os/INetworkManagementService;
-
-    const-string v3, "gre"
-
-    const/4 v4, 0x1
-
-    invoke-interface {v2, v3, v4}, Landroid/os/INetworkManagementService;->setFirewallEgressProtoRule(Ljava/lang/String;Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 208
-    :cond_0
+    .line 200
     iget-object v3, p0, Lcom/android/server/net/LockdownVpnTracker;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v3
 
-    .line 209
+    .line 201
     :try_start_1
     invoke-direct {p0}, Lcom/android/server/net/LockdownVpnTracker;->handleStateChangedLocked()V
 
-    .line 210
+    .line 202
     monitor-exit v3
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 211
+    .line 203
     return-void
 
-    .line 204
+    .line 196
     :catch_0
     move-exception v0
 
-    .line 205
+    .line 197
     .local v0, e:Landroid/os/RemoteException;
     new-instance v2, Ljava/lang/RuntimeException;
 
@@ -733,7 +690,7 @@
 
     throw v2
 
-    .line 210
+    .line 202
     .end local v0           #e:Landroid/os/RemoteException;
     :catchall_0
     move-exception v2
@@ -770,23 +727,23 @@
     .parameter "iconRes"
 
     .prologue
-    .line 296
+    .line 280
     new-instance v0, Landroid/app/Notification$Builder;
 
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mContext:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 297
+    .line 281
     .local v0, builder:Landroid/app/Notification$Builder;
     const-wide/16 v1, 0x0
 
     invoke-virtual {v0, v1, v2}, Landroid/app/Notification$Builder;->setWhen(J)Landroid/app/Notification$Builder;
 
-    .line 298
+    .line 282
     invoke-virtual {v0, p2}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
-    .line 299
+    .line 283
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mContext:Landroid/content/Context;
 
     invoke-virtual {v1, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -795,7 +752,7 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
-    .line 300
+    .line 284
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mContext:Landroid/content/Context;
 
     const v2, 0x104048e
@@ -806,22 +763,22 @@
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
-    .line 301
+    .line 285
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mResetIntent:Landroid/app/PendingIntent;
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
-    .line 302
+    .line 286
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setPriority(I)Landroid/app/Notification$Builder;
 
-    .line 303
+    .line 287
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/app/Notification$Builder;->setOngoing(Z)Landroid/app/Notification$Builder;
 
-    .line 304
+    .line 288
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mContext:Landroid/content/Context;
 
     invoke-static {v1}, Landroid/app/NotificationManager;->from(Landroid/content/Context;)Landroid/app/NotificationManager;
@@ -838,7 +795,7 @@
 
     invoke-virtual {v1, v2, v3, v4}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V
 
-    .line 305
+    .line 289
     return-void
 .end method
 
@@ -848,27 +805,27 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 220
+    .line 212
     const-string v1, "LockdownVpnTracker"
 
     const-string v2, "shutdownLocked()"
 
     invoke-static {v1, v2}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 222
+    .line 214
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mAcceptedEgressIface:Ljava/lang/String;
 
-    .line 223
+    .line 215
     iput v3, p0, Lcom/android/server/net/LockdownVpnTracker;->mErrorCount:I
 
-    .line 225
+    .line 217
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mVpn:Lcom/android/server/connectivity/Vpn;
 
     invoke-virtual {v1}, Lcom/android/server/connectivity/Vpn;->stopLegacyVpn()V
 
-    .line 227
+    .line 219
     :try_start_0
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mNetService:Landroid/os/INetworkManagementService;
 
@@ -882,7 +839,7 @@
 
     invoke-interface {v1, v2, v3, v4}, Landroid/os/INetworkManagementService;->setFirewallEgressDestRule(Ljava/lang/String;IZ)V
 
-    .line 228
+    .line 220
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mNetService:Landroid/os/INetworkManagementService;
 
     iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mProfile:Lcom/android/internal/net/VpnProfile;
@@ -894,80 +851,37 @@
     const/4 v4, 0x0
 
     invoke-interface {v1, v2, v3, v4}, Landroid/os/INetworkManagementService;->setFirewallEgressDestRule(Ljava/lang/String;IZ)V
-
-    .line 231
-    iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mNetService:Landroid/os/INetworkManagementService;
-
-    iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mProfile:Lcom/android/internal/net/VpnProfile;
-
-    iget-object v2, v2, Lcom/android/internal/net/VpnProfile;->server:Ljava/lang/String;
-
-    const/16 v3, 0x6a5
-
-    const/4 v4, 0x0
-
-    invoke-interface {v1, v2, v3, v4}, Landroid/os/INetworkManagementService;->setFirewallEgressDestRule(Ljava/lang/String;IZ)V
-
-    .line 232
-    iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mProfile:Lcom/android/internal/net/VpnProfile;
-
-    iget v1, v1, Lcom/android/internal/net/VpnProfile;->type:I
-
-    if-nez v1, :cond_0
-
-    .line 233
-    iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mNetService:Landroid/os/INetworkManagementService;
-
-    iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mProfile:Lcom/android/internal/net/VpnProfile;
-
-    iget-object v2, v2, Lcom/android/internal/net/VpnProfile;->server:Ljava/lang/String;
-
-    const/16 v3, 0x6bb
-
-    const/4 v4, 0x0
-
-    invoke-interface {v1, v2, v3, v4}, Landroid/os/INetworkManagementService;->setFirewallEgressDestRule(Ljava/lang/String;IZ)V
-
-    .line 234
-    iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mNetService:Landroid/os/INetworkManagementService;
-
-    const-string v2, "gre"
-
-    const/4 v3, 0x0
-
-    invoke-interface {v1, v2, v3}, Landroid/os/INetworkManagementService;->setFirewallEgressProtoRule(Ljava/lang/String;Z)V
     :try_end_0
     .catch Landroid/os/RemoteException; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 240
-    :cond_0
+    .line 224
     invoke-direct {p0}, Lcom/android/server/net/LockdownVpnTracker;->clearSourceRulesLocked()V
 
-    .line 241
+    .line 225
     invoke-direct {p0}, Lcom/android/server/net/LockdownVpnTracker;->hideNotification()V
 
-    .line 243
+    .line 227
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mContext:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mResetReceiver:Landroid/content/BroadcastReceiver;
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
-    .line 244
+    .line 228
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mVpn:Lcom/android/server/connectivity/Vpn;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Lcom/android/server/connectivity/Vpn;->setEnableNotifications(Z)V
 
-    .line 245
+    .line 229
     return-void
 
-    .line 237
+    .line 221
     :catch_0
     move-exception v0
 
-    .line 238
+    .line 222
     .local v0, e:Landroid/os/RemoteException;
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -985,27 +899,27 @@
     .parameter "info"
 
     .prologue
-    .line 287
+    .line 271
     invoke-virtual {p1}, Landroid/net/NetworkInfo;->isConnected()Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    .line 288
+    .line 272
     iget-object v2, p0, Lcom/android/server/net/LockdownVpnTracker;->mVpn:Lcom/android/server/connectivity/Vpn;
 
     invoke-virtual {v2}, Lcom/android/server/connectivity/Vpn;->getNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v1
 
-    .line 289
+    .line 273
     .local v1, vpnInfo:Landroid/net/NetworkInfo;
     new-instance v0, Landroid/net/NetworkInfo;
 
     invoke-direct {v0, p1}, Landroid/net/NetworkInfo;-><init>(Landroid/net/NetworkInfo;)V
 
-    .line 290
+    .line 274
     .end local p1
     .local v0, info:Landroid/net/NetworkInfo;
     invoke-virtual {v1}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
@@ -1022,7 +936,7 @@
 
     move-object p1, v0
 
-    .line 292
+    .line 276
     .end local v0           #info:Landroid/net/NetworkInfo;
     .end local v1           #vpnInfo:Landroid/net/NetworkInfo;
     .restart local p1
@@ -1065,22 +979,22 @@
     .parameter "info"
 
     .prologue
-    .line 272
+    .line 256
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 273
+    .line 257
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/net/LockdownVpnTracker;->handleStateChangedLocked()V
 
-    .line 274
+    .line 258
     monitor-exit v1
 
-    .line 275
+    .line 259
     return-void
 
-    .line 274
+    .line 258
     :catchall_0
     move-exception v0
 
@@ -1096,7 +1010,7 @@
     .parameter "info"
 
     .prologue
-    .line 278
+    .line 262
     invoke-virtual {p1}, Landroid/net/NetworkInfo;->getDetailedState()Landroid/net/NetworkInfo$DetailedState;
 
     move-result-object v0
@@ -1105,30 +1019,30 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 279
+    .line 263
     iget v0, p0, Lcom/android/server/net/LockdownVpnTracker;->mErrorCount:I
 
     add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/android/server/net/LockdownVpnTracker;->mErrorCount:I
 
-    .line 281
+    .line 265
     :cond_0
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 282
+    .line 266
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/net/LockdownVpnTracker;->handleStateChangedLocked()V
 
-    .line 283
+    .line 267
     monitor-exit v1
 
-    .line 284
+    .line 268
     return-void
 
-    .line 283
+    .line 267
     :catchall_0
     move-exception v0
 
@@ -1143,28 +1057,28 @@
     .locals 2
 
     .prologue
-    .line 248
+    .line 232
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 250
+    .line 234
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/net/LockdownVpnTracker;->shutdownLocked()V
 
-    .line 251
+    .line 235
     invoke-direct {p0}, Lcom/android/server/net/LockdownVpnTracker;->initLocked()V
 
-    .line 252
+    .line 236
     invoke-direct {p0}, Lcom/android/server/net/LockdownVpnTracker;->handleStateChangedLocked()V
 
-    .line 253
+    .line 237
     monitor-exit v1
 
-    .line 254
+    .line 238
     return-void
 
-    .line 253
+    .line 237
     :catchall_0
     move-exception v0
 
@@ -1179,22 +1093,22 @@
     .locals 2
 
     .prologue
-    .line 214
+    .line 206
     iget-object v1, p0, Lcom/android/server/net/LockdownVpnTracker;->mStateLock:Ljava/lang/Object;
 
     monitor-enter v1
 
-    .line 215
+    .line 207
     :try_start_0
     invoke-direct {p0}, Lcom/android/server/net/LockdownVpnTracker;->shutdownLocked()V
 
-    .line 216
+    .line 208
     monitor-exit v1
 
-    .line 217
+    .line 209
     return-void
 
-    .line 216
+    .line 208
     :catchall_0
     move-exception v0
 

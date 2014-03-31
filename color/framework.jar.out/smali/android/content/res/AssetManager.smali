@@ -2059,7 +2059,7 @@
 
     throw v3
 
-    .line 832
+    .line 824
     :catchall_0
     move-exception v3
 
@@ -2069,39 +2069,39 @@
 
     throw v3
 
-    .line 819
+    .line 814
     :cond_0
     :try_start_1
     invoke-static {}, Landroid/encryption/OppoEncryption;->getInstance()Landroid/encryption/OppoEncryption;
 
     move-result-object v0
 
-    .line 820
+    .line 815
     .local v0, oppoEncryption:Landroid/encryption/OppoEncryption;
     iget v3, p0, Landroid/content/res/AssetManager;->mObject:I
 
     invoke-virtual {v0, v3}, Landroid/encryption/OppoEncryption;->initAssetManager(I)V
 
-    .line 821
+    .line 816
     invoke-virtual {v0, p1, p2}, Landroid/encryption/OppoEncryption;->openXmlAssetInOppoEncryption(ILjava/lang/String;)I
 
     move-result v2
 
-    .line 825
+    .line 818
     .local v2, xmlBlock:I
     if-eqz v2, :cond_1
 
-    .line 826
+    .line 819
     const/4 v1, 0x0
 
-    .line 828
+    .line 820
     .local v1, res:Landroid/content/res/XmlBlock;
     new-instance v1, Landroid/content/res/XmlBlock;
 
     .end local v1           #res:Landroid/content/res/XmlBlock;
     invoke-direct {v1, p0, v2}, Landroid/content/res/XmlBlock;-><init>(Landroid/content/res/AssetManager;I)V
 
-    .line 829
+    .line 821
     .restart local v1       #res:Landroid/content/res/XmlBlock;
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
@@ -2109,19 +2109,19 @@
 
     invoke-direct {p0, v3}, Landroid/content/res/AssetManager;->incRefsLocked(I)V
 
-    .line 830
+    .line 822
     monitor-exit p0
 
     return-object v1
 
-    .line 832
+    .line 824
     .end local v1           #res:Landroid/content/res/XmlBlock;
     :cond_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 833
+    .line 825
     new-instance v3, Ljava/io/FileNotFoundException;
 
     new-instance v4, Ljava/lang/StringBuilder;

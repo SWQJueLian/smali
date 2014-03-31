@@ -23,7 +23,7 @@
     .locals 3
 
     .prologue
-    .line 2973
+    .line 2828
     const/16 v0, 0x13
 
     new-array v0, v0, [Ljava/lang/String;
@@ -152,10 +152,10 @@
     .parameter "cursor"
 
     .prologue
-    .line 2995
+    .line 2850
     invoke-direct {p0, p1}, Landroid/content/CursorEntityIterator;-><init>(Landroid/database/Cursor;)V
 
-    .line 2996
+    .line 2851
     return-void
 .end method
 
@@ -171,107 +171,107 @@
     .end annotation
 
     .prologue
-    .line 3001
+    .line 2856
     const-string v10, "_id"
 
     invoke-interface {p1, v10}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v2
 
-    .line 3002
+    .line 2857
     .local v2, columnRawContactId:I
     invoke-interface {p1, v2}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v8
 
-    .line 3005
+    .line 2860
     .local v8, rawContactId:J
     new-instance v4, Landroid/content/ContentValues;
 
     invoke-direct {v4}, Landroid/content/ContentValues;-><init>()V
 
-    .line 3006
+    .line 2861
     .local v4, cv:Landroid/content/ContentValues;
     const-string v10, "account_name"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3007
+    .line 2862
     const-string v10, "account_type"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3008
+    .line 2863
     const-string v10, "data_set"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3009
+    .line 2864
     const-string v10, "_id"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3010
+    .line 2865
     const-string v10, "dirty"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3011
+    .line 2866
     const-string/jumbo v10, "version"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3012
+    .line 2867
     const-string/jumbo v10, "sourceid"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3013
+    .line 2868
     const-string/jumbo v10, "sync1"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3014
+    .line 2869
     const-string/jumbo v10, "sync2"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3015
+    .line 2870
     const-string/jumbo v10, "sync3"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3016
+    .line 2871
     const-string/jumbo v10, "sync4"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3017
+    .line 2872
     const-string v10, "deleted"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3018
+    .line 2873
     const-string v10, "contact_id"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3019
+    .line 2874
     const-string/jumbo v10, "starred"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3020
-    const-string/jumbo v10, "name_verified"
+    .line 2875
+    const-string v10, "name_verified"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorIntToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3021
+    .line 2876
     new-instance v3, Landroid/content/Entity;
 
     invoke-direct {v3, v4}, Landroid/content/Entity;-><init>(Landroid/content/ContentValues;)V
 
-    .line 3025
+    .line 2880
     .local v3, contact:Landroid/content/Entity;
     :cond_0
     invoke-interface {p1, v2}, Landroid/database/Cursor;->getLong(I)J
@@ -282,18 +282,18 @@
 
     if-eqz v10, :cond_1
 
-    .line 3068
+    .line 2918
     :goto_0
     return-object v3
 
-    .line 3029
+    .line 2884
     :cond_1
     new-instance v4, Landroid/content/ContentValues;
 
     .end local v4           #cv:Landroid/content/ContentValues;
     invoke-direct {v4}, Landroid/content/ContentValues;-><init>()V
 
-    .line 3030
+    .line 2885
     .restart local v4       #cv:Landroid/content/ContentValues;
     const-string v10, "_id"
 
@@ -313,47 +313,42 @@
 
     invoke-virtual {v4, v10, v11}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 3031
+    .line 2886
     const-string/jumbo v10, "res_package"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3033
-    const-string/jumbo v10, "mimetype"
+    .line 2888
+    const-string v10, "mimetype"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3034
+    .line 2889
     const-string v10, "is_primary"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3035
+    .line 2890
     const-string v10, "is_super_primary"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3039
-    const-string/jumbo v10, "sim_id"
-
-    invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
-
-    .line 3042
+    .line 2892
     const-string v10, "data_version"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3043
+    .line 2893
     const-string v10, "group_sourceid"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3045
+    .line 2895
     const-string v10, "data_version"
 
     invoke-static {p1, v4, v10}, Landroid/database/DatabaseUtils;->cursorStringToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
-    .line 3047
+    .line 2897
     sget-object v0, Landroid/provider/ContactsContract$RawContacts$EntityIteratorImpl;->DATA_KEYS:[Ljava/lang/String;
 
     .local v0, arr$:[Ljava/lang/String;
@@ -368,13 +363,13 @@
 
     aget-object v6, v0, v5
 
-    .line 3048
+    .line 2898
     .local v6, key:Ljava/lang/String;
     invoke-interface {p1, v6}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v1
 
-    .line 3049
+    .line 2899
     .local v1, columnIndex:I
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getType(I)I
 
@@ -382,7 +377,7 @@
 
     packed-switch v10, :pswitch_data_0
 
-    .line 3062
+    .line 2912
     new-instance v10, Ljava/lang/IllegalStateException;
 
     const-string v11, "Invalid or unhandled data type"
@@ -391,7 +386,7 @@
 
     throw v10
 
-    .line 3056
+    .line 2906
     :pswitch_0
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -399,14 +394,14 @@
 
     invoke-virtual {v4, v6, v10}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3047
+    .line 2897
     :goto_2
     :pswitch_1
     add-int/lit8 v5, v5, 0x1
 
     goto :goto_1
 
-    .line 3059
+    .line 2909
     :pswitch_2
     invoke-interface {p1, v1}, Landroid/database/Cursor;->getBlob(I)[B
 
@@ -416,7 +411,7 @@
 
     goto :goto_2
 
-    .line 3065
+    .line 2915
     .end local v1           #columnIndex:I
     .end local v6           #key:Ljava/lang/String;
     :cond_2
@@ -424,7 +419,7 @@
 
     invoke-virtual {v3, v10, v4}, Landroid/content/Entity;->addSubValue(Landroid/net/Uri;Landroid/content/ContentValues;)V
 
-    .line 3066
+    .line 2916
     invoke-interface {p1}, Landroid/database/Cursor;->moveToNext()Z
 
     move-result v10
@@ -433,7 +428,7 @@
 
     goto :goto_0
 
-    .line 3049
+    .line 2899
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1

@@ -17,8 +17,6 @@
 # static fields
 .field public static final CCMP:I = 0x3
 
-.field public static final SMS4:I = 0x4
-
 .field public static final TKIP:I = 0x2
 
 .field public static final WEP104:I = 0x1
@@ -35,8 +33,8 @@
     .locals 3
 
     .prologue
-    .line 264
-    const/4 v0, 0x5
+    .line 234
+    const/4 v0, 0x4
 
     new-array v0, v0, [Ljava/lang/String;
 
@@ -64,12 +62,6 @@
 
     aput-object v2, v0, v1
 
-    const/4 v1, 0x4
-
-    const-string v2, "SMS4"
-
-    aput-object v2, v0, v1
-
     sput-object v0, Landroid/net/wifi/WifiConfiguration$GroupCipher;->strings:[Ljava/lang/String;
 
     return-void
@@ -79,7 +71,7 @@
     .locals 0
 
     .prologue
-    .line 246
+    .line 221
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

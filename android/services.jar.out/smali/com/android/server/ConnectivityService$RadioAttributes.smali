@@ -26,17 +26,17 @@
     .parameter "init"
 
     .prologue
-    .line 409
+    .line 338
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 410
+    .line 339
     const-string v1, ","
 
     invoke-virtual {p1, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 411
+    .line 340
     .local v0, fragments:[Ljava/lang/String;
     const/4 v1, 0x0
 
@@ -48,7 +48,7 @@
 
     iput v1, p0, Lcom/android/server/ConnectivityService$RadioAttributes;->mType:I
 
-    .line 412
+    .line 341
     const/4 v1, 0x1
 
     aget-object v1, v0, v1
@@ -59,6 +59,6 @@
 
     iput v1, p0, Lcom/android/server/ConnectivityService$RadioAttributes;->mSimultaneity:I
 
-    .line 413
+    .line 342
     return-void
 .end method

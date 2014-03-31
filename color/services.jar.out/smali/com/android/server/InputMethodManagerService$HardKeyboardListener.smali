@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 592
+    .line 571
     iput-object p1, p0, Lcom/android/server/InputMethodManagerService$HardKeyboardListener;->this$0:Lcom/android/server/InputMethodManagerService;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
     .parameter "x1"
 
     .prologue
-    .line 592
+    .line 571
     invoke-direct {p0, p1}, Lcom/android/server/InputMethodManagerService$HardKeyboardListener;-><init>(Lcom/android/server/InputMethodManagerService;)V
 
     return-void
@@ -55,53 +55,14 @@
     .parameter "enabled"
 
     .prologue
-    .line 601
-    sget-boolean v0, Lcom/android/server/InputMethodManagerService;->DEBUG:Z
-
-    if-eqz v0, :cond_0
-
-    .line 602
-    const-string v0, "InputMethodManagerService"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "HardKeyboardStatusChanged: available = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, ", enabled = "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 605
-    :cond_0
+    .line 584
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$HardKeyboardListener;->this$0:Lcom/android/server/InputMethodManagerService;
 
     iget-object v1, v0, Lcom/android/server/InputMethodManagerService;->mMethodMap:Ljava/util/HashMap;
 
     monitor-enter v1
 
-    .line 606
+    .line 585
     :try_start_0
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$HardKeyboardListener;->this$0:Lcom/android/server/InputMethodManagerService;
 
@@ -110,7 +71,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$HardKeyboardListener;->this$0:Lcom/android/server/InputMethodManagerService;
 
@@ -119,7 +80,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$HardKeyboardListener;->this$0:Lcom/android/server/InputMethodManagerService;
 
@@ -132,9 +93,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1
+    if-eqz v0, :cond_0
 
-    .line 608
+    .line 587
     iget-object v0, p0, Lcom/android/server/InputMethodManagerService$HardKeyboardListener;->this$0:Lcom/android/server/InputMethodManagerService;
 
     #getter for: Lcom/android/server/InputMethodManagerService;->mSwitchingDialogTitleView:Landroid/view/View;
@@ -142,33 +103,33 @@
 
     move-result-object v0
 
-    const v2, 0x1020851
+    const v2, 0x102029d
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v2
 
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_1
 
     const/4 v0, 0x0
 
     :goto_0
     invoke-virtual {v2, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 612
-    :cond_1
+    .line 591
+    :cond_0
     monitor-exit v1
 
-    .line 613
+    .line 592
     return-void
 
-    .line 608
-    :cond_2
+    .line 587
+    :cond_1
     const/16 v0, 0x8
 
     goto :goto_0
 
-    .line 612
+    .line 591
     :catchall_0
     move-exception v0
 
@@ -189,7 +150,7 @@
 
     const/4 v1, 0x0
 
-    .line 596
+    .line 575
     iget-object v2, p0, Lcom/android/server/InputMethodManagerService$HardKeyboardListener;->this$0:Lcom/android/server/InputMethodManagerService;
 
     iget-object v3, v2, Lcom/android/server/InputMethodManagerService;->mHandler:Landroid/os/Handler;
@@ -214,13 +175,13 @@
 
     invoke-virtual {v3, v0}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
 
-    .line 598
+    .line 577
     return-void
 
     :cond_0
     move v2, v1
 
-    .line 596
+    .line 575
     goto :goto_0
 
     :cond_1

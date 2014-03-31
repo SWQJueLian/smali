@@ -70,11 +70,11 @@
     .line 1304
     new-array v0, v5, [Ljava/lang/String;
 
-    const-string/jumbo v1, "minutes"
+    const-string v1, "minutes"
 
     aput-object v1, v0, v3
 
-    const-string/jumbo v1, "method"
+    const-string v1, "method"
 
     aput-object v1, v0, v4
 
@@ -128,7 +128,7 @@
 
     aput-object v1, v0, v3
 
-    const-string/jumbo v1, "name"
+    const-string v1, "name"
 
     aput-object v1, v0, v4
 
@@ -395,7 +395,7 @@
     invoke-static {v0, v8, v1}, Landroid/database/DatabaseUtils;->cursorIntToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
     .line 1383
-    const-string/jumbo v1, "lastDate"
+    const-string v1, "lastDate"
 
     move-object/from16 v0, p1
 
@@ -479,7 +479,7 @@
     invoke-static {v0, v8, v1}, Landroid/database/DatabaseUtils;->cursorLongToContentValuesIfPresent(Landroid/database/Cursor;Landroid/content/ContentValues;Ljava/lang/String;)V
 
     .line 1396
-    const-string/jumbo v1, "lastSynced"
+    const-string v1, "lastSynced"
 
     move-object/from16 v0, p1
 
@@ -691,7 +691,7 @@
 
     .line 1435
     .local v13, reminderValues:Landroid/content/ContentValues;
-    const-string/jumbo v1, "minutes"
+    const-string v1, "minutes"
 
     const/4 v2, 0x0
 
@@ -706,7 +706,7 @@
     invoke-virtual {v13, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
     .line 1436
-    const-string/jumbo v1, "method"
+    const-string v1, "method"
 
     const/4 v2, 0x1
 
@@ -1033,7 +1033,7 @@
     invoke-virtual {v12, v1, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 1493
-    const-string/jumbo v1, "name"
+    const-string v1, "name"
 
     const/4 v2, 0x1
 

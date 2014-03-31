@@ -30,18 +30,18 @@
     .parameter "reason"
 
     .prologue
-    .line 319
+    .line 302
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 320
+    .line 303
     iput-object p1, p0, Lcom/android/server/am/ActivityStack$ScheduleDestroyArgs;->mOwner:Lcom/android/server/am/ProcessRecord;
 
-    .line 321
+    .line 304
     iput-boolean p2, p0, Lcom/android/server/am/ActivityStack$ScheduleDestroyArgs;->mOomAdj:Z
 
-    .line 322
+    .line 305
     iput-object p3, p0, Lcom/android/server/am/ActivityStack$ScheduleDestroyArgs;->mReason:Ljava/lang/String;
 
-    .line 323
+    .line 306
     return-void
 .end method

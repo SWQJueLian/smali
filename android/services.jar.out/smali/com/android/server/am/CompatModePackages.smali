@@ -53,7 +53,7 @@
     iput-object v8, p0, Lcom/android/server/am/CompatModePackages;->TAG:Ljava/lang/String;
 
     .line 31
-    sget-boolean v8, Lcom/android/server/am/ActivityManagerService;->DEBUG_CONFIGURATION:Z
+    const/4 v8, 0x0
 
     iput-boolean v8, p0, Lcom/android/server/am/CompatModePackages;->DEBUG_CONFIGURATION:Z
 
@@ -764,7 +764,7 @@
     add-int/lit8 v5, v10, -0x1
 
     :goto_6
-    if-ltz v5, :cond_b
+    if-ltz v5, :cond_a
 
     .line 315
     iget-object v10, p0, Lcom/android/server/am/CompatModePackages;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -801,47 +801,7 @@
 
     if-eqz v10, :cond_8
 
-    .line 321
-    iget-boolean v10, p0, Lcom/android/server/am/CompatModePackages;->DEBUG_CONFIGURATION:Z
-
-    if-eqz v10, :cond_a
-
-    const-string v10, "ActivityManager"
-
-    new-instance v11, Ljava/lang/StringBuilder;
-
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v12, "Sending to proc "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    iget-object v12, v1, Lcom/android/server/am/ProcessRecord;->processName:Ljava/lang/String;
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    const-string v12, " new compat "
-
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-static {v10, v11}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 323
-    :cond_a
     iget-object v10, v1, Lcom/android/server/am/ProcessRecord;->thread:Landroid/app/IApplicationThread;
 
     invoke-interface {v10, v8, v2}, Landroid/app/IApplicationThread;->updatePackageCompatibilityInfo(Ljava/lang/String;Landroid/content/res/CompatibilityInfo;)V
@@ -858,7 +818,7 @@
 
     .line 329
     .end local v1           #app:Lcom/android/server/am/ProcessRecord;
-    :cond_b
+    :cond_a
     if-eqz v9, :cond_0
 
     .line 330

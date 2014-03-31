@@ -154,7 +154,7 @@
 
     const/4 v1, 0x5
 
-    const-string/jumbo v2, "mm"
+    const-string v2, "mm"
 
     aput-object v2, v0, v1
 
@@ -176,8 +176,6 @@
     return-void
 
     .line 191
-    nop
-
     :array_0
     .array-data 0x4
         0x0t 0x0t 0x80t 0x3bt

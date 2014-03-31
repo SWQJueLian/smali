@@ -397,7 +397,7 @@
     .line 126
     new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v1, "macKey == null"
+    const-string v1, "macKey == null"
 
     invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
@@ -946,7 +946,7 @@
 
     .line 279
     .local v0, sb:Ljava/lang/StringBuilder;
-    const-string/jumbo v1, "mEncryptionAlgorithm=\""
+    const-string v1, "mEncryptionAlgorithm=\""
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -961,7 +961,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 282
-    const-string/jumbo v1, "mEncryptionSpec="
+    const-string v1, "mEncryptionSpec="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -975,7 +975,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 284
-    const-string/jumbo v1, "mEncryptionKey="
+    const-string v1, "mEncryptionKey="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -989,7 +989,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 287
-    const-string/jumbo v1, "mMacAlgorithm=\""
+    const-string v1, "mMacAlgorithm=\""
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1004,7 +1004,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 290
-    const-string/jumbo v1, "mMacSpec="
+    const-string v1, "mMacSpec="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1018,7 +1018,7 @@
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 292
-    const-string/jumbo v1, "mMacKey="
+    const-string v1, "mMacKey="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

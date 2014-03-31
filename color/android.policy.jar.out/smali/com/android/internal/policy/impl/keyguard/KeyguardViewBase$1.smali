@@ -19,7 +19,7 @@
     .locals 0
 
     .prologue
-    .line 60
+    .line 59
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
     return-void
@@ -32,14 +32,14 @@
     .parameter "canvas"
 
     .prologue
-    .line 63
+    .line 62
     const/high16 v0, 0x7000
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->SRC:Landroid/graphics/PorterDuff$Mode;
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawColor(ILandroid/graphics/PorterDuff$Mode;)V
 
-    .line 64
+    .line 63
     return-void
 .end method
 
@@ -47,7 +47,7 @@
     .locals 1
 
     .prologue
-    .line 76
+    .line 75
     const/4 v0, -0x3
 
     return v0
@@ -58,7 +58,7 @@
     .parameter "alpha"
 
     .prologue
-    .line 68
+    .line 67
     return-void
 .end method
 
@@ -67,6 +67,6 @@
     .parameter "cf"
 
     .prologue
-    .line 72
+    .line 71
     return-void
 .end method

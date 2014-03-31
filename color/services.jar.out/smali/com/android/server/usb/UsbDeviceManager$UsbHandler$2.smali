@@ -24,7 +24,7 @@
     .parameter
 
     .prologue
-    .line 497
+    .line 318
     iput-object p1, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandler$2;->this$1:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
@@ -40,7 +40,7 @@
     .parameter "intent"
 
     .prologue
-    .line 500
+    .line 321
     const-string v1, "android.intent.extra.user_handle"
 
     const/4 v2, -0x1
@@ -49,7 +49,7 @@
 
     move-result v0
 
-    .line 501
+    .line 322
     .local v0, userId:I
     iget-object v1, p0, Lcom/android/server/usb/UsbDeviceManager$UsbHandler$2;->this$1:Lcom/android/server/usb/UsbDeviceManager$UsbHandler;
 
@@ -70,6 +70,6 @@
 
     invoke-virtual {v1}, Landroid/os/Message;->sendToTarget()V
 
-    .line 502
+    .line 323
     return-void
 .end method

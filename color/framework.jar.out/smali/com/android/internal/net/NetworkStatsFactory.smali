@@ -44,7 +44,7 @@
     .line 58
     new-instance v0, Ljava/io/File;
 
-    const-string/jumbo v1, "net/xt_qtaguid/iface_stat_all"
+    const-string v1, "net/xt_qtaguid/iface_stat_all"
 
     invoke-direct {v0, p1, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -53,7 +53,7 @@
     .line 59
     new-instance v0, Ljava/io/File;
 
-    const-string/jumbo v1, "net/xt_qtaguid/iface_stat_fmt"
+    const-string v1, "net/xt_qtaguid/iface_stat_fmt"
 
     invoke-direct {v0, p1, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -62,7 +62,7 @@
     .line 60
     new-instance v0, Ljava/io/File;
 
-    const-string/jumbo v1, "net/xt_qtaguid/stats"
+    const-string v1, "net/xt_qtaguid/stats"
 
     invoke-direct {v0, p1, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 

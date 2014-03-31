@@ -23,12 +23,3 @@
 
 .method public abstract onDisplayError(I)V
 .end method
-
-.method public abstract onDisplayGenericMsgEvent(I)V
-.end method
-
-.method public abstract onDisplayKeyEvent(II)V
-.end method
-
-.method public abstract onDisplayTouchEvent(III)V
-.end method

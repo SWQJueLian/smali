@@ -27,7 +27,7 @@
     .parameter
 
     .prologue
-    .line 116
+    .line 105
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -42,7 +42,7 @@
     .parameter "v"
 
     .prologue
-    .line 118
+    .line 107
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView$1;->this$0:Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardPasswordView;->mCallback:Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;
@@ -51,6 +51,6 @@
 
     invoke-interface {v0, v1, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSecurityCallback;->userActivity(J)V
 
-    .line 119
+    .line 108
     return-void
 .end method

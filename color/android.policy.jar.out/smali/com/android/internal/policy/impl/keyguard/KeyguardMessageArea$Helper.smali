@@ -27,11 +27,11 @@
     .parameter "v"
 
     .prologue
-    .line 88
+    .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 89
-    const v0, 0x1020834
+    .line 88
+    const v0, 0x1020280
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -41,12 +41,12 @@
 
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
-    .line 90
+    .line 89
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
     if-nez v0, :cond_0
 
-    .line 91
+    .line 90
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -75,7 +75,7 @@
 
     throw v0
 
-    .line 93
+    .line 92
     :cond_0
     return-void
 .end method
@@ -87,20 +87,20 @@
     .parameter "duration"
 
     .prologue
-    .line 124
+    .line 123
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->showMessage(I)V
     invoke-static {v0, p1}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->access$100(Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;I)V
 
-    .line 125
+    .line 124
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
     const/4 v1, 0x0
 
     iput-boolean v1, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mShowingBouncer:Z
 
-    .line 126
+    .line 125
     return-void
 .end method
 
@@ -110,12 +110,12 @@
     .parameter "important"
 
     .prologue
-    .line 103
+    .line 102
     if-eqz p1, :cond_0
 
     if-eqz p2, :cond_0
 
-    .line 104
+    .line 103
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
@@ -134,12 +134,12 @@
 
     iput-object v1, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mMessage:Ljava/lang/CharSequence;
 
-    .line 105
+    .line 104
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->securityMessageChanged()V
 
-    .line 107
+    .line 106
     :cond_0
     return-void
 .end method
@@ -151,12 +151,12 @@
     .parameter "formatArgs"
 
     .prologue
-    .line 110
+    .line 109
     if-eqz p1, :cond_0
 
     if-eqz p2, :cond_0
 
-    .line 111
+    .line 110
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
     iget-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
@@ -171,12 +171,12 @@
 
     iput-object v1, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mMessage:Ljava/lang/CharSequence;
 
-    .line 112
+    .line 111
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->securityMessageChanged()V
 
-    .line 114
+    .line 113
     :cond_0
     return-void
 .end method
@@ -187,7 +187,7 @@
     .parameter "important"
 
     .prologue
-    .line 96
+    .line 95
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -196,17 +196,17 @@
 
     if-eqz p2, :cond_0
 
-    .line 97
+    .line 96
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
     iput-object p1, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mMessage:Ljava/lang/CharSequence;
 
-    .line 98
+    .line 97
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
     invoke-virtual {v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->securityMessageChanged()V
 
-    .line 100
+    .line 99
     :cond_0
     return-void
 .end method
@@ -216,14 +216,14 @@
     .parameter "timeoutMs"
 
     .prologue
-    .line 130
+    .line 129
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
     int-to-long v1, p1
 
     iput-wide v1, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mTimeout:J
 
-    .line 131
+    .line 130
     return-void
 .end method
 
@@ -232,7 +232,7 @@
     .parameter "duration"
 
     .prologue
-    .line 118
+    .line 117
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
     const/4 v1, 0x0
@@ -240,13 +240,13 @@
     #calls: Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->hideMessage(IZ)V
     invoke-static {v0, p1, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->access$000(Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;IZ)V
 
-    .line 119
+    .line 118
     iget-object v0, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea$Helper;->mMessageArea:Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;
 
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Lcom/android/internal/policy/impl/keyguard/KeyguardMessageArea;->mShowingBouncer:Z
 
-    .line 120
+    .line 119
     return-void
 .end method

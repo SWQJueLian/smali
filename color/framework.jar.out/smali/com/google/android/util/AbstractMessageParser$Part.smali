@@ -73,7 +73,7 @@
     if-eqz v0, :cond_1
 
     .line 1445
-    const-string/jumbo v0, "m"
+    const-string v0, "m"
 
     goto :goto_0
 
@@ -101,7 +101,7 @@
     .line 1472
     new-instance v0, Ljava/lang/AssertionError;
 
-    const-string/jumbo v1, "media "
+    const-string v1, "media "
 
     invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 

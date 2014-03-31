@@ -55,8 +55,6 @@
 
 .field private mReason:Ljava/lang/String;
 
-.field private mSimId:I
-
 .field private mState:Landroid/net/NetworkInfo$State;
 
 .field private mSubtype:I
@@ -197,7 +195,7 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/util/EnumMap;->put(Ljava/lang/Enum;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 450
+    .line 441
     new-instance v0, Landroid/net/NetworkInfo$1;
 
     invoke-direct {v0}, Landroid/net/NetworkInfo$1;-><init>()V
@@ -212,7 +210,7 @@
     .parameter "type"
 
     .prologue
-    .line 137
+    .line 132
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -230,17 +228,17 @@
 
     const/4 v1, 0x0
 
-    .line 142
+    .line 137
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 143
+    .line 138
     invoke-static {p1}, Landroid/net/ConnectivityManager;->isNetworkTypeValid(I)Z
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 144
+    .line 139
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -265,39 +263,36 @@
 
     throw v0
 
-    .line 146
+    .line 141
     :cond_0
     iput p1, p0, Landroid/net/NetworkInfo;->mNetworkType:I
 
-    .line 147
+    .line 142
     iput p2, p0, Landroid/net/NetworkInfo;->mSubtype:I
 
-    .line 148
+    .line 143
     iput-object p3, p0, Landroid/net/NetworkInfo;->mTypeName:Ljava/lang/String;
 
-    .line 149
+    .line 144
     iput-object p4, p0, Landroid/net/NetworkInfo;->mSubtypeName:Ljava/lang/String;
 
-    .line 150
+    .line 145
     sget-object v0, Landroid/net/NetworkInfo$DetailedState;->IDLE:Landroid/net/NetworkInfo$DetailedState;
 
     invoke-virtual {p0, v0, v2, v2}, Landroid/net/NetworkInfo;->setDetailedState(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 151
+    .line 146
     sget-object v0, Landroid/net/NetworkInfo$State;->UNKNOWN:Landroid/net/NetworkInfo$State;
 
     iput-object v0, p0, Landroid/net/NetworkInfo;->mState:Landroid/net/NetworkInfo$State;
 
-    .line 152
+    .line 147
     iput-boolean v1, p0, Landroid/net/NetworkInfo;->mIsAvailable:Z
 
-    .line 153
+    .line 148
     iput-boolean v1, p0, Landroid/net/NetworkInfo;->mIsRoaming:Z
 
-    .line 154
-    iput v1, p0, Landroid/net/NetworkInfo;->mSimId:I
-
-    .line 155
+    .line 149
     return-void
 .end method
 
@@ -306,73 +301,68 @@
     .parameter "source"
 
     .prologue
-    .line 158
+    .line 152
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 159
+    .line 153
     if-eqz p1, :cond_0
 
-    .line 160
+    .line 154
     iget v0, p1, Landroid/net/NetworkInfo;->mNetworkType:I
 
     iput v0, p0, Landroid/net/NetworkInfo;->mNetworkType:I
 
-    .line 161
+    .line 155
     iget v0, p1, Landroid/net/NetworkInfo;->mSubtype:I
 
     iput v0, p0, Landroid/net/NetworkInfo;->mSubtype:I
 
-    .line 162
+    .line 156
     iget-object v0, p1, Landroid/net/NetworkInfo;->mTypeName:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/net/NetworkInfo;->mTypeName:Ljava/lang/String;
 
-    .line 163
+    .line 157
     iget-object v0, p1, Landroid/net/NetworkInfo;->mSubtypeName:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/net/NetworkInfo;->mSubtypeName:Ljava/lang/String;
 
-    .line 164
+    .line 158
     iget-object v0, p1, Landroid/net/NetworkInfo;->mState:Landroid/net/NetworkInfo$State;
 
     iput-object v0, p0, Landroid/net/NetworkInfo;->mState:Landroid/net/NetworkInfo$State;
 
-    .line 165
+    .line 159
     iget-object v0, p1, Landroid/net/NetworkInfo;->mDetailedState:Landroid/net/NetworkInfo$DetailedState;
 
     iput-object v0, p0, Landroid/net/NetworkInfo;->mDetailedState:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 166
+    .line 160
     iget-object v0, p1, Landroid/net/NetworkInfo;->mReason:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/net/NetworkInfo;->mReason:Ljava/lang/String;
 
-    .line 167
+    .line 161
     iget-object v0, p1, Landroid/net/NetworkInfo;->mExtraInfo:Ljava/lang/String;
 
     iput-object v0, p0, Landroid/net/NetworkInfo;->mExtraInfo:Ljava/lang/String;
 
-    .line 168
+    .line 162
     iget-boolean v0, p1, Landroid/net/NetworkInfo;->mIsFailover:Z
 
     iput-boolean v0, p0, Landroid/net/NetworkInfo;->mIsFailover:Z
 
-    .line 169
+    .line 163
     iget-boolean v0, p1, Landroid/net/NetworkInfo;->mIsRoaming:Z
 
     iput-boolean v0, p0, Landroid/net/NetworkInfo;->mIsRoaming:Z
 
-    .line 170
+    .line 164
     iget-boolean v0, p1, Landroid/net/NetworkInfo;->mIsAvailable:Z
 
     iput-boolean v0, p0, Landroid/net/NetworkInfo;->mIsAvailable:Z
 
-    .line 171
-    iget v0, p1, Landroid/net/NetworkInfo;->mSimId:I
-
-    iput v0, p0, Landroid/net/NetworkInfo;->mSimId:I
-
-    .line 173
+    .line 166
     :cond_0
     return-void
 .end method
@@ -461,25 +451,13 @@
     return-object p1
 .end method
 
-.method static synthetic access$702(Landroid/net/NetworkInfo;I)I
-    .locals 0
-    .parameter "x0"
-    .parameter "x1"
-
-    .prologue
-    .line 29
-    iput p1, p0, Landroid/net/NetworkInfo;->mSimId:I
-
-    return p1
-.end method
-
 
 # virtual methods
 .method public describeContents()I
     .locals 1
 
     .prologue
-    .line 422
+    .line 414
     const/4 v0, 0x0
 
     return v0
@@ -489,10 +467,10 @@
     .locals 1
 
     .prologue
-    .line 343
+    .line 336
     monitor-enter p0
 
-    .line 344
+    .line 337
     :try_start_0
     iget-object v0, p0, Landroid/net/NetworkInfo;->mDetailedState:Landroid/net/NetworkInfo$DetailedState;
 
@@ -500,7 +478,7 @@
 
     return-object v0
 
-    .line 345
+    .line 338
     :catchall_0
     move-exception v0
 
@@ -515,10 +493,10 @@
     .locals 1
 
     .prologue
-    .line 396
+    .line 389
     monitor-enter p0
 
-    .line 397
+    .line 390
     :try_start_0
     iget-object v0, p0, Landroid/net/NetworkInfo;->mExtraInfo:Ljava/lang/String;
 
@@ -526,7 +504,7 @@
 
     return-object v0
 
-    .line 398
+    .line 391
     :catchall_0
     move-exception v0
 
@@ -541,10 +519,10 @@
     .locals 1
 
     .prologue
-    .line 384
+    .line 377
     monitor-enter p0
 
-    .line 385
+    .line 378
     :try_start_0
     iget-object v0, p0, Landroid/net/NetworkInfo;->mReason:Ljava/lang/String;
 
@@ -552,7 +530,7 @@
 
     return-object v0
 
-    .line 386
+    .line 379
     :catchall_0
     move-exception v0
 
@@ -563,24 +541,14 @@
     throw v0
 .end method
 
-.method public getSimId()I
-    .locals 1
-
-    .prologue
-    .line 480
-    iget v0, p0, Landroid/net/NetworkInfo;->mSimId:I
-
-    return v0
-.end method
-
 .method public getState()Landroid/net/NetworkInfo$State;
     .locals 1
 
     .prologue
-    .line 333
+    .line 326
     monitor-enter p0
 
-    .line 334
+    .line 327
     :try_start_0
     iget-object v0, p0, Landroid/net/NetworkInfo;->mState:Landroid/net/NetworkInfo$State;
 
@@ -588,7 +556,7 @@
 
     return-object v0
 
-    .line 335
+    .line 328
     :catchall_0
     move-exception v0
 
@@ -603,10 +571,10 @@
     .locals 1
 
     .prologue
-    .line 195
+    .line 188
     monitor-enter p0
 
-    .line 196
+    .line 189
     :try_start_0
     iget v0, p0, Landroid/net/NetworkInfo;->mSubtype:I
 
@@ -614,7 +582,7 @@
 
     return v0
 
-    .line 197
+    .line 190
     :catchall_0
     move-exception v0
 
@@ -629,10 +597,10 @@
     .locals 1
 
     .prologue
-    .line 223
+    .line 216
     monitor-enter p0
 
-    .line 224
+    .line 217
     :try_start_0
     iget-object v0, p0, Landroid/net/NetworkInfo;->mSubtypeName:Ljava/lang/String;
 
@@ -640,7 +608,7 @@
 
     return-object v0
 
-    .line 225
+    .line 218
     :catchall_0
     move-exception v0
 
@@ -655,10 +623,10 @@
     .locals 1
 
     .prologue
-    .line 184
+    .line 177
     monitor-enter p0
 
-    .line 185
+    .line 178
     :try_start_0
     iget v0, p0, Landroid/net/NetworkInfo;->mNetworkType:I
 
@@ -666,7 +634,7 @@
 
     return v0
 
-    .line 186
+    .line 179
     :catchall_0
     move-exception v0
 
@@ -681,10 +649,10 @@
     .locals 1
 
     .prologue
-    .line 213
+    .line 206
     monitor-enter p0
 
-    .line 214
+    .line 207
     :try_start_0
     iget-object v0, p0, Landroid/net/NetworkInfo;->mTypeName:Ljava/lang/String;
 
@@ -692,7 +660,7 @@
 
     return-object v0
 
-    .line 215
+    .line 208
     :catchall_0
     move-exception v0
 
@@ -707,10 +675,10 @@
     .locals 1
 
     .prologue
-    .line 268
+    .line 261
     monitor-enter p0
 
-    .line 269
+    .line 262
     :try_start_0
     iget-boolean v0, p0, Landroid/net/NetworkInfo;->mIsAvailable:Z
 
@@ -718,7 +686,7 @@
 
     return v0
 
-    .line 270
+    .line 263
     :catchall_0
     move-exception v0
 
@@ -733,10 +701,10 @@
     .locals 2
 
     .prologue
-    .line 250
+    .line 243
     monitor-enter p0
 
-    .line 251
+    .line 244
     :try_start_0
     iget-object v0, p0, Landroid/net/NetworkInfo;->mState:Landroid/net/NetworkInfo$State;
 
@@ -756,7 +724,7 @@
 
     goto :goto_0
 
-    .line 252
+    .line 245
     :catchall_0
     move-exception v0
 
@@ -771,10 +739,10 @@
     .locals 2
 
     .prologue
-    .line 238
+    .line 231
     monitor-enter p0
 
-    .line 239
+    .line 232
     :try_start_0
     iget-object v0, p0, Landroid/net/NetworkInfo;->mState:Landroid/net/NetworkInfo$State;
 
@@ -801,7 +769,7 @@
 
     goto :goto_0
 
-    .line 240
+    .line 233
     :catchall_0
     move-exception v0
 
@@ -816,10 +784,10 @@
     .locals 1
 
     .prologue
-    .line 293
+    .line 286
     monitor-enter p0
 
-    .line 294
+    .line 287
     :try_start_0
     iget-boolean v0, p0, Landroid/net/NetworkInfo;->mIsFailover:Z
 
@@ -827,7 +795,7 @@
 
     return v0
 
-    .line 295
+    .line 288
     :catchall_0
     move-exception v0
 
@@ -842,10 +810,10 @@
     .locals 1
 
     .prologue
-    .line 317
+    .line 310
     monitor-enter p0
 
-    .line 318
+    .line 311
     :try_start_0
     iget-boolean v0, p0, Landroid/net/NetworkInfo;->mIsRoaming:Z
 
@@ -853,7 +821,7 @@
 
     return v0
 
-    .line 319
+    .line 312
     :catchall_0
     move-exception v0
 
@@ -871,14 +839,14 @@
     .parameter "extraInfo"
 
     .prologue
-    .line 358
+    .line 351
     monitor-enter p0
 
-    .line 359
+    .line 352
     :try_start_0
     iput-object p1, p0, Landroid/net/NetworkInfo;->mDetailedState:Landroid/net/NetworkInfo$DetailedState;
 
-    .line 360
+    .line 353
     sget-object v0, Landroid/net/NetworkInfo;->stateMap:Ljava/util/EnumMap;
 
     invoke-virtual {v0, p1}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -889,19 +857,19 @@
 
     iput-object v0, p0, Landroid/net/NetworkInfo;->mState:Landroid/net/NetworkInfo$State;
 
-    .line 361
+    .line 354
     iput-object p2, p0, Landroid/net/NetworkInfo;->mReason:Ljava/lang/String;
 
-    .line 362
+    .line 355
     iput-object p3, p0, Landroid/net/NetworkInfo;->mExtraInfo:Ljava/lang/String;
 
-    .line 363
+    .line 356
     monitor-exit p0
 
-    .line 364
+    .line 357
     return-void
 
-    .line 363
+    .line 356
     :catchall_0
     move-exception v0
 
@@ -912,60 +880,25 @@
     throw v0
 .end method
 
-.method setDetailedStateGemini(Landroid/net/NetworkInfo$DetailedState;Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 1
-    .parameter "detailedState"
-    .parameter "reason"
-    .parameter "extraInfo"
-    .parameter "simId"
-
-    .prologue
-    .line 484
-    iput-object p1, p0, Landroid/net/NetworkInfo;->mDetailedState:Landroid/net/NetworkInfo$DetailedState;
-
-    .line 485
-    sget-object v0, Landroid/net/NetworkInfo;->stateMap:Ljava/util/EnumMap;
-
-    invoke-virtual {v0, p1}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/net/NetworkInfo$State;
-
-    iput-object v0, p0, Landroid/net/NetworkInfo;->mState:Landroid/net/NetworkInfo$State;
-
-    .line 486
-    iput-object p2, p0, Landroid/net/NetworkInfo;->mReason:Ljava/lang/String;
-
-    .line 487
-    iput-object p3, p0, Landroid/net/NetworkInfo;->mExtraInfo:Ljava/lang/String;
-
-    .line 488
-    iput p4, p0, Landroid/net/NetworkInfo;->mSimId:I
-
-    .line 489
-    return-void
-.end method
-
 .method public setExtraInfo(Ljava/lang/String;)V
     .locals 1
     .parameter "extraInfo"
 
     .prologue
-    .line 373
+    .line 366
     monitor-enter p0
 
-    .line 374
+    .line 367
     :try_start_0
     iput-object p1, p0, Landroid/net/NetworkInfo;->mExtraInfo:Ljava/lang/String;
 
-    .line 375
+    .line 368
     monitor-exit p0
 
-    .line 376
+    .line 369
     return-void
 
-    .line 375
+    .line 368
     :catchall_0
     move-exception v0
 
@@ -981,20 +914,20 @@
     .parameter "isFailover"
 
     .prologue
-    .line 305
+    .line 298
     monitor-enter p0
 
-    .line 306
+    .line 299
     :try_start_0
     iput-boolean p1, p0, Landroid/net/NetworkInfo;->mIsFailover:Z
 
-    .line 307
+    .line 300
     monitor-exit p0
 
-    .line 308
+    .line 301
     return-void
 
-    .line 307
+    .line 300
     :catchall_0
     move-exception v0
 
@@ -1010,20 +943,20 @@
     .parameter "isAvailable"
 
     .prologue
-    .line 280
+    .line 273
     monitor-enter p0
 
-    .line 281
+    .line 274
     :try_start_0
     iput-boolean p1, p0, Landroid/net/NetworkInfo;->mIsAvailable:Z
 
-    .line 282
+    .line 275
     monitor-exit p0
 
-    .line 283
+    .line 276
     return-void
 
-    .line 282
+    .line 275
     :catchall_0
     move-exception v0
 
@@ -1039,20 +972,20 @@
     .parameter "isRoaming"
 
     .prologue
-    .line 323
+    .line 316
     monitor-enter p0
 
-    .line 324
+    .line 317
     :try_start_0
     iput-boolean p1, p0, Landroid/net/NetworkInfo;->mIsRoaming:Z
 
-    .line 325
+    .line 318
     monitor-exit p0
 
-    .line 326
+    .line 319
     return-void
 
-    .line 325
+    .line 318
     :catchall_0
     move-exception v0
 
@@ -1069,23 +1002,23 @@
     .parameter "subtypeName"
 
     .prologue
-    .line 201
+    .line 194
     monitor-enter p0
 
-    .line 202
+    .line 195
     :try_start_0
     iput p1, p0, Landroid/net/NetworkInfo;->mSubtype:I
 
-    .line 203
+    .line 196
     iput-object p2, p0, Landroid/net/NetworkInfo;->mSubtypeName:Ljava/lang/String;
 
-    .line 204
+    .line 197
     monitor-exit p0
 
-    .line 205
+    .line 198
     return-void
 
-    .line 204
+    .line 197
     :catchall_0
     move-exception v0
 
@@ -1100,10 +1033,10 @@
     .locals 3
 
     .prologue
-    .line 403
+    .line 396
     monitor-enter p0
 
-    .line 404
+    .line 397
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1111,7 +1044,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 405
+    .line 398
     .local v0, builder:Ljava/lang/StringBuilder;
     const-string/jumbo v1, "type: "
 
@@ -1233,19 +1166,7 @@
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    move-result-object v1
-
-    const-string v2, ", simId: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget v2, p0, Landroid/net/NetworkInfo;->mSimId:I
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 413
+    .line 405
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -1254,7 +1175,7 @@
 
     return-object v1
 
-    .line 405
+    .line 398
     :cond_0
     iget-object v1, p0, Landroid/net/NetworkInfo;->mReason:Ljava/lang/String;
 
@@ -1265,7 +1186,7 @@
 
     goto :goto_1
 
-    .line 414
+    .line 406
     .end local v0           #builder:Ljava/lang/StringBuilder;
     :catchall_0
     move-exception v1
@@ -1287,31 +1208,31 @@
 
     const/4 v1, 0x0
 
-    .line 430
+    .line 422
     monitor-enter p0
 
-    .line 431
+    .line 423
     :try_start_0
     iget v2, p0, Landroid/net/NetworkInfo;->mNetworkType:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 432
+    .line 424
     iget v2, p0, Landroid/net/NetworkInfo;->mSubtype:I
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 433
+    .line 425
     iget-object v2, p0, Landroid/net/NetworkInfo;->mTypeName:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 434
+    .line 426
     iget-object v2, p0, Landroid/net/NetworkInfo;->mSubtypeName:Ljava/lang/String;
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 435
+    .line 427
     iget-object v2, p0, Landroid/net/NetworkInfo;->mState:Landroid/net/NetworkInfo$State;
 
     invoke-virtual {v2}, Landroid/net/NetworkInfo$State;->name()Ljava/lang/String;
@@ -1320,7 +1241,7 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 436
+    .line 428
     iget-object v2, p0, Landroid/net/NetworkInfo;->mDetailedState:Landroid/net/NetworkInfo$DetailedState;
 
     invoke-virtual {v2}, Landroid/net/NetworkInfo$DetailedState;->name()Ljava/lang/String;
@@ -1329,7 +1250,7 @@
 
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 437
+    .line 429
     iget-boolean v2, p0, Landroid/net/NetworkInfo;->mIsFailover:Z
 
     if-eqz v2, :cond_0
@@ -1339,7 +1260,7 @@
     :goto_0
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 438
+    .line 430
     iget-boolean v2, p0, Landroid/net/NetworkInfo;->mIsAvailable:Z
 
     if-eqz v2, :cond_1
@@ -1349,7 +1270,7 @@
     :goto_1
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 439
+    .line 431
     iget-boolean v2, p0, Landroid/net/NetworkInfo;->mIsRoaming:Z
 
     if-eqz v2, :cond_2
@@ -1357,46 +1278,41 @@
     :goto_2
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 440
+    .line 432
     iget-object v0, p0, Landroid/net/NetworkInfo;->mReason:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 441
+    .line 433
     iget-object v0, p0, Landroid/net/NetworkInfo;->mExtraInfo:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
-    .line 442
-    iget v0, p0, Landroid/net/NetworkInfo;->mSimId:I
-
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 443
+    .line 434
     monitor-exit p0
 
-    .line 444
+    .line 435
     return-void
 
     :cond_0
     move v2, v1
 
-    .line 437
+    .line 429
     goto :goto_0
 
     :cond_1
     move v2, v1
 
-    .line 438
+    .line 430
     goto :goto_1
 
     :cond_2
     move v0, v1
 
-    .line 439
+    .line 431
     goto :goto_2
 
-    .line 443
+    .line 434
     :catchall_0
     move-exception v0
 

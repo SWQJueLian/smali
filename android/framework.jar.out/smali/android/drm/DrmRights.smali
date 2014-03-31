@@ -196,25 +196,6 @@
     return-void
 .end method
 
-.method public constructor <init>([BLjava/lang/String;)V
-    .locals 0
-    .parameter "data"
-    .parameter "mimeType"
-
-    .prologue
-    .line 190
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 191
-    iput-object p1, p0, Landroid/drm/DrmRights;->mData:[B
-
-    .line 192
-    iput-object p2, p0, Landroid/drm/DrmRights;->mMimeType:Ljava/lang/String;
-
-    .line 193
-    return-void
-.end method
-
 .method private instantiate(Ljava/io/File;Ljava/lang/String;)V
     .locals 4
     .parameter "rightsFile"

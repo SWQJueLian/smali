@@ -188,7 +188,7 @@
     .line 100
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v1, "no file to commit"
+    const-string v1, "no file to commit"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
@@ -223,7 +223,7 @@
     .line 111
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v1, "no file to roll back"
+    const-string v1, "no file to roll back"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

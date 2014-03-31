@@ -140,7 +140,7 @@
     .line 146
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "len must be > 0"
+    const-string v2, "len must be > 0"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -168,7 +168,7 @@
     :cond_1
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "mimeType must be DRM_MIMETYPE_MESSAGE or DRM_MIMETYPE_CONTENT"
+    const-string v2, "mimeType must be DRM_MIMETYPE_MESSAGE or DRM_MIMETYPE_CONTENT"
 
     invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -195,7 +195,7 @@
     .line 152
     new-instance v1, Landroid/drm/mobile1/DrmException;
 
-    const-string/jumbo v2, "nativeConstructDrmContent() returned JNI_DRM_FAILURE"
+    const-string v2, "nativeConstructDrmContent() returned JNI_DRM_FAILURE"
 
     invoke-direct {v1, v2}, Landroid/drm/mobile1/DrmException;-><init>(Ljava/lang/String;)V
 
@@ -224,7 +224,7 @@
     .line 160
     new-instance v1, Landroid/drm/mobile1/DrmException;
 
-    const-string/jumbo v2, "nativeGetDeliveryMethod() returned JNI_DRM_FAILURE"
+    const-string v2, "nativeGetDeliveryMethod() returned JNI_DRM_FAILURE"
 
     invoke-direct {v1, v2}, Landroid/drm/mobile1/DrmException;-><init>(Ljava/lang/String;)V
 
@@ -246,7 +246,7 @@
     .line 165
     new-instance v1, Landroid/drm/mobile1/DrmException;
 
-    const-string/jumbo v2, "nativeGetContentType() returned null"
+    const-string v2, "nativeGetContentType() returned null"
 
     invoke-direct {v1, v2}, Landroid/drm/mobile1/DrmException;-><init>(Ljava/lang/String;)V
 
@@ -369,7 +369,7 @@
     .line 235
     new-instance v1, Landroid/drm/mobile1/DrmException;
 
-    const-string/jumbo v2, "nativeGetContentLength() returned JNI_DRM_FAILURE"
+    const-string v2, "nativeGetContentLength() returned JNI_DRM_FAILURE"
 
     invoke-direct {v1, v2}, Landroid/drm/mobile1/DrmException;-><init>(Ljava/lang/String;)V
 

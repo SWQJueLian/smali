@@ -27,7 +27,15 @@
 
 .field public static final oppo_config_statusBarIcons:I = 0xc07040c
 
+.field public static final oppo_oppotime_month_number_chinese:I = 0xc070413
+
+.field public static final oppo_oppotime_month_number_digit:I = 0xc070414
+
 .field public static final oppo_permissions_prompt:I = 0xc07040d
+
+.field public static final oppo_plmn_mcc_mnc:I = 0xc07040b
+
+.field public static final oppo_plmn_name:I = 0xc07040a
 
 .field public static final oppo_preloaded_color_state_lists:I = 0xc070412
 
@@ -53,7 +61,7 @@
     .locals 0
 
     .prologue
-    .line 35
+    .line 45
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

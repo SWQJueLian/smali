@@ -47,35 +47,9 @@
 
 # virtual methods
 .method public enter()V
-    .locals 2
+    .locals 0
 
     .prologue
-    .line 135
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Landroid/net/CaptivePortalTracker$DefaultState;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string v1, "\n"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    #calls: Landroid/net/CaptivePortalTracker;->log(Ljava/lang/String;)V
-    invoke-static {v0}, Landroid/net/CaptivePortalTracker;->access$400(Ljava/lang/String;)V
-
     .line 136
     return-void
 .end method
@@ -85,40 +59,6 @@
     .parameter "message"
 
     .prologue
-    .line 140
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Landroid/net/CaptivePortalTracker$DefaultState;->getName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Landroid/os/Message;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string v2, "\n"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    #calls: Landroid/net/CaptivePortalTracker;->log(Ljava/lang/String;)V
-    invoke-static {v1}, Landroid/net/CaptivePortalTracker;->access$400(Ljava/lang/String;)V
-
     .line 141
     iget v1, p1, Landroid/os/Message;->what:I
 
@@ -144,7 +84,7 @@
     move-result-object v1
 
     #calls: Landroid/net/CaptivePortalTracker;->loge(Ljava/lang/String;)V
-    invoke-static {v1}, Landroid/net/CaptivePortalTracker;->access$600(Ljava/lang/String;)V
+    invoke-static {v1}, Landroid/net/CaptivePortalTracker;->access$500(Ljava/lang/String;)V
 
     .line 155
     :goto_0
@@ -164,7 +104,7 @@
     iget-object v1, p0, Landroid/net/CaptivePortalTracker$DefaultState;->this$0:Landroid/net/CaptivePortalTracker;
 
     #calls: Landroid/net/CaptivePortalTracker;->notifyPortalCheckComplete(Landroid/net/NetworkInfo;)V
-    invoke-static {v1, v0}, Landroid/net/CaptivePortalTracker;->access$500(Landroid/net/CaptivePortalTracker;Landroid/net/NetworkInfo;)V
+    invoke-static {v1, v0}, Landroid/net/CaptivePortalTracker;->access$400(Landroid/net/CaptivePortalTracker;Landroid/net/NetworkInfo;)V
 
     goto :goto_0
 

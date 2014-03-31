@@ -1,140 +1,164 @@
-.class Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;
+.class synthetic Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;
 .super Ljava/lang/Object;
 .source "GsmDataConnectionTracker.java"
 
-# interfaces
-.implements Ljava/lang/Runnable;
-
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->onRecordsLoaded()V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
+    accessFlags = 0x1008
     name = null
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-.field final synthetic val$gprsDefaultSIM:I
+# static fields
+.field static final synthetic $SwitchMap$com$android$internal$telephony$DctConstants$State:[I
 
 
 # direct methods
-.method constructor <init>(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;I)V
-    .locals 0
-    .parameter
-    .parameter
+.method static constructor <clinit>()V
+    .locals 3
 
     .prologue
-    .line 2102
-    iput-object p1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    iput p2, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->val$gprsDefaultSIM:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public run()V
-    .locals 4
-
-    .prologue
-    .line 2104
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    #calls: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->syncRoamingSetting()V
-    invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$100(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)V
-
-    .line 2105
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    #calls: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->createAllApnList()V
-    invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$200(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)V
-
-    .line 2106
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    #getter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mPhone:Lcom/android/internal/telephony/PhoneBase;
-    invoke-static {v0}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$300(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Lcom/android/internal/telephony/PhoneBase;
+    .line 433
+    invoke-static {}, Lcom/android/internal/telephony/DctConstants$State;->values()[Lcom/android/internal/telephony/DctConstants$State;
 
     move-result-object v0
 
-    iget-object v0, v0, Lcom/android/internal/telephony/PhoneBase;->mCM:Lcom/android/internal/telephony/CommandsInterface;
+    array-length v0, v0
 
-    invoke-interface {v0}, Lcom/android/internal/telephony/CommandsInterface;->getRadioState()Lcom/android/internal/telephony/CommandsInterface$RadioState;
+    new-array v0, v0, [I
 
-    move-result-object v0
+    sput-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
 
-    invoke-virtual {v0}, Lcom/android/internal/telephony/CommandsInterface$RadioState;->isOn()Z
+    :try_start_0
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
 
-    move-result v0
+    sget-object v1, Lcom/android/internal/telephony/DctConstants$State;->CONNECTED:Lcom/android/internal/telephony/DctConstants$State;
 
-    if-eqz v0, :cond_0
-
-    .line 2107
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    const-string v1, "onRecordsLoaded: notifying data availability"
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->log(Ljava/lang/String;)V
-
-    .line 2108
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    const-string v1, "simLoaded"
-
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->notifyOffApnsOfAvailability(Ljava/lang/String;)V
-
-    .line 2110
-    :cond_0
-    iget v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->val$gprsDefaultSIM:I
-
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
-
-    #getter for: Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->mGsmPhone:Lcom/android/internal/telephony/gsm/GSMPhone;
-    invoke-static {v1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->access$400(Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;)Lcom/android/internal/telephony/gsm/GSMPhone;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/android/internal/telephony/gsm/GSMPhone;->getMySimId()I
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DctConstants$State;->ordinal()I
 
     move-result v1
 
-    if-eq v0, v1, :cond_1
+    const/4 v2, 0x1
 
-    .line 2117
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_5
+
     :goto_0
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    :try_start_1
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
 
-    iget-object v1, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    sget-object v1, Lcom/android/internal/telephony/DctConstants$State;->DISCONNECTING:Lcom/android/internal/telephony/DctConstants$State;
 
-    const v2, 0x42003
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DctConstants$State;->ordinal()I
 
-    const-string v3, "simLoaded"
+    move-result v1
 
-    invoke-virtual {v1, v2, v3}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    const/4 v2, 0x2
 
-    move-result-object v1
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_4
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->sendMessage(Landroid/os/Message;)Z
+    :goto_1
+    :try_start_2
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
 
-    .line 2118
+    sget-object v1, Lcom/android/internal/telephony/DctConstants$State;->CONNECTING:Lcom/android/internal/telephony/DctConstants$State;
+
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DctConstants$State;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x3
+
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_3
+
+    :goto_2
+    :try_start_3
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
+
+    sget-object v1, Lcom/android/internal/telephony/DctConstants$State;->INITING:Lcom/android/internal/telephony/DctConstants$State;
+
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DctConstants$State;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x4
+
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_2
+
+    :goto_3
+    :try_start_4
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
+
+    sget-object v1, Lcom/android/internal/telephony/DctConstants$State;->IDLE:Lcom/android/internal/telephony/DctConstants$State;
+
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DctConstants$State;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x5
+
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_1
+
+    :goto_4
+    :try_start_5
+    sget-object v0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->$SwitchMap$com$android$internal$telephony$DctConstants$State:[I
+
+    sget-object v1, Lcom/android/internal/telephony/DctConstants$State;->SCANNING:Lcom/android/internal/telephony/DctConstants$State;
+
+    invoke-virtual {v1}, Lcom/android/internal/telephony/DctConstants$State;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x6
+
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_0
+
+    :goto_5
     return-void
 
-    .line 2113
-    :cond_1
-    iget-object v0, p0, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker$1;->this$0:Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;
+    :catch_0
+    move-exception v0
 
-    const-string v1, "default"
+    goto :goto_5
 
-    invoke-virtual {v0, v1}, Lcom/android/internal/telephony/gsm/GsmDataConnectionTracker;->enableApnType(Ljava/lang/String;)I
+    :catch_1
+    move-exception v0
+
+    goto :goto_4
+
+    :catch_2
+    move-exception v0
+
+    goto :goto_3
+
+    :catch_3
+    move-exception v0
+
+    goto :goto_2
+
+    :catch_4
+    move-exception v0
+
+    goto :goto_1
+
+    :catch_5
+    move-exception v0
 
     goto :goto_0
 .end method
