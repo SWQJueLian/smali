@@ -196,7 +196,7 @@
 
     .line 2838
     :goto_2
-    const v8, 0x10208c7
+    const v8, 0x1020315
 
     invoke-virtual {v6, v8}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

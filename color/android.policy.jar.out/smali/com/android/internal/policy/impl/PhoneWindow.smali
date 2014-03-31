@@ -604,7 +604,7 @@
 
     .line 3203
     :cond_1
-    const v0, 0x1020911
+    const v0, 0x102035f
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/PhoneWindow;->findViewById(I)Landroid/view/View;
 
@@ -758,7 +758,7 @@
 
     .line 3217
     :cond_1
-    const v0, 0x1020912
+    const v0, 0x1020360
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/PhoneWindow;->findViewById(I)Landroid/view/View;
 
@@ -1206,7 +1206,7 @@
     iput-object v8, p0, Lcom/android/internal/policy/impl/PhoneWindow;->mTitleView:Landroid/widget/TextView;
 
     .line 2941
-    const v8, 0x102080d
+    const v8, 0x102025b
 
     invoke-virtual {p0, v8}, Lcom/android/internal/policy/impl/PhoneWindow;->findViewById(I)Landroid/view/View;
 
@@ -1336,7 +1336,7 @@
 
     .line 2969
     :cond_6
-    const v8, 0x1020914
+    const v8, 0x1020362
 
     invoke-virtual {p0, v8}, Lcom/android/internal/policy/impl/PhoneWindow;->findViewById(I)Landroid/view/View;
 
@@ -1438,7 +1438,7 @@
 
     .line 2993
     :goto_3
-    const v8, 0x1020916
+    const v8, 0x1020364
 
     invoke-virtual {p0, v8}, Lcom/android/internal/policy/impl/PhoneWindow;->findViewById(I)Landroid/view/View;
 
@@ -1466,7 +1466,7 @@
     invoke-virtual {v8, v4}, Lcom/android/internal/widget/ActionBarView;->setSplitWhenNarrow(Z)V
 
     .line 3000
-    const v8, 0x1020915
+    const v8, 0x1020363
 
     invoke-virtual {p0, v8}, Lcom/android/internal/policy/impl/PhoneWindow;->findViewById(I)Landroid/view/View;
 

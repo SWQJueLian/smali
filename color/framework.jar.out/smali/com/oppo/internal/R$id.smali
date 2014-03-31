@@ -149,13 +149,23 @@
 
 .field public static final oppo_buttonPaste:I = 0xc02044f
 
+.field public static final oppo_buttonSearch:I = 0xc0204a7
+
 .field public static final oppo_buttonSelect:I = 0xc020450
 
 .field public static final oppo_buttonSelectAll:I = 0xc020451
 
+.field public static final oppo_button_always:I = 0xc0204ab
+
+.field public static final oppo_button_bar:I = 0xc0204ad
+
+.field public static final oppo_button_once:I = 0xc0204ac
+
 .field public static final oppo_flow_bar:I = 0xc02049b
 
 .field public static final oppo_inputmethodSwitch:I = 0xc020452
+
+.field public static final oppo_list_back_to_top_button:I = 0xc0204a5
 
 .field public static final oppo_listview_scrollchoice_checkbox:I = 0xc020001
 
@@ -177,9 +187,15 @@
 
 .field public static final oppo_rename_dialog_edit:I = 0xc020000
 
+.field public static final oppo_resolver_checkbox_option:I = 0xc0204a8
+
+.field public static final oppo_resolver_grid:I = 0xc0204ae
+
 .field public static final oppo_search:I = 0xc020492
 
-.field public static final oppo_search_src_voice:I = 0xc02049d
+.field public static final oppo_security_content:I = 0xc02049d
+
+.field public static final oppo_security_remember:I = 0xc02049e
 
 .field public static final oppo_seekbar:I = 0xc02045e
 
@@ -189,13 +205,29 @@
 
 .field public static final oppo_separator3:I = 0xc020455
 
+.field public static final oppo_separator4:I = 0xc0204a6
+
 .field public static final oppo_stream_icon:I = 0xc02045d
 
 .field public static final oppo_stream_title:I = 0xc02045c
 
+.field public static final oppo_text1:I = 0xc0204a9
+
+.field public static final oppo_text2:I = 0xc0204aa
+
 .field public static final oppo_toolbar_group:I = 0xc020456
 
 .field public static final oppo_toolbar_position_arrow:I = 0xc020457
+
+.field public static final oppo_volume_unified_control:I = 0xc0204a3
+
+.field public static final oppo_volumn_disk:I = 0xc02049f
+
+.field public static final oppo_volumn_icon:I = 0xc0204a1
+
+.field public static final oppo_volumn_progress:I = 0xc0204a0
+
+.field public static final oppo_volumn_title:I = 0xc0204a2
 
 .field public static final option1:I = 0xc020488
 
@@ -206,6 +238,8 @@
 .field public static final option4:I = 0xc02048b
 
 .field public static final overflow_divider:I = 0xc020483
+
+.field public static final parentPanel:I = 0xc0204a4
 
 .field public static final permission_prompt:I = 0xc02046f
 
@@ -285,7 +319,7 @@
     .locals 0
 
     .prologue
-    .line 1668
+    .line 1737
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

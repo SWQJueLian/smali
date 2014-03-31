@@ -99,7 +99,7 @@
 
     move-result v0
 
-    const v1, 0x10208a9
+    const v1, 0x10202f7
 
     if-eq v0, v1, :cond_1
 
@@ -230,7 +230,7 @@
     iput-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->mDateView:Landroid/widget/TextView;
 
     .line 86
-    const v4, 0x1020897
+    const v4, 0x10202e5
 
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->findViewById(I)Landroid/view/View;
 
@@ -241,7 +241,7 @@
     iput-object v4, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->mAlarmStatusView:Landroid/widget/TextView;
 
     .line 87
-    const v4, 0x10208b6
+    const v4, 0x1020304
 
     invoke-virtual {p0, v4}, Lcom/android/internal/policy/impl/keyguard/KeyguardStatusView;->findViewById(I)Landroid/view/View;
 

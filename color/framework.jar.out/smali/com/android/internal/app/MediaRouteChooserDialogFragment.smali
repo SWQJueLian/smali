@@ -340,7 +340,7 @@
 
     .line 176
     .local v1, layout:Landroid/view/View;
-    const v3, 0x10208cf
+    const v3, 0x102031d
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -351,7 +351,7 @@
     iput-object v3, p0, Lcom/android/internal/app/MediaRouteChooserDialogFragment;->mVolumeIcon:Landroid/widget/ImageView;
 
     .line 177
-    const v3, 0x10208d0
+    const v3, 0x102031e
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -379,7 +379,7 @@
     if-eqz v3, :cond_0
 
     .line 182
-    const v3, 0x10208d1
+    const v3, 0x102031f
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

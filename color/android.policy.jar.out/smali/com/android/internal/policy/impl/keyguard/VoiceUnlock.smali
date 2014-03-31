@@ -952,7 +952,7 @@
     iput-object p1, p0, Lcom/android/internal/policy/impl/keyguard/VoiceUnlock;->mVoiceUnlockView:Landroid/view/View;
 
     .line 183
-    const v0, 0x1020970
+    const v0, 0x10203be
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -984,7 +984,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageLevel(I)V
 
     .line 187
-    const v0, 0x1020971
+    const v0, 0x10203bf
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

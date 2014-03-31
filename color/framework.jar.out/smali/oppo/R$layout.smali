@@ -23,6 +23,8 @@
 
 .field public static final oppo_action_mode_close_item:I = 0xc090438
 
+.field public static final oppo_boot_msg_dialog:I = 0xc09044c
+
 .field public static final oppo_date_picker:I = 0xc090401
 
 .field public static final oppo_date_picker_dialog:I = 0xc09040f
@@ -36,6 +38,8 @@
 .field public static final oppo_global_actions_silent_mode:I = 0xc09043f
 
 .field public static final oppo_input_method_switch_dialog_title:I = 0xc090432
+
+.field public static final oppo_list_back_to_top_panel:I = 0xc09044d
 
 .field public static final oppo_lunar_date_picker:I = 0xc090402
 
@@ -69,13 +73,21 @@
 
 .field public static final oppo_permission_choice:I = 0xc09043d
 
+.field public static final oppo_personnal_security_panel:I = 0xc09044a
+
 .field public static final oppo_progress_dialog_notitle:I = 0xc090412
 
 .field public static final oppo_rename_dialog_layout:I = 0xc090000
 
+.field public static final oppo_resolve_list_item:I = 0xc09044f
+
+.field public static final oppo_resolver_grid:I = 0xc09044e
+
 .field public static final oppo_screen_action_bar:I = 0xc090446
 
 .field public static final oppo_screen_action_bar_overlay:I = 0xc090447
+
+.field public static final oppo_screen_action_bar_overlay_status:I = 0xc090449
 
 .field public static final oppo_search_dropdown_item_icons_2line:I = 0xc090428
 
@@ -111,6 +123,8 @@
 
 .field public static final oppo_volume_adjust_item:I = 0xc090434
 
+.field public static final oppo_volume_unified_control:I = 0xc09044b
+
 .field public static final oppo_waiting_loading:I = 0xc090001
 
 
@@ -119,7 +133,7 @@
     .locals 0
 
     .prologue
-    .line 1857
+    .line 1944
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

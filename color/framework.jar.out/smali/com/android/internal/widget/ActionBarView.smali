@@ -811,7 +811,7 @@
     .line 813
     iget-object v4, p0, Lcom/android/internal/widget/ActionBarView;->mTitleLayout:Landroid/widget/LinearLayout;
 
-    const v7, 0x1020801
+    const v7, 0x102024f
 
     invoke-virtual {v4, v7}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -824,7 +824,7 @@
     .line 814
     iget-object v4, p0, Lcom/android/internal/widget/ActionBarView;->mTitleLayout:Landroid/widget/LinearLayout;
 
-    const v7, 0x1020802
+    const v7, 0x1020250
 
     invoke-virtual {v4, v7}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -1349,7 +1349,7 @@
     .line 347
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView;->mIndeterminateProgressView:Landroid/widget/ProgressBar;
 
-    const v1, 0x1020911
+    const v1, 0x102035f
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setId(I)V
 
@@ -1391,7 +1391,7 @@
     .line 338
     iget-object v0, p0, Lcom/android/internal/widget/ActionBarView;->mProgressView:Landroid/widget/ProgressBar;
 
-    const v1, 0x1020912
+    const v1, 0x1020360
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setId(I)V
 

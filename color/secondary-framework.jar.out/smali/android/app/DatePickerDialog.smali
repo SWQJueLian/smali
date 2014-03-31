@@ -108,7 +108,7 @@
     invoke-virtual {p0, v2}, Landroid/app/DatePickerDialog;->setView(Landroid/view/View;)V
 
     .line 110
-    const v3, 0x1020832
+    const v3, 0x1020280
 
     invoke-virtual {v2, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

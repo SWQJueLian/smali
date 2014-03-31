@@ -12,6 +12,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/app/Dialog$Injector;,
         Landroid/app/Dialog$ListenersHandler;
     }
 .end annotation
@@ -35,6 +36,8 @@
 .field private mActionBar:Lcom/android/internal/app/ActionBarImpl;
 
 .field private mActionMode:Landroid/view/ActionMode;
+
+.field private mButtonFlag:I
 
 .field private mCancelAndDismissTaken:Ljava/lang/String;
 
@@ -77,14 +80,14 @@
     .parameter "context"
 
     .prologue
-    .line 131
+    .line 136
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     invoke-direct {p0, p1, v0, v1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;IZ)V
 
-    .line 132
+    .line 137
     return-void
 .end method
 
@@ -94,12 +97,12 @@
     .parameter "theme"
 
     .prologue
-    .line 147
+    .line 152
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, p2, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;IZ)V
 
-    .line 148
+    .line 153
     return-void
 .end method
 
@@ -108,33 +111,28 @@
     .parameter "context"
     .parameter "theme"
     .parameter "createContextThemeWrapper"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
-        note = "Jianhua.Lin@Plf.SDK : Modify for Change the display position of dialog"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
     const/4 v5, 0x0
 
     const/4 v4, 0x1
 
-    const/4 v2, 0x0
+    const/4 v3, 0x0
 
-    .line 154
+    .line 155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 94
     iput-boolean v4, p0, Landroid/app/Dialog;->mCancelable:Z
 
     .line 103
-    iput-boolean v2, p0, Landroid/app/Dialog;->mCreated:Z
+    iput-boolean v3, p0, Landroid/app/Dialog;->mCreated:Z
 
     .line 104
-    iput-boolean v2, p0, Landroid/app/Dialog;->mShowing:Z
+    iput-boolean v3, p0, Landroid/app/Dialog;->mShowing:Z
 
     .line 105
-    iput-boolean v2, p0, Landroid/app/Dialog;->mCanceled:Z
+    iput-boolean v3, p0, Landroid/app/Dialog;->mCanceled:Z
 
     .line 107
     new-instance v2, Landroid/os/Handler;
@@ -143,25 +141,28 @@
 
     iput-object v2, p0, Landroid/app/Dialog;->mHandler:Landroid/os/Handler;
 
-    .line 117
+    .line 119
+    iput v3, p0, Landroid/app/Dialog;->mButtonFlag:I
+
+    .line 122
     new-instance v2, Landroid/app/Dialog$1;
 
     invoke-direct {v2, p0}, Landroid/app/Dialog$1;-><init>(Landroid/app/Dialog;)V
 
     iput-object v2, p0, Landroid/app/Dialog;->mDismissAction:Ljava/lang/Runnable;
 
-    .line 155
+    .line 156
     if-eqz p3, :cond_1
 
-    .line 156
+    .line 157
     if-nez p2, :cond_0
 
-    .line 157
+    .line 158
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 158
+    .line 159
     .local v0, outValue:Landroid/util/TypedValue;
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
@@ -171,10 +172,10 @@
 
     invoke-virtual {v2, v3, v0, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    .line 160
+    .line 161
     iget p2, v0, Landroid/util/TypedValue;->resourceId:I
 
-    .line 162
+    .line 163
     .end local v0           #outValue:Landroid/util/TypedValue;
     :cond_0
     new-instance v2, Landroid/view/ContextThemeWrapper;
@@ -183,7 +184,7 @@
 
     iput-object v2, p0, Landroid/app/Dialog;->mContext:Landroid/content/Context;
 
-    .line 167
+    .line 168
     :goto_0
     const-string v2, "window"
 
@@ -195,44 +196,41 @@
 
     iput-object v2, p0, Landroid/app/Dialog;->mWindowManager:Landroid/view/WindowManager;
 
-    .line 168
+    .line 169
     iget-object v2, p0, Landroid/app/Dialog;->mContext:Landroid/content/Context;
 
     invoke-static {v2}, Lcom/android/internal/policy/PolicyManager;->makeNewWindow(Landroid/content/Context;)Landroid/view/Window;
 
     move-result-object v1
 
-    .line 169
+    .line 170
     .local v1, w:Landroid/view/Window;
     iput-object v1, p0, Landroid/app/Dialog;->mWindow:Landroid/view/Window;
 
-    .line 170
+    .line 171
     invoke-virtual {v1, p0}, Landroid/view/Window;->setCallback(Landroid/view/Window$Callback;)V
 
-    .line 171
+    .line 172
     iget-object v2, p0, Landroid/app/Dialog;->mWindowManager:Landroid/view/WindowManager;
 
     invoke-virtual {v1, v2, v5, v5}, Landroid/view/Window;->setWindowManager(Landroid/view/WindowManager;Landroid/os/IBinder;Ljava/lang/String;)V
 
-    .line 172
+    .line 173
     const/16 v2, 0x11
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->setGravity(I)V
 
-    .line 173
+    .line 174
     new-instance v2, Landroid/app/Dialog$ListenersHandler;
 
     invoke-direct {v2, p0}, Landroid/app/Dialog$ListenersHandler;-><init>(Landroid/app/Dialog;)V
 
     iput-object v2, p0, Landroid/app/Dialog;->mListenersHandler:Landroid/os/Handler;
 
-    .line 177
-    invoke-direct {p0}, Landroid/app/Dialog;->setDialogGravity()V
-
-    .line 180
+    .line 176
     return-void
 
-    .line 164
+    .line 165
     .end local v1           #w:Landroid/view/Window;
     :cond_1
     iput-object p1, p0, Landroid/app/Dialog;->mContext:Landroid/content/Context;
@@ -247,16 +245,16 @@
     .parameter "cancelListener"
 
     .prologue
-    .line 196
+    .line 192
     invoke-direct {p0, p1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
 
-    .line 197
+    .line 193
     iput-boolean p2, p0, Landroid/app/Dialog;->mCancelable:Z
 
-    .line 198
+    .line 194
     invoke-virtual {p0, p3}, Landroid/app/Dialog;->setOnCancelListener(Landroid/content/DialogInterface$OnCancelListener;)V
 
-    .line 199
+    .line 195
     return-void
 .end method
 
@@ -269,16 +267,16 @@
     .end annotation
 
     .prologue
-    .line 189
+    .line 185
     invoke-direct {p0, p1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
 
-    .line 190
+    .line 186
     iput-boolean p2, p0, Landroid/app/Dialog;->mCancelable:Z
 
-    .line 191
+    .line 187
     iput-object p3, p0, Landroid/app/Dialog;->mCancelMessage:Landroid/os/Message;
 
-    .line 192
+    .line 188
     return-void
 .end method
 
@@ -909,7 +907,7 @@
     .locals 1
 
     .prologue
-    .line 216
+    .line 212
     iget-object v0, p0, Landroid/app/Dialog;->mActionBar:Lcom/android/internal/app/ActionBarImpl;
 
     return-object v0
@@ -919,7 +917,7 @@
     .locals 1
 
     .prologue
-    .line 207
+    .line 203
     iget-object v0, p0, Landroid/app/Dialog;->mContext:Landroid/content/Context;
 
     return-object v0
@@ -969,7 +967,7 @@
     .locals 1
 
     .prologue
-    .line 240
+    .line 236
     iget-object v0, p0, Landroid/app/Dialog;->mOwnerActivity:Landroid/app/Activity;
 
     return-object v0
@@ -1041,7 +1039,7 @@
     .locals 1
 
     .prologue
-    .line 247
+    .line 243
     iget-boolean v0, p0, Landroid/app/Dialog;->mShowing:Z
 
     return v0
@@ -2160,10 +2158,10 @@
     .parameter "activity"
 
     .prologue
-    .line 226
+    .line 222
     iput-object p1, p0, Landroid/app/Dialog;->mOwnerActivity:Landroid/app/Activity;
 
-    .line 228
+    .line 224
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -2176,7 +2174,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setVolumeControlStream(I)V
 
-    .line 229
+    .line 225
     return-void
 .end method
 
@@ -2241,7 +2239,7 @@
     .locals 5
     .annotation build Landroid/annotation/OppoHook;
         level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
-        note = "Jianhui.Yu@Plf.SDK: modify for ActionBar of oppo style"
+        note = "Jianhui.Yu@Plf.SDK : Modify for ActionBar of oppo style"
         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
     .end annotation
 
@@ -2250,17 +2248,17 @@
 
     const/16 v3, 0x8
 
-    .line 261
+    .line 257
     iget-boolean v2, p0, Landroid/app/Dialog;->mShowing:Z
 
     if-eqz v2, :cond_2
 
-    .line 262
+    .line 258
     iget-object v2, p0, Landroid/app/Dialog;->mDecor:Landroid/view/View;
 
     if-eqz v2, :cond_1
 
-    .line 263
+    .line 259
     iget-object v2, p0, Landroid/app/Dialog;->mWindow:Landroid/view/Window;
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->hasFeature(I)Z
@@ -2269,12 +2267,12 @@
 
     if-eqz v2, :cond_0
 
-    .line 264
+    .line 260
     iget-object v2, p0, Landroid/app/Dialog;->mWindow:Landroid/view/Window;
 
     invoke-virtual {v2, v3}, Landroid/view/Window;->invalidatePanelMenu(I)V
 
-    .line 266
+    .line 262
     :cond_0
     iget-object v2, p0, Landroid/app/Dialog;->mDecor:Landroid/view/View;
 
@@ -2285,25 +2283,30 @@
     :goto_0
     return-void
 
-    .line 271
+    .line 267
     :cond_2
     iput-boolean v4, p0, Landroid/app/Dialog;->mCanceled:Z
 
-    .line 273
+    .line 269
     iget-boolean v2, p0, Landroid/app/Dialog;->mCreated:Z
 
     if-nez v2, :cond_3
 
-    .line 274
+    .line 270
     const/4 v2, 0x0
 
     invoke-virtual {p0, v2}, Landroid/app/Dialog;->dispatchOnCreate(Landroid/os/Bundle;)V
 
-    .line 277
+    .line 275
     :cond_3
-    invoke-virtual {p0}, Landroid/app/Dialog;->onStart()V
+    iget v2, p0, Landroid/app/Dialog;->mButtonFlag:I
+
+    invoke-static {p0, v2}, Landroid/app/Dialog$Injector;->initButtonBackground(Landroid/app/Dialog;I)V
 
     .line 278
+    invoke-virtual {p0}, Landroid/app/Dialog;->onStart()V
+
+    .line 279
     iget-object v2, p0, Landroid/app/Dialog;->mWindow:Landroid/view/Window;
 
     invoke-virtual {v2}, Landroid/view/Window;->getDecorView()Landroid/view/View;
@@ -2312,7 +2315,7 @@
 
     iput-object v2, p0, Landroid/app/Dialog;->mDecor:Landroid/view/View;
 
-    .line 280
+    .line 281
     iget-object v2, p0, Landroid/app/Dialog;->mActionBar:Lcom/android/internal/app/ActionBarImpl;
 
     if-nez v2, :cond_4
@@ -2474,36 +2477,19 @@
     return-void
 .end method
 
-.method private setDialogGravity()V
-    .locals 2
+.method public setFousedButton(I)V
+    .locals 0
+    .parameter "flag"
     .annotation build Landroid/annotation/OppoHook;
         level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "Jianhua.Lin@Plf.SDK : Add for Change the display position of dialog"
+        note = "Jianhua.Lin@Plf.SDK : Add for Oppo Theme"
         property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
     .end annotation
 
     .prologue
-    .line 1272
-    iget-object v0, p0, Landroid/app/Dialog;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->isOppoStyle()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Landroid/app/Dialog;->mWindow:Landroid/view/Window;
-
-    if-eqz v0, :cond_0
-
     .line 1273
-    iget-object v0, p0, Landroid/app/Dialog;->mWindow:Landroid/view/Window;
+    iput p1, p0, Landroid/app/Dialog;->mButtonFlag:I
 
-    const/16 v1, 0x50
-
-    invoke-virtual {v0, v1}, Landroid/view/Window;->setGravity(I)V
-
-    .line 1275
-    :cond_0
+    .line 1274
     return-void
 .end method

@@ -1936,7 +1936,7 @@
 
     .line 2203
     .local v1, row:Landroid/view/View;
-    const v2, 0x1020966
+    const v2, 0x10203b4
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1951,7 +1951,7 @@
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 2204
-    const v2, 0x1020853
+    const v2, 0x10202a1
 
     invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3892,7 +3892,7 @@
 
     .line 2233
     .local v4, textEntryView:Landroid/view/View;
-    const v6, 0x10208e0
+    const v6, 0x102032e
 
     invoke-virtual {v4, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3915,7 +3915,7 @@
     invoke-direct {p0, v1, v6, v7}, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->addRowToDialog(Landroid/view/ViewGroup;ILjava/lang/String;)V
 
     .line 2237
-    const v6, 0x1020965
+    const v6, 0x10203b3
 
     invoke-virtual {v4, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4019,7 +4019,7 @@
     invoke-direct {p0, v6}, Landroid/net/wifi/p2p/WifiP2pService$P2pStateMachine;->logd(Ljava/lang/String;)V
 
     .line 2271
-    const v6, 0x1020964
+    const v6, 0x10203b2
 
     invoke-virtual {v4, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4088,7 +4088,7 @@
 
     .line 2214
     .local v3, textEntryView:Landroid/view/View;
-    const v4, 0x10208e0
+    const v4, 0x102032e
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -83,17 +83,29 @@
 
 .field public static final Theme_OPPO_Dialog_NoActionBar_MinWidth:I = 0xc030016
 
+.field public static final Theme_OPPO_Layer:I = 0xc03002b
+
 .field public static final Theme_OPPO_NoActionBar:I = 0xc030018
 
 .field public static final Theme_OPPO_NoActionBarShadow:I = 0xc03002a
+
+.field public static final Theme_OPPO_NoActionBarShadow_Layer:I = 0xc03002d
+
+.field public static final Theme_OPPO_NoActionBarShadow_Task:I = 0xc030030
 
 .field public static final Theme_OPPO_NoDisplay:I = 0xc030003
 
 .field public static final Theme_OPPO_NoTitleBar:I = 0xc030008
 
+.field public static final Theme_OPPO_NoTitleBar_Layer:I = 0xc03002c
+
+.field public static final Theme_OPPO_NoTitleBar_Task:I = 0xc03002f
+
 .field public static final Theme_OPPO_Panel_Volume:I = 0xc030407
 
 .field public static final Theme_OPPO_SearchBar:I = 0xc030005
+
+.field public static final Theme_OPPO_Task:I = 0xc03002e
 
 .field public static final Theme_OPPO_Translucent:I = 0xc030009
 
@@ -121,7 +133,7 @@
     .locals 0
 
     .prologue
-    .line 2214
+    .line 2333
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

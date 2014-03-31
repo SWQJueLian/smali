@@ -5491,7 +5491,7 @@
 
     move-object/from16 v25, v0
 
-    const v27, 0x1020851
+    const v27, 0x102029f
 
     move-object/from16 v0, v25
 
@@ -5550,7 +5550,7 @@
 
     move-object/from16 v25, v0
 
-    const v27, 0x102080c
+    const v27, 0x102025a
 
     move-object/from16 v0, v25
 
@@ -5579,7 +5579,7 @@
 
     move-object/from16 v25, v0
 
-    const v27, 0x1020852
+    const v27, 0x10202a0
 
     move-object/from16 v0, v25
 

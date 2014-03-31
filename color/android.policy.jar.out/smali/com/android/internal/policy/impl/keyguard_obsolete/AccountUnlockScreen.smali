@@ -69,7 +69,7 @@
     invoke-virtual {v0, v1, p0, v5}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     .line 95
-    const v0, 0x1020884
+    const v0, 0x10202d2
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/AccountUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -96,7 +96,7 @@
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(I)V
 
     .line 100
-    const v0, 0x1020886
+    const v0, 0x10202d4
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/AccountUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -107,7 +107,7 @@
     iput-object v0, p0, Lcom/android/internal/policy/impl/keyguard_obsolete/AccountUnlockScreen;->mInstructions:Landroid/widget/TextView;
 
     .line 102
-    const v0, 0x1020856
+    const v0, 0x10202a4
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/AccountUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -138,7 +138,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     .line 106
-    const v0, 0x1020857
+    const v0, 0x10202a5
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/AccountUnlockScreen;->findViewById(I)Landroid/view/View;
 
@@ -154,7 +154,7 @@
     invoke-virtual {v0, p0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     .line 109
-    const v0, 0x1020858
+    const v0, 0x10202a6
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard_obsolete/AccountUnlockScreen;->findViewById(I)Landroid/view/View;
 

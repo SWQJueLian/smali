@@ -388,7 +388,7 @@
     const/4 v2, 0x0
 
     .line 58
-    const v0, 0x102086e
+    const v0, 0x10202bc
 
     .line 59
     .local v0, resId:I

@@ -1237,7 +1237,7 @@
     if-ne p0, v0, :cond_1
 
     .line 844
-    const-string/jumbo v0, "isms2"
+    const-string v0, "isms2"
 
     goto :goto_0
 

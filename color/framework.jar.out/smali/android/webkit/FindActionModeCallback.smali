@@ -115,7 +115,7 @@
     .line 57
     iget-object v0, p0, Landroid/webkit/FindActionModeCallback;->mCustomView:Landroid/view/View;
 
-    const v1, 0x1020963
+    const v1, 0x10203b1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -511,7 +511,7 @@
 
     .line 239
     :pswitch_data_0
-    .packed-switch 0x1020977
+    .packed-switch 0x10203c5
         :pswitch_0
         :pswitch_1
     .end packed-switch
@@ -566,7 +566,7 @@
     invoke-virtual {v4, v5, p2}, Landroid/view/MenuInflater;->inflate(ILandroid/view/Menu;)V
 
     .line 205
-    const v4, 0x1020977
+    const v4, 0x10203c5
 
     invoke-interface {p2, v4}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 
@@ -574,7 +574,7 @@
 
     .line 206
     .local v2, itemPrev:Landroid/view/MenuItem;
-    const v4, 0x1020978
+    const v4, 0x10203c6
 
     invoke-interface {p2, v4}, Landroid/view/Menu;->findItem(I)Landroid/view/MenuItem;
 

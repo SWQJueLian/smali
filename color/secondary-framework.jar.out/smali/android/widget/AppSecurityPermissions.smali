@@ -1517,7 +1517,7 @@
 
     .line 550
     .local v3, permView:Landroid/view/View;
-    const v4, 0x1020820
+    const v4, 0x102026e
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1527,7 +1527,7 @@
 
     .line 551
     .local v2, permGrpView:Landroid/widget/TextView;
-    const v4, 0x1020821
+    const v4, 0x102026f
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1537,7 +1537,7 @@
 
     .line 553
     .local v1, permDescView:Landroid/widget/TextView;
-    const v4, 0x102081c
+    const v4, 0x102026a
 
     invoke-virtual {v3, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2153,7 +2153,7 @@
 
     .line 485
     .local v2, permsView:Landroid/widget/LinearLayout;
-    const v3, 0x1020823
+    const v3, 0x1020271
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 
@@ -2163,7 +2163,7 @@
 
     .line 486
     .local v0, displayList:Landroid/widget/LinearLayout;
-    const v3, 0x1020822
+    const v3, 0x1020270
 
     invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
 

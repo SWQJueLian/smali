@@ -155,7 +155,7 @@
 
     .prologue
     .line 62
-    const v0, 0x1020876
+    const v0, 0x10202c4
 
     return v0
 .end method
@@ -168,7 +168,7 @@
     invoke-super {p0}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->onFinishInflate()V
 
     .line 69
-    const v2, 0x1020882
+    const v2, 0x10202d0
 
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;->findViewById(I)Landroid/view/View;
 
@@ -187,7 +187,7 @@
 
     .line 82
     :cond_0
-    const v2, 0x1020877
+    const v2, 0x10202c5
 
     invoke-virtual {p0, v2}, Lcom/android/internal/policy/impl/keyguard/KeyguardSimPinView;->findViewById(I)Landroid/view/View;
 

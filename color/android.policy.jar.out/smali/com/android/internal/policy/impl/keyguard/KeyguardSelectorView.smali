@@ -716,7 +716,7 @@
     invoke-super {p0}, Lcom/android/internal/policy/impl/keyguard/LockScreenLayout;->onFinishInflate()V
 
     .line 173
-    const v5, 0x1020863
+    const v5, 0x10202b1
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->findViewById(I)Landroid/view/View;
 
@@ -744,7 +744,7 @@
     iput-object v5, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
     .line 178
-    const v5, 0x10208af
+    const v5, 0x10202fd
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->findViewById(I)Landroid/view/View;
 
@@ -812,7 +812,7 @@
     invoke-virtual {v5, p0}, Lcom/android/internal/policy/impl/keyguard/MediatekGlowPadView;->setLockScreenView(Lcom/android/internal/policy/impl/keyguard/LockScreenLayout;)V
 
     .line 190
-    const v5, 0x10208b0
+    const v5, 0x10202fe
 
     invoke-virtual {p0, v5}, Lcom/android/internal/policy/impl/keyguard/KeyguardSelectorView;->findViewById(I)Landroid/view/View;
 

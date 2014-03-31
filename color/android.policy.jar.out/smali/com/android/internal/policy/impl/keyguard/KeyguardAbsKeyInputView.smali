@@ -342,7 +342,7 @@
     .line 134
     .end local v0           #bouncerFrameView:Landroid/view/View;
     :cond_1
-    const v1, 0x1020862
+    const v1, 0x10202b0
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->findViewById(I)Landroid/view/View;
 
@@ -351,7 +351,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->mEcaView:Landroid/view/View;
 
     .line 135
-    const v1, 0x102085e
+    const v1, 0x10202ac
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardAbsKeyInputView;->findViewById(I)Landroid/view/View;
 

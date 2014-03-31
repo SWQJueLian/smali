@@ -17,6 +17,10 @@
 # static fields
 .field public static final android_tab_indicator_text_v4:I = 0xc060404
 
+.field public static final oppo_alert_dialog_button_text_color:I = 0xc06040c
+
+.field public static final oppo_alert_dialog_button_text_fouse_color:I = 0xc06040d
+
 .field public static final oppo_alert_dialog_content_text_color:I = 0xc060002
 
 .field public static final oppo_alert_dialog_title_text_color:I = 0xc060003
@@ -79,7 +83,7 @@
     .locals 0
 
     .prologue
-    .line 1234
+    .line 1266
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

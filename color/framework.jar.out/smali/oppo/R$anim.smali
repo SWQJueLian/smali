@@ -23,6 +23,8 @@
 
 .field public static final android_push_up_out:I = 0xc0a0003
 
+.field public static final oppo_custom_view_enter:I = 0xc0a0407
+
 .field public static final oppo_dialog_close_enter:I = 0xc0a0009
 
 .field public static final oppo_dialog_close_exit:I = 0xc0a0008
@@ -30,6 +32,10 @@
 .field public static final oppo_dialog_open_enter:I = 0xc0a000b
 
 .field public static final oppo_dialog_open_exit:I = 0xc0a000a
+
+.field public static final oppo_home_as_up_enter:I = 0xc0a0406
+
+.field public static final oppo_list_layout_animation:I = 0xc0a000d
 
 .field public static final oppo_multiselect_bottom_enter:I = 0xc0a0400
 

@@ -199,7 +199,7 @@
     .line 2137
     .end local v7           #str:Ljava/lang/CharSequence;
     :cond_2
-    const v11, 0x10208ee
+    const v11, 0x102033c
 
     iget-object v8, p0, Landroid/app/Notification$InboxStyle;->mTexts:Ljava/util/ArrayList;
 

@@ -249,10 +249,10 @@
         0x1020020 -> :sswitch_0
         0x1020021 -> :sswitch_1
         0x1020022 -> :sswitch_2
-        0x1020973 -> :sswitch_4
-        0x1020974 -> :sswitch_3
-        0x1020975 -> :sswitch_5
-        0x1020976 -> :sswitch_6
+        0x10203c1 -> :sswitch_4
+        0x10203c2 -> :sswitch_3
+        0x10203c3 -> :sswitch_5
+        0x10203c4 -> :sswitch_6
     .end sparse-switch
 .end method
 
@@ -369,7 +369,7 @@
 
     .line 74
     .local v4, canWebSearch:Z
-    const v9, 0x1020975
+    const v9, 0x10203c3
 
     invoke-direct {p0, p2, v2, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
@@ -389,7 +389,7 @@
     invoke-direct {p0, p2, v0, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 
     .line 78
-    const v9, 0x1020976
+    const v9, 0x10203c4
 
     invoke-direct {p0, p2, v4, v9}, Landroid/webkit/SelectActionModeCallback;->setMenuVisibility(Landroid/view/Menu;ZI)V
 

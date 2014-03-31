@@ -2310,7 +2310,7 @@
 
     .prologue
     .line 4127
-    const-string/jumbo v0, "iso-speed"
+    const-string v0, "iso-speed"
 
     invoke-virtual {p0, v0}, Landroid/hardware/Camera$Parameters;->get(Ljava/lang/String;)Ljava/lang/String;
 
@@ -4627,7 +4627,7 @@
 
     .prologue
     .line 4133
-    const-string/jumbo v0, "iso-speed"
+    const-string v0, "iso-speed"
 
     invoke-virtual {p0, v0, p1}, Landroid/hardware/Camera$Parameters;->set(Ljava/lang/String;Ljava/lang/String;)V
 

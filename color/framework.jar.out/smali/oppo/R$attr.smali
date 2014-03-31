@@ -167,6 +167,8 @@
 
 .field public static final oppoIconMarginTop:I = 0xc01000e
 
+.field public static final oppoItemMoreAnimation:I = 0xc01005a
+
 .field public static final oppoKeyBackground:I = 0xc010016
 
 .field public static final oppoLabelFocusColor:I = 0xc010009
@@ -257,6 +259,8 @@
 
 .field public static final oppoUseDefaultController:I = 0xc010431
 
+.field public static final oppoWindowActionBarAndStatusBarOverlay:I = 0xc010059
+
 .field public static final oppoWindowContentOverlay:I = 0xc010058
 
 .field public static final pagerTitle:I = 0xc01004c
@@ -323,7 +327,7 @@
     .locals 0
 
     .prologue
-    .line 85
+    .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -170,7 +170,7 @@
     invoke-direct {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->log(Ljava/lang/String;)V
 
     .line 112
-    const v0, 0x102096e
+    const v0, 0x10203bc
 
     invoke-virtual {p0, v0}, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->findViewById(I)Landroid/view/View;
 
@@ -512,7 +512,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mSecurityMessageDisplay:Lcom/android/internal/policy/impl/keyguard/SecurityMessageDisplay;
 
     .line 50
-    const v1, 0x1020862
+    const v1, 0x10202b0
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->findViewById(I)Landroid/view/View;
 
@@ -521,7 +521,7 @@
     iput-object v1, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->mEcaView:Landroid/view/View;
 
     .line 51
-    const v1, 0x102085e
+    const v1, 0x10202ac
 
     invoke-virtual {p0, v1}, Lcom/android/internal/policy/impl/keyguard/KeyguardVoiceUnlockView;->findViewById(I)Landroid/view/View;
 

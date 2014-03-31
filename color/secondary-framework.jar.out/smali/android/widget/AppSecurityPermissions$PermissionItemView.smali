@@ -276,7 +276,7 @@
     iput-object p2, p0, Landroid/widget/AppSecurityPermissions$PermissionItemView;->mPerm:Landroid/widget/AppSecurityPermissions$MyPermissionInfo;
 
     .line 165
-    const v8, 0x102081c
+    const v8, 0x102026a
 
     invoke-virtual {p0, v8}, Landroid/widget/AppSecurityPermissions$PermissionItemView;->findViewById(I)Landroid/view/View;
 
@@ -286,7 +286,7 @@
 
     .line 166
     .local v5, permGrpIcon:Landroid/widget/ImageView;
-    const v8, 0x102081d
+    const v8, 0x102026b
 
     invoke-virtual {p0, v8}, Landroid/widget/AppSecurityPermissions$PermissionItemView;->findViewById(I)Landroid/view/View;
 

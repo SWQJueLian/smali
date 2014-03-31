@@ -203,7 +203,7 @@
 
     .prologue
     .line 248
-    const v3, 0x1020864
+    const v3, 0x10202b2
 
     .line 249
     .local v3, resId:I
@@ -305,7 +305,7 @@
     .line 276
     iget-object v6, p0, Lcom/android/internal/policy/impl/keyguard/KeyguardViewManager;->mKeyguardView:Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;
 
-    const v7, 0x1020870
+    const v7, 0x10202be
 
     invoke-virtual {v6, v7}, Lcom/android/internal/policy/impl/keyguard/KeyguardHostView;->findViewById(I)Landroid/view/View;
 
