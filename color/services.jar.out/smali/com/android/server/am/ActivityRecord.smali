@@ -190,6 +190,11 @@
     .parameter "_resultWho"
     .parameter "_reqCode"
     .parameter "_componentSpecified"
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
+        note = "Jianhua.Lin@Plf.SDK : Modify for start OppoResolverActivity instead of ResolverActivity"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
 
     .prologue
     .line 324
@@ -346,7 +351,7 @@
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->haveState:Z
 
     .line 360
-    if-eqz p7, :cond_10
+    if-eqz p7, :cond_f
 
     .line 361
     iget-object v3, p7, Landroid/content/pm/ActivityInfo;->targetActivity:Ljava/lang/String;
@@ -643,86 +648,13 @@
 
     if-eq p4, v3, :cond_6
 
-    if-nez p4, :cond_e
+    if-nez p4, :cond_d
 
     .line 423
     :cond_6
-    const-string v3, "android.intent.action.MAIN"
-
-    invoke-virtual {p5}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p5}, Lcom/android/server/am/ActivityRecord;->initIsHomeActivity(Landroid/content/Intent;)Z
 
     move-result v3
-
-    if-eqz v3, :cond_d
-
-    const-string v3, "android.intent.category.HOME"
-
-    invoke-virtual {p5, v3}, Landroid/content/Intent;->hasCategory(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_d
-
-    invoke-virtual {p5}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
-
-    move-result-object v3
-
-    invoke-interface {v3}, Ljava/util/Set;->size()I
-
-    move-result v3
-
-    const/4 v4, 0x1
-
-    if-ne v3, v4, :cond_d
-
-    invoke-virtual {p5}, Landroid/content/Intent;->getData()Landroid/net/Uri;
-
-    move-result-object v3
-
-    if-nez v3, :cond_d
-
-    invoke-virtual {p5}, Landroid/content/Intent;->getType()Ljava/lang/String;
-
-    move-result-object v3
-
-    if-nez v3, :cond_d
-
-    iget-object v3, p0, Lcom/android/server/am/ActivityRecord;->intent:Landroid/content/Intent;
-
-    invoke-virtual {v3}, Landroid/content/Intent;->getFlags()I
-
-    move-result v3
-
-    const/high16 v4, 0x1000
-
-    and-int/2addr v3, v4
-
-    if-eqz v3, :cond_d
-
-    const-class v3, Lcom/android/internal/app/ResolverActivity;
-
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    iget-object v4, p0, Lcom/android/server/am/ActivityRecord;->realActivity:Landroid/content/ComponentName;
-
-    invoke-virtual {v4}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_d
-
-    .line 435
-    const/4 v3, 0x1
 
     iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->isHomeActivity:Z
 
@@ -732,7 +664,7 @@
 
     and-int/lit16 v3, v3, 0x800
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_e
 
     const/4 v3, 0x1
 
@@ -783,7 +715,7 @@
     :cond_b
     const/4 v3, 0x0
 
-    goto/16 :goto_4
+    goto :goto_4
 
     .line 416
     :cond_c
@@ -803,19 +735,11 @@
     :cond_e
     const/4 v3, 0x0
 
-    iput-boolean v3, p0, Lcom/android/server/am/ActivityRecord;->isHomeActivity:Z
-
-    goto :goto_6
-
-    .line 443
-    :cond_f
-    const/4 v3, 0x0
-
     goto :goto_7
 
     .line 445
     .end local v2           #ent:Lcom/android/server/AttributeCache$Entry;
-    :cond_10
+    :cond_f
     const/4 v3, 0x0
 
     iput-object v3, p0, Lcom/android/server/am/ActivityRecord;->realActivity:Landroid/content/ComponentName;
@@ -4139,4 +4063,99 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v4
+.end method
+
+.method initIsHomeActivity(Landroid/content/Intent;)Z
+    .locals 3
+    .parameter "_intent"
+    .annotation build Landroid/annotation/OppoHook;
+        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
+        note = "Jianhua.Lin@Plf.SDK : Add for start OppoResolverActivity instead of ResolverActivity"
+        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
+    .end annotation
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 967
+    const-string v1, "android.intent.action.MAIN"
+
+    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    const-string v1, "android.intent.category.HOME"
+
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->hasCategory(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-virtual {p1}, Landroid/content/Intent;->getCategories()Ljava/util/Set;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Ljava/util/Set;->size()I
+
+    move-result v1
+
+    if-ne v1, v0, :cond_0
+
+    invoke-virtual {p1}, Landroid/content/Intent;->getData()Landroid/net/Uri;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    invoke-virtual {p1}, Landroid/content/Intent;->getType()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-nez v1, :cond_0
+
+    iget-object v1, p0, Lcom/android/server/am/ActivityRecord;->intent:Landroid/content/Intent;
+
+    invoke-virtual {v1}, Landroid/content/Intent;->getFlags()I
+
+    move-result v1
+
+    const/high16 v2, 0x1000
+
+    and-int/2addr v1, v2
+
+    if-eqz v1, :cond_0
+
+    const-class v1, Lcom/android/internal/app/OppoResolverActivity;
+
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/android/server/am/ActivityRecord;->realActivity:Landroid/content/ComponentName;
+
+    invoke-virtual {v2}, Landroid/content/ComponentName;->getClassName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    .line 977
+    :goto_0
+    return v0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    goto :goto_0
 .end method
