@@ -41,6 +41,7 @@
 ./base/core/java/com/android/internal/app/AlertController.java
 ./base/core/java/com/android/internal/app/ActionBarImpl.java
 ./base/core/java/com/android/internal/app/ResolverActivity.java
+./base/core/java/com/android/internal/app/ChooserActivity.java
 ./base/core/java/com/android/internal/widget/ActionBarContextView.java
 ./base/core/java/com/android/internal/widget/ActionBarView.java
 ./base/core/java/com/android/internal/widget/ScrollingTabContainerView.java
