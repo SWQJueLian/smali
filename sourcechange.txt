@@ -55,6 +55,7 @@
 ./base/services/java/com/android/server/am/ActivityStack.java
 ./base/services/java/com/android/server/am/BaseErrorDialog.java
 ./base/services/java/com/android/server/am/ActivityManagerService.java
+./base/services/java/com/android/server/am/ActivityRecord.java
 ./base/services/java/com/android/server/StatusBarManagerService.java
 ./base/services/java/com/android/server/connectivity/Tethering.java
 ./base/services/java/com/android/server/InputMethodManagerService.java
