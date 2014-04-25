@@ -533,11 +533,6 @@
     .parameter "a"
     .parameter "hasTitle"
     .parameter "buttonPanel"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->CHANGE_CODE:Landroid/annotation/OppoHook$OppoHookType;
-        note = "Jianhua.Lin@Plf.Framework.SDK : Modify for oppostyle"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
 
     .prologue
     .line 621
@@ -740,12 +735,13 @@
 
     move/from16 v1, v20
 
-    if-ne v0, v1, :cond_3
+    if-ne v0, v1, :cond_1
 
-    const/16 v19, 0x0
+    const/16 p2, 0x0
 
-    :goto_0
-    aput-object v19, v18, v13
+    .end local p2
+    :cond_1
+    aput-object p2, v18, v13
 
     .line 668
     move-object/from16 v0, p0
@@ -758,14 +754,14 @@
 
     const/16 v19, 0x1
 
-    :goto_1
+    :goto_0
     aput-boolean v19, v12, v13
 
     .line 669
     add-int/lit8 v13, v13, 0x1
 
     .line 670
-    if-eqz p3, :cond_1
+    if-eqz p3, :cond_2
 
     .line 671
     aput-object p3, v18, v13
@@ -783,8 +779,8 @@
     add-int/lit8 v13, v13, 0x1
 
     .line 675
-    :cond_1
-    if-eqz p4, :cond_2
+    :cond_2
+    if-eqz p4, :cond_3
 
     .line 676
     aput-object p7, v18, v13
@@ -795,14 +791,14 @@
     aput-boolean v19, v12, v13
 
     .line 680
-    :cond_2
+    :cond_3
     const/4 v14, 0x0
 
     .line 681
     .local v14, setView:Z
     const/4 v13, 0x0
 
-    :goto_2
+    :goto_1
     move-object/from16 v0, v18
 
     array-length v0, v0
@@ -821,24 +817,17 @@
     if-nez v17, :cond_5
 
     .line 681
-    :goto_3
+    :goto_2
     add-int/lit8 v13, v13, 0x1
 
-    goto :goto_2
+    goto :goto_1
 
     .end local v14           #setView:Z
     .end local v17           #v:Landroid/view/View;
-    :cond_3
-    move-object/from16 v19, p2
-
-    .line 666
-    goto :goto_0
-
-    .line 668
     :cond_4
     const/16 v19, 0x0
 
-    goto :goto_1
+    goto :goto_0
 
     .line 686
     .restart local v14       #setView:Z
@@ -854,13 +843,13 @@
 
     move/from16 v19, v15
 
-    :goto_4
+    :goto_3
     move/from16 v0, v19
 
     invoke-virtual {v11, v0}, Landroid/view/View;->setBackgroundResource(I)V
 
     .line 692
-    :goto_5
+    :goto_4
     const/4 v14, 0x1
 
     .line 694
@@ -870,13 +859,13 @@
     .line 695
     aget-boolean v10, v12, v13
 
-    goto :goto_3
+    goto :goto_2
 
     :cond_7
     move/from16 v19, v16
 
     .line 688
-    goto :goto_4
+    goto :goto_3
 
     .line 690
     :cond_8
@@ -884,17 +873,17 @@
 
     move/from16 v19, v6
 
-    :goto_6
+    :goto_5
     move/from16 v0, v19
 
     invoke-virtual {v11, v0}, Landroid/view/View;->setBackgroundResource(I)V
 
-    goto :goto_5
+    goto :goto_4
 
     :cond_9
     move/from16 v19, v7
 
-    goto :goto_6
+    goto :goto_5
 
     .line 698
     .end local v17           #v:Landroid/view/View;
@@ -910,13 +899,13 @@
     if-eqz p4, :cond_d
 
     .end local v5           #bottomMedium:I
-    :goto_7
+    :goto_6
     invoke-virtual {v11, v5}, Landroid/view/View;->setBackgroundResource(I)V
 
     .line 736
     .end local v8           #fullBright:I
     :cond_b
-    :goto_8
+    :goto_7
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/app/AlertController;->mListView:Landroid/widget/ListView;
@@ -997,15 +986,6 @@
 
     .line 746
     :cond_c
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p2
-
-    move-object/from16 v2, p3
-
-    invoke-virtual {v0, v1, v2}, Lcom/android/internal/app/AlertController;->setPanelBackground(Landroid/widget/LinearLayout;Landroid/view/View;)V
-
-    .line 748
     return-void
 
     .restart local v5       #bottomMedium:I
@@ -1014,28 +994,28 @@
     move v5, v3
 
     .line 704
-    goto :goto_7
+    goto :goto_6
 
     :cond_e
     move v5, v4
 
-    goto :goto_7
+    goto :goto_6
 
     .line 707
     :cond_f
     if-eqz v10, :cond_10
 
     .end local v8           #fullBright:I
-    :goto_9
+    :goto_8
     invoke-virtual {v11, v8}, Landroid/view/View;->setBackgroundResource(I)V
 
-    goto :goto_8
+    goto :goto_7
 
     .restart local v8       #fullBright:I
     :cond_10
     move v8, v9
 
-    goto :goto_9
+    goto :goto_8
 .end method
 
 .method private setupButtons()Z
@@ -2377,77 +2357,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/oppo/util/OppoDialogUtil;->setDialogButtonFlag(Landroid/view/Window;I)V
 
-    .line 1034
-    return-void
-.end method
-
-.method setPanelBackground(Landroid/widget/LinearLayout;Landroid/view/View;)V
-    .locals 4
-    .parameter "contentPanel"
-    .parameter "customPanel"
-    .annotation build Landroid/annotation/OppoHook;
-        level = .enum Landroid/annotation/OppoHook$OppoHookType;->NEW_METHOD:Landroid/annotation/OppoHook$OppoHookType;
-        note = "Jianhua.Lin@Plf.Framework.SDK,2013-08-07, add for oppostyle"
-        property = .enum Landroid/annotation/OppoHook$OppoRomType;->ROM:Landroid/annotation/OppoHook$OppoRomType;
-    .end annotation
-
-    .prologue
-    .line 1015
-    iget-object v2, p0, Lcom/android/internal/app/AlertController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->isOppoStyle()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_0
-
-    if-eqz p2, :cond_0
-
-    invoke-virtual {p1}, Landroid/widget/LinearLayout;->getVisibility()I
-
-    move-result v2
-
-    const/16 v3, 0x8
-
-    if-eq v2, v3, :cond_0
-
-    .line 1016
-    iget-object v2, p0, Lcom/android/internal/app/AlertController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0xc08048f
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    .line 1018
-    .local v1, customDrawable:Landroid/graphics/drawable/Drawable;
-    iget-object v2, p0, Lcom/android/internal/app/AlertController;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    const v3, 0xc080490
-
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    .line 1020
-    .local v0, contentDrawable:Landroid/graphics/drawable/Drawable;
-    invoke-virtual {p2, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    .line 1021
-    invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    .line 1023
-    .end local v0           #contentDrawable:Landroid/graphics/drawable/Drawable;
-    .end local v1           #customDrawable:Landroid/graphics/drawable/Drawable;
-    :cond_0
+    .line 1012
     return-void
 .end method

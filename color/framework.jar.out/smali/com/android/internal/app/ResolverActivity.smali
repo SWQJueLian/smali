@@ -505,7 +505,7 @@
 
     iput v1, p0, Lcom/android/internal/app/ResolverActivity;->mIconDpi:I
 
-    .line 131
+    .line 154
     invoke-virtual {v8}, Landroid/app/ActivityManager;->getLauncherLargeIconSize()I
 
     move-result v1
@@ -1258,7 +1258,7 @@
 
     invoke-virtual {v0, v1}, Lcom/android/internal/app/ResolverActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 373
+    .line 402
     :cond_c
     return-void
 .end method
@@ -1578,7 +1578,7 @@
     .local v0, in:Landroid/content/Intent;
     invoke-virtual {p0, v0}, Lcom/android/internal/app/ResolverActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 380
+    .line 418
     return-void
 .end method
 
