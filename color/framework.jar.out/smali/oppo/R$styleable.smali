@@ -367,14 +367,14 @@
 
     const/4 v2, 0x2
 
-    .line 2493
+    .line 2501
     new-array v0, v1, [I
 
     fill-array-data v0, :array_0
 
     sput-object v0, Loppo/R$styleable;->ApkLock:[I
 
-    .line 2541
+    .line 2549
     const/16 v0, 0x12
 
     new-array v0, v0, [I
@@ -383,28 +383,28 @@
 
     sput-object v0, Loppo/R$styleable;->DragSortListView:[I
 
-    .line 2818
+    .line 2826
     new-array v0, v2, [I
 
     fill-array-data v0, :array_2
 
     sput-object v0, Loppo/R$styleable;->EdgeTriggerView:[I
 
-    .line 2829
+    .line 2837
     new-array v0, v1, [I
 
     fill-array-data v0, :array_3
 
     sput-object v0, Loppo/R$styleable;->Mapping:[I
 
-    .line 2841
+    .line 2849
     new-array v0, v5, [I
 
     fill-array-data v0, :array_4
 
     sput-object v0, Loppo/R$styleable;->Oppo3DMultiCallView:[I
 
-    .line 2852
+    .line 2860
     new-array v0, v4, [I
 
     const v1, 0xc01008d
@@ -413,7 +413,7 @@
 
     sput-object v0, Loppo/R$styleable;->Oppo3DRollCoverView:[I
 
-    .line 2875
+    .line 2883
     const/4 v0, 0x6
 
     new-array v0, v0, [I
@@ -422,14 +422,14 @@
 
     sput-object v0, Loppo/R$styleable;->Oppo3DScenePreView:[I
 
-    .line 2994
+    .line 3002
     new-array v0, v2, [I
 
     fill-array-data v0, :array_6
 
     sput-object v0, Loppo/R$styleable;->OppoEditText:[I
 
-    .line 3039
+    .line 3047
     const/16 v0, 0xa
 
     new-array v0, v0, [I
@@ -438,7 +438,7 @@
 
     sput-object v0, Loppo/R$styleable;->OppoListView:[I
 
-    .line 3096
+    .line 3104
     new-array v0, v4, [I
 
     const v1, 0xc01041a
@@ -447,7 +447,7 @@
 
     sput-object v0, Loppo/R$styleable;->OppoLockPatternView:[I
 
-    .line 3140
+    .line 3148
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -456,7 +456,7 @@
 
     sput-object v0, Loppo/R$styleable;->OppoMultiListView:[I
 
-    .line 3256
+    .line 3264
     const/16 v0, 0xc
 
     new-array v0, v0, [I
@@ -465,7 +465,7 @@
 
     sput-object v0, Loppo/R$styleable;->OppoNumberPicker:[I
 
-    .line 3487
+    .line 3495
     const/16 v0, 0xb
 
     new-array v0, v0, [I
@@ -474,7 +474,7 @@
 
     sput-object v0, Loppo/R$styleable;->OppoOptionMenuBar:[I
 
-    .line 3651
+    .line 3659
     const/16 v0, 0x8
 
     new-array v0, v0, [I
@@ -483,14 +483,14 @@
 
     sput-object v0, Loppo/R$styleable;->OppoPagerTabStrip:[I
 
-    .line 3764
+    .line 3772
     new-array v0, v2, [I
 
     fill-array-data v0, :array_c
 
     sput-object v0, Loppo/R$styleable;->OppoPreferenceTextAppearance:[I
 
-    .line 3801
+    .line 3809
     new-array v0, v4, [I
 
     const v1, 0xc010007
@@ -499,7 +499,7 @@
 
     sput-object v0, Loppo/R$styleable;->OppoProgressBar:[I
 
-    .line 3852
+    .line 3860
     const/16 v0, 0xc
 
     new-array v0, v0, [I
@@ -508,7 +508,7 @@
 
     sput-object v0, Loppo/R$styleable;->OppoScrollingTabContainerView:[I
 
-    .line 4005
+    .line 4013
     const/16 v0, 0xd
 
     new-array v0, v0, [I
@@ -517,7 +517,7 @@
 
     sput-object v0, Loppo/R$styleable;->OppoShortCutBar:[I
 
-    .line 4051
+    .line 4059
     const/16 v0, 0x10
 
     new-array v0, v0, [I
@@ -526,14 +526,14 @@
 
     sput-object v0, Loppo/R$styleable;->OppoShortCutButton:[I
 
-    .line 4297
+    .line 4305
     new-array v0, v5, [I
 
     fill-array-data v0, :array_10
 
     sput-object v0, Loppo/R$styleable;->OppoSwitch:[I
 
-    .line 4374
+    .line 4382
     new-array v0, v4, [I
 
     const v1, 0xc01003d
@@ -542,7 +542,7 @@
 
     sput-object v0, Loppo/R$styleable;->OppoSwitchPreference:[I
 
-    .line 4425
+    .line 4433
     const/16 v0, 0xd
 
     new-array v0, v0, [I
@@ -551,14 +551,14 @@
 
     sput-object v0, Loppo/R$styleable;->OppoTabWidget:[I
 
-    .line 4623
+    .line 4631
     new-array v0, v5, [I
 
     fill-array-data v0, :array_12
 
     sput-object v0, Loppo/R$styleable;->OppoTheme:[I
 
-    .line 4678
+    .line 4686
     const/16 v0, 0xa
 
     new-array v0, v0, [I
@@ -567,28 +567,28 @@
 
     sput-object v0, Loppo/R$styleable;->OppoTouchSearchView:[I
 
-    .line 4851
+    .line 4859
     new-array v0, v2, [I
 
     fill-array-data v0, :array_14
 
     sput-object v0, Loppo/R$styleable;->OppoWeightedLinearLayout:[I
 
-    .line 4894
+    .line 4902
     new-array v0, v2, [I
 
     fill-array-data v0, :array_15
 
     sput-object v0, Loppo/R$styleable;->OppoWindow:[I
 
-    .line 4938
+    .line 4946
     new-array v0, v2, [I
 
     fill-array-data v0, :array_16
 
     sput-object v0, Loppo/R$styleable;->ScenePreView:[I
 
-    .line 4949
+    .line 4957
     new-array v0, v4, [I
 
     const v1, 0xc01005f
@@ -597,7 +597,7 @@
 
     sput-object v0, Loppo/R$styleable;->ShortCutContainer:[I
 
-    .line 4960
+    .line 4968
     const/16 v0, 0xe
 
     new-array v0, v0, [I
@@ -606,14 +606,14 @@
 
     sput-object v0, Loppo/R$styleable;->SlidePiece:[I
 
-    .line 4974
+    .line 4982
     new-array v0, v5, [I
 
     fill-array-data v0, :array_18
 
     sput-object v0, Loppo/R$styleable;->VerticalRollAnimation:[I
 
-    .line 4988
+    .line 4996
     new-array v0, v4, [I
 
     const v1, 0xc010032
@@ -622,14 +622,14 @@
 
     sput-object v0, Loppo/R$styleable;->Window:[I
 
-    .line 5012
+    .line 5021
     new-array v0, v2, [I
 
     fill-array-data v0, :array_19
 
     sput-object v0, Loppo/R$styleable;->WindowAnimation:[I
 
-    .line 5023
+    .line 5032
     new-array v0, v2, [I
 
     fill-array-data v0, :array_1a
@@ -638,7 +638,7 @@
 
     return-void
 
-    .line 2493
+    .line 2501
     :array_0
     .array-data 0x4
         0x92t 0x0t 0x1t 0xct
@@ -648,7 +648,7 @@
         0x96t 0x0t 0x1t 0xct
     .end array-data
 
-    .line 2541
+    .line 2549
     :array_1
     .array-data 0x4
         0x27t 0x4t 0x1t 0xct
@@ -671,14 +671,14 @@
         0x38t 0x4t 0x1t 0xct
     .end array-data
 
-    .line 2818
+    .line 2826
     :array_2
     .array-data 0x4
         0x89t 0x0t 0x1t 0xct
         0x8at 0x0t 0x1t 0xct
     .end array-data
 
-    .line 2829
+    .line 2837
     :array_3
     .array-data 0x4
         0x84t 0x0t 0x1t 0xct
@@ -688,7 +688,7 @@
         0x88t 0x0t 0x1t 0xct
     .end array-data
 
-    .line 2841
+    .line 2849
     :array_4
     .array-data 0x4
         0x8et 0x0t 0x1t 0xct
@@ -697,7 +697,7 @@
         0x91t 0x0t 0x1t 0xct
     .end array-data
 
-    .line 2875
+    .line 2883
     :array_5
     .array-data 0x4
         0x20t 0x0t 0x1t 0xct
@@ -708,14 +708,14 @@
         0x25t 0x0t 0x1t 0xct
     .end array-data
 
-    .line 2994
+    .line 3002
     :array_6
     .array-data 0x4
         0x4t 0x0t 0x1t 0xct
         0x6t 0x0t 0x1t 0xct
     .end array-data
 
-    .line 3039
+    .line 3047
     :array_7
     .array-data 0x4
         0x5t 0x0t 0x1t 0xct
@@ -730,7 +730,7 @@
         0x81t 0x0t 0x1t 0xct
     .end array-data
 
-    .line 3140
+    .line 3148
     :array_8
     .array-data 0x4
         0x10t 0x4t 0x1t 0xct
@@ -743,7 +743,7 @@
         0x17t 0x4t 0x1t 0xct
     .end array-data
 
-    .line 3256
+    .line 3264
     :array_9
     .array-data 0x4
         0x7t 0x4t 0x1t 0xct
@@ -760,7 +760,7 @@
         0x24t 0x4t 0x1t 0xct
     .end array-data
 
-    .line 3487
+    .line 3495
     :array_a
     .array-data 0x4
         0x35t 0x0t 0x1t 0xct
@@ -776,7 +776,7 @@
         0x5at 0x0t 0x1t 0xct
     .end array-data
 
-    .line 3651
+    .line 3659
     :array_b
     .array-data 0x4
         0x4ct 0x0t 0x1t 0xct
@@ -789,14 +789,14 @@
         0x53t 0x0t 0x1t 0xct
     .end array-data
 
-    .line 3764
+    .line 3772
     :array_c
     .array-data 0x4
         0x18t 0x4t 0x1t 0xct
         0x19t 0x4t 0x1t 0xct
     .end array-data
 
-    .line 3852
+    .line 3860
     :array_d
     .array-data 0x4
         0x40t 0x0t 0x1t 0xct
@@ -813,7 +813,7 @@
         0x3dt 0x4t 0x1t 0xct
     .end array-data
 
-    .line 4005
+    .line 4013
     :array_e
     .array-data 0x4
         0x6et 0x0t 0x1t 0xct
@@ -831,7 +831,7 @@
         0x7at 0x0t 0x1t 0xct
     .end array-data
 
-    .line 4051
+    .line 4059
     :array_f
     .array-data 0x4
         0x26t 0x0t 0x1t 0xct
@@ -852,7 +852,7 @@
         0x3ct 0x4t 0x1t 0xct
     .end array-data
 
-    .line 4297
+    .line 4305
     :array_10
     .array-data 0x4
         0x1ct 0x4t 0x1t 0xct
@@ -861,7 +861,7 @@
         0x1ft 0x4t 0x1t 0xct
     .end array-data
 
-    .line 4425
+    .line 4433
     :array_11
     .array-data 0x4
         0x8t 0x0t 0x1t 0xct
@@ -879,7 +879,7 @@
         0x3ct 0x0t 0x1t 0xct
     .end array-data
 
-    .line 4623
+    .line 4631
     :array_12
     .array-data 0x4
         0x57t 0x0t 0x1t 0xct
@@ -888,7 +888,7 @@
         0x1bt 0x4t 0x1t 0xct
     .end array-data
 
-    .line 4678
+    .line 4686
     :array_13
     .array-data 0x4
         0x16t 0x0t 0x1t 0xct
@@ -903,28 +903,28 @@
         0x1ft 0x0t 0x1t 0xct
     .end array-data
 
-    .line 4851
+    .line 4859
     :array_14
     .array-data 0x4
         0x20t 0x4t 0x1t 0xct
         0x21t 0x4t 0x1t 0xct
     .end array-data
 
-    .line 4894
+    .line 4902
     :array_15
     .array-data 0x4
         0x4bt 0x0t 0x1t 0xct
         0x59t 0x0t 0x1t 0xct
     .end array-data
 
-    .line 4938
+    .line 4946
     :array_16
     .array-data 0x4
         0x82t 0x0t 0x1t 0xct
         0x83t 0x0t 0x1t 0xct
     .end array-data
 
-    .line 4960
+    .line 4968
     :array_17
     .array-data 0x4
         0x60t 0x0t 0x1t 0xct
@@ -943,7 +943,7 @@
         0x6dt 0x0t 0x1t 0xct
     .end array-data
 
-    .line 4974
+    .line 4982
     :array_18
     .array-data 0x4
         0x97t 0x0t 0x1t 0xct
@@ -952,14 +952,14 @@
         0x9at 0x0t 0x1t 0xct
     .end array-data
 
-    .line 5012
+    .line 5021
     :array_19
     .array-data 0x4
         0x9et 0x0t 0x1t 0xct
         0x9ft 0x0t 0x1t 0xct
     .end array-data
 
-    .line 5023
+    .line 5032
     :array_1a
     .array-data 0x4
         0x8bt 0x0t 0x1t 0xct
@@ -971,7 +971,7 @@
     .locals 0
 
     .prologue
-    .line 2484
+    .line 2492
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

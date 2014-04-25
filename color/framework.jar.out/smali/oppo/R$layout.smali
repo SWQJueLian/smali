@@ -75,6 +75,8 @@
 
 .field public static final oppo_personnal_security_panel:I = 0xc09044a
 
+.field public static final oppo_preference_divider:I = 0xc090002
+
 .field public static final oppo_progress_dialog_notitle:I = 0xc090412
 
 .field public static final oppo_rename_dialog_layout:I = 0xc090000
@@ -133,7 +135,7 @@
     .locals 0
 
     .prologue
-    .line 1944
+    .line 1951
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
